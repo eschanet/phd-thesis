@@ -1,0 +1,40 @@
+\input{feynman_preamble}
+\begin{document}
+	\unitlength=1mm
+	\begin{fmffile}{ttbar_1}
+		\begin{fmfgraph*}(50,30)
+
+
+			\fmfleftn{i}{2}
+			\fmfrightn{o}{6}
+			%particelle entranti
+			\fmf{gluon,tension=0.7}{i1,v1}
+			\fmf{gluon,tension=0.7}{v4,i2}
+
+			%mediatore
+			\fmf{fermion,tension=0.7}{v1,v4}
+			
+			\fmf{fermion,label=$\bar{t}$,label.side=left,tension=0.8}{v2,v1}
+			\fmf{photon,label=$W^-$,label.side=left,tension=0.4}{v2,v3}
+			\fmf{fermion,tension=0.5}{o1,v2}
+			\fmf{fermion,tension=0.2}{v3,o2}
+			\fmf{fermion,tension=0.2}{o3,v3}
+			
+			\fmf{fermion,label=$t$,label.side=left,tension=0.8}{v4,v5}
+			\fmf{photon,label=$W^+$,label.side=right,tension=0.4}{v5,v6}
+			\fmf{fermion,tension=0.5}{v5,o6}
+			\fmf{fermion,tension=0.2}{v6,o5}
+			\fmf{fermion,tension=0.2}{o4,v6}
+			
+			\fmflabel{$g$}{i2}
+			\fmflabel{$g$}{i1}
+			\fmflabel{$\bar{b}$}{o1}
+			\fmflabel{$q'$}{o2}
+			\fmflabel{$\bar{q}$}{o3}
+			\fmflabel{$\nu$}{o5}
+			\fmflabel{$\ell^+$}{o4}
+			\fmflabel{$b$}{o6}
+																		
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}

@@ -1,0 +1,38 @@
+\input{feynman_preamble}
+\begin{document}
+	\unitlength=1mm
+	\begin{fmffile}{singletop_1}
+		\begin{fmfgraph*}(50,30)
+
+
+			\fmfleftn{i}{2}
+			\fmfrightn{o}{5}
+			%particelle entranti
+			\fmf{fermion,tension=0.7}{i1,v1}
+			\fmf{gluon,tension=0.7}{v3,i2}
+
+			%mediatore
+			\fmf{fermion,tension=0.7}{v1,v3}
+			
+			\fmf{photon,label=$W^-$,label.side=right,tension=0.8}{v2,v1}
+			\fmf{fermion,tension=0.5}{o1,v2}
+			\fmf{fermion,tension=0.2}{v2,o2}
+			
+			\fmf{fermion,label=$t$,label.side=left,tension=0.8}{v3,v4}
+			\fmf{photon,label=$W^+$,label.side=right,tension=0.4}{v4,v5}
+			\fmf{fermion,tension=0.5}{v4,o5}
+			\fmf{fermion,tension=0.2}{v5,o4}
+			\fmf{fermion,tension=0.2}{o3,v5}
+			
+			\fmflabel{$g$}{i2}
+			\fmflabel{$b$}{i1}
+			\fmflabel{$q'$}{o2}
+			\fmflabel{$\bar{q}$}{o1}
+			\fmflabel{$\ell^+$}{o3}
+			\fmflabel{$\nu$}{o4}
+			\fmflabel{$b$}{o5}
+
+																		
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}

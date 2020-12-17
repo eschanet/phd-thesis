@@ -1,0 +1,33 @@
+\input{feynman_preamble}
+\begin{document}
+	\unitlength=1mm
+	\begin{fmffile}{wjets_1}
+		\begin{fmfgraph*}(50,30)
+
+
+			\fmfleftn{i}{2}
+			\fmfrightn{o}{4}
+			%particelle entranti
+			\fmf{fermion,tension=1}{v1,i1}
+			\fmf{fermion,tension=1}{i2,v3}
+			\fmflabel{$q'$}{i2}
+			\fmflabel{$\bar{q}$}{i1}
+			%mediatore
+			\fmf{fermion,tension=0.45}{v2,v1}
+
+
+			\fmf{gluon,label=$g$,label.side=left,tension=0.8}{v1,o1}
+
+			\fmf{fermion,tension=0.5}{v3,v2}
+
+			\fmf{gluon,label=$g$,label.side=left,tension=0.2}{v2,o2}
+			\fmf{photon,label=$W^+$}{v3,v4}
+			
+			%produzione b b
+			\fmf{fermion}{v4,o3}
+			\fmf{fermion}{o4,v4}
+			\fmflabel{$\ell^+$}{o4}
+			\fmflabel{$\nu$}{o3}
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}

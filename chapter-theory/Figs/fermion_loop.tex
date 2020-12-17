@@ -1,0 +1,18 @@
+\input{feynman_preamble}
+\begin{document}
+	\unitlength=1mm
+	\begin{fmffile}{fermion_loop_1}
+		\begin{fmfgraph*}(50,30)
+			
+			
+			\fmfleftn{i}{1}
+			\fmfrightn{o}{1}
+			
+			\fmf{dashes,label=$H$}{i1,v1}
+			\fmf{dashes,label=$H$}{v2,o1}
+
+			\fmf{fermion,label=$f$,label.side=left,left=1,tension=0.5}{v1,v2,v1}	
+			
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}

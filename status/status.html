@@ -1,0 +1,184 @@
+<html><head><title>Latest Stats on PhD Writing Progress</title>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+	      google.load("visualization", "1", {packages:["corechart"]});
+	      google.setOnLoadCallback(drawChart);
+        
+        var image_nodes = null;
+        var img_idx = 0;
+        var play = true;
+        
+	      function drawChart() {
+	        var progress_data = google.visualization.arrayToDataTable(
+[
+    ['x', 'Pages', 'Words', 'Ideal'],[56.76, 128, 24242, 90/91*56.76],
+[91, null, null, 90],
+  ]);
+	        var speed_data    = google.visualization.arrayToDataTable(
+[
+  ['x', 'Pages', 'Words', 'Commits'],[0, 0, 0, 0],
+[1, 0, 0, 0],
+[2, 0, 0, 0],
+[3, 0, 0, 0],
+[4, 0, 0, 0],
+[5, 0, 0, 0],
+[6, 0, 0, 0],
+[7, 0, 0, 0],
+[8, 0, 0, 0],
+[9, 0, 0, 0],
+[10, 0, 0, 0],
+[11, 0, 0, 0],
+[12, 0, 0, 0],
+[13, 0, 0, 0],
+[14, 0, 0, 0],
+[15, 0, 0, 0],
+[16, 0, 0, 0],
+[17, 0, 0, 0],
+[18, 0, 0, 0],
+[19, 0, 0, 0],
+[20, 0, 0, 0],
+[21, 0, 0, 0],
+[22, 0, 0, 0],
+[23, 0, 0, 0],
+[24, 0, 0, 0],
+[25, 0, 0, 0],
+[26, 0, 0, 0],
+[27, 0, 0, 0],
+[28, 0, 0, 0],
+[29, 0, 0, 0],
+[30, 0, 0, 0],
+[31, 0, 0, 0],
+[32, 0, 0, 0],
+[33, 0, 0, 0],
+[34, 0, 0, 0],
+[35, 0, 0, 0],
+[36, 0, 0, 0],
+[37, 0, 0, 0],
+[38, 0, 0, 0],
+[39, 0, 0, 0],
+[40, 0, 0, 0],
+[41, 0, 0, 0],
+[42, 0, 0, 0],
+[43, 0, 0, 0],
+[44, 0, 0, 0],
+[45, 0, 0, 0],
+[46, 0, 0, 0],
+[47, 0, 0, 0],
+[48, 0, 0, 0],
+[49, 0, 0, 0],
+[50, 0, 0, 0],
+[51, 0, 0, 0],
+[52, 0, 0, 0],
+[53, 0, 0, 0],
+[54, 0, 0, 0],
+[55, 0, 0, 0],
+[56, 128, 24242, 1],
+  ]);
+
+	        var progress_options = {
+	          title: "Progress (per day)",
+	          curveType: "function",
+	          width: 900, height: 500,
+	          hAxis: {maxValue: 91, title: "Days"},
+	          vAxes: { 0: {title:"Pages", maxValue: 90},
+	                   1: {title:"Words", maxValue: 31500},
+	                   2: {title:"Ideal", maxValue: 90}
+	          },
+              series: {
+				       0: {targetAxisIndex: 0},
+					   1: {targetAxisIndex: 1},
+					   2: {targetAxisIndex: 0, color: "#ccc"},
+			     },
+	    };
+			
+			var speed_options = {
+	          title: "Speed",
+			  curveType: "function",
+			  width: 900, height: 500,
+			  hAxis: {title:"Days"},
+			  vAxes: { 0: {title:"Pages"},
+	                   1: {title:"Words"},
+	                   2: {title:"Commits"}
+	          },
+              series: {
+				       0: {targetAxisIndex: 0},
+					   1: {targetAxisIndex: 1},
+					   2: {targetAxisIndex: 0, color: "#ccc"},
+			  },
+	        };
+
+	        var progress_chart = new google.visualization.LineChart(document.getElementById("progress"));
+	        progress_chart.draw(progress_data, progress_options);
+	        var speed_chart = new google.visualization.LineChart(document.getElementById("speed"));
+	        speed_chart.draw(speed_data, speed_options);
+          
+          
+          startImageTime();
+          image_nodes = document.getElementById("images").children;
+	      };
+        
+        function startImageTime() {
+          setInterval(displayNextImage, 250);
+        }
+        
+        function toggleAnimation() {
+          play = !play;
+        }
+        
+        function displayNextImage() {
+          if (!play)
+            return;
+            
+          if (img_idx >= image_nodes.length + 10) { // the + 10 adds a little pause after a cycle
+            img_idx = 0;
+          }
+          
+          if (img_idx < image_nodes.length) {
+            var old_idx = (img_idx == 0) ? image_nodes.length - 1 : img_idx - 1;
+          
+            // console.log("display: idx " + img_idx);
+            // console.log("hide: idx " + old_idx);
+          
+            image_nodes[img_idx].style.display = "block";
+            image_nodes[old_idx].style.display = "none";
+          }
+          
+          img_idx++;
+        }
+        
+        
+	    </script>
+	  </head>
+</head>
+<body>Goal<br />
+----<br />
+<br />
+Words: 31500<br />
+Pages: 90<br />
+Words/Page: ca. 350<br />
+Draft Deadline: 1 October 2018<br />
+<br />
+Current Status<br />
+--------------<br />
+<br />
+Words: 24242<br />
+Pages: 128<br />
+Words to be written: 7258<br />
+Pages to be written: ca. -18<br />
+Progress: 76.96% finished<br />
+Remaining Days: 34.24<br />
+Remaining Workdays: 24.46<br />
+Remaining Words/Workday: 297<br />
+Pages/Day: 0.85<br />
+Current Date: Monday, 27. August 2018 18:15:59
+<div id="progress" style="width: 900px; height: 500px;"></div>
+<div id="speed"    style="width: 900px; height: 500px;"></div>
+
+<h2>Overview</h2>
+<div id='images' style='width: 900px;'>
+<img src='overview-1.png' style='display:none;width:100%;height:auto;' />
+</div>
+
+
+<button onclick="toggleAnimation();">play</button>
+</body></html>

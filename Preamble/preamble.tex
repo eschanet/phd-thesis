@@ -1,0 +1,306 @@
+% ******************************************************************************
+% ****************************** Custom Margin *********************************
+
+% Add `custommargin' in the document class options to use this section
+% Set {innerside margin / outerside margin / topmargin / bottom margin}  and
+% other page dimensions
+\ifsetCustomMargin
+  \RequirePackage[left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+  \setFancyHdr % To apply fancy header after geometry package is loaded
+\fi
+
+% Add spaces between paragraphs
+\setlength{\parskip}{0.5em}
+%Set indentation length for paragraphs
+\setlength{\parindent}{0pt}
+% Ragged bottom avoids extra whitespaces between paragraphs
+\raggedbottom
+% To remove the excess top spacing for enumeration, list and description
+%\usepackage{enumitem}
+%\setlist[enumerate,itemize,description]{topsep=0em}
+
+% *****************************************************************************
+% ******************* Fonts (like different typewriter fonts etc.)*************
+
+% Add `customfont' in the document class option to use this section
+
+\ifsetCustomFont
+  % Set your custom font here and use `customfont' in options. Leave empty to
+  % load computer modern font (default LaTeX font).
+  %\RequirePackage{helvet}
+
+  % For use with XeLaTeX
+  %  \setmainfont[
+  %    Path              = ./libertine/opentype/,
+  %    Extension         = .otf,
+  %    UprightFont = LinLibertine_R,
+  %    BoldFont = LinLibertine_RZ, % Linux Libertine O Regular Semibold
+  %    ItalicFont = LinLibertine_RI,
+  %    BoldItalicFont = LinLibertine_RZI, % Linux Libertine O Regular Semibold Italic
+  %  ]
+  %  {libertine}
+  %  % load font from system font
+  %  \newfontfamily\libertinesystemfont{Linux Libertine O}
+\fi
+
+% *****************************************************************************
+% **************************** Custom Packages ********************************
+
+% ************************* Algorithms and Pseudocode **************************
+
+%\usepackage{algpseudocode}
+
+
+% ********************Captions and Hyperreferencing / URL **********************
+
+% Captions: This makes captions of figures use a boldfaced small font.
+%\RequirePackage[small,bf]{caption}
+
+\RequirePackage[small,tableposition=top,labelfont=bf]{caption}
+%\renewcommand{\figurename}{Figure~} %to support older versions of captions.sty
+%\renewcommand{\tablename}{Table~}
+
+% *************************** Graphics and figures *****************************
+
+%\usepackage{rotating}
+%\usepackage{wrapfig}
+
+% Uncomment the following two lines to force Latex to place the figure.
+% Use [H] when including graphics. Note 'H' instead of 'h'
+%\usepackage{float}
+%\restylefloat{figure}
+\renewcommand{\topfraction}{.75}
+% Subcaption package is also available in the sty folder you can use that by
+% uncommenting the following line
+% This is for people stuck with older versions of texlive
+%\usepackage{sty/caption/subcaption}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+%
+%\DeclareSubrefFormat{myparens}{#1~(#2)}
+%\captionsetup[subfloat]{subrefformat=myparens}
+
+% ********************************** Tables ************************************
+\usepackage{booktabs} % For professional looking tables
+\usepackage{multirow}
+
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{tabularx}
+\usepackage{etoolbox}
+\AtBeginEnvironment{tabular}{\small}
+
+
+% *********************************** SI Units *********************************
+\usepackage{siunitx} % use this package module for SI units
+
+
+% ******************************* Line Spacing *********************************
+
+% Choose linespacing as appropriate. Default is one-half line spacing as per the
+% University guidelines
+
+% \doublespacing
+% \onehalfspacing
+\singlespacing
+\frenchspacing
+
+% ******************************* Language *********************************
+\usepackage[ngerman,british]{babel}
+
+% ******************************** Hyphenations**********************************
+\hyphenchar\font=\string"7F
+%\hyphenation{Trans-zen-denz trans-zen-dent}
+
+\begin{hyphenrules}{ngerman}
+	\hyphenation{Arbeits-at-mo-sphä-re}
+\end{hyphenrules}
+
+% ************************ Formatting / Footnote *******************************
+
+% Don't break enumeration (etc.) across pages in an ugly manner (default 10000)
+%\clubpenalty=500
+%\widowpenalty=500
+\usepackage{footnotebackref}
+\usepackage[perpage,hang,symbol]{footmisc} %Range of footnote options
+%\renewcommand*{\thefootnote}{(\arabic{footnote})}
+\DefineFNsymbols*{lamportnostar}[math]{\dagger\S\ddagger\P\|{\dagger\dagger}{\ddagger\ddagger}}
+\setfnsymbol{lamportnostar}
+% *****************************************************************************
+% *************************** Bibliography  and References ********************
+
+%\usepackage{cleveref} %Referencing without need to explicitly state fig /table
+
+% Add `custombib' in the document class option to use this section
+\ifuseCustomBib
+   \RequirePackage[square, sort, numbers, authoryear]{natbib} % CustomBib
+
+% If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
+
+%\RequirePackage[backend=biber, style=numeric, citestyle=numeric, natbib=true, sorting=none]{biblatex}
+%\usepackage{cleveref}
+%%\addbibresource{References/dummy.bib}
+%\addbibresource{References/references.bib}
+%\addbibresource{References/atlas_journal.bib}
+%\addbibresource{References/atlas_pub.bib}
+%\addbibresource{References/atlas_conf.bib}
+%\addbibresource{References/websites.bib} %Location of references.bib only for biblatex, Do not omit the .bib extension from the filename.
+
+\fi
+
+% changes the default name `Bibliography` -> `References'
+\renewcommand{\bibname}{References}
+
+
+% ******************************************************************************
+% ************************* User Defined Commands ******************************
+% ******************************************************************************
+
+% *********** To change the name of Table of Contents / LOF and LOT ************
+
+%\renewcommand{\contentsname}{My Table of Contents}
+%\renewcommand{\listfigurename}{My List of Figures}
+%\renewcommand{\listtablename}{My List of Tables}
+
+
+% ********************** TOC depth and numbering depth *************************
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+
+% ******************************* Nomenclature *********************************
+% To change the name of the Nomenclature section, uncomment the following line
+
+\renewcommand{\nomname}{Symbols}
+
+
+% ********************************* Appendix ***********************************
+
+% The default value of both \appendixtocname and \appendixpagename is `Appendices'. These names can all be changed via:
+
+%\renewcommand{\appendixtocname}{List of appendices}
+%\renewcommand{\appendixname}{Appndx}
+
+% *********************** Configure Draft Mode **********************************
+
+% Uncomment to disable figures in `draft'
+%\setkeys{Gin}{draft=true}  % set draft to false to enable figures in `draft'
+
+% These options are active only during the draft mode
+% Default text is "Draft"
+%\SetDraftText{DRAFT}
+
+% Default Watermark location is top. Location (top/bottom)
+%\SetDraftWMPosition{bottom}
+
+% Draft Version - default is v1.0
+%\SetDraftVersion{v1.1}
+
+% Draft Text grayscale value (should be between 0-black and 1-white)
+% Default value is 0.75
+%\SetDraftGrayScale{0.8}
+
+% ******************************** Style stuff **********************************
+%\usepackage[Bjornstrup]{fncychap}
+
+
+%\usepackage{titlesec,blindtext}
+%
+%\titleformat{\chapter}[display]
+%{\normalfont\Large\raggedleft}
+%{\MakeUppercase{\chaptertitlename}%
+%	\rlap{ \resizebox{!}{1.5cm}{\thechapter} \rule{5cm}{1.5cm}}}
+%{10pt}{\Huge}
+%\titlespacing*{\chapter}{0pt}{30pt}{20pt}
+
+%\definecolor{gray75}{gray}{0.75}
+%\newcommand{\hsp}{\hspace{20pt}}
+%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{black}{|}\hsp}{0pt}{\Huge\bfseries}
+
+%\titleformat{\chapter}[display]
+%  {\bfseries\huge}
+%  {\filleft\large\chaptertitlename~\thechapter}
+%  {3ex}
+%  {\titlerule\vspace{1.5ex}\filright}
+%  [\vspace{1ex}\titlerule]
+
+% ******************************** Todo Notes **********************************
+%% Uncomment the following lines to have todonotes.
+
+%\ifsetDraft
+%	\usepackage[colorinlistoftodos]{todonotes}
+%	\newcommand{\mynote}[1]{\todo[author=kks32,size=\small,inline,color=green!40]{#1}}
+%\else
+%	\newcommand{\mynote}[1]{}
+%	\newcommand{\listoftodos}{}
+%\fi
+
+% Example todo: \mynote{Hey! I have a note}
+
+
+
+% *****************************************************************************
+% ******************* Better enumeration my MB*************
+\usepackage{enumitem}
+
+%\usepackage{titlesec}
+
+\usepackage{braket}
+\usepackage{bbold}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{pdflscape}
+
+% ******************* New commands *************
+
+%some shortcuts for variables and symbols
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\newcommand*\codiff{\mathop{}\!D}
+\newcommand{\Lagr}{\mathcal{L}}
+\newcommand{\etmiss}{E_{\textrm{T}}^{\textrm{miss}}}
+\newcommand{\met}{E_{\textrm{T}}^{\textrm{miss}}}
+\newcommand{\vetmiss}{\boldsymbol{E}_{\textrm{T}}^{\textrm{miss}}}
+\newcommand{\ptmiss}{p_{\textrm{T}}^{\textrm{miss}}}
+\newcommand{\pt}{p_{\textrm{T}}}
+\newcommand{\ptl}{p^\ell_{\textrm{T}}}
+\newcommand{\mt}{m_{\textrm{T}}}
+\newcommand{\meff}{m_{\textrm{eff}}}
+\newcommand{\mjj}{m_{\textrm{jj}}}
+\newcommand{\GeV}{\SI{}{\GeV}}
+\newcommand{\vptlep}{\boldsymbol{p}_{\textrm{T}}^\ell}
+\newcommand{\lsp}{\tilde{\chi}_1^0}
+\newcommand{\charg}{\tilde{\chi}_1^\pm}
+
+%some shortcuts for common things that I need to write quite often
+\newcommand{\citeneed}{\textbf{[CITATION~NEEDED]}}
+\usepackage{xspace}
+\newcommand*{\eg}{e.g.\@\xspace}
+\newcommand*{\ie}{i.e.\@\xspace}
+
+\makeatletter
+\newcommand*{\etc}{%
+	\@ifnextchar{.}%
+	{etc}%
+	{etc.\@\xspace}%
+}
+\makeatother
+%these are todo notes
+\newcommand\myworries[1]{\textbf{\textcolor{red}{#1}}}
+%comment out if I want to remove todo notes
+%\renewcommand\myworries[1]{}
+
+% harmonise the size of single figures
+\newcommand{\singlefigsize}{0.6}
+\newcommand{\figname}{fig.\@\xspace}
+\newcommand{\fignames}{figs.\@\xspace}
+\newcommand{\Figname}{Figure}
+\newcommand{\Fignames}{Figures}
+\newcommand{\reference}{Ref.\@\xspace}
+\newcommand{\Reference}{Ref.\@\xspace}
+\newcommand{\references}{Refs.\@\xspace}
+\newcommand{\References}{Refs.\@\xspace}
+\usepackage{cleveref}
+
+

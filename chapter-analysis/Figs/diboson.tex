@@ -1,0 +1,33 @@
+\input{feynman_preamble}
+\begin{document}
+	\unitlength=1mm
+	\begin{fmffile}{diboson_1}
+		\begin{fmfgraph*}(50,30)
+
+
+			\fmfleftn{i}{2}
+			\fmfrightn{o}{4}
+			%particelle entranti
+			\fmf{fermion,tension=1}{i1,v1}
+			\fmf{fermion,tension=1}{v3,i2}
+
+			%mediatore
+			\fmf{fermion,tension=1}{v1,v3}
+			
+			\fmf{photon,label=$W^+$,label.side=left,tension=1}{v2,v1}
+			\fmf{fermion,tension=1}{v2,o1}
+			\fmf{fermion,tension=1}{o2,v2}
+			
+			\fmf{photon,label=$W^-$,label.side=left,tension=1}{v3,v4}
+			\fmf{fermion,tension=1}{o4,v4}
+			\fmf{fermion,tension=1}{v4,o3}
+			
+			\fmflabel{$\bar{q}$}{i2}
+			\fmflabel{$q'$}{i1}
+			\fmflabel{$q'$}{o1}
+			\fmflabel{$\bar{q}$}{o2}
+			\fmflabel{$\ell^-$}{o3}
+			\fmflabel{$\nu$}{o4}								
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}
