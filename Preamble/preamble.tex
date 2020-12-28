@@ -252,7 +252,17 @@
 \usepackage{tikz}
 \usepackage{pdflscape}
 
+
+% Select what to do with todonotes: 
+% \usepackage[disable]{todonotes} % notes not showed
+\usepackage[draft]{todonotes}   % notes showed
+
 % ******************* New commands *************
+
+
+\newcommand{\comment}[1]
+{\par {\bfseries \color{blue} #1 \par}} %comment showed
+
 
 %some shortcuts for variables and symbols
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
