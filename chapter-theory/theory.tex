@@ -11,20 +11,22 @@
     \graphicspath{{chapter-theory/Figs/Vector/}{chapter-theory/Figs/}}
 \fi
 
-This chapter outlines the basic principles 
+This chapter starts with an outline of the basic principles and concepts of the Standard Model of Particle Physics (SM), the theoretical framework describing nature on the level of elementary particles. This is followed by an introduction to supersymmetry, a promising class of theories aiming to solve some of the shortcomings of the SM.
+
+By no means intended to be a full description, this chapter merely tries to highlight the important relations and consequences of the SM and supersymmetry. The mathematical description of this chapter largely follows~\cite{Peskin:1995ev} for the SM and~\cite{Martin:1997ns} for supersymmetry.
 
 \section{The Standard Model of Particle Physics}
 
-\nomenclature{SM}{Standard Model of Particle Physics}
-\nomenclature{LEP}{Large Electron Positron Collider}
-\nomenclature{QED}{Quantum Electrodynamics}
+\nomenclature[z-SM]{SM}{Standard Model of Particle Physics}
+\nomenclature[z-LEP]{LEP}{Large Electron Positron Collider}
+\nomenclature[z-QED]{QED}{Quantum Electrodynamics}
 
 By the end of the 1920s, quantum mechanics and general relativity had been relatively well established and the consensus among physicists was that matter was made of nuclear atoms consisting of electrons and protons. During the 1930s, a multitude of new experimental discoveries and theoretical puzzles excited physicists in three main fields of research: nuclear physics, cosmic rays and relativistic quantum mechanics. The following years and decades saw particle physics emerge as a result of these currents ultimately flowing together.
 
-Since these early times of particle physics research, physicists have made extraordinary progress in describing nature at the subatomic scale. Today, a century later, the resulting theoretical framework, the Standard Model of Particle Physics (SM), is the most fundamental theory of nature to date. It provides an extremely precise description of the interactions of elementary particles and---using the Large Electron Positron collider (LEP)---has been tested and verified to an unprecedented level of accuracy up to the electroweak (EWK) scale. Given the unprecedented success of SM, it is not surprising that its history is paved with numerous awards for both experimental and theoretical work. In 1964, the Nobel prize was awarded to Feynman, Schwinger and Tomonoga for their fundamental work in quantum electrodynamics (QED). This quantum field theory allows to precisely calculate fundamental processes as e.g. the anomalous magnetic moment of the electron to a relative experimental uncertainty of $2.3 \times 10^{-10}$~\cite{Mohr:2015ccw}. In 1979, Glashow, Weinberg and Salam were awarded with the Nobel prize for their work towards electroweak unification. The most prominent recent progress is undoubtedly the discovery of the Higgs boson, not only resulting in the Nobel prize being awarded to Englert and Higgs, but also completing the SM, roughly 50 years after the existence of the Higgs boson had been theorised. 
+Since these early times of particle physics research, physicists have made extraordinary progress in describing nature at the subatomic scale. Today, a century later, the resulting theoretical framework, the Standard Model of Particle Physics, is the most fundamental theory of nature to date. It provides an extremely precise description of the interactions of elementary particles and---using the Large Electron Positron collider (LEP)---has been tested and verified to an unprecedented level of accuracy up to the electroweak (EWK) scale. Given the unprecedented success of SM, it is not surprising that its history is paved with numerous awards for both experimental and theoretical work. In 1964, the Nobel prize was awarded to Feynman, Schwinger and Tomonoga for their fundamental work in quantum electrodynamics (QED). This quantum field theory allows to precisely calculate fundamental processes as e.g. the anomalous magnetic moment of the electron to a relative experimental uncertainty of $2.3 \times 10^{-10}$~\cite{Mohr:2015ccw}. In 1979, Glashow, Weinberg and Salam were awarded with the Nobel prize for their work towards electroweak unification. The most prominent recent progress is undoubtedly the discovery of the Higgs boson, not only resulting in the Nobel prize being awarded to Englert and Higgs, but also completing the SM, roughly 50 years after the existence of the Higgs boson had been theorised. 
 
 	\improvement{Couplings and masses are measured from experiment}
-	
+		
 \subsection{Particle content of the SM}
 
 \begin{table}
@@ -63,8 +65,6 @@ Fermions are further divided into leptons and quarks, which each come in three g
 
 %\subsubsection*{Bosons}
 
-The fundamental forces described by the SM are propagated by bosons with spin $1\hbar$. The photon $\gamma$ couples to electrically charged particles and mediates the electromagnetic interaction. As the photon is massless, the electromagnetic force has infinite range. The strong force is mediated by gluons carrying one unit of colour and one unit of anti-colour. Due to colour-confinement, colour charged particles like quarks and gluons cannot exist as free particles and instead will always form colour-neutral bound states. Although nine gluon states would theoretically be possible, only eight of them are realised in nature: the colour-singlet state $\frac{1}{\sqrt{3}}(\ket{r\bar{r}}+\ket{g\bar{g}}+\ket{b\bar{b}})$ would be colour-neutral result in long-range strong interactions, which have not been observed.\info{Might want to explain this later once I introduced the gauge groups?} Finally, the weak force is mediated by a total of three bosons, two charged $W$-bosons $W^+$ and $W^-$, and a neutral $Z$-boson. The mediators of the weak force are massive, resulting in a finitely ranged interaction. The $W^\pm$ and $Z$ bosons gain their masses through the Higgs mechanism (discussed in chapter \info{need ref}), resulting in a massive spin-0 boson, called the Higgs boson. All bosons known to the SM are listed in \cref{tab:particles_bosons}}.
-
 \begin{table}
 	\centering
 	\setlength\heavyrulewidth{0.2ex}
@@ -84,13 +84,14 @@ The fundamental forces described by the SM are propagated by bosons with spin $1
 	\label{tab:particles_bosons}   
 \end{table}
 
+The fundamental forces described by the SM are propagated by bosons with spin $1\hbar$. The photon $\gamma$ couples to electrically charged particles and mediates the electromagnetic interaction. As the photon is massless, the electromagnetic force has infinite range. The strong force is mediated by gluons carrying one unit of colour and one unit of anti-colour. Due to colour-confinement, colour charged particles like quarks and gluons cannot exist as free particles and instead will always form colour-neutral bound states. Although nine gluon states would theoretically be possible, only eight of them are realised in nature: the colour-singlet state $\frac{1}{\sqrt{3}}(\ket{r\bar{r}}+\ket{g\bar{g}}+\ket{b\bar{b}})$ would be colour-neutral result in long-range strong interactions, which have not been observed.\info{Might want to explain this later once I introduced the gauge groups?} Finally, the weak force is mediated by a total of three bosons, two charged $W$-bosons $W^+$ and $W^-$, and a neutral $Z$-boson. The mediators of the weak force are massive, resulting in a finitely ranged interaction. The $W^\pm$ and $Z$ bosons gain their masses through the Higgs mechanism (discussed in chapter \info{need ref}), resulting in a massive spin-0 boson, called the Higgs boson. All bosons known to the SM are listed in \cref{tab:particles_bosons}}.
 
-\subsection{Quantum field theories}
-\nomenclature{QFT}{Quantum Field Theory}
 
-The following theoretical descriptions and notations largely follow~\cite{Peskin:1995ev}. 
+\subsection{The SM as a gauge theory}\label{ch:gauge_theory}
 
-Formally, the SM is a collection of a special type of quantum field theories, called gauge theories. Conceptually, quantum field theory (QFT) is the application of quantum mechanics to dynamical systems of fields, just as quantum mechanics is the quantisation of dynamical systems of particles. QFT provides a uniform description of quantum mechanical particles and classical fields, while including special relativity.
+\nomenclature[z-QFT]{QFT}{Quantum Field Theory}
+
+Conceptually, quantum field theory (QFT) is the application of quantum mechanics to dynamical systems of fields, just as quantum mechanics is the quantisation of dynamical systems of particles. QFT provides a uniform description of quantum mechanical particles and classical fields, while including special relativity.
 
 In classical mechanics, the fundamental quantity  is the action $S$, which is the time integral of the Lagrangian $L$, a functional characterising the state of a system of particles in terms of generalised coordinates $q_1, \dots, q_n$. In field theory, the Lagrangian can be written as spatial integral of a Lagrangian density $\Lagr(\phi_i,\partial_\mu\phi_i)$, that is a function of one or more fields $\phi_i$ and their spacetime derivates $\partial_\mu\phi_i$. For the action, this yields
 \begin{equation}
@@ -101,14 +102,63 @@ In the following, the Lagrangian density $\Lagr$ will simply be referred to as t
 Using the principle of least action $\delta S = 0$, it and assuming the equation of motions for each field are given by the Euler-Lagrange-equation,
 \begin{equation}
 	\partial_\mu\left(\frac{\partial\Lagr}{\partial\left(\partial_\mu\phi_i\right)}\right)-\frac{\partial\Lagr}{\partial\phi_i}=0.
+	\label{eq:euler_lagrange}
+\end{equation}
+Since all expressions are explicitly Lorentz-invariant, Lagrange formalism is, as opposed to the Hamiltonian formulation, especially well suited for the relativistic dynamics in the SM. 
+\improvement{Explicitly derive the Euler-Lagrange equations? Cf. Peskins Ch.2.2.}
+
+Starting for example from the free Dirac Lagrangian for a spin-1/2 field
+\begin{equation}
+	\Lagr=\bar{\psi}\left(i\gamma^\mu\partial_\mu\right)\psi - m\bar{\psi}\psi,
+\end{equation}
+where $\psi$ are spinor fields, $\bar{\psi} = \psi^\dagger\gamma^0$, and $\gamma^\mu$ are the Dirac matrices
+\begin{equation}
+	\gamma^0 = 
+		\begin{pmatrix}
+		1 & 0 \\
+		0 & -1
+		\end{pmatrix},
+	\gamma^i = 
+		\begin{pmatrix}
+		0 & \sigma_i \\
+		-\sigma_i & 0
+		\end{pmatrix},
+\end{equation}
+with the Pauli matrices $\sigma_i$ where $i=1,2,3$
+\begin{equation}
+	\sigma_1 = 
+		\begin{pmatrix}
+		0 & 1 \\
+		1 & 0
+		\end{pmatrix},
+	\sigma_2 = 
+		\begin{pmatrix}
+		0 & -i \\
+		i & 0
+		\end{pmatrix},
+	\sigma_3 = 
+		\begin{pmatrix}
+		1 & 0 \\
+		0 & -1
+		\end{pmatrix}.
+\end{equation}
+
+and applying \cref{eq:euler_lagrange} on the adjoint spinor $\bar{\psi}$ immediately yields the Dirac equation describing a particle of spin-1/2 and mass $m$ in a QFT
+\begin{equation}
+	i\gamma^\mu\partial_\mu\psi - m\psi = 0.
 \end{equation}
 
 
+\subsection{Renormalisation and divergencies}
 
-Since all expressions are explicitly Lorentz-invariant, Lagrange formalism is, as opposed to the Hamiltonian formulation, especially well suited for the relativistic dynamics in the SM. 
 
-\improvement{Explicitly derive the Euler-Lagrange equations? Cf. Peskins Ch.2.2.}
+\subsection{The SM as a gauge theory}\label{ch:gauge_theory}
+
+Formally, the SM can be described by a non-Abelian Yang-Mills \improvement{cite YM} gauge theory based on the symmetry group
+\begin{equation*}
+	SU(3)_C \otimes SU(2)_L \otimes U(1)_Y
+\end{equation*}
+
  
-\subsection{Renormalisation}
 
 \section{Supersymmetry}
