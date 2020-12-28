@@ -23,20 +23,92 @@ By the end of the 1920s, quantum mechanics and general relativity had been relat
 
 Since these early times of particle physics research, physicists have made extraordinary progress in describing nature at the subatomic scale. Today, a century later, the resulting theoretical framework, the Standard Model of Particle Physics (SM), is the most fundamental theory of nature to date. It provides an extremely precise description of the interactions of elementary particles and---using the Large Electron Positron collider (LEP)---has been tested and verified to an unprecedented level of accuracy up to the electroweak (EWK) scale. Given the unprecedented success of SM, it is not surprising that its history is paved with numerous awards for both experimental and theoretical work. In 1964, the Nobel prize was awarded to Feynman, Schwinger and Tomonoga for their fundamental work in quantum electrodynamics (QED). This quantum field theory allows to precisely calculate fundamental processes as e.g. the anomalous magnetic moment of the electron to a relative experimental uncertainty of $2.3 \times 10^{-10}$~\cite{Mohr:2015ccw}. In 1979, Glashow, Weinberg and Salam were awarded with the Nobel prize for their work towards electroweak unification. The most prominent recent progress is undoubtedly the discovery of the Higgs boson, not only resulting in the Nobel prize being awarded to Englert and Higgs, but also completing the SM, roughly 50 years after the existence of the Higgs boson had been theorised. 
 
-	\todo[inline]{Couplings and masses are measured from experiment}
+	\improvement{Couplings and masses are measured from experiment}
 	
-	The following theoretical descriptions and notations largely follow~\cite{Peskin:1995ev}. 
+\subsection{Particle content of the SM}
+
+The SM successfully describes \change{Neutrino masses not in SM!} ordinary matter as well as their interactions, namely the electromagnetic, weak and strong interactions. Gravity is the only fundamental force not described within the SM. The particles in the SM are classified into two main categories, depending on their spin. Particles with half-integer spin follow Fermi-Dirac statistics and are called fermions. As they are subject to the Pauli exclusion principle, they make up ordinary matter. Particles with integer spin follow Bose-Einstein statistics and mediate the fundamental interactions between fermions. All particles known to the SM are listed in \cref{tab:particles_fermions,tab:particles_bosons}. 
+
+\subsubsection*{Fermions} 
+
+Fermions are further divided into leptons and quarks, which each come in three generations with increasing masses\footnote{Neutrinos might not exist in a normal mass hierarchy but could also have an inverted mass hierarchy.\comment{citation!}.}. The three electrically charged leptons are each associated with a corresponding neutral neutrino (more on this \textit{association} in chapter\info{need ref}). While the SM assumes massless neutrinos, the observation of neutrino oscillations~\cite{Fukuda:1998mi} implies the existence of at least two massive neutrinos. By extending the SM to allow non-vanishing neutrino masses, neutrino oscillations can be explained by lepton generation mixing, described by the Pontecorvo-Maki-Nakagawa-Sakata (PMNS)\nomenclature[z-PMNS]{PMNS}{Pontecorvo–Maki–Nakagawa–Sakata} matrix~\cite{PMNS:1962mu}. Apart from an electric charge, quarks also carry a colour charge. There are three types of colour charge: \textit{red}, \textit{green} and \textit{blue}.
+
+\begin{table}
+	\centering
+	\setlength\heavyrulewidth{0.2ex}
+	\small
+	\caption{Names, electric charges and masses (rounded to three significant digits if known to that precision) of all observed fermions in the SM~\cite{pdg}.}
+	\begin{tabular} {c c c c c}
+		
+		\toprule
+				& generation & particle & electric charge [$e$] & mass \\ 
+		\midrule 
+				\multirow{6}{*}{leptons}& \multirow{2}{*}{1} & electron ($e$)& $-1$ & \SI{511}{\keV}\\
+				& & electron neutrino ($\nu_e$) & 0 & < \SI{2}{\eV} \\
+				& \multirow{2}{*}{2} & muon ($\mu$)& $-1$ & \SI{106}{\MeV}\\
+				& & muon neutrino ($\nu_\mu$) & 0 & < \SI{0.19}{\MeV} \\
+				& \multirow{2}{*}{3} & tau ($\tau$)& $-1$ & \SI{1.78}{\GeV}\\
+				& & tau neutrino ($\nu_\tau$) & 0 & < \SI{18.2}{\MeV} \\
+		\midrule 
+				\multirow{6}{*}{quarks}& \multirow{2}{*}{1} & up ($u$)& $\frac{2}{3}$ & \SI{2.3}{\MeV}\\
+				& & down ($d$) & $-\frac{1}{3}$ & \SI{4.8}{\MeV} \\
+				& \multirow{2}{*}{2} & charm ($c$)& $\frac{2}{3}$ & \SI{1.28}{\GeV}\\
+				& & strange ($s$) & $-\frac{1}{3}$ &\SI{95}{\MeV} \\
+				& \multirow{2}{*}{3} & top ($t$)& $\frac{2}{3}$ & \SI{173}{\GeV}\\
+				& & bottom ($b$) & $-\frac{1}{3}$ & \SI{4.18}{\GeV} \\
+		\bottomrule
+	\end{tabular}\vspace{3mm}
+	\label{tab:particles_fermions}   
+\end{table}
+
+
+
+\subsubsection*{Bosons}
+
+\begin{table}
+	\centering
+	\setlength\heavyrulewidth{0.2ex}
+	\small
+	\caption{Names, electric charges and masses (rounded to three significant digits if known to that precision) of all observed bosons in the SM~\cite{pdg}.}
+	\begin{tabular} {c c c c}
+	\toprule
+		particle & spin & electric charge [$e$]& mass \\ 
+	\midrule
+		photon ($\gamma$) & 1 & 0 & 0\\
+		gluon ($g$) & 1 & 0 & 0 \\
+		$W^\pm$ & 1 & $\pm 1$ & \SI{80.4}{\GeV} \\
+		$Z^0$ & 1 & 0 & \SI{91.2}{\GeV} \\
+		Higgs boson ($H$) & 0 & 0 & \SI{125}{\GeV} \\
+	\bottomrule					
+	\end{tabular}\vspace{3mm}
+	\label{tab:particles_bosons}   
+\end{table}
 
 
 \subsection{Quantum field theories}
-
 \nomenclature{QFT}{Quantum Field Theory}
 
-Formally, the SM is a collection of quantum field theories. Quantum field theory (QFT) is similar to quantum mechanics in the sense that is is the application of 
+The following theoretical descriptions and notations largely follow~\cite{Peskin:1995ev}. 
 
+Formally, the SM is a collection of a special type of quantum field theories, called gauge theories. Conceptually, quantum field theory (QFT) is the application of quantum mechanics to dynamical systems of fields, just as quantum mechanics is the quantisation of dynamical systems of particles. QFT provides a uniform description of quantum mechanical particles and classical fields, while including special relativity.
+
+In classical mechanics, the fundamental quantity  is the action $S$, which is the time integral of the Lagrangian $L$, a functional characterising the state of a system of particles in terms of generalised coordinates $q_1, \dots, q_n$. In field theory, the Lagrangian can be written as spatial integral of a Lagrangian density $\Lagr(\phi_i,\partial_\mu\phi_i)$, that is a function of one or more fields $\phi_i$ and their spacetime derivates $\partial_\mu\phi_i$. For the action, this yields
+\begin{equation}
+	S = \int L\diff t = \int\Lagr\left(\phi_i,\partial_\mu\phi_i\right)\Diff4 x.
+\end{equation}
+In the following, the Lagrangian density $\Lagr$ will simply be referred to as the \textit{Lagrangian}.
+
+Using the principle of least action $\delta S = 0$, it and assuming the equation of motions for each field are given by the Euler-Lagrange-equation,
+\begin{equation}
+	\partial_\mu\left(\frac{\partial\Lagr}{\partial\left(\partial_\mu\phi_i\right)}\right)-\frac{\partial\Lagr}{\partial\phi_i}=0.
+\end{equation}
+
+
+
+Since all expressions are explicitly Lorentz-invariant, Lagrange formalism is, as opposed to the Hamiltonian formulation, especially well suited for the relativistic dynamics in the SM. 
+
+\improvement{Explicitly derive the Euler-Lagrange equations? Cf. Peskins Ch.2.2.}
+ 
 \subsection{Renormalisation}
-
-\subsection{Particle content}
-
 
 \section{Supersymmetry}
