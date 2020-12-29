@@ -90,8 +90,9 @@ The fundamental forces described by the SM are propagated by bosons with spin $1
 \subsection{The SM as a gauge theory}\label{ch:gauge_theory}
 
 \nomenclature[z-QFT]{QFT}{Quantum Field Theory}
+\nomenclature[z-QCD]{QCD}{Quantum Chromodynamics}
 
-Conceptually, quantum field theory (QFT) is the application of quantum mechanics to dynamical systems of fields, just as quantum mechanics is the quantisation of dynamical systems of particles. QFT provides a uniform description of quantum mechanical particles and classical fields, while including special relativity.
+Formally, the SM is a collection of a special type of quantum field theories, called gauge theories. Quantum field theory (QFT) is the application of quantum mechanics to dynamical systems of fields, just as quantum mechanics is the quantisation of dynamical systems of particles. QFT provides a uniform description of quantum mechanical particles and classical fields, while including special relativity.
 
 In classical mechanics, the fundamental quantity  is the action $S$, which is the time integral of the Lagrangian $L$, a functional characterising the state of a system of particles in terms of generalised coordinates $q_1, \dots, q_n$. In field theory, the Lagrangian can be written as spatial integral of a Lagrangian density $\Lagr(\phi_i,\partial_\mu\phi_i)$, that is a function of one or more fields $\phi_i$ and their spacetime derivates $\partial_\mu\phi_i$. For the action, this yields
 \begin{equation}
@@ -99,13 +100,22 @@ In classical mechanics, the fundamental quantity  is the action $S$, which is th
 \end{equation}
 In the following, the Lagrangian density $\Lagr$ will simply be referred to as the \textit{Lagrangian}.
 
-Using the principle of least action $\delta S = 0$, it and assuming the equation of motions for each field are given by the Euler-Lagrange-equation,
+Using the principle of least action $\delta S = 0$, the equation of motions for each field are given by the Euler-Lagrange-equation,
 \begin{equation}
 	\partial_\mu\left(\frac{\partial\Lagr}{\partial\left(\partial_\mu\phi_i\right)}\right)-\frac{\partial\Lagr}{\partial\phi_i}=0.
 	\label{eq:euler_lagrange}
 \end{equation}
-Since all expressions are explicitly Lorentz-invariant, Lagrange formalism is, as opposed to the Hamiltonian formulation, especially well suited for the relativistic dynamics in the SM. 
+Since all expressions are explicitly Lorentz-invariant, Lagrange formalism is, as opposed to the Hamiltonian formulation, especially well suited for the relativistic dynamics of the fields in the SM. 
 \improvement{Explicitly derive the Euler-Lagrange equations? Cf. Peskins Ch.2.2.}
+
+Symmetries are of central importance in the SM. As Emmy Noether has famously shown in 1918~\cite{physics/0503066} for classical mechanics, every continuous symmetry of the action has a corresponding conservation law. In the context of classical field theory, each generator of a continuous internal or spacetime symmetry transformation leads to a conserved current, and thus to a conserved charge. In QFTs, quantum versions of Noether's theorem, called Ward–Takahashi identities~\cite{PhysRev.78.182,Takahashi1957} for Abelian theories and Slavnov–Taylor identities~\cite{THOOFT1971173,TAYLOR1971436,Slavnov1972} for non-Abelian theories relate the conservation of quantum currents to continuous symmetries of the Lagrangian.\unsure{Check correctness of formulation}
+
+From a theoretical point of view, the SM can be described by a non-Abelian Yang-Mills type \improvement{cite YM} gauge theory based on the symmetry group
+\begin{equation*}
+	SU(3)_C \otimes SU(2)_L \otimes U(1)_Y,
+\end{equation*}
+where $U(n)$ ($SU(n)$) describes (special) unitary groups, \ie the Lie groups of $n\times n$ unitary matrices (with determinant 1, if special). $SU(3)_C$ generates quantum chromodynamics (QCD), \ie the interaction of particles with colour charge through exchange of gluons, and $SU(2)_L \otimes U(1)_Y$ generates the electroweak interaction. Here, the subscript $Y$ represents the weak hypercharge, while the $L$ indicates that $SU(2)_L$ only couples to left-handed particles (right-handed antiparticles).
+
 
 Starting for example from the free Dirac Lagrangian for a spin-1/2 field
 \begin{equation}
@@ -151,13 +161,6 @@ and applying \cref{eq:euler_lagrange} on the adjoint spinor $\bar{\psi}$ immedia
 
 \subsection{Renormalisation and divergencies}
 
-
-\subsection{The SM as a gauge theory}\label{ch:gauge_theory}
-
-Formally, the SM can be described by a non-Abelian Yang-Mills \improvement{cite YM} gauge theory based on the symmetry group
-\begin{equation*}
-	SU(3)_C \otimes SU(2)_L \otimes U(1)_Y
-\end{equation*}
 
  
 
