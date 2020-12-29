@@ -179,16 +179,51 @@ As the phase transformation in \cref{eq:gauge_field} is part of the unitary grou
 
 Formally, the strong interaction between quarks and gluons in the SM is described by quantum chromodynamics (QCD), which is based on the $SU(3)_C$ gauge group, where the subscript $C$ refers to colour. As Yang and Mills have shown in 1954 \cite{PhysRev.96.191}, requiring a global phase invariance to hold locally is perfectly possible in the case of any continuous symmetry group. In the case of a general non-Abelian symmetry group, a gauge-invariant Lagrangian can be constructed in a similar manner as previously in the case of $U(1)$.
 
-Considering the general case of $SU(n)$, represented by a set of $n\times n$ unitary matrices, then a total of $n$ fermion fields in an $n$-dimensional multiplet $\Psi = (\psi_1,\dots,psi_n)^T$ are needed. The covariant derivative associated with the general transformation of the fields is given by 
+Considering the general case of $SU(n)$, represented by a set of $n\times n$ unitary matrices $V$, then a total of $n$ fermion fields $\psi(x)$ arranged in an $n$-dimensional multiplet are needed, transforming according to
 \begin{equation}
-	\codiff_\mu = \partial_\mu - igA\mu^a t^a \quad a = 1,\dots,(n^2-1)
+	\psi(x) \rightarrow V(x) \psi(x),
 \end{equation}
-where $t^a$ are the $n^2-1$ generators of $SU(n)$ 
+where, in infinitesimal form, $V(x)$ can be expanded in terms of the generators $t^a$ of the gauge group and the real phases $\alpha^a$ ($a = 1,\dots,n^2-1$)
+\begin{equation}
+	V(x) = 1 + i\alpha^a(x)t^a + \mathcal{O}(\alpha^2).
+\end{equation}
+ 
+The generators $t^a$ satisfy the commutation relations
+\begin{equation}
+	[t^a, t^b] = i f^{abc}t^c,
+\end{equation}
+where $f^{abc}$ are the so-called structure constants quantifying the lack of commutativity between the generators. By convention, the basis for the generators $t^a$ is typically chosen such that $f^{abc}$ is completely anti-symmetric.
+ 
+In order to make Lagrangian invariant under local phase transformations, a set of $n^2-1$ gauge fields $A_\mu^a$ are introduced through the covariant derivative  
+\begin{equation}
+	\codiff_\mu = \partial_\mu - igA_\mu^a t^a \qquad a = 1,\dots,(n^2-1)
+\end{equation}
+where $g$ is the coupling of the fermion fields to the gauge fields. This introduces an interaction term of the form
+\begin{equation}
+	\Lagr_\mathrm{int} = g\psi(x)\gamma^\mu\boldsymbol{A_\mu}\psi(x)
+\end{equation}
+
+With the infinitesimal transformation laws for $\psi$ and $A^a_\mu$
+\begin{equation}
+	\psi(x) \rightarrow (1 + i\alpha^a(x)t^a)\psi(x),
+	A^a_\mu \rightarrow A^a_\mu + \frac{1}{g	}\partial_\mu\alpha^a + f^{abc}A^b_\mu\alpha^c, 
+\end{equation}
+the Lagrangian becomes invariant under local phase transformations and the kinetic term for the introduced gauge fields is given by
+\begin{equation}
+	\Lagr_\mathrm{kin} = -\frac{1}{4} F^a_{\mu\nu} F^{\mu\nu,a},
+\end{equation},
+with the field-strength tensor 
+\begin{equation}
+	F^a_{\mu\nu} = \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + gf^{abc}A^b_\mu A^c_\nu.
+\end{equation}
+
+The nonlinear term appearing in the field-strength tensor leads to cubic and quartic couplings between the gauge bosons.
+
+
+
 
 
 \subsection{Renormalisation and divergencies}
-
-
  
 
 \section{Supersymmetry}
