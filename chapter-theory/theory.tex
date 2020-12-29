@@ -84,7 +84,7 @@ Fermions are further divided into leptons and quarks, which each come in three g
 	\label{tab:particles_bosons}   
 \end{table}
 
-The fundamental forces described by the SM are propagated by bosons with spin $1\hbar$. The photon $\gamma$ couples to electrically charged particles and mediates the electromagnetic interaction. As the photon is massless, the electromagnetic force has infinite range. The strong force is mediated by gluons carrying one unit of colour and one unit of anti-colour. Due to colour-confinement, colour charged particles like quarks and gluons cannot exist as free particles and instead will always form colour-neutral bound states. Although nine gluon states would theoretically be possible, only eight of them are realised in nature: the colour-singlet state $\frac{1}{\sqrt{3}}(\ket{r\bar{r}}+\ket{g\bar{g}}+\ket{b\bar{b}})$ would be colour-neutral result in long-range strong interactions, which have not been observed.\info{Might want to explain this later once I introduced the gauge groups?} Finally, the weak force is mediated by a total of three bosons, two charged $W$-bosons $W^+$ and $W^-$, and a neutral $Z$-boson. The mediators of the weak force are massive, resulting in a finitely ranged interaction. The $W^\pm$ and $Z$ bosons gain their masses through the Higgs mechanism (discussed in chapter \info{need ref}), resulting in a massive spin-0 boson, called the Higgs boson. All bosons known to the SM are listed in \cref{tab:particles_bosons}}.
+The fundamental forces described by the SM are propagated by bosons with spin $1\hbar$. The photon $\gamma$ couples to electrically charged particles and mediates the electromagnetic interaction. As the photon is massless, the electromagnetic force has infinite range. The strong force is mediated by gluons carrying one unit of colour and one unit of anti-colour. Due to colour-confinement, colour charged particles like quarks and gluons cannot exist as free particles and instead will always form colour-neutral bound states. Although nine gluon states would theoretically be possible, only eight of them are realised in nature: the colour-singlet state $\frac{1}{\sqrt{3}}(\ket{r\bar{r}}+\ket{g\bar{g}}+\ket{b\bar{b}})$ would be colour-neutral result in long-range strong interactions, which have not been observed.\info{Might want to explain this later once I introduced the gauge groups?} Finally, the weak force is mediated by a total of three bosons, two charged $W$-bosons $W^+$ and $W^-$, and a neutral $Z$-boson. The mediators of the weak force are massive, resulting in a finitely ranged interaction. The $W^\pm$ and $Z$ bosons gain their masses through the Higgs mechanism (discussed in chapter \info{need ref}), resulting in a massive spin-0 boson, called the Higgs boson. All bosons known to the SM are listed in \cref{tab:particles_bosons}.
 
 
 \subsection{The SM as a gauge theory}\label{ch:gauge_theory}
@@ -105,10 +105,11 @@ Using the principle of least action $\delta S = 0$, the equation of motions for 
 	\partial_\mu\left(\frac{\partial\Lagr}{\partial\left(\partial_\mu\phi_i\right)}\right)-\frac{\partial\Lagr}{\partial\phi_i}=0.
 	\label{eq:euler_lagrange}
 \end{equation}
-Since all expressions are explicitly Lorentz-invariant, Lagrange formalism is, as opposed to the Hamiltonian formulation, especially well suited for the relativistic dynamics of the fields in the SM. 
+As opposed to the Hamiltonian formalism, the Lagrange formulation of field theory is especially well suited in this context, as it exhibits explicit Lorentz-invariance. This is a direct consequence of the principle of least action, since boosted extrema in the action will still be extrema for Lorentz-invariant Lagrangians.
+
 \improvement{Explicitly derive the Euler-Lagrange equations? Cf. Peskins Ch.2.2.}
 
-Symmetries are of central importance in the SM. As Emmy Noether has famously shown in 1918~\cite{physics/0503066} for classical mechanics, every continuous symmetry of the action has a corresponding conservation law. In the context of classical field theory, each generator of a continuous internal or spacetime symmetry transformation leads to a conserved current, and thus to a conserved charge. In QFTs, quantum versions of Noether's theorem, called Ward–Takahashi identities~\cite{PhysRev.78.182,Takahashi1957} for Abelian theories and Slavnov–Taylor identities~\cite{THOOFT1971173,TAYLOR1971436,Slavnov1972} for non-Abelian theories relate the conservation of quantum currents to continuous symmetries of the Lagrangian.\unsure{Check correctness of formulation}
+Symmetries are of central importance in the SM. As Emmy Noether has famously shown in 1918~\cite{physics/0503066} for classical mechanics, every continuous symmetry of the action has a corresponding conservation law. In the context of classical field theory, each generator of a continuous internal or spacetime symmetry transformation leads to a conserved current, and thus to a conserved charge. In QFTs, quantum versions of Noether's theorem, called Ward–Takahashi identities~\cite{PhysRev.78.182,Takahashi1957} for Abelian theories and Slavnov–Taylor identities~\cite{THOOFT1971173,TAYLOR1971436,Slavnov1972} for non-Abelian theories relate the conservation of quantum currents and charge-like quantum numbers to continuous global symmetries of the Lagrangian.\unsure{Check correctness of formulation}
 
 From a theoretical point of view, the SM can be described by a non-Abelian Yang-Mills type \improvement{cite YM} gauge theory based on the symmetry group
 \begin{equation*}
@@ -117,47 +118,66 @@ From a theoretical point of view, the SM can be described by a non-Abelian Yang-
 where $U(n)$ ($SU(n)$) describes (special) unitary groups, \ie the Lie groups of $n\times n$ unitary matrices (with determinant 1, if special). $SU(3)_C$ generates quantum chromodynamics (QCD), \ie the interaction of particles with colour charge through exchange of gluons, and $SU(2)_L \otimes U(1)_Y$ generates the electroweak interaction. Here, the subscript $Y$ represents the weak hypercharge, while the $L$ indicates that $SU(2)_L$ only couples to left-handed particles (right-handed antiparticles).
 
 
-Starting for example from the free Dirac Lagrangian for a spin-1/2 field
+\subsubsection{Gauge principle}
+
+The gauge principle is fundamental to the SM and dictates that the existence of gauge fields is directly related to symmetries under local gauge transformations. QED, being the simplest gauge theory, can be taken to illustrate this important principle. The free Dirac Lagrangian for a single, non-interacting fermion with mass $m$ is given by
 \begin{equation}
-	\Lagr=\bar{\psi}\left(i\gamma^\mu\partial_\mu\right)\psi - m\bar{\psi}\psi,
+	\Lagr_\mathrm{Dirac}=\bar{\psi}\left(i\gamma^\mu\partial_\mu - m\right)\psi,
+	\label{eq:dirac_lagrangian}
 \end{equation}
-where $\psi$ are spinor fields, $\bar{\psi} = \psi^\dagger\gamma^0$, and $\gamma^\mu$ are the Dirac matrices
+where $\psi$ is a four-component complex spinor field, $\bar{\psi} = \psi^\dagger\gamma^0$, and $\gamma^\mu$ with $\mu = 0,1,2,3 $ are the Dirac matrices with the usual anticommutation relations generating a matrix representation of the Dirac algebra 
 \begin{equation}
-	\gamma^0 = 
-		\begin{pmatrix}
-		1 & 0 \\
-		0 & -1
-		\end{pmatrix},
-	\gamma^i = 
-		\begin{pmatrix}
-		0 & \sigma_i \\
-		-\sigma_i & 0
-		\end{pmatrix},
-\end{equation}
-with the Pauli matrices $\sigma_i$ where $i=1,2,3$
-\begin{equation}
-	\sigma_1 = 
-		\begin{pmatrix}
-		0 & 1 \\
-		1 & 0
-		\end{pmatrix},
-	\sigma_2 = 
-		\begin{pmatrix}
-		0 & -i \\
-		i & 0
-		\end{pmatrix},
-	\sigma_3 = 
-		\begin{pmatrix}
-		1 & 0 \\
-		0 & -1
-		\end{pmatrix}.
+	\{\gamma^\mu,\gamma^\nu\} \equiv \gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu = 2\eta^{\mu\nu}\mathbb{1}_4.
 \end{equation}
 
-and applying \cref{eq:euler_lagrange} on the adjoint spinor $\bar{\psi}$ immediately yields the Dirac equation describing a particle of spin-1/2 and mass $m$ in a QFT
+It is worth noting that the free Dirac Lagrangian is invariant under a global $U(1)$ transformation
 \begin{equation}
-	i\gamma^\mu\partial_\mu\psi - m\psi = 0.
+	\psi \rightarrow e^{i\theta}\psi,
+\end{equation}
+where the phase $\theta$ is spacetime independent and real. In order to produce the physics of electromagnetism, the free Dirac Lagrangian however has to be invariant under \textit{local} $U(1)$ phase transformations, which is not the case, as the transformed Lagrangian picks up an additional term from the spacetime derivative of the phase $\partial_\mu\theta(x)$.
+
+In order for the Dirac Lagrangian to become invariant under a local gauge transformation, a new vector field $A_\mu(x)$ has to be introduced and the partial derivative has to be replaced with the covariant derivative\footnote{The prescription of achieving local gauge invariance by replacing $\partial_\mu$ with $D_\mu$ is called \textit{minimal coupling}.
+\begin{equation}
+	\partial_\mu \rightarrow \codiff_\mu \equiv \partial_\mu + ieA_\mu,
+\end{equation}
+where $e$ is the coupling of the fermion field to the gauge field $A_\mu$ and can be identified with the elementary charge. This leads to a Lagrangian that is invariant under the transformations
+\begin{equation}
+	\psi \rightarrow e^{i\theta\left(x\right)}\psi,\, \, \, \, \, 	A_\mu \rightarrow A_\mu - \frac{1}{e}\partial_\mu\theta(x).
+	\label{eq:gauge_field}
 \end{equation}
 
+The modified Lagrangian now includes a term for interactions between the gauge field and the fermion field
+\begin{equation}
+\begin{split}
+	\Lagr &= \Lagr_\mathrm{Dirac} + \Lagr_\mathrm{int} \\
+		&= \bar{\psi}\left(i\gamma^\mu\partial_\mu - m\right)\psi - \left(e\bar{\psi}\gamma^\mu\psi\right)A_\mu,
+	\label{eq:modified_lagrangian}
+\end{split}
+\end{equation}
+and is indeed invariant under a local phase transformation. Yet, it still cannot be complete as it is missing a free kinetic term for the gauge field $A_\mu$ itself. For a vector field, the free term is described by the Proca Lagrangian
+\begin{equation}
+	\Lagr_\mathrm{Proca} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + \frac{1}{2}m_A^2A^\nu A_\nu,
+\end{equation}
+where $F^{\mu\nu}\equiv\left(\partial^\mu A^\nu-\partial^\nu A^\mu\right)$ is the field strength tensor that is invariant under the transformation in \cref{eq:gauge_field}. Since $A^\nu A_\nu$ is not invariant under the same transformation, the only way to keep the full Lagrangian invariant under a local phase transformation is by requiring $m_A=0$, \ie the introduced gauge field $A_\mu$ has to be massless, giving the Maxwell Lagrangian (ultimately generating the Maxwell equations)
+\begin{equation}
+	\Lagr_\mathrm{Maxwell} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+
+This finally yields the full Lagrangian
+\begin{equation}
+\begin{split}
+		\Lagr_\mathrm{QED} & = \Lagr_\mathrm{Dirac} + \Lagr_\mathrm{Maxwell} + \Lagr_\mathrm{int} \\
+	  				& = \bar{\psi}\left(i\gamma^\mu\partial_\mu\right)\psi - m\bar{\psi}\psi - \frac{1}{4}F^{\mu\nu}F_{\mu\nu} - \left(e\bar{\psi}\gamma^\mu\psi\right)A_\mu \\
+					& = \bar{\psi}\left(i\gamma^\mu\codiff_\mu - m\right)\psi - \frac{1}{4}F^{\mu\nu}F_{\mu\nu},
+\end{split}
+\end{equation}
+which can be identified to be the full Lagrangian of QED. The introduced gauge field $A_\mu$ is therefore nothing else but the electromagnetic potential with its associated massless particle, the photon. Thus, by applying the gauge principle on the free Dirac Lagrangian, \ie forcing the Lagrangian to be invariant under local phase transformations, a new massless gauge field including interaction terms with the existing fields in the Lagrangian has to be introduced. In the case of the free Dirac Lagrangian, the requirement of phase invariance to hold locally, produces all of quantum electrodynamics.
+
+As the phase transformation in \cref{eq:gauge_field} is part of the unitary group $U(1)$, this symmetry is called $U(1)$ \textit{gauge symmetry}. 
+
+\subsubsection{Quantum chromodynamics}
+
+Formally, the strong interaction between quarks and gluons in the SM is described by the $SU(3)_C$ gauge group, where the subscript $C$ refers to colour. 
 
 \subsection{Renormalisation and divergencies}
 
