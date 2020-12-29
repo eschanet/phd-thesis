@@ -171,13 +171,20 @@ This finally yields the full Lagrangian
 					& = \bar{\psi}\left(i\gamma^\mu\codiff_\mu - m\right)\psi - \frac{1}{4}F^{\mu\nu}F_{\mu\nu},
 \end{split}
 \end{equation}
-which can be identified to be the full Lagrangian of QED. The introduced gauge field $A_\mu$ is therefore nothing else but the electromagnetic potential with its associated massless particle, the photon. Thus, by applying the gauge principle on the free Dirac Lagrangian, \ie forcing the Lagrangian to be invariant under local phase transformations, a new massless gauge field including interaction terms with the existing fields in the Lagrangian has to be introduced. In the case of the free Dirac Lagrangian, the requirement of phase invariance to hold locally, produces all of quantum electrodynamics.
+which can be identified to be the full Lagrangian of QED. The introduced gauge field $A_\mu$ is therefore nothing else but the electromagnetic potential with its associated massless particle, the photon. Thus, by applying the gauge principle on the free Dirac Lagrangian, \ie forcing a global phase invariance to hold locally, a new massless gauge field including interaction terms with the existing fields in the Lagrangian has to be introduced. In the case of the free Dirac Lagrangian, local gauge invariance produces all of quantum electrodynamics.
 
 As the phase transformation in \cref{eq:gauge_field} is part of the unitary group $U(1)$, this symmetry is called $U(1)$ \textit{gauge symmetry}. 
 
 \subsubsection{Quantum chromodynamics}
 
-Formally, the strong interaction between quarks and gluons in the SM is described by the $SU(3)_C$ gauge group, where the subscript $C$ refers to colour. 
+Formally, the strong interaction between quarks and gluons in the SM is described by quantum chromodynamics (QCD), which is based on the $SU(3)_C$ gauge group, where the subscript $C$ refers to colour. As Yang and Mills have shown in 1954 \cite{PhysRev.96.191}, requiring a global phase invariance to hold locally is perfectly possible in the case of any continuous symmetry group. In the case of a general non-Abelian symmetry group, a gauge-invariant Lagrangian can be constructed in a similar manner as previously in the case of $U(1)$.
+
+Considering the general case of $SU(n)$, represented by a set of $n\times n$ unitary matrices, then a total of $n$ fermion fields in an $n$-dimensional multiplet $\Psi = (\psi_1,\dots,psi_n)^T$ are needed. The covariant derivative associated with the general transformation of the fields is given by 
+\begin{equation}
+	\codiff_\mu = \partial_\mu - igA\mu^a t^a \quad a = 1,\dots,(n^2-1)
+\end{equation}
+where $t^a$ are the $n^2-1$ generators of $SU(n)$ 
+
 
 \subsection{Renormalisation and divergencies}
 
