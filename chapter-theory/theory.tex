@@ -230,13 +230,58 @@ where $q = u,d,s,c,b,t$ and $G^a_{\mu\nu}$ are the gluon field strengths given b
 \end{equation}
 As expected from the previous section, $\Lagr_\mathrm{QCD}$ contains terms that are cubic and quartic in the gluon fields, resulting in gluon self-interaction in the theory. The gluon self-interactions lead to a number of phenomena unknown to Abelian theories, rendering the kinematics of QCD highly non-trivial.
 
+\improvement{Add QCD vertices}
+
 In QCD, a similar effect to the electric charge screening in QED happens through quark-antiquark pairs, resulting in a screening of the colour charge. However, the existence of gluon loops in the gluon propagator due to gluon self-interaction creates an opposing \textit{antiscreening} effect of colour charges. At short distances or large momentum scales, colour-charged particles essentially become free particles, a phenomenon that is called \textit{asymptotic freedom}. In this regime, where $\alpha_s$ is sufficiently small, QCD processes can be calculated using perturbation theory. At large distances or small moment scales however, $\alpha_s$ becomes large and gluons interact very strongly with colour-charged particles, meaning that no free gluons or quarks can exist. This phenomenon is called \textit{confinement} and implies that free quarks and gluons will be subject to \textit{hadronisation}, \ie form colourless bound states by combining with other quarks or gluons (that can be created from the vacuum). In a particle detector, hadronisation manifests itself as collimated showers of particles, called \textit{jets}. 
+
+\improvement{add gluon loops}
 
 At momentum scales where the strong coupling $\alpha_s$ becomes large ($\alpha_s \approx \mathcal{O(1)}$), QCD process can not longer be calculated using perturbation theory and instead lattice QCD~\cite{PhysRevD.10.2445,DeGrand:1055545} is used. 
 
 
-\subsubsection{Electroweak unification}
+\subsubsection{Electroweak interaction}\unsure{better title?}
 
+During the 1960s, Glashow, Weinberg and Salam~\cite{GLASHOW1961579,PhysRevLett.19.1264,Salam1959} developed a unified theory of the electromagnetic and weak interactions, based on the $SU(2)\otimes U(1)$ symmetry group. Known already experimentally from the Wu experiment`\cite{PhysRev.105.1413} in 1956, weak interaction violates parity, \ie the symmetry transformations have to act differently on the left-handed and right-handed fermion fields. The left- and right-handed components of a fermion field can be projected out using
+\begin{equation}
+	\psi_\mathrm{L} = \frac{1-\gamma^5}{2}\psi , \ \ \qquad 	\psi_\mathrm{R} = \frac{1+\gamma^5}{2}\psi,
+\end{equation}
+with $\gamma^5 = i\gamma^0\gamma^1\gamma^2\gamma^3$. As the weak interaction only acts on left-handed fermions, they can be ordered as $SU(2)$ doublets
+\begin{equation}
+	\begin{pmatrix}
+		\nu_e \\
+		e
+	\end{pmatrix}_\mathrm{L},
+	\quad
+	\begin{pmatrix}
+		u \\
+		d
+	\end{pmatrix}_\mathrm{L},
+	\qquad
+	\begin{pmatrix}
+		\nu_\mu \\
+		\mu
+	\end{pmatrix}_\mathrm{L},
+	\quad
+	\begin{pmatrix}
+		c \\
+		s
+	\end{pmatrix}_\mathrm{L},
+	\qquad
+	\begin{pmatrix}
+		\nu_\tau \\
+		\tau
+	\end{pmatrix}_\mathrm{L},
+	\quad
+	\begin{pmatrix}
+		t \\
+		b
+	\end{pmatrix}_\mathrm{L}.
+\end{equation} 
+The conserved quantum number associated $SU(2)$ symmetry transformations is called weak isospin $I$ with third component $I_3$. Fermion doublets have $I=1/2$, with the upper component having $I_3 = 1/2$ and the lower component $I_3=-1/2$. Right-handed fermion fields have $I=0$, \ie are singlet states in weak isospin space
+\begin{equation}
+	e_\mathrm{R},u_\mathrm{R},d_\mathrm{R}, \qquad \mu_\mathrm{R},c_\mathrm{R},s_\mathrm{R}, \qquad \tau_\mathrm{R},t_\mathrm{R},b_\mathrm{R}, 
+\end{equation}
+and thus do not couple to the weak interaction. In the electroweak theory, neutrinos are assumed to be strictly massless, therefore no right-handed neutrino singlets exist.
 
 \subsection{Renormalisation and divergencies}
 \label{ch:renormalisation}
