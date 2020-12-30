@@ -154,7 +154,7 @@ The modified Lagrangian now includes a term for interactions between the gauge f
 	\label{eq:modified_lagrangian}
 \end{split}
 \end{equation}
-and is indeed invariant under a local phase transformation. Yet, it still cannot be complete as it is missing a free kinetic term for the gauge field $A_\mu$ itself. For a vector field, the free term is described by the Proca Lagrangian
+and is indeed invariant under a local phase transformation. Yet, it still cannot be complete as it is missing a term describing the kinematics of the free gauge field $A_\mu$. For a vector field, the kinetic term is described by the Proca Lagrangian
 \begin{equation}
 	\Lagr_\mathrm{Proca} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + \frac{1}{2}m_A^2A^\nu A_\nu,
 \end{equation}
@@ -177,47 +177,49 @@ As the phase transformation in \cref{eq:gauge_field} is part of the unitary grou
 
 \subsubsection{Quantum chromodynamics}
 
-Formally, the strong interaction between quarks and gluons in the SM is described by quantum chromodynamics (QCD), which is based on the $SU(3)_C$ gauge group, where the subscript $C$ refers to colour. As Yang and Mills have shown in 1954 \cite{PhysRev.96.191}, requiring a global phase invariance to hold locally is perfectly possible in the case of any continuous symmetry group. In the case of a general non-Abelian symmetry group, a gauge-invariant Lagrangian can be constructed in a similar manner as previously in the case of $U(1)$.
+As Yang and Mills have shown in 1954 \cite{PhysRev.96.191}, requiring a global phase invariance to hold locally is perfectly possible in the case of any continuous symmetry group. Considering a general non-Abelian symmetry group $G$, represented by a set of $n\times n$ unitary matrices $U(\alpha^1,\dots,\alpha^N)$, parametrised by $N$ real parameters $\alpha^1,\dots,\alpha^N$, then a gauge-invariant Lagrangian can be constructed with a similar prescription~\cite{Brock:1354959} as previously in the case of $U(1)$. 
 
-Considering the general case of $SU(n)$, represented by a set of $n\times n$ unitary matrices $V$, then a total of $n$ fermion fields $\psi(x)$ arranged in an $n$-dimensional multiplet are needed, transforming according to
+A total of $n$ fermion fields with mass $m$ are needed, arranged in an $n$-dimensional multiplet $\Psi = (\psi_1,\dots,\psi_n)^T$. The free Lagrangian 
 \begin{equation}
-	\psi(x) \rightarrow V(x) \psi(x),
+	\Lagr_\mathrm{free} = \bar{\Psi}\left(i\gamma^\mu\partial_\mu -m\right)\Psi,
+	\label{eq:free_lagrangian}
 \end{equation}
-where, in infinitesimal form, $V(x)$ can be expanded in terms of the generators $t^a$ of the gauge group and the real phases $\alpha^a$ ($a = 1,\dots,n^2-1$)
+is invariant under a global phase transformation
 \begin{equation}
-	V(x) = 1 + i\alpha^a(x)t^a + \mathcal{O}(\alpha^2).
+	\Psi(x) \rightarrow U(\alpha^1,\dots,\alpha^N)\Psi(x),
 \end{equation}
+Each element in the set of transformations $U$ can be written in terms of the group generators $T^a$
+\begin{equation}
+	U(\alpha^1,\dots,\alpha^N) = e^{i\alpha^aT^a},
+\end{equation}
+where the group indices $a = 1,\dots,N$ are to be summed over. The group generators $T^a$ satisfy the commutation relations
+\begin{equation}
+	[T^a,T^b] = i f^{abc}T^c,
+\end{equation}
+with $f^{abc}$ the so-called structure constants quantifying the lack of commutativity between the generators. By convention, the basis for the generators $T^a$ is typically chosen such that $f^{abc}$ is completely anti-symmetric.
  
-The generators $t^a$ satisfy the commutation relations
+In order to make the Lagrangian invariant under local phase transformations, \ie under transformations with a set of spacetime-dependent real parameters $\alpha^a(x)$ a vector field $\boldsymbol{W}_\mu$ together with a coupling constant $g$ have to be introduced through the covariant derivative  
 \begin{equation}
-	[t^a, t^b] = i f^{abc}t^c,
+	\partial_\mu \rightarrow \codiff_\mu = \partial_\mu - ig\boldsymbol{W}_\mu.
 \end{equation}
-where $f^{abc}$ are the so-called structure constants quantifying the lack of commutativity between the generators. By convention, the basis for the generators $t^a$ is typically chosen such that $f^{abc}$ is completely anti-symmetric.
- 
-In order to make Lagrangian invariant under local phase transformations, a set of $n^2-1$ gauge fields $A_\mu^a$ are introduced through the covariant derivative  
+As $\codiff_\mu$ acts on the $n$-dimensional multiplet $\Psi$, the introduced gauge field $\boldsymbol{W}_\mu$ has to be an $n\times n$ matrix and can thus be expanded in terms of the generators
 \begin{equation}
-	\codiff_\mu = \partial_\mu - igA_\mu^a t^a \qquad a = 1,\dots,(n^2-1)
+	\boldsymbol{W}_\mu(x) = T^a W_\mu^a(x),
 \end{equation}
-where $g$ is the coupling of the fermion fields to the gauge fields. This introduces an interaction term of the form
+explicitly illustrating, that a total of $N$ gauge fields $W^a_\mu$ are introduced through the covariant derivative. Similar to QED above, the covariant derivative also introduces an interaction term of the form
 \begin{equation}
-	\Lagr_\mathrm{int} = g\psi(x)\gamma^\mu\boldsymbol{A_\mu}\psi(x)
+	\Lagr_\mathrm{int} = g\bar{\Psi}\gamma^\mu\boldsymbol{W}_\mu\Psi,
 \end{equation}
+in the Lagrangian in \cref{eq:free_lagrangian}, coupling the gauge fields $W^a_\mu$ to the fermion fields. For infinitesimal $\alpha^a(x)$, the gauge fields gauge transform according to
+\begin{equation}
+	W_\mu^a \rightarrow W_\mu^a + \frac{1}{g}\partial_\mu\alpha^a + f^{abc} W_\mu^b \alpha^c,
+\end{equation}
+where the term with $\alpha^a$ looks familiar from the $U(1)$ example and corresponds to the Abelian case, while the term with $f^{abc}$ introduces the non-Abelian structure into the theory. The non-Abelian structure is again clearly visible when introducing a kinetic term for the gauge fields into the Lagrangian
+\begin{equation}
+	\Lagr_\mathrm{W} = -\frac{1}{4} F^a_{\mu\nu} F^{\mu\nu,a},
+\end{equation} 
+with the field-strength tensor now $F^a_{\mu\nu} = \partial_\mu W^a_\nu - \partial_\nu W^a_\mu + gf^{abc}W^b_\mu W^c_\nu$. As was already the case for QED, the above Lagrangian contains Abelian terms quadratic in $W$, describing the propagation of the free gauge fields. This time, the Lagrangian however also contains non-Abelian terms cubic and quartic in $W$, leading to self-interaction of the gauge fields.
 
-With the infinitesimal transformation laws for $\psi$ and $A^a_\mu$
-\begin{equation}
-	\psi(x) \rightarrow (1 + i\alpha^a(x)t^a)\psi(x),
-	A^a_\mu \rightarrow A^a_\mu + \frac{1}{g	}\partial_\mu\alpha^a + f^{abc}A^b_\mu\alpha^c, 
-\end{equation}
-the Lagrangian becomes invariant under local phase transformations and the kinetic term for the introduced gauge fields is given by
-\begin{equation}
-	\Lagr_\mathrm{kin} = -\frac{1}{4} F^a_{\mu\nu} F^{\mu\nu,a},
-\end{equation},
-with the field-strength tensor 
-\begin{equation}
-	F^a_{\mu\nu} = \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + gf^{abc}A^b_\mu A^c_\nu.
-\end{equation}
-
-The nonlinear term appearing in the field-strength tensor leads to cubic and quartic couplings between the gauge bosons.
 
 
 
