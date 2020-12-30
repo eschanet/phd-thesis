@@ -145,7 +145,6 @@ where $e$ is the coupling of the fermion field to the gauge field $A_\mu$ and ca
 	\psi \rightarrow e^{i\theta\left(x\right)}\psi,\, \, \, \, \, \, \, \, \, \, A_\mu \rightarrow A_\mu - \frac{1}{e}\partial_\mu\theta(x).
 	\label{eq:gauge_field}
 \end{equation}
-
 The modified Lagrangian now includes a term for interactions between the gauge field and the fermion field
 \begin{equation}
 \begin{split}
@@ -167,15 +166,10 @@ This finally yields the full Lagrangian
 \begin{equation}
 \begin{split}
 		\Lagr_\mathrm{QED} & = \Lagr_\mathrm{Dirac} + \Lagr_\mathrm{Maxwell} + \Lagr_\mathrm{int} \\
-	  				& = \bar{\psi}\left(i\gamma^\mu\partial_\mu\right)\psi - m\bar{\psi}\psi - \frac{1}{4}F^{\mu\nu}F_{\mu\nu} - \left(e\bar{\psi}\gamma^\mu\psi\right)A_\mu \\
-					& = \bar{\psi}\left(i\gamma^\mu\codiff_\mu - m\right)\psi - \frac{1}{4}F^{\mu\nu}F_{\mu\nu},
+	  				& = \bar{\psi}\left(i\gamma^\mu\partial_\mu\right)\psi - m\bar{\psi}\psi - \frac{1}{4}F^{\mu\nu}F_{\mu\nu} - \left(e\bar{\psi}\gamma^\mu\psi\right)A_\mu
 \end{split}
 \end{equation}
 which can be identified to be the full Lagrangian of QED. The introduced gauge field $A_\mu$ is therefore nothing else but the electromagnetic potential with its associated massless particle, the photon. Thus, by applying the gauge principle on the free Dirac Lagrangian, \ie forcing a global phase invariance to hold locally, a new massless gauge field including interaction terms with the existing fields in the Lagrangian has to be introduced. In the case of the free Dirac Lagrangian, local gauge invariance produces all of quantum electrodynamics.
-
-As the phase transformation in \cref{eq:gauge_field} is part of the unitary group $U(1)$, this symmetry is called $U(1)$ \textit{gauge symmetry}. 
-
-\subsubsection{Quantum chromodynamics}
 
 As Yang and Mills have shown in 1954 \cite{PhysRev.96.191}, requiring a global phase invariance to hold locally is perfectly possible in the case of any continuous symmetry group. Considering a general non-Abelian symmetry group $G$, represented by a set of $n\times n$ unitary matrices $U(\alpha^1,\dots,\alpha^N)$, parametrised by $N$ real parameters $\alpha^1,\dots,\alpha^N$, then a gauge-invariant Lagrangian can be constructed with a similar prescription~\cite{Brock:1354959} as previously in the case of $U(1)$. 
 
@@ -220,12 +214,31 @@ where the term with $\alpha^a$ looks familiar from the $U(1)$ example and corres
 \end{equation} 
 with the field-strength tensor now $F^a_{\mu\nu} = \partial_\mu W^a_\nu - \partial_\nu W^a_\mu + gf^{abc}W^b_\mu W^c_\nu$. As was already the case for QED, the above Lagrangian contains Abelian terms quadratic in $W$, describing the propagation of the free gauge fields. This time, the Lagrangian however also contains non-Abelian terms cubic and quartic in $W$, leading to self-interaction of the gauge fields.
 
+\subsubsection{Quantum chromodynamics}
+
+Quantum chromodynamics (QCD), the gauge theory describing the strong interaction between quarks and gluons in the SM, is an example for a non-Abelian Yang-Mills theory. QCD is based on the gauge group $SU(3)_C$, with the subscript $C$ indicating that the quantum number associated with the symmetry group is the \textit{colour}. Each quark is described by a triplet of fermion fields $q = (q_r,q_g,q_b)^T$, where the subscripts refer to the three different colours. The symmetry group $SU(3)$ has a total of $n^2-1 = 8$ generators, usually expressed in terms of the Gell-Mann matrices $\lambda^a$. The covariant derivative introducing the gauge fields $G_\mu^a$ acting on the quark triplets is then
+\begin{equation}
+	\codiff_\mu = \partial_\mu - ig_s \frac{\lambda^a}{2	}G_\mu^a,
+\end{equation}
+with $g_s$ the coupling constant of the strong interaction, that is typically written as $\alpha_s = g_s^2 / (4\pi)$ in analogy to the fine-structure constant in QED. Gauge invariance thus introduces a total of $N=8$ gauge fields that can be identified with the eight gluons, leading to the full Lagrangian of QCD
+\begin{equation}
+	\Lagr_\mathrm{QCD} = \sum_q{\bar{q}(i\gamma^\mu\partial_\mu - m_q)q} - \sum_q{-g_s\bar{q}\gamma^\mu\frac{\lambda^a}{2}qG^a_\mu} - \frac{1}{4}G^a_{\mu\nu}G^{\mu\nu,a},
+\end{equation}
+where $q = u,d,s,c,b,t$ and $G^a_{\mu\nu}$ are the gluon field strengths given by
+\begin{equation}
+	G^a_{\mu\nu} = \partial_\mu G^a_\nu - \partial_\nu G^a_\mu + g_s f^{abc}G^b_\mu G^c_\nu.
+\end{equation}
+As expected from the previous section, $\Lagr_\mathrm{QCD}$ contains terms that are cubic and quartic in the gluon fields, resulting in gluon self-interaction in the theory. The gluon self-interactions lead to a number of phenomena unknown to Abelian theories, rendering the kinematics of QCD highly non-trivial.
+
+In QCD, a similar effect to the electric charge screening in QED happens through quark-antiquark pairs, resulting in a screening of the colour charge. However, the existence of gluon loops in the gluon propagator due to gluon self-interaction creates an opposing \textit{antiscreening} effect of colour charges. At short distances or large momentum scales, colour-charged particles essentially become free particles, a phenomenon that is called \textit{asymptotic freedom}. In this regime, where $\alpha_s$ is sufficiently small, QCD processes can be calculated using perturbation theory. At large distances or small moment scales however, $\alpha_s$ becomes large and gluons interact very strongly with colour-charged particles, meaning that no free gluons or quarks can exist. This phenomenon is called \textit{confinement} and implies that free quarks and gluons will be subject to \textit{hadronisation}, \ie form colourless bound states by combining with other quarks or gluons (that can be created from the vacuum). In a particle detector, hadronisation manifests itself as collimated showers of particles, called \textit{jets}. 
+
+At momentum scales where the strong coupling $\alpha_s$ becomes large ($\alpha_s \approx \mathcal{O(1)}$), QCD process can not longer be calculated using perturbation theory and instead lattice QCD~\cite{PhysRevD.10.2445,DeGrand:1055545} is used. 
 
 
-
+\subsubsection{Electroweak unification}
 
 
 \subsection{Renormalisation and divergencies}
- 
+\label{ch:renormalisation}
 
 \section{Supersymmetry}
