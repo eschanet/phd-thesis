@@ -241,7 +241,7 @@ At momentum scales where the strong coupling $\alpha_s$ becomes large ($\alpha_s
 
 \subsubsection{Electroweak interaction}\unsure{better title?}
 
-During the 1960s, Glashow, Weinberg and Salam~\cite{GLASHOW1961579,PhysRevLett.19.1264,Salam1959} developed a unified theory of the electromagnetic and weak interactions, based on the $SU(2)\otimes U(1)$ symmetry group. Known already experimentally from the Wu experiment`\cite{PhysRev.105.1413} in 1956, weak interaction violates parity, \ie the symmetry transformations have to act differently on the left-handed and right-handed fermion fields. The left- and right-handed components of a fermion field can be projected out using
+During the 1960s, Glashow, Weinberg and Salam~\cite{GLASHOW1961579,PhysRevLett.19.1264,Salam1959} developed a unified theory of the electromagnetic and weak interactions, based on the $SU(2)_\mathrm{L}\otimes U(1)_Y$ symmetry group. Known already experimentally from the Wu experiment`\cite{PhysRev.105.1413} in 1956, weak interaction violates parity, \ie the symmetry transformations have to act differently on the left-handed and right-handed fermion fields. The left- and right-handed components of a fermion field can be projected out using
 \begin{equation}
 	\psi_\mathrm{L} = \frac{1-\gamma^5}{2}\psi , \ \ \qquad 	\psi_\mathrm{R} = \frac{1+\gamma^5}{2}\psi,
 \end{equation}
@@ -277,11 +277,42 @@ with $\gamma^5 = i\gamma^0\gamma^1\gamma^2\gamma^3$. As the weak interaction onl
 		b
 	\end{pmatrix}_\mathrm{L}.
 \end{equation} 
-The conserved quantum number associated $SU(2)$ symmetry transformations is called weak isospin $I$ with third component $I_3$. Fermion doublets have $I=1/2$, with the upper component having $I_3 = 1/2$ and the lower component $I_3=-1/2$. Right-handed fermion fields have $I=0$, \ie are singlet states in weak isospin space
+The quantum number associated with $SU(2)$ symmetry transformations is called weak isospin $I$ with third component $I_3$. Fermion doublets have $I=1/2$, with the upper component having $I_3 = 1/2$ and the lower component $I_3=-1/2$. Right-handed fermion fields have $I=0$, \ie are singlet states in weak isospin space
 \begin{equation}
 	e_\mathrm{R},u_\mathrm{R},d_\mathrm{R}, \qquad \mu_\mathrm{R},c_\mathrm{R},s_\mathrm{R}, \qquad \tau_\mathrm{R},t_\mathrm{R},b_\mathrm{R}, 
 \end{equation}
-and thus do not couple to the weak interaction. In the electroweak theory, neutrinos are assumed to be strictly massless, therefore no right-handed neutrino singlets exist.
+and thus do not couple to the weak interaction. In the electroweak theory, neutrinos are assumed to be strictly massless, therefore no right-handed neutrino singlets exist. 
+
+The fermion doublets can be written in a free Lagrangian similar to \cref{eq:dirac_lagrangian,eq:free_lagrangian}
+\begin{equation}
+	\Lagr = \bar{\psi}_\mathrm{L}i\gamma^\mu\partial_\mu\psi_\mathrm{L},
+\end{equation}
+with one crucial difference---the omission of the fermion masses. As will be illustrated in \cref{sec:ssb}, mass terms cannot be included in the electroweak Lagrangian without breaking gauge symmetry. For left-handed fermion fields, local $SU(2)_\mathrm{L}$ transformations can be written as
+\begin{equation}
+	\psi_\mathrm{L} \rightarrow \mathrm{exp}\left(ig_2\alpha^a\frac{\sigma^a}{2}\right)\psi_\mathrm{L},
+\end{equation}  
+where $g_2$ is the coupling constant, $\alpha^a$ with $a=1,2,3$ are real parameters and the Pauli matrices $\sigma^a$ are the generators of $SU(2)_\mathrm{L}$. By introducing the covariant derivative $\codiff_\mu = \partial_\mu + ig_2\frac{\sigma^a}{2}W^a_\mu$ and including the usual kinetic term for the gauge fields, the Lagrangian becomes invariant under $SU(2)_\mathrm{L}$ transformations and reads
+\begin{equation}
+	\Lagr = \bar{\psi}_\mathrm{L}i\gamma^\mu\codiff_\mu\psi_\mathrm{L} - \frac{1}{4}W^a_{\mu\nu}W^{\mu\nu,a},
+\end{equation}
+with the gauge field strength tensors $W^a_{\mu\nu} = \partial_\mu W^a_\nu - \partial_\nu W^a_\mu + g_2 \epsilon^{abc}W^b_\mu W^c_\nu$ where $\epsilon^{abc}$ are the structure constants. As previously in the case of QCD, the non-Abelian structure of the symmetry group causes self-interactions of the gauge fields.
+
+In order to include electromagnetic interactions, the weak isospin group is extended with the $U(1)_Y$, corresponding to the multiplication of a phase factor $e^{i\alpha\frac{Y}{2}}$ to each of the preceding doublets and singlets. Here, $Y$ is the weak hypercharge as given by the Gell-Mann--Nishijima relation~\cite{Gell-Mann1956,10.1143/PTP.13.285,10.1143/PTP.10.581}
+\begin{equation}
+	Q = I_3 + \frac{Y}{2},
+\end{equation}
+with $Q$ the electric charge. The electromagnetic group $U(1)_\mathrm{em}$ as a subgroup of the combined electroweak gauge group.
+
+By modifying the covariant derivative to include a $U(1)_Y$ gauge field and ensuring that $U(1)_Y$ acts the same on left- and on right-handed fermions it becomes $\codiff_\mu &= \partial_\mu + ig_2\frac{\sigma^a}{2}W^a_\mu + ig_1\frac{Y}{2}B_\mu$ for left-handed fermions and $\codiff_\mu &= \partial_\mu + ig_1\frac{Y}{2}B_\mu$ for right-handed fermions. The the full electroweak Lagrangian thus reads
+\begin{equation}
+	\Lagr_\mathrm{electroweak} = \bar{\psi}i\gamma^\mu\codiff_\mu\psi - \frac{1}{4}W^a_{\mu\nu}W^{\mu\nu,a} - \frac{1}{4}B_{\mu\nu}B^{\mu\nu},
+\end{equation}
+where a term describing the kinematics of the gauge field $B_\mu$ has already been added and $B_{\mu\nu} = \partial_\mu B_\nu - \partial_\nu B_\mu$. 
+
+
+\subsubsection{Spontaneous symmetry breaking}
+\label{sec:ssb}
+
 
 \subsection{Renormalisation and divergencies}
 \label{ch:renormalisation}
