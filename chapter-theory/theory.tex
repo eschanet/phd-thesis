@@ -13,7 +13,7 @@
 
 This chapter starts with an outline of the basic principles and concepts of the Standard Model of Particle Physics (SM), the theoretical framework describing nature on the level of elementary particles. This is followed by an introduction to supersymmetry, a promising class of theories aiming to solve some of the shortcomings of the SM.
 
-By no means intended to be a full description, this chapter merely tries to highlight the important relations and consequences of the SM and supersymmetry. The mathematical description of this chapter largely follows~\cite{Peskin:1995ev} for the SM and~\cite{Martin:1997ns} for supersymmetry.
+By no means intended to be a full description, this chapter merely tries to highlight the important relations and consequences of the SM and supersymmetry. The mathematical description of this chapter largely follows~\cite{Brock:1354959, Peskin:1995ev} for the SM and~\cite{Martin:1997ns} for supersymmetry.
 
 \section{The Standard Model of Particle Physics}
 
@@ -61,7 +61,7 @@ The SM successfully describes \change{Neutrino masses not in SM!} ordinary matte
 
 %\subsubsection*{Fermions} 
 
-Fermions are further divided into leptons and quarks, which each come in three generations with increasing masses\footnote{Neutrinos might not exist in a normal mass hierarchy but could also have an inverted mass hierarchy.\info{Need ref}}. The three electrically charged leptons are each associated with a corresponding neutral neutrino (more on this \textit{association} in chapter\info{need ref}). While the SM assumes massless neutrinos, the observation of neutrino oscillations~\cite{Fukuda:1998mi} implies the existence of at least two massive neutrinos. By extending the SM to allow non-vanishing neutrino masses, neutrino oscillations can be introduced through lepton generation mixing, described by the Pontecorvo-Maki-Nakagawa-Sakata (PMNS)\nomenclature[z-PMNS]{PMNS}{Pontecorvo–Maki–Nakagawa–Sakata} matrix~\cite{PMNS:1962mu}. Apart from an electric charge, the six quarks also carry a colour charge. There are three types of colour charge: \textit{red}, \textit{green} and \textit{blue} as well as their respective anti-colours. The mixing in the quark sector through the weak interaction can be described by the Cabibbo-Kobayashi-Maskawa (CKM)\nomenclature[z-CKM]{CKM}{Cabibbo-Kobayashi-Maskawa} matrix~\cite{CKM:1973fv}. Finally, each fermion comes with its own anti-particle with same mass and spin, but inverted charge-like quantum numbers\footnote{The exact nature of anti-neutrinos is still an open question and ties into whether or not the neutrino mass matrix contains non-vanishing Majorana mass terms.}. All fermions in the SM are listed in \cref{tab:particles_fermions}.
+Fermions are further divided into leptons and quarks, which each come in three generations with increasing masses\footnote{Neutrinos might not exist in a normal mass hierarchy but could also have an inverted mass hierarchy.\info{Need ref}}. The three electrically charged leptons are each associated with a corresponding neutral neutrino (more on this \textit{association} in chapter\info{need ref}). While the SM assumes massless neutrinos, the observation of neutrino oscillations~\cite{Fukuda:1998mi} implies the existence of at least two massive neutrinos. By extending the SM to allow non-vanishing neutrino masses, neutrino oscillations can be introduced through lepton generation mixing, described by the Pontecorvo-Maki-Nakagawa-Sakata (PMNS)\nomenclature[z-PMNS]{PMNS}{Pontecorvo–Maki–Nakagawa–Sakata} matrix~\cite{PMNS:1962mu}. Apart from an electric charge, the six quarks also carry a colour charge. There are three types of colour charge: \textit{red}, \textit{green} and \textit{blue} as well as their respective anti-colours. The mixing in the quark sector through the weak interaction can be described by the Cabibbo-Kobayashi-Maskawa (CKM)\nomenclature[z-CKM]{CKM}{Cabibbo-Kobayashi-Maskawa} matrix~\cite{PhysRevLett.10.531,CKM:1973fv}. Finally, each fermion comes with its own anti-particle with same mass and spin, but inverted charge-like quantum numbers\footnote{The exact nature of anti-neutrinos is still an open question and ties into whether or not the neutrino mass matrix contains non-vanishing Majorana mass terms.}. All fermions in the SM are listed in \cref{tab:particles_fermions}.
 
 %\subsubsection*{Bosons}
 
@@ -330,7 +330,7 @@ This spontaneous symmetry breaking is achieved through the Brout-Englert-Higgs  
 		\phi^0(x)
 	\end{pmatrix}.
 \end{equation}
-The Higgs doublet has hypercharge $Y=1$, hence according to \cref{eq:gell-mann-nishijima}, $\phi^+$ has electric charge +1 while $\phi^0$ is electrically neutral. With the covariant derivative introduced in \cref{sec:ewk_interaction}, the Higgs doublet has an associated part in the SM Lagrangian reading
+The Higgs doublet has hypercharge $Y=1$, hence according to \cref{eq:gell-mann-nishijima}, $\phi^+$ has electric charge +1 while $\phi^0$ is electrically neutral. With the covariant derivative introduced in \cref{sec:ewk_interaction}, the Higgs doublet gets an associated part in the SM Lagrangian reading
 \begin{equation}
 	\Lagr_\mathrm{H} = (\codiff_\mu\Phi)^\dagger(\codiff^\mu\Phi) - V(\Phi),
 \end{equation}
@@ -370,8 +370,52 @@ where only $H$ gets a mass term, thus describing an electrically neutral scalar 
 \end{equation}
 The gauge transformation bringing \cref{eq:higgs_expansion} into the above form is called the \textit{unitary gauge}. In this gauge, the Higgs potential from \cref{eq:higgs_potential} has the form
 \begin{equation}
-	V = \frac{m_H^2}{2} H^2 + \frac{m_H^2}{2v} H^3 + \frac{m_H^2}{8v^2} H^4
+	V = \frac{m_H^2}{2} H^2 + \frac{m_H^2}{2v} H^3 + \frac{m_H^2}{8v^2} H^4,
 \end{equation}
+containing cubic and quartic self-interactions of the Higgs field proportional to $m^2_H$. Inserting the excitation around the vacuum state in the kinetic term of the $\Lagr_\mathrm{H}$ yields mass terms for the vector bosons
+\begin{equation}
+	\Lagr_\mathrm{H} \propto \frac{v^2}{8}g^2_2\left(W_\mu^1W^{1,\mu} + W_\mu^2W^{2,\mu}\right) + \frac{v^2}{8} \begin{pmatrix}
+		W^3_\mu & B_\mu
+	\end{pmatrix}
+	\begin{pmatrix}
+		g_2^2 & g_1g_2   \\
+		g_1g_2 & g_1^2
+	\end{pmatrix}
+	\begin{pmatrix}
+		W^{3,\mu} \\
+		B^\mu
+	\end{pmatrix},
+\end{equation}
+Instead of expressing the Lagrangian in terms of the fields $W^a_\mu$ and $B_\mu$ that make the original gauge invariance manifest, it can also be written in terms of the \textit{physical} fields that correspond to the physical $W^\pm$, $Z$ and $\gamma$ bosons in the electroweak theory
+\begin{align*}
+	W^\pm_\mu 	& = \frac{1}{\sqrt{2}}(W^1_\mu\mp i W^2_\mu) 				& \textrm{with} \quad m_W  & = \frac{g_2}{2}v, \\
+	Z_\mu 		& = \frac{1}{\sqrt{g_1^2+g_2^2}}(g_2W^3_\mu - g_1 B_\mu) 	& \textrm{with} \quad m_Z  & = \frac{\sqrt{g_1^2+g_2^2}}{2}v, \\
+	Z_\mu 		& = \frac{1}{\sqrt{g_1^2+g_2^2}}(g_1W^3_\mu + g_2 B_\mu) 	& \textrm{with} \quad m_A  & = 0.
+\end{align*}
+The change of basis from $(W^3_\mu, B_\mu)$ to $(Z_\mu,A_\mu)$~\cite{Peskin:1995ev} can also be written as a basis rotation with the weak mixing angle $\theta_W$
+\begin{equation}
+	\begin{pmatrix}
+		Z_\mu \\
+		A_\mu
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\cos{\theta_W} & \sin{\theta_W} \\
+		- \sin{\theta_W} & \cos{\theta_W}
+	\end{pmatrix}
+	\begin{pmatrix}
+		W^3_\mu \\
+		B_\mu
+	\end{pmatrix} \qquad \textrm{with } \cos{\theta_W} = \frac{g_2}{\sqrt{g_1^2 + g_2^2}} = \frac{m_W}{m_Z}.
+\end{equation}
+In the SM, not only the $W^\pm$ and $Z$ bosons but also fermions gain their masses through spontaneous breaking of the electroweak gauge symmetry. Fermion fields gain masses through gauge-invariant Yukawa interactions with the Higgs field. For one fermion generation, the respective Yukawa terms in the Lagrangian are
+\begin{equation}
+	\Lagr_\mathrm{Yukawa,gen} = - \lambda_\ell \bar{L}_\mathrm{L}\Phi\ell_\mathrm{R} - \lambda_d \bar{Q}_\mathrm{L}\Phi d_\mathrm{R} - \lambda_u \bar{Q}_\mathrm{L} \Phi^\dagger u_\mathrm{R} + \mathrm{h.c.},
+\end{equation}
+where $\lambda_f$ with $f = \ell,d,u$ are the dimensionless Yukawa couplings and $L_\mathrm{L} = (\nu_\mathrm{L},\ell_\mathrm{L})^T$ and $Q_\mathrm{L} = (u_\mathrm{L},d_\mathrm{L})^T$ are the left-handed lepton and quark doublets, respectively. The VEV of the Higgs field then gives rise to fermion mass terms in the Lagrangian, which, in the unitary gauge, reads for a single fermion generation
+\begin{equation}
+ 	\Lagr_\mathrm{Yukawa, gen} = - \sum_{f=\ell,d,u}{\left(m_f\bar{\psi}_f\psi_f + \frac{m_f}{v}H\bar{\psi}_f\psi_f\right)} \qquad \textrm{with} \quad m_f = \frac{1}{\sqrt{2}}\lambda_f v.
+\end{equation}
+When introducing all three fermion generations, additional Yukawa terms mixing fermions of different generations appear in the Lagrangian. The terms involving quark fields can be parametrised using the Cabibbo–Kobayashi–Maskaw (CKM) matrix $V_\mathrm{CKM}$~\cite{PhysRevLett.10.531,CKM:1973fv}, quantifying the transition probability between quark generations. Since no right-handed neutrinos exist in the SM, no generation mixing in the lepton sector occurs and hence no neutrino mass terms are allowed in the SM. Neutrino oscillations have however been observed experimentally, thus at least one massive neutrino generation needs to exist. Their mixing can then be described with the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix~\cite{PMNS:1962mu}, allowing neutrinos to acquire mass \eg through the see-saw mechanism~\cite{Brdar:2019iem}.
 
  
 \subsection{Renormalisation and divergencies}
