@@ -119,6 +119,7 @@ where $U(n)$ ($SU(n)$) describes (special) unitary groups, \ie the Lie groups of
 
 
 \subsubsection{Gauge principle}
+\label{sec:gauge_principle}
 
 The gauge principle is fundamental to the SM and dictates that the existence of gauge fields is directly related to symmetries under local gauge transformations. QED, being the simplest gauge theory, can be taken to illustrate this important principle. The free Dirac Lagrangian for a single, non-interacting fermion with mass $m$ is given by
 \begin{equation}
@@ -236,10 +237,11 @@ In QCD, a similar effect to the electric charge screening in QED happens through
 
 \improvement{add gluon loops}
 
-At momentum scales where the strong coupling $\alpha_s$ becomes large ($\alpha_s \approx \mathcal{O(1)}$), QCD process can not longer be calculated using perturbation theory and instead lattice QCD~\cite{PhysRevD.10.2445,DeGrand:1055545} is used. 
+At momentum scales where the strong coupling $\alpha_s$ becomes large ($\alpha_s \approx \mathcal{O}(1)$), QCD processes can no longer be calculated using perturbation theory and instead lattice QCD~\cite{PhysRevD.10.2445,DeGrand:1055545} is used. 
 
 
 \subsubsection{Electroweak interaction}\unsure{better title?}
+\label{sec:ewk_interaction}
 
 During the 1960s, Glashow, Weinberg and Salam~\cite{GLASHOW1961579,PhysRevLett.19.1264,Salam1959} developed a unified theory of the electromagnetic and weak interactions, based on the $SU(2)_\mathrm{L}\otimes U(1)_Y$ symmetry group. Known already experimentally from the Wu experiment`\cite{PhysRev.105.1413} in 1956, weak interaction violates parity, \ie the symmetry transformations have to act differently on the left-handed and right-handed fermion fields. The left- and right-handed components of a fermion field can be projected out using
 \begin{equation}
@@ -287,7 +289,7 @@ The fermion doublets can be written in a free Lagrangian similar to \cref{eq:dir
 \begin{equation}
 	\Lagr = \bar{\psi}_\mathrm{L}i\gamma^\mu\partial_\mu\psi_\mathrm{L},
 \end{equation}
-with one crucial difference---the omission of the fermion masses. As will be illustrated in \cref{sec:ssb}, mass terms cannot be included in the electroweak Lagrangian without breaking gauge symmetry. For left-handed fermion fields, local $SU(2)_\mathrm{L}$ transformations can be written as
+with one crucial difference---the omission of the fermion masses. As $\bar{\psi}\psi = \bar{\psi}_\mathrm{L}\psi_\mathrm{R} + \bar{\psi}_\mathrm{R}\psi_\mathrm{L}$, mass terms would mix left- and right-handed terms and break gauge invariance. \Cref{sec:ssb} will illustrate how fermion masses will instead be generated in the electroweak theory. For left-handed fermion fields, local $SU(2)_\mathrm{L}$ transformations can be written as
 \begin{equation}
 	\psi_\mathrm{L} \rightarrow \mathrm{exp}\left(ig_2\alpha^a\frac{\sigma^a}{2}\right)\psi_\mathrm{L},
 \end{equation}  
@@ -300,20 +302,78 @@ with the gauge field strength tensors $W^a_{\mu\nu} = \partial_\mu W^a_\nu - \pa
 In order to include electromagnetic interactions, the weak isospin group is extended with the $U(1)_Y$, corresponding to the multiplication of a phase factor $e^{i\alpha\frac{Y}{2}}$ to each of the preceding doublets and singlets. Here, $Y$ is the weak hypercharge as given by the Gell-Mann--Nishijima relation~\cite{Gell-Mann1956,10.1143/PTP.13.285,10.1143/PTP.10.581}
 \begin{equation}
 	Q = I_3 + \frac{Y}{2},
+	\label{eq:gell-mann-nishijima}
 \end{equation}
 with $Q$ the electric charge. The electromagnetic group $U(1)_\mathrm{em}$ as a subgroup of the combined electroweak gauge group.
 
-By modifying the covariant derivative to include a $U(1)_Y$ gauge field and ensuring that $U(1)_Y$ acts the same on left- and on right-handed fermions it becomes $\codiff_\mu &= \partial_\mu + ig_2\frac{\sigma^a}{2}W^a_\mu + ig_1\frac{Y}{2}B_\mu$ for left-handed fermions and $\codiff_\mu &= \partial_\mu + ig_1\frac{Y}{2}B_\mu$ for right-handed fermions. The the full electroweak Lagrangian thus reads
+By modifying the covariant derivative to include a $U(1)_Y$ gauge field and ensuring that $U(1)_Y$ acts the same on left- and on right-handed fermions it becomes $\codiff_\mu = \partial_\mu + ig_2\frac{\sigma^a}{2}W^a_\mu + ig_1\frac{Y}{2}B_\mu$ for left-handed fermions and $\codiff_\mu = \partial_\mu + ig_1\frac{Y}{2}B_\mu$ for right-handed fermions. Then the full electroweak Lagrangian reads
 \begin{equation}
-	\Lagr_\mathrm{electroweak} = \bar{\psi}i\gamma^\mu\codiff_\mu\psi - \frac{1}{4}W^a_{\mu\nu}W^{\mu\nu,a} - \frac{1}{4}B_{\mu\nu}B^{\mu\nu},
+\begin{split}
+	\Lagr_\mathrm{electroweak} = & \sum_j^6{\bar{\psi}_\mathrm{L}^j i \gamma^\mu \left(\partial_\mu -ig_2\frac{\sigma^a}{2} W^a_\mu + ig_1 \frac{Y}{2} B_\mu \right) \psi^j_\mathrm{L}} \\
+	& + \sum_j^9{\bar{\psi}_\mathrm{R}^j i \gamma^\mu \left(\partial_\mu + ig_1 \frac{Y}{2} B_\mu \right) \psi^j_\mathrm{R}}
+\end{split}
 \end{equation}
-where a term describing the kinematics of the gauge field $B_\mu$ has already been added and $B_{\mu\nu} = \partial_\mu B_\nu - \partial_\nu B_\mu$. 
-
+where $B_{\mu\nu} = \partial_\mu B_\nu - \partial_\nu B_\mu$. 
 
 \subsubsection{Spontaneous symmetry breaking}
 \label{sec:ssb}
 
+\nomenclature[z-VEV]{VEV}{Vacuum expectation value}
 
+
+In the electroweak theory a total of three vector fields $W^a_\mu$ and one vector field $B_\mu$ are associated with the gauge groups $SU(2)_\mathrm{L}$ and $U(1)_Y$, respectively. As has been shown explicitly through the example of QED in \cref{sec:gauge_principle}, the gauge fields need to be massless for the resulting Lagrangian to be gauge invariant under the respective symmetry group. In addition, the electroweak symmetry group does not allow for fermion masses. Both gauge bosons of the weak interaction and the fermion are however manifestly massive, hence the electroweak symmetry has to be broken in the SM.
+
+This spontaneous symmetry breaking is achieved through the Brout-Englert-Higgs   mechanism~\cite{PhysRevLett.13.321,PhysRevLett.13.508,PhysRev.145.1156}. In the SM, an isospin doublet of complex scalar fields, called Higgs doublet, is introduced
+\begin{equation}
+	\Phi(x) = \begin{pmatrix}
+		\phi^+(x) \\
+		\phi^0(x)
+	\end{pmatrix}.
+\end{equation}
+The Higgs doublet has hypercharge $Y=1$, hence according to \cref{eq:gell-mann-nishijima}, $\phi^+$ has electric charge +1 while $\phi^0$ is electrically neutral. With the covariant derivative introduced in \cref{sec:ewk_interaction}, the Higgs doublet has an associated part in the SM Lagrangian reading
+\begin{equation}
+	\Lagr_\mathrm{H} = (\codiff_\mu\Phi)^\dagger(\codiff^\mu\Phi) - V(\Phi),
+\end{equation}
+where $V(\Phi)$ is a gauge invariant potential
+\begin{equation}
+	V(\Phi) = -\mu^2\Phi^\dagger\Phi + \frac{\lambda}{4}(\Phi^\dagger\Phi)^2.
+	\label{eq:higgs_potential}
+\end{equation}
+For positive and real parameters $\mu^2$ and $\lambda$, this potential has the form of a \textit{Mexican hat} and an infinite number of minima for field configurations with $\Phi^\dagger\Phi=2\mu^2/\lambda$. In the vacuum, \ie in the ground state of the theory with minimal potential energy of the field, one of these minima is chosen such that the Higgs  receives a vacuum expectation value (VEV)
+\begin{equation}
+	\braket{\Phi} = \frac{1}{\sqrt{2}}\begin{pmatrix}
+		0 \\
+		v
+	\end{pmatrix} \qquad \textrm{with} \quad v = \frac{2\mu}{\sqrt{\lambda}}.
+	\label{eq:higgs_vev}
+\end{equation}
+This is neither invariant under a $SU(2)_\mathrm{L}$ transformation of the form $U = \mathrm{exp}(i\alpha^a\frac{\sigma^a}{2})$, nor under a $U(1)_Y$ transformation of the form $\mathrm{exp}(i\alpha\frac{Y}{2})$, therefore the electroweak gauge symmetry is spontaneously broken; the Lagrangian has a symmetry that the vacuum does not have. It is worth noting that the $U(1)_\mathrm{em}$ gauge symmetry is not broken as the VEV of $\phi^+$ vanishes and $\phi^0$ is invariant under $U(1)_\mathrm{em}$.
+
+The Higgs doublet can be expressed as excitations around the ground state
+\begin{equation}
+	\Phi(x) = \frac{1}{\sqrt{2}} begin{pmatrix}
+		\phi_1(x)+i\phi_2(x) \\
+		v + H(x) + i\chi(x)
+	\end{pmatrix},
+	\label{eq:higgs_expansion}
+\end{equation}
+where $H$, $\chi$, $\phi_1$ and $\phi_2$ are real scalar fields with vanishing VEV. The Higgs potential can then be written as
+\begin{equation}
+	V = \mu^2H^2 + \frac{\mu^2}{v} H (H^2 + \chi^2 + \phi_1^2+\phi_2^2)+ \frac{\mu^2}{4v^2}(H^2 + \chi^2 + \phi_1^2 + \phi_2^2),
+\end{equation}
+where only $H$ gets a mass term, thus describing an electrically neutral scalar particle with mass $m_H = \sqrt{2}\mu$. The remaining scalar fields remain massless, in accordance with the Nambu-Goldstone theorem~\cite{Nambu:1960tm,Goldstone:1961eq}, stating that every spontaneously broken continuous symmetry generates a massless Goldstone boson. These bosons are unphysical and can be gauged away through a $SU(2)_\mathrm{L}$ transformation, such that the expansion around the vacuum from \cref{eq:higgs_expansion} involves only the physical scalar $H(x)$
+\begin{equation}
+	\Phi(x) = \frac{1}{\sqrt{2}} begin{pmatrix}
+		0 \\
+		v + H(x)
+	\end{pmatrix}.	
+\end{equation}
+The gauge transformation bringing \cref{eq:higgs_expansion} into the above form is called the \textit{unitary gauge}. In this gauge, the Higgs potential from \cref{eq:higgs_potential} has the form
+\begin{equation}
+	V = \frac{m_H^2}{2} H^2 + \frac{m_H^2}{2v} H^3 + \frac{m_H^2}{8v^2} H^4
+\end{equation}
+
+ 
 \subsection{Renormalisation and divergencies}
 \label{ch:renormalisation}
 
