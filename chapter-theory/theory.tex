@@ -256,8 +256,8 @@ At momentum scales where the strong coupling $\alpha_s$ becomes large ($\alpha_s
 		\centering\includegraphics[width=0.7\textwidth]{gluon_quartic_vertex}
 		\caption{\label{fig:gluon_quartic_vertix}}
 	\end{subfigure}
-	\label{fig:qcd_vertices}
 	\caption{Possible vertices in QCD.}
+	\label{fig:qcd_vertices}
 \end{figure}
 
 \subsubsection{Electroweak interaction}\unsure{better title?}
@@ -388,6 +388,35 @@ where only $H$ gets a mass term, thus describing an electrically neutral scalar 
 		v + H(x)
 	\end{pmatrix}.	
 \end{equation}
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{w_fermion_vertex}
+		\caption{\label{fig:w_fermion_vertex}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{z_fermion_vertex}
+		\caption{\label{fig:z_fermion_vertex}}
+	\end{subfigure}	
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{gamma_fermion_vertex}
+		\caption{\label{fig:gamma_fermion_vertex}}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.7\textwidth]{w_boson_quartic_vertex}
+		\caption{\label{fig:w_boson_quartic_vertex}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.7\textwidth]{wz_boson_quartic_vertex}
+		\caption{\label{fig:wz_boson_quartic_vertex}}
+	\end{subfigure}	
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.7\textwidth]{w_boson_cubic_vertex}
+		\caption{\label{fig:w_boson_cubic_vertex}}
+	\end{subfigure}
+	\caption{Possible vertices in the electroweak interaction.}
+	\label{fig:ewk_vertices}
+\end{figure}
 The gauge transformation bringing \cref{eq:higgs_expansion} into the above form is called the \textit{unitary gauge}. In this gauge, the Higgs potential from \cref{eq:higgs_potential} has the form
 \begin{equation}
 	V = \frac{m_H^2}{2} H^2 + \frac{m_H^2}{2v} H^3 + \frac{m_H^2}{8v^2} H^4,
@@ -428,24 +457,6 @@ It is worth noting, that the massless photon field $A_\mu$ associated with the e
 	\end{pmatrix} \qquad \textrm{with } \cos{\theta_W} = \frac{g_2}{\sqrt{g_1^2 + g_2^2}} = \frac{m_W}{m_Z}.
 \end{equation}
 
-\begin{figure}
-	\centering
-	\begin{subfigure}[b]{0.33\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{w_boson_quartic_vertex}
-		\caption{\label{fig:w_boson_quartic_vertex}}
-	\end{subfigure}%
-	\begin{subfigure}[b]{0.33\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{wz_boson_quartic_vertex}
-		\caption{\label{fig:wz_boson_quartic_vertex}}
-	\end{subfigure}	
-	\begin{subfigure}[b]{0.33\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{w_boson_cubic_vertex}
-		\caption{\label{fig:w_boson_cubic_vertex}}
-	\end{subfigure}
-	\label{fig:ewk_vertices}
-	\caption{Possible vertices in the electroweak interaction.}
-\end{figure}
-
 In the SM, not only the $W^\pm$ and $Z$ bosons but also fermions gain their masses through spontaneous breaking of the electroweak gauge symmetry. Fermion fields gain masses through gauge-invariant Yukawa interactions with the Higgs field. For one fermion generation, the respective Yukawa terms in the Lagrangian are
 \begin{equation}
 	\Lagr_\mathrm{Yukawa,gen} = - \lambda_\ell \bar{L}_\mathrm{L}\Phi\ell_\mathrm{R} - \lambda_d \bar{Q}_\mathrm{L}\Phi d_\mathrm{R} - \lambda_u \bar{Q}_\mathrm{L} \Phi^\dagger u_\mathrm{R} + \mathrm{h.c.},
@@ -473,20 +484,23 @@ When introducing all three fermion generations, additional Yukawa terms mixing f
 		\centering\includegraphics[width=0.85\textwidth]{cubic_vertex}
 		\caption{\label{fig:cubic_vertex}}
 	\end{subfigure}
-	\label{fig:loop_corrections}
-	\caption{Examples of loops corrections to (a) the gluon propagator, (b) the $W$ or $Z$ propagator and (c) the cubic gauge boson vertex.}
+	\caption{Examples of loops corrections to (a) the gluon propagator, (b) the $W$ or $Z$ propagator and (c) the cubic gauge boson vertex.}\label{fig:loop_corrections}
 \end{figure}
 
 At lowest order in the perturbative expansion, the momenta of the internal lines in the Feynman diagrams are fixed by the external particles. For higher orders where the diagrams involve loops, the momenta of the internal lines need to be integrated over as they are not fixed by energy-momentum conservation. Some examples of loop corrections to propagators and vertices are shown in \cref{fig:loop_corrections}. As each vertex in the Feynman diagrams is associated with a coupling constant that is usually smaller than 1 (apart from the non-perturbative regime of QCD), higher orders in the perturbative expansion contribute less and less to the total amplitude of the full expansion.
 
-The momentum integrals in loop corrections however lead to \textit{ultraviolet divergencies} for large momenta. In order to eliminate the divergencies, the integrals have to be \textit{regularised}, \eg by applying a cut-off scale $\Lambda$ or calculating the integrals in a number $D = 4-\epsilon$ of dimensions where they converge. The potential divergencies are then absorbed in parameters of the Lagrangian, such as coupling constants and masses, after which the regulator is removed (\eg $\epsilon\rightarrow 0$) again and a \textit{renormalisation} procedure is applied, replacing the bare parameter values with the physical, measured values. 
+The momentum integrals in loop corrections however lead to \textit{ultraviolet divergencies} for large momenta. In order to eliminate the divergencies, the integrals have to be \textit{regularised}, \eg by applying a cut-off scale $\Lambda$ or calculating the integrals in a number $D = 4-\epsilon$ of dimensions where they converge. The potential divergencies are then absorbed in parameters of the Lagrangian, such as coupling constants and masses, after which the regulator is removed (\eg $\epsilon\rightarrow 0$) again and a \textit{renormalisation} procedure is applied, replacing the bare parameter values with the physical, measured values. Renormalisation effectively absorbs the effects of quantum fluctuations acting on much smaller scales than the scale of the given problem in the parameters of the theory.
 
-Renormalisation effectively absorbs the effects of quantum fluctuations acting on much smaller scales than the scale of the given problem in the parameters of the theory.
-
+As Veltmann and t'Hooft~\cite{THOOFT1972189,THOOFT1971173} have shown in the early 1970s, all Yang-Mills theories with massive gauge fields are renormalizable, making the SM as a whole a renormalizable theory.  
 
 \section{Supersymmetry}
 
 The following section introduces the concept of Supersymmetry (SUSY), a promising class of theories extending the SM and solving some of its shortcomings. First, a motivation for the need of SUSY is given by highlighting some of the open questions of the SM, followed by an introduction to the mathematical description and phenomenological consequences of supersymmetric theories. This section is intended to highlight the most important concepts and relations, a complete and detailed introduction to SUSY can \eg be found in~\cite{Martin:1997ns}.
+
+
+\subsubsection{Dark matter}
+
+\subsubsection{Unification of forces}
 
 \subsubsection{The Hierarchy Problem}
 
@@ -515,4 +529,5 @@ Similarly, a one-loop correction due to the coupling to a hypothetical heavy com
 	\label{eq:scalar_correction}
 \end{align}
 
+\subsubsection{Anomalous moment of the muon}
 
