@@ -1,0 +1,23 @@
+\documentclass[class=minimal,border={5pt 15pt 5pt 15pt}]{standalone}
+\usepackage[force]{feynmp-auto}
+\usepackage{xcolor}
+\begin{document}
+	\unitlength=0.65mm
+	\begin{fmffile}{gluon_vertex_1}
+		\begin{fmfgraph*}(40,30)
+						
+			\fmfleftn{i}{1}
+			\fmfrightn{o}{2}
+			
+			\fmf{gluon,tension=1}{i1,v1}
+
+			\fmf{gluon,tension=0.75}{o1,v1}
+			\fmf{gluon,tension=0.75}{o2,v1}
+
+		    \fmflabel{$g$}{o1}
+		    \fmflabel{$g$}{o2}
+		    \fmflabel{$g$}{i1}
+			
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}

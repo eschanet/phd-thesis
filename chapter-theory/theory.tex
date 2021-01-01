@@ -235,16 +235,30 @@ where $q = u,d,s,c,b,t$ and $G^a_{\mu\nu}$ are the gluon field strengths given b
 \begin{equation}
 	G^a_{\mu\nu} = \partial_\mu G^a_\nu - \partial_\nu G^a_\mu + g_s f^{abc}G^b_\mu G^c_\nu.
 \end{equation}
-As expected from the previous section, $\Lagr_\mathrm{QCD}$ contains terms that are cubic and quartic in the gluon fields, resulting in gluon self-interaction in the theory. The gluon self-interactions lead to a number of phenomena unknown to Abelian theories, rendering the kinematics of QCD highly non-trivial.
-
-\improvement{Add QCD vertices}
+As expected from the previous section, $\Lagr_\mathrm{QCD}$ contains terms that are cubic and quartic in the gluon fields, resulting in gluon self-interaction in the theory. All possible QCD interaction vertices involving gluons and quarks are shown in \cref{fig:qcd_vertices}.The gluon self-interactions lead to a number of phenomena unknown to Abelian theories, rendering the kinematics of QCD highly non-trivial.
 
 In QCD, a similar effect to the electric charge screening in QED happens through quark-antiquark pairs, resulting in a screening of the colour charge. However, the existence of gluon loops in the gluon propagator due to gluon self-interaction creates an opposing \textit{antiscreening} effect of colour charges. At short distances or large momentum scales, colour-charged particles essentially become free particles, a phenomenon that is called \textit{asymptotic freedom}. In this regime, where $\alpha_s$ is sufficiently small, QCD processes can be calculated using perturbation theory. At large distances or small moment scales however, $\alpha_s$ becomes large and gluons interact very strongly with colour-charged particles, meaning that no free gluons or quarks can exist. This phenomenon is called \textit{confinement} and implies that free quarks and gluons will be subject to \textit{hadronisation}, \ie form colourless bound states by combining with other quarks or gluons (that can be created from the vacuum). In a particle detector, hadronisation manifests itself as collimated showers of particles, called \textit{jets}. 
 
-\improvement{add gluon loops}
-
 At momentum scales where the strong coupling $\alpha_s$ becomes large ($\alpha_s \approx \mathcal{O}(1)$), QCD processes can no longer be calculated using perturbation theory and instead lattice QCD~\cite{PhysRevD.10.2445,DeGrand:1055545} is used. 
 
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.7\textwidth]{gluon_quark_vertex}
+		\caption{\label{fig:gluon_quark_vertex}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.7\textwidth]{gluon_vertex}
+		\caption{\label{fig:gluon_vertex}}
+	\end{subfigure}	
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.7\textwidth]{gluon_quartic_vertex}
+		\caption{\label{fig:gluon_quartic_vertix}}
+	\end{subfigure}
+	\label{fig:qcd_vertices}
+	\caption{Possible vertices in QCD.}
+\end{figure}
 
 \subsubsection{Electroweak interaction}\unsure{better title?}
 \label{sec:ewk_interaction}
@@ -398,7 +412,7 @@ Instead of expressing the Lagrangian in terms of the fields $W^a_\mu$ and $B_\mu
 	Z_\mu 		& = \frac{1}{\sqrt{g_1^2+g_2^2}}(g_2W^3_\mu - g_1 B_\mu) 	& \textrm{with} \quad m_Z  & = \frac{\sqrt{g_1^2+g_2^2}}{2}v, \\
 	A_\mu 		& = \frac{1}{\sqrt{g_1^2+g_2^2}}(g_1W^3_\mu + g_2 B_\mu) 	& \textrm{with} \quad m_A  & = 0.
 \end{align*}
-It is worth noting, that the massless photon field $A_\mu$ associated with the electromagnetic $U(1)_\mathrm{em}$ gauge symmetry is automatically recovered. The change of basis from $(W^3_\mu, B_\mu)$ to $(Z_\mu,A_\mu)$~\cite{Peskin:1995ev} can also be written as a basis rotation with the weak mixing angle $\theta_W$
+It is worth noting, that the massless photon field $A_\mu$ associated with the electromagnetic $U(1)_\mathrm{em}$ gauge symmetry is automatically recovered. All possible vertices between fermions and the physical electroweak gauge bosons are shown in \cref{fig:ewk_vertices} The change of basis from $(W^3_\mu, B_\mu)$ to $(Z_\mu,A_\mu)$~\cite{Peskin:1995ev} can also be written as a basis rotation with the weak mixing angle $\theta_W$
 \begin{equation}
 	\begin{pmatrix}
 		Z_\mu \\
@@ -413,6 +427,25 @@ It is worth noting, that the massless photon field $A_\mu$ associated with the e
 		B_\mu
 	\end{pmatrix} \qquad \textrm{with } \cos{\theta_W} = \frac{g_2}{\sqrt{g_1^2 + g_2^2}} = \frac{m_W}{m_Z}.
 \end{equation}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.7\textwidth]{w_boson_quartic_vertex}
+		\caption{\label{fig:w_boson_quartic_vertex}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.7\textwidth]{wz_boson_quartic_vertex}
+		\caption{\label{fig:wz_boson_quartic_vertex}}
+	\end{subfigure}	
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.7\textwidth]{w_boson_cubic_vertex}
+		\caption{\label{fig:w_boson_cubic_vertex}}
+	\end{subfigure}
+	\label{fig:ewk_vertices}
+	\caption{Possible vertices in the electroweak interaction.}
+\end{figure}
+
 In the SM, not only the $W^\pm$ and $Z$ bosons but also fermions gain their masses through spontaneous breaking of the electroweak gauge symmetry. Fermion fields gain masses through gauge-invariant Yukawa interactions with the Higgs field. For one fermion generation, the respective Yukawa terms in the Lagrangian are
 \begin{equation}
 	\Lagr_\mathrm{Yukawa,gen} = - \lambda_\ell \bar{L}_\mathrm{L}\Phi\ell_\mathrm{R} - \lambda_d \bar{Q}_\mathrm{L}\Phi d_\mathrm{R} - \lambda_u \bar{Q}_\mathrm{L} \Phi^\dagger u_\mathrm{R} + \mathrm{h.c.},

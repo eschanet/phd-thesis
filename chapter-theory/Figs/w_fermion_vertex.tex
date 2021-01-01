@@ -1,0 +1,22 @@
+\documentclass[class=minimal,border={17pt 15pt 28pt 15pt}]{standalone}
+\usepackage[force]{feynmp-auto}
+\usepackage{xcolor}
+\begin{document}
+	\unitlength=0.65mm
+	\begin{fmffile}{w_fermion_vertex_1}
+		\begin{fmfgraph*}(40,30)
+						
+			\fmfleftn{i}{1}
+			\fmfrightn{o}{2}
+			
+			\fmf{boson,tension=1}{i1,v1}
+
+			\fmf{fermion,tension=0.75}{o1,v1,o2}
+
+		    \fmflabel{$u,c,t,\ell$}{o1}
+		    \fmflabel{$d,s,b,\nu$}{o2}
+		    \fmflabel{$W$}{i1}
+			
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}
