@@ -1,0 +1,18 @@
+\input{feynman_preamble}
+\begin{document}
+	\unitlength=1mm
+	\begin{fmffile}{gluon_loop_1}
+		\begin{fmfgraph*}(50,20)
+			
+			
+			\fmfleftn{i}{1}
+			\fmfrightn{o}{1}
+			
+			\fmf{gluon,label=$$}{v1,i1}
+			\fmf{gluon,label=$$}{o1,v2}
+
+			\fmf{gluon,left=1,tension=0.4}{v1,v2,v1}	
+			
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}

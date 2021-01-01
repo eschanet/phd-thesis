@@ -1,0 +1,20 @@
+\input{feynman_preamble}
+\begin{document}
+	\unitlength=1mm
+	\begin{fmffile}{wz_propagator_1}
+		\begin{fmfgraph*}(50,20)
+			
+%			\fmfset{wiggly_len}{1.5mm}
+			
+			\fmfleftn{i}{1}
+			\fmfrightn{o}{1}
+			
+			\fmf{boson,label=$$}{i1,v1}
+			\fmf{boson,label=$$}{v2,o1}
+
+			\fmf{dashes,label=$H$,label.side=left,left=1,tension=0.4}{v1,v2}	
+			\fmf{boson,left=1,tension=0.4}{v2,v1}	
+
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}

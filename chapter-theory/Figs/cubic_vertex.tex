@@ -1,0 +1,21 @@
+\input{feynman_preamble}
+\begin{document}
+	\unitlength=1mm
+	\begin{fmffile}{cubic_vertex_1}
+		\begin{fmfgraph*}(50,20)
+		    \fmfstraight
+		    \fmfleft{i1,i2}
+		    \fmfright{o1,w,o2}
+		    % bosons
+		    \fmf{boson}{i1,t1}
+		    \fmf{boson}{t2,i2}
+		    \fmf{phantom,tension=0.5}{t1,o1}
+		    \fmf{phantom,tension=0.5}{t2,o2}
+		    \fmffreeze
+		    % top loop
+		    \fmf{fermion,tension=1}{t1,t2,t3,t1}
+		    % boson
+		    \fmf{boson,labe=$$,tension=2.0}{t3,w}
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}

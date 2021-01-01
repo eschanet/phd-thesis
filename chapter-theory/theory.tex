@@ -117,6 +117,12 @@ From a theoretical point of view, the SM can be described by a non-Abelian Yang-
 \end{equation*}
 where $U(n)$ ($SU(n)$) describes (special) unitary groups, \ie the Lie groups of $n\times n$ unitary matrices (with determinant 1, if special). $SU(3)_C$ generates quantum chromodynamics (QCD), \ie the interaction of particles with colour charge through exchange of gluons, and $SU(2)_L \otimes U(1)_Y$ generates the electroweak interaction. Here, the subscript $Y$ represents the weak hypercharge, while the $L$ indicates that $SU(2)_L$ only couples to left-handed particles (right-handed antiparticles).
 
+\subsubsection{Feyman diagrams}
+
+Transitioning from classic field theory to quantum field theory is typically done either through canonical quantisation or through the usage of path integral formalism. Only the the simplest field theories can be solved analytically, namely those containing only free fields, without any interactions. Perturbation theory has to be used for calculating scattering cross sections and decay rates for any QFT containing interactions. Any transition matrix can then be written as a series expansion in the coupling constant, with each term represented by a Feynman diagram. 
+
+Using appropriate Feynman rules dictating the possible vertices (representing interactions between fields) and propagators (representing the propagation of fields), an infinite number of Feynman diagrams can be written down. Given the incoming and outgoing particles, all possible combinations of propagators and vertices that can be placed in between (\ie all possible Feynman diagrams) represent the full perturbation series. Only the lowest order in the series is considered at leading order (LO), the next-lowest at next-to-leading order (NLO), and so on. \unsure{is this paragraph correct?}
+
 
 \subsubsection{Gauge principle}
 \label{sec:gauge_principle}
@@ -344,7 +350,7 @@ For positive and real parameters $\mu^2$ and $\lambda$, this potential has the f
 	\braket{\Phi} = \frac{1}{\sqrt{2}}\begin{pmatrix}
 		0 \\
 		v
-	\end{pmatrix} \qquad \textrm{with} \quad v = \frac{2\mu}{\sqrt{\lambda}}.
+	\end{pmatrix} \qquad \textrm{with} \quad v = \frac{2\mu}{\sqrt{\lambda}} \approx \SI{246}{\GeV}.
 	\label{eq:higgs_vev}
 \end{equation}
 This is neither invariant under a $SU(2)_\mathrm{L}$ transformation of the form $U = \mathrm{exp}(i\alpha^a\frac{\sigma^a}{2})$, nor under a $U(1)_Y$ transformation of the form $\mathrm{exp}(i\alpha\frac{Y}{2})$, therefore the electroweak gauge symmetry is spontaneously broken; the Lagrangian has a symmetry that the vacuum does not have. It is worth noting that the $U(1)_\mathrm{em}$ gauge symmetry is not broken as the VEV of $\phi^+$ vanishes and $\phi^0$ is invariant under $U(1)_\mathrm{em}$.
@@ -390,9 +396,9 @@ Instead of expressing the Lagrangian in terms of the fields $W^a_\mu$ and $B_\mu
 \begin{align*}
 	W^\pm_\mu 	& = \frac{1}{\sqrt{2}}(W^1_\mu\mp i W^2_\mu) 				& \textrm{with} \quad m_W  & = \frac{g_2}{2}v, \\
 	Z_\mu 		& = \frac{1}{\sqrt{g_1^2+g_2^2}}(g_2W^3_\mu - g_1 B_\mu) 	& \textrm{with} \quad m_Z  & = \frac{\sqrt{g_1^2+g_2^2}}{2}v, \\
-	Z_\mu 		& = \frac{1}{\sqrt{g_1^2+g_2^2}}(g_1W^3_\mu + g_2 B_\mu) 	& \textrm{with} \quad m_A  & = 0.
+	A_\mu 		& = \frac{1}{\sqrt{g_1^2+g_2^2}}(g_1W^3_\mu + g_2 B_\mu) 	& \textrm{with} \quad m_A  & = 0.
 \end{align*}
-The change of basis from $(W^3_\mu, B_\mu)$ to $(Z_\mu,A_\mu)$~\cite{Peskin:1995ev} can also be written as a basis rotation with the weak mixing angle $\theta_W$
+It is worth noting, that the massless photon field $A_\mu$ associated with the electromagnetic $U(1)_\mathrm{em}$ gauge symmetry is automatically recovered. The change of basis from $(W^3_\mu, B_\mu)$ to $(Z_\mu,A_\mu)$~\cite{Peskin:1995ev} can also be written as a basis rotation with the weak mixing angle $\theta_W$
 \begin{equation}
 	\begin{pmatrix}
 		Z_\mu \\
@@ -416,9 +422,64 @@ where $\lambda_f$ with $f = \ell,d,u$ are the dimensionless Yukawa couplings and
  	\Lagr_\mathrm{Yukawa, gen} = - \sum_{f=\ell,d,u}{\left(m_f\bar{\psi}_f\psi_f + \frac{m_f}{v}H\bar{\psi}_f\psi_f\right)} \qquad \textrm{with} \quad m_f = \frac{1}{\sqrt{2}}\lambda_f v.
 \end{equation}
 When introducing all three fermion generations, additional Yukawa terms mixing fermions of different generations appear in the Lagrangian. The terms involving quark fields can be parametrised using the Cabibbo–Kobayashi–Maskaw (CKM) matrix $V_\mathrm{CKM}$~\cite{PhysRevLett.10.531,CKM:1973fv}, quantifying the transition probability between quark generations. Since no right-handed neutrinos exist in the SM, no generation mixing in the lepton sector occurs and hence no neutrino mass terms are allowed in the SM. Neutrino oscillations have however been observed experimentally, thus at least one massive neutrino generation needs to exist. Their mixing can then be described with the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix~\cite{PMNS:1962mu}, allowing neutrinos to acquire mass \eg through the see-saw mechanism~\cite{Brdar:2019iem}.
-
  
 \subsection{Renormalisation and divergencies}
 \label{ch:renormalisation}
 
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.85\textwidth]{gluon_loop}
+		\caption{\label{fig:gluon_loop}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.85\textwidth]{wz_propagator}
+		\caption{\label{fig:wz_propagator}}
+	\end{subfigure}	
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=0.85\textwidth]{cubic_vertex}
+		\caption{\label{fig:cubic_vertex}}
+	\end{subfigure}
+	\label{fig:loop_corrections}
+	\caption{Examples of loops corrections to (a) the gluon propagator, (b) the $W$ or $Z$ propagator and (c) the cubic gauge boson vertex.}
+\end{figure}
+
+At lowest order in the perturbative expansion, the momenta of the internal lines in the Feynman diagrams are fixed by the external particles. For higher orders where the diagrams involve loops, the momenta of the internal lines need to be integrated over as they are not fixed by energy-momentum conservation. Some examples of loop corrections to propagators and vertices are shown in \cref{fig:loop_corrections}. As each vertex in the Feynman diagrams is associated with a coupling constant that is usually smaller than 1 (apart from the non-perturbative regime of QCD), higher orders in the perturbative expansion contribute less and less to the total amplitude of the full expansion.
+
+The momentum integrals in loop corrections however lead to \textit{ultraviolet divergencies} for large momenta. In order to eliminate the divergencies, the integrals have to be \textit{regularised}, \eg by applying a cut-off scale $\Lambda$ or calculating the integrals in a number $D = 4-\epsilon$ of dimensions where they converge. The potential divergencies are then absorbed in parameters of the Lagrangian, such as coupling constants and masses, after which the regulator is removed (\eg $\epsilon\rightarrow 0$) again and a \textit{renormalisation} procedure is applied, replacing the bare parameter values with the physical, measured values. 
+
+Renormalisation effectively absorbs the effects of quantum fluctuations acting on much smaller scales than the scale of the given problem in the parameters of the theory.
+
+
 \section{Supersymmetry}
+
+The following section introduces the concept of Supersymmetry (SUSY), a promising class of theories extending the SM and solving some of its shortcomings. First, a motivation for the need of SUSY is given by highlighting some of the open questions of the SM, followed by an introduction to the mathematical description and phenomenological consequences of supersymmetric theories. This section is intended to highlight the most important concepts and relations, a complete and detailed introduction to SUSY can \eg be found in~\cite{Martin:1997ns}.
+
+\subsubsection{The Hierarchy Problem}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=0.85\textwidth]{fermion_loop}
+		\caption{\label{fig:fermion_loop}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=0.85\textwidth]{scalar_loop}
+		\caption{\label{fig:scal_loop}}
+	\end{subfigure}	
+	\caption{A massive fermion \subref{fig:fermion_loop} and a hypothetical massive scalar particle \subref{fig:scal_loop} coupling to the Higgs boson.}
+\end{figure}
+
+
+
+\begin{align}
+	\Delta m_H^2 = -\frac{\lvert\lambda_f\rvert^2}{8\pi^2} \Lambda^2_{UV} + \dots\, .
+	\label{eq:fermion_correction}
+\end{align}
+Similarly, a one-loop correction due to the coupling to a hypothetical heavy complex scalar particle $S$ with mass $m_S$~\cite{Martin:1997ns} as in \cref{fig:scal_loop} is given by
+\begin{align}
+	\Delta m_H^2 = \frac{\lambda_S}{16\pi^2}\left[\Lambda^2_{UV} + 2m_S^2\log\left(\Lambda_{UV}/m_S\right)+ \dots\right].
+	\label{eq:scalar_correction}
+\end{align}
+
+
