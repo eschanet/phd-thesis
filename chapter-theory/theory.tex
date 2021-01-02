@@ -526,6 +526,8 @@ In the SM, the coupling constants run towards each other with increasing energy 
 
 \subsubsection{The Hierarchy Problem}
 
+As the SM is a renormalizable gauge theory, finite results are obtained for all higher-order loop corrections, making the SM a theory that is well-defined up to infinite energies. In renormalisation terms, this means that the cut-off scale $\Lambda$ is theoretically allowed to go to infinity. It is however clear, that the SM cannot be a complete theory of nature and that at some unknown high-energy scale $\Lambda$, \textit{new physics} has to appear. At the very least, a new theoretical framework becomes necessary at the Planck scale $M_P \approx \SI{e18}{\GeV}$ ~\cite{Martin:1997ns}, where quantum gravitational effects can no longer be ignored.
+
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
@@ -536,22 +538,30 @@ In the SM, the coupling constants run towards each other with increasing energy 
 		\centering\includegraphics[width=0.85\textwidth]{scalar_loop}
 		\caption{\label{fig:scal_loop}}
 	\end{subfigure}	
-	\caption{A massive fermion \subref{fig:fermion_loop} and a hypothetical massive scalar particle \subref{fig:scal_loop} coupling to the Higgs boson.}
+	\caption{A massive fermion \subref{fig:fermion_loop} and a hypothetical massive scalar particle \subref{fig:scal_loop} coupling to the Higgs boson.}\label{fig:loop_corrections_higgs}
 \end{figure}
 
-
-
+The mass parameters of fermions and massive vector bosons are protected from large quantum corrections by chiral symmetry and gauge symmetry, respectively~\cite{Aitchison:2007fn}. The mass parameter of the scalar Higgs field, on the other hand, gets loop corrections proportional at least to the scale at which new physics sets in. The coupling of the Higgs field to a fermion $f$ with mass $m_f$, depicted in \cref{fig:fermion_loop}, yields a one-loop correction term to the Higgs square mass~\cite{Martin:1997ns} given by
 \begin{align}
-	\Delta m_H^2 = -\frac{\lvert\lambda_f\rvert^2}{8\pi^2} \Lambda^2_{UV} + \dots\, .
+	\Delta m_H^2 = -\frac{\lvert\lambda_f\rvert^2}{8\pi^2} \Lambda^2 + \dots\, .
 	\label{eq:fermion_correction}
 \end{align}
-Similarly, a one-loop correction due to the coupling to a hypothetical heavy complex scalar particle $S$ with mass $m_S$~\cite{Martin:1997ns} as in \cref{fig:scal_loop} is given by
+Thus, in order to obtain the relative low value of the Higgs mass in the order of $\SI{e2}{\GeV}$, the quantum corrections to the bare Higgs parameter have to be tuned in such a way that they almost cancel.  Hence, if there is \textit{any} scale of new physics even only several orders of magnitude higher than the electroweak scale, the large quantum corrections to the Higgs mass immediately lead to a \textit{fine-tuning} problem that is considered to be unnatural.
+
+In SUSY, the Higgs mass is automatically protected from the large quantum corrections by the introduction of two complex scalar partners to each SM fermion. The quantum corrections from the a hypothetical heavy complex scalar particle $S$ with mass $m_S$ as in \cref{fig:scal_loop} yields a one-loop correction~\cite{Martin:1997ns} given by 
 \begin{align}
-	\Delta m_H^2 = \frac{\lambda_S}{16\pi^2}\left[\Lambda^2_{UV} + 2m_S^2\log\left(\Lambda_{UV}/m_S\right)+ \dots\right].
+	\Delta m_H^2 = \frac{\lambda_S}{16\pi^2}\left[\Lambda^2 + 2m_S^2\log\left(\Lambda/m_S\right)+ \dots\right].
 	\label{eq:scalar_correction}
 \end{align}
+Interestingly, the corrections in \cref{eq:fermion_correction} and \cref{eq:scalar_correction} enter with opposite signs. Thus, if $\lambda_S = \vert\lambda_f\vert^2$, then the large quantum corrections neatly cancel and no excessive fine-tuning is needed. The requirement $\lambda_S = \vert\lambda_f\vert^2$ means that the fermions and their supersymmetric bosonic partners would have same masses. Such particles would have been discovered long ago in particle physics experiments, meaning that SUSY must be a broken symmetry (see \cref{sec:susy_breaking}) such that the supersymmetric particles acquire masses well above their SM partners. 
+
+
+
+
 
 \subsubsection{Anomalous moment of the muon}
 
 
 \subsubsection{R-parity}\label{sec:rparity}
+
+\subsubsection{Supersymmetry breaking}\label{sec:susy_breaking}
