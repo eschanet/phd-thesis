@@ -499,7 +499,7 @@ The following section introduces the concept of Supersymmetry (SUSY), a promisin
 
 \subsection{Shortcomings of the SM}
 
-
+Although the SM is a wildly successful theory able to predict and describe the interactions between elementary particles with unprecedented precision, there are still phenomena in nature that cannot be suitable understood with the SM. Those limitations and open questions are the reason for numerous searches looking for new physics beyond the Standard Model (BSM). Some of these open questions are described in the following. 
 
 \subsubsection{Dark Matter}
 
@@ -558,7 +558,46 @@ Interestingly, the corrections in \cref{eq:fermion_correction} and \cref{eq:scal
 
 \subsubsection{Anomalous magnetic moment of the muon}
 
-One of the longest standing disagreements between experiment and theory in the SM is the anomalous magnetic moment of the muon. 
+One of the longest standing disagreements between experiment and theory in the SM is the anomalous magnetic moment of the muon. The magnetic moment of the muon $\vec{\mu}_\mu$ is related to its intrinsic spin $\vec{S}$ through the gyromagnetic ratio $g_\mu$ by
+\begin{equation}
+	\vec{\mu}_\mu = g_\mu \frac{q}{2m} \vec{S}.
+\end{equation}
+For a structureless spin-1/2 particle with mass $m$ and charge $q=\pm e$, the gyromagnetic ratio is $g_\mu = 2$~\cite{Bennett:2006fi}. Loop corrections coupling the muon spin to virtual fields cause small deviations, parameterised by the anomalous magnetic moment
+\begin{equation}
+	a_\mu = \frac{1}{2}(g_\mu-2).
+\end{equation}
+The anomalous magnetic moment can be precisely measured as well as predicted within the SM, a comparison between experimental data and theoretical prediction thus directly tests the SM at quantum loop level and may hint to effects from new physics in case of discrepancies~\cite{baer_tata_2006}. In the SM, the most dominant contribution to $a_\mu$ comes from QED corrections involving photon and fermion loops. An exemplary diagram is shown in \cref{fig:qed_anomalous_moment}. Weak contributions involving the heavy $W^\pm$, $Z$ and Higgs particles are relatively suppressed due to their mass~\cite{pdg2020}. Although the contributions from QCD are relatively small, they give rise to the main theoretical uncertainties as they are not calculable from first principles~\cite{pdg2020}.
+
+The E821 experiment at Brookhaven National Lab (BNL)~\cite{Bennett:2006fi} has measured the anomalous magnetic moment of the muon and found a deviation from the SM expectation of
+\begin{equation}
+	\Delta a_\mu = a^\mathrm{exp}_\mu - a^\mathrm{SM}_\mu = 261(63)(48)\times 10^{-11},
+\end{equation}
+where the numbers in parentheses are the uncertainties from experiment and theory, respectively. This represents a deviation of $3.3\sigma$~\cite{pdg2020} from the SM expectation. 
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.245\linewidth}
+		\centering\includegraphics[width=0.9\textwidth]{qed_anomalous_moment}
+		\caption{\label{fig:qed_anomalous_moment}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.245\linewidth}
+		\centering\includegraphics[width=0.9\textwidth]{qed_anomalous_moment}
+		\caption{\label{fig:qcd_anomalous_moment}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.245\linewidth}
+		\centering\includegraphics[width=0.9\textwidth]{qed_anomalous_moment}
+		\caption{\label{fig:susy_anomalous_moment_1}}
+	\end{subfigure}	
+	\begin{subfigure}[b]{0.245\linewidth}
+		\centering\includegraphics[width=0.9\textwidth]{qed_anomalous_moment}
+		\caption{\label{fig:susy_anomalous_moment_2}}
+	\end{subfigure}	
+	\caption{A massive fermion \subref{fig:fermion_loop} and a hypothetical massive scalar particle \subref{fig:scal_loop} coupling to the Higgs boson.}\label{fig:loop_corrections_higgs}
+\end{figure}
+
+In SUSY, additional Feynman diagrams exist involving the supersymmetric partners of the muon, the muon neutrino and the electroweak gauge bosons, and thus the measured deviation in $a_\mu$ can easily be accommodated in many supersymmetric models~\cite{Czarnecki:2001pv,Feng:2001tr}. Exemplary lowest-order diagrams involving supersymmetric particles are shown in \cref{fig:susy_anomalous_moment_1,fig:susy_anomalous_moment_2}.
+
+
 
 \subsubsection{R-parity}\label{sec:rparity}
 

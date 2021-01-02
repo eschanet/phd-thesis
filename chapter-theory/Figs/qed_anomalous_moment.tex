@@ -1,0 +1,27 @@
+\documentclass[class=minimal,border={10pt 15pt 10pt 15pt}]{standalone}
+\usepackage[force]{feynmp-auto}
+\usepackage{xcolor}
+\begin{document}
+	\unitlength=0.65mm
+	\begin{fmffile}{qed_anomalous_moment_1}
+		  \begin{fmfgraph*}(70,50)
+		    % Define two vertices on the left, but only `i2' will be actually used.
+		    \fmfleft{i1,i2}
+		    % The same on the right.
+		    \fmfright{o1,o2}
+		    % Define the vertex for the blob.
+		    \fmftop{b}
+		    \fmf{fermion,label=$$,label.side=left,tension=1.0}{i1,v1}
+		    \fmf{fermion,label=$$,label.side=left,tension=1.0}{v2,o1}
+		    \fmf{photon, tension=1}{v3,b} 
+%		    \fmfblob{.15w}{b}
+		    \fmf{fermion,label=$$,label.side=left,tension=0.45}{v1,v3}
+		    \fmf{fermion,label=$$,label.side=left,tension=0.45}{v3,v2}
+		    \fmf{photon, label=$\gamma$,tension=0.45}{v1,v2} 
+		    % Labels on vertices.
+		    \fmflabel{$\mu$}{i1}
+		    \fmflabel{$\mu$}{o1}
+		  	\fmflabel{$\gamma$}{b}
+		  \end{fmfgraph*}
+	\end{fmffile}
+\end{document}
