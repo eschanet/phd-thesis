@@ -596,11 +596,47 @@ where the numbers in parentheses are the uncertainties from experiment and theor
 In SUSY, additional Feynman diagrams exist involving the supersymmetric partners of the muon, the muon neutrino and the electroweak gauge bosons, and thus the measured deviation in $a_\mu$ can easily be accommodated in many supersymmetric models~\cite{Czarnecki:2001pv,Feng:2001tr}. Two exemplary lowest-order diagrams involving supersymmetric particles is shown in \cref{fig:susy_anomalous_moment_1,fig:susy_anomalous_moment_2}.
 
 
-\subsection{Mathematical description}\label{sec:susy_mathematical_description}
+\subsection{Supersymmetric Algebra}\label{sec:susy_algebra}
 
-A generator of supersymmetric transformations is an operator that turns fermionic states $\ket{f}$ into bosonic states $\ket{b}$ and vice-versa.
+A generator of supersymmetric transformations is an anti-commuting spinor $Q$ that turns fermionic states $\ket{f}$ into bosonic states $\ket{b}$ and vice-versa.
+\begin{equation}
+	Q\ket{f} = \ket{b}, \qquad \qquad \qquad Q\ket{b}=\ket{f}.
+\end{equation}
+As spinors are complex objects, $Q^\dagger$ is also a symmetry operator. Both $Q$ and $Q^\dagger$ are necessarily fermionic and thus must carry half-integer spin, in the simplest case spin-1/2, meaning that SUSY must be a spacetime symmetry, \ie a Poincaré symmetry. The Coleman-Mandula theorem~\cite{PhysRev.159.1251} dictates that the symmetry group generating a consistent spacetime quantum field theory must be the direct product of the internal symmetry group with the Poincaré group, which in principle rules out the possibility for SUSY. The Haag-Lopuszanski-Sohnius extension~\cite{Haag:1974qh} however states that the only possible way of non-trivially combining internal and spacetime symmetry groups is to use a Lie superalgebra and fermionic spin-1/2 generators. Thus, in order to obey the Haag-Lopuszanski-Sohnius theorem and simultaneously allow for parity-violating interactions, the SUSY generators have to satisfy the following algebra of commutation and anti-commutation relations~\cite{Bustamante:2009us}.
+\begin{equation}
+\begin{split}
+	\{ Q,Q^\dagger \} & \quad = \quad  2\sigma_\mu P^\mu,\\
+	\{ Q,Q \} &  \quad = \quad \{ Q^\dagger,Q^\dagger \} = 0, \\
+	\left[P^\mu,Q \right] &  \quad = \quad \left[ P^\mu,Q^\dagger \right] = 0, \\
+	\{ M_{\mu\nu}, Q \} & \quad = \quad \sigma_{\mu\nu} Q,\\
+	\{ M_{\mu\nu},Q^\dagger \} & \quad = \quad \bar{\sigma}_{\mu\nu} Q^\dagger,
+  \label{eq:commute}
+\end{split}
+\end{equation}
+where $P^\mu$ is the four-momentum generator of spacetime translations, $\sigma_\mu = (\mathbb{1}_2,\sigma_i)$, $\bar{\sigma}_\mu = (\mathbb{1}_2,-\sigma_i)$ with $i=1,2,3$ and the Pauli matrices $\sigma_i$, and $\sigma_{\mu\nu} = \frac{i}{4}(\sigma_\mu\bar{\sigma}_\nu - \sigma_\nu\bar{\sigma}_\mu)$ as well as $\bar{\sigma}_{\mu\nu} = \frac{i}{4}(\bar{\sigma}_\mu\sigma_\nu - \bar{\sigma}_\nu\sigma_\mu)$. This is the simplest version of SUSY, called $N=1$ symmetry, as it introduces only one pair of generators. Supersymmetric theories with $N\geq 2$ pairs of generators also exist and generally have some theoretical advantages as \eg fewer divergencies in the case of $N=2$ or even no divergencies at all in the case of $N=4$~\cite{Bustamante:2009us}. SUSY models with $N\geq 2$ however do not allow for parity violation and thus fail to describe the physics of the SM, disqualifying them from an experimental point of view~\cite{Bustamante:2009us}.
+
+As both SUSY generators commute with spacetime translations (see \cref{eq:commute}), they also both commute with the squared mass operator $-P^2$. Consequently, particles related by the generators, called \textit{superpartners}, must have equal eigenvalues under $-P^2$, \ie equal masses. Furthermore, the SUSY generators also commute with the gauge transformation generators, hence superpartners must have same electric charge, weak isospin and degrees of freedom in colour space~\cite{Martin:1997ns}.\improvement{Mention link to gravity}
+
+
+\subsection{Supermultiplets}
+
+The SM and SUSY particles are arranged in irreducible representations of the SUSY algebra, called \textit{supermultiplets}, that each contain both fermionic and bosonic states, that are superpartners of each other. It can be shown that each supermultiplet has an equal number of fermion and boson degrees of freedom, $n_f = n_b$~\cite{Martin:1997ns}.
+
+The simplest supermultiplet that can be constructed contains a single Weyl fermion and two real scalars, described by a single complex field, called the \textit{sfermion}. The Weyl fermion has two spin helicity states, hence $n_f=2$, and the complex scalar field has two components with $n_b=1$ each. An additional complex scalar field $F$, called \textit{auxiliary field} and not corresponding to a physical particle, has to be introduced in order to allow the SUSY algebra to close off-shell~\cite{Martin:1997ns}. Being a pure bookkeeping device, the auxiliary field does not propagate and can be eliminated on-shell with the equations of motion $F=F^*=0$. This supermultiplet is called a \textit{chiral} or \textit{scalar} supermultiplet. 
+
+The next-simplest supermultiplet for which $n_f = n_b$ holds, is the \textit{vector} or \textit{gauge} supermultiplet containing a spin-1 vector boson. In order for the theory to be renormalizable, this gauge boson must be massless before spontaneous breaking of the symmetry. As a massless spin-1 boson has two helicity states, $n_b = 2$, the superpartner, called \textit{gaugino}, must be a massless spin-1/2 Weyl fermion with two helicity states, $n_f = 2$~\cite{Martin:1997ns}. An auxiliary real bosonic field $D^a$ (with $a$ the index of the gauge group) is needed in order to balance the degrees of freedom off-shell~\cite{Bustamante:2009us}. Like the chiral auxiliary field, the gauge auxiliary field does not correspond to a physical particle and can be eliminated on-shell through its equations of motion~\cite{Martin:1997ns}.
+
+\subsection{Supersymmetric Lagrangian}
+
+\subsection{The Minimal Supersymmetric Standard Model}
+
+\subsection{Soft supersymmetry breaking}\label{sec:susy_breaking}
+
+As stated in \cref{sec:susy_algebra}, all superpartners must have same quantum numbers apart from their spin. They especially also should have same masses, however such particles would have been discovered a long time ago and thus SUSY must be broken. The exact breaking mechanism is still an open question.
 
 
 \subsection{R-parity}\label{sec:rparity}
 
-\subsection{Supersymmetry breaking}\label{sec:susy_breaking}
+\subsection{The phenomenological MSSM}
+
+\subsection{Simplified models}
