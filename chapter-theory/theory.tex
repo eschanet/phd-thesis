@@ -490,7 +490,7 @@ When introducing all three fermion generations, additional Yukawa terms mixing f
 At lowest order in the perturbative expansion, the momenta of the internal lines in the Feynman diagrams are fixed by the external particles. For higher orders where the diagrams involve loops, the momenta of the internal lines need to be integrated over as they are not fixed by energy-momentum conservation. Some examples of loop corrections to propagators and vertices are shown in \cref{fig:loop_corrections}. As each vertex in the Feynman diagrams is associated with a coupling constant that is usually smaller than 1 (apart from the non-perturbative regime of QCD), higher orders in the perturbative expansion contribute less and less to the total amplitude of the full expansion.
 
 The momentum integrals in loop corrections however lead to \textit{ultraviolet divergencies} for large momenta. In order to eliminate the divergencies, the integrals have to be \textit{regularised}, \eg by applying a cut-off scale $\Lambda$ or calculating the integrals in a number $D = 4-\epsilon$ of dimensions where they converge. The potential divergencies are then absorbed in parameters of the Lagrangian, such as coupling constants and masses, after which the regulator is removed (\eg $\epsilon\rightarrow 0$) again and a \textit{renormalisation} procedure is applied, replacing the bare parameter values with the physical, measured values. Renormalisation effectively absorbs the effects of quantum fluctuations acting on much smaller scales than the scale of the given problem in the parameters of the theory.
-
+\improvement{Mass dimension needs to be < 4}
 As Veltmann and t'Hooft~\cite{THOOFT1972189,THOOFT1971173} have shown in the early 1970s, all Yang-Mills theories with massive gauge fields are renormalizable, making the SM as a whole a renormalizable theory.  
 
 \section{Supersymmetry}
@@ -608,26 +608,73 @@ As spinors are complex objects, $Q^\dagger$ is also a symmetry operator. Both $Q
 	\{ Q,Q^\dagger \} & \quad = \quad  2\sigma_\mu P^\mu,\\
 	\{ Q,Q \} &  \quad = \quad \{ Q^\dagger,Q^\dagger \} = 0, \\
 	\left[P^\mu,Q \right] &  \quad = \quad \left[ P^\mu,Q^\dagger \right] = 0, \\
-	\{ M_{\mu\nu}, Q \} & \quad = \quad \sigma_{\mu\nu} Q,\\
-	\{ M_{\mu\nu},Q^\dagger \} & \quad = \quad \bar{\sigma}_{\mu\nu} Q^\dagger,
+	\{ M^{\mu\nu}, Q \} & \quad = \quad \sigma^{\mu\nu} Q,\\
+	\{ M^{\mu\nu},Q^\dagger \} & \quad = \quad \bar{\sigma}^{\mu\nu} Q^\dagger,
   \label{eq:commute}
 \end{split}
 \end{equation}
-where $P^\mu$ is the four-momentum generator of spacetime translations, $\sigma_\mu = (\mathbb{1}_2,\sigma_i)$, $\bar{\sigma}_\mu = (\mathbb{1}_2,-\sigma_i)$ with $i=1,2,3$ and the Pauli matrices $\sigma_i$, and $\sigma_{\mu\nu} = \frac{i}{4}(\sigma_\mu\bar{\sigma}_\nu - \sigma_\nu\bar{\sigma}_\mu)$ as well as $\bar{\sigma}_{\mu\nu} = \frac{i}{4}(\bar{\sigma}_\mu\sigma_\nu - \bar{\sigma}_\nu\sigma_\mu)$. This is the simplest version of SUSY, called $N=1$ symmetry, as it introduces only one pair of generators. Supersymmetric theories with $N\geq 2$ pairs of generators also exist and generally have some theoretical advantages as \eg fewer divergencies in the case of $N=2$ or even no divergencies at all in the case of $N=4$~\cite{Bustamante:2009us}. SUSY models with $N\geq 2$ however do not allow for parity violation and thus fail to describe the physics of the SM, disqualifying them from an experimental point of view~\cite{Bustamante:2009us}.
+where $P^\mu$ is the four-momentum generator of spacetime translations, $\sigma_\mu = (\mathbb{1}_2,\sigma_i)$, $\bar{\sigma}_\mu = (\mathbb{1}_2,-\sigma_i)$ with $i=1,2,3$ and the Pauli matrices $\sigma_i$, and $\sigma^{\mu\nu} = \frac{i}{4}(\sigma^\mu\bar{\sigma}^\nu - \sigma^\nu\bar{\sigma}^\mu)$ as well as $\bar{\sigma}^{\mu\nu} = \frac{i}{4}(\bar{\sigma}^\mu\sigma^\nu - \bar{\sigma}^\nu\sigma^\mu)$. This is the simplest version of SUSY, called $N=1$ symmetry, as it introduces only one pair of generators. Supersymmetric theories with $N\geq 2$ pairs of generators also exist and generally have some theoretical advantages as \eg fewer divergencies in the case of $N=2$ or even no divergencies at all in the case of $N=4$~\cite{Bustamante:2009us}. SUSY models with $N\geq 2$ however do not allow for parity violation and thus fail to describe the physics of the SM, disqualifying them from an experimental point of view~\cite{Bustamante:2009us}.
 
 As both SUSY generators commute with spacetime translations (see \cref{eq:commute}), they also both commute with the squared mass operator $-P^2$. Consequently, particles related by the generators, called \textit{superpartners}, must have equal eigenvalues under $-P^2$, \ie equal masses. Furthermore, the SUSY generators also commute with the gauge transformation generators, hence superpartners must have same electric charge, weak isospin and degrees of freedom in colour space~\cite{Martin:1997ns}.\improvement{Mention link to gravity}
 
 
-\subsection{Supermultiplets}
+\subsection{Supermultiplets}\label{sec:supermultiplets}
 
 The SM and SUSY particles are arranged in irreducible representations of the SUSY algebra, called \textit{supermultiplets}, that each contain both fermionic and bosonic states, that are superpartners of each other. It can be shown that each supermultiplet has an equal number of fermion and boson degrees of freedom, $n_f = n_b$~\cite{Martin:1997ns}.
 
-The simplest supermultiplet that can be constructed contains a single Weyl fermion and two real scalars, described by a single complex field, called the \textit{sfermion}. The Weyl fermion has two spin helicity states, hence $n_f=2$, and the complex scalar field has two components with $n_b=1$ each. An additional complex scalar field $F$, called \textit{auxiliary field} and not corresponding to a physical particle, has to be introduced in order to allow the SUSY algebra to close off-shell~\cite{Martin:1997ns}. Being a pure bookkeeping device, the auxiliary field does not propagate and can be eliminated on-shell with the equations of motion $F=F^*=0$. This supermultiplet is called a \textit{chiral} or \textit{scalar} supermultiplet. 
+The simplest supermultiplet $\Psi$ that can be constructed contains a single Weyl fermion $psi$ and two real scalars, described by a single complex field $phi$, called the \textit{sfermion}. The Weyl fermion has two spin helicity states, hence $n_f=2$, and the complex scalar field has two components with $n_b=1$ each. An additional complex scalar field $F$, called \textit{auxiliary field} and not corresponding to a physical particle, has to be introduced in order to allow the SUSY algebra to close off-shell~\cite{Martin:1997ns}. The supermultiplet $\Psi$ thus reads
+\begin{equation}
+	\Psi = (\phi,\psi,F).
+\end{equation}
+Being a pure bookkeeping device, the auxiliary field does not propagate and can be eliminated on-shell with the equations of motion $F=F^*=0$. This supermultiplet is called a \textit{chiral} or \textit{scalar} supermultiplet. 
 
-The next-simplest supermultiplet for which $n_f = n_b$ holds, is the \textit{vector} or \textit{gauge} supermultiplet containing a spin-1 vector boson. In order for the theory to be renormalizable, this gauge boson must be massless before spontaneous breaking of the symmetry. As a massless spin-1 boson has two helicity states, $n_b = 2$, the superpartner, called \textit{gaugino}, must be a massless spin-1/2 Weyl fermion with two helicity states, $n_f = 2$~\cite{Martin:1997ns}. An auxiliary real bosonic field $D^a$ (with $a$ the index of the gauge group) is needed in order to balance the degrees of freedom off-shell~\cite{Bustamante:2009us}. Like the chiral auxiliary field, the gauge auxiliary field does not correspond to a physical particle and can be eliminated on-shell through its equations of motion~\cite{Martin:1997ns}.
+The next-simplest supermultiplet for which $n_f = n_b$ holds, is the \textit{vector} or \textit{gauge} supermultiplet $\Phi$ containing a spin-1 gauge boson $A^\mu_a$, where $a$ is the index of the gauge group. In order for the theory to be renormalizable, this gauge boson must be massless before spontaneous breaking of the symmetry. As a massless spin-1 boson has two helicity states, $n_b = 2$, the superpartner, called \textit{gaugino}, must be a massless spin-1/2 Weyl fermion $\lambda_a$ with two helicity states, $n_f = 2$~\cite{Martin:1997ns}. An auxiliary real bosonic field $D_a$ is needed in order to balance the degrees of freedom off-shell~\cite{Bustamante:2009us}, completing the supermultiplet to be
+\begin{equation}
+	\Phi = (\lambda_a,A^\mu_a,D_a).
+\end{equation}
+ Like the chiral auxiliary field, the gauge auxiliary field does not correspond to a physical particle and can be eliminated on-shell through its equations of motion~\cite{Martin:1997ns}.
 
 \subsection{Supersymmetric Lagrangian}
 
+The simplest supersymmetric model that can be shown to realise the superalgebra is the massless, non-interacting Wess-Zumino model~\cite{WESS197439,Martin:1997ns}, given by 
+\begin{equation}
+\begin{split}
+	\Lagr_\mathrm{free} & = \Lagr_\mathrm{scalar} + \Lagr_\mathrm{fermion} \\
+	& = \partial^\mu\phi^*\partial_\mu\phi + i\psi^\dagger\bar{\sigma}^\mu\partial_\mu\psi,
+\end{split}
+\end{equation}
+with a massless complex scalar $\phi$ and a spin-1/2 fermion $\psi$, corresponding to a single chiral supermultiplet. As discussed in \cref{sec:supermultiplets}, in order for this Lagrangian to satisfy the supersymmetry off-shell where the equations of motion cannot be used, an auxiliary complex scalar field $F$ has to be added. For a collection of $i$ chiral supermultiplets, the free Lagrangian reads
+\begin{equation}
+\begin{split}
+	\Lagr_\mathrm{free} & = \Lagr_\mathrm{scalar} + \Lagr_\mathrm{fermion} + \Lagr_\mathrm{aux} \\
+	 & = \partial^\mu\phi^{*i}\partial_\mu\phi_i + i\psi^{\dagger i}\bar{\sigma}^\mu\partial_\mu\psi_i + F^*iF_i,
+\end{split}
+\end{equation} 
+where the repreated indices $i$ are summed over. The auxiliary Lagrangian term $\Lagr_\mathrm{aux}$ implies the trivial equations of motion $F = F^* = 0$ which are needed to remove the auxiliary field in the on-shell case. The next step involves adding terms for non-gauge interactions for the chiral supermultiplets  It can be shown that the most general non-gauge interactions for chiral supermultiplets are determined by a holomorphic\footnote{A holomorphic function is a complex-valued function in one or more complex variables that is complex differentiable in a neighbourhood for every point of its domain.} function of the complex scalar fields, called the \textit{superpotential} $W$~\cite{Martin:1997ns, Bustamante:2009us}, which reads
+\begin{equation}
+	W = \frac{1}{2}m^{ij}\phi_i \phi_j + \frac{1}{6}y^{ijk}\phi_i \phi_j \phi_k,
+\end{equation}
+with $y^{ij}$ the Yukawa couplings between the scalars and fermions. The superpotential can at most be cubic in order for the final Lagrangian to be renormalizable~\cite{Bustamante:2009us}. The requirement that the interaction part of the Lagrangian be invariant under supersymmetry transformations further defines the potential $V$. The equations of motions of the auxiliary fields $F$ can be written as
+\begin{equation}
+	F_i = \frac{\partial W(\phi)}{\partial \phi^i} = - W^*_i, \qquad F^{*i} = - \frac{\partial W(\phi)}{\partial \phi_i} = - W^i,
+\end{equation} 
+which thus yields for the potential $V = W^*_iW^i = F_iF^{*i}$. The full Lagrangian of the Wess-Zumino model with general chiral interactions for $i$ chiral supermultiplets is then given~\cite{Martin:1997ns} by
+\begin{equation}
+	\Lagr = \partial^\mu\phi^{*i}\partial_\mu\phi_i + i\psi^{\dagger i}\bar{\sigma}^\mu\partial_\mu\psi_i + \frac{1}{2} m^{ij}\psi_i \psi_j + \frac{1}{2} m_{ij}^* \psi^{\dagger i} \psi^{\dagger j} + \frac{1}{2} y^{ijk} \phi_i \psi_j \psi_k + \frac{1}{2} y^*_{ijk} \phi^{*i} \psi^{\dagger j} \psi^{\dagger k} + V.
+	\label{eq:wess_zumino_lagrangian}
+\end{equation}
+The Lagrangian in \cref{eq:wess_zumino_lagrangian} immediately reveals that, as expected by supersymmetry, the masses of the fermions and bosons in the same supermultiplet are identical. In order to incorporate gauge supermultiplets and consider the interactions between fermions and gauge bosons observed in the SM, the usual minimal coupling rule has to be applied, replacing $\partial_\mu$ with $\codiff_\mu$. This leads to equation of motions for the auxiliary fields $D^a$
+\begin{equation}
+	D^a = -g(\phi^*T^a\phi),
+\end{equation}
+where $T^a$ are the generators of the gauge group and $g$ is the coupling constant~\cite{Martin:1997ns}. The potential then becomes
+\begin{equation}
+	V = F^{*i}F_i + \frac{1}{2} \sum_a{D^aD^a} = W^*_iW^i + \frac{1}{2}\sum_a{g^2_a(\phi^*T^a\phi)^2} ,
+\end{equation}
+where $a$ runs over the gauge groups that in general have different gauge couplings~\cite{Martin:1997ns,Bustamante:2009us}.
+
+
+ 
 \subsection{The Minimal Supersymmetric Standard Model}
 
 \subsection{Soft supersymmetry breaking}\label{sec:susy_breaking}
