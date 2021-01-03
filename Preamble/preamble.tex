@@ -252,8 +252,10 @@
 \usepackage{tikz}
 \usepackage{pdflscape}
 \usepackage{xargs}                      % Use more than one optional parameter in a new commands
-\usepackage[force]{feynmp-auto}
-\usepackage{floatrow}
+
+% package for displaying captions on weird places
+\RequirePackage{floatrow}
+\floatsetup[table]{capposition=above}
 
 % Select what to do with todonotes: 
 % \usepackage[disable]{todonotes} % notes not showed

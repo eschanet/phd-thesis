@@ -590,7 +590,7 @@ where the numbers in parentheses are the uncertainties from experiment and theor
 		\centering\includegraphics[width=1.0\textwidth]{susy_anomalous_moment_2}
 		\caption{\label{fig:susy_anomalous_moment_2}}
 	\end{subfigure}	
-	\caption{Electromagnetic \subref{fig:qed_anomalous_moment} and supersymmetric \subref{fig:susy_anomalous_moment_1}, \subref{fig:susy_anomalous_moment_2} contributions to $a_\mu$.}\label{fig:loop_corrections_anomalous_moment}
+	\caption{Electromagnetic \subref{fig:qed_anomalous_moment} and supersymmetric \subref{fig:susy_anomalous_moment_1}, \subref{fig:susy_anomalous_moment_2} contributions to $a_\mu$. Adapted from~\cite{baer_tata_2006}.}\label{fig:loop_corrections_anomalous_moment}
 \end{figure}
 
 In SUSY, additional Feynman diagrams exist involving the supersymmetric partners of the muon, the muon neutrino and the electroweak gauge bosons, and thus the measured deviation in $a_\mu$ can easily be accommodated in many supersymmetric models~\cite{Czarnecki:2001pv,Feng:2001tr}. Two exemplary lowest-order diagrams involving supersymmetric particles is shown in \cref{fig:susy_anomalous_moment_1,fig:susy_anomalous_moment_2}.
@@ -677,12 +677,67 @@ where $a$ runs over the gauge groups that in general have different gauge coupli
  
 \subsection{The Minimal Supersymmetric Standard Model}
 
-\subsection{Soft supersymmetry breaking}\label{sec:susy_breaking}
+The Minimal Supersymmetric Standard Model (MSSM) is the simplest supersymmetrisation of the SM in the sense that it introduces a minimal set of additional particles. The MSSM arranges all SM particles in one chiral (all the fermions and quarks) and one gauge (all spin-1 bosons) supermultiplet. As supersymmetric partners (\textit{spartners}) have the same quantum numbers apart from spin, none of the SM particles can be spartners of each other. Thus, all spartners have to be new, unseen particles. \Cref{tab:particles_MSSM} summaries the names, notations and spins of all spartners introduced in the MSSM. The naming convention is to prepend the names of the spartners of fermions with an 's' (\eg \textit{selectron}, \textit{stop}, ...) and append '-ino' to the names of the spartners of the bosons (\eg \textit{Wino}, \textit{Higgsino}, ...). Supersymmetric particles (\textit{sparticles}) are generally denoted by adding a tilde to the symbol of SM particles (\eg $\tilde{e}$, $\tilde{u}$, $\tilde{g}$, ...). 
 
-As stated in \cref{sec:susy_algebra}, all superpartners must have same quantum numbers apart from their spin. They especially also should have same masses, however such particles would have been discovered a long time ago and thus SUSY must be broken. The exact breaking mechanism is still an open question.
+\begin{table}
+	\centering
+	\small
+	\setlength\heavyrulewidth{0.2ex}
+	\caption{Particle content of the MSSM. The spin refers to the spin of the spartner. Adapted from~\cite{Bustamante:2009us}.}
+	\begin{tabular} {l l c}
+		
+		\toprule
+		Particle & Spartner 0 & Spin \\ 
+		\midrule 
+		quarks $q$ & squarks $\tilde{q}$ & 0 \\
+		$\rightarrow$ top $t$ & stop $\tilde{t}$ & \\
+		$\rightarrow$ bottom $t$ & sbottom $\tilde{b}$ & \\
+		$\dots$ & & \\
+		leptons $\ell$ & sleptons $\tilde{\ell}$ & 0 \\
+		$\rightarrow$ electron $e$ & selectron $\tilde{e}$ & \\
+		$\rightarrow$ muon $\mu$ & smuon $\tilde{\mu}$ & \\
+		$\rightarrow$ tau $\tau$ & stau $\tilde{\tau}$ & \\
+		$\rightarrow$ neutrinos $\nu_\ell$ & stop $\tilde{\nu}_\ell$ & \\
+		\midrule
+		gauge bosons & gauginos & 1/2 \\
+		$\rightarrow$ photon $\gamma$ & photino $\tilde{\gamma}$ & \\
+		$\rightarrow$ boson $Z$ & Zino $\tilde{Z}$ & \\
+		$\rightarrow$ boson $B$ & Bino $\tilde{B}$ & \\
+		$\rightarrow$ boson $W$ & Wino $\tilde{W}$ & \\
+		$\rightarrow$ gluon $g$ & gluino $\tilde{g}$ & \\
+		\midrule
+		Higgs bosons $H^{\pm,0}_i$ & higgsinos $\tilde{H}^{\pm,0}_i$ & 1/2 \\
+		\bottomrule
+	\end{tabular}\vspace{3mm}
+	\label{tab:particles_MSSM}   
+\end{table}
+
+An important detail to note is that right-handed and left-handed fermions get their own chiral supermultiplets and thus have distinct spartners, as otherwise the preference of the weak interaction for left-handed particles would be violated. 
+For example, left-handed and right-handed quarks ($q_\mathrm{L}$, $q_\mathrm{R}$) get two different spartners ($\tilde{q}_\mathrm{L}$, $\tilde{q}_\mathrm{R}$), denoted with an index L and R, which refers to the handedness of the SM particle as scalar particles have only one helicity state. Additionally, the spartners of the left-handed and right-handed will mix to form physical mass eigenstates.
+
+In the MSSM, two Higgs doublets are needed in order to give masses to the up-type and down-type quarks via Yukawa couplings. A single Higgs field $h$ cannot be used for this as it would require Yukawa terms including the complex conjugate $h^*$ of the Higgs field, which is forbidden as the superpotential, being a holomorphic function of the fields, cannot depend on the complex conjugates of the same fields~\cite{Bustamante:2009us}. Additionally, the use of a single Higgs doublet would lead to gauge anomaly in the electroweak gauge symmetry~\cite{PhysRevD.6.429}. Instead two complex Higgs doublets with hypercharge $Y = +1/2$ and $Y = -1/2$ are used in the MSSM. The two Higgs doublets can be written as
+\begin{equation}
+	H_u = \begin{pmatrix}
+		H^0_u \\
+		H^-_u
+	\end{pmatrix}, \qquad \qquad
+	H_d = \begin{pmatrix}
+		H^+_d \\
+		H^0_d
+	\end{pmatrix},
+\end{equation}
+and have a total of eight degrees of freedom, three of which are used up to give masses to the $W^\pm$ and $Z$ bosons (see \cref{sec:ssb}). Thus, a total of five physical Higgs bosons appear in the MSSM; two neutral Higgs bosons even under CP transformation called $h^0$, one neutral Higgs boson odd under CP transformation called $A^0$ and finally two charged Higgs bosons called $H^\pm$.
+
+The two charged higgsinos mix with the two charged winos to form four charged mass eigenstates called \textit{charginos} ($\tilde{\chi}_1^\pm$, $\tilde{\chi}_2^\pm$, ordered with increasing mass) and the photino, zino and bino mix with the remaining neutral higgsinos to form four neutral mass eigenstates called \textit{neutralinos} ($\tilde{\chi}_1^0$, $\tilde{\chi}_2^0$, $\tilde{\chi}_3^0$, $\tilde{\chi}_4^0$, again ordered with increasing mass).
+
+Finally, it is also worth asking why the spartners of SM particles are of lower spin in the first place, as \eg spin-1 spartners of the SM fermions could also have been considered. The MSSM being minimal, this would not be possible as the introduction of spin-1 bosons would entail the introduction of new gauge interactions. Furthermore, introducing spartners with spin greater than 1 would make the resulting theory non-renormalizable~\cite{Bustamante:2009us}.
 
 
-\subsection{R-parity}\label{sec:rparity}
+\subsubsection{Soft supersymmetry breaking}\label{sec:susy_breaking}
+
+As stated in \cref{sec:susy_algebra}, all superpartners must have same quantum numbers apart from their spin. They especially also should have same masses, however such particles would have been discovered a long time ago and thus SUSY must be broken. The exact breaking mechanism is still an open question. 
+
+\subsubsection{R-parity}\label{sec:rparity}
 
 \subsection{The phenomenological MSSM}
 
