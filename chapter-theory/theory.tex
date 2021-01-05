@@ -441,7 +441,7 @@ Instead of expressing the Lagrangian in terms of the fields $W^a_\mu$ and $B_\mu
 	Z_\mu 		& = \frac{1}{\sqrt{g_1^2+g_2^2}}(g_2W^3_\mu - g_1 B_\mu) 	& \textrm{with} \quad m_Z  & = \frac{\sqrt{g_1^2+g_2^2}}{2}v, \\
 	A_\mu 		& = \frac{1}{\sqrt{g_1^2+g_2^2}}(g_1W^3_\mu + g_2 B_\mu) 	& \textrm{with} \quad m_A  & = 0.
 \end{align*}
-It is worth noting, that the massless photon field $A_\mu$ associated with the electromagnetic $U(1)_\mathrm{em}$ gauge symmetry is automatically recovered. All possible vertices between fermions and the physical electroweak gauge bosons are shown in \cref{fig:ewk_vertices} The change of basis from $(W^3_\mu, B_\mu)$ to $(Z_\mu,A_\mu)$~\cite{Peskin:1995ev} can also be written as a basis rotation with the weak mixing angle $\theta_W$
+It is worth noting, that the massless photon field $A_\mu$ associated with the electromagnetic $U(1)_\mathrm{em}$ gauge symmetry is automatically recovered. All possible vertices between fermions and the physical electroweak gauge bosons are shown in \cref{fig:ewk_vertices} The change of basis from $(W^3_\mu, B_\mu)$ to $(Z_\mu,A_\mu)$~\cite{Peskin:1995ev} can also be written as a basis rotation with the weak mixing angle $\theta_W$ \improvement{Write somewhere SU2xU1 to U1 breakdown}
 \begin{equation}
 	\begin{pmatrix}
 		Z_\mu \\
@@ -677,7 +677,11 @@ where $a$ runs over the gauge groups that in general have different gauge coupli
  
 \subsection{The Minimal Supersymmetric Standard Model}
 
-The Minimal Supersymmetric Standard Model (MSSM) is the simplest supersymmetrisation of the SM in the sense that it introduces a minimal set of additional particles. The MSSM arranges all SM particles in one chiral (all the fermions and quarks) and one gauge (all spin-1 bosons) supermultiplet. As supersymmetric partners (\textit{spartners}) have the same quantum numbers apart from spin, none of the SM particles can be spartners of each other. Thus, all spartners have to be new, unseen particles. \Cref{tab:particles_MSSM} summaries the names, notations and spins of all spartners introduced in the MSSM. The naming convention is to prepend the names of the spartners of fermions with an 's' (\eg \textit{selectron}, \textit{stop}, ...) and append '-ino' to the names of the spartners of the bosons (\eg \textit{Wino}, \textit{Higgsino}, ...). Supersymmetric particles (\textit{sparticles}) are generally denoted by adding a tilde to the symbol of SM particles (\eg $\tilde{e}$, $\tilde{u}$, $\tilde{g}$, ...). 
+The Minimal Supersymmetric Standard Model (MSSM) is the simplest supersymmetrisation of the SM in the sense that it introduces a minimal set of additional particles.
+
+\subsubsection{Particle content and interactions}\label{sec:mssm_particle_content}
+
+The MSSM arranges all SM particles in one chiral (all the fermions and quarks) and one gauge (all spin-1 bosons) supermultiplet. As supersymmetric partners (\textit{spartners}) have the same quantum numbers apart from spin, none of the SM particles can be spartners of each other. Thus, all spartners have to be new, unseen particles. \Cref{tab:particles_MSSM} summaries the names, notations and spins of all spartners introduced in the MSSM. The naming convention is to prepend the names of the spartners of fermions with an 's' (\eg \textit{selectron}, \textit{stop}, ...) and append '-ino' to the names of the spartners of the bosons (\eg \textit{Wino}, \textit{Higgsino}, ...). Supersymmetric particles (\textit{sparticles}) are generally denoted by adding a tilde to the symbol of SM particles (\eg $\tilde{e}$, $\tilde{u}$, $\tilde{g}$, ...). 
 
 \begin{table}
 	\centering
@@ -715,6 +719,8 @@ The Minimal Supersymmetric Standard Model (MSSM) is the simplest supersymmetrisa
 An important detail to note is that right-handed and left-handed fermions get their own chiral supermultiplets and thus have distinct spartners, as otherwise the preference of the weak interaction for left-handed particles would be violated. 
 For example, left-handed and right-handed quarks ($q_\mathrm{L}$, $q_\mathrm{R}$) get two different spartners ($\tilde{q}_\mathrm{L}$, $\tilde{q}_\mathrm{R}$), denoted with an index L and R, which refers to the handedness of the SM particle as scalar particles have only one helicity state. Additionally, the spartners of the left-handed and right-handed will mix to form physical mass eigenstates.
 
+It is also worth asking why the spartners of SM particles are of lower spin in the first place, as \eg spin-1 spartners of the SM fermions could also have been considered. The MSSM being minimal, this would not be possible as the introduction of spin-1 bosons would entail the introduction of new gauge interactions. Furthermore, introducing spartners with spin greater than 1 would make the resulting theory non-renormalizable~\cite{Bustamante:2009us}.
+
 In the MSSM, two Higgs doublets are needed in order to give masses to the up-type and down-type quarks via Yukawa couplings. A single Higgs field $h$ cannot be used for this as it would require Yukawa terms including the complex conjugate $h^*$ of the Higgs field, which is forbidden as the superpotential, being a holomorphic function of the fields, cannot depend on the complex conjugates of the same fields~\cite{Bustamante:2009us}. Additionally, the use of a single Higgs doublet would lead to gauge anomaly in the electroweak gauge symmetry~\cite{PhysRevD.6.429}. Instead two complex Higgs doublets with hypercharge $Y = +1/2$ and $Y = -1/2$ are used in the MSSM. The two Higgs doublets can be written as
 \begin{equation}
 	H_u = \begin{pmatrix}
@@ -725,18 +731,8 @@ In the MSSM, two Higgs doublets are needed in order to give masses to the up-typ
 		H^+_d \\
 		H^0_d
 	\end{pmatrix},
+	\label{eq:Higgs_doublets}
 \end{equation}
-and have a total of eight degrees of freedom, three of which are used up to give masses to the $W^\pm$ and $Z$ bosons (see \cref{sec:ssb}). Thus, a total of five physical Higgs bosons appear in the MSSM; two neutral Higgs bosons even under CP transformation called $h^0$, one neutral Higgs boson odd under CP transformation called $A^0$ and finally two charged Higgs bosons called $H^\pm$. The two Higgs doublets $H_u$ and $H_d$ each get a VEV, named $v_u$ and $v_d$ respectively, that are connected to the VEV $v$ of the SM Higgs field by $	v_u^2 + v_d^2 = v^2$. Phenomenologically, the ratio of the two VEVs is usually considered, conventionally called $\tan{\beta}$,
-\begin{equation}
-	\tan{\beta} = \frac{v_u}{v_d}.
-\end{equation}
-
-Due to electroweak symmetry breaking, the fields in the MSSM are in general not mass eigenstates but instead
-The two charged higgsinos mix with the two charged winos to form four charged mass eigenstates called \textit{charginos} ($\tilde{\chi}_1^\pm$, $\tilde{\chi}_2^\pm$, ordered with increasing mass) and the photino, zino and bino mix with the remaining neutral higgsinos to form four neutral mass eigenstates called \textit{neutralinos} ($\tilde{\chi}_1^0$, $\tilde{\chi}_2^0$, $\tilde{\chi}_3^0$, $\tilde{\chi}_4^0$, again ordered with increasing mass).
-
-\improvement{mixing of squarks and sfermions}
-
-It is also worth asking why the spartners of SM particles are of lower spin in the first place, as \eg spin-1 spartners of the SM fermions could also have been considered. The MSSM being minimal, this would not be possible as the introduction of spin-1 bosons would entail the introduction of new gauge interactions. Furthermore, introducing spartners with spin greater than 1 would make the resulting theory non-renormalizable~\cite{Bustamante:2009us}.
 
 As illustrated in \cref{sec:susy_lagrangian} using the Wess-Zumino model, interactions are introduced using the superpotential. In the MSSM, the superpotential reads
 \begin{equation}
@@ -754,15 +750,49 @@ As stated in \cref{sec:susy_algebra}, all superpartners must have same quantum n
 \end{equation}
 where, $\Lagr_\mathrm{soft}$ contains all the symmetry breaking terms while $\Lagr_\mathrm{SUSY}$ is the SUSY invariant Lagrangian with all the gauge and Yukawa interactions. In a softly broken SUSY, the loop corrections to the Higgs mass parameter depend quadratically on the largest mass scale associated with the soft terms ($m_\mathrm{soft}$). As the fine-tuning problem reappears if $m_\mathrm{soft}$ becomes too large, superpartners with masses not far above the TeV scale are generally assumed.
 
-A total of 109 :
+A total of 105 new parameters with no counterpart in the SM are introduced through $\Lagr_\mathrm{soft}$\ ~\cite{Martin:1997ns}:
 \begin{itemize}
 	\item gaugino mass parameters $M_1$, $M_2$ and $M_3$,
 	\item trilinear scalar couplings, parametrized by $3\times 3$ matrices in generation space $\boldsymbol{a_u}$, $\boldsymbol{a_d}$, $\boldsymbol{a_e}$, representing Higgs-squark-squark and Higgs-slepton-slepton interactions,
 	\item Hermitian $3\times 3$ matrices in generation space \boldmath $m_Q^2$, $m^2_{\bar{u}}$, $m^2_{\bar{d}}$, $m^2_L$, $m^2_{\bar{e}}$ \unboldmath that represent the sfermion masses,
 	\item SUSY breaking parameters $m^2_{H_u}$, $m^2_{H_d}$ and $b$.
 \end{itemize}
+As most of the parameters in the MSSM are related to soft SUSY breaking, it is not surprising that the phenomenology of the MSSM strongly depends on the exact breaking mechanism. The breaking is usually introduced to happen in a \textit{hidden sector} and the effects of the breaking are then typically mediated by messenger particles from a messenger field to the \textit{visible sector} containing all the particles of the MSSM. Since the hidden sector is assumed to be only coupled weakly or indirectly to the visible sector, the phenomenology mostly depends on the mechanism mediating the breaking. The two most popular mechanisms are \textit{gravity-mediated} and \textit{gauge-mediated} SUSY breaking.
+
+Mediating SUSY breaking through gravity is an attractive approach, since all particles share gravitational interactions. This makes it easy to imagine gravitational effects to be the only connection between the hidden and the visible sectors. In such models SUSY breaking is mediated through effects of gravitational strength, suppressed by inverse powers of the Plack mass~\cite{pdg2020}. The gravitino mass is typically of electroweak scale~\cite{Nilles:1983ge,LAHANAS19871}. Due to its couplings of gravitational strengths, it typically does not play a role in collider physics~\cite{pdg2020}.
+
+In gauge-mediated SUSY breaking (GMSB), additional messenger fields sharing gauge interactions with the MSSM fields are transmitting the breaking from the hidden to the visible sector. In such models, the gravitino is typically the LSP, as its mass ranges from a few eV to a few GeV, making it a candidate for DM~\cite{Feng:2003xh}.
 
 \subsubsection{Mass spectrum}
+
+In the MSSM, electroweak symmetry breaking is generalised to the two Higgs doublets introduced in \cref{eq:Higgs_doublets}. In total, the two doublets have eight degrees of freedom, three of which are used up to give masses to the $W^\pm$ and $Z$ bosons during the breaking of $SU(2)_\mathrm{L}\otimes U(1)_Y$ to $U(1)_\mathrm{em}$ (see \cref{sec:ssb}). Thus, five physical Higgs bosons appear in the MSSM; two neutral Higgs bosons even under CP transformation called $h^0$, one neutral Higgs boson odd under CP transformation called $A^0$ and finally two charged Higgs bosons called $H^\pm$. The two Higgs doublets $H_u$ and $H_d$ each get a VEV ($v_u$ and $v_d$, respectively) that are connected to the VEV $v$ of the SM Higgs field by
+\begin{equation}
+	v_u^2 + v_d^2 = v^2.
+\end{equation}
+Phenomenologically, the ratio of the two VEVs is usually considered, conventionally called $\tan{\beta}$,
+\begin{equation}
+	\tan{\beta} = \frac{v_u}{v_d}.
+\end{equation}
+
+Due to electroweak symmetry breaking, the gauginos and higgsinos are not mass eigenstates but mix to form states with definite mass, called \textit{electroweakinos}: 
+\begin{itemize}
+	\item the two charged higgsinos mix with the two charged winos to form two charged mass eigenstates $\tilde{\chi}_1^\pm$, $\tilde{\chi}_2^\pm$, called \textit{charginos},
+	\item the remaining neutral higgsinos mix with the photino, zino and bino to form four neutral mass eigenstates $\tilde{\chi}_1^0$, $\tilde{\chi}_2^0$, $\tilde{\chi}_3^0$, $\tilde{\chi}_4^0$, called \textit{neutralinos}.
+\end{itemize}
+Both charginos and neutralinos are by convention labeled in ascending mass order. In the gauge-eigenstate basis $\psi^0 = (\tilde{B},\tilde{W}^0,\tilde{H}^0_d,\tilde{H}^0_u)$, the neutralino mixing matrix reads~\cite{Martin:1997ns}
+\begin{equation}
+	\boldsymbol{M}_\tilde{\chi}^0 = 
+	\begin{pmatrix}
+		M_1 & 0 & -g_1v_d/\sqrt{2} & g_1 v_u/\sqrt{2} \\
+		0 & M_2 & g_2 v_d/\sqrt{2} & - g_2 v_u/\sqrt{2} \\
+		- g_1 v_d/\sqrt{2} & g_2 v_d/\sqrt{2} & 0 & -\mu \\
+		g_1 v_u/\sqrt{2} & -g_2 v_u/\sqrt{2} & -\mu & 0
+	\end{pmatrix},
+	\label{eq:neutralino_mixing}
+\end{equation}
+where $M_1$ and $M_2$ stem directly from the soft SUSY breaking terms while the $-\mu$ terms are the higgsino mass terms. Entries with $g_1$ and $g_2$ come from Higgs-higgsino-gaugino couplings. The neutralino mixing matrix can be diagonalized to obtain the neutralino masses, which can be expressed in terms of the parameters $M_1$, $M_2$, $\mu$ and $\tan{\beta}$~\cite{Martin:1997ns}. As the exact forms of the mass expressions are relatively complicated, they are typically evaluated in limits where one of the mass parameters is significantly smaller than the other two. This is possible because $M_1$ and $M_2$ can be chosen to be real and positive through an appropriate phase redefinition of $\tilde{B}$ and $\tilde{W}$\footnote{This makes the phase of $\mu$ in that convention a physical parameter that can no longer be rotated away through basis rotation.}. If neutralinos are dominated the wino, bino or higgsino component, they are called wino-, bino- or higgsino-like in the following.
+
+The gluino, being the single color octet fermion of the unbroken $SU(3)_C$ gauge group, cannot mix with another fermion and thus is a mass eigenstate with mass $m_{\tilde{g}} = \vert M_3 \vert$ at tree level~\cite{Martin:1997ns,baer_tata_2006}.
 
 \subsubsection{R-parity}\label{sec:rparity}
 
