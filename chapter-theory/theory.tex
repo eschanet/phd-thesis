@@ -757,6 +757,9 @@ A total of 105 new parameters with no counterpart in the SM are introduced throu
 	\item Hermitian $3\times 3$ matrices in generation space \boldmath $m_Q^2$, $m^2_{\bar{u}}$, $m^2_{\bar{d}}$, $m^2_L$, $m^2_{\bar{e}}$ \unboldmath that represent the sfermion masses,
 	\item SUSY breaking parameters $m^2_{H_u}$, $m^2_{H_d}$ and $b$.
 \end{itemize}
+
+The sfermion mass matrices and the trilinear scalar couplings may introduce additional flavour mixing and CP violation, both of which are heavily constrained by experimental results. Flavour mixing in the lepton sector is for example constrained by an upper limit on $\mathrm{BR}(\mu \rightarrow e\gamma) < \SI{4.2e-12}{}$~\cite{Mori:2016vwi}. Bounds on additional CP violation as well as squark mixing terms come from measurements in neutral meson systems. Formally, in order to avoid these terms, SUSY breaking can be assumed to be \textit{flavour-blind}, meaning that the mass matrices are approximately diagonal. The large Yukawa couplings for the third generation squarks and sfermions can then be achieved by assuming that the trilinear scalar couplings are proportional to the corresponding Yukawa coupling matrix.
+
 As most of the parameters in the MSSM are related to soft SUSY breaking, it is not surprising that the phenomenology of the MSSM strongly depends on the exact breaking mechanism. The breaking is usually introduced to happen in a \textit{hidden sector} and the effects of the breaking are then typically mediated by messenger particles from a messenger field to the \textit{visible sector} containing all the particles of the MSSM. Since the hidden sector is assumed to be only coupled weakly or indirectly to the visible sector, the phenomenology mostly depends on the mechanism mediating the breaking. The two most popular mechanisms are \textit{gravity-mediated} and \textit{gauge-mediated} SUSY breaking.
 
 Mediating SUSY breaking through gravity is an attractive approach, since all particles share gravitational interactions. This makes it easy to imagine gravitational effects to be the only connection between the hidden and the visible sectors. In such models SUSY breaking is mediated through effects of gravitational strength, suppressed by inverse powers of the Plack mass~\cite{pdg2020}. The gravitino mass is typically of electroweak scale~\cite{Nilles:1983ge,LAHANAS19871}. Due to its couplings of gravitational strengths, it typically does not play a role in collider physics~\cite{pdg2020}.
@@ -781,8 +784,7 @@ Due to electroweak symmetry breaking, the gauginos and higgsinos are not mass ei
 \end{itemize}
 Both charginos and neutralinos are by convention labeled in ascending mass order. In the gauge-eigenstate basis $\psi^0 = (\tilde{B},\tilde{W}^0,\tilde{H}^0_d,\tilde{H}^0_u)$, the neutralino mixing matrix reads~\cite{Martin:1997ns}
 \begin{equation}
-	\boldsymbol{M}_\tilde{\chi}^0 = 
-	\begin{pmatrix}
+	\boldsymbol{M}_{\tilde{\chi}}^0 = 	\begin{pmatrix}
 		M_1 & 0 & -g_1v_d/\sqrt{2} & g_1 v_u/\sqrt{2} \\
 		0 & M_2 & g_2 v_d/\sqrt{2} & - g_2 v_u/\sqrt{2} \\
 		- g_1 v_d/\sqrt{2} & g_2 v_d/\sqrt{2} & 0 & -\mu \\
@@ -791,6 +793,21 @@ Both charginos and neutralinos are by convention labeled in ascending mass order
 	\label{eq:neutralino_mixing}
 \end{equation}
 where $M_1$ and $M_2$ stem directly from the soft SUSY breaking terms while the $-\mu$ terms are the higgsino mass terms. Entries with $g_1$ and $g_2$ come from Higgs-higgsino-gaugino couplings. The neutralino mixing matrix can be diagonalized to obtain the neutralino masses, which can be expressed in terms of the parameters $M_1$, $M_2$, $\mu$ and $\tan{\beta}$~\cite{Martin:1997ns}. As the exact forms of the mass expressions are relatively complicated, they are typically evaluated in limits where one of the mass parameters is significantly smaller than the other two. This is possible because $M_1$ and $M_2$ can be chosen to be real and positive through an appropriate phase redefinition of $\tilde{B}$ and $\tilde{W}$\footnote{This makes the phase of $\mu$ in that convention a physical parameter that can no longer be rotated away through basis rotation.}. If neutralinos are dominated the wino, bino or higgsino component, they are called wino-, bino- or higgsino-like in the following.
+
+The chargino mixing matrix can be written in a similar fashion. In the gauge-eigenstate $\psi^\pm = (\tilde{W}^\pm , \tilde{H}^+_u, \tilde{W}^-, \tilde{H}^-_d)$, it can be written as
+\begin{equation}
+	\boldsymbol{M}_{\tilde{\chi}^\pm} = \begin{pmatrix}
+		\mathbb{0}_2 & \boldsymbol{X}^T \\
+		\boldsymbol{X} & \mathbb{0}_2
+	\end{pmatrix}
+	\qquad \textrm{with} \quad \boldsymbol{X} = \begin{pmatrix}
+		M_2 & g_2 v_u\\
+		g_2 v_d & \mu
+	\end{pmatrix}.
+\end{equation}
+The masses of the charginos are then the eigenvalues of the doubly degenerate $4\times 4$ matrix $\boldsymbol{M}^{\dagger}_{\tilde{\chi}^\pm}\boldsymbol{M}_{\tilde{\chi}^\pm}$ and can be expressed in terms of $M_2$, $\mu$ and $\sin{2\beta}$~\cite{Martin:1997ns}. 
+
+Squarks and sleptons also mix with each other. As in principle any scalars with same electric charge, colour charge and R-parity can mix with each other, the mass eigenstates of the sleptons and squarks should a priori be obtained through diagonalization of three $6\times 6$ mixing matrices (one for up-type squarks, one for down-type squarks and one for charged sleptons) and one $3\times 3$ matrix (for sneutrinos). The assumption of flavour-blind soft SUSY breaking terms leads to most of the mixing angles being very small. As opposed to the first and second generation, the third generation sfermions have relatively large Yukawa couplings, therefore the superpartners of the left- and right-handed fermions mix to mass eigenstates $(\tilde{t}_1,\tilde{t}_2)$, $(\tilde{b}_1,\tilde{b}_2)$, $(\tilde{\tau}_1,\tilde{\tau}_2)$, again labeled in ascending mass order. The first and second generation sfermions, on the other hand, having very small Yukawa couplings, end up in nearly mass-degenerate, unmixed pairs.
 
 The gluino, being the single color octet fermion of the unbroken $SU(3)_C$ gauge group, cannot mix with another fermion and thus is a mass eigenstate with mass $m_{\tilde{g}} = \vert M_3 \vert$ at tree level~\cite{Martin:1997ns,baer_tata_2006}.
 
