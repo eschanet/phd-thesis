@@ -726,9 +726,15 @@ In the MSSM, two Higgs doublets are needed in order to give masses to the up-typ
 		H^0_d
 	\end{pmatrix},
 \end{equation}
-and have a total of eight degrees of freedom, three of which are used up to give masses to the $W^\pm$ and $Z$ bosons (see \cref{sec:ssb}). Thus, a total of five physical Higgs bosons appear in the MSSM; two neutral Higgs bosons even under CP transformation called $h^0$, one neutral Higgs boson odd under CP transformation called $A^0$ and finally two charged Higgs bosons called $H^\pm$.
+and have a total of eight degrees of freedom, three of which are used up to give masses to the $W^\pm$ and $Z$ bosons (see \cref{sec:ssb}). Thus, a total of five physical Higgs bosons appear in the MSSM; two neutral Higgs bosons even under CP transformation called $h^0$, one neutral Higgs boson odd under CP transformation called $A^0$ and finally two charged Higgs bosons called $H^\pm$. The two Higgs doublets $H_u$ and $H_d$ each get a VEV, named $v_u$ and $v_d$ respectively, that are connected to the VEV $v$ of the SM Higgs field by $	v_u^2 + v_d^2 = v^2$. Phenomenologically, the ratio of the two VEVs is usually considered, conventionally called $\tan{\beta}$,
+\begin{equation}
+	\tan{\beta} = \frac{v_u}{v_d}.
+\end{equation}
 
+Due to electroweak symmetry breaking, the fields in the MSSM are in general not mass eigenstates but instead
 The two charged higgsinos mix with the two charged winos to form four charged mass eigenstates called \textit{charginos} ($\tilde{\chi}_1^\pm$, $\tilde{\chi}_2^\pm$, ordered with increasing mass) and the photino, zino and bino mix with the remaining neutral higgsinos to form four neutral mass eigenstates called \textit{neutralinos} ($\tilde{\chi}_1^0$, $\tilde{\chi}_2^0$, $\tilde{\chi}_3^0$, $\tilde{\chi}_4^0$, again ordered with increasing mass).
+
+\improvement{mixing of squarks and sfermions}
 
 It is also worth asking why the spartners of SM particles are of lower spin in the first place, as \eg spin-1 spartners of the SM fermions could also have been considered. The MSSM being minimal, this would not be possible as the introduction of spin-1 bosons would entail the introduction of new gauge interactions. Furthermore, introducing spartners with spin greater than 1 would make the resulting theory non-renormalizable~\cite{Bustamante:2009us}.
 
@@ -742,7 +748,21 @@ where $Q$ and $L$ correspond to the supermultiplets containing the left-handed q
 
 \subsubsection{Soft supersymmetry breaking}\label{sec:susy_breaking}
 
-As stated in \cref{sec:susy_algebra}, all superpartners must have same quantum numbers apart from their spin. They especially also should have same masses, however such particles would have been discovered a long time ago and thus SUSY must be broken. The exact breaking mechanism is still an open question. 
+As stated in \cref{sec:susy_algebra}, all superpartners must have same quantum numbers apart from their spin. They especially also should have same masses, however such particles would have been discovered a long time ago and thus SUSY must be broken. Formally, SUSY should thus be an exact symmetry that is spontaneously broken because the Lagrangian has a symmetry under which the vacuum state is not invariant. However, if broken SUSY is still to provide a solution to the Hierarchy problem, \ie cancel the quadratic divergencies in the loop corrections for the Higgs mass parameter, then the relations between the dimensionless couplings of the SM particles and their superpartners have to be maintained~\cite{Martin:1997ns}. Hence, only symmetry breaking terms with positive mass dimension are allowed in the Lagrangian, especially also forbidding the presence of dimensionless SUSY-breaking couplings~\cite{Martin:1997ns}. Such a breaking of SUSY is called \textit{soft} breaking and can be written as
+\begin{equation}
+	\Lagr = \Lagr_\mathrm{SUSY} + \Lagr_\mathrm{soft}.
+\end{equation}
+where, $\Lagr_\mathrm{soft}$ contains all the symmetry breaking terms while $\Lagr_\mathrm{SUSY}$ is the SUSY invariant Lagrangian with all the gauge and Yukawa interactions. In a softly broken SUSY, the loop corrections to the Higgs mass parameter depend quadratically on the largest mass scale associated with the soft terms ($m_\mathrm{soft}$). As the fine-tuning problem reappears if $m_\mathrm{soft}$ becomes too large, superpartners with masses not far above the TeV scale are generally assumed.
+
+A total of 109 :
+\begin{itemize}
+	\item gaugino mass parameters $M_1$, $M_2$ and $M_3$,
+	\item trilinear scalar couplings, parametrized by $3\times 3$ matrices in generation space $\boldsymbol{a_u}$, $\boldsymbol{a_d}$, $\boldsymbol{a_e}$, representing Higgs-squark-squark and Higgs-slepton-slepton interactions,
+	\item Hermitian $3\times 3$ matrices in generation space \boldmath $m_Q^2$, $m^2_{\bar{u}}$, $m^2_{\bar{d}}$, $m^2_L$, $m^2_{\bar{e}}$ \unboldmath that represent the sfermion masses,
+	\item SUSY breaking parameters $m^2_{H_u}$, $m^2_{H_d}$ and $b$.
+\end{itemize}
+
+\subsubsection{Mass spectrum}
 
 \subsubsection{R-parity}\label{sec:rparity}
 
@@ -762,7 +782,7 @@ where $s$ is the spin of the particle. Given this definition, all SM particles a
 \end{itemize}
 The nature of the LSP can be further constrained by cosmological observations~\cite{Ellis:1998eh}. If it were electrically charged or coupled to the strong interaction, it would have dissipated its energy and mixed with ordinary matter in the galactic disks where it would have formed anomalous heavy isotopes. Upper limits on such supersymmetric relics~\cite{Ellis:1983ew} thus heavily favour an electrically neutral and weakly interacting LSP. This excludes in particular the gluino as an LSP. Another possible LSP, the sneutrino, is ruled out by LEP and direct searches. A gravitino LSP is especially attractive in gauge mediated theories. 
 
-Another option is a neutralino LSP. In large portions of the MSSM parameter space, a neutralino LSP produces a DM relic density that is compatible with the DM relic density measured by Planck~\cite{Ellis:1983ew, Aghanim:2018eyx}. In the following, only neutralino LSPs are considered.
+Another option is a neutralino LSP. In large portions of the MSSM parameter space, a neutralino LSP produces a DM relic density that is compatible with the DM relic density measured by Planck~\cite{Ellis:1983ew, Aghanim:2018eyx}. In the following, only R-parity conserving SUSY models with neutralino LSPs are considered.
 
 
 \subsection{The phenomenological MSSM}
