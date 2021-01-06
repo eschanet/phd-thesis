@@ -834,22 +834,36 @@ Another option is a neutralino LSP. In large portions of the MSSM parameter spac
 
 \subsection{The phenomenological MSSM}
 
-In addition to the 19 parameters of the SM, the MSSM adds a total of 105 additional parameters, too much to allow for an extensive exploration of the MSSM in a model-independent way. However, as already discussed in \cref{sec:susy_breaking}, not all values of the 105 additional parameters lead to phenomenologically viable models. By requiring a set of phenomenological constraints, the 105 free parameters can be reduced to only 19 free parameters, spanning a model space called the phenomenological MSSM (pMSSM)~\cite{Djouadi:2002ze,Berger_2009}. The free parameters in the pMSSM are the following:
-\begin{itemize}
-	\item $\tan{\beta}$: the ratio of the Higgs doublet VEVs,
-	\item $M_A$: the mass of the CP-odd Higgs boson,
-	\item $\mu$: the Higgs-higgsino mass parameters,
-	\item $M_1$, $M_2$, $M_3$: the wino, bino and gluino mass parameters,
-	\item $m_{\tilde{q}}$, $m_{\tilde{u}_R}$, $m_{\tilde{d}_R}$, $m_{\tilde{\ell}}$, $m_{\tilde{e}_R}$: the first and second generation sfermion masses,
-	\item $m_{\tilde{Q}}$, $m_{\tilde{t}_R}$, $m_{\tilde{b}_R}$, $m_{\tilde{L}}$, $m_{\tilde{\tau}_R}$: the third generation sfermion masses,
-	\item $A_t$, $A_b$, $A_\tau$: the third generation trilinear couplings.
-\end{itemize}
+In addition to the 19 parameters of the SM, the MSSM adds a total of 105 additional parameters, too much to allow for a realistic exploration of the MSSM in a model-independent way. However, as already discussed in \cref{sec:susy_breaking}, not all values of the 105 additional parameters lead to phenomenologically viable models. By requiring a set of phenomenological constraints, the 105 free parameters can be reduced to only 19 free parameters, spanning a model space called the phenomenological MSSM (pMSSM)~\cite{Djouadi:2002ze,Berger_2009}. The free parameters in the pMSSM are listed in \cref{tab:parameters_pmssm}.
+
+\begin{table}
+	\centering
+	\setlength\heavyrulewidth{0.2ex}
+	\small
+	\caption{Parameters of the pMSSM.}
+	\begin{tabular} {l l}
+	\toprule
+		Parameter & Meaning \\ 
+	\midrule
+	$\tan{\beta}$ & ratio of the Higgs doublet VEVs \\
+	$M_A$ & mass of the CP-odd Higgs boson \\
+	$\mu$ & Higgs-higgsino mass parameters \\
+	$M_1$, $M_2$, $M_3$ & wino, bino and gluino mass parameters \\
+	$m_{\tilde{q}}$, $m_{\tilde{u}_R}$, $m_{\tilde{d}_R}$, $m_{\tilde{\ell}}$, $m_{\tilde{e}_R}$ & first and second generation sfermion masses \\
+	$m_{\tilde{Q}}$, $m_{\tilde{t}_R}$, $m_{\tilde{b}_R}$, $m_{\tilde{L}}$, $m_{\tilde{\tau}_R}$ & third generation sfermion masses \\
+	$A_t$, $A_b$, $A_\tau$ & third generation trilinear couplings \\
+	\bottomrule					
+	\end{tabular}\vspace{3mm}
+	\label{tab:parameters_pmssm}   
+\end{table}
 
 The reduction of free parameters is obtained by applying the following constraints on the MSSM:
 \begin{itemize}
-	\item No new source of CP violation, as discussed already in \cref{sec:susy_breaking}.
-	\item 
+	\item No new source of CP violation, as discussed already in \cref{sec:susy_breaking}, achieved by assuming all soft breaking parameters to be real.
+	\item Minimal flavour violation, meaning that FCNC, heavily constrained by experiment, are not allowed and the flavour physics is governed by the CKM matrix.
+	\item First and second sfermion generations are mass-degenerate\footnote{This is motivated by \eg Kaon mixing measurements and holds unless first and second generation squarks are significantly heavier than $\mathcal{O}(\SI{1}{\TeV})$.}.
+	\item The trilinear couplings and Yukawa couplings are negligible for the first and second sfermion generations.
 \end{itemize}
-
+The pMSSM does not make any assumptions on the physics above the TeV scale, and therefore does not assume a specific SUSY breaking mechanism. With its 19 free parameters, and the typical complexity of a search for SUSY, the pMSSM is still computationally extremely challenging to probe. Using appropriate approximations, the computational complexity can be simplified enough for exhaustive scans and comparisons to experimental data to become possible. 
 
 \subsection{Simplified models}
