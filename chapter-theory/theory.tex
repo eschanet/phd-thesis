@@ -831,7 +831,6 @@ The nature of the LSP can be further constrained by cosmological observations~\c
 
 Another option is a neutralino LSP. In large portions of the MSSM parameter space, a neutralino LSP produces a DM relic density that is compatible with the DM relic density measured by Planck~\cite{Ellis:1983ew, Aghanim:2018eyx}. In the following, only R-parity conserving SUSY models with neutralino LSPs are considered.
 
-
 \subsection{The phenomenological MSSM}
 
 In addition to the 19 parameters of the SM, the MSSM adds a total of 105 additional parameters, too much to allow for a realistic exploration of the MSSM in a model-independent way. However, as already discussed in \cref{sec:susy_breaking}, not all values of the 105 additional parameters lead to phenomenologically viable models. By requiring a set of phenomenological constraints, the 105 free parameters can be reduced to only 19 free parameters, spanning a model space called the phenomenological MSSM (pMSSM)~\cite{Djouadi:2002ze,Berger_2009}. The free parameters in the pMSSM are listed in \cref{tab:parameters_pmssm}.
@@ -867,3 +866,50 @@ The reduction of free parameters is obtained by applying the following constrain
 The pMSSM does not make any assumptions on the physics above the TeV scale, and therefore does not assume a specific SUSY breaking mechanism. With its 19 free parameters, and the typical complexity of a search for SUSY, the pMSSM is still computationally extremely challenging to probe. Using appropriate approximations, the computational complexity can be simplified enough for exhaustive scans and comparisons to experimental data to become possible. 
 
 \subsection{Simplified models}
+
+In searches for BSM physics at the Large Hadron Collider, it is common to use simplified models~\cite{SimplifiedModels1:2008ag,SimplifiedModels2:2011wf,Alves:2011sq} as a way of reducing the space of free parameters to a manageable level. Simplified models do not aim to represent complete supersymmetric models but are mostly defined by the empirical objects and kinematic variables use in the searches, typically allowing only a small number of sparticles to be involved in the decay chain (usually only two or three). Other sparticles are decoupled by setting their masses to be kinematically inaccessible at current collider experiments. The decay chains of the participating sparticles are determined by fixed branching ratios, often set to be 100\%. Experimental bounds from non-observation of a given model are then usually presented in function of the physical masses of the sparticles involved in the decay chain.
+
+Simplified models have the inherent advantage that they circumvent the issue of having to search for SUSY in a vast parameters space where many of the parameters only have small effects on observables. Their interpretation in terms of limits on individual SUSY production and decay topologies in function of sparticle masses is straightforward and very convenient. The hope is, that simplified models are a reasonable approximation of sizeable regions of parameter space of the more complete model they are embedded in~\cite{pdg2020}. The obvious downside is however, that the limits obtained in simplified models are not automatically a good approximation of the true underlying constraint on the respective model parameter when interpreted in more complete SUSY models. Often times, for example, the constraints set on sparticle masses in simplified models, significantly overestimate the true constraints obtained in more complex SUSY spectra, especially when the usual 100\% branching fractions are assumed in the simplified models (see \eg~\cite{Ambrogi:2017lov,Buchmueller:2013exa}).
+
+One way of circumventing these issues while sticking to the simplified model approach is to ensure that the limits obtained in different simplified models involving different production and decay mechanisms are combined into limits representing more complex SUSY spectra. In such an approach, the simplified model limits can be seen as building blocks for more complete and realistic SUSY models. Another possibility is to perform reinterpretations of SUSY searches---optimised for one ore more simplified models---in more complete SUSY model spaces, like \eg the pMSSM. This can not only demonstrate the sensitivity of existing SUSY searches beyond simplified models, but also potentially identify blind spots and uncovered model regions. In addition, direct connections to DM searches as well as Higgs and flavour measurements can be explored this way. Some recent efforts going in this direction are provided in~\cite{Ambrogi:2017lov, Aaboud:2016wna, pMSSM-scan-run1:2015baa}.
+
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=.9\textwidth]{electroweakino_production_1}
+		\caption{\label{fig:electroweakino_production_1}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=.9\textwidth]{electroweakino_production_2}
+		\caption{\label{fig:electroweakino_production_2}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.33\linewidth}
+		\centering\includegraphics[width=.9\textwidth]{electroweakino_production_3}
+		\caption{\label{fig:electroweakino_production_3}}
+	\end{subfigure}	
+	\caption{Dominant Feynman diagrams for direct production of electroweakino pairs at the Large Hadron Collider.}\label{fig:electroweakino_production}
+\end{figure}
+
+\section{Search for electroweakinos}
+
+While both the ATLAS~\cite{ATLASsummary} and CMS experiments~\cite{CMSsummary} at the Large Hadron Collider at CERN set strong limits on the presence of gluinos and squarks at the TeV scale, the limits on electroweakinos are still comparably low and offer ample space for SUSY to hide in. The reason why the limits on electroweakinos are still low is mostly due to the low cross-sections of electroweakino production, coupled with the previously relatively small datasets collected by collider experiments. With the full Run-2 dataset collected by the ATLAS experiment from 2016--2018, many of the electroweakino production and decay processes that were previously out of experimental reach, only recently got into reach of SUSY searches. 
+
+\subsection{Production of electroweakinos at the Large Hadron Collider}
+
+If gluinos and squarks are too heavy to be within reach of the Large Hadron Collider, the direct production of electroweakinos might be the dominant production mode of SUSY. At hadron colliders, electroweakinos can be pair-produced directly via electroweak processes. The direct production of electroweakino pairs dominantly happens through electroweak gauge bosons from \textit{s}-channel $q\bar{q}$ annihilation, as shown in \cref{fig:electroweakino_production}. Contributions from \textit{t}-channels via squark exchange are typically of less importance~\cite{Martin:1997ns}.
+
+
+\subsection{Models used within this work}
+
+\begin{figure}
+	\centering\includegraphics[width=.4\textwidth]{model_c1n2_Wh}
+	\caption{Diagram for the simplified model used in this work.}\label{fig:Wh_model}
+\end{figure}
+
+The main model considered in the SUSY search presented in this work and pictured in \cref{fig:Wh_model} is a simplified model for direct production of a $\charg\neutr$ pair where the lightest chargino decays via $\charg\rightarrow W\lsp$ and the next-to-lightest neutralino decays via $\neutr\rightarrow W\lsp$, each with 100\% branching ratio. In this model, in the following called the \textit{Wh model}, the lightest chargino $\charg$ and the next-to-lightest neutralino $\neutr$ are considered to be mass-degenerate and wino-like, while the lightest neutralino $\lsp$ is a bino-like LSP, hence $\vert M_1 \vert < \vert M_2 \vert \ll \vert\mu\vert$. The Higgs boson mass is set to $\SI{125}{\GeV}$ in accordance with the measured value~\cite{Aad:2012tfa,Chatrchyan:2012ufa} and its branching ratios are the ones from the SM. The search further targets a $W$ boson which decays into an electron or muon (and a corresponding neutrino) and a Higgs boson decaying into a pair of \textit{b}-quarks. The branching ratio of $h\rightarrow b\bar{b}$ is taken to be 58.3\% as expected for the SM Higgs boson. The final state of this simplified model thus includes exactly one light lepton (electron or muon) from the $W^\pm$ decay, two $b$-jets from the Higgs boson decay, as well as missing transverse momentum\improvement{introduced in section} from the LSPs and neutrino escaping the detector.
+
+In addition to the simplified model targeted by the SUSY search presented in this work, an additional class of models is considered in the second part of this work. These models are sampled directly from the pMSSM and are used to reinterpret the SUSY search in the pMSSM. In accordance with the simplified model in \cref{fig:Wh_model}, the pMSSM models are sampled with a focus on electroweakinos, \ie all electroweak parameters are set to be lighter than $\SI{2}{\TeV}$ while first and second generation squarks are decoupled and set to have mass parameters of $\SI{10}{\TeV}$. Sleptons are also set to be decoupled with mass parameters fixed at $\SI{10}{\TeV}$.  In order to yield a better rate of surviving models during the sampling without affecting the decays of the electroweakinos too much, third generation squark and gluino mass parameters are varied between 2--$\SI{5}{\TeV}$ and 1--$\SI{5}{\TeV}$, respectively\improvement{Reference, why?}. No assumptions are made on the bino, wino or higgsino nature of either charginos or neutralinos. More details on the sampling of the pMSSM models are given in\improvement{reference to sampling}. 
+
+
+\subsection{Constraints from direct searches}

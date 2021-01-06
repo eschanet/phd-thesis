@@ -1,0 +1,33 @@
+\documentclass[class=minimal,border={10pt 16pt 10pt 16pt}]{standalone}
+\usepackage[force]{feynmp-auto}
+\usepackage{xcolor}
+\begin{document}
+	\unitlength=0.65mm
+	\begin{fmffile}{electroweak_production_3_1}
+		  \begin{fmfgraph*}(50,30)
+		    % Define two vertices on the left, but only `i2' will be actually used.
+		    \fmfleft{i1,i2}
+		    % The same on the right.
+		    \fmfright{o1,o2}
+		    % Define the vertex for the blob.
+		    \fmf{fermion,label=$$,label.side=left,tension=1.0}{i1,v1}
+		    \fmf{fermion,label=$$,label.side=left,tension=1.0}{v1,i2}
+
+		    \fmf{boson,label=$Z$,label.side=left,tension=1.0}{v1,v2}
+
+		    \fmf{plain,label=$$,label.side=left,tension=1,foreground=red}{o1,v2}
+		    \fmf{plain,label=$$,label.side=left,tension=1,foreground=red}{o2,v2}
+		    
+			\fmffreeze
+		    \fmf{boson,foreground=red}{o1,v2}
+		    \fmf{boson,foreground=red}{o2,v2}
+		    
+		    \fmflabel{$q$}{i1}
+		    \fmflabel{$\bar{q}$}{i2}
+		    
+		    \fmflabel{\textcolor{red}{$\tilde{\chi}_2^0$}}{o1}
+		    \fmflabel{\textcolor{red}{$\tilde{\chi}_1^0$}}{o2}
+
+		  \end{fmfgraph*}
+	\end{fmffile}
+\end{document}                    
