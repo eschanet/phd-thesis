@@ -36,17 +36,40 @@ The eight arcs of the LHC are filled with dipole magnets built from superconduct
 
 \subsection{Pileup}
 
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{mu_2015_2018}
+		\caption{Luminosity-weighted mean number of interactions per bunch crossing during Run~2 data-taking.\label{fig:mu_2015_2018}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{peakMuByFill}
+		\caption{Peak mean number of interactions per bunch crossing for each fill during 2018.\label{fig:peakMuByFill}}
+	\end{subfigure}%
+	\caption{Number of interactions per bunch crossing recorded by the ATLAS detector~\cite{ATLAS:Run2}}\label{fig:mu_run2}
+\end{figure}
 
+Due to the high number of protons in each bunch, several $pp$ collisions occur at each bunch crossing. This leads to a phenomenon called \textit{pile-up}, where the recorded events not only contain information from the hard-scattering process of interest, but also remnants from additional, often low-energy, $pp$ collisions. During the Run~2 data-taking period, the mean number of inelastic $pp$ collisions per bunch crossing, $\mu$, has varied from roughly 10 to 70, with the majority of bunch crossings having a value of $\mu$ around 30. \Cref{fig:mu_2015_2018} shows the mean number of interactions per bunch crossing during the Run-2 data-taking period, weighted by luminosity. The peak number of interactions per bunch crossing $\mu_\mathrm{peak}$ per fill has been consistently around 50 during the 2018 data-taking (cf.~\cref{fig:peakMuByFill}).
+
+Experimentally, pile-up can be divided into five major components~\cite{Marshall:2014mza}:
+\begin{itemize}
+	\item \textit{In-time} pile-up: multiple interactions during a single bunch crossing, of which not all will be interesting, as often with relatively low energy. If they can be resolved, the main hard-scattering event can still be isolated and studied.
+	\item \textit{Out-of-time} pile-up: additional collisions occurring in bunch crossings before or after the main event of interest. This happens either due to read-out electronic integrating over longer time frames than the $\SI{25}{ns}$ bunch spacing, or detector components being sensitive to several bunch crossings.
+	\item \textit{Cavern background}: gas of thermal neutrons and photons that typically fill the experimental caverns during a run of the LHC and tend to cause random hits in detector components.
+	\item \textit{Beam halo events}: protons scraping an up-stream collimator, typically resulting in muons travelling parallel to the beam pip
+	\item Beam gas events: collision events that originate from interactions between proton bunches and residual gas inside the beam pipe.
+\end{itemize}
+While the effects of cavern background can be mitigated through special pieces of shielding, beam halo and beam gas events leave signatures that can be recognized and removed. Signals from in-time and out-of-time pile-up create irreducible overlap with the events of interest, significantly impacting analyses, and thus need to be simulated.
 
 \subsection{Luminosity and data-taking}
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.49\linewidth}
+	\begin{subfigure}[b]{0.45\linewidth}
 		\centering\includegraphics[width=\textwidth]{peakLumiByFill}
 		\caption{\label{fig:peakLumiByFill}}
 	\end{subfigure}%
-	\begin{subfigure}[b]{0.49\linewidth}
+	\begin{subfigure}[b]{0.45\linewidth}
 		\centering\includegraphics[width=\textwidth]{intlumivstimeRun2DQall}
 		\caption{\label{fig:intlumivstimeRun2DQall}}
 	\end{subfigure}%
@@ -65,11 +88,13 @@ The instantaneous luminosity is related to the total number of events $N$ throug
 \end{equation}
 with $L_\mathrm{int}$ the total integrated luminosity, a measure for the total amount of collision data produced.
 
-A precise knowledge of the integrated luminosity corresponding to a given dataset is needed in order to be able to scale\improvement{LUCID}
-
-The LHC entered operation in 2008, with first beams in September and first collisions by the end of November that same year~\cite{startup}. Its operation is in general structured into so-called \textit{Runs}, that are spanned by multiple years of data-taking. Run~1 spanned from 2009 to 2013 and delivered roughly $\SI{28.5}{\per\femto\barn}$ of $pp$ collision data to ATLAS, taken at centre-of-mass energies of $\SI{7}{\TeV}$ and $\SI{8}{\TeV}$~\cite{Aad:2011dr,Aad:1517411,Aaboud:2016hhf}. Run~2 lasted from 2015 to 2018 and saw a centre-of-mass energy increase to $\SI{13}{\TeV}$, delivering approximately $\SI{156}{\per\femto\barn}$ of $pp$ collision data to ATLAS~\cite{ATLAS:2019pzw}. Run~3 of $pp$ collision data taking with two times design peak luminosity is currently planned to start its physics program in 2022 and last until end of 2024~\cite{run3}. Current plans foresee Run~3 to deliver about $\SI{150}{\per\femto\barn}$ of $pp$ collision data with centre-of-mass energies of $\SI{13}{\TeV}$ and $\SI{14}{\TeV}$. After Run~3, the LHC will be upgraded to the High Luminosity LHC, significantly increasing the peak instantaneous luminosity and delivering up to $\SI{3000}{\per\femto\barn}$ of $pp$ collision data from 2027 until 2040~\cite{run3,Apollinari:2284929}. 
+The LHC entered operation in 2008, with first beams in September and first collisions by the end of November that same year~\cite{startup}. Its operation is in general structured into so-called \textit{Runs}, that are spanned by multiple years of data-taking. Run~1 spanned from 2009 to 2013 and delivered roughly $\SI{28.5}{\per\femto\barn}$ of $pp$ collision data to ATLAS, taken at centre-of-mass energies of $\SI{7}{\TeV}$ and $\SI{8}{\TeV}$~\cite{Aad:2011dr,Aad:1517411,Aaboud:2016hhf}. Run~2 lasted from 2015 to 2018 and saw a centre-of-mass energy increase to $\SI{13}{\TeV}$, delivering approximately $\SI{156}{\per\femto\barn}$ of $pp$ collision data to ATLAS~\cite{ATLAS-CONF-2019-021}. Run~3 of $pp$ collision data taking with two times design peak luminosity is currently planned to start its physics program in 2022 and last until end of 2024~\cite{run3}. Current plans foresee Run~3 to deliver about $\SI{150}{\per\femto\barn}$ of $pp$ collision data with centre-of-mass energies of $\SI{13}{\TeV}$ and $\SI{14}{\TeV}$. After Run~3, the LHC will be upgraded to the High Luminosity LHC, significantly increasing the peak instantaneous luminosity and delivering up to $\SI{3000}{\per\femto\barn}$ of $pp$ collision data from 2027 until 2040~\cite{run3,Apollinari:2284929}. 
 
 This work uses $pp$ collision data taken by ATLAS during Run~2 of the LHC. Of the $\SI{156}{\per\femto\barn}$ delivered to ATLAS, $\SI{147}{\per\femto\barn}$ were recorded, and $\SI{139}{\per\femto\barn}$ were deemed to be good for physics analysis. \Cref{fig:lumi_run2} shows the cumulative luminosity delivered to ATLAS during Run~2.
+
+A precise knowledge of the integrated luminosity corresponding to a given dataset is crucial for both SM measurements as well as searches for BSM physics. Searches for SUSY like the one presented in this work rely on precise measurements of the integrated luminosity in order to be able to estimate the contribution from SM background processes. The luminosity measurement for the Run~2 dataset used within this work is described in detail in~\cite{ATLAS-CONF-2019-021} and relies on . 
+
+
 
 
 \section{ATLAS Experiment}\label{sec:atlas_experiment}
