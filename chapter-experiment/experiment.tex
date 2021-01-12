@@ -98,10 +98,13 @@ In order to use $\mu_\mathrm{vis}$ as luminosity monitor, the respective detecto
 
 The LHC entered operation in 2008, with first beams in September and first collisions by the end of November that same year~\cite{startup}. Its operation is in general structured into so-called \textit{Runs}, that are spanned by multiple years of data-taking. Run~1 spanned from 2009 to 2013 and delivered roughly $\SI{28.5}{\per\femto\barn}$ of $pp$ collision data to ATLAS, taken at centre-of-mass energies of $\SI{7}{\TeV}$ and $\SI{8}{\TeV}$~\cite{Aad:2011dr,Aad:1517411,Aaboud:2016hhf}. Run~2 lasted from 2015 to 2018 and saw a centre-of-mass energy increase to $\SI{13}{\TeV}$, delivering approximately $\SI{156}{\per\femto\barn}$ of $pp$ collision data to ATLAS~\cite{ATLAS-CONF-2019-021}. Run~3 of $pp$ collision data taking with two times design peak luminosity is currently planned to start its physics program in 2022 and last until end of 2024~\cite{run3}. Current plans foresee Run~3 to deliver about $\SI{150}{\per\femto\barn}$ of $pp$ collision data with centre-of-mass energies of $\SI{13}{\TeV}$ and $\SI{14}{\TeV}$. After Run~3, the LHC will be upgraded to the High Luminosity LHC, significantly increasing the peak instantaneous luminosity and delivering up to $\SI{3000}{\per\femto\barn}$ of $pp$ collision data from 2027 until 2040~\cite{run3,Apollinari:2284929}. 
 
-This work uses $pp$ collision data taken by ATLAS during Run~2 of the LHC. Of the $\SI{156}{\per\femto\barn}$ delivered to ATLAS, $\SI{147}{\per\femto\barn}$ were recorded, and $\SI{139}{\per\femto\barn}$ were deemed to be good for physics analysis. \Cref{fig:lumi_run2} shows the cumulative luminosity delivered to ATLAS during Run~2. Uncertainties on the measurement total recorded luminosity stem from the measurements of $\mu_\mathrm{vis}$ and $\sigma_\mathrm{vis}$, but are dominated by the uncertainties on $\sigma_\mathrm{vis}$ as vdM scans can only be done during special runs, while the general conditions during high-$\mu$ conditions change constantly. For the full Run~2 dataset, the uncertainties accumulate to $\pm 1.7 \%$~\cite{ATLAS-CONF-2019-021}.
+This work uses $pp$ collision data taken by ATLAS during Run~2 of the LHC. Of the $\SI{156}{\per\femto\barn}$ delivered to ATLAS, $\SI{147}{\per\femto\barn}$ were recorded, and $\SI{139}{\per\femto\barn}$ were deemed to be good for physics analysis. \Cref{fig:lumi_run2} shows the cumulative luminosity delivered to ATLAS during Run~2. Uncertainties on the measurement total recorded luminosity stem from the measurements of $\mu_\mathrm{vis}$ and $\sigma_\mathrm{vis}$, but are dominated by the uncertainties on $\sigma_\mathrm{vis}$ as vdM scans can only be done during special runs, while the general conditions during high-$\mu$ conditions change continuously. For the full Run~2 dataset, the uncertainties accumulate to $\pm 1.7 \%$~\cite{ATLAS-CONF-2019-021}.
 
 \section{ATLAS Experiment}\label{sec:atlas_experiment}
 
+The ATLAS experiment is one of two general-purpose detectors at the LHC. Located at Point~1 in a cavern $\SI{100}{\meter}$ below the surface, it is approximately $\SI{44}{\meter}$ long and $\SI{25}{\meter}$ high~\cite{Aad:2008zzm}. The design of the ATLAS experiment is driven by the aim to allow for a diverse research program, including SM precision measurements, Higgs physics and searches for BSM physics, whilst at the same time taking into account the unique and challenging conditions set by the LHC. The various detector technologies used are designed to withstand the high-radiation environment of the LHC, while allowing particle measurements with high spatial and temporal granularity. The general structure of ATLAS is depicted in \cref{fig:atlas_detector}, and consists of a central part, called \textit{barrel}, that has a cylindrical shape around the beam pipe, and two discs, called \textit{end-caps}, that close off the barrel on each side. This makes the ATLAS detector forward-backward symmetric and covering nearly the full solid angle of $4\pi$, which is needed in order to measure momentum imbalances caused by particles that only interact weakly with the detector material.
+
+The following sections introduce the working principles of the different detector components used in ATLAS, starting with the innermost component closest to the interaction point, the inner detector, followed by the calorimeters in the middle and finally the muon spectrometers on the outside. If not otherwise stated, details on the detector components are extracted from~\cite{Aad:2008zzm}.
 
 \begin{figure}
 	\centering    
@@ -109,6 +112,42 @@ This work uses $pp$ collision data taken by ATLAS during Run~2 of the LHC. Of th
 	\caption[The ATLAS detector]{Computer generated picture of the ATLAS detector, giving an overview on the various subsystems~\cite{Pequenao:1095924}.}
 	\label{fig:atlas_detector}
 \end{figure}
+
+
+\subsection{Coordinate system}
+
+In order to properly describe collision events in the ATLAS detector, a suitable detector system is needed. The right-handed coordinate system~\cite{ATLAS:1999uwa} used in ATLAS has its origin at the nominal interaction point in the centre of the detector. The positive $x$-axis points towards the centre of the LHC ring, the positive $y$-axis points upwards to the surface, and the beam pipe is used to define the $z$-axis. In the $x$--$y$ plane, called the transverse plane, the azimuthal angle $\phi$ is the angle around the beam axis, and the polar angle $\theta$ is measured from the beam axis. The rapidity~\cite{pdg2020} is defined as
+\begin{equation}
+	y = \frac{1}{2}\ln\left(\frac{E+p_z}{E-p_z}\right) = \tanh{\frac{p_z}{E}}^{-1},
+\end{equation}
+with $E$ the energy of an object and $p_z$ its momentum in $z$-direction. As opposed to the polar angle $\theta$, differences in the rapidity are invariant under Lorentz boosts in $z$-direction.
+
+The pseudorapidity \cite{pdg2020} is the high-energy limit ($p\gg m$) of the rapidity, and defined as
+\begin{align}
+	\eta = - \ln\tan\frac{\theta}{2},
+\end{align}
+with $\cos\theta = p_z/p$. Pseudorapidity and rapidity are approximately equal in the limit where $p\gg m$ and $\theta \gg \frac{1}{\gamma}$. Compared to the rapidity, the pseudorapidity has the advantage of not depending on the energy and momentum calibration of the detected objects. Additionally, it gives a direct correspondence to the polar angle $\theta$ through the relation $\tanh\eta = \cos\theta$.
+
+The distance between two objects in the ATLAS detector is given by
+\begin{align}
+	\Delta R=\sqrt{\left(\Delta \eta\right)^2+\left(\Delta \phi\right)^2}.
+\end{align}
+The longitudinal momentum of the partons composing the colliding hadrons is only known by means of the parton distribution functions (PDFs), stating the probabilities of the partons to have a certain energy in the direction of the beam. Thus, the total longitudinal energy in each collision is not exactly known, impeding the use of physics quantities in the $z$-direction. In the $x$--$y$ plane, however, momentum conservation can be applied, which is why mainly transverse physics quantities are used, indicated by a subscript `T', \eg $E_T$ or $p_T$.
+
+
+\subsection{Magnet system}
+
+\subsection{Inner detector}
+
+\subsection{Calorimeters}
+
+\subsection{Muon spectrometer}
+
+\subsection{Forward detectors}
+
+\subsection{Trigger and data acquisition system}
+
+\subsection{Object reconstruction}
 
 
 \section{Monte Carlo simulation}
