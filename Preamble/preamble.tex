@@ -129,7 +129,7 @@
 % *****************************************************************************
 % *************************** Bibliography  and References ********************
 
-%\usepackage{cleveref} %Referencing without need to explicitly state fig /table
+\usepackage{cleveref} %Referencing without need to explicitly state fig /table
 
 % Add `custombib' in the document class option to use this section
 \ifuseCustomBib
@@ -138,7 +138,6 @@
 % If you would like to use biblatex for your reference management, as opposed to the default `natbibpackage` pass the option `custombib` in the document class. Comment out the previous line to make sure you don't load the natbib package. Uncomment the following lines and specify the location of references.bib file
 
 %\RequirePackage[backend=biber, style=numeric, citestyle=numeric, natbib=true, sorting=none]{biblatex}
-%\usepackage{cleveref}
 %%\addbibresource{References/dummy.bib}
 %\addbibresource{References/references.bib}
 %\addbibresource{References/atlas_journal.bib}
@@ -171,9 +170,10 @@
 
 % ******************************* Nomenclature *********************************
 % To change the name of the Nomenclature section, uncomment the following line
-
 \renewcommand{\nomname}{Symbols}
 
+\RequirePackage[acronym]{glossaries} 
+\makeglossaries
 
 % ********************************* Appendix ***********************************
 
@@ -262,7 +262,7 @@
 \setlength{\marginparwidth}{2cm}
 \usepackage[draft,textsize=small]{todonotes}   % notes showed
 
-% ******************* New commands *************
+% ******************************** New custom commands **********************************
 
 
 \newcommand{\comment}[1]
@@ -308,8 +308,6 @@
 \makeatother
 %these are todo notes
 \newcommand\myworries[1]{\textbf{\textcolor{red}{#1}}}
-%comment out if I want to remove todo notes
-%\renewcommand\myworries[1]{}
 
 % harmonise the size of single figures
 \newcommand{\singlefigsize}{0.6}
@@ -321,6 +319,16 @@
 \newcommand{\Reference}{Ref.\@\xspace}
 \newcommand{\references}{Refs.\@\xspace}
 \newcommand{\References}{Refs.\@\xspace}
-\usepackage{cleveref}
 
 
+% ******************************** Acronyms **********************************
+
+
+\newacronym{lhc}{LHC}{Large Hadron Collider}
+\newacronym{rf}{RF}{Radio frequency}
+\newacronym{ps}{PS}{Proton Synchrotron}
+\newacronym{sps}{SPS}{Super Proton Synchrotron}
+\newacronym{id}{ID}{Inner Detector}
+\newacronym{sct}{SCT}{Silicon Microstip Tracker}
+\newacronym{trt}{TRT}{Transition Radiation Tracker}
+\newacronym{ibl}{IBL}{Insertable B-Layer}
