@@ -126,7 +126,7 @@ The pseudorapidity \cite{pdg2020} is the high-energy limit ($p\gg m$) of the rap
 \begin{align}
 	\eta = - \ln\tan\frac{\theta}{2},
 \end{align}
-with $\cos\theta = p_z/p$. Pseudorapidity and rapidity are approximately equal in the limit where $p\gg m$ and $\theta \gg \frac{1}{\gamma}$. Compared to the rapidity, the pseudorapidity has the advantage of not depending on the energy and momentum calibration of the detected objects. Additionally, it gives a direct correspondence to the polar angle $\theta$ through the relation $\tanh\eta = \cos\theta$.
+with $\cos\theta = p_z/p$. Pseudorapidity and rapidity are approximately equal in the limit where $p\gg m$ and $\theta \gg \frac{1}{\gamma}$. Compared to the rapidity, the pseudorapidity has the advantage of not depending on the energy and momentum calibration of the detected objects. Additionally, it gives a direct correspondence to the polar angle $\theta$ through the relation $\tanh\eta = \cos\theta$. Objects travelling along the beam axis have a pseudorapidity of $\eta = \inf$ and objects travelling upwards along the $y$-axis have $\eta = 0$.
 
 The distance between two objects in the ATLAS detector is given by
 \begin{align}
@@ -134,8 +134,13 @@ The distance between two objects in the ATLAS detector is given by
 \end{align}
 The longitudinal momentum of the partons composing the colliding hadrons is only known by means of the parton distribution functions (PDFs), stating the probabilities of the partons to have a certain energy in the direction of the beam. Thus, the total longitudinal energy in each collision is not exactly known, impeding the use of physics quantities in the $z$-direction. In the $x$--$y$ plane, however, momentum conservation can be applied, which is why mainly transverse physics quantities are used, indicated by a subscript `T', \eg $E_T$ or $p_T$.
 
-
 \subsection{Magnet system}
+
+In order to perform precise momentum measurements of particles, ATLAS uses a system of magnets, whose magnetic fields force charged particles on curved tracks due to the Lorentz force. Using precise measurements of the tracks taken in the inner detector and the muon spectrometers, the curvature of the tracks can be determined, allowing an inference of the charge-to-momentum ratio $q/p$ of charged particles. ATLAS employs a set of four superconducting magnets, one central solenoid, and three toroids, all operating at a nominal temperature of $\SI{4.5}{K}$, achieved through a cryogenic system using liquid helium~\cite{Aad:2008zzm}. 
+
+The solenoid is aligned on the beam axis and provides a $\SI{2}{T}$ magnetic field for the inner detector~\cite{Aad:2008zzm}. As it is located in front of the calorimeters (as seen from the IP), it is specially designed to have minimal material thickness in order to avoid influencing the subsequent energy measurements. The solenoid consists of single-layer coils made out of a Nb/Ti conductor and additional aluminum for stability. It operates at a nominal current of $\SI{7.73}{\kilo\ampere}$ and uses the hadronic calorimeter as return yoke~\cite{Aad:2008zzm}.
+
+The toroid magnets consist of a barrel toroid and two end-cap toroids, producing a magnetic field of $\SI{0.5}{T}$ and $\SI{1}{T}$ for the muon spectrometers in the barrel and end-caps, respectively\footnote{The magnetic field in of the toroid magnets is designed to be higher in the end-caps in order to ensure enough bending power necessary for precise momentum measurements.}~\cite{Aad:2008zzm}. Both barrel and end-cap toroids are made out off Nb/Ti/Cu conductor with aluminum stabilisation, wound into double pancake-shaped coils. The barrel toroid coils are enclosed in eight stainless-steel vacuum vessels in a racetrack-shaped configuration and arranged around the barrel calorimeters with an azimuthal symmetry. In order to withstand the Lorentz forces, the end-cap toroid coils are assembled in eight square units, and bolted and glued together with eight wedges, forming rigid structures. Both end-cap and barrel toroids operate at a nominal current of $\SI{20.5}{\kilo\ampere}$~\cite{Aad:2008zzm}.
 
 \subsection{Inner detector}
 
