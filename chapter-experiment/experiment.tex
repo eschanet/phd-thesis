@@ -168,16 +168,36 @@ In the high-rate environment directly adjacent to the beam pipe, the only detect
 
 \subsubsection{Silicon microstrip detector}
 
-The pixel detector is surrounded by the \gls{sct}, consisting of four layers in the barrel and nine disks in the end-caps. In order to provide two-dimensional tracking information, strips are arranged in double-layers with a small crossing angle of $\SI{40}{mrad}$ and a mean pitch of $\SI{80}{\micro\meter}$. A charged particle traversing the SCT through the barrel thus creates four space point measurements. In the barrel, one set of strips in each of the four double-layers is oriented in beam direction, thereby measuring $R-\phi$, and in the end-caps, one set of strips in each layer is oriented in radial direction. The SCT has roughly $6.3$ million readout channels and provides tracking information up to $\vert\eta\vert <2.5$. It achieves a precision of $\SI{17}{\micro\meter}$ in ($R-\phi$) and $\SI{580}{\micro\meter}$ in ($z$) for the barrel and ($R$) for the end-caps.
+The pixel detector is surrounded by the \gls{sct}, consisting of four layers in the barrel and nine disks in the end-caps. In order to provide two-dimensional tracking information, strips are arranged in double-layers with a small crossing angle of $\SI{40}{mrad}$ and a mean pitch of $\SI{80}{\micro\meter}$~\cite{Aad:2008zzm}. A charged particle traversing the SCT through the barrel thus creates four space point measurements. In the barrel, one set of strips in each of the four double-layers is oriented in beam direction, thereby measuring $R-\phi$, and in the end-caps, one set of strips in each layer is oriented in radial direction. The SCT has roughly $6.3$ million readout channels and provides tracking information up to $\vert\eta\vert <2.5$~\cite{Aad:2008zzm}. It achieves a precision of $\SI{17}{\micro\meter}$ in ($R-\phi$) and $\SI{580}{\micro\meter}$ in ($z$) for the barrel and ($R$) for the end-caps~\cite{Aad:2008zzm}.
 
 \subsubsection{Transition radiation tracker}
 
-The last and also largest of the three subdetectors of the ID is the \gls{trt}, a gaseous detector made of multiple layers of $\SI{4}{\milli\meter}$ diameter drift tubes, surrounding the pixel detector and the SCT. The drift tubes consist of an aluminum cathode coated on a polyimide layer reinforced by carbon fibers and use a gold-plated tungsten wire as anode. The tubes are filled with a Xe-based gas mixture, providing an electric permittivity different from the surrounding material, causing transition radiation when traversed by ultrarelativistic particles. While the $\SI{144}{\centi\meter}$ long tubes in the barrel region are aligned parallel to the beam pipe, the $\SI{37}{\centi\meter}$ long tubes in the end-caps are aligned in radial direction, providing coverage up to $\vert\eta\vert <2.0$ and an intrinsic accuracy of $\SI{130}{\micro\meter}$ in $R-\phi$. The low accuracy compared to the pixel detector and the SCT is compensated by the large amount of hits ($\sim 36$ per track) and the longer measured track length. As the amount of transition radiation given off by a particle, is proportional to its Lorentz factor $\gamma$~\cite{pdg2020}, the TRT is also used to improve electron identification~\cite{ATLAS-CONF-2011-128}. For the same momentum, electrons will have a higher Lorentz factor than the heavier charged pions, and consequently give off more transition radiation.
+The last and also largest of the three subdetectors of the ID is the \gls{trt}, a gaseous detector made of multiple layers of $\SI{4}{\milli\meter}$ diameter drift tubes, surrounding the pixel detector and the SCT. The drift tubes consist of an aluminum cathode coated on a polyimide layer reinforced by carbon fibers and use a gold-plated tungsten wire as anode. The tubes are filled with a Xe-based gas mixture, providing an electric permittivity different from the surrounding material, causing transition radiation when traversed by ultrarelativistic particles. While the $\SI{144}{\centi\meter}$ long tubes in the barrel region are aligned parallel to the beam pipe, the $\SI{37}{\centi\meter}$ long tubes in the end-caps are aligned in radial direction, providing coverage up to $\vert\eta\vert <2.0$ and an intrinsic accuracy of $\SI{130}{\micro\meter}$ in $R-\phi$~\cite{Aad:2008zzm}. The low accuracy compared to the pixel detector and the SCT is compensated by the large amount of hits (typically $36$ per track) and the longer measured track length. As the amount of transition radiation given off by a particle, is proportional to its Lorentz factor $\gamma$~\cite{pdg2020}, the TRT is also used to improve electron identification~\cite{ATLAS-CONF-2011-128}. For the same momentum, electrons will have a higher Lorentz factor than the heavier charged pions, and consequently give off more transition radiation.
 
 \subsection{Calorimeters}
 
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{cal}
+		\caption{Calorimeter systems\label{fig:calorimeters}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{ms}
+		\caption{Muon spectrometer\label{fig:muon_system}}
+	\end{subfigure}%
+	\caption{Schematic drawing of the calorimeter systems and the muon spectrometer in ATLAS. Images adapted from~\cite{Pequenao:1095927,Pequenao:1095929}.}\label{fig:cal_ms_schematic}
+\end{figure}
 
+The primary goal of calorimeters is to measure the energies of incoming particles by completely absorbing them. As the energies of neutral particles can not be measured by other means, calorimeters are especially important for jet energy measurements (which contain neutral hadrons)~\cite{Brock:1354959}. As the absorption process always causes cascades of secondary particles that strongly depend on the type of incoming particle, different calorimeter systems are used in ATLAS. Photons and electrons (and positrons) loose their energy through the electromagnetic process of \textit{bremsstrahlung} and \textit{ionisation}. Charged hadrons also loose energy due to ionisation. Due to the high particle masses, bremsstrahlung is however negligible in the case of charged hadrons. The majority of the energy loss of charged and neutral hadrons stems from inelastic interactions with the nuclei of the atoms in the detector material. For this reason, ATLAS employs two types of calorimeters, an electromagnetic, and a hadronic calorimeter, providing coverage up to $\vert\eta\vert <4.9$~\cite{Aad:2008zzm}. 
 
+Both calorimeters are sampling calorimeters, consisting of alternating layers of active and absorbing material. The absorbing material interacts with the incoming particles, causing them to deposit their energy by creating cascades or \textit{showers} of secondary particles. The active layers are then used to record the shape and intensity of the produced showers. This alternating structure results in reduced material costs but also reduced energy resolution as only part of the particle's energy is sampled. Due to the typically longer cascades in hadronic interactions compared to electromagnetic interactions, and in order to minimise punch-through into the muon system, the hadronic calorimeter requires a greater material depth than the electromagnetic one. Both calorimeter systems in ATLAS are schematically illustrated in \cref{fig:cal_ms_schematic}.
+
+\subsubsection{Electromagnetic calorimeter}
+
+The \gls{ecal} has an accordion-shaped structure and uses \gls{lar} as active material and lead as absorber, providing full $\phi$ symmetry without azimuthal cracks 
+
+\subsubsection{Hadronic calorimeter}
 
 \subsection{Muon spectrometer}
 
