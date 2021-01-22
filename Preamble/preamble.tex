@@ -172,7 +172,8 @@
 % To change the name of the Nomenclature section, uncomment the following line
 \renewcommand{\nomname}{Symbols}
 
-\RequirePackage[acronym]{glossaries} 
+\RequirePackage[acronym]{glossaries}
+\renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}}
 \makeglossaries
 
 % ********************************* Appendix ***********************************
@@ -324,15 +325,28 @@
 % ******************************** Acronyms **********************************
 
 
+\newacronym{susy}{SUSY}{Supersymmetry}
+\newacronym{bsm}{BSM}{Beyond the Standard Model}
+\newacronym{em}{EM}{Electromagnetic}
+\newacronym{emec}{EMEC}{Electromagnetic end-cap calorimeter}
+\newacronym{hec}{HEC}{Hadronic end-cap calorimeter}
 \newacronym{lhc}{LHC}{Large Hadron Collider}
+\newacronym{lep}{LEP}{Large Electron Positron}
 \newacronym{rf}{RF}{Radio frequency}
+\newacronym{vdm}{vdM}{van der Meer}
 \newacronym{ps}{PS}{Proton Synchrotron}
 \newacronym{sps}{SPS}{Super Proton Synchrotron}
 \newacronym{id}{ID}{Inner Detector}
+\newacronym{ip}{IP}{Interaction Point}
 \newacronym{sct}{SCT}{Silicon Microstip Tracker}
 \newacronym{trt}{TRT}{Transition Radiation Tracker}
 \newacronym{ibl}{IBL}{Insertable B-Layer}
 \newacronym{ecal}{ECal}{electromagnetic calorimeter}
 \newacronym{fcal}{FCal}{Forward Calorimeter}
-\newacronym{hcal}{HCal}{hadronic Calorimeter}
+\newacronym{hcal}{HCal}{Hadronic Calorimeter}
 \newacronym{lar}{LAr}{liquid argon}
+\newacronym{ms}{MS}{Muon Spectrometer}
+\newacronym{mdt}{MDTs}{Monitoring Drift Tubes}
+\newacronym{csc}{CSCs}{Cathode Strip Chambers}
+\newacronym{rpc}{RPCs}{Resistive Plate Chambers}
+\newacronym{tgc}{TGCs}{Thin Gap Chambers}
