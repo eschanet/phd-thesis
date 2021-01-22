@@ -208,7 +208,26 @@ The forward region with $3.1 < \vert\eta\vert <4.9$ is covered by the \gls{lar}~
 
 \subsection{Muon spectrometer}
 
-Muons, being minimum ionising particles, are the only charged particles that consistently pass through the entire detector including the calorimeter system. Providing one of the cleanest signatures for \gls{bsm} physics~\cite{Brock:1354959}, muonic final states are measured with a dedicated detector system on the outermost layer of the ATLAS experiment. Embedded in the magnetic field of the toroid magnets, the \gls{ms} consists of three concentric cylindrical layers in the barrel region, and three wheels in each end-cap, and provides momentum measurements up to $\vert\eta\vert <2.7$~\cite{Aad:2008zzm}. The \gls{ms} is designed to deliver a transverse momentum resolution of $10\%$ for $\SI{1}{\TeV}$ tracks
+Muons, being minimum ionising particles, are the only charged particles that consistently pass through the entire detector including the calorimeter system. Providing one of the cleanest signatures for \gls{bsm} physics~\cite{Brock:1354959}, muonic final states are measured with a dedicated detector system on the outermost layer of the ATLAS experiment. Embedded in the magnetic field of the toroid magnets, the \gls{ms} consists of three concentric cylindrical layers in the barrel region, and three wheels in each end-cap, and provides momentum measurements up to $\vert\eta\vert <2.7$~\cite{Aad:2008zzm}. It is designed to deliver a transverse momentum resolution of $10\%$ for $\SI{1}{\TeV}$ tracks and be able to measure muon momenta down to roughly $\SI{3}{\GeV}$.
+
+The \gls{ms} uses two high-precision gaseous detector chamber types, \gls{mdt} chambers and \gls{csc}. As both the \gls{mdt} and \gls{csc} are drift chambers relying on charges drifting to an anode or cathode, the maximum response times of $\SI{700}{\nano\second}$ and $\SI{50}{\nano\second}$, respectively, are slow compared to the bunch-spacing of $\SI{25}{\nano\second}$. ATLAS therefore uses \gls{rpc} in the barrel and \gls{tgc} in the end-caps as triggers in order to associate measurements to the right bunch-crossing.  
+
+\subsubsection{Monitored drift tubes}
+
+The \gls{mdt} chambers are the main subcomponent providing precision measurements of the muon tracks up to $\vert\eta\vert <2.7$, except in the innermost end-cap layer where their coverage only extends to $\vert\eta\vert <2.0$. The \gls{mdt} are made of 3--4 layers of $\sim \SI{30}{\milli\meter}$ diameter drift tubes operated with Ar/CO$_2$ gas\footnote{With a small admixture of $\SI{300}{ppm}$ of water to improve high voltage stability.} pressurised to $\SI{3}{\bar}$. Charged particles traversing the drift tubes ionise the gas, creating electrons that drift towards a central tungsten-rhenium anode wire with a diameter of $\SI{50}{\micro\meter}$. Following the symmetry of the barrel toroid magnet, the \gls{mdt} chambers are arranged as octets around the calorimeters with the drift tubes in $\phi$ direction, \ie tangential to circles around the beam pipe. In order to be able to correct for potential chamber deformations due to varying thermal gradients, each \gls{mdt} chamber is equipped with an internal optical alignment system. Apart from the regular chambers in the barrel and the end-cap wheels, special modules are installed in order to minimise the acceptance losses due to the ATLAS support structure (the \textit{feets} of the experiment).
+
+\subsubsection{Cathode strip chambers}
+
+In the region with $\vert\eta\vert > 2.0$ in the first layer of the end-caps, the particle flux is too high to allow for safe operation of \gls{mdt} chambers. Instead, \gls{csc}, multiwire proportional chambers, are used for precision measurements in this region. The gold-plated tungsten-rhenium anode wires in the \gls{csc} have a diameter of $\SI{30}{\micro\meter}$ and are oriented in radial direction. The wires are enclosed on both sides by cathode planes, one segmented perpendicular to the wires (thus providing the precision coordinate), the other parallel to the wires. Each chambers is filled with an Ar/CO$_2$ gas mixture and consists of four wire planes, resulting in four measurements of $\eta$ and $\phi$ for each track. In addition to the chamber-internal alignment sensors, ATLAS also employs an optical alignment system in order to align the precision chambers to each other~\cite{Aad:2008zzm}.
+
+\subsubsection{Resistive plate chambers}
+
+\gls{rpc} are gaseous parallel electrode-plate chambers that use two resistive plastic laminate plates kept $\SI{2}{\milli\meter}$ apart by insulating spacers. Due to an electric field of roughly $\SI{4.9}{\kilo\volt\per\milli\meter}$ between the plates, charged particles traversing the chamber cause avalanches of charges that can be read out through capacitive coupling to metallic strips mounted on the outside of the resistive plates. In order to provide tracking information in both coordinates, each \gls{rpc} consists of two rectangular units each containing two gas volumes with a total of four pairwise orthogonal sets of readout strips. The tree concentric cylindrical layers of \gls{rpc} in the barrel region thus provide six measurements of $\eta$ and $\phi$ and cover $\vert\eta\vert <1.05$
+
+\subsubsection{Thin gap chambers}
+
+The \gls{tgc} are not only necessary for triggering in the end-cap \gls{ms} but also provide measurements of a second coordinate, orthogonal to the measurements of the \gls{mdt}.
+
 
 \subsection{Forward detectors}
 
