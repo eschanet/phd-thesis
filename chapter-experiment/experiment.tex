@@ -255,9 +255,15 @@ producing an output format identical to that of the \gls{daq} for recorded $pp$ 
 
 \subsubsection{Event generation}
 
-Generating and understanding the final states of $pp$ collision events is an enormously challenging problem as it typically involves hundreds of particles with energies spanning many orders of magnitude~\cite{Buckley:2011ms}. This makes the matrix elements connected to these processes too complicated to be computed beyond the first few orders of perturbation theory. The \gls{qcd} processes, can not be computed using perturbation theory at all and rely on different hadronisation schemes.
+The majority of $pp$ collisions are not interesting for particle physicists in the sense that they only involve soft hadrons travelling along the beam axis. Only a few events actually involve an \textit{hard-scattering} event with high-momentum transfer, rendering them interesting for particle physicists to study. Generating and understanding the final states of these $pp$ collision events is an enormously challenging problem as it typically involves hundreds of particles with energies spanning many orders of magnitude~\cite{Buckley:2011ms}. This makes the matrix elements connected to these processes too complicated to be computed beyond the first few orders of perturbation theory. The treatment of divergences and the integration over large phase-spaces further complicates the calculation of experimental observables.
 
-The majority of $pp$ collisions are not interesting for particle physicists in the sense that they only involve soft hadrons travelling along the beam axis. Only a few events actually involve a \textit{hard-scattering} event with high-momentum transfer. The first step of any event generator software thus is to calculate the probability distribution of a hard-scatter event of interest, a process that is more or l ~\cite{Buckley:2011ms}.
+It is not surprising that the simulation of the hard-scatter interaction is at the heart of any \gls{mc} event generator. Due to the high-momentum transfer scale, the cross section of this process can be calculated perturbatively using collinear factorisation~\cite{Buckley:2011ms},
+\begin{equation}
+	\sigma = \sum_{a,b}{\int_0^1{\diff x_a \diff x_b\int{\diff\Phi_n f_a^{h_1}(x_a,\mu_F) f_b^{h_2}(x_b,\mu_F)} \times \frac{1}{2 x_a x_b s}\vert \mathcal{M}_{ab\rightarrow n} \vert^2 (\Phi_n; \mu_F,\mu_R)}},
+\end{equation}
+with $x_a$ and $x_b$ the momentum fractions of the partons $a$ and $b$ with respect to their parent hadrons $h_1$ and $h_2$, $\mu_F$ and $\mu_R$ are the factorisation and the renormalisation scales, respectively and $\diff\Phi_n$ is the differential final state phase-space element. The matrix element $\vert\mathcal{M}_{ab\rightarrow n}\vert^2$ can be calculated using different methods~\cite{Buckley:2011ms}, with most \gls{mc} generators employing \gls{lo} computations 
+
+
 
 \subsubsection{Detector simulation}
 
