@@ -35,7 +35,7 @@ The remaining four Points house accelerator equipment needed for operation of th
 
 The eight arcs of the \gls{lhc} are filled with dipole magnets built from superconducting NbTi Rutherford cables. The electromagnets are responsible for keeping the accelerated particles on their circular trajectory and are the limiting factor of the maximal centre-of-mass energy $\sqrt{s}$ of the \gls{lhc}. In order to achieve the design energy of $\sqrt{s} = \SI{14}{\TeV}$~\cite{Bruning:782076}, the magnets have to create a field strength of $\SI{8.3}{T}$~\cite{Evans:1129806}. In order to sustain the electric currents needed for such high field strengths, the magnets need to be cooled down to $\SI{1.9}{K}$~\cite{Evans:1129806} using superfluid helium and operated in superconducting state. In addition to the dipole magnets, the arcs contain quadrupole magnets used to shape and focus the beams, as well as multipole magnets correcting and optimizing the beam trajectory. Quadrupole magnets are also used to reduce the beam size before and after the interaction points.
 
-\subsection{Pileup}
+\subsection{Pile-up}\label{sec:pileup}
 
 \begin{figure}
 	\centering
@@ -58,7 +58,7 @@ Experimentally, pile-up can be divided into five major components~\cite{Marshall
 	\item \textit{Out-of-time} pile-up: additional collisions occurring in bunch crossings before or after the main event of interest. This happens either due to read-out electronic integrating over longer time frames than the $\SI{25}{ns}$ bunch spacing, or detector components being sensitive to several bunch crossings.
 	\item \textit{Cavern background}: gas of thermal neutrons and photons that typically fill the experimental caverns during a run of the LHC and tend to cause random hits in detector components.
 	\item \textit{Beam halo events}: protons scraping an up-stream collimator, typically resulting in muons travelling parallel to the beam pip
-	\item Beam gas events: collision events that originate from interactions between proton bunches and residual gas inside the beam pipe.
+	\item \textit{Beam gas events}: collision events that originate from interactions between proton bunches and residual gas inside the beam pipe.
 \end{itemize}
 While the effects of cavern background can be mitigated through special pieces of shielding, beam halo and beam gas events leave signatures that can be recognized and removed. Signals from in-time and out-of-time pile-up create irreducible overlap with the events of interest, significantly impacting analyses, and thus need to be simulated~\cite{Marshall:2014mza}.
 
@@ -257,9 +257,9 @@ producing an output format identical to that of the \gls{daq} for recorded $pp$ 
 
 
 \begin{figure}
-\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.3\textwidth}}]{figure}[\FBwidth]
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.4\linewidth}}]{figure}[\FBwidth]
 {\caption{Pictorial representation of a $t\bar{t}+H$ event simulated by a \gls{mc} event generator. The hard interaction (big red blob) is followed by the decay of the two top quarks and the Higgs boson (small red blobs). \gls{isr} and \gls{fsr} are shown as curly blue and red lines, respectively. A second interaction is simulated (purple blob) and contributions from the underlying event are modelled (purple lines). The hadronisation of final-state partons (light green blobs) is followed by the decays of unstable hadrons (dark green blobs). \gls{qed} radiation (yellow lines) is added at each stage of the event simulation. Figure adapted from~\cite{Gleisberg:2008ta}.}\label{fig:sherpa_event}}
-{\includegraphics[width=0.6\textwidth]{sherpa_event}}
+{\includegraphics[width=0.6\linewidth]{sherpa_event}}
 \end{figure}
 
 \improvement{simulation tools allow to plugin any Lagrangian and get events at detector level}
@@ -283,7 +283,7 @@ Once the parton showering reaches energies of $\mathcal{O}(\SI{1}{\GeV})$, enter
  As not all hadrons formed in the hadronisation process are stable, the affected hadrons need to be decayed until they form resonances stable enough to reach the detector material. In addition \gls{qed} radiation, that can happen at any time during the event, needs to be simulated. This is typically done with algorithms similar to the ones used for the parton shower.
  
  The simulation steps that cannot be performed from first principles but rely on phenomenological models (underlying event, parton shower, hadronisation) introduce free parameters that need to be derived or \textit{tuned} from parameter optimisations against experimental data. In ATLAS, the output of \gls{mc} event generators is stored in so-called EVNT data format containing HepMC~\cite{Dobbs:2001ck} event records. Although only the stable final-state particles are propagated to the detector simulation, the HepMC event record contains the entire connected tree as so-called \textit{Monte Carlo truth}.
- 																																		
+		
 \subsubsection{Detector simulation}
 
 Only the final-state particles generated by the \gls{mc} event generator are read into the detector simulation. In ATLAS, the full detector simulation is handled \textsc{Geant4}~\cite{geant:2002hh}, a toolkit providing detailed models for physics processes and an infrastructure for particle transportation through a geometry. \textsc{Geant4} has knowledge about the full detector geometry as well as the materials used in the subdetectors and is able to compute the energy deposits (so-called \textit{hits}) from single particles in the different sensitive portions of the detector components. The \textsc{Geant4} simulation adds information to the Monte Carlo truth content created during the event generation, including however only the most relevant tracks (mostly from the \gls{id}) due to size constraints~\cite{Aad:2010ah}.
@@ -292,7 +292,7 @@ The complicated detector geometry and the detailed description of physics proces
 
 \subsubsection{Digitisation}
 
-
+During the digitisation step, the hits from the detector simulation are converted into detector responses, so-called \textit{digits} that are typically produced when currents or voltages in the respective readout channels rise above a certain threshold in a given time window. The digitisation considers a modelling of the peculiarities of each detector component, including electronic noise and cross-talk~\cite{Aad:2010ah}. The effects from out-of-time and in-time pile-up are also considered by reading in multiple events and overlaying their hits. In order to match the true pile-up distribution in data, the number of events to overlay per bunch crossing can be set at run time. As described in~\cref{sec:pileup}, effects from cavern background, beam halo and beam gas can either be mitigated or removed at analysis level and are therefore typically not simulated.
 
 
 
