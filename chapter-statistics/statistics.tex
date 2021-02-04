@@ -20,17 +20,28 @@ Statistical models are used in order to order to quantify the correspondence bet
  
 In measurements in high energy physics, a \textit{statistical model} $f(\boldsymbol{x}\vert\boldsymbol{\phi})$ is a parametric family of \glspl{pdf} describing the probability of observing data $\boldsymbol{x}$ given a set of model parameters $\phi$ that typically describe parameters of the physical theory or unknown detector effects. The \textit{likelihood function} $L(\boldsymbol{\phi})$ is then numerically equivalent to $f(\boldsymbol{x}\vert\boldsymbol{\phi})$ with $\boldsymbol{x}$ fixed. As opposed to the \gls{pdf} $f(\boldsymbol{x})$ which describes the value of $f$ as a function of $\boldsymbol{x}$ given a fixed set of parameters $\boldsymbol{\phi}$, the likelihood refers to the value of $f$ as a function of $\boldsymbol{\phi}$ given a fixed value of $\boldsymbol{x}$.
 
-Searches for \gls{bsm} physics are typically centred around the measurement of several disjoint binned distributions (called \textit{channels} $c$) that are each associated with different event selection criteria (as opposed to different scattering processes) yielding observed event counts $\boldsymbol{n}$. In such counting experiments where each event is independently drawn from the same underlying distribution, each bin is described by a Poisson term. The Poisson probability to observe $n$ events with a expectation of $\nu$ events, is given by
+Searches for \gls{bsm} physics are typically centred around the measurement of several disjoint binned distributions (called \textit{channels} $c$) that are each associated with different event selection criteria (as opposed to different scattering processes) yielding observed event counts $\boldsymbol{n}$. In such counting experiments where each event is independently drawn from the same underlying distribution, each bin is fundamentally described by a Poisson term. The Poisson probability to observe $n$ events with a expectation of $\nu$ events, is given by
 \begin{equation}
 	\mathrm{Pois}(n\vert\nu) = \frac{\nu^n}{n!}e^{-\nu}.
 \end{equation}
+The expectation $\nu_{cb}$ in each channel $c$ and bin $b$ is a sum over the set of physics processes considered (called \textit{samples}). The sample-wise rates are in general a function of the the model parameters $\boldsymbol{\phi}$. The full model parameter set is typically separated into \textit{parameters of interest} $\boldsymbol{\psi}$ and \textit{nuisance parameters} $\boldsymbol{\theta}$ that are not of immediate interest but need to be accounted for. In the search presented in this work, the only \gls{poi} is the \textit{signal strength} parameter $\mu_{\mathrm{sig}}$, representing the ratio of the signal process cross section to its reference cross section as expected from theory. Free nuisance parameters directly determined by the Poisson terms for the data observations are called \textit{normalisation factors} $\boldsymbol{\mu_\mathrm{sample}}$. The remaining, constrained nuisance parameters represent the systematic uncertainties $\boldsymbol{\alpha}$. The degree to which they cause a deviation of the expected event rates from the nominal event rates is limited through \textit{constraint terms} $c_{\boldsymbol{\alpha}}(a_{\boldsymbol{\alpha}}\vert\boldsymbol{\alpha})$ that can be viewed as \textit{auxiliary measurements} with global observed data $\boldsymbol{a}$. 
+
+For a given set of observed data $\boldsymbol{n}$ and auxiliary data $\boldsymbol{a}$, the likelihood then reads
+\begin{equation}
+	L (\mu_{\mathrm{sig}}, \boldsymbol{\mu_\mathrm{sample}}, \boldsymbol{\alpha}) = \prod_{c\in\mathrm{channels}} \prod_{b\in\mathrm{bins_c}} \mathrm{Pois}(n_{cb}\vert\nu_{cb}(\mu_{\mathrm{sig}, \boldsymbol{\mu_\mathrm{sample}}, \boldsymbol{\alpha}})) \prod_{\alpha\in\boldsymbol{\alpha}}c_\alpha (a_\alpha\vert\alpha),
+\end{equation}
+where, given a certain integrated luminosity, $n_{cb}$ and $\nu_{cb}$ refer to the corresponding observed and expected rate of events, respectively~\cite{ATL-PHYS-PUB-2019-029}. The expected event depend on the model parameters $\boldsymbol{\phi}$ an are defined as
+\begin{equation}
+	\nu_{cb}(\boldsymbol) = \sum_{s\in\mathrm{samples}}{}\nu_{scb}(\boldsymbol{\phi}) = \sum_{s\in\mathrm{samples}}{(\prod_{\kappa\in\boldsymbol{\kappa}}\kappa_{scb}(\boldsymbol{\phi}))(\nu^0_{scb}(\boldsymbol{\phi})+\prod_{\Delta\in\boldsymbol{\Delta}}\Delta{scb}(\boldsymbol{\phi}))}.
+\end{equation} 
+
 The expectation $\nu_i$ in each bin $i$ can be parametrised through the introduction of a signal strength parameter $\mu_{\mathrm{sig}}$ by
 \begin{equation}
 	\nu_i = \mu_{\mathrm{sig}}s_i + b_i,
 \end{equation}
 where $s_i$ and $b_i$ are the bin-wise expected signal and background rates, respectively. The signal strength $\mu_{\mathrm{sig}}$ and is used as \gls{poi} in fits to data. Fixing $\mu_{\mathrm{sig}} = 0$ yields a \gls{sm} expectation, while $\mu_{\mathrm{sig}} = 1$ represents a \textit{signal-plus-background} description at nominal signal cross section. Scanning multiple values of $\mu_{\mathrm{sig}}$ allows to set limits on the visible cross sections of the signal models considered in the search. 
   
-For each of the channels, the total event rate is the sum over a set of physics processes, called \textit{samples}. The sample-wise event rates generally depend on the model parameters $\boldsymbol{\phi}$
+For each of the channels, the total event rate is the sum over a set of physics processes, called \textit{samples}. The sample-wise event rate are in general a function of the the model parameters $\boldsymbol{\phi}$
 
 
 
