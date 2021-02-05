@@ -14,7 +14,7 @@
 
 \glsreset{pdf}
 
-Statistical models are used in order to order to quantify the correspondence between theoretical predictions and the experimental observations in searches for \gls{bsm} physics. This chapter introduces the statistical concepts, methods and formulae used in this work for statistical inference. A frequentist approach to statistics is employed, interpreting probabilities as the frequencies of the outcomes of repeatable experiments that may either be real, based on computer simulations, or mathematical abstraction~\cite{pdg2020,Cranmer:2015nia}. The ensuing description largely follows~\cite{Cranmer:2015nia, Cowan:2010js}
+Statistical models are used in order to order to quantify the correspondence between theoretical predictions and the experimental observations in searches for \gls{susy}. This chapter introduces the statistical concepts, methods and formulae used in this work for statistical inference. A frequentist approach to statistics is employed, interpreting probabilities as the frequencies of the outcomes of repeatable experiments that may either be real, based on computer simulations, or mathematical abstraction~\cite{pdg2020,Cranmer:2015nia}. The ensuing description largely follows~\cite{Cranmer:2015nia, Cowan:2010js}
 
 \section{The likelihood function}
  
@@ -64,10 +64,23 @@ The \gls{mle} $\boldsymbol{\hat{\phi}}$ can thus be found by solving
 \begin{equation}
  \frac{\partial \ln L}{\partial\phi_i} = 0,
 \end{equation}
-where the index $i$ runs over all parameters. The solution typically needs to be found numerically using minimisation algorithms.
+where the index $i$ runs over all parameters. The solution typically needs to be found numerically using minimisation algorithms. In the following, the parameter estimation is referred to as a \textit{fit} of the model to data, and the maximum likelihood estimates of the parameters are consequently called \textit{best-fit values}.
 
 \section{Statistical tests}
 
+In addition to estimating the values of model parameters, searches for \gls{susy} are naturally interested in claiming discovery (or alternatively exclusion) of hypothesised signal models. In the frequentist approach, this can be formulated in terms of hypothesis tests, evaluating a \textit{null hypothesis} $H_0$ against an \textit{alternative hypothesis} $H_1$, with the goal of rejecting the null hypothesis. For discovering a new signal process, $H_0$ is defined to describe only known \gls{sm} processes (called \textit{background-only} hypothesis), while $H_1$ describes both \gls{sm} background processes as well as the signal process (called \textit{signal plus background hypothesis}). When excluding a signal model the signal plus background hypothesis takes over the role of $H_0$ and is tested against the background-only hypothesis.
+
+The degree of agreement of observed data with a certain hypothesis $H$ is quantified by computing a $p$-value, representing the probability of finding data of greater or more extreme incompatibility under assumption of $H$. The hypothesis can then be considered as excluded if its observed $p$-value is below a specified threshold. It is common to convert the $p$-value into a \textit{significance} $Z$, defined in such a way that a Gaussian distributed observable with measured value $Z$ standard deviations above its mean gives a one-sided upper tail probability equal to $p$. This yields the expression
+\begin{equation}
+	Z = \Phi^{-1}(1-p),
+\end{equation}
+where $\Phi^{-1}$ is the quantile of the standard Gaussian. Discovery of a signal then conventionally requires a significance of at least $Z = 5$, while exclusion of a signal hypothesis at 95\% confidence level requires a $p$-value of 0.05, \ie $Z = 1.64$~\cite{Cowan:2010js}. 
+
+The $p$-values are calculated using a \textit{test statistic q} that parameterises the compatibility between the hypothesis and data in a single value. In the test statistic definitions introduced in the following, larger values of $q$ represent increasing incompatibility with data. The $p$-value can then be computed using
+\begin{equation}
+	p = \int_{q_{\mathrm{obs}}}^{\inf}{f(q\vert H)\diff q},
+\end{equation}
+with $q_\mathrm{obs}$ the observed value of the test statistic in data, and $f(q\vert H)$ the \gls{pdf} of $q$ under the assumption of $H$. At LHC experiments, the 
 
 \section{Intervals and limits}
 
