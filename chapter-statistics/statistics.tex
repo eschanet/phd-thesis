@@ -24,13 +24,13 @@ Searches for \gls{bsm} physics are typically centred around the measurement of s
 \begin{equation}
 	\mathrm{Pois}(n\vert\nu) = \frac{\nu^n}{n!}e^{-\nu}.
 \end{equation}
-The expectation $\nu_{cb}$ in each channel $c$ and bin $b$ is a sum over the set of physics processes considered (called \textit{samples}). The sample-wise rates are in general a function of the the model parameters $\boldsymbol{\phi}$, that can either be \textit{free parameters} $\boldsymbol{\eta}$ or \textit{constrained parameters} $\boldsymbol{\chi}$. Free parameters directly determined by the Poisson terms for the data observations are called \textit{normalisation factors} $\boldsymbol{\mu}$. The constrained parameters represent the systematic uncertainties considered in the model. The degree to which they cause a deviation of the expected event rates from the nominal event rates is limited through \textit{constraint terms} $c_{\boldsymbol{\chi}}(a_{\boldsymbol{\chi}}\vert\boldsymbol{\chi})$ that can be viewed as \textit{auxiliary measurements} with global observed data $\boldsymbol{a}$. 
+The expectation $\nu_{cb}$ in each channel $c$ and bin $b$ is a sum over the set of physics processes considered (called \textit{samples}). The sample-wise rates are in general a function of the the model parameters $\boldsymbol{\phi}$, that can either be \textit{free parameters} $\boldsymbol{\eta}$ or \textit{constrained parameters} $\boldsymbol{\chi}$. Free parameters directly determined by the Poisson terms for the data observations are called \textit{normalisation factors}. The constrained parameters represent the systematic uncertainties considered in the model. The degree to which they cause a deviation of the expected event rates from the nominal event rates is limited through \textit{constraint terms} $c_{\boldsymbol{\chi}}(a_{\boldsymbol{\chi}}\vert\boldsymbol{\chi})$ that can be viewed as \textit{auxiliary measurements} with global observed data $\boldsymbol{a}$. 
 
 For a given observation $\boldsymbol{x} = (\boldsymbol{n},\boldsymbol{a})$ of observed events $\boldsymbol{n}$ and auxiliary data $\boldsymbol{a}$, the likelihood then reads
 \begin{equation}
 	L (\boldsymbol{\eta}, \boldsymbol{\chi}) = \prod_{c\in\mathrm{channels}} \prod_{b\in\mathrm{bins_c}} \mathrm{Pois}(n_{cb}\vert\nu_{cb}(\boldsymbol{\eta},\boldsymbol{\chi})) \prod_{\chi\in\boldsymbol{\chi}}c_\chi (a_\chi\vert\chi),
 \end{equation}
-where, given a certain integrated luminosity, $n_{cb}$ and $\nu_{cb}$ refer to the corresponding observed and expected rate of events, respectively~\cite{ATL-PHYS-PUB-2019-029}. Most of the systematic uncertainties are so-called \textit{interpolation parameters} $\boldsymbol{\alpha}$ representing either normalisation uncertainties or correlated shape uncertainties\improvement{Explain this further}. Their constraint terms $c_{\boldsymbol{\alpha}}(a_{\boldsymbol{\alpha}}\vert\boldsymbol{\alpha})$ are parametrised by a Gaussian with mean $a = 0\vert\alpha$ and variance $\sigma = 1$, with $\alpha = 0$ representing the nominal value. The \textit{up} and \textit{down} variations are then given by $\alpha=\pm 1$, thus representing $\pm 1\sigma$ variations. The impact of any given value of the parameter on the event rates is then evaluated through polynomial interpolation and exponential extrapolation, a method that avoids discontinuous first and second derivatives at $\alpha = 0$ and ensures positive values for the predicted event rates.
+where, given a certain integrated luminosity, $n_{cb}$ and $\nu_{cb}$ refer to the corresponding observed and expected rate of events, respectively~\cite{ATL-PHYS-PUB-2019-029}. Most of the systematic uncertainties are so-called \textit{interpolation parameters} $\boldsymbol{\alpha}$ representing either normalisation uncertainties or correlated shape uncertainties\improvement{Explain this further}. Their constraint terms $c_{\boldsymbol{\alpha}}(a_{\boldsymbol{\alpha}}\vert\boldsymbol{\alpha})$ are parametrised by a Gaussian with mean $a = 0\vert\alpha$ and variance $\sigma = 1$, with $\alpha = 0$ representing the nominal value. The \textit{up} and \textit{down} variations are then given by $\alpha=\pm 1$, thus representing $\pm 1\sigma$ variations. The impact of any given value of the parameter on the event rates is then evaluated through polynomial interpolation and exponential extrapolation, a method that avoids discontinuous first and second derivatives at $\alpha = 0$ and ensures positive values for the predicted event rates~\cite{Cranmer:1456844}.
 
 Sample rates derived from theory calculations (\ie \gls{mc} simulation), are scaled to the integrated luminosity corresponding to the observed data. The integrated luminosity is itself a measurement that is subject to uncertainties. Therefore, an additional constraint term in the likelihood is needed. It is parametrised by a Gaussian with mean corresponding to the nominal integrated luminosity measurement and variance equal to the integrated luminosity measurement uncertainty.
 
@@ -38,28 +38,36 @@ Uncertainties arising from the finite size of the \gls{mc} datasets often used t
 
 As the event rate in a given bin can depend on multiple parameters, and, likewise, a single parameter can affect the expected event rate in multiple bins, correlations between the model parameters $\boldsymbol{\phi}$ can occur.
 
-The above prescription for building statistical models is called the \textsc{HistFactory} template~\cite{Cranmer:1456844}. In this work, two independent implementation of the \textsc{HistFactory} template are used. One implementation uses \textsc{RooFit} and \textsc{RooStats}
-
+The above prescription for building binned likelihoods is called the \textsc{HistFactory} template~\cite{Cranmer:1456844}. In this work, two independent implementations of the \textsc{HistFactory} template are used. The first implementation uses \textsc{RooFit} and \textsc{RooStats} for fitting (using \texttt{Minuit}), and \textsc{HistFitter} as interface for steering fits and hypothesis tests and bookkeeping of results. The second implementation uses \texttt{pyhf}, a pure-\texttt{python} implementation of \textsc{HistFactory} that is independent from \textsc{ROOT} and uses computational graph libraries like \texttt{PyTorch}, \textsc{TensorFlow} and \textsc{JAX} to speed up the minimisation process.
  
 %\begin{equation}
 %	\nu_{cb}(\boldsymbol{\phi}) = \sum_{s\in\mathrm{samples}}{}\nu_{scb}(\boldsymbol{\phi}) = \sum_{s\in\mathrm{samples}}{\left(\prod_{\kappa\in\boldsymbol{\kappa}}\kappa_{scb}(\boldsymbol{\phi})\right)\left(\nu^0_{scb}(\boldsymbol{\phi})+\sum_{\Delta\in\boldsymbol{\Delta}}\Delta_{scb}(\boldsymbol{\phi})\right)},
 %\end{equation} 
 %where $\nu_{scb}$ are sample-wise event rates determined from \textit{nominal rates} $\nu^0_{scb}$ and a set of multiplicative and additive \textit{rate modifiers} $\boldsymbol{\kappa(\phi)}$ and $\boldsymbol{\Delta(\phi)}$, that are functions of the model parameters (typically only a single parameter per modifier). The modifiers are paired with a constraint term in order to implement systematic uncertainties into the statistical model. The event rates in a given bin can be affected by multiple parameters and single parameters can 
 
- The full model parameter set is typically separated into \textit{parameters of interest} $\boldsymbol{\psi}$ and \textit{nuisance parameters} $\boldsymbol{\theta}$ that are not of immediate interest but need to be accounted for in the statistical model. In the search presented in this work, the only \gls{poi} is the \textit{signal strength} parameter $\mu_{\mathrm{sig}}$, representing the ratio of the signal process cross section to its reference cross section as expected from theory.
+Apart from separating the model parameter set into free and constrained parameters $\boldsymbol{\phi} = (\boldsymbol{\eta},\boldsymbol{\chi})$, a separate partition $\boldsymbol{\phi} = (\boldsymbol{\psi},\boldsymbol{\theta})$ is frequently used in the context of hypothesis testing. Here, $\boldsymbol{\eta}$ are so-called \textit{parameters of interests} of the model for which hypothesis tests are performed, and $\boldsymbol{\theta}$ are \textit{nuisance parameters} that are not of immediate interest but need to be accounted for to correctly model the data. In the search presented in this work, the only \gls{poi} is the \textit{signal strength} parameter $\mu$, representing the ratio of the signal process cross section to its reference cross section as expected from theory.
 
-
-The expectation $\nu_i$ in each bin $i$ can be parametrised through the introduction of a signal strength parameter $\mu_{\mathrm{sig}}$ by
-\begin{equation}
-	\nu_i = \mu_{\mathrm{sig}}s_i + b_i,
-\end{equation}
-where $s_i$ and $b_i$ are the bin-wise expected signal and background rates, respectively. The signal strength $\mu_{\mathrm{sig}}$ and is used as \gls{poi} in fits to data. Fixing $\mu_{\mathrm{sig}} = 0$ yields a \gls{sm} expectation, while $\mu_{\mathrm{sig}} = 1$ represents a \textit{signal-plus-background} description at nominal signal cross section. Scanning multiple values of $\mu_{\mathrm{sig}}$ allows to set limits on the visible cross sections of the signal models considered in the search. 
+%The expectation $\nu_i$ in each bin $i$ can be parametrised through the introduction of a signal strength parameter $\mu_{\mathrm{sig}}$ by
+%\begin{equation}
+%	\nu_i = \mu_{\mathrm{sig}}s_i + b_i,
+%\end{equation}
+%where $s_i$ and $b_i$ are the bin-wise expected signal and background rates, respectively. The signal strength $\mu_{\mathrm{sig}}$ and is used as \gls{poi} in fits to data. Fixing $\mu_{\mathrm{sig}} = 0$ yields a \gls{sm} expectation, while $\mu_{\mathrm{sig}} = 1$ represents a \textit{signal-plus-background} description at nominal signal cross section. Scanning multiple values of $\mu_{\mathrm{sig}}$ allows to set limits on the visible cross sections of the signal models considered in the search. 
   
-For each of the channels, the total event rate is the sum over a set of physics processes, called \textit{samples}. The sample-wise event rates are in general a function of the the model parameters $\boldsymbol{\phi}$
-
-
-
 
 \section{Parameter estimation}
 
+Given a likelihood $L(\mu,\boldsymbol{\phi})$ for a fixed set of observations $\boldsymbol{x}$, a measurement can be understood as a parameter estimation. In general, an estimator $\hat{\phi}$ is a function of the observed data used to estimate the true value of the model parameter $\phi$.
+
+In particle physics, the most commonly used estimator is the \gls{mle}. The \glspl{mle} for the model parameters $\boldsymbol{\hat{\phi}}$ are defined to be the parameter values that maximise $L(\boldsymbol{\phi})$, or, equivalently maximise $\ln{L(\boldsymbol{\phi})}$ and minimises $-\ln{L(\boldsymbol{\phi})}$. The logarithm of the likelihood is used for computational reasons, as it not only reduces the computational complexity by avoiding exponentials and products, but also avoids avoids problems of running out of floating point precision. As the logarithm is a monotonically increasing function, $\ln{L(\boldsymbol{\phi})}$ has maxima at the same parameter values as ${L(\boldsymbol{\phi})}$.
+
+The \gls{mle} $\boldsymbol{\hat{\phi}}$ can thus be found by solving
+\begin{equation}
+ \frac{\partial \ln L}{\partial\phi_i} = 0,
+\end{equation}
+where the index $i$ runs over all parameters. The solution typically needs to be found numerically using minimisation algorithms.
+
 \section{Statistical tests}
+
+
+\section{Intervals and limits}
+
