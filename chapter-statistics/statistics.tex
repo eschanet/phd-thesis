@@ -45,15 +45,12 @@ The above prescription for building binned likelihoods is called the \textsc{His
 %\end{equation} 
 %where $\nu_{scb}$ are sample-wise event rates determined from \textit{nominal rates} $\nu^0_{scb}$ and a set of multiplicative and additive \textit{rate modifiers} $\boldsymbol{\kappa(\phi)}$ and $\boldsymbol{\Delta(\phi)}$, that are functions of the model parameters (typically only a single parameter per modifier). The modifiers are paired with a constraint term in order to implement systematic uncertainties into the statistical model. The event rates in a given bin can be affected by multiple parameters and single parameters can 
 
-Apart from separating the model parameter set into free and constrained parameters $\boldsymbol{\phi} = (\boldsymbol{\eta},\boldsymbol{\chi})$, a separate partition $\boldsymbol{\phi} = (\boldsymbol{\psi},\boldsymbol{\theta})$ is frequently used in the context of hypothesis testing. Here, $\boldsymbol{\eta}$ are so-called \textit{parameters of interests} of the model for which hypothesis tests are performed, and $\boldsymbol{\theta}$ are \textit{nuisance parameters} that are not of immediate interest but need to be accounted for to correctly model the data. In the search presented in this work, the only \gls{poi} is the \textit{signal strength} parameter $\mu$, representing the ratio of the signal process cross section to its reference cross section as expected from theory.
-
-%The expectation $\nu_i$ in each bin $i$ can be parametrised through the introduction of a signal strength parameter $\mu_{\mathrm{sig}}$ by
-%\begin{equation}
-%	\nu_i = \mu_{\mathrm{sig}}s_i + b_i,
-%\end{equation}
-%where $s_i$ and $b_i$ are the bin-wise expected signal and background rates, respectively. The signal strength $\mu_{\mathrm{sig}}$ and is used as \gls{poi} in fits to data. Fixing $\mu_{\mathrm{sig}} = 0$ yields a \gls{sm} expectation, while $\mu_{\mathrm{sig}} = 1$ represents a \textit{signal-plus-background} description at nominal signal cross section. Scanning multiple values of $\mu_{\mathrm{sig}}$ allows to set limits on the visible cross sections of the signal models considered in the search. 
+Apart from separating the model parameter set into free and constrained parameters $\boldsymbol{\phi} = (\boldsymbol{\eta},\boldsymbol{\chi})$, a separate partition $\boldsymbol{\phi} = (\boldsymbol{\psi},\boldsymbol{\theta})$ is frequently used in the context of hypothesis testing. Here, $\boldsymbol{\eta}$ are so-called \textit{parameters of interests} of the model for which hypothesis tests are performed, and $\boldsymbol{\theta}$ are \textit{nuisance parameters} that are not of immediate interest but need to be accounted for to correctly model the data. In the search presented in this work, the only \gls{poi} is the \textit{signal strength} parameter $\mu$, representing the ratio of the signal process cross section to its reference cross section as expected from theory. The expectation $\nu_i$ in each bin $i$ can be parametrised through
+\begin{equation}
+	\nu_b = \mu S_b + B_b,
+\end{equation}
+where $S_b$ and $B_b$ are the bin-wise expected signal and background rates, respectively. Fixing $\mu = 0$ thus yields an expected event rate containing only \gls{sm} processes (thus called \textit{background-only}), while $\mu = 1$ represents a \textit{signal-plus-background} description at nominal signal cross section. Scanning multiple values of $\mu$ allows to set limits on the visible cross sections of the signal models considered in the search. 
   
-
 \section{Parameter estimation}
 
 Given a likelihood $L(\mu,\boldsymbol{\phi})$ for a fixed set of observations $\boldsymbol{x}$, a measurement can be understood as a parameter estimation. In general, an estimator $\hat{\phi}$ is a function of the observed data used to estimate the true value of the model parameter $\phi$.
@@ -76,11 +73,72 @@ The degree of agreement of observed data with a certain hypothesis $H$ is quanti
 \end{equation}
 where $\Phi^{-1}$ is the quantile of the standard Gaussian. Discovery of a signal then conventionally requires a significance of at least $Z = 5$, while exclusion of a signal hypothesis at 95\% confidence level requires a $p$-value of 0.05, \ie $Z = 1.64$~\cite{Cowan:2010js}. 
 
-The $p$-values are calculated using a \textit{test statistic q} that parameterises the compatibility between the hypothesis and data in a single value. In the test statistic definitions introduced in the following, larger values of $q$ represent increasing incompatibility with data. The $p$-value can then be computed using
+The $p$-values are calculated using a \textit{test statistic} that parameterises the compatibility between the hypothesis and data in a single value. At the LHC experiments, the test statistics used for hypothesis testing are based on the \textit{profile likelihood ratio}
 \begin{equation}
-	p = \int_{q_{\mathrm{obs}}}^{\inf}{f(q\vert H)\diff q},
+	\lambda(\mu) = \frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\boldsymbol{\theta}})},
 \end{equation}
-with $q_\mathrm{obs}$ the observed value of the test statistic in data, and $f(q\vert H)$ the \gls{pdf} of $q$ under the assumption of $H$. At LHC experiments, the 
+where the \textit{conditional maximum likelihood estimates} $\boldsymbol{\hat{\hat{\theta}}}$ are the values of $\boldsymbol{\theta}$ that maximise the likelihood with $\mu$ fixed. The profile likelihood ratio depends explicitly on $\mu$, and implicitly on $\boldsymbol{x} = (\boldsymbol{n},\boldsymbol{a})$, but is independent of the nuisance parameters $\boldsymbol{\theta}$\footnote{Eliminated by choosing specific values of the nuisance parameters for a given $\boldsymbol{x}$ and $\mu$, often referred to as \textit{profiling}.}. The profile likelihood ratio takes values between 0 and 1, with $\lambda(\mu) = 1$ corresponding to cases where the tested value of $\mu$ is in good agreement with the observed data.
+
+As the rate of signal processes considered in this work is non-negative, an estimator for $\mu$ must satisfy $\hat{\mu}\geq 0$. In order to avoid the formal complications of having a boundary at $\mu = 0$, it is convenient to consider an effective estimator $\hat{\mu}$ that is allowed to become negative, provided that the respective Poisson terms for $\mu S_b + B_b$ remain positive. By imposing the constraint $\mu \geq 0$ on the test statistic itself, it is possible to avoid the formal problems of having a boundary at $\mu = 0$. This leads to the definition of
+\begin{equation}
+	\tilde{\lambda}(\mu)= 
+\begin{cases}
+     \frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\boldsymbol{\theta}})}, & \hat{\mu} \geq 0,\\
+     \frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(0,\boldsymbol{\hat{\hat{\theta}}}(0))},              & \hat{\mu} < 0,
+\end{cases}
+\label{eq:lambda_tilde}
+\end{equation}
+where $\boldsymbol{\hat{\hat{\theta}}}(0)$ and $\boldsymbol{\hat{\hat{\theta}}}(\mu)$ are the conditional \glspl{mle} of $\boldsymbol{\theta}$ given a signal strength parameter of 0 and $\mu$, respectively. 
+
+\subsubsection{Discovery}
+For the important special case where $\mu = 0$ is tested in a model with $\mu \geq 0$, \ie discovery of a non-negative signal (rejection of the $\mu = 0$ hypothesis), the test statistic in \cref{eq:lambda_tilde} becomes
+\begin{equation}
+	q_0 = \tilde{t_0} = 
+\begin{cases}
+    -\ln{\lambda(0)}, & \hat{\mu} \geq 0,\\
+    0,              & \hat{\mu} < 0.
+\end{cases}
+\label{eq:disc_test_stat}
+\end{equation}
+
+This definition ensures that the $\mu = 0$ hypothesis is not rejected due to a downward fluctuation in data, causing $\hat{\mu} < 0$. In case more events are seen in data than expected based on the background-only hypothesis, \cref{eq:disc_test_stat} produces increasingly large values of $q_0$, corresponding to an increasing incompatibility between data and the background-only hypothesis. The $p$-value quantifying the disagreement between the $\mu = 0$ hypothesis and data can then be computed using
+\begin{equation}
+		p = \int_{q_{),\mathrm{obs}}}^{\infty}{f(q_0\vert 0)\diff q},
+\end{equation}
+with $q_{0,\mathrm{obs}}$ the observed value of the test statistic $q_0$ in data and $f(q_0\vert 0)$ the \gls{pdf} of $q_0$ under assumption of the $\mu=0$ hypothesis.
+
+\subsubsection{Exclusion and upper limits}
+If the background-only ($\mu=1$) hypothesis cannot be rejected, the hypotheses can be switched around and instead the signal plus background hypothesis can be tested. For excluding  
+
+\begin{equation}
+	\tilde{q}_\mu = 
+\begin{cases}
+    -2\ln{\tilde{\lambda}(\mu)}, & \hat{\mu} \geq 0,\\
+    0,              & \hat{\mu} < 0.
+\end{cases} =
+\begin{cases}
+    -2 \ln{\frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\boldsymbol{\theta}})}}, & \hat{\mu} \geq 0,\\
+    -2 \ln{\frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(0,\boldsymbol{\hat{\hat{\theta}}}(0))}},              & 0 \leq \hat{\mu} \leq \mu, \\
+    0  & hat{\mu} > \mu.
+\end{cases}
+\end{equation}
+
 
 \section{Intervals and limits}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
