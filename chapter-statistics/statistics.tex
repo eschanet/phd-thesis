@@ -70,6 +70,7 @@ In addition to estimating the values of model parameters, searches for \gls{susy
 The degree of agreement of observed data with a certain hypothesis $H$ is quantified by computing a $p$-value, representing the probability of finding data of greater or more extreme incompatibility under assumption of $H$. The hypothesis can then be considered as excluded if its observed $p$-value is below a specified threshold. It is common to convert the $p$-value into a \textit{significance} $Z$, defined in such a way that a Gaussian distributed observable with measured value $Z$ standard deviations above its mean gives a one-sided upper tail probability equal to $p$. This yields the expression
 \begin{equation}
 	Z = \Phi^{-1}(1-p),
+	\label{eq:significance}
 \end{equation}
 where $\Phi^{-1}$ is the quantile of the standard Gaussian. Discovery of a signal then conventionally requires a significance of at least $Z = 5$, while exclusion of a signal hypothesis at 95\% confidence level requires a $p$-value of 0.05, \ie $Z = 1.64$~\cite{Cowan:2010js}. 
 
@@ -77,7 +78,7 @@ The $p$-values are calculated using a \textit{test statistic} that parameterises
 \begin{equation}
 	\lambda(\mu) = \frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\boldsymbol{\theta}})},
 \end{equation}
-where the \textit{conditional maximum likelihood estimates} $\boldsymbol{\hat{\hat{\theta}}}$ are the values of $\boldsymbol{\theta}$ that maximise the likelihood with $\mu$ fixed. The profile likelihood ratio depends explicitly on $\mu$, and implicitly on $\boldsymbol{x} = (\boldsymbol{n},\boldsymbol{a})$, but is independent of the nuisance parameters $\boldsymbol{\theta}$\footnote{Eliminated by choosing specific values of the nuisance parameters for a given $\boldsymbol{x}$ and $\mu$, often referred to as \textit{profiling}.}. The profile likelihood ratio takes values between 0 and 1, with $\lambda(\mu) = 1$ corresponding to cases where the tested value of $\mu$ is in good agreement with the observed data.
+where the \textit{conditional maximum likelihood estimates} $\boldsymbol{\hat{\hat{\theta}}}$ are the values of $\boldsymbol{\theta}$ that maximise the likelihood with $\mu$ fixed. The profile likelihood ratio depends explicitly on $\mu$, and implicitly on $\boldsymbol{x} = (\boldsymbol{n},\boldsymbol{a})$, but is asymptotically  (\ie in the limit of a large number of events)independent of the nuisance parameters $\boldsymbol{\theta}$\footnote{Eliminated by choosing specific values of the nuisance parameters for a given $\boldsymbol{x}$ and $\mu$, often referred to as \textit{profiling}.}. The asymptotic independence from $\boldsymbol{\theta}$ follows from Wald's and Wilks' theorems~\cite{wald10.2307/1990256,wilks1938} and is one of the main motivations for using the profile likelihood ratio, as it avoids the problem of having to compute $p$-values for all possible values of $\boldsymbol{theta}$. The profile likelihood ratio takes values between 0 and 1, with $\lambda(\mu) = 1$ corresponding to cases where the tested value of $\mu$ is in good agreement with the observed data.
 
 As the rate of signal processes considered in this work is non-negative, an estimator for $\mu$ must satisfy $\hat{\mu}\geq 0$. In order to avoid the formal complications of having a boundary at $\mu = 0$, it is convenient to consider an effective estimator $\hat{\mu}$ that is allowed to become negative, provided that the respective Poisson terms for $\mu S_b + B_b$ remain positive. By imposing the constraint $\mu \geq 0$ on the test statistic itself, it is possible to avoid the formal problems of having a boundary at $\mu = 0$. This leads to the definition of
 \begin{equation}
@@ -93,7 +94,7 @@ where $\boldsymbol{\hat{\hat{\theta}}}(0)$ and $\boldsymbol{\hat{\hat{\theta}}}(
 \subsubsection{Discovery}
 For the important special case where $\mu = 0$ is tested in a model with $\mu \geq 0$, \ie discovery of a non-negative signal (rejection of the $\mu = 0$ hypothesis), the test statistic in \cref{eq:lambda_tilde} becomes
 \begin{equation}
-	q_0 = \tilde{t_0} = 
+	q_0 = \tilde{t}_0 = 
 \begin{cases}
     -\ln{\lambda(0)}, & \hat{\mu} \geq 0,\\
     0,              & \hat{\mu} < 0.
@@ -103,12 +104,25 @@ For the important special case where $\mu = 0$ is tested in a model with $\mu \g
 
 This definition ensures that the $\mu = 0$ hypothesis is not rejected due to a downward fluctuation in data, causing $\hat{\mu} < 0$. In case more events are seen in data than expected based on the background-only hypothesis, \cref{eq:disc_test_stat} produces increasingly large values of $q_0$, corresponding to an increasing incompatibility between data and the background-only hypothesis. The $p$-value quantifying the disagreement between the $\mu = 0$ hypothesis and data can then be computed using
 \begin{equation}
-		p = \int_{q_{),\mathrm{obs}}}^{\infty}{f(q_0\vert 0)\diff q},
+		p_0 = \int_{q_{0,\mathrm{obs}}}^{\infty}{f(q_0\vert 0)\diff q},
+		\label{eq:disc_pvalue}
 \end{equation}
-with $q_{0,\mathrm{obs}}$ the observed value of the test statistic $q_0$ in data and $f(q_0\vert 0)$ the \gls{pdf} of $q_0$ under assumption of the $\mu=0$ hypothesis.
+with $q_{0,\mathrm{obs}}$ the observed value of the test statistic $q_0$ in data and $f(q_0\vert 0)$ the \gls{pdf} of $q_0$ under assumption of the $\mu=0$ hypothesis. In the asymptotic limit with a single \gls{poi}, the test statistic $q_0$ can be  written as
+\begin{equation}
+	q_0 = \begin{cases}
+    \hat{\mu}^2/\sigma^2, & \hat{\mu} \geq 0,\\
+    0,              & \hat{\mu} < 0,
+\end{cases}
+\label{eq:test_stat_disc_asymptotic}
+\end{equation}
+where $\hat{\mu}$ has a Gaussian distribution with mean $\mu '$ and variance $\sigma^2$. In the case where $\mu'=0$, the \gls{pdf} of $q_0$ has the form of a half chi-square distribution with one degree of freedom, and its cumulative distribution is $F(q_0 \vert 0) = \Phi(\sqrt{q_0})$. Using \cref{eq:significance}, the $p$-value obtained with \cref{eq:disc_pvalue} can be expressed with the significance $Z_0$ as
+\begin{equation}
+	Z_0 = \sqrt{q_0}.
+\end{equation}
+
 
 \subsubsection{Exclusion and upper limits}
-If the background-only ($\mu=1$) hypothesis cannot be rejected, the hypotheses can be switched around and instead the signal plus background hypothesis can be tested. For excluding  
+If the background-only ($\mu = 0$) hypothesis cannot be rejected, the hypotheses can be switched around and instead the signal plus background hypothesis can be tested. For excluding the signal plus background ($\mu = 1$) hypothesis and setting upper limits on the signal strength $\mu$, the test statistic is defined as
 
 \begin{equation}
 	\tilde{q}_\mu = 
@@ -119,13 +133,38 @@ If the background-only ($\mu=1$) hypothesis cannot be rejected, the hypotheses c
 \begin{cases}
     -2 \ln{\frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\boldsymbol{\theta}})}}, & \hat{\mu} \geq 0,\\
     -2 \ln{\frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(0,\boldsymbol{\hat{\hat{\theta}}}(0))}},              & 0 \leq \hat{\mu} \leq \mu, \\
-    0  & hat{\mu} > \mu.
+    0  & \hat{\mu} > \mu.
+\end{cases}
+\end{equation}
+Setting $\tilde{q}_\mu = 0$ in the case where $\hat{\mu} > \mu$ ensures that an overfluctuation of data is not considered as evidence against the signal hypothesis. This is opposed to the definition of $q_0$, where an underfluctuation of data ($\hat{\mu} < \mu$) is not regarded to be evidence against the background-only hypothesis. The $p$-value, quantifying the level of agreement between data and the tested value of $\mu$ is then given by
+\begin{equation}
+		p_\mu = \int_{\tilde{q}_{\mu,\mathrm{obs}}}^{\infty}{f(\tilde{q}_\mu\vert \mu)\diff \tilde{q}_\mu},
+\end{equation}
+where, as before, $\tilde{q}_{\mu,\mathrm{obs}}$ is the observed value of the test statistic in data and $f(\tilde{q}_\mu\vert \mu)$ is the \gls{pdf} of $\tilde{q}_\mu$ given the hypothesis $\mu$. In the asymptotic limit, the test statistic $\tilde{q}_\mu$ can be written as
+\begin{equation}
+	\tilde{q}_\mu = 
+\begin{cases}
+    \mu^2\sigma^2 - 2\mu\hat{\mu}/\sigma^2, & \hat{\mu} \geq 0,\\
+    (\mu-\hat{\mu})^2\sigma^2,              & 0 \leq \hat{\mu} \leq \mu, \\
+    0  & \hat{\mu} > \mu,
+\end{cases}
+\end{equation}
+which yields for the significance $Z_\mu$ the expression
+\begin{equation}
+	Z_\mu = 
+\begin{cases}
+    \sqrt{\tilde{q}_\mu}, & 0 < \tilde{q}_\mu \leq \mu^2/\sigma^2 \\
+    \frac{\tilde{q}_\mu + \mu^2/\sigma^2}{2\mu/\sigma},              & \tilde{q}_\mu > \mu^2/\sigma^2 .
 \end{cases}
 \end{equation}
 
 
+\section{Asimov dataset}
+
 \section{Intervals and limits}
 
+
+\section{$CL_S$ approach}
 
 
 
