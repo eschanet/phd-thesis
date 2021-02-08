@@ -164,12 +164,28 @@ which yields for the significance $Z_\mu$ the expression
 \section{Intervals and limits}
 
 
-\section{$CL_S$ approach}
+\section[$CL_s$ approach]{$\boldsymbol{CL_s}$ approach}
 
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{cls_1}
+		\caption{\label{fig:cls_close}}
+	\end{subfigure}%
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{cls_2}
+		\caption{\label{fig:cls_far}}
+	\end{subfigure}%
+	\caption{Distribution of the \glspl{pdf} of the signal plus background (in orange) and background-only (in blue) models. The coloured areas represent the $p_{s+b}$ and $p_{b}$ values, respectively. Figure~\subref{fig:cls_close} shows a case where both \glspl{pdf} are close together, while figure \subref{fig:cls_close} shows a case where both a well separated. Adapted from \cite{Cowan:2013pha}.}\label{fig:cls_method}
+\end{figure}
 
+In the $CL_{s+b}$ method, a signal plus background model is excluded if $p_{s+b} < \alpha$, where $\alpha$ is defined by the desired confidence level, typically $CL = 1 - \alpha = 95\%$, and $p_{s+b}$ can be calculated using the test statistic $\tilde{q}_\mu$ (with $\mu = 1$) introduced before. If the experiment has very low sensitivity to a specific signal plus background model, \eg because the production cross section is too low, the test statistic of the signal plus background model will be very close to that of the background-only model. In case of an underfluctuation in data, the $\mu = 1$ model can then falsely be excluded, even though no sensitivity is expected. \Cref{fig:cls_method} illustrates this with a simple example. In fact, the exclusion of models to which the experiment has no sensitivity has a probability of at least $\alpha$~\cite{Cowan:2013pha}.
 
-
-
+This problem can be remedied by adopting the $CL_s$ method~\cite{Read:2002hq}, altering the threshold for excluding a model in a way to avoid exclusion of models to which the experiment has very low sensitivity. The $CL_s$ value is defined as
+\begin{equation}
+	CL_s = \frac{p_{s+b}}{1-p_b},
+\end{equation}
+where $p_b$ is the $p$-value of the background-only hypothesis. If the distributions of the test statistics for the signal plus background and the background-only models are close a small value of $p_{s+b}$ due to an underfluctuation in data will entail a large value of $p_b$. Consequently, in the calculation of the $CL_s$ value, $p_{s+b}$ will be penalised by $1-p_b$ (that will be close to 0), resulting in $CL_s > p_{s+b}$, preventing the exclusion of the signal plus background model. Conversely, in the case where the two test statistics are well-separated and $p_{s+b} < \alpha$, then $p_b$ will also be small and thus $CL_s$ will be close to $p_{s+b}$ obtained by the frequentist approach. 
 
 
 
