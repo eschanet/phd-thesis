@@ -12,13 +12,63 @@
 \fi
 
 
-This chapter aims to give an introduction to the search for electroweakinos presented in this work. First, the targeted final state, the 1-lepton final state, is introduced and motivated. This is followed by 
+This chapter aims to give an introduction to the search for electroweakinos presented in this work. First, the targeted final state, the 1-lepton final state, is introduced and motivated, followed by the \gls{sm} background processes that need to be considered when doing searches for \gls{susy} in this final state. Next the reconstruction and identification of physics objects as well as the event selection requirements are described.
 
-\section{The 1-lepton final state}
-
+\section{Search for electroweakinos in the 1-lepton final state}
 
 
 \section{Standard Model backgrounds}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.3\linewidth}
+		\centering\includegraphics[width=\textwidth]{ttbar}
+		\caption{\label{fig:ttbar}}
+	\end{subfigure}\quad
+	\begin{subfigure}[b]{0.3\linewidth}
+		\centering\includegraphics[width=\textwidth]{wjets}
+		\caption{\label{fig:wjets}}
+	\end{subfigure}\quad
+%	\begin{subfigure}[b]{0.25\linewidth}
+%		\centering\includegraphics[width=\textwidth]{diboson}
+%		\caption{\label{fig:diboson}}
+%	\end{subfigure}
+	\begin{subfigure}[b]{0.3\linewidth}
+		\centering\includegraphics[width=\textwidth]{singletop}
+		\caption{\label{fig:singletop}}
+	\end{subfigure}	
+	\caption{Exemplary Feynman diagrams showing the dominant processes \subref{fig:ttbar} $t\bar{t}$, \subref{fig:wjets} $W+\textrm{jets}$ and \subref{fig:singletop} single top production with subsequent decays.}
+	\label{fig:sm_backgrounds_feynman}
+\end{figure}
+
+Although the requirement of exactly one lepton isolated from surrounding hadronic activity significantly reduces the contribution from \gls{qcd} multi-jet background, numerous \gls{sm} processes can result in final states with exactly one isolated lepton, multiple jets and missing transverse momentum. Background sources are generally classified into \textit{reducible} and \textit{irreducible} backgrounds. Irreducible backgrounds are processes that have a physical phase space that is indistinguishable from the final state of the signal process considered. Reducible backgrounds, on the other hand, result from partially misreconstructed processes as well as mismeasurements. Examples of reducible processes are events where a lepton originates from a \gls{hf} decay, photon conversions or misreconstructed jets. \gls{sm} processes that result in final states with an isolated lepton, multiple jets and missing transverse momentum typically involve a $W$ boson decaying into a lepton--neutrino pair (a so-called \textit{leptonic decay}). The neutrino will contribute to the total missing transverse momentum in the event, while additional jets can appear in the final state through \gls{qcd} radiation or other branches of the decay chain.
+
+By far the largest \gls{sm} background
+
+By far the largest \gls{sm} background contributions in the search presented in this work stem from the production of a $W$ boson with additional jets ($\wjets$ processes) and production of top quarks, including both single top as well as $\ttbar$ processes. \Cref{fig:sm_backgrounds_feynman} shows exemplary Feynman diagram for the production and decay of these major backgrounds, illustrating how they can result in final states with one isolated lepton, multiple jets and missing transverse momentum. Smaller and minor \gls{sm} background processes considered in the search include the production of top quark pairs with an associated vector boson ($\ttbar + V$) or an associated Higgs boson ($\ttbar + h$), production of multiple vector bosons (including $VV$ and $VVV$ processes), production of a vector boson in association with a Higgs boson ($V+h$) as well as $Z+\mathrm{jets}$ processes.
+
+Pure \gls{qcd} multi-jet events---omnipresent at hadron colliders like the \gls{lhc}---can only appear in the 1-lepton final state through false reconstruction of a jet as a lepton (so-called \textit{fake} leptons) and mismeasurement of $\etmiss$. As it has been shown that this background is negligible in all selections relevant to this search, no estimation for \gls{qcd} contribution is considered in the following~\cite{SUSY-2019-08}.
+
+\section{Monte Carlo samples}
+
+\begin{table}
+	\centering
+	\setlength\heavyrulewidth{0.2ex}
+	\small
+	\caption{Overview of configuration of \gls{mc} generators used for simulating the various signal and \gls{sm} background processes.}
+	\begin{tabular} {lllll}
+	\toprule
+		Process & Matrix element & Parton shower & PDF set & Cross section \\ 
+	\midrule
+		photon ($\gamma$) & 1 & 0 & 0\\
+		gluon ($g$) & 1 & 0 & 0 \\
+		$W^\pm$ & 1 & $\pm 1$ & \SI{80.4}{\GeV} \\
+		$Z^0$ & 1 & 0 & \SI{91.2}{\GeV} \\
+		Higgs boson ($H$) & 0 & 0 & \SI{125}{\GeV} \\
+	\bottomrule					
+	\end{tabular}\vspace{3mm}
+	\label{tab:particles_bosons}   
+\end{table}
 
 \section{Object definitions}
 

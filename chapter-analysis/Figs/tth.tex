@@ -1,0 +1,46 @@
+\documentclass[class=minimal,border={5pt 15pt 10pt 15pt}]{standalone}
+\usepackage[force]{feynmp-auto}
+\usepackage{xcolor}
+\begin{document}
+	\unitlength=1mm
+	\begin{fmffile}{tth_1}
+		\begin{fmfgraph*}(50,30)
+
+
+			\fmfleftn{i}{2}
+			\fmfrightn{o}{8}
+			\fmf{gluon,tension=1}{i1,v1}
+			\fmf{gluon,tension=1}{v6,i2}
+
+%			\fmf{fermion,tension=0.5}{v1,v3}
+			\fmf{fermion,tension=0.5}{v1,v4,v6}
+			
+			\fmf{fermion,label=$\bar{t}$,label.side=left,tension=1}{v2,v1}
+			\fmf{photon,label=$W^-$,label.side=right,tension=0.5}{v2,v3}
+			\fmf{fermion,tension=0.25}{o1,v3}
+			\fmf{fermion,tension=0.25}{v3,o2}
+			\fmf{fermion,tension=0.5}{o3,v2}
+			
+			\fmf{dashes,label=$h$,label.side=left,tension=0.5}{v4,v5}
+			\fmf{fermion,tension=0.25}{o5,v5}
+			\fmf{fermion,tension=0.25}{v5,o4}
+
+			\fmf{fermion,label=$t$,label.side=left,tension=1}{v6,v7}
+			\fmf{photon,label=$W^+$,label.side=left,tension=0.5}{v7,v8}
+			\fmf{fermion,tension=0.25}{o7,v8}
+			\fmf{fermion,tension=0.25}{v8,o8}
+			\fmf{fermion,tension=0.5}{v7,o6}
+			
+			\fmflabel{$g$}{i2}
+			\fmflabel{$g$}{i1}
+			\fmflabel{$\ell^-$}{o2}
+			\fmflabel{$\bar{\nu}_\ell$}{o1}
+			\fmflabel{$\bar{b}$}{o3}
+			\fmflabel{$b$}{o4}
+			\fmflabel{$\bar{b}$}{o5}
+			\fmflabel{$b$}{o6}								
+			\fmflabel{$\bar{q}$}{o7}								
+			\fmflabel{$q'$}{o8}								
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}
