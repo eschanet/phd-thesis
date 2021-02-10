@@ -43,11 +43,16 @@ This chapter aims to give an introduction to the search for electroweakinos pres
 
 Although the requirement of exactly one lepton isolated from surrounding hadronic activity significantly reduces the contribution from \gls{qcd} multi-jet background, numerous \gls{sm} processes can result in final states with exactly one isolated lepton, multiple jets and missing transverse momentum. Background sources are generally classified into \textit{reducible} and \textit{irreducible} backgrounds. Irreducible backgrounds are processes that have a physical phase space that is indistinguishable from the final state of the signal process considered. Reducible backgrounds, on the other hand, result from partially misreconstructed processes as well as mismeasurements. Examples of reducible processes are events where a lepton originates from a \gls{hf} decay, photon conversions or misreconstructed jets. \gls{sm} processes that result in final states with an isolated lepton, multiple jets and missing transverse momentum typically involve a $W$ boson decaying into a lepton--neutrino pair (a so-called \textit{leptonic decay}). The neutrino will contribute to the total missing transverse momentum in the event, while additional jets can appear in the final state through \gls{qcd} radiation or other branches of the decay chain.
 
-By far the largest \gls{sm} background
+By far the largest \gls{sm} background contributions stem from the production of top quarks, including top quark pair $\ttbar$ production as well as single top processes. These processes were generated using \textsc{Powheg-Box} v2~\cite{PowhegBox:2010xd}, implementing the \textsc{POWHEG} method~\cite{Powheg1,Powheg2} for merging \gls{nlo} matrix elements with the parton showering. The parton showering, hadronisation and underlying even were simulated using \textsc{Pythia8}~\cite{Pythia8:2007gs} with the A14 set of tuned parameters~\cite{ATL-PHYS-PUB-2014-021}. The NNPDF 2.3 NLO set was used for the \glspl{pdf}.
+
+\textsc{MadGraph5\_aMC\@NLO} 2.6.2~\cite{MGaMCNLO:2014hca,Frederix:2012ps}
+\textsc{Sherpa} 2.2.1
 
 By far the largest \gls{sm} background contributions in the search presented in this work stem from the production of a $W$ boson with additional jets ($\wjets$ processes) and production of top quarks, including both single top as well as $\ttbar$ processes. \Cref{fig:sm_backgrounds_feynman} shows exemplary Feynman diagram for the production and decay of these major backgrounds, illustrating how they can result in final states with one isolated lepton, multiple jets and missing transverse momentum. Smaller and minor \gls{sm} background processes considered in the search include the production of top quark pairs with an associated vector boson ($\ttbar + V$) or an associated Higgs boson ($\ttbar + h$), production of multiple vector bosons (including $VV$ and $VVV$ processes), production of a vector boson in association with a Higgs boson ($V+h$) as well as $Z+\mathrm{jets}$ processes.
 
 Pure \gls{qcd} multi-jet events---omnipresent at hadron colliders like the \gls{lhc}---can only appear in the 1-lepton final state through false reconstruction of a jet as a lepton (so-called \textit{fake} leptons) and mismeasurement of $\etmiss$. As it has been shown that this background is negligible in all selections relevant to this search, no estimation for \gls{qcd} contribution is considered in the following~\cite{SUSY-2019-08}.
+
+\Cref{tab:mc_generators} summarises all \gls{mc} generators and software versions used for the simulated events used in the following. Further details are given in the relevant ATLAS simulation notes~\cite{ATL-PHYS-PUB-2018-009,ATL-PHYS-PUB-2016-005,ATL-PHYS-PUB-2017-006,ATL-PHYS-PUB-2017-005,ATL-PHYS-PUB-2016-005,ATL-PHYS-PUB-2016-002}.
 
 \section{Monte Carlo samples}
 
@@ -56,18 +61,29 @@ Pure \gls{qcd} multi-jet events---omnipresent at hadron colliders like the \gls{
 	\setlength\heavyrulewidth{0.2ex}
 	\small
 	\caption{Overview of configuration of \gls{mc} generators used for simulating the various signal and \gls{sm} background processes.}
-	\begin{tabular} {lllll}
+	\resizebox{\textwidth}{!}{\begin{tabular} {llllll}
 	\toprule
-		Process & Matrix element & Parton shower & PDF set & Cross section \\ 
+	Process & Matrix element & Parton shower & PDF set & Cross section & Tune\\ 
 	\midrule
-		photon ($\gamma$) & 1 & 0 & 0\\
-		gluon ($g$) & 1 & 0 & 0 \\
-		$W^\pm$ & 1 & $\pm 1$ & \SI{80.4}{\GeV} \\
-		$Z^0$ & 1 & 0 & \SI{91.2}{\GeV} \\
-		Higgs boson ($H$) & 0 & 0 & \SI{125}{\GeV} \\
+	Signal & \textsc{MadGraph5\_aMC\@NLO} 2.6.2 & \textsc{Pythia} 8.230 & NNPDF 2.3 LO & NLO+NLL & ATLAS A14 \\
+	\midrule	
+	$\ttbar$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF 2.3 LO & NLO+NLL & ATLAS A14 \\
+	$t$ (s-channel) & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF 2.3 LO & NLO+NLL & ATLAS A14 \\
+	$t$ (t-channel) & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF 2.3 LO & NLO+NLL & ATLAS A14 \\
+	$t+W$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF 2.3 LO & NLO+NLL & ATLAS A14 \\
+	$\ttbar + V$ & \textsc{MadGraph5\_aMC\@NLO} 2.3.3 & \textsc{Pythia} 8.210 & NNPDF 2.3 LO & NLO+NLL & ATLAS A14 \\
+	\midrule
+	$V+\mathrm{jets}$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1} & NNPDF 3.0 NLO ??? & NNLO & \textsc{Sherpa} default \\
+	$VV$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1/2.2.2} & NNPDF 3.0 NLO & NNLO & \textsc{Sherpa} default\\
+	$VVV$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1/2.2.2} & NNPDF 3.0 NLO & NNLO & \textsc{Sherpa} default\\
+	\midrule
+	$h+\ttbar$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF 2.3 LO & NLO+NLL & ATLAS A14 \\
+	$h+V$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.212 & NNPDF 3.0 NLO ??? & NLO+NLL & AZNLO \\
+	\textit{h (ggF)} & \textsc{Powheg-Box} & \textsc{Pythia} 8.212 & NNPDF 3.0 NLO ??? & NLO+NLL & AZNLO \\
+	\textit{h (VBF)} & \textsc{Powheg-Box} & \textsc{Pythia} 8.212 & NNPDF 3.0 NLO ??? & NLO+NLL & AZNLO \\
 	\bottomrule					
-	\end{tabular}\vspace{3mm}
-	\label{tab:particles_bosons}   
+	\end{tabular}}\vspace{3mm}
+	\label{tab:mc_generators}   
 \end{table}
 
 \section{Object definitions}
