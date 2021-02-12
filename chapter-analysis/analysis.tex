@@ -70,13 +70,13 @@ Pure \gls{qcd} multi-jet events can only appear in the 1-lepton final state thro
 
 \subsection{Signal samples}
 
-The $\charg\neutr$ pair production signal samples were generated at \gls{lo} using \textsc{MadGraph5\_aMC@NLO} 2.6.2~\cite{MGaMCNLO:2014hca,Frederix:2012ps} with up to two additional partons in the \gls{me}. \textsc{MadGraph5\_aMC@NLO} is interfaced with \textsc{Pythia8}~\cite{Pythia8:2007gs} for the \gls{ps}, hadronisation and underlying event, using the CKKW-L~\cite{Lonnblad:2011xx} scheme for matching the \gls{ps} to the \glspl{me}. The NNPDF 2.3 LO~\cite{Ball:2012cx} \gls{PDF} set and the A14 set of tuned parameters~\cite{ATL-PHYS-PUB-2014-021} are used. For modelling the decay of \gls{hf} quarks, \textsc{EvtGen}~\cite{Lange:2001uf} v1.6.0 is used. 
+The $\charg\neutr$ pair production signal samples were generated at \gls{lo} using \textsc{MadGraph5\_aMC@NLO} 2.6.2~\cite{MGaMCNLO:2014hca,Frederix:2012ps} with up to two additional partons in the \gls{me}. \textsc{MadGraph5\_aMC@NLO} is interfaced with \textsc{Pythia8}~\cite{Pythia8:2007gs} for the \gls{ps}, hadronisation and underlying event, using the CKKW-L~\cite{Lonnblad:2011xx} scheme for matching the \gls{ps} to the \glspl{me}. The NNPDF 2.3 LO~\cite{Ball:2012cx} \gls{PDF} set and the A14 set of tuned parameters~\cite{ATL-PHYS-PUB-2014-021} are used. For modelling the decay of \gls{hf} quarks, \textsc{EvtGen}~\cite{Lange:2001uf} v1.6 is used. 
 
-As the $\charg/\neutr$ and $\lsp$ masses are free parameters of the signal model, they are systematically scanned, resulting in a set of 164 distinct evenly distributed in the two-dimensional grid spanned by the mass parameters. In the following the two-dimensional grid will be referred to as \textit{signal grid}, while the distinct signal scenarios (each witch a unique set of mass parameter values) will be referred to as \textit{signal point}. The generated signal grid covers $\charg\neutr$ masses from $\SI{150}{\GeV}$ to $\SI{1.1}{\TeV}$ and $\lsp$ masses from $\SI{0}{\GeV}$ to $\SI{550}{\GeV}$, avoiding the kinematically forbidden region with $m(\charg\neutr) > m(\lsp) + m(h)$.
+As the $\charg/\neutr$ and $\lsp$ masses are free parameters of the signal model, they are systematically scanned, resulting in a set of 164 distinct evenly distributed in the two-dimensional grid spanned by the mass parameters. In the following the two-dimensional grid will be referred to as \textit{signal grid}, while the distinct signal scenarios (each witch a unique set of mass parameter values) will be referred to as \textit{signal point}. The generated signal grid covers $\charg/\neutr$ masses from $\SI{150}{\GeV}$ to $\SI{1.1}{\TeV}$ and $\lsp$ masses from $\SI{0}{\GeV}$ to $\SI{550}{\GeV}$, avoiding the kinematically forbidden region with $m(\charg/\neutr) > m(\lsp) + m(h)$.
 
-Signal samples well within the expected sensitivity range of the analysis (with relatively low $charg/\neutr$ and $\lsp$ masses) are generated using the \textsc{ATLFAST-II} detector simulation, while the full detector simulation using \textsc{Geant4} is used for the remaining model points for maximum accuracy. In order to account for pileup effects, all signal samples are overlaid with simulated minimum bias events generated using \textsc{Pythia8} and the A3 tune~\cite{ATL-PHYS-PUB-2016-017}, reweighted to match the pileup distribution measured in data. 
+Signal samples well within the expected sensitivity range of the analysis (with relatively low $\charg/\neutr$ and $\lsp$ masses) are generated using the \textsc{ATLFAST-II} detector simulation, while the full detector simulation using \textsc{Geant4} is used for the remaining model points for maximum accuracy. In order to account for pileup effects, all signal samples are overlaid with simulated minimum bias events generated using \textsc{Pythia8} and the A3 tune~\cite{ATL-PHYS-PUB-2016-017}, reweighted to match the pileup distribution measured in data. 
 
-The cross sections for chargino pair production have been calculated using \textsc{Resummino}~\cite{Fuks:2013vua} at \gls{nlo} in the strong coupling constant and \gls{nll} accuracy in the soft gluon resummation~\cite{Fiaschi:2018hgm,Fuks:2012qx}.
+The cross sections for chargino pair production have been calculated using \textsc{Resummino}~\cite{Fuks:2013vua} at \gls{nlo} in the strong coupling constant and including \gls{nll} terms in the soft gluon resummation~\cite{Fiaschi:2018hgm,Fuks:2012qx}.
 
 \subsection{Background samples}
 
@@ -86,7 +86,7 @@ Production of a vector boson $V$ with additional jets ($V+\mathrm{jets}$) is sim
 
 All Higgs processes are simulated using \textsc{Powheg-Box} v2 for the \gls{me} calculations and \textsc{Pythia8} for the \gls{ps}, underlying event and hadronisation. While the generation of $h+\ttbar$ uses the A14 tune and the NNPDF2.3LO set, $h+V$ and single Higgs production are simulated using the NNPDF 3.0 NNLO set and the AZNLO~\cite{ATL-PHYS-PUB-2013-017} set of tuned generator parameters.
 
-The detector simulation for all \gls{mc} background samples was performed using the full detector simulation based on \textsc{Geant4}, introduced in \cref{sec:detector_simulation}. Except for the \gls{mc} samples generated using \textsc{Sherpa}, all background samples use \textsc{EvtGen} v1.2.0 or v1.6.0 to model the decay of \gls{hf} quarks. Similar to the signal models, all background samples are mixed with simulated minimum bias events generated with \textsc{Pythia8} and the A3 tune.
+The detector simulation for all \gls{mc} background samples was performed using the full detector simulation based on \textsc{Geant4}, introduced in \cref{sec:detector_simulation}. Except for the \gls{mc} samples generated using \textsc{Sherpa}, all background samples use \textsc{EvtGen} v1.2 or v1.6 to model the decay of \gls{hf} quarks. Similar to the signal models, all background samples are mixed with simulated minimum bias events generated with \textsc{Pythia8} and the A3 tune.
 
 \begin{table}
 	\centering
@@ -97,22 +97,22 @@ The detector simulation for all \gls{mc} background samples was performed using 
 	\toprule
 	Process & Matrix element & Parton shower & PDF set & Cross section & Tune\\ 
 	\midrule
-	Signal & \textsc{MadGraph5\_aMC@NLO} 2.6.2 & \textsc{Pythia} 8.230 & NNPDF 2.3 LO & NLO+NLL~\cite{Fuks:2013vua,Fiaschi:2018hgm,Fuks:2012qx} & ATLAS A14 \\
+	Signal & \textsc{MadGraph5\_aMC@NLO} 2.6.2 & \textsc{Pythia} 8.230 & NNPDF 2.3 LO & NLO+NLL~\cite{Fuks:2013vua,Fiaschi:2018hgm,Fuks:2012qx} & A14 \\
 	\midrule	
-	$\ttbar$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF2.3LO & NLO+NLL ??? & A14 \\
-	$t$ (s-channel) & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF2.3LO & NLO+NLL ??? & A14 \\
-	$t$ (t-channel) & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF2.3LO & NLO+NLL ??? & A14 \\
-	$t+W$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF2.3LO & NLO+NLL ??? & A14 \\
-	$\ttbar + V$ & \textsc{MadGraph5\_aMC@NLO} 2.3.3 & \textsc{Pythia} 8.210 & NNPDF2.3LO & NLO+NLL ??? & A14 \\
+	$\ttbar$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF2.3LO & NNLO+NNLL~\cite{Czakon:2011xx,Cacciari:2011hy} & A14 \\
+	$t$ (s-channel) & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF2.3LO & NLO~\cite{Kant:2014oha} & A14 \\
+	$t$ (t-channel) & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF2.3LO & NLO~\cite{Kant:2014oha} & A14 \\
+	$t+W$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF2.3LO & NNLO~\cite{Kant:2014oha,Kidonakis:2010ux,} & A14 \\
+	$\ttbar + V$ & \textsc{MadGraph5\_aMC@NLO} 2.3.3 & \textsc{Pythia} 8.210 & NNPDF2.3LO & NLO~\cite{Campbell:2012dh,Lazopoulos:2008de} & A14 \\
 	\midrule
-	$V+\mathrm{jets}$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1} & NNPDF3.0NNLO & NNLO ??? & \textsc{Sherpa} default \\
-	$VV$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1/2.2.2} & NNPDF3.0NNLO & NNLO ??? & \textsc{Sherpa} default\\
-	$VVV$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1/2.2.2} & NNPDF3.0NNLO & NNLO ??? & \textsc{Sherpa} default\\
+	$V+\mathrm{jets}$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1} & NNPDF3.0NNLO & NNLO~\cite{Gavin:2010az} & \textsc{Sherpa} default \\
+	$VV$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1/2.2.2} & NNPDF3.0NNLO & NLO~\cite{ATL-PHYS-PUB-2017-005} & \textsc{Sherpa} default\\
+	$VVV$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1/2.2.2} & NNPDF3.0NNLO & NLO~\cite{ATL-PHYS-PUB-2017-005} & \textsc{Sherpa} default\\
 	\midrule
-	$h+\ttbar$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF2.3LO & NLO+NLL ??? & A14 \\
-	$h+V$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.212 & NNPDF3.0NNLO & NLO+NLL ??? & AZNLO \\
-	\textit{h (ggF)} & \textsc{Powheg-Box} & \textsc{Pythia} 8.212 & NNPDF3.0NNLO & NLO+NLL ??? & AZNLO \\
-	\textit{h (VBF)} & \textsc{Powheg-Box} & \textsc{Pythia} 8.212 & NNPDF3.0NNLO & NLO+NLL ??? & AZNLO \\
+	$h+\ttbar$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.230 & NNPDF2.3LO & NLO~\cite{deFlorian:2016spz} & A14 \\
+	$h+V$ & \textsc{Powheg-Box} & \textsc{Pythia} 8.212 & NNPDF3.0NNLO & NNLO~\cite{deFlorian:2016spz} & AZNLO \\
+	\textit{h (ggF)} & \textsc{Powheg-Box} & \textsc{Pythia} 8.212 & NNPDF3.0NNLO & N$^3$LO+N$^3$LL~\cite{deFlorian:2016spz} & AZNLO \\
+	\textit{h (VBF)} & \textsc{Powheg-Box} & \textsc{Pythia} 8.212 & NNPDF3.0NNLO & NNLO~\cite{deFlorian:2016spz} & AZNLO \\
 	\bottomrule
 	\end{tabular}}\vspace{3mm}
 	\label{tab:mc_generators}   
@@ -128,7 +128,7 @@ The detector simulation for all \gls{mc} background samples was performed using 
 
 \subsection{\textit{b}-tagging}
 
-\selection{Overlap removal}
+\section{Overlap removal}
 
 \section{Event selection}
 
