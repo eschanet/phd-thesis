@@ -16,9 +16,11 @@ This chapter aims to give an introduction to the search for electroweakinos pres
 
 \section{Search for electroweakinos in the 1-lepton final state}
 
-In the search for electroweakinos presented herein, the simplified model introduced in \cref{sec:models_used} is interpreted in final states with one lepton and two \textit{b}-jets, a final state that can occur when the $W$ boson decays through $W^\pm\rightarrow\ell^\pm\nu_\ell$, while the Higgs boson decays into $h\rightarrow b\bar{b}$. Although final states without leptons generally benefit from higher cross sections due to \gls{qcd} couplings and quark colours, they are largely dominated by \gls{qcd} multi-jet background processes that are omnipresent at hadron colliders like the \gls{lhc}. Final states with exactly one lepton have lower cross sections but allow to reject a majority of the \gls{qcd} background, as pure \gls{qcd} events can only appear in the 1-lepton final state through false reconstruction of a jet as a lepton (so-called \textit{fake} leptons). 
+In the search for electroweakinos presented herein, the simplified model introduced in \cref{sec:models_used} is interpreted in final states with one lepton, two \textit{b}-jets and high missing transverse momentum. This final state can occur when the $W$ boson decays through $W^\pm\rightarrow\ell^\pm\nu_\ell$, while the Higgs boson decays into $h\rightarrow b\bar{b}$. Although a final state without leptons would benefit from the higher branching fraction of the $W^\pm\rightarrow q'\bar{q}$ decay, due to the \gls{qcd} couplings these final states are largely dominated by \gls{qcd} multi-jet background processes that are omnipresent at hadron colliders like the \gls{lhc}. Final states with exactly one lepton have lower cross sections but allow to reject a majority of the \gls{qcd} background, as pure \gls{qcd} multi-jet events can only appear in the 1-lepton final state through false reconstruction of a jet as a lepton (so-called \textit{fake} leptons). 
 
-The decay of the Higgs boson into a pair of \textit{b} quarks has a branching ratio of 58.3\% and allows a full reconstruction of Higgs candidates \improvement{refer to observables}. \Cref{fig:Wh_model_full} hence shows the full signal model targeted in this search. Previous searches for electroweakinos in this final state have been performed by the ATLAS~\cite{SUSY-2013-23,SUSY-2017-01} and CMS~\cite{CMS-SUS-16-043} collaborations, excluding $\charg\neutr$ masses up to $\SI{540}{\GeV}$ and $\SI{490}{\GeV}$, respectively, for massless $\lsp$. The two previous ATLAS searches used $\SI{20.3}{\per\femto\barn}$ of $\sqrt{s}=\SI{8}{\TeV}$ and $\SI{36.1}{\per\femto\barn}$ of $\sqrt{s}=\SI{13}{\TeV}$ $pp$ collision data, respectively. As opposed to this, the search presented in the following uses the full dataset available from the Run~2 data taking period, amounting to an unprecedented $\SI{139}{\per\femto\barn}$ of $pp$ collision data at $\sqrt{s}=\SI{13}{\TeV}$.
+Targeting the decay of the Higgs boson into a pair of \textit{b} quarks benefits from the high branching ratio of 58.3\% and allows a full reconstruction of Higgs candidates, a procedure that will be used to achieve a high signal-to-background ratio. \improvement{refer to observables}. \Cref{fig:Wh_model_full} shows the full signal model targeted in this search, including the considered decays of the $W$ and Higgs bosons. 
+
+Previous searches for electroweakinos in this final state have been performed by the ATLAS~\cite{SUSY-2013-23,SUSY-2017-01} and CMS~\cite{CMS-SUS-16-043} collaborations, excluding $\charg\neutr$ masses up to $\SI{540}{\GeV}$ and $\SI{490}{\GeV}$, respectively, for massless $\lsp$. The two previous ATLAS searches used $\SI{20.3}{\per\femto\barn}$ of $\sqrt{s}=\SI{8}{\TeV}$ and $\SI{36.1}{\per\femto\barn}$ of $\sqrt{s}=\SI{13}{\TeV}$ $pp$ collision data, respectively. As opposed to this, the search presented in the following uses the full dataset available from the Run~2 data taking period, amounting to an unprecedented $\SI{139}{\per\femto\barn}$ of $pp$ collision data at $\sqrt{s}=\SI{13}{\TeV}$.
 
 \begin{figure}
 	\centering\includegraphics[width=.4\textwidth]{model_c1n2_Wh}
@@ -33,27 +35,34 @@ The decay of the Higgs boson into a pair of \textit{b} quarks has a branching ra
 		\centering\includegraphics[width=\textwidth]{ttbar}
 		\caption{\label{fig:ttbar}}
 	\end{subfigure}\quad
+		\begin{subfigure}[b]{0.3\linewidth}
+		\centering\includegraphics[width=\textwidth]{singletop}
+		\caption{\label{fig:singletop}}
+	\end{subfigure}\quad
 	\begin{subfigure}[b]{0.3\linewidth}
 		\centering\includegraphics[width=\textwidth]{wjets}
 		\caption{\label{fig:wjets}}
-	\end{subfigure}\quad
+	\end{subfigure}
 %	\begin{subfigure}[b]{0.25\linewidth}
 %		\centering\includegraphics[width=\textwidth]{diboson}
 %		\caption{\label{fig:diboson}}
 %	\end{subfigure}
-	\begin{subfigure}[b]{0.3\linewidth}
-		\centering\includegraphics[width=\textwidth]{singletop}
-		\caption{\label{fig:singletop}}
-	\end{subfigure}	
 	\caption{Exemplary Feynman diagrams showing the dominant processes \subref{fig:ttbar} $t\bar{t}$, \subref{fig:wjets} $W+\textrm{jets}$ and \subref{fig:singletop} single top production with subsequent decays.}
 	\label{fig:sm_backgrounds_feynman}
 \end{figure}
 
 Although the requirement of exactly one lepton isolated from surrounding hadronic activity significantly reduces the contribution from \gls{qcd} multi-jet background, numerous \gls{sm} processes can result in final states with exactly one isolated lepton, multiple jets and missing transverse momentum. Background sources are generally classified into \textit{reducible} and \textit{irreducible} backgrounds. Irreducible backgrounds are processes that have a physical phase space that is indistinguishable from the final state of the signal process considered. Reducible backgrounds, on the other hand, result from partially misreconstructed processes as well as mismeasurements. Examples of reducible processes are events where a lepton originates from a \gls{hf} decay, photon conversions or misreconstructed jets. \gls{sm} processes that result in final states with an isolated lepton, multiple jets and missing transverse momentum typically involve a $W$ boson decaying into a lepton--neutrino pair (a so-called \textit{leptonic decay}). The neutrino will contribute to the total missing transverse momentum in the event, while additional jets can appear in the final state through \gls{qcd} radiation or other branches of the decay chain.
 
-By far the largest \gls{sm} background contributions stem from the production of top quarks, including top quark pair $\ttbar$ production as well as single top processes. 
+By far the largest \gls{sm} background contributions stem from the production of top quarks, predominantly through top quark pair $\ttbar$ production, where both top quarks decay into a $W$ boson and a $b$ quark. Final states with one isolated lepton can occur through leptonic decay of one of the $W$ bosons. \Cref{fig:ttbar} shows a diagram depicting an exemplary decay of a $\ttbar$ system into a final state with one lepton, multiple jets (two of which originate from \textit{b} quarks) and missing transverse momentum. In addition to $\ttbar$, single top production (\textit{s}-channel, \texttt{t}-channel or \textit{tW}-channel) can also result in similar final states as the \gls{susy} signal and thus constitutes a significant \gls{sm} background process. An exemplary decay is shown in~\cref{fig:singletop}.
 
-Apart from processes involving top quarks, the production of the vector bosons \textit{W} and \textit{Z} constitutes another major source of \gls{sm} backgrounds. 
+Apart from processes involving top quarks, the production of a $W$ boson in association with multiple jets ($\wjets$) is the third major background considered in the analysis. If the $W$ boson undergoes a leptonic decay and two of the produced jets are tagged as originating from $b$ quarks, the signature of this process is similar to that of signal events.
+
+
+
+ and \textit{Z} constitutes another major source of \gls{sm} backgrounds. 
+
+
+
 Various \gls{sm} processes involving Higgs bosons can also result in final states with one lepton, two $b$-tagged jets (from $h\rightarrow b\bar{b}$), and $\etmiss$ and, although their contributions are overall relatively small, are thus included in the background estimation. The processes considered in this analysis include Higgs boson production in association with a top-quark pair or a vector boson ($h+\ttbar$ and $h+V$) as well as single Higgs production through \gls{vbf} or \gls{ggf}. 
 
 Pure \gls{qcd} multi-jet events can only appear in the 1-lepton final state through false reconstruction of a jet as a lepton (so-called \textit{fake} leptons) and mismeasurement of $\etmiss$. As it has been shown that this background is negligible in all selections relevant to this search, no estimation for \gls{qcd} contribution is considered in the following~\cite{SUSY-2019-08}.
