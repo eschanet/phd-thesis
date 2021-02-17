@@ -120,8 +120,7 @@ The detector simulation for all \gls{mc} background samples was performed using 
 
 \section{Object definitions}
 
-The reconstruction of physics objects requires the combination of data from multiple detector components. Due to finite detector resolutions, and the sheer amount of particles produced in each collision, this process does not always work without flaws. Sometimes, objects are falsely reconstructed or not reconstructed at all. In order to minimise reconstruction errors, different identification and reconstruction criteria are introduced for each physics object category. Electrons and muons are categorised into \textit{baseline} and \textit{signal} objects. Baseline objects have a smaller purity but a higher acceptance which is \eg useful for the reconstruction of the missing transverse momentum. Stricter identification and isolation criteria are required for signal objects, resulting in lower acceptances but also lower reconstruction errors. In this analysis, signal-type objects are used as the physical objects.
-\improvement{table with obj def somewhere}
+The reconstruction of physics objects requires the combination of data from multiple detector components. Due to finite detector resolutions, and the sheer amount of particles produced in each collision, this process does not always work without flaws. Sometimes, objects are falsely reconstructed or not reconstructed at all. In order to minimise reconstruction errors, different identification and reconstruction criteria are introduced for each physics object category. Electrons and muons are categorised into \textit{baseline} and \textit{signal} objects. Baseline objects have a smaller purity but a higher acceptance which is \eg useful for the reconstruction of the missing transverse momentum. Stricter identification and isolation criteria are required for signal objects, resulting in lower acceptances but also lower reconstruction errors. In this analysis, signal-type objects are used as the physical objects. \Cref{tab:objdef} gives a comprehensive summary of the object definitions introduced in the following.
 
 \subsection{Tracks and vertices}\label{sec:reco_tracks}
 
@@ -135,31 +134,11 @@ Electron and photon candidates are reconstructed from energy deposits in topolog
 
 The identification of prompt electrons relies on a likelihood discriminant built from quantities measured in the \gls{id} and calorimeters. The quantities are chosen according to their ability of discriminating prompt isolated electrons from non-prompt leptons originating in \gls{hf} decays, from photon conversions or from jets. They include the properties of the electron track, the shape of the \gls{em} shower and the quality of the match between the electron track and the calorimeter clusters~\cite{PERF-2017-01}. Photon identification, on the other hand, relies on a cut-based selection exploiting the shape of the \gls{em} shower.
 
-In this analysis, electrons are required to satisfy $\pt > \SI{7}{GeV}$ and $\vert\eta\vert<2.47$. Baseline electrons are identified using the \textit{LooseAndBLayer} requirement on the identification likelihood, requiring a hit in the innermost layer of the pixel detector, at least two additional hits in the remaining layers of the pixel detector and seven hits in the pixel an \gls{sct} detectors combined~\cite{PERF-2017-01}. In addition, the longitudinal impact parameter $z_0$ of baseline electrons needs to satisfy $\Delta z_0\sin\theta < \SI{0.5}{\milli\meter}$ with respect to the primary vertex. Signal electrons are a subset of baseline electrons and need to satisfy the \textit{tight} likelihood identification, yielding an efficiency of 80\% for prompt electrons with $E_\mathrm{T}=\SI{40}{\GeV}$~\cite{PERF-2017-01}. In addition to the longitudinal impact parameter, signal leptons also need to satisfy $d_0/\sigma_{d_0} < 5$, where the transverse impact parameter $d_0$ and its uncertainty $\sigma_{d_0}$ are measured with respect to the beam line. 
+In this analysis, electrons are required to satisfy $\pt > \SI{7}{GeV}$ and $\vert\eta\vert<2.47$. Baseline electrons are identified using the \textit{LooseAndBLayer} requirement on the identification likelihood, requiring a hit in the innermost layer of the pixel detector, at least two additional hits in the remaining layers of the pixel detector and seven hits in the pixel an \gls{sct} detectors combined~\cite{PERF-2017-01}. In addition, the longitudinal impact parameter $z_0$ of baseline electrons needs to satisfy $\Delta z_0\sin\theta < \SI{0.5}{\milli\meter}$ with respect to the primary vertex. Signal electrons are a subset of baseline electrons and need to satisfy the \textit{Tight} likelihood identification, yielding an efficiency of 80\% for prompt electrons with $E_\mathrm{T}=\SI{40}{\GeV}$~\cite{PERF-2017-01}. In addition to the longitudinal impact parameter, signal leptons also need to satisfy $d_0/\sigma_{d_0} < 5$, where the transverse impact parameter $d_0$ and its uncertainty $\sigma_{d_0}$ are measured with respect to the beam line. 
 
 Finally, electrons need to be \textit{isolated}, meaning that the vicinity of electrons needs to be clear of additional significant detector activity. Requiring electrons to be isolated prevents the selection of non-prompt electrons originating \eg from \gls{hf} decays or misidentifications of light hadrons. Isolation is quantified using two observables, one using tracking information and the other one using calorimeter data. The track based isolation variable $p_{\mathrm{T}}^{\mathrm{varcone20}}$ is the sum of all track momenta above $\SI{1}{\GeV}$, (excluding the electrons track itself) in a cone around the electron. The size of the cone is $\Delta R = \min (\SI{10}{\GeV}/\pt,0.2)$, \ie shrinking with increasing electrons $\pt$. The calorimeter based variable $E_{\mathrm{T}}^{\mathrm{cone20}}$ corresponds to the sum of the transverse energies in topo-clusters (excluding the electrons itself and after correcting for pileup effects) in a cone with $\Delta R = 0.2$ around the electrons. In this analysis, both baseline and signal electrons are required to satisfy the \textit{Loose} working point~\cite{EGAM-2018-01}, corresponding to the requirements $p_{\mathrm{T}}^{\mathrm{varcone20}}/\pt < 0.2$ and $E_{\mathrm{T}}^{\mathrm{cone20}} < 0.15$. In order improve the rejection of non-prompt electrons at high transverse momenta, electrons with $\pt >\SI{200}{\GeV}$ need to satisfy the \textit{HighPtCaloOnly} working point, applying the tighter requirement $E_{\mathrm{T}}^{\mathrm{cone20}} < \max (0.015\cdot\pt,3.5GeV)$. 
 
 Photons are required to have $\pt > \SI{13}{GeV}$ and $\vert\eta\vert<2.37$ and need to satisfy the \textit{tight} identification and \textit{FixedCutTight} isolation requirements~\cite{EGAM-2018-01}. In this analysis, photons are only used in the calculation of the missing transverse momentum.
-
-%\begin{table}
-%	\centering
-%	\setlength\heavyrulewidth{0.2ex}
-%	\small
-%	\caption{Overview of the object definitions for electrons.}
-%	\resizebox{\textwidth}{!}{\begin{tabular} {lc}
-%	\toprule
-%	Selection & Value/description \\ 
-%	\midrule
-%	\multicolumn{2}{c}{Baseline electron} \\
-%	Identification & LooseAndBLayer \\
-%	$p_\mathrm{T}$ & $> \SI{7}{\GeV}$ \\
-%	$\vert\eta\vert$ & $< 2.47$ \\
-%	\midrule
-%	\multicolumn{2}{c}{Signal electron} \\
-%	\bottomrule
-%	\end{tabular}}\vspace{2mm}
-%	\label{tab:ele_objdef}   
-%\end{table}
 
 \subsection{Muons}
 
@@ -170,7 +149,7 @@ The reconstruction of muons uses primarily data from the \gls{id} and \gls{ms} a
 \end{itemize}
 After resolving the overlaps between the different muon types, the muon objects used for physics analysis are subject to a momentum calibration using data from $J/\Psi\rightarrow\mu\mu$ and $Z\rightarrow\mu\mu$ decays~\cite{PERF-2015-10,Aad:2020gmm}.
 
-Identification of muons is performed using quality requirements designed to suppress non-prompt muons originating from pion and kaon decays and allow a robust momentum measurement. Muons in this analysis are built using combined and extrapolated muons that satisfy the \textit{medium} identification requirements~\cite{PERF-2015-10}. Combined muons need to have at least three hits in at least two \gls{mdt} layers, except for the region with $\vert\eta\vert < 0.1$, where a single \gls{mdt} layer is enough, as long as there is no more than one \gls{mdt} hole layer. Extrapolated muons need to have at least three hits in at least three \gls{mdt} and \gls{csc} layers. In addition, all muons need to have a significance of the ratio of the measured charge and momentum of the muons satisfying $\sigma(q/p) < 7$.
+Identification of muons is performed using quality requirements designed to suppress non-prompt muons originating from pion and kaon decays and allow a robust momentum measurement. Muons in this analysis are built using combined and extrapolated muons that satisfy the \textit{Medium} identification requirements~\cite{PERF-2015-10}. Combined muons need to have at least three hits in at least two \gls{mdt} layers, except for the region with $\vert\eta\vert < 0.1$, where a single \gls{mdt} layer is enough, as long as there is no more than one \gls{mdt} hole layer. Extrapolated muons need to have at least three hits in at least three \gls{mdt} and \gls{csc} layers. In addition, all muons need to have a significance of the ratio of the measured charge and momentum of the muons satisfying $\sigma(q/p) < 7$.
 
 Muons in this analysis also need to satisfy $\pt > \SI{6}{\GeV}$ as well as $\vert\eta\vert < 2.7$ or $\vert\eta\vert < 2.5$ for baseline or signal muons, respectively. The longitudinal impact parameter of baseline muons is required to be $\Delta z_0\sin\theta < \SI{0.5}{\milli\meter}$ with respect to the primary vertex. Signal muons additionally need to have a transverse impact parameter satisfying $d_0/\sigma_{d_0} < 3$. Similar to electrons, muons also need to be isolated, using the same variables. Both signal and baseline muons need to conform to the \textit{Loose} working point, requiring $p_{\mathrm{T}}^{\mathrm{varcone20}}/\pt < 0.3$ and $E_{\mathrm{T}}^{\mathrm{cone20}} < 0.15$~\cite{Aad:2020gmm}.
 
@@ -183,18 +162,77 @@ Jets are reconstructed at the \gls{em} scale using the anti-$k_t$ algorithm~\cit
 
 Reconstructed jets undergo a \gls{jes} calibration, correcting the four-momentum and scaling the energy and mass~\cite{Aad:2020flx}. In a first step, energy contributions from in-time and out-of-time pileup are removed using a data-driven jet-by-jet approach based on jet areas and pileup $\pt$ density as well as a residual correction derived from MC simulation and parameterised by the number of mean interactions per bunch crossing and the number of reconstructed primary vertices~\cite{Aad:2020flx,Cacciari:2007fd}. The reconstructed jet four-momentum is corrected to the particle-level energy scale through an absolute \gls{jes} and $\eta$ calibration. In order to reduce the dependence of the jet response (\ie the ratio between the measured jet energy and the true jet energy) on the flavour and energy distribution of its constituents, a series of multiplicative corrections, called \gls{gsc}~\cite{PERF-2011-03}, is applied. The \gls{gsc} improves the \gls{jer} and is based on data from the calorimeters, jet-related tracking information as well as \gls{ms} information. Differences between the jet response in data and \gls{mc} simulation, caused by imperfect detector and physics simulations, are corrected using so-called \textit{in situ} calibrations~\cite{Aad:2020flx}. The jet response in data and \gls{mc} simulations is measured separately, allowing to derive a correction factor that is applied on data. Similar to the \gls{jes}, the \gls{jer} is also calibrated. The \gls{jer} is measured in dijet events through $\pt$ asymmetry~\cite{PERF-2014-02}.
 
-Even after the subtraction of pileup effects, some pileup jets still remain. The \gls{jvt}~\cite{PERF-2014-03}, a multivariate discriminant, can be used to suppress pileup jets. The \gls{jvt} uses variables that describe the fraction of the total jet momentum corresponding to tracks associated to the primary vertex. 
+Even after the subtraction of pileup effects, some pileup jets still remain. The \gls{jvt}~\cite{PERF-2014-03}, a multivariate discriminant, can be used to suppress pileup jets. It is based on variables that describe the fraction of the total jet momentum corresponding to tracks associated to the primary vertex. In this analysis, jets with $\pt < \SI{120}{\GeV}$ and $\vert\eta\vert < 2.5$ need to be associated to the primary vertex using the \textit{medium} working point, achieving an average 92\% efficiency for jets originating from the hard scatter interaction~\cite{Aad:2020flx}.
 
+Baseline jets in this analysis are required to have $\pt > \SI{20}{\GeV}$ and $\vert\eta\vert < 4.5$. Analysis variables built using jets use signal jets with $\pt > \SI{30}{\GeV}$ and $\vert\eta\vert < 2.8$.
 
-topo cluster~\cite{JetCellClustering:2016upy}
-JES~\cite{PERF-2016-04,Aad:2020flx}
-antikt~\cite{Cacciari:2008gp}
-fastjet~\cite{Fastjet,Cacciari:2006sm}
 \subsection{Flavour tagging}
+
+As can be easily seen through the \gls{ckm} matrix, \textit{b}-quarks primarily decay through $b\rightarrow W c$. However, since the small coupling constant proportional to the corresponding \gls{ckm} matrix element $V_{cb}$ (corresponding to the $b \leftrightarrow c $ transition), \textit{b}-hadrons have relatively long lifetimes of the order of $\SI{1.5}{\pico\second}$ ($\braket{c\tau} \approx \SI{450}{\micro\meter}$)~\cite{pdg2020}. In the typical momentum ranges, \textit{b}-hadrons can have a measurable flight length before decaying, leading to secondary vertices that are displaced from the hard-scatter interaction point. In order to exploit this, ATLAS uses a collection of algorithms designed to discern \gls{hf} jets containing \textit{b}-hadrons from light-flavour jets by exploiting either the impact parameters or reconstructing the displaced vertices. A multivariate classifier, called \texttt{MV2}~\cite{ATL-PHYS-PUB-2017-013} combines the outputs of the different taggers using a \gls{bdt} algorithm that is trained on $\ttbar + Z'$ \gls{mc} samples. 
+
+Due to the Higgs decay $h\rightarrow b\bar{b}$ in the targeted signal model, \textit{b}-jets play a crucial role in the analysis. Baseline jets with $\vert\eta\vert < 2.5$ are used as input to the \texttt{MV2c10} \textit{b}-tagging algorithm, an implementation of the \texttt{MV2} discriminant using a \textit{c}-jet fraction of 7\% during the \gls{bdt} training~\cite{FTAG-2018-01, PERF-2016-05}. The working point chosen for the \texttt{MV2c10} tagger achieves a \textit{b}-tagging efficiency of 77\% with a rejection rates of $4.9$, $15$, and $110$ for \textit{c}-jets, $\tau$-jets and light-flavour jets, respectively, measured in simulated $\ttbar$ events~\cite{FTAG-2018-01}.
 
 \subsection{Missing transverse momentum}
 
-\section{Overlap removal}
+Momentum conservation in the transverse plane implies that the sum of the transverse momenta of all objects in a $pp$ collision should vanish. Particles escaping the detector without being measured thus lead to a momentum imbalance, in the following referred to as missing transverse momentum $\boldsymbol{p}^{\textrm{miss}}_\textrm{T}$ with magnitude $\etmiss$. The missing transverse momentum in each event is computed using all reconstructed objects and takes into account tracks associated to the primary vertex but not used for any reconstructed objects~\cite{PERF-2016-07}, yielding
+\begin{equation}
+	\boldsymbol{p}^{\textrm{miss}}_\textrm{T} = - \sum\boldsymbol{p}^{e}_{\textrm{T}} - \sum\boldsymbol{p}^{\gamma}_{\textrm{T}} - \sum\boldsymbol{p}^{\mu}_{\textrm{T}} - \sum\boldsymbol{p}^{\mathrm{jet}}_{\textrm{T}} - \sum\boldsymbol{p}^{\mathrm{track}}_{\textrm{T}}.
+	\label{eq:met}
+\end{equation}
+While terms originating from the reconstructed, calibrated objects are collectively referred to as the \textit{hard term}, the remaining track term is referred to as \textit{soft term}. As $\tau$-leptons are not explicitly reconstructed in this analysis, no corresponding term is included in \cref{eq:met}. Hadronic decays of $\tau$-leptons are, however, included in the jet term as they are, in general, reconstructed as jets. The computation of $\etmiss$ uses all baseline objects introduced in the previous sections. Ambiguities between objects are resolved using an overlap removal procedure that is separate and independent from the procedure described in \cref{sec:overlap_removal}~\cite{PERF-2016-07}. In order to reduce effects from pileup, the $\etmiss$ is computed using the \textit{tight} working point described in Ref.~\cite{ATLAS-CONF-2018-023}, excluding forward jets with $\vert\eta\vert > 2.4$ and $\pt < \SI{30}{\GeV}$.
+
+Events without any true $\etmiss$ can have non-zero reconstructed $\etmiss$ due to residual pileup effects, object mismeasurements are particles escaping through uninstrumentalised regions of the detector. Such \textit{fake} $\etmiss$ allows events without any real $\etmiss$ (\eg $Z(\rightarrow ee)+\mathrm{jets}$) to pass the event selection criteria and end up in the regions of interest even after requiring a certain threshold value of $\etmiss$.
+
+
+\begin{table}
+	\centering
+	\setlength\heavyrulewidth{0.2ex}
+	\small
+	\caption{Overview of the object definitions used in the analysis.}
+	\begin{tabular} {lll}
+	\toprule
+	Property & Baseline type & Signal type \\ 
+	\midrule
+	\multicolumn{3}{c}{Electrons} \\
+	\midrule
+	Kinematic &  $\pt > \SI{7}{GeV}$, $\vert\eta\vert<2.47$ & $\pt > \SI{7}{GeV}$, $\vert\eta\vert<2.47$\\
+	Identification &  \textit{LooseAndBLayer}~\cite{PERF-2017-01} & \textit{Tight}~\cite{PERF-2017-01} \\
+	Impact parameters & $\Delta z_0\sin\theta < \SI{0.5}{\milli\meter}$ & $\Delta z_0\sin\theta < \SI{0.5}{\milli\meter}$, $d_0/\sigma_{d_0} < 5$ \\
+	\multirow{2}*{Isolation} & \multirow{2}*{--} & \textit{Loose}~\cite{EGAM-2018-01} ($\pt \leq \SI{200}{\GeV}$) \\
+	& & \textit{HighPtCaloOnly}~\cite{EGAM-2018-01} ($\pt > \SI{200}{\GeV}$) \\
+	\midrule
+	\multicolumn{3}{c}{Muons} \\
+	\midrule
+	Kinematic &  $\pt > \SI{6}{GeV}$, $\vert\eta\vert<2.7$ & $\pt > \SI{6}{GeV}$, $\vert\eta\vert<2.5$\\
+	Identification &  \textit{Medium}~\cite{PERF-2015-10} & \textit{Medium}~\cite{PERF-2015-10} \\
+	Impact parameters & $\Delta z_0\sin\theta < \SI{0.5}{\milli\meter}$ & $\Delta z_0\sin\theta < \SI{0.5}{\milli\meter}$, $d_0/\sigma_{d_0} < 3$ \\
+	Isolation & -- & \textit{Loose}~\cite{Aad:2020gmm}\\
+	\midrule
+		\multicolumn{3}{c}{Jets} \\
+	\midrule
+	Kinematic &  $\pt > \SI{20}{GeV}$, $\vert\eta\vert<4.5$ & $\pt > \SI{30}{GeV}$, $\vert\eta\vert<2.8$\\
+	\gls{jvt} & -- &  \textit{Medium}~\cite{Aad:2020flx}, $\pt < \SI{120}{\GeV}$, $\vert\eta\vert < 2.5$ \\
+	\midrule
+		\multicolumn{3}{c}{\textit{b}-jets} \\
+	\midrule
+	Kinematic &  $\pt > \SI{20}{GeV}$, $\vert\eta\vert<4.5$ & $\pt > \SI{30}{GeV}$, $\vert\eta\vert<2.5$\\
+	\gls{jvt} & -- &  \textit{Medium}~\cite{Aad:2020flx}., $\pt < \SI{120}{\GeV}$, $\vert\eta\vert < 2.5$  \\
+	\textit{b}-tagging & -- & \texttt{MV2c10}~\cite{FTAG-2018-01} with 85\% efficiency \\
+	\bottomrule
+	\end{tabular}\vspace{2mm}
+	\label{tab:objdef}   
+\end{table}
+
+\section{Overlap removal}\label{sec:overlap_removal}
+
+As the reconstruction procedure runs independently for each object type, it may happen that the same tracks or energy deposits in the calorimeters are used for the reconstruction of two different objects. For example electrons tend to cluster as well as jets and are therefore often also reconstructed as electron-seeded jets~\cite{overlapremoval:1700874}. In order to resolve ambiguities and prevent double-counting, an overlap removal procedure using the distance parameter $\Delta R_y = \sqrt{(\Delta y)^2+(\Delta \phi)^2}$ is performed. The procedure sequentially runs the following steps on baseline objects, with only surviving objects participating in subsequent steps:
+\begin{enumerate}
+	\item Electrons sharing an \gls{id} track with a muon are removed, preventing duplication of muons via bremsstrahlung with subsequent photon conversion~\cite{overlapremoval:1700874}.
+	\item Jets within $\Delta R_y < 0.2$ of an electron are rejected, preventing the pure duplication of electrons as electron-seeded jets~\cite{overlapremoval:1700874}.
+	\item Electrons overlapping with remaining jets within $\Delta R_y = \min (0.4, 0.04+\SI{10}{\GeV}/\pt)$ are removed, resolving the regime where hadronic jets lose a fraction of their energy to electron-seeded jets~\cite{overlapremoval:1700874}. The shrinking cone size avoids unnecessary rejection of electrons originating from decays of boosted particles together with jets.
+	\item Jets with less than three associated tracks, within $\Delta R_y < 0.2$ of a muon or where the muon has been matched to the jet through ghost association~\cite{ghostassociation:2008gn} are removed. This resolves for example scenarios where a muon is reconstructed as a jet due to bremsstrahlung or \gls{fsr} with subsequent photon conversion reconstructed both as electron and jet~\cite{overlapremoval:1700874}.
+	\item Muons overlapping with a remaining jet are removed. The same shrinking cone size as for electrons is used. This predominantly removes non-prompt muons produced in light meson decays, or \gls{hf} decays, together with jets~\cite{overlapremoval:1700874}. 
+\end{enumerate} 
 
 \section{Event selection}
 
