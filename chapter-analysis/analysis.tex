@@ -234,6 +234,70 @@ As the reconstruction procedure runs independently for each object type, it may 
 	\item Muons overlapping with a remaining jet are removed. The same shrinking cone size as for electrons is used. This predominantly removes non-prompt muons produced in light meson decays, or \gls{hf} decays, together with jets~\cite{overlapremoval:1700874}. 
 \end{enumerate} 
 
+
+\section{Analysis variables}
+
+In order to separate supersymmetric signal events from \gls{sm} processes, it is necessary to apply requirements on different discriminating observables, creating so-called \textit{signal regions} enriched in signal events. In addition these variables are also used to construct regions enriched in \gls{sm} background events, in the following used for the background estimation in the signal regions.
+
+\subsubsection{Number of jets}
+
+The simplified model depicted in \cref{fig:Wh_model_full} features two \textit{b}-jets in the final state, originating from the decay of the Higgs boson. In the following, all events are required to have exactly two \textit{b}-jets in the final state, significantly reducing contributions from $\wjets$ processes that have a very low probability of producing two \textit{b}-jets. In order to avoid rejecting signal events with \gls{isr} or \gls{fsr}, a third, light-flavour jet is allowed in the final state.
+
+\subsubsection[Invariant mass of the \textit{b}-tagged jets]{Invariant mass of the $\boldsymbol{b}$-tagged jets}
+
+The invariant mass of the two \textit{b}-jets $\mbb$ is defined as
+\begin{equation}
+	\mbb = (\boldsymbol{\mathrm{p_1}}+\boldsymbol{\mathrm{p_2}})^2,
+\end{equation}
+where $\boldsymbol{\mathrm{p_1}}$ and $\boldsymbol{\mathrm{p_2}}$ are the four-vector momenta of the leading and subleading \textit{b}-jets, respectively. The term \textit{leading} henceforth refers to the object with the largest $\pt$ in its object category.
+
+\subsubsection{Missing transverse energy}
+
+\subsubsection{Transverse mass}
+
+\begin{equation}
+	\mt = \sqrt{2\pt^\ell\etmiss(1-\cos[\Delta\phi(\boldsymbol{p}_\mathrm{T}^\ell,\boldsymbol{p}_\mathrm{T}^\mathrm{miss})])},
+\end{equation}
+
+\subsubsection{Contransverse mass}
+
+\begin{equation}
+	\mct = \sqrt{2\pt^{b_1}\pt^{b_2}(1+\cos\Delta\phi_{bb})},
+\end{equation}
+
+\subsubsection[Invariant mass of the lepton and leading \textit{b}-jet]{Invariant mass of the lepton and leading $\boldsymbol{b}$-jet}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{presel/mt}
+		\caption{\label{fig:norm_mt}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{presel/mct}
+		\caption{\label{fig:norm_mct}}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{presel/met}
+		\caption{\label{fig:norm_mt}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{presel/mbb}
+		\caption{\label{fig:norm_mct}}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{presel/mlb1}
+		\caption{\label{fig:norm_mt}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{presel/nBJet}
+		\caption{\label{fig:norm_nbjet}}
+	\end{subfigure}
+	\caption{Distributions of the most important observables used in the analysis. The simulated \gls{sm} backgrounds are stacked on top of each other, and distributions from exemplary signal models with the quoted mass parameters are overlaid. In order to emphasise the shape differences, both background and signal distributions are normalised to unity.}\label{fig:norm_obs}
+\end{figure}
+
 \section{Event selection}
+
+
 
 \section{Triggers}
