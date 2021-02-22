@@ -154,7 +154,7 @@ Identification of muons is performed using quality requirements designed to supp
 Muons in this analysis also need to satisfy $\pt > \SI{6}{\GeV}$ as well as $\vert\eta\vert < 2.7$ or $\vert\eta\vert < 2.5$ for baseline or signal muons, respectively. The longitudinal impact parameter of baseline muons is required to be $\Delta z_0\sin\theta < \SI{0.5}{\milli\meter}$ with respect to the primary vertex. Signal muons additionally need to have a transverse impact parameter satisfying $d_0/\sigma_{d_0} < 3$. Similar to electrons, muons also need to be isolated, using the same variables. Both signal and baseline muons need to conform to the \textit{Loose} working point, requiring $p_{\mathrm{T}}^{\mathrm{varcone20}}/\pt < 0.3$ and $E_{\mathrm{T}}^{\mathrm{cone20}} < 0.15$~\cite{Aad:2020gmm}.
 
 
-\subsection{Jets}
+\subsection{Jets}\label{sec:jets}
 
 Jets are reconstructed at the \gls{em} scale using the anti-$k_t$ algorithm~\cite{Cacciari:2008gp} with a radius parameter $R=0.4$, implemented in the \textsc{FastJet}~\cite{Fastjet,Cacciari:2006sm} package. The inputs to the anti-$k_t$ algorithm are topo-clusters~\cite{Aad:2020flx}, built using the same procedure introduced in~\cref{sec:reco_electrons}. Tracks with $\pt > \SI{500}{\MeV}$ and an association to the primary vertex are assigned to jets using \textit{ghost association}~\cite{Cacciari:2007fd}, a method treating them as particles with infinitesimal momentum such that the properties of the calorimeter-based jets are not changed. 
 
@@ -237,7 +237,7 @@ As the reconstruction procedure runs independently for each object type, it may 
 
 \section{Analysis variables}
 
-In order to separate supersymmetric signal events from \gls{sm} processes, it is necessary to apply requirements on different discriminating observables, creating so-called \textit{signal regions} enriched in signal events. In addition these variables are also used to construct regions enriched in \gls{sm} background events, in the following used for the background estimation in the signal regions.
+In order to separate supersymmetric signal events from \gls{sm} processes, it is necessary to apply requirements on different discriminating observables, creating so-called \textit{signal regions} enriched in signal events. In addition these variables are also used to construct regions enriched in \gls{sm} background events, in the following used for the background estimation in the signal regions. The distributions of all discriminating variables are illustrated in \cref{fig:norm_obs}, showing signal and \gls{sm} background distributions, each normalised to unity. Most observables depend on the absolute mass scale of the supersymmetric particles, as well as the mass difference between $\charg/\neutr$ and $\lsp$. 
 
 \subsubsection{Number of jets}
 
@@ -247,25 +247,53 @@ The simplified model depicted in \cref{fig:Wh_model_full} features two \textit{b
 
 The invariant mass of the two \textit{b}-jets $\mbb$ is defined as
 \begin{equation}
-	\mbb = (\boldsymbol{\mathrm{p_1}}+\boldsymbol{\mathrm{p_2}})^2,
+	\mbb = \sqrt{(\boldsymbol{\mathrm{p}}_{b_1}+\boldsymbol{\mathrm{p}}_{b_2})^2},
 \end{equation}
-where $\boldsymbol{\mathrm{p_1}}$ and $\boldsymbol{\mathrm{p_2}}$ are the four-vector momenta of the leading and subleading \textit{b}-jets, respectively. The term \textit{leading} henceforth refers to the object with the largest $\pt$ in its object category.
+where $\boldsymbol{\mathrm{p}}_{b_1}$ and $\boldsymbol{\mathrm{p}}_{b_2}$ are the four-vector momenta of the leading and subleading \textit{b}-jets, respectively. The term \textit{leading} henceforth refers to the object with the largest $\pt$ in its object category. In the high-relativistic limit $E \gg m$, the invariant mass of the two \textit{b}-jets can be written as
+\begin{equation}
+	\mbb = \sqrt{2\pt^{b_1}\pt^{b_2}(\cosh\Delta\eta - \cos\Delta\phi)}.
+\end{equation}
+As the two \textit{b}-jets originate from the Higgs decay $h\rightarrow b\bar{b}$, their measured invariant mass will in general be close to the measured Higgs mass of around $\SI{125}{\GeV}$~\cite{pdg2020}, leading to a peak in the $\mbb$ distribution, as can clearly be seen in~\cref{fig:norm_mbb}. In most \gls{sm} background processes, on the other hand, the \textit{b}-jets do not originate from a Higgs decay, and thus their $\mbb$ distribution does not exhibit the same peak-like structure. In order to enrich signal events in a selection, a requirement of $\SI{100}{\GeV}<\mbb<\SI{140}{\GeV}$ is used in the following.
 
 \subsubsection{Missing transverse energy}
 
+The missing transverse energy $\etmiss$ is an observable finding widespread usage in searches for \gls{susy} at the \gls{lhc}. In \gls{sm} processes, $\etmiss$ only stems from neutrinos and fake $\etmiss$ arising \eg from mismeasurements or imperfect detector hermeticity. In the case of the \gls{susy} scenario considered in the following, two \glspl{lsp} escape the detector, leaving a considerable amount of missing transverse momentum, such that a lower requirement on $\etmiss$ allows to separate signal and background processes. \Cref{fig:norm_met} shows the $\etmiss$ distribution, illustrating the fact that signal models with high absolute sparticle masses as well as high mass differences tend to have the largest $\etmiss$.  
+
 \subsubsection{Transverse mass}
 
+The transverse masse $\mt$~\cite{Arnison:1983rp,transversemass:163856} is one of the most important observables considered in this analysis. It aims to reconstruct the mass of a heavy particle decaying into two daughter particles subject to a co-linear boost in the laboratory transverse plane. In \gls{susy} searches targeting the 1-lepton final state, $\mt$ is commonly used to reconstruct the transverse mass of the $W$ boson decaying into a lepton--neutrino pair, and is therefore defined as
 \begin{equation}
 	\mt = \sqrt{2\pt^\ell\etmiss(1-\cos[\Delta\phi(\boldsymbol{p}_\mathrm{T}^\ell,\boldsymbol{p}_\mathrm{T}^\mathrm{miss})])},
 \end{equation}
+where $\boldsymbol{p}_\mathrm{T}^\ell$ is the momentum three-vector of the lepton in the event. As additional leptons are vetoed, the vast majority of the leptons in background processes stem from leptonic decays of $W$ bosons. In background events where the neutrino from $W\rightarrow\ell\nu$ is the only source of $\etmiss$, the transverse mass has a theoretical kinematic endpoint at the $W$ boson mass, 
+\begin{equation}
+	\mt^\mathrm{max} = m_W \approx \SI{80}{\GeV}.
+\end{equation}
+Due to finite detector resolution, mismeasurements or additional $\etmiss$ in the event, background events can sometimes have $\mt > m_W$, leading to a kinematic endpoint at $m_W$ that is not infinitely sharp.
+
+In the signal scenarios considered in the analysis, the \glspl{lsp} constitute a majority of the $\etmiss$ in an event, which typically leads to a $\mt$ distribution that is significantly broader than that of background processes and does not present the same kinematic endpoint. A lower requirement on the transverse mass slightly above the $W$ boson mass thus allows to reject a majority of the \gls{sm} background events while keeping most of the signal events. As can be seen in \cref{fig:norm_met},the broadness of the $\mt$ distribution depends on the scale of the mass parameters, with increasing mass differences leading to increasingly broad distributions. For this reason, different signal regions with varying requirements on $\mt$ can be constructed, targeting different kinematic regimes in the signal grid.
 
 \subsubsection{Contransverse mass}
 
+The contransverse mass $\mct$~\cite{Tovey:2008ui} is designed to have a kinematic endpoint for pair produced heavy particles decaying into invisible and visible particles subject to a contra-linear boost. In the following, $\mct$ is defined as
 \begin{equation}
 	\mct = \sqrt{2\pt^{b_1}\pt^{b_2}(1+\cos\Delta\phi_{bb})},
 \end{equation}
+where $\pt^{b_1}$ and $\pt^{b_2}$ are the transverse momenta of the two \textit{b}-jets in the final state. Although $\mct$ is invariant under co-linear boosts in the beam direction\footnote{This is by construction the case, as only transverse quantities are used.}, it is not invariant under transverse boosts, \eg due to \gls{isr} jets, such that $\mct$ as well as its kinematic endpoint depend on the size and direction of the transverse boost. For this reason, a boost-corrected version of the contransverse mass is used in the following, using a procedure described in detail in \reference\cite{Polesello:2009rn}. 
+
+For $\ttbar$ events where each top quark decays via $t\rightarrow bW$, the two \textit{b}-jets used for calculating $\mct$ stem from each of the two decay branches of the $\ttbar$ system. It can be shown that, in this case, the boost-corrected contransverse mass has a kinematic endpoint at~\cite{Polesello:2009rn}
+\begin{equation}
+	\mct^\mathrm{max} = \frac{m^2(t) - m^2(W)}{m(t)} \approx \SI{135}{\GeV}.
+\end{equation}
+In signal events, the two input \textit{b}-jets originate from the same Higgs boson, and thus $\mct$ does not present a clear kinematic endpoint but rather tends to take much higher values. \Cref{fig:norm_mct} clearly illustrates the kinematic endpoint for $\ttbar$ backgrounds and further shows that signal distributions take on much higher values depending on their mass parameter scales. Similar  as for the transverse mass, varying lower bounds on $\mct$ will be used to define signal regions optimised to different kinematic regimes. 
 
 \subsubsection[Invariant mass of the lepton and leading \textit{b}-jet]{Invariant mass of the lepton and leading $\boldsymbol{b}$-jet}
+
+The invariant mass of the lepton and the leading \textit{b}-jet $\mlb$ is designed to offer high rejection power towards $\ttbar$ and single top processes. In events where the lepton and leading \textit{b}-jet originate from the same top quark decay $t\rightarrow bW \rightarrow b\ell\nu$, the $\mlb$ distribution has a kinematic endpoint at 
+\begin{equation}
+	\mlb^\mathrm{max} = \sqrt{m^2(t)-m^2(W)} \approx \SI{153}{\GeV} 
+\end{equation}
+In signal events, the lepton and leading \textit{b}-jet originate from the decay chains of the $\charg$ and $\neutr$, respectively and thus the $\mlb$ distribution depends on the mass scale of the \gls{susy} particles, yielding good discriminative power especially for signal scenarios with high $\charg/\neutr$ masses.
 
 \begin{figure}
 	\centering
@@ -279,15 +307,15 @@ where $\boldsymbol{\mathrm{p_1}}$ and $\boldsymbol{\mathrm{p_2}}$ are the four-v
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{presel/met}
-		\caption{\label{fig:norm_mt}}
+		\caption{\label{fig:norm_met}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{presel/mbb}
-		\caption{\label{fig:norm_mct}}
+		\caption{\label{fig:norm_mbb}}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{presel/mlb1}
-		\caption{\label{fig:norm_mt}}
+		\caption{\label{fig:norm_mlb1}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{presel/nBJet}
@@ -296,8 +324,31 @@ where $\boldsymbol{\mathrm{p_1}}$ and $\boldsymbol{\mathrm{p_2}}$ are the four-v
 	\caption{Distributions of the most important observables used in the analysis. The simulated \gls{sm} backgrounds are stacked on top of each other, and distributions from exemplary signal models with the quoted mass parameters are overlaid. In order to emphasise the shape differences, both background and signal distributions are normalised to unity.}\label{fig:norm_obs}
 \end{figure}
 
+\section{Trigger strategy}
+
+The trigger strategy of an analysis is crucial to select $pp$ events worth investigating, and typically relies on triggers sensitive to physics objects that are important to the considered signal scenarios. The data used in this analysis have been recorded with $\etmiss$ triggers. Selecting events with invisible particles is inherently difficult precisely because these particles do not leave a trace in the detector. As described in \cref{sec:trigger}, the \gls{l1} trigger uses only parts of the instrumented regions, a technique that is not well suited for momentum imbalance triggers that rely on a sum of momenta over the full solid angle~\cite{Aad:2020les}. In addition, the significant increase in luminosity in Run~2 of the LHC degrades the $\etmiss$ resolution in the calorimeters, the only detector component used for the $\etmiss$ triggers~\cite{Aad:2020les}. The \gls{l1} triggers used in this analysis employed a threshold of $\etmiss > \SI{50}{\GeV}$, before feeding passing events to the \gls{hlt} for further analysis. 
+
+Two different types of $\etmiss$ triggers are used by the \gls{hlt}, one based on jets (\texttt{mht} algorithm), and one implementing local pile-up suppression (\texttt{pufit} algorithm). As hadronic jets dominate the visible momentum in most interesting events, using them for $\etmiss$ computation and triggering is well-motivated. The \texttt{mht} algorithm was used during the 2015--2016 data taking period and computes the $\etmiss$ from the negative vectorial sum of the transverse momenta of all jets with a transverse momentum $p_\mathrm{T} > \SI{7}{\GeV}$ before calibration~\cite{Aad:2020les}. The \gls{hlt} jets are reconstructed and calibrated using a similar procedure as for offline analysis, and are thus corrected for pile-up effects~\cite{Aad:2016nrq}. The \texttt{pufit} algorithm was used during the 2017--2018 data taking period and takes as input topo clusters formed using the method described in~\cref{sec:reco_electrons}. The clusters are subsequently combined into $\eta$--$\phi$ patches of approximately jet size and corrected for pile-up effects based on the distribution of the energy deposits in the calorimeter. The \texttt{pufit} algorithm assumes that high transverse energy deposits stem from the hard-scatter events, while low transverse energy deposits originate mainly from pile-up effects~\cite{Aad:2020les}. An online $\etmiss$ threshold ranging between $\SI{70}{\GeV}$ and $\SI{110}{\GeV}$ was used.  
+
+Since the online reconstruction techniques used by the triggers are slightly different\footnote{This is necessary to be able to handle the data streams caused by the $pp$ collisions.} than those used in offline analysis, the performance of triggers is in general not a simple step function but a so-called \textit{turn-on curve} with rising efficiency, followed by a \textit{plateau region} with constant efficiency. In order to achieve the same trigger selection in \gls{mc} as in data, the \gls{mc} events are each assigned a random run number that are distributed according to the respective integrated luminosities of each data taking period. Using the run numbers, the same triggers used for data taking during each run can be applied for \gls{mc} events. 
+
+\Cref{fig:trigger_eff} shows the combined $\etmiss$ trigger efficiencies for the electron and muon channel separately. In the following, an offline requirement of $\etmiss > \SI{240}{\GeV}$ is applied for all analysis regions, selecting events where the $\etmiss$ triggers are fully efficient and show no significant difference between \gls{mc} and data. Thus, no efficiency correction is considered in the following. A statistical uncertainty of 2\% is taken to account for the difference between data and \gls{mc} in the trigger plateau
+
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{trigger/met_ele}
+		\caption{Electron channel\label{fig:trigger_met_ele}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{trigger/met_mu}
+		\caption{Muon channel\label{fig:trigger_met_mu}}
+	\end{subfigure}
+		\caption{Efficiencies of the combined $\etmiss$ triggers in data and \gls{mc} events, triggered by single lepton triggers in the  \subref{fig:trigger_met_ele} electron and \subref{fig:trigger_met_mu} muon channels. A preselection requiring exactly one lepton (baseline and signal), at least two jets, and $\etmiss > \SI{100}{\GeV}$ is applied. The arrow indicates the offline $\etmiss$ requirement applied on all selections in the analysis.}\label{fig:trigger_eff}
+\end{figure}
+
+
 \section{Event selection}
 
 
-
-\section{Triggers}
