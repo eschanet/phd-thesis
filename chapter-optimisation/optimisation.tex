@@ -45,45 +45,63 @@ Although being a very simple fit configuration, the statistical inference can ta
 
 \section{Optimisation procedure}
 
-The optimisation of the \glspl{sr} uses experience from past analyses investigating the same signal model in the same final state~\cite{SUSY-2013-23,SUSY-2017-01}, all the while exploring new observables and \gls{sr} configurations optimised for the full Run~2 dataset. 
-
-Apart from the variables introduced in~\cref{sec:variables}, some additional, interesting observables are considered in the $N$-dimensional cut scan\footnote{These variables will turn out not to be used for the final signal regions and are only introduced here for completeness of the optimisation procedure.}:
-\begin{itemize}
-	\item Transverse momenta of the two leading jets as well as the lepton. Especially for signal models with high mass differences between the $\charg/\neutr$ and the $\lsp$, the transverse momenta of the lepton and the jets tend to be higher than in background processes.
-	\item Object-based $\etmiss$ significance $S$~\cite{met_significance:2294922}, a quantity designed to offer good discrimination against fake $\etmiss$ caused by mismeasurements or the non-hermeticity of the detector. Events with a large share of fake $\etmiss$ accumulate at low values of $S$, while events with mostly real $\etmiss$ tend to have large values of $S$. \unsure{is this conf up-to-date?}
-	\item The distance between the two leading jets $\Delta R_\mathrm{jj}$ as well as the two \textit{b}-jets $\Delta R_\mathrm{bb}$. As the two \textit{b}-jets originating from the Higgs decay in the signal scenario tend to be close together and the highest-$\pt$ jets in an event, both $\Delta R_\mathrm{jj}$ and $\Delta R_\mathrm{bb}$ tend to have small values for signal events. In background processes, the two leading (\textit{b}-)jets often do not originate from the same object and thus are not as close together.
-	\item The azimuthal distance between the lepton $\pt$ and the missing transverse momentum, $\Delta \phi (\boldsymbol{p}_\mathrm{T}^\ell, \boldsymbol{p}_\mathrm{T}^\mathrm{miss})$. This observable exploits the fact that 
-\end{itemize}
-
-
-
 \begin{table}
 	\centering
 	\small
 	\setlength\heavyrulewidth{0.2ex}
-	\caption[Cut ranges used in the $N$-dimensional cut scan]{List of observables and cut ranges used in the $N$-dimensional cut scan. All cut ranges, except for $N_\textrm{jet}$, have default values that allow the scan to not apply the cut at all, \eg a cut of $p_\textrm{T}^{\ell} > \SI{0}{\GeV}$ is always fulfilled and thus equivalent to no cut at all.}
+	\caption[Cut ranges used in the $N$-dimensional cut scan]{List of observables and cut ranges used in the $N$-dimensional cut scan. All cut ranges, except for $N_\mathrm{jet}$ and $N_{b-\mathrm{jet}}$, are allowed not to be applied at all.}
 	\begin{tabular} {l c l}
 		\toprule
 		Observable &  & Cut values \\ 
 		\midrule
-		$p_\textrm{T}^\ell$ $[\SI{}{\GeV}]$& $>$ & $\in \{0, 20, 40, 60, 80\}$ \\
-		$p_\textrm{T}^\mathrm{jet1}$ [GeV]& $>$ & $\in \{0, 75, 100, 125, 150, 175\}$ \\
-		$p_\textrm{T}^\mathrm{jet2}$ [GeV]& $>$ & $\in \{0, 50,75,100,125\}$ \\	
-		$\Delta R_\mathrm{jj}$ & $<$ & $\in \{0.8, 1.0,1.2,2.0,1000\}$ \\
-		$N_\mathrm{jet}$ & $\leq$ & $\in \{2,3\}$ \\			
-		$N_\mathrm{\textit{b}-jet}$ & $\leq$ & $\in \{0,1,100\}$ \\
-		$\etmiss$ [GeV]& $>$ & $\in \{0,150,160,180,200,220\}$ \\
-		$\etmiss$ significance & $>$ & $\in \{0,5,10,15\}$ \\
-		$m_\mathrm{T}$ [GeV]& $>$ & $\in \{0,140,160,180,200,220\}$ \\
-		$m_\mathrm{eff}$ [GeV]& $>$ & $\in \{0, 300, 400, 500, 600, 700\}$ \\
-		$m_\mathrm{jj}$ lower [GeV]& $>$ & $\in \{0,60,70,75\}$ \\
-		$m_\mathrm{jj}$ upper [GeV]& $<$ & $\in \{85,90,100,1000\}$ \\
-		$\Delta\phi (\vetmiss,\vptlep )$ [rad]& $<$ & $\in \{2.0,2.4,2.8,3.15\}$ \\
+		$\etmiss$ [GeV]& $>$ & $\in \{200,220,240,260,280,300,320,340\}$ \\
+		$\etmiss$ significance & $>$ & $\in \{5,10,15\}$ \\
+		$\mt$ [GeV]& $>$ & $\in \{100, 120, 140,160,180,200,220,240,260,280, 300\}$ \\
+		$\mct$ [GeV]& $>$ & $\in \{100, 120, 140,160,180,200,220,240,260,280, 300\}$ \\
+		$m_\mathrm{bb}$ lower [GeV]& $>$ & $\in \{85,90,95,100,105,110,115\}$ \\
+		$m_\mathrm{bb}$ upper [GeV]& $<$ & $\in \{130,135,140,145,150\}$ \\
+		$p_\textrm{T}^\ell$ $[\SI{}{\GeV}]$& $>$ & $\in \{20, 40, 60, 80\}$ \\
+		$p_\textrm{T}^\mathrm{jet1}$ [GeV]& $>$ & $\in \{50, 100, 150\}$ \\
+		$p_\textrm{T}^\mathrm{jet2}$ [GeV]& $>$ & $\in \{50, 75, 100\}$ \\	
+		$\Delta R_\mathrm{jj}$ & $<$ & $\in \{0.8,1.0,1.2,2.0\}$ \\
+		$\Delta R_\mathrm{bb}$ & $<$ & $\in \{0.8,1.0,1.2,2.0\}$ \\
+		$N_\mathrm{jet}$ & $\leq$ & $\in \{2,3,4\}$ \\			
+		$\Delta\phi (\vetmiss,\vptlep )$ [rad]& $>$ & $\in \{0.5,1.0,2.0,2.5\}$ \\
 		\bottomrule					
 	\end{tabular}
 	\label{tab:cut_scan}   
 \end{table}
 
+The optimisation of the \glspl{sr} uses experience from past analyses investigating the same signal model in the same final state~\cite{SUSY-2013-23,SUSY-2017-01}, all the while exploring new observables and \gls{sr} configurations optimised for the full Run~2 dataset. 
+
+\subsection{Benchmark signal points}
+
+A total of six so-called \textit{benchmark} signal points representative for the entire signal grid are chosen for the first step of the optimisation procedure involving $N$-dimensional cut scans and N-1 plots. Apart from the variables introduced in~\cref{sec:variables}, a set of additional, potentially discriminative observables are considered in the $N$-dimensional cut scan\footnote{These variables will turn out not to be used for the final signal regions and are only introduced here for completeness of the optimisation procedure description.}:
+\begin{itemize}
+	\item Transverse momenta of the two leading jets as well as the lepton. Especially for signal models with high mass differences between the $\charg/\neutr$ and the $\lsp$, the transverse momenta of the lepton and the jets tend to be higher than in background processes.
+	\item Object-based $\etmiss$ significance $S$~\cite{met_significance:2294922}, a quantity designed to offer good discrimination against fake $\etmiss$ caused by mismeasurements or the non-hermeticity of the detector. Events with a large share of fake $\etmiss$ accumulate at low values of $S$, while events with mostly real $\etmiss$ tend to have large values of $S$. \unsure{is this conf up-to-date?}
+	\item The distance between the two leading jets $\Delta R_\mathrm{jj}$ as well as the two \textit{b}-jets $\Delta R_\mathrm{bb}$. As the two \textit{b}-jets originating from the Higgs decay in the signal scenario tend to be close together and the highest-$\pt$ jets in an event, both $\Delta R_\mathrm{jj}$ and $\Delta R_\mathrm{bb}$ tend to have small values for signal events. In background processes, the two leading (\textit{b}-)jets often do not originate from the same object and thus are not as close together.
+	\item The azimuthal distance between the lepton $\pt$ and the missing transverse momentum, $\Delta \phi (\boldsymbol{p}_\mathrm{T}^\ell, \boldsymbol{p}_\mathrm{T}^\mathrm{miss})$. This observable exploits the fact that the lepton and the $\etmiss$ tend to have a more back-to-back configuration in signal events than in many background processes where the lepton and the neutrino often originate from the same $W$ boson.
+\end{itemize}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_300_150.pdf}
+		\caption{}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_800_250.pdf}
+		\caption{}
+	\end{subfigure}\hfill
+
+	\caption[N-dimensional cut scan results]{Results of the $N$-dimensional cut scan for two exemplary benchmark points. The binomial discovery significance $Z_\mathrm{B}$ is plotted against the signal efficiency for varying uncertainty configurations. Additionally, the expected \gls{sm} background rates are shown, including statistical uncertainty for one of the two statistically independent samples (shaded area). The solid and dashed lines represent the two statistically independent subset that the \gls{mc} samples are split into.}
+	\label{fig:results_z_vs_eff}
+\end{figure}
+
+In order to avoid selecting cut combination candidates with overtightened selection criteria compared to the available \gls{mc} statistics, constraints on the relative statistical uncertainty on the background and on the raw number of \gls{mc} events passing the cut combination candidates are applied. Cut combinations are only considered if they result in less than 50\% relative statistical uncertainty on the total background, and less than 40\% relative statistical uncertainty on the $\wjets$ background estimation in particular. In addition, all cut combinations need to result in at least 5 raw \gls{mc} events for each of the major backgrounds, $\ttbar$, single top and $\wjets$.
+
+The discrete selection possibilities for each of the observables are shown in \cref{tab:cut_scan}. A preselection of one lepton and exactly two \textit{b}-jets (and thus at least two jets overall in the event) is always applied. Requirements on the different observables in~\cref{tab:cut_scan} are optional and do not need to be applied by the optimisation algorithm. The results of the brute-force $N$-dimensional cut scans for each benchmark signal point can be visualised by plotting the expected discovery significance $Z_\mathrm{B}$ against the signal efficiency. \Cref{fig:results_z_vs_eff} shows the cut scan results for two of the benchmark signal points. The corresponding plots for the remaining benchmark points can be found in~\cref{fig:results_z_vs_eff_rest}. In these figures, the binomial significance is calculated for different uncertainty configurations and separately for each of the two statistically independent subsets. In addition, the expected background rate is shown for each of the two sample subsets. As such, these figures allow to pick a cut combination with high achieved significance while avoiding statistical fluctuations and overtightening. The cut combinations chosen for each benchmark point, after a single round of N-1 plots, are shown in~\cref{tab:cut_scan_results}. The N-1 plots, shown in~\cref{fig:results_n1_800_0,fig:results_n1_800_150,fig:results_n1_800_250,fig:results_n1_600_300,fig:results_n1_400_200,fig:results_n1_300_150}, is used to validate and fine-tune the cut values obtained through the cut scan and allows to remove cuts on observables that do not contribute significantly to the achieved $Z_\mathrm{B}$ value. From the initially 12 considered observables, only six (excluding the \textit{b}-jet multiplicity technically not part of the scan) are part of the chosen cut combination candidates. The remaining observables turned out not to significantly improve the sensitivity.
 
 
 \begin{table}
@@ -95,46 +113,95 @@ Apart from the variables introduced in~\cref{sec:variables}, some additional, in
 				\midrule
 				$N_{b\mathrm{-jet}}$ &  2 & 2 & 2 & 2 & 2 & 2 \\
 				$N_\mathrm{jet}$ & 2 & 2 & 2 -- 3 & 2 -- 3  & 2 -- 3 & 2 -- 3\\
-				$m_\mathrm{bb}$  $[\SI{}{\GeV}]$& $[100-135]$ & $[100-140]$ & $[100-140]$ & $[95-145]$ & $[95-145]$ & $[105-135]$ \\
+				$m_\mathrm{bb}$  $[\SI{}{\GeV}]$& $[105-135]$ & $[100-140]$ & $[100-140]$ & $[95-145]$ & $[95-145]$ & $[95-145]$ \\
 				$\met$ $[\SI{}{\GeV}]$ & $>240$ & $>240$ & $>240$ & $>240$ & $>240$  & $>240$\\
 				$m_\mathrm{CT}$ $[\SI{}{\GeV}]$ &  $>200$ & $>240$ & $>260$ & $>260$ & $>260$   & $>280$ \\
 				$m_\mathrm{T}$ $[\SI{}{\GeV}]$ &  $>100$ & $>120$ & $>140$ & $>200$ & $>240$ & $>240$ \\
 				$\mlb$ $[\SI{}{\GeV}]$ &  $-$ & $-$ & $>150$ & $>120$ & $>120$ & $>120$ \\
 				\midrule
-				$Z$ $[\sigma]$ & \multicolumn{1}{c}{0.8} & \multicolumn{1}{c}{2.4} & \multicolumn{1}{c}{2.2} & \multicolumn{1}{c}{1.9} & \multicolumn{1}{c}{2.2} & \multicolumn{1}{c}{2.3} \\
+				$Z_\mathrm{B}$ $[\sigma]$ & \multicolumn{1}{c}{0.8} & \multicolumn{1}{c}{1.9} & \multicolumn{1}{c}{2.1} & \multicolumn{1}{c}{1.8} & \multicolumn{1}{c}{2.2} & \multicolumn{1}{c}{2.3} \\
 				\bottomrule
 			\end{tabular}
-		\caption{Optimal cut combination for each benchmark signal point obtained with a brute force cut scan and a round of N-1 plots. The significance is computed for \onethirtynineifb with \texttt{BinomialExpZ} and includes MC statistical uncertainty as well as 30\% systematic uncertainty.}
-		\label{tab:Wh_reopt_cut_combinations_second_round}
+		\caption{Optimal cut combination for each benchmark signal point obtained with a brute force cut scan and a round of N-1 plots. The significance is computed for \onethirtynineifb with the binomial discovery significance $Z_\mathrm{B}$ and includes MC statistical uncertainty as well as a flat 30\% systematic uncertainty.}
+		\label{tab:cut_scan_results}
 	\end{center}
 \end{table}
 
 
 
 
+\subsection{Towards the final signal regions}
 
+The optimal cut combinations obtained for the benchmark signal points, shown in~\cref{tab:cut_scan_results}, subsequently need to be consolidated into a finite set of \glspl{sr}. From~\cref{tab:cut_scan_results}, it can easily be seen that all benchmark points favour a baseline selection including exactly two \textit{b}-jets, possibly one additional light jet, a Higgs mass window requirement of roughly $\mbb\in [\SI{100}{\GeV},\SI{140}{\GeV}]$, and $\etmiss > \SI{240}{\GeV}$. The requirements on $\mt$, $\mct$ and $\mlb$ are, however, not easily consolidated into a single signal region.
 
+From the normalised distributions in~\cref{fig:norm_obs}, it can already be seen that signal points from different kinematic regimes in the parameter space would in principle prefer different requirements on all three of these observables. Designing a single signal region that is optimised for the entire parameter space is thus not possible. Instead, a more generalised configuration is chosen, defining multiple signal region bins orthogonal to each other through their requirement on the $\mt$ and the $\mct$, effectively creating a two-dimensional shape fit in these observables as the different \gls{sr} bins can be fit simultaneously. Such a shape-fit configuration allows to exploit the differences in shape between signal and background distributions, while being generic enough to accommodate the varying shapes of signal points from different regions in the parameter space.
 
+The optimal number of bins as well as values of the individual bin edges in both distributions depends on the available \gls{mc} statistics and is determined using simplified fit scans. The \gls{mc} statistical uncertainty as well as an uncorrelated shape uncertainty of 30\% is considered in each scanned configuration. The number of bins are varied in each direction ($\mt$ and $\mct$) between two and five, each time with varying bin edge values. As configurations with more bins could benefit from the additional \gls{mc} statistics resulting from looser selection criteria on the remaining variables, the previously consolidated baseline selection is also allowed to vary to some extent. Configurations with multiple orthogonal \gls{sr} bins in the $\etmiss$ or $\mbb$ are also included in the scan. A subset of the investigated \gls{sr} candidates are shown in~\cref{fig:fit_scan_optimisation}, only showing the nominal expected exclusion limit at 95\% without uncertainty bands.
 
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.35\textwidth}}]{figure}[\FBwidth]
+{\caption{Expected exclusion contours obtained from a subset of the signal region candidates. The background estimation is taken directly from \gls{mc} and includes \gls{mc} statistical uncertainty as well as an uncorrelated shape uncertainty of 30\%. For the sake of visibility, only the nominal contours are shown (without uncertainty bands).}\label{fig:fit_scan_optimisation}}
+{\includegraphics[width=0.6\textwidth]{HF/batch_compare}}
+\end{figure}
 
+As expected already from~\cref{tab:cut_scan_results}, the best performing configurations define multiple signal region bins in the $\mt$ and $\mct$ distributions, while keeping a constant baseline selection on the remaining observables. A configuration introducing three bins in $\mt$ and in $\mct$ (for a total of nine \gls{sr} bins) was shown to yield the best expected exclusion limit with minimal uncertainty band and optimal sensitivity to models within the expected exclusion contour. \Cref{fig:plot_binnings} shows a comparison of expected exclusion for exemplary two-dimensional shape-fit configurations, using signal regions binned in ($\mt$, $\etmiss$), ($\mt$, $\mbb$) and ($\mt$,$\mct$). It can clearly be seen that the setup using bins in $\mt$ and $\mct$ maximises the expected excluded area. In addition, this configuration also leads to optimal sensitivity within the expected limit (see~\cref{fig:plot_binnings_cls}). Finally, applying a requirement on high values of $\mlb$ in the highest $\mt$ bins has been shown (see~\cref{fig:plot_mlb1_cls}) to significantly improve sensitivity to signal models with high mass differences. 
 
+The final definition of the shape-fit signal regions is given in~\cref{tab:SignalRegionDef}. As shape-fits are, by construction, highly model-dependent these so-called \textit{exclusion} \glspl{sr} are used fo 
 
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{HF/plot_binnings}
+		\caption{\label{fig:plot_binnings}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{HF/plot_2d_shapefit}
+		\caption{}
+	\end{subfigure}\hfill
 
+	\caption{}
+	\label{fig:results_HF_scans}
+\end{figure}
 
+\subsection{Signal region definitions}
 
+Shape-fits are, by construction, highly model-dependent, and therefore unsuited for evaluating potential excesses in terms of a potential discovery of new physics. For such scenarios, a second set of signal regions is derived from the optimised shape-fit setup. For each of the three bins in the transverse mass (SRLM, SRMM, and SRHM), the three $\mct$ bins are summed up and the upper bound on $\mt$ is removed (if present). This results in three cut-and-count signal regions that make minimal model assumptions and can be interpreted in any signal model as long as the predicted signal rates are known. In case of a significant excess over the \gls{sm} expectation, these so-called \textit{discovery} \glspl{sr} can be used to derive model-independent limits. The shape-fit setup using the \textit{exclusion} \glspl{sr} is then used to derive model-dependent exclusion limits.
 
+The exact definitions of all nine exclusion \gls{sr} bins as well as the three discovery \glspl{sr} are given in~\cref{tab:SignalRegionDef}.
 
-
-
-
-
-
-
-
-
-
-
-
+\begin{table}
+	\begin{center}
+		\begin{tabular} {l | c c c }
+			\toprule
+				&  \textbf{SRLM} & \textbf{SRMM} & \textbf{SRHM} \\
+			\midrule
+			$N_{\mathrm{lepton}}$ & \multicolumn{3}{c}{$=$ 1}\\
+			$\ptl$ [\GeV] & \multicolumn{3}{c}{ $>7(6)$ for $e$($\mu$)} \\
+			$N_\mathrm{jet}$ & \multicolumn{3}{c}{$=$ 2 or 3}\\
+			$N_{b\textrm{-jet}}$ &\multicolumn{3}{c}{$=$ 2} \\
+			$\met$ $[\SI{}{\GeV}]$ & \multicolumn{3}{c}{$>240$}\\
+			$\mbb$  $[\SI{}{\GeV}]$ & \multicolumn{3}{c}{$\in [100,140]$}\\
+			$m(\ell,b_1)$ $[\SI{}{\GeV}]$ & -- & -- & $>120$ \\
+			\midrule
+			%                        \mt $[\SI{}{\GeV}]\mathrm{(excl.)}$&   $\in [100,160]$ & $\in [160,240]$ & $\in [240,\infty]$ \\
+			$\mt$ $[\SI{}{\GeV}]~\mathrm{(excl.)}$&   $\in [100,160]$ & $\in [160,240]$ & $>240$ \\
+			
+			
+			$\mct$ $[\SI{}{\GeV}]~\mathrm{(excl.)}$ &\multicolumn{3}{c}{ $ \{ \in [180,230]$,\,$\in [230,280]$, $>280  \}$}\\
+			%                        &\multicolumn{3}{c}{ $\in [180,230]$}\\
+			%                        \mct $[\SI{}{\GeV}]\mathrm{(excl.)}$ & \multicolumn{3}{c}{ $\in [230,280]$} \\   
+			%                         & \multicolumn{3}{c}{ $>280$}\\
+			%                         & \multicolumn{3}{c}{ $\in [280,\infty]$}\\
+			
+			\midrule
+			$\mt$ $[\SI{}{\GeV}]~\mathrm{(disc.)}$&   $>100$ & $>160$ & $>240$ \\
+			$\mct$ $[\SI{}{\GeV}]~\mathrm{(disc.)}$ & \multicolumn{3}{c}{ $>180$}\\
+			\bottomrule
+		\end{tabular}
+		\caption{Overview of the selection criteria for the signal regions. Each of the three `excl.' SRs is binned in three $\mct$ regions for a total of nine `excl.'  bins.} 
+		\label{tab:SignalRegionDef}
+	\end{center}
+\end{table}
 
 \begin{figure}
 	\centering
