@@ -144,9 +144,7 @@ The optimal number of bins as well as values of the individual bin edges in both
 {\includegraphics[width=0.6\textwidth]{HF/batch_compare}}
 \end{figure}
 
-As expected already from~\cref{tab:cut_scan_results}, the best performing configurations define multiple signal region bins in the $\mt$ and $\mct$ distributions, while keeping a constant baseline selection on the remaining observables. A configuration introducing three bins in $\mt$ and in $\mct$ (for a total of nine \gls{sr} bins) was shown to yield the best expected exclusion limit with minimal uncertainty band and optimal sensitivity to models within the expected exclusion contour. \Cref{fig:plot_binnings} shows a comparison of expected exclusion for exemplary two-dimensional shape-fit configurations, using signal regions binned in ($\mt$, $\etmiss$), ($\mt$, $\mbb$) and ($\mt$,$\mct$). It can clearly be seen that the setup using bins in $\mt$ and $\mct$ maximises the expected excluded area. In addition, this configuration also leads to optimal sensitivity within the expected limit (see~\cref{fig:plot_binnings_cls}). Finally, applying a requirement on high values of $\mlb$ in the highest $\mt$ bins has been shown (see~\cref{fig:plot_mlb1_cls}) to significantly improve sensitivity to signal models with high mass differences. 
-
-The final definition of the shape-fit signal regions is given in~\cref{tab:SignalRegionDef}. As shape-fits are, by construction, highly model-dependent these so-called \textit{exclusion} \glspl{sr} are used fo 
+As expected already from~\cref{tab:cut_scan_results}, the best performing configurations define multiple signal region bins in the $\mt$ and $\mct$ distributions, while keeping a constant baseline selection on the remaining observables. \Cref{fig:plot_binnings} shows a comparison of the expected exclusion contour for exemplary two-dimensional shape-fit configurations, using signal regions binned in ($\mt$, $\etmiss$), ($\mt$, $\mbb$) and ($\mt$,$\mct$). The setup using a two-dimensional shape-fit in $\mt$ and $\mct$ clearly maximises the expected excluded area. In addition, this configuration also leads to optimal sensitivity within the expected limit (see~\cref{fig:plot_binnings_cls}). Finally, applying a requirement on high values of $\mlb$ in the highest $\mt$ bins has been shown (see~\cref{fig:plot_mlb1_cls}) to significantly improve sensitivity to signal models with high mass differences. 
 
  \begin{figure}
 	\centering
@@ -163,11 +161,10 @@ The final definition of the shape-fit signal regions is given in~\cref{tab:Signa
 	\label{fig:results_HF_scans}
 \end{figure}
 
-\subsection{Signal region definitions}
 
-Shape-fits are, by construction, highly model-dependent, and therefore unsuited for evaluating potential excesses in terms of a potential discovery of new physics. For such scenarios, a second set of signal regions is derived from the optimised shape-fit setup. For each of the three bins in the transverse mass (SRLM, SRMM, and SRHM), the three $\mct$ bins are summed up and the upper bound on $\mt$ is removed (if present). This results in three cut-and-count signal regions that make minimal model assumptions and can be interpreted in any signal model as long as the predicted signal rates are known. In case of a significant excess over the \gls{sm} expectation, these so-called \textit{discovery} \glspl{sr} can be used to derive model-independent limits. The shape-fit setup using the \textit{exclusion} \glspl{sr} is then used to derive model-dependent exclusion limits.
+An overview of the signal region definitions is provided in~\cref{tab:SignalRegionDef}. Based on the previously discussed results, three signal regions are defined, optimised for the low (SRLM), medium (SRMM), and high (SRHM) mass difference regimes. While SRLM targets the smallest values of $\mt$, SRMM and SRHM target progressively increasing values of $\mt$. All three signal regions are further divided into three symmetric $\mct$ bins each, resulting in a total of nine disjoint \gls{sr} bins. The signal region with the highest requirement on $\mt$ (SRHM) also requires $\mlb>\SI{120}{\GeV}$, for the reason explained previously. All three \glspl{sr} otherwise share a common set of requirements on the number of jets, $\etmiss$ and $\mbb$. As shape-fits are by construction highly model-dependent (the signal rates in multiple orthogonal signal region bins need to be known), these \glspl{sr} will be used for deriving model-dependent limits in the case where no significant excess compared to the expected \gls{sm} background rate is seen in data. For this reason, the shape-fit regions will be referred to as \textit{exclusion} regions in the following (marked as \textit{excl.} in ~\cref{tab:SignalRegionDef}).
 
-The exact definitions of all nine exclusion \gls{sr} bins as well as the three discovery \glspl{sr} are given in~\cref{tab:SignalRegionDef}.
+For evaluating a potential excess in data compared to the expected background rate, a second set of signal regions is derived from the optimised shape-fit setup. For each of the three bins in the transverse mass (SRLM, SRMM, and SRHM), the three $\mct$ bins are summed up and the upper bound on $\mt$ is removed (if present). This results in three cut-and-count signal regions that make minimal model assumptions and can be interpreted in any signal model as long as the predicted signal rates are known. In case of no significant excess over the \gls{sm} expectation, these so-called \textit{discovery} \glspl{sr} can be used to derive model-independent limits. 
 
 \begin{table}
 	\begin{center}
@@ -198,7 +195,7 @@ The exact definitions of all nine exclusion \gls{sr} bins as well as the three d
 			$\mct$ $[\SI{}{\GeV}]~\mathrm{(disc.)}$ & \multicolumn{3}{c}{ $>180$}\\
 			\bottomrule
 		\end{tabular}
-		\caption{Overview of the selection criteria for the signal regions. Each of the three `excl.' SRs is binned in three $\mct$ regions for a total of nine `excl.'  bins.} 
+		\caption{Overview of the selection criteria for the signal regions. \textit{Exclusion} \glspl{sr} are defined for model-dependent limits, and \textit{discovery} \glspl{sr} are defined for model-independent limits. Each of the three exclusion \glspl{sr} is binned in three $\mct$ regions for a total of nine exclusion bins.} 
 		\label{tab:SignalRegionDef}
 	\end{center}
 \end{table}
