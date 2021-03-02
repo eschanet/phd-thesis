@@ -12,4 +12,25 @@
     \graphicspath{{chapter-background/Figs/Vector/}{chapter-background/Figs/}}
 \fi
 
+\glsreset{cr}
 
+A reliable estimation of the expected \gls{sm} background rates in the \glspl{sr} is crucial for exercising the statistical machinery laid out in \cref{ch:statistics} and making conclusive statistical statements. The background estimation approaches used in the following either rely on semi-data-driven techniques or on \gls{mc}-only estimations. As estimating backgrounds only from \gls{mc} simulation is often problematic due to \eg mis-modelings in the phase space regions targeted not appropriately covered by the uncertainties, a (semi-)data-driven approach is often favoured. In the following, the major backgrounds $\ttbar$, single top and $\wjets$ are estimated using a semi-data-driven approach, while the expected rates from the remaining smaller backgrounds rely purely on \gls{mc} simulations.
+
+\section{General strategy}
+
+Estimating background contributions in \glspl{sr} in a semi-data-driven approach, usually involves the introduction of so-called \glspl{cr} used to control dominant background processes by comparing their expected event rates to data. The \glspl{cr} are designed to be enriched in events of a given background process (or type) while being approximately free of signal contamination. If $N_p^\mathrm{MC}(\mathrm{SR})$ and $N_p^\mathrm{MC}(\mathrm{CR})$ are the expected rates for a given background process $p$ from \gls{mc} simulation in a given \gls{sr} and \gls{cr}, respectively, then the transfer factor $N_p^\mathrm{MC}(\mathrm{SR})/N_p^\mathrm{MC}(\mathrm{CR})$ allows to convert the number of observed background events in the \glspl{cr}, $N_p^\mathrm{obs.}(\mathrm{CR})$ into a background estimate in the \glspl{sr},$N_p^\mathrm{est.}(\mathrm{SR})$, through
+\begin{equation}
+	N_p^\mathrm{est.}(\mathrm{SR}) = N_p^\mathrm{obs.}(\mathrm{CR}) \frac{N_p^\mathrm{MC}(\mathrm{SR})}{N_p^\mathrm{MC}(\mathrm{CR})} = \mu_p N_p^\mathrm{MC}(\mathrm{SR}).
+	\label{eq:transfer_factor}
+\end{equation}
+An important benefit of this approach is that the impact of systematic uncertainties on the estimated background rates can be evaluated on the transfer factors, that are ratios of \gls{mc} estimates. As such, systematic uncertainties can be canceled in the extrapolation to the \gls{sr}. The uncertainty on the background estimate is then a combination of statistical uncertainties in the \gls{cr} and remaining uncertainties affecting the extrapolation. For this reason, \glspl{cr} are usually deliberately chosen to have large statistics, effectively reducing the uncertainties on the extrapolation to the \glspl{sr}.  
+
+As indicated in~\cref{eq:transfer_factor}, the transfer factor approach is formally equivalent to using the process-specific normalisation factor introduced in~\cref{sec:likelihood_function}, effectively \textit{normalising} the number of background events expected from \gls{mc} in the \gls{cr} to the number of observed events. In the fit setups used in the following, implemented using \textsc{HistFitter}~\cite{HistFitter:2014wma}, the normalisation factor $\mu_b$ is fitted to data instead of background as expected from \gls{mc} simulation. In the following, multiple disjoint \glspl{cr} are used to simultaneously normalise multiple background processes to data in a combined fit. In order not to have an underdetermined minimisation problem, at least the same number of \glspl{cr} as normalisation factors needs to be used. 
+
+In order to verify the quality of the extrapolation from the \glspl{cr} to the \glspl{sr}, so-called \gls{vr} are defined. \glspl{vr} do not participate in the actual fit of the model parameters to data, but serve as intermediate regions to verify the extrapolation. For this reason, \glspl{vr} are typically placed in the region between the \glspl{cr} and \glspl{sr} that is extrapolated over. A schematic view of an analysis strategy using all three types of regions is shown in~\cref{fig:hf_strategy}. All three types of regions can have more than one bin and are separated using suitable observables that are extrapolated over.
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.5\textwidth}}]{figure}[\FBwidth]
+{\caption{Schematic view of an analysis strategy including multiple control, validation and signal regions with one or multiple bins each. Extrapolations from the control regions into the signal regions can be verified in the validation regions lying in the phase space extrapolated over. Figure adapted from~\cite{HistFitter:2014wma}.}\label{fig:hf_strategy}}
+{\includegraphics[width=0.45\textwidth]{hf_strategy}}
+\end{figure}
