@@ -3,10 +3,41 @@
 
 \chapter{}
 \ifpdf
-\graphicspath{{chapter-analysis/Figs/Raster/}{chapter-analysis/Figs/PDF/}{chapter-analysis/Figs/}}
+\graphicspath{{chapter-background/Figs/Raster/}{chapter-background/Figs/PDF/}{chapter-background/Figs/}}
 \else
-\graphicspath{{chapter-analysis/Figs/Vector/}{chapter-analysis/Figs/}}
+\graphicspath{{chapter-background/Figs/Vector/}{chapter-background/Figs/}}
 \fi
 
-\section{Scatter plots comparing truth and reco yields in the SRs}\label{app:pmssm_comp_SR_scatter}
+\section{Background estimation}\label{app:background_estimation}
 
+
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VRon1}
+		\caption{VRon1\label{fig:signal_contamination_VRon1}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VRon2}
+		\caption{VRon2\label{fig:signal_contamination_VRon2}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VRon3}
+		\caption{VRon3\label{fig:signal_contamination_VRon3}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VRoff1}
+		\caption{VRoff1\label{fig:signal_contamination_VRoff1}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VRoff2}
+		\caption{VRoff2\label{fig:signal_contaminations_VRoff2}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VRoff3}
+		\caption{VRoff3\label{fig:signal_contaminations_VRoff3}}
+	\end{subfigure}\hfill
+
+	\caption{Signal contamination (shown on the \textit{z-axis}) for all \glspl{vr} throughout the signal grid. The space between the signal points (indicated by the black circles) is interpolated using Delaunay triangles.}
+	\label{fig:results_HF_scans}
+\end{figure}
