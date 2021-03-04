@@ -38,30 +38,25 @@ In order to verify the quality of the extrapolation from the \glspl{cr} to the \
 {\includegraphics[width=0.45\textwidth]{hf_strategy}}
 \end{figure}
 
-
 \subsection{Analysis blinding}
 
 An important concept in the design phase of searches for new physics is the idea of \textit{blinding} regions of interest~\cite{blind:2003rw}, meaning that measured data are not looked at in these regions. This avoids issues of \textit{experimenter's bias}, \ie unintended influences on the design of the analysis based on the observed data. If data were already known when designing the signal regions (and therefore the outcome of the analysis would be known to some extent), experimenter's bias could for example occur during the selection of the final signal region definitions.
 
 During the design of a search for new physics, signal regions are generally kept blinded until the complete analysis strategy is fixed. Once the \glspl{sr} have been designed, the next step is to develop suitable \glspl{cr} with negligible signal contamination. This is followed by design of \glspl{vr} that can be unblinded once the \glspl{cr} are fixed. The \glspl{sr} are only unblinded after the extrapolation from the \glspl{cr} has been verified in the \glspl{vr}, allowing to either quantify potential excesses in data or set limits on model parameters. 
 
-\section{Control regions}
+\subsection{Data versus Monte Carlo plots}
 
-The contributions from $\ttbar$, $\wjets$ production and single top processes are normalised to data in dedicated \glspl{cr}. All \glspl{cr} are designed to be kinematically as close as possible to the respective \glspl{sr}, such that the normalisation factors derived in the \glspl{cr} are also valid in the \glspl{sr}. The \glspl{cr} are mutually exclusive and made orthogonal to the \glspl{sr} through their requirements on $\mt$, $\mct$ and $\mbb$. Apart from the requirements on these three observables as well as the requirement on $\mlb$ (removed altogether in the \glspl{cr}), the \glspl{cr} share the same set of cuts as the \glspl{sr}. \Cref{fig:cr_strategy} illustrates the configuration of all \glspl{cr}, especially highlighting the fact that all \glspl{cr} are located in sideband regions off the $\mbb$ window, significantly reducing signal contamination. \Cref{tab:CRVRdef} summarises the kinematic requirements separating the \glspl{cr} from other regions of interest in the analysis. \improvement{Show some exemplary distributions, rest can in app.}
+In this chapter, all plots comparing data versus \gls{mc} are \textit{pre-fit}, meaning that no background-only fit has been run in order to determine the normalisation factors and total systematic uncertainties for the background estimate. The contributions from the dominant backgrounds $\ttbar$, $\wjets$ and single top are normalised simultaneously in the control regions by solving the system of $i$ equations
+\begin{equation}
+%	\begin{split}
+		n_\mathrm{data}^{\mathrm{CR}_i} = \mu_{\ttbar} B_{\ttbar}^{\mathrm{CR}_i} + \mu_{W} B_{W}^{\mathrm{CR}_i} + \mu_\mathrm{ST} B_\mathrm{ST}^{\mathrm{CR}_i} + B_\mathrm{other}^{\mathrm{CR}_i},
+%	\end{split}
+\end{equation}
+where $i$ runs over the list of \glspl{cr} introduced in \cref{sec:control_regions} and $\mu_{\ttbar}$, $\mu_\mathrm{W}$ and $\mu_\mathrm{ST}$ are the normalisation factors of the $\ttbar$, $\wjets$ and single top backgrounds, respectively, that are to be determined. $B_{\ttbar}^{\mathrm{CR}_i}$, $B_\mathrm{ST}^{\mathrm{CR}_i}$, $B_\mathrm{ST}^{\mathrm{CR}_i}$ and $B_\mathrm{other}^{\mathrm{CR}_i}$ are the background rates expected from \gls{mc} simulation in the \textit{i}-th \gls{cr}. Normalisation factors obtained are 0.96 for $\ttbar$, 1.24 for $\wjets$ and 0.73 for single top. As will be shown in~\cref{sec:results_background_only}, the normalisation factors obtained using the full statistical procedure will be close to these values.
 
-Subdominant processes like $Z+\mathrm{jets}$, diboson and multiboson, $\ttbar+V$, $\ttbar+h$ and $V+h$ are estimated directly from \gls{mc} simulation and normalised to their theoretical cross sections. 
+Additionally, the uncertainty bands on the background estimation include only \gls{mc} statistical uncertainty as well as experimental uncertainties. The variations of the experimental uncertainties are normalised to the nominal background estimate in the case of $\ttbar$, $\wjets$ and single top, such that only the shapes of the dominant backgrounds are affected. For the remaining minor backgrounds, the experimental uncertainties can affect both normalisation and shape. All experimental uncertainties are assumed to be fully correlated over all processes and bins, allowing them to be added together in quadrature. The uncertainty bars on the data points correspond to the 68\% confidence interval, assuming data to be Poisson distributed. 
 
-\subsubsection[Control regions for $\ttbar$]{Control regions for $\boldsymbol{\ttbar}$}
-
-As events from $\ttbar$ processes constitute the dominant \gls{sm} background in all \glspl{sr}, it is necessary to have a precise and reliable estimation of their contributions. Three \glspl{cr} are defined for $\ttbar$, following the same binning in $\mt$, and thus called TRLM, TRMM and TRHM in the following. A good purity of $\ttbar$ processes as well as the necessary high \gls{mc} are achieved  by inverting the requirements on $\mbb$ and $\mct$. The achieved $\ttbar$ purities are 79.6\% in TRLM, 85.9\% in TRMM and 84.1\% in TRHM. The composition of the different $\ttbar$ decay modes in each \gls{cr} is found to be similar as in the respective \gls{sr}. The maximum signal contamination over the entire signal grid is 0.8\%, 1.1\% and 1.9\% for TRLM, TRMM and TRHM, respectively, and thus negligible. \Cref{fig:signal_contamination_TRLM,fig:signal_contamination_TRMM,fig:signal_contamination_TRHM} show the signal contamination over the entire signal grid. 
-
-\subsubsection[Control region for $\wjets$]{Control region for $\boldsymbol{\wjets}$}
-
-Events from $\wjets$ production represent the second largest contribution of \gls{sm} background events in the \glspl{sr}. A single $\wjets$ \gls{cr} (WR) is defined by replacing the requirements on $\mt$ and $\mbb$ with $\SI{50}{\GeV} < mt < \SI{100}{\GeV}$  and $\SI{50}{\GeV} < \mbb < \SI{80}{\GeV}$, respectively. No bins in $\mct$ are defined for WR. As for the $\ttbar$ control regions, moving WR off the Higgs mass peak allows to achieve a tolerable maximum signal contamination of about 2.4\% (with most signal points having significantly less than 1\% signal contamination in WR), as shown in \cref{fig:signal_contamination_WR}. Applying a low requirement on $\mt$ allows to predominantly select events in front of the kinematic endpoint of the transverse mass of the W boson, resulting in a high statistics control region with a $\wjets$ purity of roughly 52.5\%.
-
-\subsubsection{Control region for single top}
-
-Single top processes result in significant background contributions in some \glspl{sr}, necessitating a proper semi-data-driven estimation. A single top \gls{cr} (STR) is defined by replacing the Higgs mass window cut on $\mbb$ with $\mbb > \SI{195}{\GeV}$ and removing the bins in $\mct$. Off the Higgs mass peak guarantees a low maximum signal contamination of roughly 0.8\% and a high purity of single top processes of about 51.7\%. The signal contamination across the entire signal grid is shown in \cref{fig:signal_contaminations_STCR}.
+\section{Control regions}\label{sec:control_regions}
 
 \begin{table}
 \begin{center}
@@ -86,6 +81,19 @@ $\mct$ [$\GeV$]  &\multicolumn{3}{c|}{$<$180}&\multicolumn{6}{c}{$>$180}\\
 \end{center}
 \end{table}
 
+The contributions from $\ttbar$, $\wjets$ production and single top processes are normalised to data in dedicated \glspl{cr}. Other processes like $Z+\mathrm{jets}$, diboson and multiboson, $\ttbar+V$, $\ttbar+h$ and $V+h$ are estimated directly from \gls{mc} simulation and normalised to their theoretical cross sections. All \glspl{cr} are designed to be kinematically as close as possible to the respective \glspl{sr}, such that the normalisation factors derived in the \glspl{cr} are also valid in the \glspl{sr}. The \glspl{cr} are mutually exclusive and made orthogonal to the \glspl{sr} through their requirements on $\mt$, $\mct$ and $\mbb$. Apart from the requirements on these three observables as well as the requirement on $\mlb$ (removed altogether in the \glspl{cr}), the \glspl{cr} share the same set of cuts as the \glspl{sr}. \Cref{fig:cr_strategy} illustrates the configuration of all \glspl{cr}, especially highlighting the fact that all \glspl{cr} are located in sideband regions off the $\mbb$ window, significantly reducing signal contamination. \Cref{tab:CRVRdef} summarises the kinematic requirements separating the \glspl{cr} from other regions of interest in the analysis. 
+
+\subsubsection[Control regions for $\ttbar$]{Control regions for $\boldsymbol{\ttbar}$}
+
+As events from $\ttbar$ processes constitute the dominant \gls{sm} background in all \glspl{sr}, it is necessary to have a precise and reliable estimation of their contributions. Three \glspl{cr} are defined for $\ttbar$, following the same binning in $\mt$, and thus called TRLM, TRMM and TRHM in the following. A good purity of $\ttbar$ processes as well as the necessary high \gls{mc} are achieved  by inverting the requirements on $\mbb$ and $\mct$. The achieved $\ttbar$ purities are 79.6\% in TRLM, 85.9\% in TRMM and 84.1\% in TRHM. The composition of the different $\ttbar$ decay modes in each \gls{cr} is found to be similar as in the respective \gls{sr}. The maximum signal contamination over the entire signal grid is 0.8\%, 1.1\% and 1.9\% for TRLM, TRMM and TRHM, respectively, and thus negligible. \Cref{fig:signal_contamination_TRLM,fig:signal_contamination_TRMM,fig:signal_contamination_TRHM} show the signal contamination over the entire signal grid. 
+
+\subsubsection[Control region for $\wjets$]{Control region for $\boldsymbol{\wjets}$}
+
+Events from $\wjets$ production represent the second largest contribution of \gls{sm} background events in the \glspl{sr}. A single $\wjets$ \gls{cr} (WR) is defined by replacing the requirements on $\mt$ and $\mbb$ with $\SI{50}{\GeV} < mt < \SI{100}{\GeV}$  and $\SI{50}{\GeV} < \mbb < \SI{80}{\GeV}$, respectively. No bins in $\mct$ are defined for WR. As for the $\ttbar$ control regions, moving WR off the Higgs mass peak allows to achieve a tolerable maximum signal contamination of about 2.4\% (with most signal points having significantly less than 1\% signal contamination in WR), as shown in \cref{fig:signal_contamination_WR}. Applying a low requirement on $\mt$ allows to predominantly select events in front of the kinematic endpoint of the transverse mass of the W boson, resulting in a high statistics control region with a $\wjets$ purity of roughly 52.5\%.
+
+\subsubsection{Control region for single top}
+
+Single top processes result in significant background contributions in some \glspl{sr}, necessitating a proper semi-data-driven estimation. A single top \gls{cr} (STR) is defined by replacing the Higgs mass window cut on $\mbb$ with $\mbb > \SI{195}{\GeV}$ and removing the bins in $\mct$. Off the Higgs mass peak guarantees a low maximum signal contamination of roughly 0.8\% and a high purity of single top processes of about 51.7\%. The signal contamination across the entire signal grid is shown in \cref{fig:signal_contaminations_STCR}.
 
  \begin{figure}
 	\centering
@@ -110,7 +118,7 @@ $\mct$ [$\GeV$]  &\multicolumn{3}{c|}{$<$180}&\multicolumn{6}{c}{$>$180}\\
 		\caption{STCR\label{fig:signal_contaminations_STCR}}
 	\end{subfigure}\hfill
 
-	\caption{Exemplary distribution shown in each control region. As laid out in the beginning of this chapter, the shaded region includes \gls{mc} statistical uncertainty as well as well as the pre-fit experimental uncertainties. A good agreement between \gls{mc} expectation and data is observed in all \glspl{cr}.}
+	\caption{Exemplary distribution shown in each control region. As laid out in the beginning of this chapter, the shaded region includes \gls{mc} statistical uncertainty as well as experimental uncertainties, added in quadrature. A good agreement between \gls{mc} expectation and data is observed in all \glspl{cr}.}
 	\label{fig:CR_distributions_prefit}
 \end{figure}
 
