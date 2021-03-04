@@ -12,4 +12,31 @@
     \graphicspath{{chapter-uncertainties/Figs/Vector/}{chapter-uncertainties/Figs/}}
 \fi
 
+Several sources of systematic uncertainties need to be considered in the following. As laid out in \cref{ch:statistics}, they enter the likelihood as nuisance parameters and can be interpreted as a loss of information on the signal strength parameter. In the following, they are separated into experimental uncertainties arising from finite detector resolution and object reconstruction and theory uncertainties due to modelling of the physics processes during simulation. 
 
+\section{Experimental uncertainties}
+
+Experimental uncertainties arise from the experimental methods used to derive the signal and background rate estimations. They are evaluated using up and down variations provided either as variational weights in the case of efficiency uncertainties, or as additional variational samples derived by performing the object reconstruction with varied parameters.
+
+\subsection{Pile-up reweighting and luminosity}
+
+
+
+As detailed in \cref{sec:lumi_datataking}, the total integrated luminosity relies on the measurement of the bunch luminosity which in turn needs precise measurements of the visible inelastic cross section $\sigma_\mathrm{vis}$ as well as the visible pile-up parameter $\mu_\mathrm{vis}$. Uncertainties on the measurement of the total recorded cross section are dominated by the uncertainties on $\sigma_\mathrm{vis}$ that is measured during special \gls{vdm} scans. For the full Run~2 dataset, an overall luminosity uncertainty of $\pm 1.7\%$, is considered for all \gls{mc} processes not normalised to data using a \gls{cr}.
+
+\subsection{Triggers}
+
+As all selections considered in the analysis apply a minimum $\etmiss$ requirement of $\SI{240}{\GeV}$ where the $\etmiss$ triggers are fully efficient (see~\cref{sec:trigger_strategy}), a 2\% normalisation uncertainty correlated over all bins is considered. 
+
+\subsection{Leptons}
+
+
+
+\subsection{Jets}
+
+\subsection{Missing transverse energy}
+
+\section{Theory uncertainties}
+
+
+\section{Impact on signal regions}
