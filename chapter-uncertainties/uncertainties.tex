@@ -20,9 +20,9 @@ Experimental uncertainties arise from the experimental methods used to derive th
 
 \subsection{Pile-up reweighting and luminosity}
 
+The \gls{mc} events were largely already generated before the full data was taken, and therefore before the full pileup profile in data was known. For this reason, the number of average interactions $\braket{\mu}$ per bunch crossing in \gls{mc} is in general not identical to that in data, necessitating a reweighting procedure in \gls{mc}. In order to account for differences in the measured inelastic \textit{pp} cross sections and the one obtained from \gls{mc} simulation, a scale factor of 1.03 is applied before the reweighting procedure. As \gls{mc} samples are generated with integer of $\braket{\mu}$ only, the scale factor is applied to data instead. The uncertainty on the pileup reweighting is evaluated by varying the data scale factor by $\pm 0.04$ and deriving variational pileup weights.
 
-
-As detailed in \cref{sec:lumi_datataking}, the total integrated luminosity relies on the measurement of the bunch luminosity which in turn needs precise measurements of the visible inelastic cross section $\sigma_\mathrm{vis}$ as well as the visible pile-up parameter $\mu_\mathrm{vis}$. Uncertainties on the measurement of the total recorded cross section are dominated by the uncertainties on $\sigma_\mathrm{vis}$ that is measured during special \gls{vdm} scans. For the full Run~2 dataset, an overall luminosity uncertainty of $\pm 1.7\%$, is considered for all \gls{mc} processes not normalised to data using a \gls{cr}.
+As detailed in \cref{sec:lumi_datataking}, the total integrated luminosity relies on the measurement of the bunch luminosity which in turn needs precise measurements of the visible inelastic cross section $\sigma_\mathrm{vis}$ as well as the visible pile-up parameter $\mu_\mathrm{vis}$. Uncertainties on the measurement of the total recorded cross section are dominated by the uncertainties on $\sigma_\mathrm{vis}$ that is measured during special \gls{vdm} scans. For the full Run~2 dataset, an overall luminosity uncertainty of $\pm 1.7\%$, is considered for all \gls{mc} processes not normalised to data using a \gls{cr}, derived using the methods described in \reference\cite{ATLAS-CONF-2019-021}.
 
 \subsection{Triggers}
 
@@ -30,11 +30,21 @@ As all selections considered in the analysis apply a minimum $\etmiss$ requireme
 
 \subsection{Leptons}
 
-
+A large number of uncertainties on electrons arises from energy scale and resolution measurements~\cite{EGAM-2018-01,PERF-2017-01}. They are assumed to be fully correlated in $\eta$ and are summed in quadrature, resulting in one nuisance parameter for the energy scale and one for the resolution. Similarly, uncertainties on muons arise from calibrations of the muon momentum scale and resolution~\cite{PERF-2015-10}. They are evaluated using variations in the smearing of the \gls{id} and \gls{ms} tracks as well as the momentum scale, resulting in a total of five nuisance parameters entering the likelihood. Additional lepton uncertainties considered in the following originate from reconstruction, identification and isolation efficiencies, as well as track-to-vertex association and bad muon identification efficiencies. The latter two are only considered for muons.
 
 \subsection{Jets}
 
+The calibration of the jets to the absolute \gls{jes} is subject uncertainties arising \eg from the \textit{in situ} measurements, pile-up effects or flavour-dependence~\cite{Aad:2020flx}, encoded in a large set of 125 parameters. The full detail contained in the complete set of uncertainty components offers far greater statistical precision than needed for the following analysis. As the majority of the parameters (a total of 98) stems from \textit{in situ} measurements, an eigenvector decomposition is performed on the covariance matrix of these components~\cite{ATL-PHYS-PUB-2015-014}, allowing to determine the 15 principal orthogonal components (including a residual term adding the remaining terms in quadrature), with minimal loss in bin-by-bin correlation information. Five additional parameters evaluating uncertainties arising from \textit{in situ} $\eta$-intercalibrations of forward jets with respect to central jets are kept separate due to their two-dimensional dependence on $\pt$ and $\eta$~\cite{Aad:2020flx}. Effects from pile-up are described by four nuisance parameters. Uncertainties arising from differing detector responses to gluon- and quark-initiated jets as well as flavour-related differences are accounted for by two more nuisance parameters. Uncertainties from jets that are not contained in the calorimeters and \textit{punch-through} into the \gls{ms} are evaluated with an additional parameter. A last parameter encodes the uncertainty arising from the calibration of \gls{mc} samples reconstructed using \textsc{ATLFAST-II} instead of the full detector simulation.
+
+Systematic uncertainties on the \gls{jer} arise from measured differences between data and \gls{mc} simulation, noise from pile-up, and \textit{in situ} measurements of the jet $\pt$ imbalance. A similar eigenvector decomposition as for part of the \gls{jes} uncertainties is used, reducing the set of nuisance parameters considered in the following to 13~\cite{Aad:2020flx}. Finally, uncertainties related to the efficiency of jet vertex tagging are evaluated using a weight systematic.
+
+\subsection{Flavour tagging}
+ 
+ Uncertainties on the flavour tagging efficiency originate \eg from modelling uncertainties as well as uncertainties on the reconstruction of physics objects. As for the \gls{jer} and \gls{jes} the full set of nuisance parameters that would in principle need to be included in order to consider the full bin-by-bin correlations and $\pt$ and $\eta$ dependence of the uncertainties, is reduced to a more manageable size using an eigenvector decomposition. This leads to a total of five nuisance parameters encoding uncertainties on the \textit{b}-tagging efficiency, c-jet and light-jet mistagging rate as well as the extrapolation to high-$\pt$ jets~\cite{FTAG-2018-01, PERF-2016-05}.  
+ 
 \subsection{Missing transverse energy}
+
+The uncertainties on $\etmiss$ are evaluated using the systematic variations of all calibrated objects as inputs to the $\etmiss$ calculation. Additional uncertainties arise from the calculation of the track soft term. In the following, uncertainties on the soft term scale and resolution are considered, resulting in one nuisance parameter for the soft term scale and two nuisance parameters (corresponding to the perpendicular and parallel components) for the soft term resolution uncertainty. All track soft term uncertainties are derived by comparing simulation to $Z\rightarrow\mu\mu$ events~\cite{PERF-2016-07}. Contributions to the \gls{jes} uncertainty due to pile-up is considered 	
 
 \section{Theory uncertainties}
 
