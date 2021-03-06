@@ -12,7 +12,7 @@
     \graphicspath{{chapter-uncertainties/Figs/Vector/}{chapter-uncertainties/Figs/}}
 \fi
 
-Several sources of systematic uncertainties need to be considered in the following. As laid out in \cref{ch:statistics}, they enter the likelihood as nuisance parameters and can be interpreted as a loss of information on the signal strength parameter. In the following, they are separated into experimental uncertainties arising from finite detector resolution and object reconstruction and theory uncertainties due to modelling of the physics processes during simulation. 
+Several sources of systematic uncertainties need to be considered in the following. As laid out in \cref{ch:statistics}, they enter the likelihood as nuisance parameters and can be interpreted as a loss of information on the signal strength parameter. In the following, they are separated into experimental uncertainties arising from finite detector resolution and object reconstruction and theoretical uncertainties due to modelling of the physics processes during simulation. 
 
 \section{Experimental uncertainties}
 
@@ -46,7 +46,51 @@ Systematic uncertainties on the \gls{jer} arise from measured differences betwee
 
 The uncertainties on $\etmiss$ are evaluated using the systematic variations of all calibrated objects as inputs to the $\etmiss$ calculation. Additional uncertainties arise from the calculation of the track soft term. In the following, uncertainties on the soft term scale and resolution are considered, resulting in one nuisance parameter for the soft term scale and two nuisance parameters (corresponding to the perpendicular and parallel components) for the soft term resolution uncertainty. All track soft term uncertainties are derived by comparing simulation to $Z\rightarrow\mu\mu$ events~\cite{PERF-2016-07}. Contributions to the \gls{jes} uncertainty due to pile-up is considered 	
 
-\section{Theory uncertainties}
+\section{Theoretical uncertainties}
 
+As discussed in~\cref{sec:mc_simulation}, due to finite order calculations, the different steps of the \gls{mc} simulation generally introduces a certain number of unphysical scales and parameters. In order to quantify the uncertainties arising from the ad-hoc values of these, the \gls{mc} simulation generally needs to be re-run with systematically varied parameter values. Since varied \gls{mc} simulation parameters affect the event kinematics even before reconstruction and calibration, it is computationally very expensive to produce a full set of variations for each \gls{mc} sample used in the nominal analysis.
 
+In the following, multiple approaches are used to derive the theory uncertainties. For some of the variational samples, the full \gls{mc} simulation chain was run with reduced statistics or different samples produced with a different set of \gls{mc} generators and tunes were available. For others, variations were already processed during the initial \gls{mc} simulation of the nominal sample and subsequently stored as variational weights. Finally, some of the variational samples were simulated at truth-level (\ie without detector simulation). The latter approach was used especially in the case of \gls{susy} signal samples, where theory uncertainties are expected to only have a minor impact and a full simulation of all parameter variations would be computationally unfeasible. 
+
+For background processes that are normalised to data in a dedicated \gls{cr}, the theory uncertainties are evaluated on the transfer factors. For a process $p$, a control region CR$_i$, and a destination region R$_j$ (either a \gls{sr} or a \gls{vr}), the transfer factor reads
+\begin{equation}
+	f_p(\mathrm{CR}_i\rightarrow \mathrm{R}_j) = \frac{N^\mathrm{MC}_p(\mathrm{R}_j)}{N^\mathrm{MC}_p(\mathrm{CR}_i)},
+\end{equation}
+where $N^\mathrm{MC}_p(\mathrm{R}_j)$ and $N^\mathrm{MC}_p(\mathrm{CR}_i)$ are the expected event rates for the process $p$ in CR$_i$ and R$_j$, respectively. The systematic uncertainty on the transfer factor is then given by
+\begin{equation}
+	\Delta f_p^\mathrm{syst} = \frac{f_p^\mathrm{variation}}{f_p^\mathrm{nominal}} - 1,
+\end{equation}
+with $f_p^\mathrm{variation}$ and $f_p^\mathrm{nominal}$ the transfer factors from the variational and nominal samples, respectively. If the \gls{mc} samples used for deriving the variational and nominal transfer factors are statistically independent, a statistical component of the uncertainty is derived using the individual statistical uncertainties on the background estimate,
+\begin{equation}
+	\Delta f_p^\mathrm{stat} = (\Delta f_p^\mathrm{syst} + 1 ) \sqrt{\sum_{n\in\boldsymbol{N}}(\frac{\sigma_n}{n})^2},
+\end{equation}
+ where $n$ runs over the set of expected event rates and $\sigma_n$ is the absolute \gls{mc} statistical uncertainty associated to each expected event rate $n$. For other backgrounds directly estimated from \gls{mc} simulation, the systematic uncertainty on the expected event rate in each region R$_i$ is given by
+ \begin{equation}
+ 	\Delta n_p^\mathrm{syst}(\mathrm{R}_i) = \frac{n_p^\mathrm{syst}(\mathrm{R}_i)n_p^\mathrm{nominal}(\mathrm{R})}{n_p^\mathrm{nominal}(\mathrm{R}_i)n_p^\mathrm{syst}(\mathrm{P})} - 1,
+ \end{equation}
+ where the region P is a so-called \textit{loose preselection} with minimal analysis selection criteria used for normalisation of the event rates to be compared.
+ 
+ 
+ \subsection{Background}
+ 
+ \subsubsection{$\boldsymbol{\ttbar}$ and single top}
+ 
+ Theory uncertainties on the estimate of $\ttbar$ and single top processes arise for example from the simulation of the hard scattering between the interacting partons. These are evaluated by comparing the nominal \gls{mc} samples generated using \textsc{Powheg} and \textsc{Pythia8} with alternative samples generated using \textsc{MadGraph\_aMC@NLO} and \textsc{Pythia8}. An uncertainty resulting from the hadronisation and fragmentation scheme chosen in \textsc{Pythia8} is estimated by comparison to a \gls{mc} sample generated using \textsc{Powheg} and \textsc{Herwig++}~\cite{Herwig:2015jjp}. Uncertainties arising from \gls{isr} are evaluated at full reconstruction level by varying the unphysical renormalisation $\mu_\mathrm{R}$ and factorisation $\mu_\mathrm{F}$ scales as well as the parameters controlling the showering and \gls{me}/\gls{ps} matching. Likewise, uncertainties arising from simulation of \gls{fsr} are estimated by varying the effective coupling $\alpha_s^{\mathrm{FSR}}$. 
+ 
+ Uncertainties also originate from the \gls{PDF} set used when simulating the nominal \gls{mc} sample. As detailed in~\cref{tab:mc_generators}, the \textsc{NNPDF3.0NLO} is used for the simulation of both $\ttbar$ and single top processes. An envelope around the variational expected event rates obtained from the \textsc{NNPDF3.0NLO} uncertainties are used to compute an uncertainty on the transfer factor.
+ 
+ Beyond \gls{lo} single top production diagrams, interference appears between $Wt$ and $\ttbar$ production. Two approaches are commonly used to try and isolate the $Wt$ channel: \gls{dr} and \gls{ds}~\cite{Frixione:2008yi}. While the former removes all diagrams in the \gls{nlo} $Wt$ amplitude that are doubly resonant (meaning that they involve an intermediate $t$ quark that can be on-shell), the latter introduces subtraction terms in the \gls{nlo} $Wt$ cross section cancelling the $\ttbar$ contribution~\cite{Frixione:2008yi}. As the \gls{dr} scheme is used for estimating the event rate of the $Wt$ channel in the analysis, a comparison with an estimation using the \gls{ds} scheme allows to derive an uncertainty associated to the interference.
+  
+ \subsubsection{$\boldsymbol{V+\mathrm{jets}}$}
+ 
+ \subsubsection{Diboson and multiboson}
+ 
+ \subsubsection{$\boldsymbol{\ttbar+V}$}
+ 
+ \subsection{Signal}
+ 
+ 
 \section{Impact on signal regions}
+
+
+
