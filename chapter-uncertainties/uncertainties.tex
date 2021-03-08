@@ -64,12 +64,15 @@ with $f_p^\mathrm{variation}$ and $f_p^\mathrm{nominal}$ the transfer factors fr
 \begin{equation}
 	\Delta f_p^\mathrm{stat} = (\Delta f_p^\mathrm{syst} + 1 ) \sqrt{\sum_{n\in\boldsymbol{N}}(\frac{\sigma_n}{n})^2},
 \end{equation}
- where $n$ runs over the set of expected event rates and $\sigma_n$ is the absolute \gls{mc} statistical uncertainty associated to each expected event rate $n$. For other backgrounds directly estimated from \gls{mc} simulation, the systematic uncertainty on the expected event rate in each region R$_i$ is given by
+ where $n$ runs over the set of expected event rates and $\sigma_n$ is the absolute \gls{mc} statistical uncertainty associated to each expected event rate $n$. In the following the control region used to evaluate the uncertainties on the transfer factors is taken to be the sum of all \glspl{cr} introduced in~\cref{sec:control_regions}. This not only significantly improves the statistics in the region used for normalisation, but also results in a consistent treatment across all theoretical uncertainties on all relevant processes.
+ 
+ For other backgrounds directly estimated from \gls{mc} simulation, the systematic uncertainty on the expected event rate in each region R$_i$ is given by
  \begin{equation}
  	\Delta n_p^\mathrm{syst}(\mathrm{R}_i) = \frac{n_p^\mathrm{syst}(\mathrm{R}_i)n_p^\mathrm{nominal}(\mathrm{P})}{n_p^\mathrm{nominal}(\mathrm{R}_i)n_p^\mathrm{syst}(\mathrm{P})} - 1,
  \end{equation}
- where the region P is a so-called \textit{loose preselection} with minimal analysis selection criteria used for normalisation of the event rates to be compared.
+ where the region P is a so-called \textit{loose preselection} with minimal analysis selection criteria used for normalisation of the event rates to be compared. If not otherwise indicated the loose preselection used for normalisation requires exactly one isolated lepton, 2--3 jets of which at least one is \textit{b}-tagged, $\etmiss>\SI{220}{\GeV}$ and $\mt>\SI{50}{\GeV}$.
  
+ Apart from the hard scattering and parton showering uncertainties on top processes, all other theoretical uncertainties enter the likelihood as asymmetric correlated shape uncertainties. The hard scattering and parton showering uncertainties on top processes described below are estimated using \gls{mc} generator comparisons and thus need to be symmetrised. The shape information is however still kept, \ie the uncertainties are not one-sided.
  
  \subsection{Background}
  

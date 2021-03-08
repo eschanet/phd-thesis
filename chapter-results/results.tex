@@ -12,11 +12,11 @@
     \graphicspath{{chapter-results/Figs/Vector/}{chapter-results/Figs/}}
 \fi
 
+This chapter discusses the results of the different fit configurations and hypothesis tests performed in the analysis. After the background estimation obtained through a background-only fit in the \glspl{cr} is validated in the \glspl{vr}, the \glspl{sr} are unblinded and the observed data is compared to the \gls{sm} background expectation.
 
+\section{Background-only fit results}\label{sec:results_background_only}
 
-\section{Background-only}\label{sec:results_background_only}
-
-
+\subsection{Results in the control regions}
 
  \begin{figure}
 	\centering
@@ -26,12 +26,14 @@
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=0.85\textwidth]{OneLeptonbb_CR_TRMMEM_mct2_yellow}
 	\end{subfigure}\hfill
+	\par\medskip
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=0.85\textwidth]{OneLeptonbb_CR_TRHMEM_mct2_yellow}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=0.85\textwidth]{OneLeptonbb_CR_WREM_mbb_yellow}
 	\end{subfigure}\hfill
+	\par\medskip
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=0.85\textwidth]{OneLeptonbb_CR_STCREM_mbb_yellow}
 	\end{subfigure}\hfill
@@ -40,8 +42,24 @@
 	\label{fig:CR_distributions_postfit}
 \end{figure}
 
+\input{chapter-results/Figs/MyTable1LepCR_bkgonly.tex}
 
-\section{Validation regions}
+As all \glspl{cr} are mutually exclusive, a background-only fit simultaneously using information from all \glspl{cr} can be run. Only the terms for the \glspl{cr} enter the likelihood as channels and any signal contamination present in the \glspl{cr} is neglected. This allows to fit the dominant backgrounds to data, and thus by construction leads to a good agreement between observed data and the total fitted background estimate in all \glspl{cr}. The free normalisation parameters for $\ttbar$ ($\mu_\mathrm{T}$), single top ($\mu_\mathrm{ST}$) and $\wjets$ ($\mu_\mathrm{W}$) are fitted to be
+\begin{equation}
+	\begin{split}
+		\mu_\mathrm{T} = 1.02^{+0.07}_{-0.09}, \\
+		\mu_\mathrm{ST} = 0.6^{+0.5}_{-0.25}, \\
+		\mu_\mathrm{W} = 1.22^{+0.26}_{-0.24}. \\
+	\end{split}
+\end{equation}
+While the dominant $\ttbar$ background stays roughly at its nominal expectation with respect to \gls{mc} simulation, $\wjets$ processes are scaled up. The single top expectation, on the other hand, is scaled down. The high uncertainty on $\mu_\mathrm{ST}$ can be attributed to the relatively low \gls{mc} statistics as well as the comparably low purity of single top events in STR.
+
+\Cref{tab:results_bkg_only_CR} summarises the fitted background estimate including all uncertainties for all control regions. As discussed in~\cref{ch:background_estimation}, $\ttbar$ is the most dominant in all control regions except WR where $\wjets$ is the largest background, followed by single top and $\wjets$ processes. Small contributions come from diboson, multiboson as well as other backgrounds like $\ttbar+V$, $\ttbar+h$ and $V+h$. All processes estimated directly from \gls{mc} simulation together account for only 10\%, 5.5\% and a maximum of 2.6\% in the single top, $\wjets$ and $\ttbar$ control regions, respectively. Exemplary distributions in the \glspl{cr} after the background-only fit are shown in~\cref{fig:VR_distributions_postfit}, revealing a good agreement between observed data and the \gls{sm} background estimate throughout the distributions shown.
+
+
+
+
+\subsection{Results in the validation regions}
 
 
 
@@ -70,9 +88,10 @@
 	\label{fig:VR_distributions_postfit}
 \end{figure}
 
-\section{Signal regions}
+\subsection{Results in the signal regions}
 
 
+\input{chapter-results/Figs/MyTable1LepSRMerge_bkgonly_sum.tex}
 
  \begin{figure}
 	\centering
@@ -91,4 +110,50 @@
 \end{figure}
 
 \section{Interpretation}
+
+ \begin{figure}
+	\centering\includegraphics[width=0.85\textwidth]{histpull_CRVRSR}
+	\caption{}
+	\label{fig:result_exclusion}
+\end{figure}
+
+
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Signal Region}                       & $\langle\epsilon{\mathrm{ \sigma}}\rangle_{\mathrm{ obs}}^{95}$[fb]  &  $S_{\mathrm{ obs}}^{95}$  & $S_{\mathrm{ exp}}^{95}$ & $\textrm{CL}_{\textrm{B}}$ & $p_{0}$ & $Z$  \\
+\midrule
+ SRLM $\mathrm{(disc.)}$    & $0.26$ &  $36.8$ & $ { 20.0 }^{ +8.0 }_{ -5.4 }$ & $0.97$ & $ 0.03$&$1.88$ \\%
+ SRMM $\mathrm{(disc.)}$    & $0.18$ &  $24.8$ & $ { 15.3 }^{ +6.2 }_{ -4.6 }$ & $0.94$ & $ 0.06$&$1.54$ \\%
+ SRHM $\mathrm{(disc.)}$    & $0.11$ &  $14.7$ & $ { ~~9.7 }^{ +3.3 }_{ -2.7 }$ & $0.89$ & $ 0.10$&$1.30$ \\%
+
+\bottomrule
+\end{tabular}
+%}
+\caption[Breakdown of upper limits.]{
+Left to right: 95\% CL upper limits on the visible cross-section
+($\langle\epsilon\sigma\rangle_{\mathrm{ obs}}^{95}$) and on the number of
+signal events ($S_{\mathrm{ obs}}^{95}$ ). 
+The third column ($S_{\mathrm{ exp}}^{95}$) shows the expected 95\% CL upper limit (and its $\pm 1\sigma$ excursions) 
+on the number of signal events if no BSM signal is present. 
+% on the number of signal events that would be expected were the observation consistent with a background-only hypothesis, (and $\pm 1\sigma$ excursions on the expectation) of background events.
+The last three columns
+indicate the $\textrm{CL}_{\textrm{B}}$ value, i.e. the confidence level observed for
+the background-only hypothesis, the discovery $p$-value ($p_{0}$) and the significance $Z$~\cite{2008NIMPA.595..480C}.}
+\label{upperlimit_toys}
+\end{center}
+\end{table}
+
+
+ \begin{figure}
+	\centering\includegraphics[width=0.75\textwidth]{contourPlotterWh1Lbb}
+	\caption{}
+	\label{fig:result_exclusion}
+\end{figure}
+
+
+
 
