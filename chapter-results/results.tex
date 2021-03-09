@@ -121,7 +121,7 @@ None of the exclusion or discovery signal regions reveal a significant deviation
 
 
  \begin{figure}
-	\centering\includegraphics[width=0.85\textwidth]{histpull_CRVRSR}
+	\centering\includegraphics[width=0.95\textwidth]{histpull_CRVRSR}
 	\caption{}
 	\label{fig:result_histpull}
 \end{figure}
@@ -131,6 +131,11 @@ None of the exclusion or discovery signal regions reveal a significant deviation
 
 \section{Interpretation}\label{sec:results_interpretation}
 
+As no significant excess of data is observed in any of the signal regions, model-independent as well as model-dependent limits are are computed.
+
+\subsection{Model-independent upper limits} 
+
+Model-independent upper limits on the visible cross section of new physics are derived using the discovery \glspl{sr}. For this, a likelihood containing terms for the \glspl{cr} and the discovery \glspl{sr} is used. Since the discovery \glspl{sr} are not mutually exclusive, only one discovery \gls{sr} enters the likelihood at a time. This results in three distinct fit configurations in which the signal strength $\mu$ is the \gls{poi} and no signal contamination is assumed in the control regions. The \gls{poi} is subsequently scanned in distinct steps from 0 to high\footnote{The signal strength is in principle allowed to exceed unity in order to find an 95\% CL upper limit} values, followed by a hypothesis test at each scan step. The upper limit on the number of observed signal events $S_{\mathrm{ obs}}^{95}$ is then given by the value of $\mu$ for which the corresponding CL$_s$ value drops below 0.05. An upper limit on the visible cross section $\langle\epsilon{\mathrm{ \sigma}}\rangle_{\mathrm{ obs}}^{95}$ is then obtained by dividing $S_{\mathrm{ obs}}^{95}$ by the integrated luminosity of \onethirtynineifb. In addition to the upper limits on $\langle\epsilon{\mathrm{ \sigma}}\rangle_{\mathrm{ obs}}^{95}$ and $S_{\mathrm{ obs}}^{95}$,~\cref{tab:upperlimit_toys} also gives the $p$-values (and corresponding significances) for rejecting the background-only hypothesis in favour of the signal-plus-background hypothesis. As all significances are below $1.88\sigma$ for all \glspl{sr}, no indication for physics beyond the \gls{sm} is seen.
 
 \begin{table}
 \begin{center}
@@ -156,16 +161,28 @@ on the number of signal events if no BSM signal is present.
 The last three columns
 indicate the $\textrm{CL}_{\textrm{B}}$ value, i.e. the confidence level observed for
 the background-only hypothesis, the discovery $p$-value ($p_{0}$) and the significance $Z$~\cite{2008NIMPA.595..480C}.}
-\label{upperlimit_toys}
+\label{tab:upperlimit_toys}
 \end{center}
 \end{table}
 
+
+\subsection{Model-dependent exclusion limits}
+
+For each signal point in the signal grid considered, a separate \textit{exclusion} fit is run in the \glspl{cr} and the exclusion \glspl{sr}. As all exclusion signal region bins are disjoint, a likelihood containing terms for all bins can be constructed, effectively creating a shape-fit in the binned variables $\mt$ and $\mct$. As opposed to the background-only fit, the exclusion fits allow for signal contribution in all regions considered, and considers the signal strength $\mu$ to be a free parameter. For each point in the signal grid, the expected and observed CL$_s$ value is calculated as discussed in~\cref{sec:cls_approach}. Expected (observed) contour lines can then be drawn at expected (observed) CL$_s =0.05$. Signal points inside the contour are excluded at 95\% CL. \Cref{fig:result_exclusion} shows the exclusion contours obtained in the $\charg\neutr$ signal grid considered in the analysis. The dashed line corresponds to the expected exclusion contour, obtained using the Asimov dataset. The yellow uncertainty band represents the interval containing 68\% of all exclusion contours obtained for observations distributed according to the background-only hypothesis. The solid red line represents the observed exclusion limit obtained using the data recorded by ATLAS. As discussed in~\cref{sec:signal_theory_uncertainties}, the dashed red lines are obtained by varying the signal cross sections up and down by $1\sigma$.
+
+Due to the slight overfluctuations of data observed in some of the exclusion signal region bins, the observed limit is slightly weaker than the expected one. The observed exclusion limit extends to about $\SI{740}{\GeV}$ in $m(\charg/\neutr)$ for massless $\lsp$, and up to $\SI{600}{\GeV}$ for $m(\lsp)=\SI{250}{\GeV}$. This extends the previous limit set by ATLAS in this simplified model and decay channel by more than $\SI{200}{\GeV}$ in $m(\charg/\neutr)$ for massless $\lsp$, an improvement made possible not only by the increase in integrated luminosity but also the introduction of a two-dimensional shape fit in the analysis strategy. 
 
  \begin{figure}
 	\centering\includegraphics[width=0.75\textwidth]{contourPlotterWh1Lbb}
 	\caption{}
 	\label{fig:result_exclusion}
 \end{figure}
+
+
+\section{Discussion}
+
+At the time of writing, the limits derived in this analysis constitute the most stringent limits on the $\charg\neutr\rightarrow Wh\lsp\lsp$ simplified model set by ATLAS\improvement{citation}. Although this is ultimately bound to change with new searches extending these limits even further, 
+
 
 
 
