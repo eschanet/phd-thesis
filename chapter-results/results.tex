@@ -42,7 +42,7 @@ This chapter discusses the results of the different fit configurations and hypot
 	\label{fig:CR_distributions_postfit}
 \end{figure}
 
-\input{chapter-results/Figs/MyTable1LepCR_bkgonly.tex}
+\input{chapter-results/Figs/tables/MyTable1LepCR_bkgonly_sum.tex}
 
 As all \glspl{cr} are mutually exclusive, a background-only fit simultaneously using information from all \glspl{cr} can be run. Only the terms for the \glspl{cr} enter the likelihood as channels and any signal contamination present in the \glspl{cr} is neglected. This allows to fit the dominant backgrounds to data, and thus by construction leads to a good agreement between observed data and the total fitted background estimate in all \glspl{cr}. The free normalisation parameters for $\ttbar$ ($\mu_\mathrm{T}$), single top ($\mu_\mathrm{ST}$) and $\wjets$ ($\mu_\mathrm{W}$) are fitted to be
 \begin{equation}
@@ -54,15 +54,10 @@ As all \glspl{cr} are mutually exclusive, a background-only fit simultaneously u
 \end{equation}
 While the dominant $\ttbar$ background stays roughly at its nominal expectation with respect to \gls{mc} simulation, $\wjets$ processes are scaled up. The single top expectation, on the other hand, is scaled down. The high uncertainty on $\mu_\mathrm{ST}$ can be attributed to the relatively low \gls{mc} statistics as well as the comparably low purity of single top events in STR.
 
-\Cref{tab:results_bkg_only_CR} summarises the fitted background estimate including all uncertainties for all control regions. As discussed in~\cref{ch:background_estimation}, $\ttbar$ is the most dominant in all control regions except WR where $\wjets$ is the largest background, followed by single top and $\wjets$ processes. Small contributions come from diboson, multiboson as well as other backgrounds like $\ttbar+V$, $\ttbar+h$ and $V+h$. All processes estimated directly from \gls{mc} simulation together account for only 10\%, 5.5\% and a maximum of 2.6\% in the single top, $\wjets$ and $\ttbar$ control regions, respectively. Exemplary distributions in the \glspl{cr} after the background-only fit are shown in~\cref{fig:VR_distributions_postfit}, revealing a good agreement between observed data and the \gls{sm} background estimate throughout the distributions shown.
-
-
-
+\Cref{tab:results_bkg_only_CR} summarises the fitted background estimate including all uncertainties for all control regions. As discussed in~\cref{ch:background_estimation}, $\ttbar$ is the most dominant in all control regions except WR where $\wjets$ is the largest background, followed by single top and $\wjets$ processes. Small contributions come from diboson, multiboson as well as other backgrounds like $\ttbar+V$, $\ttbar+h$ and $V+h$. All processes estimated directly from \gls{mc} simulation cumulatively account for only 10\%, 5.5\% and a maximum of 2.6\% in the single top, $\wjets$ and $\ttbar$ control regions, respectively. Exemplary distributions in the \glspl{cr} after the background-only fit are shown in~\cref{fig:CR_distributions_postfit}, revealing a good agreement between observed data and the \gls{sm} background estimate throughout the distributions shown.
 
 \subsection{Results in the validation regions}
-
-
-
+	
  \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
@@ -88,8 +83,23 @@ While the dominant $\ttbar$ background stays roughly at its nominal expectation 
 	\label{fig:VR_distributions_postfit}
 \end{figure}
 
+\input{chapter-results/Figs/tables/MyTable1LepVRall_bkgonly_sum.tex}
+
+In order to validate the extrapolations from the \glspl{cr} to the \glspl{sr}, the results of the background-only fit in are extrapolated into the \glspl{vr}. \Cref{tab:results_bkg_only_VR} details the observed data and background estimation before and after the fit in the different \gls{vr} bins. 
+
+In the on-peak \glspl{vr}, $\ttbar$ is by far the dominant background. Contributions from single top and $\wjets$ each amount to only 1--5\%, depending on validation region bin. Diboson, multiboson and other \gls{sm} processes result in minor contributions of the level of not more than 3\% of the total background estimate. As the total uncertainties on the background estimate in the on-peak regions are dominated by the $\ttbar$ uncertainties, the large uncertainties on the $\wjets$ and single top estimate due to relatively limited \gls{mc} statistics do not have a significant impact. 
+In the off-peak \glspl{vr}, $\ttbar$ is the dominant process in the low mass regime, while contribution from single top and $\wjets$ are subdominant. In the medium and high mass regimes, $\ttbar$, single top and $\wjets$ all result in similar contributions. Diboson, multiboson and other \gls{sm} processes are only minor backgrounds in all off-peak regions, cumulatively amounting to only 10--14\% of the total background estimate depending on the mass regime.
+Exemplary N-1 distributions in the validation regions after the results from the background-only fit are extrapolated are shown in~\cref{fig:VR_distributions_postfit}.
+
+The agreement between data and the background estimate is summarised in~\cref{result_histpull}. \improvement{quote exact numbers} The background estimates agree within $1.5\sigma$ with the observed data in all validation regions, except for the VR-onMM where the agreement is within $1.9\sigma$. Thus, the overall agreement in the validation regions is considered to be acceptable, paving the way for further extrapolation of the background estimate into the \glspl{sr}.
+
 \subsection{Results in the signal regions}
 
+By extrapolating the results from the background-only fit in the control regions, the background estimate in the signal regions can be obtained. \Cref{tab:results_bkg_only_SR_disc} compares the background estimate with the observed data for all discovery signal regions. In the low mass discovery signal region, $\ttbar$ is the dominant background, followed by $\wjets$ and single top. In the medium mass discovery signal region, all three main backgrounds contribute at roughly equal parts. In the high mass signal region, $\wjets$ is the largest \gls{sm} background, followed by single top and $\ttbar$. In all discovery signal regions, diboson, multiboson and other \gls{sm} backgrounds yield only minor contributions. The results in the exclusion signal regions are shown in \cref{tab:results_bkg_only_SR}. As for the discovery signal regions, $\ttbar$ is the dominant background in the low mass signal region bins, while $\wjets$ slightly dominates in the high mass signal region bins. The $\mct$ distribution in all three exclusion \glspl{sr} are shown in~\cref{SR_distributions_postfit}.
+
+None of the exclusion or discovery signal regions reveal a significant deviation from the \gls{sm} background estimate in data, meaning that all observations are compatible with the \gls{sm}. Consequently, the signal regions will be used in the following to derive model-dependent as well as model-independent limits. A slight overfluctuation of data in the discovery \glspl{sr} (that are not mutually exclusive) is quantified to be within $2\sigma$, resulting in weaker model-independent limits than expected. Some of the exclusion signal region bins also exhibit slight overfluctuations in data, all well within $2\sigma$ of the \gls{sm} background estimate. Thus, the observed model-dependent exclusion limit derived in~\cref{sec:results_interpretation} is slightly weaker than expected. \Cref{fig:result_histpull} summarises for all regions the observed data, \gls{sm} background estimate as well as the significances of any deviations.
+
+\input{chapter-results/Figs/tables/MyTable1LepSRIncl_bkgonly_sum.tex}
 
 \input{chapter-results/Figs/MyTable1LepSRMerge_bkgonly_sum.tex}
 
@@ -109,14 +119,17 @@ While the dominant $\ttbar$ background stays roughly at its nominal expectation 
 	\label{fig:SR_distributions_postfit}
 \end{figure}
 
-\section{Interpretation}
 
  \begin{figure}
 	\centering\includegraphics[width=0.85\textwidth]{histpull_CRVRSR}
 	\caption{}
-	\label{fig:result_exclusion}
+	\label{fig:result_histpull}
 \end{figure}
 
+
+\FloatBarrier
+
+\section{Interpretation}\label{sec:results_interpretation}
 
 
 \begin{table}
@@ -126,9 +139,9 @@ While the dominant $\ttbar$ background stays roughly at its nominal expectation 
 \toprule
 \textbf{Signal Region}                       & $\langle\epsilon{\mathrm{ \sigma}}\rangle_{\mathrm{ obs}}^{95}$[fb]  &  $S_{\mathrm{ obs}}^{95}$  & $S_{\mathrm{ exp}}^{95}$ & $\textrm{CL}_{\textrm{B}}$ & $p_{0}$ & $Z$  \\
 \midrule
- SRLM $\mathrm{(disc.)}$    & $0.26$ &  $36.8$ & $ { 20.0 }^{ +8.0 }_{ -5.4 }$ & $0.97$ & $ 0.03$&$1.88$ \\%
- SRMM $\mathrm{(disc.)}$    & $0.18$ &  $24.8$ & $ { 15.3 }^{ +6.2 }_{ -4.6 }$ & $0.94$ & $ 0.06$&$1.54$ \\%
- SRHM $\mathrm{(disc.)}$    & $0.11$ &  $14.7$ & $ { ~~9.7 }^{ +3.3 }_{ -2.7 }$ & $0.89$ & $ 0.10$&$1.30$ \\%
+ SR-LM $\mathrm{(disc.)}$    & $0.26$ &  $36.8$ & $ { 20.0 }^{ +8.0 }_{ -5.4 }$ & $0.97$ & $ 0.03$&$1.88$ \\%
+ SR-MM $\mathrm{(disc.)}$    & $0.18$ &  $24.8$ & $ { 15.3 }^{ +6.2 }_{ -4.6 }$ & $0.94$ & $ 0.06$&$1.54$ \\%
+ SR-HM $\mathrm{(disc.)}$    & $0.11$ &  $14.7$ & $ { ~~9.7 }^{ +3.3 }_{ -2.7 }$ & $0.89$ & $ 0.10$&$1.30$ \\%
 
 \bottomrule
 \end{tabular}
