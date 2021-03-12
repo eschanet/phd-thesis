@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,11pt,numbered,pdftex,dvipsnames]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,11pt,numbered,pdftex,dvipsnames,chapter]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -109,7 +109,9 @@
 %	\includeonly{chapter-mc/mc}
 %	\includeonly{chapter-optimisation/optimisation}
 %	\includeonly{chapter-background/background}
-	\includeonly{chapter-results/results}
+%	\includeonly{chapter-results/results}
+	\includeonly{chapter-preservation/preservation}
+
 %	\includeonly{chapter-statistics/statistics}
 %	\includeonly{chapter-electroweak/electroweak}
 %	\includeonly{chapter-pmssm/pmssm}
@@ -166,6 +168,7 @@ Supervisor: PD\@\xspace Dr.\@\xspace Jeanette Lorenz
 \include{chapter-results/results}
 
 \part{Reinterpretation}
+\include{chapter-preservation/preservation}
 \include{chapter-simplify/simplify}
 \include{chapter-pmssm/pmssm}
 
