@@ -41,12 +41,9 @@ Instead of trying to estimate the signal rates of a new signal model using \gls{
 
 \section{Public full likelihood}\label{sec:full_likelihood}
 
-The likelihood is arguably one of the most information-dense and thus valuable data products of an analysis. Without precise knowledge of the exact likelihood of the original analysis, approximations need to be made for the statistical inference \eg in terms of correlations between event rate estimates. Recently, ATLAS has started to publish full analysis likelihoods built using the \textsc{HistFactory} \gls{pdf} template introduced in~\cref{ch:statistics}~\cite{ATL-PHYS-PUB-2019-029}. This extraordinary step towards more open and reproducible science has been facilitated by the development of \texttt{pyhf} in conjunction with the introduction of a \texttt{JSON} specification fully describing the \textsc{HistFactory} template. As a pure-text format, the \texttt{JSON} likelihoods are human- and machine-readable, highly compressible and can easily be put under version control, all of which are properties that make them ideal for long-term preservation. The full likelihood of the search for electroweakinos presented in the previous part of this work has been published~\cite{fullLH_1Lbb} and is heavily used in the following chapters.
+The likelihood is arguably one of the most information-dense and thus valuable data products of an analysis. Without precise knowledge of the exact likelihood of the original analysis, approximations need to be made for the statistical inference \eg in terms of correlations between event rate estimates as well as the treatment of uncertainties. Recently, ATLAS has started to publish full analysis likelihoods built using the \textsc{HistFactory} \gls{pdf} template introduced in~\cref{ch:statistics}~\cite{ATL-PHYS-PUB-2019-029}. This extraordinary step towards more open and reproducible science has been praised by the theory community~\cite{REINP:2020pec} as it allows for considerably more trustful reinterpretations. This effort has been facilitated by the development of \texttt{pyhf} in conjunction with the introduction of a \texttt{JSON} specification fully describing the \textsc{HistFactory} template. As a pure-text format, the \texttt{JSON} likelihoods are human- and machine-readable, highly compressible and can easily be put under version control, all of which are properties that make them ideal for long-term preservation. 
 
-Reinterpretations using 
-
-Full likelihoods~\cite{ATL-PHYS-PUB-2019-029}
-
+The full likelihood (in \texttt{JSON} format) of the search for electroweakinos presented in the previous part of this work has been published~\cite{fullLH_1Lbb} and is not only heavily used in the following chapters, but also in various analysis reinterpretation and combination efforts currently ongoing in ATLAS. Several efforts outside of the ATLAS collaboration have already included the analysis likelihood into their reinterpretations, \eg \textsc{SModelS}~\cite{SModelS_pyhf:2020grj} and \textsc{MadAnalysis}~\cite{Goodsell:2020ddr,Fuks:2021wpe} both reporting significant precision improvements through the use of the full likelihood (as opposed to approximating the statistical model). Furthermore, the full likelihood of the search presented herein has recently been used to demonstrate the concept of scalable distributed statistical inference on \glspl{hpc}~\cite{Feickert:2021sua}. Through the \texttt{funcX} package~\cite{chard20funcx}, \texttt{pyhf} is used as a highly scalable function as a service to fit the entire signal grid of 125 signal points within $\SI{156}{\second}$ on 85 available worker nodes\footnote{Theses benchmarks use \texttt{pyhf}'s \textsc{NumPy} backend and \textsc{SciPy} optimiser, which does have a slower log-likelihood minimisation time than \eg \textsc{PyTorch} coupled with \textsc{SciPy}.}.
 
 \section{Analysis preservation using containerised workflows}\label{sec:recast_implementation}
 
@@ -60,7 +57,7 @@ Full likelihoods~\cite{ATL-PHYS-PUB-2019-029}
 
  \begin{figure}
 	\centering\includegraphics[width=\textwidth]{yadage_workflow_instance}
-	\caption{}
+	\caption{Workflow}
 	\label{fig:recast_workflow}
 \end{figure}
 
