@@ -63,26 +63,28 @@ Due to the software structure of the analysis presented in this work, a containe
 	\item Statistical inference: although the original analysis used \textsc{HistFitter} for the statistical inference, the \textsc{Recast} implementation uses the \texttt{pyhf}-implementation of the \textsc{HistFactory} models in order to benefit from the possibility of using a partial \texttt{JSON} likelihood to preserve background and data rates. The \textsc{HistFitter} and \texttt{pyhf} implementations of the statistical inference have been shown to produce exactly the same results up to machine precision.
 \end{itemize}
 
-The first Docker image is based on a \textit{base image} providing a fixed ATLAS software release including all dependencies, expanded with the relevant analysis software. The second docker image uses the \textsc{ROOT} installation version originally used in the analysis, provided as part of a suitable ATLAS software release. The last image is based on a \texttt{pyhf} base image containing the \texttt{pyhf} release version used when validating the two \textsc{HistFactory} implementations against each other in the context of the analysis. \improvement{provide dockerfiles in appendix}
+The first Docker image is based on a \textit{base image} providing a fixed ATLAS software release including all dependencies, expanded with the relevant analysis software. The second docker image uses the \textsc{ROOT} installation version originally used in the analysis, provided as part of a suitable ATLAS software release. The last image is based on a \texttt{pyhf} base image containing the \texttt{pyhf} release version used when validating the two \textsc{HistFactory} implementations against each other in the context of the analysis. All docker images are subject to version control and continuous integration, such that changes to the underlying software environment can be tracked and tagged. This allows for a consistent preservation of multiple versions of the analysis pipeline. \improvement{provide dockerfiles in appendix}
 
 \subsection{Processing steps preservation}
 
 Preserving the software environment is not sufficient, as detailed instructions on how to use it have to be given to the user. This is achieved through parameterised job templates that specify the precise commands and arguments required to re-execute the analysis code for specific processing steps. As re-executing the analysis pipeline using different signal models involves varying input parameters, all job template parameters are exposed to the user. Within \textsc{Recast}, the job templates are formulated using the YAML format. 
 
-User-specifiable arguments and inputs to the event selection and physics object calibration step include the actual reconstructed \gls{mc} events in \textit{derived analysis object data} format, obtained through the central ATLAS production system, as well as corresponding files necessary for the pile-up correction in \gls{mc}. In addition, the signal process cross section as well as \gls{mc} generator-level efficiencies need to be given for correct normalisation the estimated signal rates to the integrated luminosity of the full Run~2 dataset.
+User-specifiable arguments and inputs to the event selection and physics object calibration step include the actual reconstructed \gls{mc} events in \textit{derived analysis object data} format, obtained through the central ATLAS production system, as well as corresponding files necessary for the pile-up correction in \gls{mc}. In addition, the signal process cross section as well as \gls{mc} generator-level efficiencies need to be given for correct normalisation the estimated signal rates to the integrated luminosity of the full Run~2 dataset. For each new signal model to be tested, three \gls{mc} samples need to be provided, generated with specific pile-up profiles close to the pile-up profile in data during the 2015--2016, 2017 and 2018 data-taking periods, respectively\footnote{This allows to have pile-up weights close to unity, avoiding unnecessary statistical dilution.}. In all three jobs, the events processed are weighted according to the integrated luminosity of the data-taking period they represent within the full Run~2 dataset. A subsequent \textit{merging} step uses the same docker image as the previous processing step, and serves to merge the three produced outputs into a single \textsc{ROOT} file that can be read by the subsequent step.
+
+Apart from the merged \textsc{ROOT} output file produced in the previous step, the generation of the expected signal rates in a \texttt{JSON} patch format requires only one additional input---a \texttt{JSON} file containing theory uncertainties on the expected signal rates. These are optional and do not have to be specified if deemed to be negligible for the signal model to be tested.
+
+The statistical inference steps requires the signal \texttt{JSON} patch from the previous step as well as the archived partial likelihood containing observed data as well as expected background rates including systematic variations thereof. 
 
 \subsection{Workflow preservation}
 
+Finally, the preserved processing steps need to be linked together, creating a parameterised workflow completely defining the analysis pipeline from centrally produced \gls{mc} datasets to the statistical inference results. Within \textsc{Recast}, this is achieved using the workflow description language \texttt{yadage}~\cite{yadage:2017frf}, capturing the full workflow in YAML format. The workflow uses the job templates and defines their processing order and dependencies. \Cref{fig:recast_workflow} shows a graph visualisation of the entire analysis pipeline, implemented in \textsc{Recast}. 
+
+The \textsc{Recast} implementation of the analysis presented in this work has been validated against original analysis inputs. The expected and observed CL$_s$ values derived in the original analysis could be re-derived using the containerised workflow implementation. On a non-isolated CPU, the full preserved analysis pipeline for a single signal model can be executed within 1 hour. Due to the highly portable nature of the containerised workflow, the pipeline can easily be run in a distributed setup, allowing scalable reinterpretations at full analysis precision. 
 
 
-\textsc{Recast}, originally proposed in \reference\cite{RECAST_cranmer} and recently used within ATLAS in \eg \reference\cite{ATL-PHYS-PUB-2019-032}
-
-
-
-
- \begin{figure}
+ \begin{sidewaysfigure}[ht]
 	\centering\includegraphics[width=\textwidth]{yadage_workflow_instance}
-	\caption{Workflow}
+	\caption{Graph of the workflow as specified for the analysis pipeline. The containerised processing steps are represented as blue rectangular nodes, while input parameters, input files and outputs are shown as red oval nodes. The workflow is comprised of four processing steps: \texttt{selection\_stage\_mc16(a,d,e)}, \texttt{merging\_stage}, \texttt{workspace\_creation\_stage} and \texttt{fitting\_stage}. The first two steps perform the object calibration, event selection and merging of the three \gls{mc} datasets representing the three data-takin periods 2015--2016, 2017 and 2018. The latter two steps implement the generation of the signal \texttt{JSON} patch as well as the final statistical inference. Compared to \cref{fig:pipeline_analysis} the first two steps implement the \textit{signal analysis} part, while the latter two steps implement the \textit{statistical inference} deriving the final results.} 
 	\label{fig:recast_workflow}
-\end{figure}
+\end{sidewaysfigure}
 
