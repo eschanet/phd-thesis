@@ -239,6 +239,56 @@
 
 % Example todo: \mynote{Hey! I have a note}
 
+% ******************************** Listings **********************************
+
+\usepackage{listings}
+\usepackage{xcolor}
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+
+\colorlet{punct}{black}
+\definecolor{delim}{HTML}{000000}
+\definecolor{kw_color}{HTML}{0b0273}
+\definecolor{string_color}{HTML}{5184ad}
+\definecolor{bool_color}{HTML}{2a7d18}
+\colorlet{numb}{magenta!60!black}
+
+\lstset{aboveskip=10pt,belowskip=10pt}
+\lstdefinelanguage{json}{
+    basicstyle=\scriptsize\ttfamily,
+    keywords={true,false,null},
+    keywordstyle=\color{bool_color}\bfseries,
+    commentstyle=\color{string_color}\bfseries, % Green strings
+    stringstyle=\color{kw_color}\bfseries, % Purple keywords
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+%    backgroundcolor=\color{background},
+    comment=[s]{\ "}{"},
+    string=[s]{"}{"},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+
 
 
 % *****************************************************************************
