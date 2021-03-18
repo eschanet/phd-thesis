@@ -121,25 +121,25 @@ The use of automatic differentiation of the full likelihood gradient enabled by 
 
 Interestingly, the wall time of the simplified likelihood does not benefit from the usage of features like automatic differentiation offered by \eg \textsc{PyTorch}. This is due to the extreme simplicity of the simplified likelihood function, therefore the computational benefits from features like automatic differentiation do not outweigh the overhead of libraries like \textsc{PyTorch}.
 
-In addition to the search for electroweakinos presented herein, the simplified likelihood approach has also been applied on a number of other ATLAS SUSY searches. \Cref{tab:simplified_performance} 
+In addition to the search for electroweakinos presented herein, the simplified likelihood approach has also been applied on a number of other ATLAS SUSY searches. \Cref{tab:simplified_performance} summarises the mean wall time of all ATLAS \gls{susy} searches investigated using the simplified likelihood approach. In all cases, \textsc{PyTorch} offers the fastest backend for the full likelihood while \textsc{NumPy} performs best for the simplified likelihood. The performance improvement of roughly two orders of magnitude obtained in the 1-lepton analysis is confirmed in the other ATLAS \gls{susy} searches investigated. The wall time of the simplified likelihood appears to be bound from below at $\mathcal{O}(\SI{e-2}{\second})$, limiting the performance gain for some of the faster analyses.
 
 \begin{table}
 	\begin{center}
 	\small
-			\begin{tabular} {l r r}
+			\begin{tabular} {l r r r}
 				\toprule
-				Analysis & Full likelihood [s] & Simplified likelihood [s] \\
+				Analysis & Full likelihood [s] & Simplified likelihood [s] & Improvement \\
 				\midrule
-				ATLAS compressed search~\cite{SUSY-2018-16} & 0 & 0 \\
-				ATLAS 3-lepton search & 0 & 0 \\
-				ATLAS 2-lepton search~\cite{SUSY-2018-32} & 0 & 0 \\
-				ATLAS 1-lepton search~\cite{SUSY-2019-08} & 0 & 0 \\
-				ATLAS direct stau search~\cite{SUSY-2018-04} & 0 & 0 \\
-				ATLAS sbottom search~\cite{SUSY-2018-31} & 0 & 0 \\
-				ATLAS stop search & 0 & 0 \\
+				ATLAS compressed search~\cite{SUSY-2018-16} & $16.49\pm 3.16$ & $0.073 \pm 0.012$ & 236$\times$ \\
+				ATLAS 3-lepton search & $40.41 \pm 15.7$ & $0.082 \pm 0.021$ & 495$\times$\\
+				ATLAS 2-lepton search~\cite{SUSY-2018-32} & $5.93 \pm 0.16$ & $0.079 \pm 0.0082$ & 75$\times$\\
+				ATLAS 1-lepton search~\cite{SUSY-2019-08} & $4.93 \pm 0.11$ & $0.040 \pm 0.0057$ & 123$\times$ \\
+				ATLAS direct stau search~\cite{SUSY-2018-04} & $1.91 \pm 0.090$ & $0.039 \pm 0.0055$ & 49$\times$\\
+				ATLAS sbottom search~\cite{SUSY-2018-31} & $1.36 \pm 0.067$ & $0.038 \pm 0.0046$ & 36$\times$ \\
+				ATLAS stop search & $2.27 \pm 0.062$ & $0.044 \pm 0.011$ & 51$\times$\\
 				\bottomrule
 			\end{tabular}
-		\caption{}
+		\caption{Benchmarks of the wall times (in seconds) needed for computing the CL$_s$ value for a single signal model using the full and the simplified likelihoods. The signal models used for the benchmarks include all signal models originally considered in the respective search. The uncertainty corresponds to the standard deviation of the benchmark sample. Additionally, the performance improvement is stated as ratio between the wall times. The benchmarks were performed on a non-isolated CPU under minimal load on a node without dedicated GPU. The \textsc{PyTorch} (\textsc{NumPy}) backend of \texttt{pyhf} is used for the full (simplified) likelihood, in conjunction with the \textsc{SciPy} optimiser. Searches without reference quoted are not yet public.}
 		\label{tab:simplified_performance}
 	\end{center}
 \end{table}
@@ -148,29 +148,31 @@ In addition to the search for electroweakinos presented herein, the simplified l
 
 A comparison of the exclusion contours obtained with the full and simplified likelihoods in the context of the search for electroweakinos presented herein is shown in~\cref{fig:results_simplify_1Lbb}. The results obtained using the simplified likelihood are shown in blue, while the results obtained using the full likelihood are presented in orange. Both the observed (without the usual theoretical up and down variations on the signal cross section) and expected exclusion limits including the uncertainty band are shown. In the case of the full likelihood, the complete set of \gls{mc} statistical and systematic uncertainties introduced in \cref{ch:uncertainties} are taken into account. As discussed in \cref{sec:building_simplified_likelihoods}, the uncertainty band on the simplified likelihood contour results from the single nuisance parameter built by reducing the original nuisance parameters.
 
-The exact observed and expected CL$_s$ values obtained using both likelihoods are shown in~\cref{fig:scatter_cls}. As expected from the exclusion contour, both the simplified and the full likelihood agree reasonably well across the majority of the shown range in CL$_s$. For signal models highly excluded with the full likelihood, \ie $\mathrm{CL}_s \ll 0.05$, the simplified likelihood tends to result in slightly larger CL$_s$ values than the full likelihood, thus giving a conservative sensitivity estimate. In the range relevant to the exclusion contour at 95\% CL, the results from the simplified likelihood agree well with those from the full likelihood.
-
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.35\textwidth}}]{figure}[\FBwidth]
 {\caption{Comparison of the simplified likelihood (blue contours) and full likelihood (orange contours) results for the search for electroweakinos presented previously. The observed contours are shown as solid lines, while the expected contours are shown as dashed lines. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood, and only the simplified uncertainties in the case of the simplified likelihood.}\label{fig:results_simplify_1Lbb}}
 {\includegraphics[width=0.60\textwidth]{exclusion_1Lbb_noLabel}}
 \end{figure}
 
+The exact observed and expected CL$_s$ values obtained using both likelihoods are shown in~\cref{fig:scatter_cls}. As expected from the exclusion contour, both the simplified and the full likelihood agree reasonably well across the majority of the shown range in CL$_s$. For signal models well within exclusion with the full likelihood, \ie $\mathrm{CL}_s \ll 0.05$, the simplified likelihood tends to result in slightly larger CL$_s$ values than the full likelihood, thus giving a conservative sensitivity estimate. In the range relevant to the exclusion contour at 95\% CL, the results from the simplified likelihood agree well with those from the full likelihood.
+
+In addition to the 1-lepton search, the simplified likelihood approach has been applied on the ATLAS \gls{susy} searches listed in \cref{tab:simplified_performance}. An overview of the results can be seen in~\cref{fig:results_analyses}, comparing the exclusion contours obtained with the simplified likelihood against the full analysis results. Overall, the simplified likelihoods show excellent agreement with the original analysis results, demonstrating that this method can offer a fast and reliable approximation of ATLAS \gls{susy} searches.
+
+
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{cls_scatter_lin}
+		\centering\includegraphics[width=\textwidth]{cls_scatter_1Lbb_lin}
 		\caption{Linear scale}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{cls_scatter_log}
+		\centering\includegraphics[width=\textwidth]{cls_scatter_1Lbb_log}
 		\caption{Logarithmic scale}
 	\end{subfigure}
 	\caption{Scatter plots comparing the observed and expected CL$_s$ values obtained using the simplified and the full likelihoods for the same set of signal models considered in the search for electroweakinos. Both linear and logarithmic scale representations are shown.}\label{fig:scatter_cls}
 \end{figure}
 
 
-In addition to the search for electroweakinos presented herein, the simplified likelihood approach has been applied on a number of additional ATLAS SUSY searches. An overview of the results can be seen in~\cref{fig:results_analyses}
 
 
 
@@ -186,22 +188,44 @@ In addition to the search for electroweakinos presented herein, the simplified l
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering\includegraphics[width=\textwidth]{exclusion_2L0J_noLabel}
-		\caption{ATLAS 1L search~\cite{SUSY-2019-08}\label{fig:results_2L0J}}
+		\caption{ATLAS 2-lepton search~\cite{SUSY-2018-32}\label{fig:results_2L0J}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering\includegraphics[width=\textwidth]{exclusion_directstaus_noLabel}
-		\caption{\label{fig:results_directstaus}}
+		\caption{ATLAS direct stau search~\cite{SUSY-2018-04}\label{fig:results_directstaus}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering\includegraphics[width=\textwidth]{exclusion_3Loffshell_noLabel}
-		\caption{ATLAS 2L search~\cite{SUSY-2018-32}\label{fig:results_3Loffshell}}
+		\caption{ATLAS 3-lepton search\label{fig:results_3Loffshell}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering\includegraphics[width=\textwidth]{exclusion_compressed_noLabel}
-		\caption{ATLAS compressed electroweakino search~\cite{SUSY-2018-16}\label{fig:results_compressed}}
+		\caption{ATLAS compressed search~\cite{SUSY-2018-16}\label{fig:results_compressed}}
 	\end{subfigure}\hfill
 	\caption{Simplified likelihood results for the different ATLAS searches studied in this document. The results from the simplified likelihood (blue) are compared with the results of the full analysis likelihood (orange). The coloured numbers represent the observed CL$_s$ numbers obtained with both likelihoods.}\label{fig:results_analyses}
 \end{figure}
 
 
-\section{Limitations and future prospects}
+\section{Limitations}
+
+Building a well-performing simplified likelihood is not always as straightforward as described in~\cref{sec:building_simplified_likelihoods} and some analyses require special care when approximated. For example, in the case of the ATLAS compressed search~\cite{SUSY-2018-16} shown in~\cref{fig:results_compressed}, only a subset of the original analysis signal regions are entering the simplified likelihood, in order to improve the general agreement. The straightforward structure of the simplified likelihood is, in this case, not able to reproduce the statistical behaviour of the full likelihood. As the omitted channels only add limited sensitivity to the search, their removal in the simplified likelihood yields an overall improvement in agreement. 
+
+The reason for this is that the simplified likelihood assumes that the background model can be described by a single sample with a single systematic uncertainty constrained by a Gaussian correlated over all bins, with background event rates and uncertainties obtained from a background-only fit in all \glspl{cr} and \glspl{sr} using the full likelihood. This in particular assumes that the background model is sufficiently constrained by the large statistics in the \glspl{cr} and that the introduction of signal contributions---especially in the \glspl{sr}---does not significantly change the background model in a way that cannot be replicated with a single background sample where the event rates only depend on a single nuisance parameter. While it can be argued that such an unstable fit configuration where \glspl{cr} are no longer sufficiently constraining the background should be avoided in an analysis, such a configuration is especially problematic for the simplified likelihood where the background model is assumed to be fixed up to a single constrained nuisance parameter.
+
+\improvement{Plot of changing fit behaviour}
+
+An additional limitation arises in cases of significant signal contamination in the \glspl{cr}. In the full likelihood, significant signal contamination in the \glspl{cr} generally leads to smaller best-fit background normalisation factors and thus smaller background estimates in the \glspl{sr}. This, in turn, results in conservative exclusion limits. In the simplified likelihood, even with the \glspl{cr} included, the single constrained nuisance parameter might in such cases not offer enough freedom to the fit to scale down the background model enough in the $\mu = 1$ fit, resulting in \textit{fake} sensitivity in the \glspl{cr}. Although it is generally important to limit signal contamination in the \glspl{cr} for the sake of healthy statistical fits, this is especially true in the case of very simplified likelihoods as introduced here. In the case of the ATLAS stop search shown in~\cref{fig:results_stop1L}, significant signal contamination of more than 30\% appears in many signal models with $m(\tilde{t}_1) < m(\lsp)+m(t)$\footnote{This is a kinematic region that the analysis is not designed to be sensitive in.}, which can thus not be evaluated with the simplified likelihood.
+
+\section{Future prospects}
+
+The simplified likelihoods introduced in this chapter can offer precise and extremely efficient approximations of ATLAS \gls{susy} searches for which the full likelihood in \texttt{JSON} format is available (either internally but preferably publicly). A proof-of-concept python tool has been developed for generic conversion of any full likelihood into the simplified format introduced here.
+
+As the full likelihood defines the full statistical model given observed data in an analysis, other forms of likelihood simplifications can be thought of. One possible approach to investigate in the future is to construct likelihood simplifications with a variable number of nuisance parameters (as opposed to reducing the full set of nuisance parameters to a single one). In such an approach, a principal components analysis could be used to project the full $N$-dimensional nuisance parameter space onto a number $n$ principal components maximising the variance of the projected space, \ie resulting in minimal loss in correlation information. The $n$ principal components can then be kept separate, while the $N-n$ remaining components can be combined in quadrature into a \textit{residual} term. A similar approach was already introduced in \cref{ch:uncertainties}: the large number of nuisance parameters connected to the \gls{jer} and \gls{jes} uncertainties in the 1-lepton search are reduced to a more manageable set of \textit{effective} nuisance parameters with minimal loss in bin-by-bin correlation information. 
+
+Up until very recently, the only way for physicists outside the collaboration to re-use the ATLAS \gls{bsm} searches involved building approximations of the statistical models based on lossy projections of the full likelihood. With ATLAS' recent push to 
+ 
+In principle, the full likelihood contains all information necessary for generating a simplified likelihood with an ideal compromise between statistical precision and computational efficiency, allowing to find an ideal approximation given constraints on available computing resources. With theorists and phenomenologists  ATLAS' recent push to publish full analysis likelihoods in \texttt{JSON}
+
+
+
+
