@@ -42,11 +42,13 @@ Therefore, the following sections introduce a method for approximating ATLAS SUS
 
 
 
-In order to retain the full statistical combination of multiple signal region bins implemented in many SUSY searches, while still being able to achieve a sufficiently fast approximation, the statistical treatment of the systematic uncertainties as well as of the background model needs to be simplified. In the procedure presented in the following, this is achieved by first performing a background-only fit to data in all \glspl{sr} and \glspl{cr}, in order to determine the best-fit values of all the model parameters $\boldsymbol{\phi}$. This allows to determine the post-fit total background rate estimate as well as the total uncertainty on that estimate in every bin. 
+In order to retain the full statistical combination of multiple signal region bins implemented in many SUSY searches, while still being able to achieve a sufficiently fast approximation, the statistical treatment of the systematic uncertainties as well as of the background model needs to be simplified. In the procedure presented in the following, this is achieved by first performing a background-only fit to data in all \glspl{sr} and \glspl{cr}, in order to determine the best-fit values of all the model parameters $\boldsymbol{\phi}$. This allows to calculate the post-fit total background estimate as well as the total uncertainty on the estimate in every bin, both of which can be used to construct a simplified likelihood.
 
-As the full likelihood in \texttt{JSON} format defines the full statistical model used for statistical inference in the analysis, the above background-only fit can be performed using \texttt{pyhf} and the preserved full likelihood of the analysis. With the full likelihoods starting to become available on \textsc{HEPData} (see \eg \reference\cite{fullLH_1Lbb}) this procedure can rely on public information only. The simplified likelihoods introduced in the following, follow the same likelihood \texttt{JSON} specification introduced for the full likelihoods in \reference\cite{ATL-PHYS-PUB-2019-029}. The following description only highlights the specification details relevant to the simplified likelihood. 
+As the full likelihood in \texttt{JSON} format defines the full statistical model used for the statistical inference, the above background-only fit can be performed using \texttt{pyhf} and the preserved full likelihood of the analysis. With the full likelihoods starting to become available on \textsc{HEPData} (see \eg \reference\cite{fullLH_1Lbb}) this procedure can rely on public information only and is therefore widely accessible to the \gls{hep} community. The simplified likelihoods introduced in the following, follow the same \texttt{JSON} specification introduced for the full likelihoods in \reference\cite{ATL-PHYS-PUB-2019-029}. The following description highlights the specification details relevant to the simplified likelihood. 
 
-In the simplified likelihood, the background model is approximated with a single background sample, representing the total \gls{sm} background rate in the different analysis channels (called \texttt{total\_bkg} in \cref{lst:bkg_sample}). The sample rate of the total background sample is set to the total post-fit background rate obtained in the background-only fit (in \cref{lst:bkg_sample} set to be $10.0$). Likewise, the complete set of nuisance parameters in the original full likelihood is reduced to a single constrained parameter $\alpha$ with up and down variations corresponding to the post-fit uncertainty on the total \gls{sm} background estimate in each bin (called \texttt{total\_error} in \cref{lst:bkg_sample}). It is constrained by a Gaussian $\mathrm{Gaus}(a = 0 \vert \alpha , \sigma = 1)$ and is correlated over all bins in each channel. Although the final uncertainty is constrained by a simple Gaussian, the full treatment of the uncertainties in the background-only fit using the full likelihood ensures that non-Gaussian effects are included to some extent.
+\subsubsection{Background model}
+
+In the simplified likelihood, the background model is approximated with a single background sample, representing the total \gls{sm} background estimate in the different analysis channels (called \texttt{total\_bkg} in \cref{lst:bkg_sample}). The sample rate of the total background sample is set to the total post-fit background estimate obtained in the background-only fit using the full statistical model (in \cref{lst:bkg_sample} set to be $10.0$). Likewise, the complete set of nuisance parameters in the original full likelihood is reduced to a single constrained parameter $\alpha$ with up and down variations corresponding to the post-fit uncertainties on the total \gls{sm} background estimates in each bin (called \texttt{total\_error} in \cref{lst:bkg_sample}). It is constrained by a Gaussian $\mathrm{Gaus}(a = 0 \vert \alpha , \sigma = 1)$ and is correlated over all bins in each channel. Although the final uncertainty is constrained by a simple Gaussian, the full treatment of the uncertainties in the background-only fit using the full likelihood ensures that non-Gaussian effects are included to some extent.
 
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[language=json,firstnumber=1,caption={Example of a total background sample with sample rate and total uncertainty as derived from a previous fit in the \glspl{sr} and \glspl{cr}.},captionpos=b, label=lst:bkg_sample]
@@ -57,6 +59,8 @@ In the simplified likelihood, the background model is approximated with a single
 }
 \end{lstlisting}
 \end{minipage}
+
+\subsubsection{Analysis channels}
 
 Each original channel in the full likelihood with the original number of bins is also entering the simplified likelihood, and each contains the total background sample as specified above. Apart from the total background sample, one additional sample is needed---the signal sample. An example of a signal sample is shown in \cref{lst:sig_sample}. It introduces the unconstrained signal strength parameter $\mu$ as second parameter of the statistical model. For simplicity, the example shown in \cref{lst:sig_sample} does not introduce any additional uncertainties on the signal rates, thereby assuming that them to be negligible. Depending on the \gls{bsm} scenario, signal uncertainties can be introduced through additional nuisance parameters (modifiers).
 
@@ -69,6 +73,8 @@ Each original channel in the full likelihood with the original number of bins is
 }
 \end{lstlisting}
 \end{minipage}
+
+\subsubsection{Observations and measurements}
 
 According to the \texttt{JSON} specification defined in \reference\cite{ATL-PHYS-PUB-2019-029}, the data observed by the analysis in each channel (and each bin) is introduced by means of an \textit{observation}. In the case of the simplified likelihood, this is taken directly from the full likelihood and, by construction, does not need to be modified. An example of an observation including several channels and bins is shown in~\cref{lst:observation}.
 
@@ -97,9 +103,12 @@ The only part of the \texttt{JSON} specification left to be defined is the \text
 \end{lstlisting}
 \end{minipage}
 
-Put together, the above pieces result in a simplified likelihood for a given signal model, using a background model obtained from an initial background-only fit using the full likelihood considering the full treatment of systematic uncertainties. Replacing the signal sample by the means of \texttt{JSON} patches allows to test any signal model for which the expected yields in the analysis regions are known.  
+Put together, the above pieces result in a simplified likelihood for a given signal model, using a background model obtained from an initial background-only fit using the full likelihood considering the full treatment of systematic uncertainties. Replacing the signal sample by the means of \texttt{JSON} patches allows for systematic reinterpretations of any signal model for which the expected rates in the analysis regions are known.  
+
 
 \section{Computational performance}\label{sec:cpu_performance}
+
+One of the main figures of merit of an analysis approximation naturally is the reduction in wall time compared to the full analysis. \Cref{fig:benchmark_1Lbb} shows a benchmark for different likelihood configurations of the search for electroweakinos presented herein. The wall time of the full analysis likelihood is compared with that of the simplified likelihood constructed following the previously introduced prescription. In addition, the wall time of the single-bin likelihood using the discovery \glspl{sr} in a setup similar to that already used in the naive approximation in \cref{fig:single_bin}, is shown. For each likelihood, different computational backends are used for the tensor algebra operations in \texttt{pyhf}. All benchmarks have been performed on an Intel i7-4790 CPU with a nominal clock speed of $\SI{3.60}{\GHz}$, 4 cores and 8 threads. The CPU was not isolated but under minimal load. The original 125 signal points of the analysis where used in each configuration.
 
 \begin{figure}
 	\centering    
@@ -108,5 +117,91 @@ Put together, the above pieces result in a simplified likelihood for a given sig
 	\label{fig:benchmark_1Lbb}
 \end{figure}
 
+The use of automatic differentiation of the full likelihood gradient enabled by some of the tensor algebra backends to \texttt{pyhf} offers an efficient minimisation of the likelihood resulting in fast hypothesis tests of $\mathcal{O}(\SI{5}{\second})$ for the full analysis. In large-scale reinterpretations, this is however still to computationally expensive. The simplified likelihood, on the other hand, results in a wall time for hypothesis tests as fast as $\SI{0.04}{\second}$ per signal model. Thus, the computational performance of the simplified likelihood is in the same order of magnitude as that of the naive single-bin approach\footnote{In fact, the simplified likelihood is actually even faster than the single-bin approach, as the latter needs to be executed separately for each discovery \gls{sr} and thus the numbers quoted need to be multiplied by the number of discovery \glspl{sr} used in the analysis.}, but offers by construction a significantly better approximation oft the true analysis exclusion power.
+
+Interestingly, the wall time of the simplified likelihood does not benefit from the usage of features like automatic differentiation offered by \eg \textsc{PyTorch}. This is due to the extreme simplicity of the simplified likelihood function, therefore the computational benefits from features like automatic differentiation do not outweigh the overhead of libraries like \textsc{PyTorch}.
+
+In addition to the search for electroweakinos presented herein, the simplified likelihood approach has also been applied on a number of other ATLAS SUSY searches. \Cref{tab:simplified_performance} 
+
+\begin{table}
+	\begin{center}
+	\small
+			\begin{tabular} {l r r}
+				\toprule
+				Analysis & Full likelihood [s] & Simplified likelihood [s] \\
+				\midrule
+				ATLAS compressed search~\cite{SUSY-2018-16} & 0 & 0 \\
+				ATLAS 3-lepton search & 0 & 0 \\
+				ATLAS 2-lepton search~\cite{SUSY-2018-32} & 0 & 0 \\
+				ATLAS 1-lepton search~\cite{SUSY-2019-08} & 0 & 0 \\
+				ATLAS direct stau search~\cite{SUSY-2018-04} & 0 & 0 \\
+				ATLAS sbottom search~\cite{SUSY-2018-31} & 0 & 0 \\
+				ATLAS stop search & 0 & 0 \\
+				\bottomrule
+			\end{tabular}
+		\caption{}
+		\label{tab:simplified_performance}
+	\end{center}
+\end{table}
 
 \section{Physics performance}\label{sec:physics_performance}
+
+A comparison of the exclusion contours obtained with the full and simplified likelihoods in the context of the search for electroweakinos presented herein is shown in~\cref{fig:results_simplify_1Lbb}. The results obtained using the simplified likelihood are shown in blue, while the results obtained using the full likelihood are presented in orange. Both the observed (without the usual theoretical up and down variations on the signal cross section) and expected exclusion limits including the uncertainty band are shown. In the case of the full likelihood, the complete set of \gls{mc} statistical and systematic uncertainties introduced in \cref{ch:uncertainties} are taken into account. As discussed in \cref{sec:building_simplified_likelihoods}, the uncertainty band on the simplified likelihood contour results from the single nuisance parameter built by reducing the original nuisance parameters.
+
+The exact observed and expected CL$_s$ values obtained using both likelihoods are shown in~\cref{fig:scatter_cls}. As expected from the exclusion contour, both the simplified and the full likelihood agree reasonably well across the majority of the shown range in CL$_s$. For signal models highly excluded with the full likelihood, \ie $\mathrm{CL}_s \ll 0.05$, the simplified likelihood tends to result in slightly larger CL$_s$ values than the full likelihood, thus giving a conservative sensitivity estimate. In the range relevant to the exclusion contour at 95\% CL, the results from the simplified likelihood agree well with those from the full likelihood.
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.35\textwidth}}]{figure}[\FBwidth]
+{\caption{Comparison of the simplified likelihood (blue contours) and full likelihood (orange contours) results for the search for electroweakinos presented previously. The observed contours are shown as solid lines, while the expected contours are shown as dashed lines. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood, and only the simplified uncertainties in the case of the simplified likelihood.}\label{fig:results_simplify_1Lbb}}
+{\includegraphics[width=0.60\textwidth]{exclusion_1Lbb_noLabel}}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{cls_scatter_lin}
+		\caption{Linear scale}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{cls_scatter_log}
+		\caption{Logarithmic scale}
+	\end{subfigure}
+	\caption{Scatter plots comparing the observed and expected CL$_s$ values obtained using the simplified and the full likelihoods for the same set of signal models considered in the search for electroweakinos. Both linear and logarithmic scale representations are shown.}\label{fig:scatter_cls}
+\end{figure}
+
+
+In addition to the search for electroweakinos presented herein, the simplified likelihood approach has been applied on a number of additional ATLAS SUSY searches. An overview of the results can be seen in~\cref{fig:results_analyses}
+
+
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_sbottom_noLabel}
+		\caption{ATLAS sbottom search~\cite{SUSY-2018-31}\label{fig:results_sbottom}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_noLabel}
+		\caption{ATLAS stop search\label{fig:results_stop1L}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_2L0J_noLabel}
+		\caption{ATLAS 1L search~\cite{SUSY-2019-08}\label{fig:results_2L0J}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_directstaus_noLabel}
+		\caption{\label{fig:results_directstaus}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_3Loffshell_noLabel}
+		\caption{ATLAS 2L search~\cite{SUSY-2018-32}\label{fig:results_3Loffshell}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_compressed_noLabel}
+		\caption{ATLAS compressed electroweakino search~\cite{SUSY-2018-16}\label{fig:results_compressed}}
+	\end{subfigure}\hfill
+	\caption{Simplified likelihood results for the different ATLAS searches studied in this document. The results from the simplified likelihood (blue) are compared with the results of the full analysis likelihood (orange). The coloured numbers represent the observed CL$_s$ numbers obtained with both likelihoods.}\label{fig:results_analyses}
+\end{figure}
+
+
+\section{Limitations and future prospects}

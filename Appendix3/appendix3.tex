@@ -1,0 +1,48 @@
+%!TEX root = ../thesis.tex
+% ******************************* Thesis Appendix B ********************************
+
+\chapter{}
+\ifpdf
+\graphicspath{{chapter-simplify/Figs/Raster/}{chapter-simplify/Figs/PDF/}{chapter-simplify/Figs/}}
+\else
+\graphicspath{{chapter-simplify/Figs/Vector/}{chapter-simplify/Figs/}}
+\fi
+
+\section{Simplified likelihood results}
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.35\textwidth}}]{figure}[\FBwidth]
+{\caption{Comparison of the simplified likelihood (blue contours) and full likelihood (orange contours) results for the search for electroweakinos presented previously. The observed contours are shown as solid lines, while the expected contours are shown as dashed lines. Observed CL$_s$ values from both likelihoods are given. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood, and only the simplified uncertainties in the case of the simplified likelihood.}\label{fig:app_results_simplify_1Lbb}}
+{\includegraphics[width=0.60\textwidth]{exclusion_1Lbb_CLs_noLabel}}
+\end{figure}
+
+
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_sbottom_CLs_noLabel}
+		\caption{ATLAS sbottom search~\cite{SUSY-2018-31}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_CLs_noLabel}
+		\caption{ATLAS stop search}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_2L0J_CLs_noLabel}
+		\caption{ATLAS 1L search~\cite{SUSY-2019-08}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_directstaus_CLs_noLabel}
+		\caption{}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_3Loffshell_CLs_noLabel}
+		\caption{ATLAS 2L search~\cite{SUSY-2018-32}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_compressed_CLs_noLabel}
+		\caption{ATLAS compressed electroweakino search~\cite{SUSY-2018-16}}
+	\end{subfigure}\hfill
+	\caption{}\label{fig:app_results_analyses}
+\end{figure}
