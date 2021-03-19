@@ -154,9 +154,9 @@ A comparison of the exclusion contours obtained with the full and simplified lik
 {\includegraphics[width=0.60\textwidth]{exclusion_1Lbb_noLabel}}
 \end{figure}
 
-The exact observed and expected CL$_s$ values obtained using both likelihoods are shown in~\cref{fig:scatter_cls}. As expected from the exclusion contour, both the simplified and the full likelihood agree reasonably well across the majority of the shown range in CL$_s$. For signal models well within exclusion with the full likelihood, \ie $\mathrm{CL}_s \ll 0.05$, the simplified likelihood tends to result in slightly larger CL$_s$ values than the full likelihood, thus giving a conservative sensitivity estimate. In the range relevant to the exclusion contour at 95\% CL, the results from the simplified likelihood agree well with those from the full likelihood.
+The exact observed and expected CL$_s$ values obtained using both likelihoods are shown in~\cref{fig:scatter_cls}. As expected from the exclusion contour, both the simplified and the full likelihood agree reasonably well across the majority of the shown range in CL$_s$. For signal models well within exclusion with the full likelihood, \ie $\mathrm{CL}_s \ll 0.05$, the simplified likelihood of the 1-lepton analysis tends to result in slightly lower CL$_s$ values than the full likelihood, thus giving a slightly too optimistic sensitivity estimate. In the range relevant to the exclusion contour at 95\% CL, the results from the simplified likelihood agree however well with those from the full likelihood.
 
-In addition to the 1-lepton search, the simplified likelihood approach has been applied on the ATLAS \gls{susy} searches listed in \cref{tab:simplified_performance}. An overview of the results can be seen in~\cref{fig:results_analyses}, comparing the exclusion contours obtained with the simplified likelihood against the full analysis results. Overall, the simplified likelihoods show excellent agreement with the original analysis results, demonstrating that this method can offer a fast and reliable approximation of ATLAS \gls{susy} searches.
+In addition to the 1-lepton search, the simplified likelihood approach has been applied on the ATLAS \gls{susy} searches listed in \cref{tab:simplified_performance}. An overview of the results can be seen in~\cref{fig:results_analyses}, comparing the exclusion contours obtained with the simplified likelihood against the full analysis results. In some analyses, \eg the ATLAS sbottom search as well as the ATLAS 3-lepton search, the simplified likelihoods show excellent agreements. In other analyses like \eg the ATLAS direct stau search, the agreement is less good but overall still acceptable, demonstrating that this method can offer a fast and reliable approximation of ATLAS \gls{susy} searches.
 
 
 \begin{figure}
@@ -171,9 +171,6 @@ In addition to the 1-lepton search, the simplified likelihood approach has been 
 	\end{subfigure}
 	\caption{Scatter plots comparing the observed and expected CL$_s$ values obtained using the simplified and the full likelihoods for the same set of signal models considered in the search for electroweakinos. Both linear and logarithmic scale representations are shown.}\label{fig:scatter_cls}
 \end{figure}
-
-
-
 
 
 \begin{figure}
@@ -206,7 +203,7 @@ In addition to the 1-lepton search, the simplified likelihood approach has been 
 \end{figure}
 
 
-\section{Limitations}
+\section{Limitations}\label{sec:simplify_limitations}
 
 Building a well-performing simplified likelihood is not always as straightforward as described in~\cref{sec:building_simplified_likelihoods} and some analyses require special care when approximated. For example, in the case of the ATLAS compressed search~\cite{SUSY-2018-16} shown in~\cref{fig:results_compressed}, only a subset of the original analysis signal regions are entering the simplified likelihood, in order to improve the general agreement. The straightforward structure of the simplified likelihood is, in this case, not able to reproduce the statistical behaviour of the full likelihood. As the omitted channels only add limited sensitivity to the search, their removal in the simplified likelihood yields an overall improvement in agreement. 
 
@@ -220,11 +217,11 @@ An additional limitation arises in cases of significant signal contamination in 
 
 The simplified likelihoods introduced in this chapter can offer precise and extremely efficient approximations of ATLAS \gls{susy} searches for which the full likelihood in \texttt{JSON} format is available (either internally but preferably publicly). A proof-of-concept python tool has been developed for generic conversion of any full likelihood into the simplified format introduced here.
 
-As the full likelihood defines the full statistical model given observed data in an analysis, other forms of likelihood simplifications can be thought of. One possible approach to investigate in the future is to construct likelihood simplifications with a variable number of nuisance parameters (as opposed to reducing the full set of nuisance parameters to a single one). In such an approach, a principal components analysis could be used to project the full $N$-dimensional nuisance parameter space onto a number $n$ principal components maximising the variance of the projected space, \ie resulting in minimal loss in correlation information. The $n$ principal components can then be kept separate, while the $N-n$ remaining components can be combined in quadrature into a \textit{residual} term. A similar approach was already introduced in \cref{ch:uncertainties}: the large number of nuisance parameters connected to the \gls{jer} and \gls{jes} uncertainties in the 1-lepton search are reduced to a more manageable set of \textit{effective} nuisance parameters with minimal loss in bin-by-bin correlation information. 
+As the full likelihood defines the full statistical model given observed data in an analysis, other forms of likelihood simplifications can be thought of. One possible approach to investigate in the future is to construct likelihood simplifications with a variable number of nuisance parameters (as opposed to reducing the full set of nuisance parameters to a single one). In such an approach, a principal components analysis could be used to project the full $N$-dimensional nuisance parameter space onto a number $n$ principal components maximising the variance of the projected space, \ie resulting in minimal loss in correlation information. The $n$ principal components can then be kept separate, while the $N-n$ remaining components can be combined in quadrature into a \textit{residual} term. A similar approach was already introduced in \cref{ch:uncertainties} where the large number of nuisance parameters connected to the \gls{jer} and \gls{jes} uncertainties in the 1-lepton search were reduced to a more manageable set of \textit{effective} nuisance parameters with minimal loss in bin-by-bin correlation information. 
 
-Up until very recently, the only way for physicists outside the collaboration to re-use the ATLAS \gls{bsm} searches involved building approximations of the statistical models based on lossy projections of the full likelihood. With ATLAS' recent push to 
- 
-In principle, the full likelihood contains all information necessary for generating a simplified likelihood with an ideal compromise between statistical precision and computational efficiency, allowing to find an ideal approximation given constraints on available computing resources. With theorists and phenomenologists  ATLAS' recent push to publish full analysis likelihoods in \texttt{JSON}
+Up until very recently, the only way for physicists outside the collaboration to re-use ATLAS \gls{bsm} searches involved building approximations of their statistical models based on lossy projections of the full likelihood. With ATLAS' recent push to publish full analysis likelihoods, new approaches for approximation of the statistical models are becoming available. In principle, the full likelihood contains all information necessary for generating a simplified likelihood with an ideal compromise between statistical precision and computational efficiency, allowing to find an ideal approximation given constraints on available computing resources. 
+
+\improvement{ref to simplify}
 
 
 

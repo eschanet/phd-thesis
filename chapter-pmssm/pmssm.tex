@@ -11,12 +11,63 @@
     \graphicspath{{chapter-pmssm/Figs/Vector/}{chapter-pmssm/Figs/}}
 \fi
 
+After having discussed to some extent efforts and methods to reinterpret ATLAS searches for \gls{susy}, this chapter presents a reinterpretation of the 1-lepton analysis in the \gls{pmssm}. The truth analysis and simplified likelihoods discussed in~\cref{ch:preservation,ch:simplify}, respectively, are instrumental for the following sections. 
+
+\section{Motivation}
+
+In today's searches for \gls{bsm} physics, it is common to use simplified models as a way of avoiding to necessity to deal with high-dimensional parameter spaces that are extremely challenging to sample and compare to data in an exhaustive way. The simplified model approach has also been used in the second part of this work, where results of the interpretation of the 1-lepton analysis in the $\charg\neutr\rightarrow Wh\lsp\lsp$ model have been presented. As has been discussed in~\cref{sec:simplified_models}, simplified models are however by no means complete \gls{susy} models and only serve as proxies for more complex and realistic \gls{susy} scenarios. As such, simplified model limits cannot trivially be translated into limits on model parameters of a more complete \gls{susy} model. Large-scale reinterpretations are necessary to understand the constraints today's \gls{susy} searches set on realistic \gls{susy} scenarios. 
+
+One class of more complete models, focussing on phenomenologically viable models, is the \gls{pmssm}, introduced in~\cref{sec:theory_pmssm}. With its 19 parameters it offers much more complex \gls{susy} scenarios while still being of somewhat manageable dimensionality. Still, large-scale reinterpretations in the \gls{pmssm} are computationally challenging and require a set of approximation as those introduced in~\cref{ch:preservation,ch:simplify}.
+
+Large-scale reinterpretations in the \gls{pmssm} using a collection of relevant ATLAS \gls{susy} searches not only allow to assess the sensitivity of the ATLAS \gls{susy} search program towards more realistic \gls{susy} scenarios, but can also potentially reveal interesting regions of the parameter space not yet covered by the current search programme. Moreover, such reinterpretations allow to demonstrate the sensitivity of simplified model searches beyond the simplified models they are originally interpreted in, thereby justifying the use of simplified models as proxies for more complete \gls{susy} scenarios. In addition, reinterpretations in the \gls{pmssm} can be used to connect the ATLAS \gls{susy} searches with dark matter constraints from non-collider experiments, as well as Higgs and flavour measurements. \unsure{might want to tweak this last sentence} 
+
+Although the following sections will be restricted to a reinterpretation of the 1-lepton search presented in the second part of this thesis, efforts are ongoing in ATLAS to perform large-scale reinterpretations using a majority of the full Run~2 ATLAS \gls{susy} searches. These efforts will most likely result in one of the most comprehensive set of ATLAS constraints on \gls{susy} yetope.
+
+\section{Model sampling}\label{sec:pmssm_sampling}
+
+
+\begin{table}[h]
+	\centering
+	\small
+	\caption{Scan ranges used for each of the 19 pMSSM parameters.}
+	\setlength\heavyrulewidth{0.2ex}
+	\begin{tabular} {l r r l}
+		\toprule
+		Parameter & min & max & Note \\ 
+		\midrule
+		$m_{\tilde{L}_1}$ $(=m_{\tilde{L}_2})$ & $\SI{10}{\TeV}$ & $\SI{10}{\TeV}$ & Left-handed slepton (first two gens.) mass \\
+		$m_{\tilde{e}_1}$ $(=m_{\tilde{e}_2})$ & $\SI{10}{\TeV}$ & $\SI{10}{\TeV}$ & Right-handed slepton (first two gens.) mass \\ 
+		$m_{\tilde{L}_3}$ & $\SI{10}{\TeV}$ & $\SI{10}{\TeV}$ & Left-handed stau doublet mass \\
+		$m_{\tilde{e}_3}$ & $\SI{10}{\TeV}$ & $\SI{10}{\TeV}$ & Right-handed stau mass \\
+		\midrule
+		$m_{\tilde{Q}_1}$ $(=m_{\tilde{Q}_2})$ & $\SI{10}{\TeV}$ & $\SI{10}{\TeV}$ & Left-handed squark (first two gens.) mass \\
+		$m_{\tilde{u}_1}$ $(=m_{\tilde{u}_2})$ & $\SI{10}{\TeV}$ & $\SI{10}{\TeV}$ & Right-handed up-type squark (first two gens.) mass \\
+		$m_{\tilde{d}_1}$ $(=m_{\tilde{d}_2})$ &$\SI{10}{\TeV}$ & $\SI{10}{\TeV}$ & Right-handed down-type squark (first two gens.) mass \\
+		$m_{\tilde{Q}_3}$ & $\SI{2}{\TeV}$ & $\SI{5}{\TeV}$ & Left-handed squark (third gen.) mass \\
+		$m_{\tilde{u}_3}$ & $\SI{2}{\TeV}$ & $\SI{5}{\TeV}$ & Right-handed top squark mass \\
+		$m_{\tilde{d}_3}$ & $\SI{2}{\TeV}$ & $\SI{5}{\TeV}$ & Right-handed bottom squark mass \\
+		\midrule
+		$\vert M_1\vert$ & $\SI{0}{\TeV}$ & $\SI{2}{\TeV}$ & Bino mass parameter \\
+		$\vert M_2\vert$ & $\SI{0}{\TeV}$ & $\SI{2}{\TeV}$ & Wino mass parameter \\
+		$\vert\mu\vert$ & $\SI{0}{\TeV}$ & $\SI{2}{\TeV}$ & Bilinear Higgs mass parameter \\
+		$M_3$ & $\SI{1}{\TeV}$ & $\SI{5}{\TeV}$ & Gluino mass parameter \\
+		\midrule
+		$\vert A_t\vert$ & $\SI{0}{\TeV}$ & $\SI{8}{\TeV}$ & Trilinear top coupling \\
+		$\vert A_b\vert$ & $\SI{0}{\TeV}$ & $\SI{2}{\TeV}$ & Trilinear bottom coupling \\
+		$\vert A_\tau\vert$ & $\SI{0}{\TeV}$ & $\SI{2}{\TeV}$ & Trilinear $\tau$ lepton coupling \\
+		$M_A$ & $\SI{0}{\TeV}$ & $\SI{5}{\TeV}$ & Pseudoscalar Higgs boson mass \\
+		$\tan\beta$ & $1$ & $60$ & Ratio of the Higgs vacuum expectation values \\
+		\bottomrule
+	\end{tabular}
+
+	\label{fig:pmssm_scan_ranges}   
+\end{table}
 
 
 
+\section{Model selection and processing}
+
+\section{Truth analysis}\label{sec:truth_smearing}
 
 
-
-\section{Truth smearing}\label{sec:truth_smearing}
-
-\section{Sampling}\label{sec:pmssm_sampling}
+\section{Results}

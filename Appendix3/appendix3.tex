@@ -10,9 +10,13 @@
 
 \section{Simplified likelihood results}
 
-\begin{figure}
+\Cref{fig:app_results_simplify_1Lbb,fig:results_analyses} show comparisons of the exclusion limits obtained using the full and simplified likelihoods for different ATLAS \gls{susy} searches. In addition to the exclusion limits, the observed CL$_s$ are given for every signal model tested. Although some likelihood simplifications needed special care (see \cref{sec:simplify_limitations}) and validation, a good agreement is observed throughout all analyses tested. \Cref{fig:app_results_cls_1,fig:app_results_cls_2} directly compare the expected and observed CL$_s$ values obtained using both likelihood configurations for each ATLAS \gls{susy} search considered. Both linear- and log-scale representations are shown, revealing that the simplified likelihood tends to lead to good agreement in the CL$_s$ values around $0.05$, while slightly overestimating sensitivity in the region with CL$_s \ll 0.05$, where signal models are in any case being excluded (and thus to some extent it is not important how small the CL$_s$ value actually is).
+
+\vspace{5em}
+
+\begin{figure}[hb]
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.35\textwidth}}]{figure}[\FBwidth]
-{\caption{Comparison of the simplified likelihood (blue contours) and full likelihood (orange contours) results for the search for electroweakinos presented previously. The observed contours are shown as solid lines, while the expected contours are shown as dashed lines. Observed CL$_s$ values from both likelihoods are given. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood, and only the simplified uncertainties in the case of the simplified likelihood.}\label{fig:app_results_simplify_1Lbb}}
+{\caption{Comparison of the simplified likelihood (blue contours) and full likelihood (orange contours) results for the search for electroweakinos presented previously. The observed contours are shown as solid lines, while the expected contours are shown as dashed lines. Observed CL$_s$ values from both likelihoods are given. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood, and the simplified uncertainties in the case of the simplified likelihood.}\label{fig:app_results_simplify_1Lbb}}
 {\includegraphics[width=0.60\textwidth]{exclusion_1Lbb_CLs_noLabel}}
 \end{figure}
 
@@ -41,10 +45,10 @@
 		\caption{ATLAS 3-lepton search\label{fig:results_3Loffshell}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_compressed_noLabel}
+		\centering\includegraphics[width=\textwidth]{exclusion_compressed_CLs_noLabel}
 		\caption{ATLAS compressed search~\cite{SUSY-2018-16}\label{fig:results_compressed}}
 	\end{subfigure}\hfill
-	\caption{Simplified likelihood results for the different ATLAS searches studied in this document. The results from the simplified likelihood (blue) are compared with the results of the full analysis likelihood (orange). The coloured numbers represent the observed CL$_s$ numbers obtained with both likelihoods.}\label{fig:results_analyses}
+	\caption{Comparison of the simplified likelihood (blue contours) and full likelihood (orange contours) results for different ATLAS \gls{susy} searches. The observed contours are shown as solid lines, while the expected contours are shown as dashed lines. Observed CL$_s$ values from both likelihoods are given. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood, and the simplified uncertainties in the case of the simplified likelihood.}\label{fig:results_analyses}
 \end{figure}
 
 
@@ -75,7 +79,7 @@
 		\centering\includegraphics[width=\textwidth]{cls_scatter_2L0J_log}
 		\caption{ATLAS 2-lepton search~\cite{SUSY-2018-32}}
 	\end{subfigure}\hfill
-	\caption{}\label{fig:app_results_cls_1}
+	\caption{Scatter plots comparing the observed and expected CL$_s$ values obtained using the simplified and the full likelihoods for the same set of signal models originally considered in the various ATLAS \gls{susy} searches. Both linear and logarithmic scale representations are shown on the left- and right-hand side, respectively, illustrating the full range of CL$_s$ values. Apart from the scales, both columns show exactly the same results for each row of plots.}\label{fig:app_results_cls_1}
 \end{figure}
 
 
@@ -105,5 +109,5 @@
 		\centering\includegraphics[width=\textwidth]{cls_scatter_compressed_log}
 		\caption{ATLAS compressed search~\cite{SUSY-2018-16}}
 	\end{subfigure}\hfill
-	\caption{}\label{fig:app_results_cls_2}
+	\caption{Scatter plots comparing the observed and expected CL$_s$ values obtained using the simplified and the full likelihoods for the same set of signal models originally considered in the various ATLAS \gls{susy} searches. Both linear and logarithmic scale representations are shown on the left- and right-hand side, respectively, illustrating the full range of CL$_s$ values. Apart from the scales, both columns show exactly the same results for each row of plots.}\label{fig:app_results_cls_2}
 \end{figure}
