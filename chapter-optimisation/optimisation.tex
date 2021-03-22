@@ -102,11 +102,11 @@ A total of six so-called \textit{benchmark} signal points representative for the
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_300_150.pdf}
-		\caption{}
+		\caption{$m(\charg/\neutr), m(\lsp) =  300, \SI{150}{\GeV}$}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_800_250.pdf}
-		\caption{}
+		\caption{$m(\charg/\neutr), m(\lsp) =  800, \SI{250}{\GeV}$}
 	\end{subfigure}\hfill
 
 	\caption[N-dimensional cut scan results]{Results of the $N$-dimensional cut scan for two exemplary benchmark points. The binomial discovery significance $Z_\mathrm{B}$ is plotted against the signal efficiency for varying uncertainty configurations. Additionally, the expected \gls{sm} background rates are shown, including statistical uncertainty for one of the two statistically independent samples (shaded area). The solid and dashed lines represent the two statistically independent subset that the \gls{mc} samples are split into.}
@@ -144,7 +144,7 @@ The discrete selection possibilities for each of the observables are shown in \c
 
 
 
-\subsection{Towards the final signal regions}
+\subsection{Towards the final signal regions}\label{sec:towards_signal_regions}
 
 The optimal cut combinations obtained for the benchmark signal points, shown in~\cref{tab:cut_scan_results}, subsequently need to be consolidated into a finite set of \glspl{sr}. From~\cref{tab:cut_scan_results}, it can easily be seen that all benchmark points favour a baseline selection including exactly two \textit{b}-jets, possibly one additional light jet, a Higgs mass window requirement of roughly $\mbb\in [100,140]$~$\SI{}{\GeV}$, and $\etmiss > \SI{240}{\GeV}$. The requirements on $\mt$, $\mct$ and $\mlb$ are however not easily consolidated into a single signal region, as they vastly differ depending on the model space represented by each benchmark point.
 
@@ -168,17 +168,17 @@ As expected already from~\cref{tab:cut_scan_results}, the best performing config
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{HF/plot_2d_shapefit}
-		\caption{}
+		\caption{\label{fig:previous_analysis_comparison}}
 	\end{subfigure}\hfill
 
-	\caption{}
+	\caption{Comparison of different shape-fit configurations. Fig.~\subref{fig:plot_binnings} compares three different two-dimensional shape-fit configurations using $3\times 3$ bins in ($\mt$, $\etmiss$), ($\mt$, $\mbb$) and ($\mt$, $\mct$). Fig.~\subref{fig:previous_analysis_comparison} compares the two-dimensional shape-fit in $\mt$ and $\mct$ to the previous analysis iteration signal regions scaled to \onethirtynineifb. All shown exclusion limits are expected limits at 95\% CL, using \gls{mc} statistical and 30\% systematic uncertainty.}
 	\label{fig:results_HF_scans}
 \end{figure}
 
 
 \section{Signal region definitions}\label{sec:signal_region_definitions}
 
-An overview of the final signal region definitions is provided in~\cref{tab:SignalRegionDef}. Based on the previously discussed results, three signal regions bins in $\mt$ are defined, optimised for the low (SRLM), medium (SRMM), and high (SRHM) mass difference regimes. While SRLM targets the smallest values of $\mt$, SRMM and SRHM target progressively increasing values of $\mt$. All three signal regions are further divided into three $\mct$ bins each, resulting in a total of nine disjoint \gls{sr} bins. The signal region with the highest requirement on $\mt$ (SRHM) also requires $\mlb>\SI{120}{\GeV}$, for the reason explained previously. All three \glspl{sr} otherwise share a common set of requirements on the number of jets, $\etmiss$ and $\mbb$. As shape-fits are by construction highly model-dependent\footnote{The signal shapes need to be known in order to estimate the expected signal rates in multiple, disjoint signal region bins.}, these \glspl{sr} will be used for deriving model-dependent limits in the case where no significant excess compared to the expected \gls{sm} background rate is seen in data. For this reason, the shape-fit regions will be referred to as \textit{exclusion} regions in the following. A graphical representation of the nine exclusion signal region bins is shown in~\cref{fig:sr_strategy}.
+An overview of the final signal region definitions is provided in~\cref{tab:SignalRegionDef}. Based on the previously discussed results, three signal regions bins in $\mt$ are defined, optimised for the low (SR-LM), medium (SR-MM), and high (SR-HM) mass difference regimes. While SRLM targets the smallest values of $\mt$, SRMM and SRHM target progressively increasing values of $\mt$. All three signal regions are further divided into three $\mct$ bins each, resulting in a total of nine disjoint \gls{sr} bins. The signal region with the highest requirement on $\mt$ (SR-HM) also requires $\mlb>\SI{120}{\GeV}$, for the reason explained previously. All three \glspl{sr} otherwise share a common set of requirements on the number of jets, $\etmiss$ and $\mbb$. As shape-fits are by construction highly model-dependent\footnote{The signal shapes need to be known in order to estimate the expected signal rates in multiple, disjoint signal region bins.}, these \glspl{sr} will be used for deriving model-dependent limits in the case where no significant excess compared to the expected \gls{sm} background rate is seen in data. For this reason, the shape-fit regions will be referred to as \textit{exclusion} regions in the following. A graphical representation of the nine exclusion signal region bins is shown in~\cref{fig:sr_strategy}.
 
 For evaluating a potential excess in data compared to the expected background rate, a second set of signal regions is derived from the optimised shape-fit setup. For each of the three bins in the transverse mass (SRLM, SRMM, and SRHM), the three $\mct$ bins are summed up and the upper bound on $\mt$ is removed (if present). This results in three cut-and-count signal regions that make minimal model assumptions and can be interpreted in any signal model as long as the predicted signal rates are known. In case of no significant excess over the \gls{sm} expectation, these so-called \textit{discovery} \glspl{sr} can be used to derive model-independent limits. 
 
@@ -186,7 +186,7 @@ For evaluating a potential excess in data compared to the expected background ra
 	\begin{center}
 		\begin{tabular} {l | c c c }
 			\toprule
-				&  \textbf{SRLM} & \textbf{SRMM} & \textbf{SRHM} \\
+				&  \textbf{SR-LM} & \textbf{SR-MM} & \textbf{SR-HM} \\
 			\midrule
 			$N_{\mathrm{lepton}}$ & \multicolumn{3}{c}{$=$ 1}\\
 			$\ptl$ [\GeV] & \multicolumn{3}{c}{ $>7(6)$ for $e$($\mu$)} \\
@@ -249,7 +249,7 @@ For evaluating a potential excess in data compared to the expected background ra
 		\centering\includegraphics[width=\textwidth]{n1_SRLM_mct_bins/nJet30.pdf}
 		\caption{\label{fig:Wh_reopt_second_round_n1_srlm_njet}}
 	\end{subfigure}
-	\caption{$N-1$ plots for SRLM, with exemplary signal points and all $\mct$ bins included. The dashed area represents \gls{mc} statistical uncertainty on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainty as well as MC statistical uncertainty. In \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
+	\caption{$N-1$ plots for SR-LM, with exemplary signal points and all $\mct$ bins included. The dashed area represents \gls{mc} statistical uncertainty on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainty as well as MC statistical uncertainty. In \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
 	\label{fig:Wh_reopt_second_round_n1_srlm}
 \end{figure}
 
@@ -279,7 +279,7 @@ For evaluating a potential excess in data compared to the expected background ra
 		\centering\includegraphics[width=\textwidth]{n1_SRMM_mct_bins/nJet30.pdf}
 		\caption{\label{fig:Wh_reopt_second_round_n1_srmm_njet}}
 	\end{subfigure}
-	\caption{$N-1$ plots for SRMM, with exemplary signal points and all $\mct$ bins included. The dashed area represents \gls{mc} statistical uncertainty on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainty as well as MC statistical uncertainty. In \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
+	\caption{$N-1$ plots for SR-MM, with exemplary signal points and all $\mct$ bins included. The dashed area represents \gls{mc} statistical uncertainty on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainty as well as MC statistical uncertainty. In \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
 	\label{fig:Wh_reopt_second_round_n1_srmm}
 \end{figure}
 
@@ -309,7 +309,7 @@ For evaluating a potential excess in data compared to the expected background ra
 		\centering\includegraphics[width=\textwidth]{n1_SRHM_mct_bins/nJet30.pdf}
 		\caption{\label{fig:Wh_reopt_second_round_n1_srhm_njet}}
 	\end{subfigure}
-	\caption{$N-1$ plots for SRHM, with exemplary signal points and all $\mct$ bins included. The dashed area represents \gls{mc} statistical uncertainty on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainty as well as MC statistical uncertainty. In \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
+	\caption{$N-1$ plots for SR-HM, with exemplary signal points and all $\mct$ bins included. The dashed area represents \gls{mc} statistical uncertainty on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainty as well as MC statistical uncertainty. In \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
 	\label{fig:Wh_reopt_second_round_n1_srhm}
 \end{figure}
 

@@ -2,7 +2,7 @@
 % ******************************* Thesis Appendix A ****************************
 
 \chapter{}
-\section{N-1 plots for cut-scan results}\label{app:n-1_plots_cut_opt}
+\section{Additional information on signal region optimisation}\label{app:n-1_plots_cut_opt}
 
 \ifpdf
 \graphicspath{{chapter-optimisation/Figs/Raster/}{chapter-electroweak/Figs/PDF/}{chapter-optimisation/Figs/}}
@@ -10,26 +10,32 @@
 \graphicspath{{chapter-optimisation/Figs/Vector/}{chapter-electroweak/Figs/}}
 \fi
 
-\begin{figure}
+The following figures provide additional information on the signal region optimisation performed in~\cref{ch:signal_region_optimisation}. \Cref{fig:results_z_vs_eff_rest} shows the results of the $N$-dimensional cut scan for the remaining benchmark signal points considered. As before, three different uncertainty configurations are used for computing the significance $Z_\mathrm{B}$, and all values are computed for the two statistically independent subsets used during the $N$-dimensional scan. This approach allows to gauge the impact of statistical fluctuations on the cut combinations tested.
+
+By choosing a well-performing cut combination for each benchmark point, the optimised selections in~\cref{fig:results_n1_800_0,fig:results_n1_800_150,fig:results_n1_800_250,fig:results_n1_600_300,fig:results_n1_400_200,fig:results_n1_300_150} are found after a round of $N-1$ plots. As discussed in~\cref{sec:towards_signal_regions} the optimal cut combinations for each benchmark signal point are consolidated in different signal regions designed to be sensitive to different kinematic regions of the model parameter space. 
+
+\Cref{fig:results_HF_scan_app} shows additional information on some of the investigated shape-fit configurations. Two-dimensional shape-fits in $(\mt,\mbb)$, $(\mt,\met)$ and $(\mt,\mct)$ are compared, showing 
+
+\begin{figure}[hb]
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_800_150.pdf}
-		\caption{}
+		\caption{$m(\charg/\neutr), m(\lsp) =  800, \SI{150}{\GeV}$}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_800_0.pdf}
-		\caption{}
+		\caption{$m(\charg/\neutr), m(\lsp) =  800, \SI{0}{\GeV}$}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_600_300.pdf}
-		\caption{}
+		\caption{$m(\charg/\neutr), m(\lsp) =  600, \SI{300}{\GeV}$}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_400_200.pdf}
-		\caption{}
+		\caption{$m(\charg/\neutr), m(\lsp) =  400, \SI{200}{\GeV}$}
 	\end{subfigure}\hfill
 
-	\caption[N-dimensional cut scan results]{Results of the $N$-dimensional cut scan for two exemplary benchmark points. The binomial discovery significance $Z_\mathrm{B}$ is plotted against the signal efficiency for varying uncertainty configurations. Additionally, the expected \gls{sm} background rates are shown, including statistical uncertainty for one of the two statistically independent samples (shaded area). The solid and dashed lines represent the two statistically independent subset that the \gls{mc} samples are split into.}
+	\caption[N-dimensional cut scan results]{Results of the $N$-dimensional cut scan for the remaining four benchmark points. The binomial discovery significance $Z_\mathrm{B}$ is plotted against the signal efficiency for varying uncertainty configurations. Additionally, the expected \gls{sm} background rates are shown, including statistical uncertainty for one of the two statistically independent samples (shaded area). The solid and dashed lines represent the two statistically independent subset that the \gls{mc} samples are split into.}
 	\label{fig:results_z_vs_eff_rest}
 \end{figure}
 
@@ -37,35 +43,25 @@
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_0/mt}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/mt}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_0/mct}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/mct}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_0/met}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/met}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_0/mlb1}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/mlb1}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_0/mbb_lower}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/mbb_both}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_0/mbb_upper}
-		\caption{}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_0/nJet30}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (800, 0) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{0}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added quadratically) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[N-1 plots for the chosen cut combination for the (800, 0) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{0}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_800_0}
 \end{figure}
 
@@ -74,175 +70,125 @@
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_150/mt}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_150/mt}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_150/mct}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_150/mct}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_150/met}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_150/met}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_150/mlb1}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_150/mlb1}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_150/mbb_lower}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_150/mbb_both}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_150/mbb_upper}
-		\caption{}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_150/nJet30}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_150/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (800, 150) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{150}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added quadratically) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[N-1 plots for the chosen cut combination for the (800, 150) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{150}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_800_150}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_250/mt}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_250/mt}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_250/mct}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_250/mct}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_250/met}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_250/met}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_250/mlb1}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_250/mlb1}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_250/mbb_lower}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_250/mbb_both}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_250/mbb_upper}
-		\caption{}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_800_250/nJet30}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_250/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (800, 250) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{250}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added quadratically) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[N-1 plots for the chosen cut combination for the (800, 250) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{250}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_800_250}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_600_300/mt}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_600_300/mt}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_600_300/mct}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_600_300/mct}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_600_300/met}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_600_300/met}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_600_300/mlb1}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_600_300/mlb1}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_600_300/mbb_lower}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_600_300/mbb_both}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_600_300/mbb_upper}
-		\caption{}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_600_300/nJet30}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_600_300/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (600, 300) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{600}{\GeV}, \SI{300}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added quadratically) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[N-1 plots for the chosen cut combination for the (600, 300) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{600}{\GeV}, \SI{300}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_600_300}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_400_200/mt}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_400_200/mt}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_400_200/mct}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_400_200/mct}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_400_200/met}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_400_200/met}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_400_200/mlb1}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_400_200/mlb1}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_400_200/mbb_lower}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_400_200/mbb_both}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_400_200/mbb_upper}
-		\caption{}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_400_200/nJet30}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_400_200/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (400, 200) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{400}{\GeV}, \SI{200}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added quadratically) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[N-1 plots for the chosen cut combination for the (400, 200) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{400}{\GeV}, \SI{200}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_400_200}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_300_150/mt}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_300_150/mt}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_300_150/mct}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_300_150/mct}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_300_150/met}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_300_150/met}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_300_150/mlb1}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_300_150/mlb1}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_300_150/mbb_lower}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_300_150/mbb_both}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_300_150/mbb_upper}
-		\caption{}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=0.7\textwidth]{N-1_cut_scan/n1_300_150/nJet30}
-		\caption{}
+		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_300_150/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (300, 150) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{300}{\GeV}, \SI{150}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added quadratically) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[N-1 plots for the chosen cut combination for the (300, 150) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{300}{\GeV}, \SI{150}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_300_150}
 \end{figure}
 

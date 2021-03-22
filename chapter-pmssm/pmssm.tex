@@ -67,7 +67,107 @@ Although the following sections will be restricted to a reinterpretation of the 
 
 \section{Model selection and processing}
 
-\section{Truth analysis}\label{sec:truth_smearing}
+\section{Truth analysis}\label{sec:truth_analysis}
+
+As discussed in~\cref{ch:preservation}, the reinterpretation of an analysis involves re-executing the analysis pipeline in order to derived signal rate estimates in all regions. In large-scale reinterpretations, running a \textsc{Recast} implementation on all signal models considered is not computationally feasible and instead a \textit{truth-level} analysis is performed for most signal models sampled. The truth-level analysis skips the detector simulation and uses generator-level objects instead. Any detector-level effects and inefficiencies will thus not be reflected in truth-level observables. In order to reproduce the kinematic distributions observed in the full analysis (using reconstruction-level objects), a dedicated \textit{truth smearing}---discussed in detail in~\cref{sec:truth_smearing}---is applied.
+
+\subsection{Truth selection}\label{sec:truth_selection}
+
+All signal and control regions considered in the original 1-lepton search are implemented at truth-level using \textsc{SimpleAnalysis}. The exact implementation is publicly available at \reference\cite{HEPdata_1Lbb} and was already used in~\cref{ch:uncertainties} for the derivation of a number of the theory uncertainties in the full analysis.
+
+Although a number of object definitions introduced in~\cref{sec:object_definitions} are not well-defined at truth-level, they are nonetheless specified in the truth-level implementation as the subsequent truth smearing may depend on them. Additionally, as discussed in~\cref{sec:reinterpretations}, the full specification of the original analysis event selection allows for simpler reinterpretations by efforts outside of the ATLAS collaboration that generally do not have access to the full original analysis software.
+
+All observables used in the analysis are computed using truth-level quantities. An overlap removal procedure following the same prescription as described for the reconstruction-level analysis is performed, \ie especially also using the same shrinking cone definitions introduced in~\cref{sec:overlap_removal}. Overlap removal step removing electrons sharing a track with a muon is approximated by using a distance parameter of $\Delta R = 0.01$ between the objects. 
+
+\subsection{Truth smearing}\label{sec:truth_smearing}
+
+\subsubsection{Working principle}
+
+The general assumption of the truth smearing applied in the following is that the detector response roughly factorises into the responses of single particles. This allows to use detector performance results provided by the \textit{combined performance groups} in ATLAS in order to construct detector response maps parameterised in different observables for each physics object. Detector response maps include object reconstruction and identification efficiencies as well as scale factors to correct for differences between \gls{mc} and observed data. Likewise, effects from the finite resolution of energy measurements in the detector are modelled through energy resolution maps. In the following, the 4-vector components of electrons, muons, jets and $\etmiss$ are smeared.
+
+In the case of truth electrons, the identifications efficiencies considered are parameterised in $\eta$ and $\pt$ as well as the identification working point used. In $\eta$, nine fixed-width bins are used. In $\pt$, six bins are implemented and a linear interpolation between two adjacent $\pt$-bins is used to get the efficiency for the given $\pt$ of each truth electron. The probability of finding a fake electron in a truth jet is estimated through a similar two-dimensional map depending on the truth jet $\eta$ and $\pt$, again using fixed-width bins in $\eta$ and linear interpolation in $\pt$. The range of the $\pt$ interpolation for identification efficiencies and fake rates extends from $\SI{7}{\GeV}$ to $\SI{120}{\GeV}$. If the truth $\pt$ of the electron is outside of that range, the identification efficiency and fake rate from the respective bound of the corresponding $\eta$-bin are used. The probability for misidentifying an electron as a photon is estimated using different fixed values for the barrel and end-cap regions. Finally, the transverse energy of the electron is smeared using a random number drawn from a Gaussian distribution with mean corresponding to the truth value and a standard deviation corresponding to the $\eta$- and $\pt$-dependent energy resolution.  
+
+For truth muons, the identification efficiencies are also parameterised in $\eta$ and $\pt$ as well as the identification working point used. Similar to truth electrons, the  $\pt$ of the muon is smeared using a random number drawn from a Gaussian distribution with mean corresponding to the true transverse momentum, and standard deviation corresponding to the momentum resolution. The momentum resolution of combined truth muons is computed from the measured resolutions in the \gls{id} ($\sigma_\mathrm{ID}$) and \gls{ms} ($\sigma_\mathrm{MS}$) as
+\begin{equation}
+	\sigma_\mathrm{CB} = \frac{\sigma_\mathrm{ID}\sigma_\mathrm{MS}}{\sqrt{\sigma_\mathrm{ID}^2 + \sigma_\mathrm{MS}^2}},
+\end{equation}
+where $\sigma_\mathrm{ID}$ and $\sigma_\mathrm{MS}$ are parameterised in $\eta$ and $\pt$.
+
+The transverse momentum of truth jets is smeared using a Gaussian with standard deviation equal to the \gls{jer}, provided in a map parameterised in five bins in $\eta$ ranging from $\vert\eta\vert = 0$ to $\vert\eta\vert = 4.5$. Following~\cite{Aad:2020flx}, jet energy resolutions are provided using parameterisations of a noise $N$, stochastic $S$ and constant $C$ term for each of the seven bins in $\vert\eta\vert$, such that the resolution can be computed as
+\begin{equation}
+	\frac{\sigma(\pt)}{\pt} = \frac{N}{\pt}\oplus\frac{S}{\sqrt{\pt}}\oplus C.
+\end{equation}
+Only truth jets with $\SI{10}{\GeV} < \pt < \SI{1.5}{\TeV}$ are smeared. For truth jets with $\pt > \SI{20}{\GeV}$, the flavour tagging efficiency is considered using efficiencies parameterised in $\eta$, $\pt$ and the \textsc{MV2c10} working point (introduced in~\cref{sec:object_definitions}) used, measured in fully reconstructed simulated $\ttbar$ events~\cite{FTAG-2018-01}.
+
+Finally, the smeared missing transverse energy is computed using the the transverse momenta of all smeared truth objects in the event, including an approximation for the track soft term. The latter is approximated using results from $Z\rightarrow e^+e^-$ events, allowing to infer a distribution of the mean soft term projected in the direction longitudinal to the total transverse momentum of all hard objects in an event, $\boldsymbol{p}_\mathrm{T}^\mathrm{hard}$. The measured resolution parallel and perpendicular to $\boldsymbol{p}_\mathrm{T}^\mathrm{hard}$ is then used to smear the nominal soft track value.
+ 
+ 
+ \subsubsection{Performance at loose preselection}
+
+  \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{met_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{mt_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{mct_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{mbb_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{lep1Pt_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{jet1Pt_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{mlb1_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.45\linewidth}
+		\centering\includegraphics[width=\textwidth]{nBJet30_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
+	\end{subfigure}\hfill
+	\caption{Comparisons of the kinematic distributions of key observables at (smeared) truth- and reconstruction-level. The exemplary benchmark signal point with $m(\charg/\neutr), m(\lsp) = 700, \SI{150}{\GeV}$ is shown. The ratio pad shows the ratio between smeared and unsmeared truth-level distributions (green and blue) to reconstruction-level distributions (red). Only \gls{mc} statistical uncertainty is included in the error bars. All distributions are shown in a loose preselection requiring exactly one lepton, $\met>\SI{50}{\GeV}$, $\mt > \SI{50}{\GeV}$, and 2--3 jets, two of which need to be \textit{b}-tagged. The latter requirement is dropped for the \textit{b}-jet multiplicity distribution.}
+	\label{fig:smearing_preselection}
+\end{figure}
+ 
+
+ The performance of the truth smearing is illustrated in a loose preselection for a single exemplary benchmark signal point in~\cref{fig:smearing_preselection}. The loose preselection applied requires exactly one lepton, $\met>\SI{50}{\GeV}$, $\mt > \SI{50}{\GeV}$, and 2--3 jets, two of which need to be \textit{b}-tagged. The truth-level distributions are compared with the reconstruction-level distributions before and after truth smearing. It can clearly be observed that the truth smearing noticeably improves the agreement between the truth- and reconstruction-level distributions. While the lepton and jet reconstruction and identification efficiencies are---due to their general dependence on $\eta$, $\pt$ and individual working points---crucial for the overall agreement in shape, the inclusion of flavour-tagging efficiencies significantly improves the overall agreement in normalisation.
+ 
+Although some minor differences remain, overall a good agreement is observed across all relevant kinematic distributions at loose preselection level. Most of the differences between smeared truth-level and reconstruction-level distributions in individual bins are well within the \gls{mc} statistical uncertainties arising from the relatively limited \gls{mc} statistics available.
+ 
+ \subsubsection{Performance in signal regions}
+ 
+ As the expected signal rates in the signal regions are ultimately what is entering the (simplified) likelihood, it is important that the good agreement observed at preselection is still present in the kinematically tight selections of the signal regions. Additionally, it is worth investigating the agreement across all signal models considered in the original analysis. A comparison of the truth-level and reconstruction-level event rates before and after smearing in the signal regions SR-LM, SR-MM and SR-HM is shown in~\cref{fig:smearing_signal_regions} for all signal models considered in the 1-lepton analysis. Only the cumulative $\mct$ bins are shown in each \gls{sr} in~\cref{fig:smearing_signal_regions}. The agreement in the individual $\mct$ bins in each SR-LM, SR-MM and SR-HM is shown in~\cref{fig:smearing_signal_regions_1,fig:smearing_signal_regions_2,fig:smearing_signal_regions_3}.
+ 
+ It can clearly be seen that the truth smearing drastically improves the agreement in event rate estimates at truth- and reconstruction-level across all \gls{sr} bins considered. While the event rates are generally overestimated at truth-level before smearing, compared to reconstruction-level, both tend to agree well within statistical uncertainties after smearing. 
+ 
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{yields_SR-LM_unsmeared}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{yields_SR-LM_smeared}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{yields_SR-MM_unsmeared}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{yields_SR-MM_smeared}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{yields_SR-HM_unsmeared}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{yields_SR-HM_smeared}
+	\end{subfigure}
+	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing. From top to bottom, the SR-LM, SR-MM and SR-HM signal regions are shown, with cumulative (integrated) $\mct$ bins. Every single point in the scatter plots represents a single signal model considered in the original 1-lepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
+	\label{fig:smearing_signal_regions}
+\end{figure}
 
 
 \section{Results}
