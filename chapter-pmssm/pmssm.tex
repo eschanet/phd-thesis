@@ -131,6 +131,20 @@ Using the expected event rates at smeared truth-level for every signal model in 
 
 In summary, this validation process shows that the signal pipeline in~\cref{fig:pipeline_analysis} can be efficiently approximated using truth-level analysis and a simplified treatment of the statistical model, allowing a considerably faster evaluation of \gls{bsm} models while still offering reliable results. \improvement{CLs plot?}
 
+
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}
+	\end{subfigure}\hfill
+	\caption{}
+	\label{fig:truth_smearing_contour}
+\end{figure}
+ 
+
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.35\textwidth}}]{figure}[\FBwidth]
 {\caption{}\label{fig:simplified_truth_result}}
@@ -187,9 +201,11 @@ Once a value for each of the 19 \gls{pmssm} parameters has been chosen, a number
 
 \subsection{Selection and processing}
 
-A total of \num[group-separator={,}]{200000} unique models are sampled from the \gls{pmssm} using the above prescription. After requiring all spectrum generators and properties calculations to finish without errors as well as models to produce a dark matter relic density satisfying $\Omega_c h^2 < 0.12$, a total of \num[group-separator={,}]{106854} models survive. The cross section for all surviving models is computed at \gls{nlo} using \textsc{Prospino}~v2.1~\cite{prospino:314229, prospino_2:1999xh}. Models with an inclusive cross sections for all electroweak production processes below $\SI{0.07}{\femto\barn}$ are discarded as they would result in less than 10 expected signal events with an integrated luminosity of \onethirtynineifb, not enough to be sensitive to with current electroweak \gls{susy} searches. Models are also discarded for lack of experimental sensitivity if the $\charg$ is heavier than $\SI{1.2}{\TeV}$. Next, models are only considered in the following if their \gls{lsp} is the $\lsp$. Finally, models with long-lived or even stable (on the time scale needed for traversing the ATLAS detector) sparticles\footnote{Not considering the \gls{lsp}.} are discarded as \gls{susy} searches targeting prompt electroweakino decays (like the 1-lepton search), are not expected to be sensitive to these models. 
+In order to avoid models with pathological properties, all spectrum generators are required to finish execution without error. The cross section for surviving models is computed at \gls{nlo} using \textsc{Prospino}~v2.1~\cite{prospino:314229, prospino_2:1999xh}. Models with an inclusive cross sections for all electroweak production processes below $\SI{0.07}{\femto\barn}$ are discarded as they would result in less than 10 expected signal events with an integrated luminosity of \onethirtynineifb, not enough to be sensitive to with current electroweak \gls{susy} searches. For the sake of experimental sensitivity, models are also required to have a lightest chargino with mass below $\SI{1.2}{\TeV}$ and produce a neutralino \gls{lsp}. Finally, models with long-lived or even stable (on the time scale needed for traversing the ATLAS detector) sparticles\footnote{Not considering the \gls{lsp}.} are discarded as \gls{susy} searches targeting prompt electroweakino decays (like the 1-lepton search), are not expected to be sensitive to these models. 
 
-Altogether, \num[group-separator={,}]{90974} of the \gls{pmssm} models sampled satisfy all constraints and are generated at truth-level in a subsequent step. 
+Furthermore, as only $R$-parity conserving models are considered, the \gls{lsp} is stable and thus has a non-vanishing cosmological abundance. The resulting \gls{lsp} abundance is required to be below the experimentally observed value of the cold dark matter relic density of $\Omega_c h^2 = 0.12$, thus not making a statement about whether or not the \gls{lsp} is the only \gls{dm} particle. No constraints on the computed precision electroweak and flavour observables are applied. Experimental constraints from \eg \gls{lep} are also not applied at this stage. 
+
+Of the \num[group-separator={,}]{200000} unique models sampled from the \gls{pmssm} using the above prescription, \num[group-separator={,}]{90974} models survive the constraints and requirements discussed in this section. The majority of the models rejected are \gls{susy} scenarios that do not satisfy the \gls{dm} relic density constraint.
 
 \subsection{Event generation}
 
@@ -197,7 +213,9 @@ Event generation is performed using the software centrally provided by the ATLAS
 		
 \subsection{Truth-level analysis}
 
-All models passing event generation are evaluated using the truth-level analysis described in~\cref{sec:truth_analysis}.
+All models passing event generation are evaluated using the truth-level analysis described in~\cref{sec:truth_analysis}. This is the only evaluation done for the models considered in this work. A full scan over the \gls{pmssm} including multiple ATLAS \gls{susy} searches would most likely include an additional processing step reverting to reconstruction-level analysis including the original analysis pipelines and full detector reconstruction for model points where (non-)exclusion is uncertain based on truth-level analysis only.
 
 
-\section{Results in the pMSSM}
+\section{Impact on sparticle masses}
+
+\section{Impact on dark matter}

@@ -2,7 +2,6 @@
 % ******************************* Thesis Appendix A ****************************
 
 \chapter{}
-\section{Additional information on signal region optimisation}\label{app:n-1_plots_cut_opt}
 
 \ifpdf
 \graphicspath{{chapter-optimisation/Figs/Raster/}{chapter-electroweak/Figs/PDF/}{chapter-optimisation/Figs/}}
@@ -10,11 +9,14 @@
 \graphicspath{{chapter-optimisation/Figs/Vector/}{chapter-electroweak/Figs/}}
 \fi
 
+
+\section{Additional information on signal region optimisation}\label{app:n-1_plots_cut_opt}
+
 The following figures provide additional information on the signal region optimisation performed in~\cref{ch:signal_region_optimisation}. \Cref{fig:results_z_vs_eff_rest} shows the results of the $N$-dimensional cut scan for the remaining benchmark signal points considered. As before, three different uncertainty configurations are used for computing the significance $Z_\mathrm{B}$, and all values are computed for the two statistically independent subsets used during the $N$-dimensional scan. This approach allows to gauge the impact of statistical fluctuations on the cut combinations tested.
 
-By choosing a well-performing cut combination for each benchmark point, the optimised selections in~\cref{fig:results_n1_800_0,fig:results_n1_800_150,fig:results_n1_800_250,fig:results_n1_600_300,fig:results_n1_400_200,fig:results_n1_300_150} are found after a round of $N-1$ plots. As discussed in~\cref{sec:towards_signal_regions} the optimal cut combinations for each benchmark signal point are consolidated in different signal regions designed to be sensitive to different kinematic regions of the model parameter space. 
+By choosing a well-performing cut combination for each benchmark point, the optimised selections in~\cref{fig:results_n1_800_0,fig:results_n1_800_150,fig:results_n1_800_250,fig:results_n1_600_300,fig:results_n1_400_200,fig:results_n1_300_150} are found after a round of $N-1$ plots. As discussed in~\cref{sec:towards_signal_regions} the optimal cut combinations for each benchmark signal point are consolidated into multiple signal regions designed to be sensitive to different kinematic regions of the model parameter space. 
 
-\Cref{fig:results_HF_scan_app} shows additional information on some of the investigated shape-fit configurations. Two-dimensional shape-fits in $(\mt,\mbb)$, $(\mt,\met)$ and $(\mt,\mct)$ are compared, showing 
+\Cref{fig:results_HF_scan_app} shows additional information on some of the investigated simplified shape-fit configurations. Two-dimensional shape-fits in $(\mt,\mbb)$, $(\mt,\met)$ and $(\mt,\mct)$ with $3\times 3$ bins each are compared. The configuration using bins in $\mt$ and $\mct$ results in the best expected CL$_s$ values throughout the entire signal grid. Adding a requirement on high values of $\mlb$ to SR-HM further increases the expected sensitivity. Overall, the expected sensitivity achieved through introduction of the two-dimensional shape fit significantly exceeds the sensitivity of the previous analysis iteration (using a one-dimensional shape-fit in $\mt$, scaled to \onethirtynineifb).
 
 \begin{figure}[hb]
 	\centering
@@ -208,6 +210,6 @@ By choosing a well-performing cut combination for each benchmark point, the opti
 		\caption{\label{fig:plot_2d_shapefit_cls}}
 	\end{subfigure}\hfill
 
-	\caption{}
+	\caption{Comparison of different shape-fit configurations. Fig.~\subref{fig:plot_binnings_cls} compares three different two-dimensional shape-fit configurations using $3\times 3$ bins in ($\mt$, $\etmiss$), ($\mt$, $\mbb$) and ($\mt$, $\mct$). Fig.~\subref{fig:plot_mlb1_cls} illustrates the sensitivity increase achieved through a requirement on high $\mlb$ values in SR-HM on top of the two-dimensional shape-fit in $\mt$ and $\mct$. Fig.~\subref{fig:plot_2d_shapefit_cls} compares the two-dimensional shape-fit in $\mt$ and $\mct$ to the previous analysis iteration signal regions scaled to \onethirtynineifb. All shown exclusion limits are expected limits at 95\% CL, using \gls{mc} statistical and 30\% systematic uncertainty. Background estimation in the signal regions is taken directly from \gls{mc} for all \gls{sm} backgrounds.}
 	\label{fig:results_HF_scan_app}
 \end{figure}
