@@ -137,10 +137,19 @@ The truth smearing drastically improves the agreement in event rate estimates at
  
 \subsection{Validation using likelihood}
 
-\begin{figure}
-\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.35\textwidth}}]{figure}[\FBwidth]
-{\caption{Expected and observed exclusion contours obtained with the full likelihood and reconstruction-level (orange) as well truth-level signal inputs before (purple) and after (green) smearing. Uncertainties include all statistical and systematic uncertainties on the background and signal for the reconstruction-level contours, but only statistical and systematic uncertainties on the background for truth-level signal inputs.}\label{fig:full_truth_result}}
-{\includegraphics[width=0.60\textwidth]{exclusion_1Lbb_truthInput_compareReco_BkgOnly_noLabel}}
+
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_truthInput_compareReco_BkgOnly_noLabel}
+		\caption{\label{fig:full_truth_result}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}
+		\caption{\label{fig:simplified_truth_result}}
+	\end{subfigure}\hfill
+	\caption{Expected and observed exclusion contours obtained with the full and simplified likelihoods. Fig.~\subref{fig:full_truth_result} compares the full likelihood contours obtained with the reconstruction-level inputs (orange) to results obtained with truth inputs before (purple) and after (green) smearing. Fig.~\subref{fig:simplified_truth_result} compares the full likelihood reconstruction-level contours (orange) with those obtained using the simplified likelihood and smeared truth-level inputs (blue). Uncertainties include all statistical and systematic uncertainties on the background and signal for the reconstruction-level contours, but only statistical and systematic uncertainties on the background for truth-level signal inputs.}
+	\label{fig:smearing_signal_regions}
 \end{figure}
 
 Using the nominal expected event rates at smeared truth-level for every signal model in the original signal grid considered in the 1-lepton analysis, expected and observed CL$_s$ values can be computed and exclusion contours can be derived. \Cref{fig:full_truth_result} compares the expected and observed exclusion contours obtained using the full likelihood and reconstruction-level signal inputs with those obtained using the full likelihood and truth-level signal inputs before and after truth smearing. While all theory and systematic uncertainties on the signal are included in the reconstruction-level contours, no signal uncertainties are considered when obtaining both the smeared and unsmeared truth-level contours. As expected from the previous validation steps in the signal regions, the sensitivity using unsmeared truth-level signal inputs is significantly overestimated compared to the published analysis exclusion limit using reconstruction-level inputs. The smeared truth-level inputs, however, yield exclusion contours with an acceptable match compared to the reconstruction-level results.
@@ -148,12 +157,6 @@ Using the nominal expected event rates at smeared truth-level for every signal m
 With the truth smearing validated at multiple selection levels of the analysis, the full two-fold approximation of signal pipeline and statistical inference can be constructed. \Cref{fig:simplified_truth_result} compares the exclusion contours of the original analysis results with those obtained using smeared truth-level signal inputs as well as the simplified likelihood. Even with the approximations made, overall a good agreement is found and the original analysis results can be reproduced to a relatively high degree of precision.
 
 In summary, this validation process shows that the signal pipeline in~\cref{fig:pipeline_analysis} can be efficiently approximated using truth-level analysis and a simplified treatment of the statistical model, allowing a considerably faster evaluation of \gls{bsm} models while still offering reliable results. In large-scale reinterpretations, this approach thus enables an efficient classification of models into safely excluded and non-excluded models as well as models where exclusion is in doubt and where the full analysis pipeline using \textsc{Recast} is needed.
-
-\begin{figure}
-\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.35\textwidth}}]{figure}[\FBwidth]
-{\caption{Expected and observed exclusion contours obtained with the full likelihood and reconstruction-level (orange) as well simplified likelihood and smeared truth-level signal inputs before (blue).}\label{fig:simplified_truth_result}}
-{\includegraphics[width=0.60\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}}
-\end{figure}
 
 \section{Model sampling and processing}\label{sec:pmssm_sampling}
 
@@ -213,13 +216,74 @@ Of the \num[group-separator={,}]{200000} unique models sampled from the \gls{pms
 
 \subsection{Event generation}
 
-Event generation is performed using the software centrally provided by the ATLAS production system. The initial pair of sparticles with two one parton in the \gls{me} are generated using the \textsc{MadGraph5\_aMC@NLO} v2.6.1.~\cite{MGaMCNLO:2014hca,Frederix:2012ps} generator. Next, \textsc{Pythia8.230}~\cite{Pythia8:2007gs}  with the \textsc{A14} tune is used for the hadronisation and \gls{ps}, together with the NNPDF 2.3 LO~\cite{Ball:2012cx} \gls{PDF} set.
+Event generation is performed using the software centrally provided by the ATLAS production system. The initial pair of sparticles with two one parton in the \gls{me} are generated using the \textsc{MadGraph5\_aMC@NLO} v2.6.1.~\cite{MGaMCNLO:2014hca,Frederix:2012ps} generator. Next, \textsc{Pythia8.230}~\cite{Pythia8:2007gs}  with the \textsc{A14} tune is used for the hadronisation and \gls{ps}, together with the NNPDF 2.3 LO~\cite{Ball:2012cx} \gls{PDF} set. The number of events generated scales with the cross section of the model, starting at $10^4$ and capping out at $10^6$ truth-level events.
 		
 \subsection{Truth-level analysis}
 
 All models passing event generation are evaluated using the truth-level analysis described in~\cref{sec:truth_analysis}. This is the only evaluation done for the models considered in this work. A full scan over the \gls{pmssm} including multiple ATLAS \gls{susy} searches would most likely include an additional processing step reverting to reconstruction-level analysis including the original analysis pipelines and full detector reconstruction for model points where (non-)exclusion is uncertain based on truth-level analysis only.
 
+\section{Impact of the 1-lepton search on the pMSSM}
 
-\section{Impact on sparticle masses}
+The impact of the 1-lepton search on the \gls{pmssm} is discussed using one-dimensional and two-dimensional distributions in the following sections. As usual, a model is considered to be excluded if the observed CL$_s$ value obtained from the simplified likelihood using the smeared truth-level inputs is below 0.05. Of the 7264 models evaluated, the \onelepton search excludes a total of 98, or about 1.3\%, of the models.
 
-\section{Impact on dark matter}
+For the one-dimensional distributions shown in the following, the total number of models is compared against the number of models excluded by the \onelepton search. An additional pad indicates the ratio between models excluded and total models sampled in each bin of the distribution. In the two-dimensional distributions, the numbers in the bins indicate the number of \gls{pmssm} models falling into each respective bin. In these distributions, the fraction of models excluded with the \onelepton search is encoded using the $z$-axis, represented by a colour bar.
+
+\subsection{Impact on electroweakino masses}
+
+\Cref{fig:impact_electroweakinos_2D}
+
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{cut_none/mchi1p_mlsp_contour}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{cut_none/mchi20_mlsp_contour}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{cut_none/mchi1p_mchi20_contour}
+	\end{subfigure}\hfill
+	\caption{Bin-by-bin fraction of excluded models as a function of the relevant sparticle masses. The numbers in the bins correspond to the total number of models sampled falling into the respective bin. The number of models excluded by the 1-lepton analysis is encoded with a colour bar ranging from 0 to 1. Where all models in a given bin are excluded, the bin is coloured in black. Bins without a models excluded are left white. Models are evaluated using the simplified likelihood of the 1-lepton analysis.}
+	\label{fig:impact_electroweakinos_2D}
+\end{figure}
+
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{1D/m_chi_10}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{1D/m_chi_20}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{1D/m_chi_1p}
+	\end{subfigure}\hfill
+	\caption{}
+	\label{fig:impact_electroweakinos_1D}
+\end{figure}
+
+\subsection{Impact on pMSSM model parameters}
+
+
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{1D/M1}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{1D/M2}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{1D/mu}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{1D/mA}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{1D/tanb}
+	\end{subfigure}\hfill
+	\caption{}
+	\label{fig:impact_pMSSM_parameters_1D}
+\end{figure}
+
+\subsection{Impact on dark matter}
