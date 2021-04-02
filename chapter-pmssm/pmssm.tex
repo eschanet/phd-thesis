@@ -227,6 +227,28 @@ Event generation is performed using the software centrally provided by the ATLAS
 
 All models passing event generation are evaluated using the truth-level analysis described in~\cref{sec:truth_analysis}. This is the only evaluation done for the models considered in this work. A full scan over the \gls{pmssm} including multiple ATLAS \gls{susy} searches would most likely include an additional processing step reverting to reconstruction-level analysis including the original analysis pipelines and full detector reconstruction for model points where (non-)exclusion is uncertain based on truth-level analysis only.
 
+\section{Phenomenology of the LSP}
+
+The composition of the $\lsp$ in each \gls{pmssm} model sampled is shown in the $m(\charg)$--$m(\lsp)$ and $m(\neutr)$--$m(\lsp)$ plane in~\cref{fig:lsp_types,fig:lsp_types_N2}, respectively. The $\lsp$ is considered to be bino-like ($\tilde{B}$-like), wino-like ($\tilde{W}$-like) or higgsino-like ($\tilde{H}$-like) if the corresponding fraction from the neutralino mass mixing matrix is at least 80\%. If more than one component has a fraction of more than 20\%, then the $\lsp$ is considered to be of mixed nature. 
+
+In the bulk of the $m(\charg)$--$m(\lsp)$ plane, \ie the parameter space targeted by the \onelepton search using the simplified model, the large majority of the models produce a bino-like \gls{lsp} with nearly mass-degenerate $\charg$ and $\neutr$. These models correspond to cases where $M_1 \ll M_2, \mu$ and are closest to the canonical simplified model considered in the \onelepton search. Some sensitivity can be expected towards these models, provided that the branching fractions of the decays $\neutr \rightarrow h \lsp$ and $\charg \rightarrow W^\pm \lsp$ are large enough and produce on-shell bosons.
+
+Towards the diagonal of $m(\charg)$--$m(\lsp)$ plane, \ie for models where the $\charg$ and $\lsp$ are nearly mass-degenerate, the nature of the \gls{lsp} shows a larger variation. In a large set of models, the \gls{lsp} has a significant wino component, leading to a mass spectrum where the $\charg$ and $\lsp$ are nearly mass-degenerate while the mass of the $\neutr$ can take on higher values. In models where the \gls{lsp} has a large higgsino component, \ie $\mu \ll M_1, M_2$, all three sparticles ($\charg$, $\neutr$ and $\lsp$) are nearly mass-degenerate and result in very soft decay products, making these models inherently difficult to target.
+
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{scatter/lsp_types.pdf}
+		\caption{\label{fig:lsp_types}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{scatter/lsp_types_N2.pdf}
+		\caption{\label{fig:lsp_types_N2}}
+	\end{subfigure}\hfill
+	\caption{Scatter plot of all models sampled in the \subref{fig:lsp_types} $m(\charg)$--$m(\lsp)$ and \subref{fig:lsp_types_N2} $m(\neutr)$--$m(\lsp)$ planes. The colour encodes the composition of the $\lsp$ in each model. The $\lsp$ is considered to be bino-like ($\tilde{B}$-like), wino-like ($\tilde{W}$-like) or higgsino-like ($\tilde{H}$-like) if the corresponding fraction from the neutralino mass mixing matrix is at least 80\%. Additionally, the $\lsp$ is considered to be of mixed nature if more than one component has a fraction of 20\%. For example, a $\tilde{B}\tilde{W}$-like $\lsp$ has more than 20\% bino and wino components, but less than 20\% higgsino component.}
+	\label{fig:lsp_phenomenology}
+\end{figure}
+
 \section{Impact of the 1-lepton search on the pMSSM}
 
 The impact of the 1-lepton search on the \gls{pmssm} is discussed using one-dimensional and two-dimensional distributions in the following sections. As usual, a model is considered to be excluded if the observed CL$_s$ value obtained from the simplified likelihood using the smeared truth-level inputs is below 0.05. Of the 7264 models evaluated, the \onelepton search excludes a total of 98, or about 1.3\%, of the models.
@@ -280,6 +302,25 @@ No sensitivity is observed for \gls{pmssm} models with higgsino-like electroweak
 
 
 \subsection{Impact on pMSSM parameters}
+
+
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{cut_none/mchi1p_mlsp_contour}
+		\caption{\label{fig:mchi1p_mlsp_contour}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{cut_none/mchi20_mlsp_contour}
+		\caption{\label{fig:mchi20_mlsp_contour}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=\textwidth]{cut_none/mchi1p_mchi20_contour}
+		\caption{\label{fig:mchi1p_mchi20_contour}}
+	\end{subfigure}\hfill
+	\caption{Bin-by-bin fraction of excluded models as a function of the relevant sparticle masses. The numbers in the bins correspond to the total number of models sampled falling into the respective bin. The number of models excluded by the 1-lepton analysis is encoded with a colour bar ranging from 0 to 1. Where all models in a given bin are excluded, the bin is coloured in black. Bins without any models excluded are left white. Models are evaluated using the simplified likelihood of the 1-lepton analysis. The simplified model contour is shown in orange.}
+	\label{fig:impact_electroweakinos_2D}
+\end{figure}
 
 
  \begin{figure}
