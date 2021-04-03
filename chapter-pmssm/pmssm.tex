@@ -255,7 +255,7 @@ The impact of the 1-lepton search on the \gls{pmssm} is discussed using one-dime
 
 For the one-dimensional distributions shown in the following, the total number of models is compared against the number of models excluded by the \onelepton search. An additional pad indicates the ratio between models excluded and total models sampled in each bin of the distribution. In the two-dimensional distributions, the numbers in the bins indicate the number of \gls{pmssm} models falling into each respective bin. In these distributions, the fraction of models excluded with the \onelepton search is encoded using the $z$-axis, represented by a colour bar.
 
-\subsection{Impact on electroweakino masses}
+\subsection{Impact on electroweakino masses}\label{sec:impact_electroweakino_masses}
 
  \begin{figure}
 	\centering
@@ -320,27 +320,7 @@ As a cross-check, a significant portion of the models with bino-like \gls{lsp} w
 
 \subsection{Impact on pMSSM parameters}
 
-
- \begin{figure}
-	\centering
-	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=\textwidth]{cut_none/mchi1p_mlsp_contour}
-		\caption{\label{fig:mchi1p_mlsp_contour}}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=\textwidth]{cut_none/mchi20_mlsp_contour}
-		\caption{\label{fig:mchi20_mlsp_contour}}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=\textwidth]{cut_none/mchi1p_mchi20_contour}
-		\caption{\label{fig:mchi1p_mchi20_contour}}
-	\end{subfigure}\hfill
-	\caption{Bin-by-bin fraction of excluded models as a function of the relevant sparticle masses. The numbers in the bins correspond to the total number of models sampled falling into the respective bin. The number of models excluded by the 1-lepton analysis is encoded with a colour bar ranging from 0 to 1. Where all models in a given bin are excluded, the bin is coloured in black. Bins without any models excluded are left white. Models are evaluated using the simplified likelihood of the 1-lepton analysis. The simplified model contour is shown in orange.}
-	\label{fig:impact_electroweakinos_2D}
-\end{figure}
-
-
- \begin{figure}
+\begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=\textwidth]{1D/M1}
@@ -361,4 +341,63 @@ As a cross-check, a significant portion of the models with bino-like \gls{lsp} w
 	\label{fig:impact_pMSSM_parameters_1D}
 \end{figure}
 
-\subsection{Impact on dark matter}
+The impact of the \onelepton search on the \gls{pmssm} parameters relevant to the electroweak sector are shown in one-dimensional distributions in~\cref{fig:impact_pMSSM_parameters_1D}. As already discussed in~\cref{sec:impact_electroweakino_masses}, the \onelepton search has the largest impact for small values in the bino mass parameter $M_1$, leading to models with a bino-like \gls{lsp} when $M_1 \ll M_2 \lesssim \mu$. Consequently, the proportion of excluded models peaks at slightly higher values in the distribution of the wino mass parameter, $\vert M_2\vert\approx\SI{400}{\GeV}$. As the search is not sensitive to compressed scenarios with a higgsino-like \gls{lsp}, no models with small values in $\vert\mu\vert$ can be excluded. 
+
+As the pseudoscalar Higgs boson does not directly enter the phenomenology of the models targeted by the \onelepton search, only indirect constraints are provided on $m_\mathrm{A}$, excluding models in the full range of the $m_\mathrm{A}$ distribution sampled. A similar behaviour is observed in $\tan\beta$ where the excluded models have values of $\tan\beta$ spanning the full range from 1 to 60. Likewise, no direct constraints on the trilinear scalar couplings ($A_t$, $A_b$, $A_\tau$), and the remaining gluino and third generation squark mass parameters ($M_3$, $m_{\tilde{Q}_3}$, $m_{\tilde{u}_3}$, $m_{\tilde{d}_3}$) is observed. As can be seen from \cref{fig:impact_pMSSM_parameters_1D_2}, the \onelepton search excludes values of these parameters across the entire range originally sampled. 
+
+\improvement{why mA < 500?}
+
+% \begin{figure}
+%	\centering
+%	\begin{subfigure}[b]{0.5\linewidth}
+%		\centering\includegraphics[width=\textwidth]{cut_none/M1_vs_M2}
+%		\caption{\label{fig:M1_vs_M2}}
+%	\end{subfigure}\hfill
+%	\begin{subfigure}[b]{0.5\linewidth}
+%		\centering\includegraphics[width=\textwidth]{cut_none/M1_vs_mu}
+%		\caption{\label{fig:M1_vs_mu}}
+%	\end{subfigure}\hfill
+%	\begin{subfigure}[b]{0.5\linewidth}
+%		\centering\includegraphics[width=\textwidth]{cut_none/M2_vs_mu}
+%		\caption{\label{fig:M2_vs_mu}}
+%	\end{subfigure}\hfill
+%	\caption{}
+%	\label{fig:impact_electroweakinos_2D}
+%\end{figure}
+
+\subsection{Impact on dark matter relic density}
+
+The $\lsp$ cosmological abundance in dependence of its type and mass is shown in~\cref{fig:relic_density_lsp}. The measurement of the \gls{dm} relic density by the Planck mission is shown as dashed line and interpreted as upper limit on the \gls{dm} relic density, allowing the $\lsp$ to be a sub-dominant \gls{dm} component. Some interesting features can be highlighted. First, most of the models sampled with bino-like $\lsp$ result in a cosmological abundance $\Omega_{\tilde{\chi}} h^2 > 0.12$ incompatible with the result from Planck. Of the \gls{pmssm} models sampled in this work, only models containing a $\lsp$ with a considerable wino or higgsino component satisfy $\Omega_{\tilde{\chi}} h^2 < 0.12$ over a large range of $m(\lsp)$. Models with $m(\lsp) \simeq m(Z)/2$ produce especially low values in $\Omega_{\tilde{\chi}} h^2$ as the $\lsp$ can resonantly annihilate through \textit{s}-channel $Z$ exchange. This is the so-called \textit{Z-funnel}~\cite{Cabrera:2016wwr}. A similar funnel exists around $m(h)/2$ but is not visible in~\cref{fig:relic_density_lsp} due to an additional resonant process: co-annihilation of a nearly mass-degenerate $\charg\lsp$ pair at $m(W)/2$ through \textit{s}-channel \textit{W} exchange.\unsure{is this correct?}
+
+In practice, experimental constraints like \eg the \gls{lep} limit of $m(\charg) \gtrsim \SI{100}{\GeV}$ (the actual limit depends on the exact configuration of the \gls{susy} mass spectrum probed) rule out models with $\vert M_2\vert, \vert \mu \vert \lesssim \SI{100}{\GeV}$. The effect of this in the $\Omega_{\tilde{\chi}} h^2$--$m(\lsp)$ plane is shown in~\cref{fig:relic_density_lsp_withConstraint}, revaealing that models containing a $\lsp$ with a large wino or higgsino component and $m(\lsp) \lesssim \SI{100}{\GeV}$ are largely ruled out, leaving models with a bino-like $\lsp$ as the only remaining possibility in this region. Although theoretically models with a bino-like $\lsp$ could produce low $\lsp$ relic density values through the $Z$- and $h$-funnels, in practice they are not sampled in this work due to the limited number of bino-like $\lsp$ models sampled in combination with relative accumulation at large $\lsp$ masses of models with a bino-like $\lsp$. For this reason, in this work, only a very small number of models with a bino-like $\lsp$ with $m(\lsp) \lesssim \SI{100}{\GeV}$ have a relic density compatible with the Planck measurement. Oversampling this region in the parameter space still reveals the $Z$- and $h$-funnels for models with a bino-like $\lsp$, as can be seen in \eg \references\cite{pMSSM-scan-run1:2015baa,Aaboud:2016wna}. If the $\charg/\neutr$ masses of such models fall into the range where the \onelepton search is sensitive,\ie $\charg\neutr$ pair-production has high enough cross section, the \onelepton search can be excepted to exclude a large fraction of these models, warranting additional studies and dedicated \gls{pmssm} scans using experimental constraints in the sampling priors. 
+
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.445\linewidth}
+		\centering\includegraphics[width=\textwidth]{scatter/relic_density_lsp}
+		\caption{\label{fig:relic_density_lsp}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.555\linewidth}
+		\centering\includegraphics[width=\textwidth]{scatter/relic_density_lsp_cls}
+		\caption{\label{fig:relic_density_lsp_cls}}
+	\end{subfigure}\hfill
+	\caption{}
+	\label{fig:relic_density}
+\end{figure}
+
+Although of limited use due to the reasons just discussed, the impact of the \onelepton search on the \gls{dm} relic density can still be investigated with the models available. \Cref{fig:relic_density_lsp_cls} shows the $\lsp$ cosmological abundance in dependence of its mass. Instead of encoding the nature of the $\lsp$, the colour now encodes the observed CL$_s$ value obtained by the \onelepton search. By comparing with \cref{fig:relic_density_lsp} it can be seen that the majority of the models with a bino-like $\lsp$ excluded by the \onelepton search have a cosmological abundance not satisfying $\Omega_{\tilde{\chi}} h^2 < 0.12$. Through its limited sensitivity to some of the models with a wino-like $\lsp$, the \onelepton search is however still able to constrain $\Omega_{\tilde{\chi}} h^2$, even if only for a few select models. 
+
+
+
+\section{Discussion}
+
+Large-scale reinterpretations in high-dimensional \gls{susy} model spaces are crucial in order to assess the sensitivity of \gls{susy} searches in the context of realistic \gls{susy} scenarios. The evaluation of signal models at smeared truth level in combination with the simplified likelihoods introduced in~\cref{ch:simplify} offers a computationally efficient but still reliable approach for such reinterpretations.
+
+A reinterpretation of the \onelepton search in a limited number of models sampled from the \gls{pmssm} with a focus on the electroweak sector revealed that the search is sensitive to \gls{susy} beyond the simplified model originally considered. In general, the simplified model phenomenology maps reasonably well onto a portion of the \gls{pmssm} parameter space. The sensitivity of the \onelepton search towards \gls{pmssm} models is however negatively impacted by the competing decays $\neutr \rightarrow Z \lsp$ and $\neutr \rightarrow h \lsp$, a circumstance that breaks one of the main assumptions of the simplified model. In order to maximise the sensitivity of future searches to $\charg\neutr$ pair-production in more complete \gls{susy} scenarios, it is crucial to target both decay modes at the same time. In searches targeting final states with one lepton, multiple jets and missing transverse momentum, both the \textit{b}-jet multiplicity as well as the invariant mass of the jets originating from the decays $h\rightarrow b\bar{b}$ and $Z\rightarrow q\bar{q}$ can easily be used to construct disjoint\footnote{Building signal regions that are not orthogonal to each other prevents the construction of a single likelihood and thus does not allow to fit all regions simultaneously.} signal regions targeting both decay modes.
+
+Going even further than this, it would be worth targeting not only $\charg\neutr$ production, but also $\charg\charg$ production at the same time through a single likelihood. In ATLAS, work is ongoing to perform a \eg a \onelepton search with dedicated signal regions targeting both $\charg\neutr \rightarrow WZ\lsp\lsp\rightarrow \ell\nu_\ell q\bar{q} \lsp\lsp$ and $\charg\charg \rightarrow WW\lsp\lsp\rightarrow \ell\nu_\ell q\bar{q}' \lsp\lsp$ at the same time. 
+
+Finally, the impact of the \onelepton search on the \gls{dm} relic density was discussed. Due to the parameter ranges chosen during sampling and the lack of experimental constraints applied, many models sampled are not directly relevant to the \gls{dm} phenomenology. Only a small number of models with a bino-like $\lsp$ are sampled in the $Z$- and $h$-funnel region where $\Omega_{\tilde{\chi}} h^2 < 0.12$ is satisfied. Outside of these two funnels, models with a bino-like $\lsp$ only satisfy the relic density constraint for $\charg$ and $\lsp$ masses outside of the parameter space the \onelepton search is sensitive to. In order to be able to further investigate the impact of the \onelepton search on \gls{dm} observables---especially in the $Z$ and $h$-funnels---a different sampling technique would need to be adopted and models with bino-like $\lsp$ need to be oversampled in the relevant region of the parameter space. 
+
+
+
