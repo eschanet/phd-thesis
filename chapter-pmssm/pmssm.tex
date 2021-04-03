@@ -271,7 +271,7 @@ For the one-dimensional distributions shown in the following, the total number o
 		\centering\includegraphics[width=\textwidth]{cut_none/mchi1p_mchi20_contour}
 		\caption{\label{fig:mchi1p_mchi20_contour}}
 	\end{subfigure}\hfill
-	\caption{Bin-by-bin fraction of excluded models as a function of the relevant sparticle masses. The numbers in the bins correspond to the total number of models sampled falling into the respective bin. The number of models excluded by the 1-lepton analysis is encoded with a colour bar ranging from 0 to 1. Where all models in a given bin are excluded, the bin is coloured in black. Bins without any models excluded are left white. Models are evaluated using the simplified likelihood of the 1-lepton analysis. The simplified model contour is shown in orange.}
+	\caption{Bin-by-bin fraction of excluded models as a function of the relevant sparticle masses. The numbers in the bins correspond to the total number of models sampled falling into the respective bin. The number of models excluded by the 1-lepton analysis is encoded with a colour bar ranging from 0 to 1. Where all models in a given bin are excluded, the bin is coloured in black. Bins without any models excluded are left white. Models are evaluated using the simplified likelihood of the \onelepton search. The simplified model contour is shown in orange.}
 	\label{fig:impact_electroweakinos_2D}
 \end{figure}
 
@@ -287,7 +287,7 @@ For the one-dimensional distributions shown in the following, the total number o
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=\textwidth]{1D/m_chi_1p}
 	\end{subfigure}\hfill
-	\caption{}
+	\caption{Bin-by-bin number of excluded models as a one-dimensional function of the electroweakino masses. The bin-wise fraction of excluded models, $N^\mathrm{bin}_\mathrm{excl} / N^\mathrm{bin}_\mathrm{total}$, is shown in the lower pad. All models are evaluated using the simplified likelihood of the \onelepton search.}
 	\label{fig:impact_electroweakinos_1D}
 \end{figure}
 
@@ -310,7 +310,7 @@ No sensitivity is observed for \gls{pmssm} models with higgsino-like electroweak
 		\centering\includegraphics[width=\textwidth]{scatter/fig_scatter_mchi10_BFHiggs_bino_withXsecCut}
 		\caption{\label{fig:fig_scatter_mchi10_BFHiggs_bino_withXsecCut}}
 	\end{subfigure}\hfill
-	\caption{}
+	\caption{Density of the \gls{pmssm} models with bino-like $\lsp$ projected onto the plane spanned by \subref{fig:fig_scatter_xsec_BFHiggs_bino} $\charg\neutr$ pair-production cross section and $\mathrm{BF}(\neutr \rightarrow h \lsp)$ and \subref{fig:fig_scatter_mchi10_BFHiggs_bino_withXsecCut} $m(\lsp)$ and $\mathrm{BF}(\neutr \rightarrow h \lsp)$. The observed CL$_s$ value obtained for each model using the \onelepton search is encoded using the colour-palette. Models with a red tint cannot be excluded, models with a neutral white tint are on the boundary of exclusion, and models with a blue tint can be excluded. Only models satisfying $\sigma(\charg\neutr)>\SI{1}{\femto\barn}$ are shown in fig.~\subref{fig:fig_scatter_mchi10_BFHiggs_bino_withXsecCut}.}
 	\label{fig:bino_sensitivity}
 \end{figure}
 
@@ -337,7 +337,7 @@ As a cross-check, a significant portion of the models with bino-like \gls{lsp} w
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=\textwidth]{1D/tanb}
 	\end{subfigure}\hfill
-	\caption{}
+	\caption{Bin-by-bin number of excluded models as a one-dimensional function of the \gls{pmssm} parameters sampled relevant to the electroweak sector. The bin-wise fraction of excluded models, $N^\mathrm{bin}_\mathrm{excl} / N^\mathrm{bin}_\mathrm{total}$, is shown in the lower pad. All models are evaluated using the simplified likelihood of the \onelepton search.}
 	\label{fig:impact_pMSSM_parameters_1D}
 \end{figure}
 
@@ -367,10 +367,6 @@ As the pseudoscalar Higgs boson does not directly enter the phenomenology of the
 
 \subsection{Impact on dark matter relic density}
 
-The $\lsp$ cosmological abundance in dependence of its type and mass is shown in~\cref{fig:relic_density_lsp}. The measurement of the \gls{dm} relic density by the Planck mission is shown as dashed line and interpreted as upper limit on the \gls{dm} relic density, allowing the $\lsp$ to be a sub-dominant \gls{dm} component. Some interesting features can be highlighted. First, most of the models sampled with bino-like $\lsp$ result in a cosmological abundance $\Omega_{\tilde{\chi}} h^2 > 0.12$ incompatible with the result from Planck. Of the \gls{pmssm} models sampled in this work, only models containing a $\lsp$ with a considerable wino or higgsino component satisfy $\Omega_{\tilde{\chi}} h^2 < 0.12$ over a large range of $m(\lsp)$. Models with $m(\lsp) \simeq m(Z)/2$ produce especially low values in $\Omega_{\tilde{\chi}} h^2$ as the $\lsp$ can resonantly annihilate through \textit{s}-channel $Z$ exchange. This is the so-called \textit{Z-funnel}~\cite{Cabrera:2016wwr}. A similar funnel exists around $m(h)/2$ but is not visible in~\cref{fig:relic_density_lsp} due to an additional resonant process: co-annihilation of a nearly mass-degenerate $\charg\lsp$ pair at $m(W)/2$ through \textit{s}-channel \textit{W} exchange.\unsure{is this correct?}
-
-In practice, experimental constraints like \eg the \gls{lep} limit of $m(\charg) \gtrsim \SI{100}{\GeV}$ (the actual limit depends on the exact configuration of the \gls{susy} mass spectrum probed) rule out models with $\vert M_2\vert, \vert \mu \vert \lesssim \SI{100}{\GeV}$. The effect of this in the $\Omega_{\tilde{\chi}} h^2$--$m(\lsp)$ plane is shown in~\cref{fig:relic_density_lsp_withConstraint}, revaealing that models containing a $\lsp$ with a large wino or higgsino component and $m(\lsp) \lesssim \SI{100}{\GeV}$ are largely ruled out, leaving models with a bino-like $\lsp$ as the only remaining possibility in this region. Although theoretically models with a bino-like $\lsp$ could produce low $\lsp$ relic density values through the $Z$- and $h$-funnels, in practice they are not sampled in this work due to the limited number of bino-like $\lsp$ models sampled in combination with relative accumulation at large $\lsp$ masses of models with a bino-like $\lsp$. For this reason, in this work, only a very small number of models with a bino-like $\lsp$ with $m(\lsp) \lesssim \SI{100}{\GeV}$ have a relic density compatible with the Planck measurement. Oversampling this region in the parameter space still reveals the $Z$- and $h$-funnels for models with a bino-like $\lsp$, as can be seen in \eg \references\cite{pMSSM-scan-run1:2015baa,Aaboud:2016wna}. If the $\charg/\neutr$ masses of such models fall into the range where the \onelepton search is sensitive,\ie $\charg\neutr$ pair-production has high enough cross section, the \onelepton search can be excepted to exclude a large fraction of these models, warranting additional studies and dedicated \gls{pmssm} scans using experimental constraints in the sampling priors. 
-
  \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.445\linewidth}
@@ -381,9 +377,13 @@ In practice, experimental constraints like \eg the \gls{lep} limit of $m(\charg)
 		\centering\includegraphics[width=\textwidth]{scatter/relic_density_lsp_cls}
 		\caption{\label{fig:relic_density_lsp_cls}}
 	\end{subfigure}\hfill
-	\caption{}
+	\caption{Density of the \gls{pmssm} model points sampled in the plane spanned by the relic density and the $\lsp$ mass. The model points are additionally shown as a function of \subref{fig:relic_density_lsp} the nature of their $\lsp$ and \subref{fig:relic_density_lsp_cls} the observed CL$_s$ value obtained for \onethirtynineifb of data using the \onelepton search. The horizontal dashed line represents the \gls{dm} relic density measurement by the Planck collaboration, interpreted as an upper limit $\Omega_{\tilde{\chi}} h^2 < 0.12$ such that the $\lsp$ can be a sub-dominant \gls{dm} component.}
 	\label{fig:relic_density}
 \end{figure}
+
+The $\lsp$ cosmological abundance in dependence of its type and mass is shown in~\cref{fig:relic_density_lsp}. The measurement of the \gls{dm} relic density by the Planck mission is shown as dashed line and interpreted as upper limit on the \gls{dm} relic density, allowing the $\lsp$ to be a sub-dominant \gls{dm} component. Some interesting features can be highlighted. First, most of the models sampled with bino-like $\lsp$ result in a cosmological abundance $\Omega_{\tilde{\chi}} h^2 > 0.12$ incompatible with the result from Planck. Of the \gls{pmssm} models sampled in this work, only models containing a $\lsp$ with a considerable wino or higgsino component satisfy $\Omega_{\tilde{\chi}} h^2 < 0.12$ over a large range of $m(\lsp)$. Models with $m(\lsp) \simeq m(Z)/2$ produce especially low values in $\Omega_{\tilde{\chi}} h^2$ as the $\lsp$ can resonantly annihilate through \textit{s}-channel $Z$ exchange. This is the so-called \textit{Z-funnel}~\cite{Cabrera:2016wwr}. A similar funnel exists around $m(h)/2$ but is not visible in~\cref{fig:relic_density_lsp} due to an additional resonant process: co-annihilation of a nearly mass-degenerate $\charg\lsp$ pair at $m(W)/2$ through \textit{s}-channel \textit{W} exchange.\unsure{is this correct?}
+
+In practice, experimental constraints like \eg the \gls{lep} limit of $m(\charg) \gtrsim \SI{100}{\GeV}$ (the actual limit depends on the exact configuration of the \gls{susy} mass spectrum probed) rule out models with $\vert M_2\vert, \vert \mu \vert \lesssim \SI{100}{\GeV}$. The effect of this in the $\Omega_{\tilde{\chi}} h^2$--$m(\lsp)$ plane is shown in~\cref{fig:relic_density_lsp_withConstraint}, revaealing that models containing a $\lsp$ with a large wino or higgsino component and $m(\lsp) \lesssim \SI{100}{\GeV}$ are largely ruled out, leaving models with a bino-like $\lsp$ as the only remaining possibility in this region. Although theoretically models with a bino-like $\lsp$ could produce low $\lsp$ relic density values through the $Z$- and $h$-funnels, in practice they are not sampled in this work due to the limited number of bino-like $\lsp$ models sampled in combination with relative accumulation at large $\lsp$ masses of models with a bino-like $\lsp$. For this reason, in this work, only a very small number of models with a bino-like $\lsp$ with $m(\lsp) \lesssim \SI{100}{\GeV}$ have a relic density compatible with the Planck measurement. Oversampling this region in the parameter space still reveals the $Z$- and $h$-funnels for models with a bino-like $\lsp$, as can be seen in \eg \references\cite{pMSSM-scan-run1:2015baa,Aaboud:2016wna}. If the $\charg/\neutr$ masses of such models fall into the range where the \onelepton search is sensitive,\ie $\charg\neutr$ pair-production has high enough cross section, the \onelepton search can be excepted to exclude a large fraction of these models, warranting additional studies and dedicated \gls{pmssm} scans using experimental constraints in the sampling priors. 
 
 Although of limited use due to the reasons just discussed, the impact of the \onelepton search on the \gls{dm} relic density can still be investigated with the models available. \Cref{fig:relic_density_lsp_cls} shows the $\lsp$ cosmological abundance in dependence of its mass. Instead of encoding the nature of the $\lsp$, the colour now encodes the observed CL$_s$ value obtained by the \onelepton search. By comparing with \cref{fig:relic_density_lsp} it can be seen that the majority of the models with a bino-like $\lsp$ excluded by the \onelepton search have a cosmological abundance not satisfying $\Omega_{\tilde{\chi}} h^2 < 0.12$. Through its limited sensitivity to some of the models with a wino-like $\lsp$, the \onelepton search is however still able to constrain $\Omega_{\tilde{\chi}} h^2$, even if only for a few select models. 
 
