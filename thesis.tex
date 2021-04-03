@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,11pt,numbered,pdftex,dvipsnames]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,11pt,numbered,pdftex,dvipsnames,chapter]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -103,7 +103,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
-%	\includeonly{Introduction/introduction}
+	\includeonly{Introduction/introduction}
 %	\includeonly{chapter-theory/theory}
 %	\includeonly{chapter-experiment/experiment}
 %	\includeonly{chapter-statistics/statistics}
@@ -116,7 +116,7 @@
 
 %	\includeonly{chapter-statistics/statistics}
 %	\includeonly{chapter-electroweak/electroweak}
-	\includeonly{chapter-pmssm/pmssm,Appendix4/appendix4}
+%	\includeonly{chapter-pmssm/pmssm,Appendix4/appendix4}
 %	\includeonly{chapter-summary/summary}
 \fi
 
@@ -174,7 +174,7 @@ Supervisor: PD\@\xspace Dr.\@\xspace Jeanette Lorenz
 \include{chapter-simplify/simplify}
 \include{chapter-pmssm/pmssm}
 
-\part{Summary and Outlook}
+\part{Summary and Outlook}\label{part:summary}
 \include{chapter-summary/summary}
 
 % ********************************** Back Matter *******************************
