@@ -25,6 +25,17 @@
 % Add `customfont' in the document class option to use this section
 
 \ifsetCustomFont
+\usepackage[footnotefigures]{MinionPro}
+\usepackage[footnotefigures]{MyriadPro}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\renewcommand{\scdefault}{ssc}
+\allsectionsfont{\sffamily}
+
+
+%\usepackage[scaled=0.85]{luximono} % Monospace font
+%\usepackage[letterspace=160,babel=true,tracking=true,kerning=true]{microtype}
+
   % Set your custom font here and use `customfont' in options. Leave empty to
   % load computer modern font (default LaTeX font).
   %\RequirePackage{helvet}
@@ -202,29 +213,6 @@
 % Default value is 0.75
 %\SetDraftGrayScale{0.8}
 
-% ******************************** Style stuff **********************************
-%\usepackage[Bjornstrup]{fncychap}
-
-
-%\usepackage{titlesec,blindtext}
-%
-%\titleformat{\chapter}[display]
-%{\normalfont\Large\raggedleft}
-%{\MakeUppercase{\chaptertitlename}%
-%	\rlap{ \resizebox{!}{1.5cm}{\thechapter} \rule{5cm}{1.5cm}}}
-%{10pt}{\Huge}
-%\titlespacing*{\chapter}{0pt}{30pt}{20pt}
-
-%\definecolor{gray75}{gray}{0.75}
-%\newcommand{\hsp}{\hspace{20pt}}
-%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{black}{|}\hsp}{0pt}{\Huge\bfseries}
-
-%\titleformat{\chapter}[display]
-%  {\bfseries\huge}
-%  {\filleft\large\chaptertitlename~\thechapter}
-%  {3ex}
-%  {\titlerule\vspace{1.5ex}\filright}
-%  [\vspace{1ex}\titlerule]
 
 % ******************************** Todo Notes **********************************
 %% Uncomment the following lines to have todonotes.
@@ -291,11 +279,8 @@
 
 
 
-% *****************************************************************************
-% ******************* Better enumeration my MB*************
-\usepackage{enumitem}
+\usepackage{enumitem} % better enumeration
 
-%\usepackage{titlesec}
 \usepackage{placeins}
 \usepackage{braket}
 \usepackage{bbold}
@@ -316,8 +301,44 @@
 \setlength{\marginparwidth}{2cm}
 \usepackage[draft,textsize=small,disable]{todonotes}   % notes showed
 
-% ******************************** New custom commands **********************************
+% ******************************** Style stuff **********************************
+% ************************* Some hacks of my thesis style class I am too lazy to implement correctly ****************************
+%
+%\usepackage{titlesec}
+%\titleformat{\chapter}[display]
+%	{\normalfont\LARGE}
+%	{\filleft\MakeUppercase{\chaptertitlename}\hspace{0.5cm}\rlap{\resizebox{!}{1.5cm}{\thechapter}~\rule{5cm}{1.5cm}}\hspace{0.0cm}}
+%  	{10pt}
+%  	{\bf\LARGE\filright}
+%\titlespacing*{\chapter}{0pt}{30pt}{20pt}
 
+%\newcommand*\HUGE{\Huge}
+%\newcommand*\chapnamefont{\normalfont\LARGE\MakeUppercase}
+%\newcommand*\chapnumfont{\normalfont\HUGE}
+%\newcommand*\chaptitlefont{\normalfont\HUGE\bfseries}
+%
+%\newlength\beforechapskip
+%\newlength\midchapskip
+%\setlength\midchapskip{\paperwidth}
+%\addtolength\midchapskip{-\textwidth}
+%\addtolength\midchapskip{-\oddsidemargin}
+%\addtolength\midchapskip{-1in}
+%\setlength\beforechapskip{18mm}
+%
+%\titleformat{\chapter}[display]
+%  {\normalfont\filleft}
+%{{\chapnamefont\chaptertitlename}%
+%\rlap{\hspace{.8em}
+%\makebox[\dimexpr\paperwidth-\evensidemargin-\hoffset-1in][r]{{\resizebox{!}{\beforechapskip}{\chapnumfont\thechapter}}\quad%
+%\rule{46pt}{\beforechapskip}}%
+%}}%
+%  {25pt}
+%  {\chaptitlefont}
+%\titlespacing*{\chapter}
+%  {0pt}{40pt}{40pt}
+
+
+% ******************************** New custom commands **********************************
 
 \newcommand{\comment}[1]
 {\par {\bfseries \color{blue} #1 \par}} %comment showed
