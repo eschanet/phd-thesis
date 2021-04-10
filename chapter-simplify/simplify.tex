@@ -181,6 +181,22 @@ In addition to the 1-lepton search, the simplified likelihood approach has been 
 \end{figure}
 
 
+ \begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_truthInput_compareReco_BkgOnly_noLabel}
+		\caption{\label{fig:full_truth_result}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.49\linewidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}
+		\caption{\label{fig:simplified_truth_result}}
+	\end{subfigure}\hfill
+	\caption{Expected and observed exclusion contours obtained with the full and simplified likelihoods. Fig.~\subref{fig:full_truth_result} compares the full likelihood contours obtained with the reconstruction-level inputs (orange) to results obtained with truth inputs before (purple) and after (green) smearing. Fig.~\subref{fig:simplified_truth_result} compares the full likelihood reconstruction-level contours (orange) with those obtained using the simplified likelihood and smeared truth-level inputs (blue). Uncertainties include all statistical and systematic uncertainties on the background and signal for the reconstruction-level contours, but only statistical and systematic uncertainties on the background for truth-level signal inputs.}
+	\label{fig:smearing_signal_regions}
+\end{figure}
+
+
+
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\textwidth}
@@ -209,7 +225,6 @@ In addition to the 1-lepton search, the simplified likelihood approach has been 
 	\end{subfigure}\hfill
 	\caption{Simplified likelihood results for the different ATLAS searches studied in this document. The results from the simplified likelihood (blue) are compared with the results of the full analysis likelihood (orange). The coloured numbers represent the observed CL$_s$ numbers obtained with both likelihoods.}\label{fig:results_analyses}
 \end{figure}
-
 
 \section{Limitations}\label{sec:simplify_limitations}
 
