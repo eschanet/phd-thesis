@@ -280,7 +280,7 @@
 
 
 \usepackage{enumitem} % better enumeration
-
+\usepackage{relsize} % for Cpp command
 \usepackage{placeins}
 \usepackage{braket}
 \usepackage{bbold}
@@ -379,6 +379,9 @@
 \newcommand{\onefiftyifb}{\ensuremath{\SI{150}{\femto\barn^{-1}}}\@\xspace}
 \newcommand{\thirtysixifb}{\ensuremath{\SI{36.1}{\femto\barn^{-1}}}\@\xspace}
 
+
+\newcommand{\Rplus}{\protect\hspace{-.1em}\protect\raisebox{.35ex}{\smaller{\smaller\textbf{+}}}}
+\newcommand{\Cpp}{\mbox{C\Rplus\Rplus}\xspace}
 
 %some shortcuts for common things that I need to write quite often
 \newcommand{\citeneed}{\textbf{[CITATION~NEEDED]}}
