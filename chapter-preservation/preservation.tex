@@ -131,7 +131,7 @@ The \textsc{Recast} implementation of the analysis presented in this work has be
 
 
  \begin{sidewaysfigure}
-	\centering\includegraphics[width=\textwidth]{yadage_workflow_instance}
+	\centering\includegraphics[width=1.0\textwidth]{yadage_workflow_instance}
 	\caption{Graph of the workflow as specified for the analysis pipeline. The containerised processing steps are represented as blue rectangular nodes, while input parameters, input files and outputs are shown as red oval nodes. The workflow is comprised of four processing steps: \texttt{selection\_stage\_mc16(a,d,e)}, \texttt{merging\_stage}, \texttt{workspace\_creation\_stage} and \texttt{fitting\_stage}. The first two steps perform the object calibration, event selection and merging of the three \gls{mc} datasets representing the three data-taking periods 2015--2016, 2017 and 2018. The latter two steps implement the generation of the signal \texttt{JSON} patch as well as the final statistical inference. Compared to \cref{fig:pipeline_analysis} the first two steps implement the \textit{signal analysis} part, while the latter two steps implement the \textit{statistical inference} deriving the final results.} 
 	\label{fig:recast_workflow}
 \end{sidewaysfigure}
@@ -164,10 +164,10 @@ In \cref{ch:pmssm}, both approximations are combined and applied on a set of \gl
 
  \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.48\linewidth}
+	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{20210324_noLabel_noOR/700_150/lep1Pt_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.48\linewidth}
+	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{20210324_noLabel_noOR/700_150/jet1Pt_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
 	\end{subfigure}\hfill
 	\caption{Impact of the overlap removal (OR) procedure at truth-level illustrated in the lepton and leading jet transverse momenta distributions. The truth-distributions with (blue) and without (green) overlap removal (green) are compared with a reconstruction-level (orange) distribution. The exemplary benchmark signal point with $m(\charg/\neutr), m(\lsp) = 700, \SI{150}{\GeV}$ is shown in both plots. Both truth-level distributions are shown after smearing. All distributions are shown in a loose preselection requiring exactly one lepton, $\met>\SI{50}{\GeV}$, $\mt > \SI{50}{\GeV}$, and 2--3 jets, two of which need to be \textit{b}-tagged.}
@@ -220,28 +220,28 @@ Finally, the smeared missing transverse energy is computed using the transverse 
  
   \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.45\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{20210324/700_150/met_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.45\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{20210324/700_150/mt_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.45\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{20210324/700_150/mct_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.45\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{20210324/700_150/mbb_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.45\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{20210324/700_150/lep1Pt_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.45\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{20210324/700_150/jet1Pt_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.45\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{20210324/700_150/mlb1_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.45\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{20210324/700_150/nBJet30_C1N2_Wh_hbb_700p0_150p0_smeared.pdf}
 	\end{subfigure}\hfill
 	\caption{Comparisons of the kinematic distributions of key observables at (smeared) truth- and reconstruction-level. The exemplary benchmark signal point with mass parameters $m(\charg/\neutr), m(\lsp) = 700, \SI{150}{\GeV}$ is shown. The ratio pad shows the ratio of smeared and unsmeared truth-level distributions (blue and green) to reconstruction-level distributions (orange). Only \gls{mc} statistical uncertainty is included in the error bars. All distributions are shown in a loose preselection requiring exactly one lepton, $\met>\SI{50}{\GeV}$, $\mt > \SI{50}{\GeV}$, and 2--3 jets, two of which need to be \textit{b}-tagged. The latter requirement is dropped for the \textit{b}-jet multiplicity distribution.}

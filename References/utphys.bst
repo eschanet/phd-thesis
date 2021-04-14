@@ -178,6 +178,7 @@ ENTRY
     title
     type
     volume
+    version
     year
     archive
     eprint
@@ -547,6 +548,13 @@ FUNCTION {format.collaboration}
 { collaboration empty$
     { "" }
     { "{\bfseries " collaboration * "} " * "Collaboration" * }
+  if$
+}
+
+FUNCTION {format.version}
+{ version empty$
+    { "" }
+    { " Version " * version * }
   if$
 }
 
@@ -1111,6 +1119,24 @@ FUNCTION {misc}
       blank.sep
     }
   if$
+  format.howpublished output
+  format.date output
+  new.block
+  format.url output
+  new.sentence
+  note output
+  new.sentence
+  fin.entry
+  empty.misc.check
+}
+
+FUNCTION {software}
+{ output.bibitem
+  format.collaboration output
+  format.authors "author" output.check
+  format.title add.doi "title" output.check
+  blank.sep
+  format.version output
   format.howpublished output
   format.date output
   new.block
