@@ -11,17 +11,28 @@
     \graphicspath{{chapter-theory/Figs/Vector/}{chapter-theory/Figs/}}
 \fi
 
-This chapter starts with an outline of the basic principles and concepts of the Standard Model of Particle Physics, the theoretical framework describing nature on the level of elementary particles. This is followed by an introduction to Supersymmetry, a promising class of theories aiming to solve some of the shortcomings of the \gls{sm}. By no means intended to be a full description, this chapter aims to highlight the important relations and consequences of the SM and Supersymmetry. A much more detailed introduction can be found in the references that the mathematical description in this chapter is based upon, namely \references\cite{Brock:1354959, Peskin:1995ev} for the SM and \references\cite{Martin:1997ns,Bustamante:2009us} for Supersymmetry.
+\glsreset{sm}
 
-\section{The Standard Model of Particle Physics}
+The \gls{sm}, introduced in the following section, is a theoretical framework providing a description of nature on the level of elementary particles. Although experimentally well-validated, a number of open questions are left unanswered by the \gls{sm}.
+For this reason, the second part of this chapter introduces Supersymmetry, a class of theories that could provide answers to some of these open questions. As searching for Supersymmetry will be the guiding thread for the greater part of this thesis, this chapter will highlight the phenomenological consequences of supersymmetric theories.
+The mathematical description in the following sections largely follows \references\cite{Brock:1354959, Peskin:1995ev} for the \gls{sm} and \references\cite{Martin:1997ns,Bustamante:2009us} for Supersymmetry.
 
-By the end of the 1920s, quantum mechanics and general relativity had been relatively well established and the consensus among physicists was that matter is composed of nuclear atoms consisting of electrons and protons. During the 1930s, a multitude of new experimental discoveries and theoretical puzzles excited physicists in three main currents of research: nuclear physics, cosmic rays and relativistic quantum mechanics~\cite{brown1986the}. Open questions at this time included \eg the continuous spectrum of the $\beta$-decay, the nature of cosmic rays, or the negative energy states in Dirac's relativistic electron theory. As a result of these currents ultimately flowing together, the following decades saw elementary particle physics emerge as a new field of research.
+\section{The Standard Model of particle physics}
 
-Since these early times of particle physics, extraordinary progress has been made in describing nature at the subatomic scale. Today, a century later, the resulting theoretical framework, the \gls{sm}, is the most fundamental, experimentally validated theory of nature known to mankind. It provides an extremely precise description of the interactions of elementary particles and---using the \gls{lep} collider---has been tested to an unprecedented level of accuracy up to the \gls{ewk} scale. Given the remarkable success of the \gls{sm}, it is not surprising that its history is paved with numerous awards for both experimental and theoretical work. In 1964, the Nobel prize was awarded to Feynman, Schwinger and Tomonoga for their fundamental work in \gls{qed}, a quantum field theory allowing the precise calculation of fundamental processes like \eg the anomalous magnetic moment of the electron that is known to a relative experimental uncertainty of $2.3 \times 10^{-10}$~\cite{Mohr:2015ccw}. In 1979, Glashow, Weinberg and Salam were awarded the Nobel prize for their work towards electroweak unification. The most prominent recent progress undoubtedly is the discovery of the Higgs boson, not only resulting in the Nobel prize being awarded to Englert and Higgs, but also completing the \gls{sm}, roughly 50 years after the existence of the Higgs boson had been theorised. 
+By the end of the 1920s, quantum mechanics and general relativity had been relatively well established, and the consensus among physicists was that matter is composed of nuclear atoms consisting of electrons and protons.
+During the 1930s, a multitude of new experimental discoveries and theoretical puzzles excited physicists in, among others, three important directions of research: nuclear physics, cosmic rays and relativistic quantum mechanics~\cite{brown1986the}.
+At this time, open questions in these fields included, \eg, the continuous spectrum of the $\beta$-decay, the nature of cosmic rays, or the negative energy states in Dirac's relativistic electron theory. As a result of these directions ultimately flowing together, the following decades saw elementary particle physics, among others, emerge as a new field of research.
+
+Since these early times of particle physics, significant progress has been made in describing nature at the subatomic scale.
+Today, a century later, the resulting theoretical framework, the \gls{sm}, is the most fundamental, experimentally validated theory of nature known to mankind.
+It provides an extremely precise description of the interactions of elementary particles and has been experimentally tested to an unprecedented level of accuracy. Given the remarkable success of the \gls{sm}, it is not surprising that its history is paved with numerous awards for both experimental and theoretical work.
+In 1964, the Nobel prize was awarded to Feynman, Schwinger and Tomonoga for their fundamental work on \gls{qed}, a quantum field theory allowing the precise calculation of fundamental processes like \eg the anomalous magnetic moment of the electron that is known to a relative experimental uncertainty of $2.3 \times 10^{-10}$~\cite{Mohr:2015ccw}.
+In 1979, Glashow, Weinberg and Salam were awarded the Nobel prize for their work towards electroweak unification.
+The most prominent recent progress is undoubtedly the discovery of the Higgs boson, not only resulting in the Nobel prize being awarded to Englert and Higgs, but also completing the \gls{sm}, roughly 50 years after the existence of the Higgs boson had been postulated. 
 
 	\improvement{Couplings and masses are measured from experiment}
 		
-\subsection{Particle content of the SM}
+\subsection{Particle content of the Standard Model}
 
 \begin{table}
 	\centering
@@ -51,7 +62,10 @@ Since these early times of particle physics, extraordinary progress has been mad
 	\label{tab:particles_fermions}   
 \end{table}
 
-Apart from the experimentally non-vanishing neutrino masses, the SM successfully describes ordinary matter as well as their interactions, namely the electromagnetic, weak and strong interactions, leaving gravity as the only fundamental force not described within the \gls{sm}. The particles in the SM are classified into two main categories, depending on their spin. Particles with half-integer spin follow Fermi-Dirac statistics and are called \textit{fermions}. As they are subject to the Pauli exclusion principle, they make up ordinary matter. Particles with integer spin are called \textit{bosons}, follow Bose-Einstein statistics and mediate the fundamental interactions between fermions. 
+Apart from the experimentally non-vanishing neutrino masses, the SM successfully describes ordinary matter as well as their interactions, namely the electromagnetic, weak and strong interactions, leaving gravity as the only fundamental force not described within the \gls{sm}.
+The particles in the SM are classified into two main categories, depending on their spin.
+Particles with half-integer spin follow the Fermi-Dirac statistics and are called \textit{fermions}. As they are subject to the Pauli exclusion principle, they make up ordinary matter.
+Particles with integer spin are called \textit{bosons}, follow Bose-Einstein statistics and mediate the fundamental interactions. 
 
 %\subsubsection*{Fermions} 
 
@@ -80,7 +94,7 @@ Fermions are further divided into leptons and quarks, that each come in three ge
 
 The fundamental forces described by the SM are propagated by bosons with spin-1. The photon~$\gamma$ couples to electrically charged particles and mediates the electromagnetic interaction. As the photon is massless, the electromagnetic force has infinite range. The strong force is mediated by gluons carrying one unit of colour and one unit of anti-colour. Due to colour-confinement, colour charged particles like quarks and gluons cannot exist as free particles and instead will always form colour-neutral bound states. Although nine gluon states would theoretically be possible, only eight of them are realised in nature---the colour-singlet state $\frac{1}{\sqrt{3}}(\ket{r\bar{r}}+\ket{g\bar{g}}+\ket{b\bar{b}})$ would result in long-range strong interactions, which have not been observed. Finally, the weak force is mediated by a total of three bosons, two charged $W^\pm$ bosons and a neutral $Z$ boson. The mediators of the weak force are massive, resulting in a finitely ranged interaction. They gain their masses through the Higgs mechanism (discussed in chapter~\cref{sec:ssb}). All bosons known to the SM are listed in \cref{tab:particles_bosons}.
 
-\subsection{The SM as a gauge theory}\label{ch:gauge_theory}
+\subsection{The Standard Model as a gauge theory}\label{ch:gauge_theory}
 
 Formally, the SM is a collection of a special type of \glspl{qft}, called gauge theories. \gls{qft} is the application of quantum mechanics to dynamical systems of fields---just as quantum mechanics is the quantisation of dynamical systems of particles---providing a uniform description of quantum mechanical particles and classical fields, while including special relativity.
 

@@ -11,18 +11,20 @@
     \graphicspath{{chapter-preservation/Figs/Vector/}{chapter-preservation/Figs/}}
 \fi
 
-Today's particle physics experiments are designed to collect physics data over a span of several decades. They operate at scales and complexities that make it impossible for the experiments to be repeated in the foreseeable future.
-The data taken at these experiments and physics results derived are thus exceptionally valuable and major problems arise from a scientific reproducibility point of view. In the following, reusability problems directly related to an individual analysis are discussed, and approaches taken in view of analysis preservation and reinterpretation are presented.
-This chapter starts with a brief motivation for reinterpretations, followed by a description of the main ingredients necessary.
-The remaining sections discuss three separate efforts aiming to improve the reinterpretability of the \onelepton search in light of new signal models.
+The current particle physics experiments are designed to collect physics data over a span of several decades, and operate at scales and complexities that make it impossible for the experiments to be repeated in the foreseeable future.
+The data taken at these experiments and physics results derived are thus highly valuable and major problems arise from a scientific reproducibility point of view. 
+
+In the following, reusability problems directly related to an individual analysis are discussed, and approaches taken in view of analysis preservation and reinterpretation are presented.
+This chapter starts with a brief motivation for reinterpretations, followed by a description of the main ingredients required.
+The remaining sections discuss three separate efforts aiming to improve the reinterpretability of the \onelepton search in light of new signal models. All three efforts are not only relevant in the scope of this thesis, but also for reinterpretation activities currently ongoing in ATLAS.
 
 \section{The case for reinterpretations}\label{sec:reinterpretations}
 
 \subsection{Motivation}
 Designing and executing searches for \gls{bsm} physics requires a substantial amount of person-power and computing resources. As laid out in detail in \cref{part:simplified_model_analysis} of this thesis, an analysis generally aims to design signal regions in which a given \gls{bsm} signal can be efficiently discriminated against \gls{sm} background. Although the careful design of such regions already requires a significant amount of resources, it constitutes only a fraction of the work necessary for concluding the search. 
-Contributions in the signal regions from \gls{sm} processes need to be estimated, usually requiring expensive \gls{mc} simulation and the development of background estimation strategies. Systematic uncertainties arising from numerous sources need to be considered and their impact estimated. 
+Contributions in the signal regions from \gls{sm} processes need to be estimated, usually requiring expensive \gls{mc} simulations and the development of background estimation strategies. Systematic uncertainties arising from numerous sources need to be considered and their impact estimated. 
 For the \gls{bsm} signal, a similar processing pipeline involving \gls{mc} simulation, event reconstruction and event selection including uncertainties needs to be executed.
-Furthermore, recorded data also needs to be reconstructed and processed through the analysis-specific event selection.
+Furthermore, recorded data also has to be reconstructed and processed through the analysis-specific event selection.
 Only after the expected and observed event rates in all regions are known, can the statistical evaluation be performed. 
 
 As shown in \cref{fig:pipeline_analysis}, an analysis can thus be divided into three main processing pipelines; a \textit{background pipeline}, a \textit{signal pipeline} and a \textit{data pipeline}.
@@ -35,8 +37,8 @@ Still, it is likely that a given analysis is sensitive to a variety of different
 Consequently, it is not surprising that there is significant interest in the \gls{hep} community to reinterpret \gls{bsm} searches in different signal models. Reinterpretations of ATLAS searches for \gls{susy} are routinely performed by various reinterpretation efforts. In the context of direct constraints on \gls{bsm} physics, the search results published by the experimental collaborations represent the only windows into the \gls{lhc} data that are available to the wider \gls{hep} community.
 Reinterpretations of \gls{bsm} searches are thus the only possibility to determine the implications of \gls{lhc} data for a broad range of models~\cite{reinterpretation_workshop}.
 
-As will be discussed in \cref{ch:pmssm}, reinterpretations are not only of interest for the wider \gls{hep} community, but also for the experimental collaborations themselves. Within ATLAS, reinterpretations of \gls{susy} searches can, for example, serve as powerful tools to state a comprehensive summary of ATLAS's sensitivity to \gls{susy} models.
-
+As will be discussed in detail in \cref{ch:pmssm}, reinterpretations are not only of interest for the wider \gls{hep} community, but also for the experimental collaborations themselves. Within ATLAS, reinterpretations of \gls{susy} searches in complete \gls{susy} models can, for example, serve as powerful tools to state a comprehensive summary of the overall sensitivity to realistic supersymmetric models. As such, the efforts discussed in the remainder of this chapter, as well as \cref{ch:simplify,ch:pmssm}, are not only relevant for the work presented in this thesis, but also reinterpretation efforts currently ongoing in ATLAS.
+ 
  \begin{figure}
 	\centering\includegraphics[width=\textwidth]{pipeline}
 	\caption{Full analysis workflow including the three main processing pipelines for deriving background and signal estimates as well as observed data rates. The outputs of the three processing pipelines are combined into a likelihood forming the basis for the statistical inference. In a \textsc{Recast} setup (details in the text), the estimated background rates and observed data are archived, and the signal pipeline is fully preserved, such that it can be re-executed with different inputs at any time. Figure recreated from \mbox{\reference\cite{ATL-PHYS-PUB-2019-032}}.}
@@ -49,7 +51,7 @@ As the event selection of an analysis is fixed, the pre-fit background estimates
 Hence, the data and background pipelines shown in~\cref{fig:pipeline_analysis}, entering the statistical inference of the analysis by means of event rates, can be archived in a format significantly smaller than the original input data.
 In consequence, reinterpreting a search in the light of a new signal model requires the re-execution of two main analysis ingredients with (partially) new inputs; the signal pipeline and the statistical inference.
 
-Recently, it has become possible to preserve the partial analysis likelihood\footnote{As before, this only refers to likelihoods built using the \textsc{HistFactory} template.} built from the background estimates and observed data, including all auxiliary data and details of the statistical model used for inference in a pure-text format~\cite{ATL-PHYS-PUB-2019-029}. In \cref{fig:pipeline_analysis}, this is indicated through a red rectangle. 
+Recently, it has become possible to preserve, in a pure-text format~\cite{ATL-PHYS-PUB-2019-029}, the partial analysis likelihood\footnote{As before, this only refers to likelihoods built using the \textsc{HistFactory} template.} built from the background estimates and observed data, including all auxiliary data and details of the statistical model used for inference. In \cref{fig:pipeline_analysis}, this is indicated through a red rectangle. 
 Once the signal estimates are known, a new full analysis likelihood can be built, and the viability of the new signal model can be tested with respect to the analysis in question. The publication of the likelihood of the \onelepton search will be discussed further in~\cref{sec:full_likelihood}.
 
 Different approaches can be taken for rendering the signal pipeline reusable to the extent that signal estimates for a new \gls{bsm} scenarios of interest can be derived. Manifestly the most precise approach involves executing the original analysis software, but using a different \gls{bsm} model as input. As this requires the preservation of the entirety of the original software environment, including the workflows used in the analysis, this is arguably the most involved approach, especially since it involves executing the computationally expensive detector simulation. 
@@ -63,7 +65,7 @@ ATLAS has internally maintained a similar catalogue of its \gls{susy} analyses a
 Recently, this package maintained by ATLAS, called \textsc{SimpleAnalysis}~\cite{simpleanalysis}, has been made publicly available, allowing the \Cpp snippets published to be executed outside the collaboration.
 
 A crucial step, necessary for achieving a reliable reimplementation of the signal pipeline, is the detector simulation.
-Executing the full detector simulation requires access to the collaborations's detector descriptio and is computationally expensive, disfavouring\footnote{This is especially true for reinterpretation efforts outside the ATLAS collaboration, which cannot make use of the collaboration's detector description.} its usage in the context of large-scale reinterpretations over a large set of models.
+Executing the full detector simulation requires access to the collaborations's detector descriptio and is computationally expensive, disfavouring\footnote{This is especially true for reinterpretation efforts outside the ATLAS collaboration, which, for reasons not discussed herein, cannot make use of the collaboration's detector description.} its usage in the context of large-scale reinterpretations over a large set of models.
 For this reason, it is often approximated using simplified detector geometries and granularities.
 The most commonly used package for a fast detector simulation outside of the ATLAS collaboration is \textsc{Delphes}~\cite{Delphes:2009tx}, which is used in, \eg, \textsc{CheckMate} and \textsc{MadAnalysis5}.
 Other packages like, \eg, \textsc{Rivet}~\cite{Rivet1:2010ar,Rivet2:2019stt} approximate the detector response using dedicated four-vector smearing techniques, assuming that the detector response roughly factorises into the responses of single particles.
@@ -127,7 +129,7 @@ The statistical inference step requires, as external input, the archived partial
 
 Finally, the preserved processing steps need to be linked together, creating a parameterised workflow completely defining the analysis pipeline, starting from centrally produced \gls{mc} datasets up to the statistical inference results. Within \textsc{Recast}, this is achieved using the workflow description language \texttt{yadage}~\cite{yadage:2017frf}, capturing the full workflow in \texttt{YAML} format. The workflow uses the job templates and defines their processing order and dependencies.
 
-The \textsc{Recast} implementation of the analysis presented in this work has been validated against original analysis inputs. The expected and observed CL$_s$ values derived in the original analysis were successfully re-derived using the containerised workflow implementation. On a non-isolated CPU, the full preserved analysis pipeline for a single signal model can be executed with a wall time of about $\SI{50}{\minute}$. Due to the highly portable nature of the containerised workflow, the pipeline can easily be run in a distributed setup, allowing scalable reinterpretations at full analysis precision. 
+The \textsc{Recast} implementation of the analysis presented in this work has been validated against original analysis inputs. The expected and observed CL$_s$ values derived in the original analysis were successfully re-derived using the containerised workflow implementation. On a non-isolated CPU, the full preserved analysis pipeline for a single signal model can be executed with a wall time of about $\SI{50}{\minute}$. Due to the highly portable nature of the containerised workflow, the pipeline can easily be run in a distributed setup, allowing scalable reinterpretations at full analysis precision. Although not explicitly used in the remainder of this thesis, the \textsc{Recast} implementation of the \onelepton search is crucial for the large-scale reinterpretation efforts in the \gls{pmssm} currently ongoing in ATLAS (and discussed to some extent in \cref{ch:pmssm}). In these efforts, the \textsc{Recast} implementation allows the systematic reinterpretation of the \onelepton search in any \gls{pmssm} model of interest using the full analysis precision.
 
 
  \begin{sidewaysfigure}
@@ -137,7 +139,7 @@ The \textsc{Recast} implementation of the analysis presented in this work has be
 \end{sidewaysfigure}
 
 
-\FloatBarrier
+%\FloatBarrier
 
 \section{Truth-level analysis}\label{sec:truth_analysis}
 
