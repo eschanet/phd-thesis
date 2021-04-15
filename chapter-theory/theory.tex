@@ -554,48 +554,71 @@ As Veltmann and t'Hooft~\cite{THOOFT1972189,THOOFT1971173} have shown, all Yang-
 
 \section{Supersymmetry}
 
-Among the properties a quantum field theory might possess to make it more mathematically tractable, one specific higher symmetry reveals particularly far-reaching implications; a symmetry relating fermions and bosons, known as \gls{susy}. In the following, the basic concepts of \gls{susy}, a class of theories that could solve some of the shortcomings of the \gls{sm}. 
+Originally developed in the late 1960s and early 1970s as an attempt to combine the Poincaré group with internal symmetries into a single symmetry group~\cite{kane2000the}, \glsfirst{susy} is a class of theories transforming fermionic states into bosonic ones, and vice-versa. Since its theoretical discovery, driven purely by theoretical developments rather than by pressure of existing data~\cite{kane2000the}, \gls{susy} was found to have far-reaching phenomenological consequences that could solve some of the shortcomings of the \gls{sm}. 
 
-First, some of the shortcomings of the \gls{sm} are highlighted, and possible solutions through supersymmetric theories are illustrated.  highlighting some of the open questions of the SM. This is followed by an introduction to the mathematical description and phenomenological consequences of supersymmetric theories. The following sections are intended to highlight the most important concepts and relations, a much more complete and detailed introduction to \gls{susy} can be found in \references\cite{Martin:1997ns,Bustamante:2009us}.
+This section starts with an overview of these shortcomings and illustrates how they could be solved by supersymmetric theories. This is followed by an introduction to the mathematical description and phenomenological consequences of \gls{susy}. While the following sections are intended to highlight the most important concepts and relations, a much more complete and detailed introduction to \gls{susy} can be found in \references\cite{Martin:1997ns,Bustamante:2009us}.
+
+%Among the properties a quantum field theory might possess to make it more mathematically tractable, one specific higher symmetry reveals particularly far-reaching implications; a symmetry relating fermions and bosons, known as \gls{susy}. In the following, the basic concepts of \gls{susy}, a class of theories that could solve some of the shortcomings of the \gls{sm}. 
+
+%First, some of the shortcomings of the \gls{sm} are highlighted, and possible solutions through supersymmetric theories are illustrated.  highlighting some of the open questions of the SM. This is followed by an introduction to the mathematical description and phenomenological consequences of supersymmetric theories. The following sections are intended to highlight the most important concepts and relations, a much more complete and detailed introduction to \gls{susy} can be found in \references\cite{Martin:1997ns,Bustamante:2009us}.
 
 \subsection{Shortcomings of the Standard Model}
 
-Although the \gls{sm} is a remarkably successful theory able to predict and describe the interactions between elementary particles with unprecedented precision, there are still phenomena in nature that cannot be suitable understood within the theoretical framework of the \gls{sm}. Those limitations and open questions are the reason for numerous searches looking for new physics \gls{bsm}. Some of the aforementioned open questions are described in the following. 
+Although the \gls{sm} is a remarkably successful theory able to predict and describe the interactions between elementary particles with unprecedented precision, there are still phenomena in nature that cannot be suitable understood within the theoretical framework of the \gls{sm}. 
+
+Those limitations and open questions are the reason for numerous searches looking for new physics \gls{bsm}, such as the one presented in this thesis. Some of these open questions are described in the following. 
 
 \subsubsection{Dark Matter}
 
 The existence of \gls{dm}, \ie non-luminous and non-absorbing matter is nowadays well established~\cite{pdg2020}. Some of the earliest hints for the existence of \gls{dm} came from the observation that the rotation curves of luminous objects are not consistent with the expected velocities based on the gravitational attraction of the visible objects around them. Zwicky already postulated in 1933 the existence of \gls{dm}~\cite{Zwicky:437297} based on rotation curves of galaxies in the Coma cluster. In 1970, Rubin measured rotation curves of spiral galaxies~\cite{Rubin:1970zza}, revealing again a significant disagreement with the theoretically expected curves given the visible matter in the galaxies. Based on Newtonian dynamics, the circular velocity of stars outside the bulge of galaxies is expected to fall off with increasing radius as $v(r) \propto 1/\sqrt{r}$~\cite{Bertone:2004pz}. Rubin's observations, however, revealed that the velocities of stars outside the bulge stay approximately constant, strongly suggesting the existence of a non-luminous (or \textit{dark}) matter halo around the galaxies. Surveys of galaxy clusters and observations of gravitational lensing effects \eg in the bullet cluster~\cite{Clowe:2006eq} or the Abell 1689 cluster~\cite{Taylor:1998uk} have since then further consolidated the existence of large accumulations of non-luminous mass in the universe.
 
-The anisotropies in \gls{cmb}, studied by the COBE~\cite{Bennett:1996ce,COBE}, WMAP~\cite{WMAP2,WMAP1} and Planck missions~\cite{Planck} are well described by the \gls{lcdm} model~\cite{Liddle:1976476}, which includes a density for cold dark matter. Planck's latest results~\cite{Aghanim:2018eyx} suggest that the matter density of the universe is $\Omega_m = 0.3111\pm 0.0056$\footnote{The remaining $\sim 69\%$ are taken up by \textit{dark energy}, the nature of which is still an open question.} and that ordinary baryonic matter only makes up $\sim 4.9\%$ of the universe's matter content, while \gls{dm} accounts for the remaining $\sim 26.1\%$.\improvement{DM relic density}
+The anisotropies in \gls{cmb}, studied by the COBE~\cite{Bennett:1996ce,COBE}, WMAP~\cite{WMAP2,WMAP1} and Planck missions~\cite{Planck} are well described by the \gls{lcdm} model~\cite{Liddle:1976476}, which includes a density for cold dark matter. Planck's latest results~\cite{Aghanim:2018eyx} for the cold \gls{dm} relic density and baryonic density of
+\begin{align}
+\begin{split}
+	\Omega_c h^2 &= 0.1200\pm0.0012, \\
+	\Omega_b h^2 &= 0.02237\pm0.00015,
+\end{split}
+\end{align}
+respectively, suggest that ordinary baryonic matter only makes up $\sim 4.9\%$ of the universe's matter content, while \gls{dm} accounts for $\sim 26.1\%$\footnote{The remaining $\sim 69\%$ are taken up by \textit{dark energy}, the nature of which is still an open question.}.
 
-Candidates for non-baryonic \gls{dm} need to satisfy certain conditions: they have to be stable on cosmological timescales (otherwise they would have decayed by now), they have to couple only very weakly to the electromagnet interaction (if at all, otherwise they would be luminous matter) and they need to have the right relic density. Analyses of structure formations in the Universe have furthermore shown that most \gls{dm} should have been \textit{cold}, \ie non-relativistic at the beginning of galaxy formation~\cite{Bertone:2004pz}. Candidates for \gls{dm} particles are \eg sterile neutrinos, axions, primordial black holes, or \glspl{wimp}.
+Candidates for cold \gls{dm} need to satisfy certain conditions: they have to be stable on cosmological timescales (otherwise they would have decayed by now), they have to couple only very weakly to the electromagnet interaction (if at all, otherwise they would be luminous matter) and they need to have the right relic density. Analyses of structure formations in the Universe have furthermore shown that most \gls{dm} should have been \textit{cold}, \ie non-relativistic at the beginning of galaxy formation~\cite{Bertone:2004pz}. Candidates for \gls{dm} particles are \eg sterile neutrinos, axions, primordial black holes, or \glspl{wimp}.
 
-In the SM, the only \gls{dm} candidate particle is the neutrino. Given the upper limits on the neutrino masses, an upper bound on their relic density can be computed, revealing that neutrinos are simply not abundant enough to be a dominant component of \gls{dm}~\cite{Bertone:2004pz}. Many \gls{bsm} theories naturally predict new \glspl{wimp} with masses in the GeV to TeV range. In many SUSY models with exact R-parity conservation (a quantity introduced in \cref{sec:rparity}), the lightest supersymmetric particle is neutral and stable and could be a good candidate for \gls{dm}.
+In the SM, the only \gls{dm} candidate particle is the neutrino. Given the upper limits on the neutrino masses, an upper bound on their relic density can be computed, revealing that neutrinos are not abundant enough to be a dominant component of \gls{dm}~\cite{Bertone:2004pz}. Furthermore, due to their low masses, neutrinos would still have been relativistic particles at the beginning of galaxy formation, preventing the \textit{bottom-up}\footnote{The \textit{bottom-up} structure formation begins with small objects that subsequently merge into ever larger structures and is the structure formation process favoured in a universe dominated by cold \gls{dm}.} structure formation favoured by a cold \gls{dm} dominated universe.
+
+ Many \gls{bsm} theories naturally predict new \glspl{wimp} with masses in the GeV to TeV range. In many SUSY models with exact R-parity conservation (a quantity introduced in \cref{sec:rparity}), the lightest supersymmetric particle is neutral and stable and could be a good candidate for \gls{dm}.
 
 \subsubsection{Unification of forces}
 
+
+Although the \gls{sm} provides a good description of nature up to the energy scale probed with today's accelerators, some of its peculiar aspects hint to a more fundamental theory. A prominent example is the question why the electric charges of the electrons and the charges of the quarks of the protons and neutrons in the nuclei exactly cancel, making for electrically neutral atoms~\cite{Brock:1354959}. Or in other words: why are the charges of all observed particles simple multiples of the fundamental charge? And why are they quantised in the first place?
+
+An explanation to many of these peculiarities comes naturally when describing the \gls{sm} as a unified theory with a single non-Abelian gauge group, \eg $SU(5)$~\cite{PhysRevLett.32.438}. The larger symmetry group with a single coupling constant is then thought to be spontaneously broken at very high energy, such that the known \gls{sm} interactions are recovered at the lower energies probed in today's experiments. In such a \gls{gut}, the particles in the \gls{sm} are arranged in anomaly-free\footnote{In the sense that loop corrections do not break symmetries the Lagrangian has.} irreducible representations of the gauge group, thereby \eg naturally ensuring the fractional charges of quarks~\cite{Peskin:1995ev}.
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
 {\caption{Evolution of the inverse coupling constants in the \gls{sm} (dashed lines) and the \gls{mssm} (solid lines) in function of the energy scale $Q$. In the \gls{mssm}, the masses of the supersymmetric particles are treated as common threshold varied between $\SI{750}{\GeV}$ and $\SI{2.5}{\TeV}$. Figure taken from \reference\cite{Martin:1997ns}.}\label{fig:unification_forces}}
 {\includegraphics[width=0.5\textwidth]{unification}}
 \end{figure}
 
-Although the \gls{sm} provides a good description of nature up to the energy scale probed with today's accelerators, some of its peculiar aspects hint to a more fundamental theory. A prominent example is the question why the electric charges of the electrons and the charges of the quarks of the protons and neutrons in the nuclei exactly cancel, making for electrically neutral atoms~\cite{Brock:1354959}. Or in other words: why are the charges of all observed particles simple multiples of the fundamental charge? And why are they quantised in the first place?
-
-An explanation to many of these peculiarities comes naturally when describing the \gls{sm} as a unified theory with a single non-Abelian gauge group, \eg $SU(5)$~\cite{PhysRevLett.32.438}. The larger symmetry group with a single coupling constant is then thought to be spontaneously broken at very high energy, such that the known \gls{sm} interactions are recovered at the lower energies probed in today's experiments. In such a \gls{gut}, the particles in the \gls{sm} are arranged in anomaly-free\footnote{In the sense that loop corrections do not break symmetries the Lagrangian has.} irreducible representations of the gauge group, thereby \eg naturally ensuring the fractional charges of quarks~\cite{Peskin:1995ev}.
-
-In the \gls{sm}, the coupling constants run towards each other with increasing energy scale, but never exactly meet. In the \gls{mssm} with supersymmetric particles at the $\SI{}{\TeV}$ scale the running couplings meet within their current uncertainties, hinting that a supersymmetric \gls{gut} could be a good candidate for describing physics at the unification scale. \Cref{fig:unification_forces} shows the running of the coupling constants in both the \gls{sm} and the \gls{mssm}.
+In the \gls{sm}, the coupling constants run towards each other with increasing energy scale, but never exactly meet. In the \glsfirst{mssm}, introduced in \cref{sec:mssm_intro}, the running couplings meet within their current uncertainties if the supersymmetric particles are at the $\SI{}{\TeV}$ scale, hinting that a supersymmetric \gls{gut} could be a good candidate for describing physics at the unification scale. \Cref{fig:unification_forces} shows that the running coupling constants in the \gls{mssm} are modified such that they meet at $\SI{e16}{\GeV}$.
 
 \subsubsection{The Hierarchy Problem}
 
-As the \gls{sm} is a renormalisable gauge theory, finite results are obtained for all higher-order loop corrections, making the \gls{sm} a theory that is in principle well-defined up to infinite energies. In renormalisation terms, this means that the cut-off scale $\Lambda$ is theoretically allowed to go to arbitrarily high values. It is clear though, that the \gls{sm} cannot be a complete theory of nature and that at some unknown high-energy scale $\Lambda$, \textit{new physics} has to appear. At the very least, a new theoretical framework becomes necessary at the Planck scale $M_P \approx \SI{e18}{\GeV}$~\cite{Martin:1997ns}, where quantum gravitational effects can no longer be ignored.
+As the \gls{sm} is a renormalisable gauge theory, finite results are obtained for all higher-order loop corrections, making the \gls{sm} a theory that is in principle well-defined up to infinite energies. In renormalisation terms, this means that the cut-off scale $\Lambda$ is theoretically allowed to go to arbitrarily high values. It is clear though, that the \gls{sm} cannot be a complete theory of nature and that at some unknown high-energy scale $\Lambda$, \textit{new physics} has to appear. At the very least, a new theoretical framework becomes necessary at the Planck scale $M_P \approx \SI{e19}{\GeV}$~\cite{Bustamante:2009us}, where quantum gravitational effects can no longer be ignored.
 
-The mass parameters of fermions and massive vector bosons are protected from large quantum corrections by chiral symmetry and gauge symmetry, respectively~\cite{Aitchison:2007fn}. The mass parameter of the scalar Higgs field, on the other hand, receives loop corrections proportional at least to the scale at which new physics sets in. The coupling of the Higgs field to a fermion $f$ with mass $m_f$, depicted in \cref{fig:fermion_loop}, yields a one-loop correction term to the Higgs square mass~\cite{Martin:1997ns} given by
+The mass parameters of fermions and massive vector bosons are protected from large quantum corrections by chiral symmetry and gauge symmetry, respectively~\cite{Aitchison:2007fn}. The mass parameter of the scalar Higgs field, on the other hand, receives loop corrections proportional at least to the scale at which new physics sets in. The Yukawa coupling of the Higgs field to a fermion $f$ with mass $m_f$, depicted in \cref{fig:fermion_loop}, yields a one-loop correction term to the Higgs square mass~\cite{Bustamante:2009us} given by
 \begin{align}
-	\Delta m_H^2 = -\frac{\lvert\lambda_f\rvert^2}{8\pi^2} \Lambda^2 + \dots\, .
+	\Delta m_h^2 = -\frac{\lambda_f^2}{8\pi^2} \Lambda^2 + \dots\, .
 	\label{eq:fermion_correction}
 \end{align}
-Thus, in order to obtain the relatively low value of the Higgs mass in the order of $\SI{e2}{\GeV}$, the quantum corrections to the bare Higgs parameter have to be tuned in such a way that they almost cancel.  Hence, if there is \textit{any} scale of new physics even only several orders of magnitude higher than the electroweak scale, the resulting large quantum corrections to the Higgs mass immediately lead to a \textit{fine-tuning} problem that is considered to be unnatural.
+The Higgs mass thus quadratically diverges with the scale $\Lambda$. If the \gls{sm} is to be valid up to the Planck scale, then $\Lambda = M_P$, and the correction to the Higgs squared mass becomes more than $10^{30}$ times larger than the expected value in the order of $(\SI{e2}{\GeV})^2$~\cite{Martin:1997ns}.
+Furthermore, the Higgs mass gets similar quantum corrections from the quartic coupling to a heavy scalar boson $S$ with mass $m_S$, shown in \cref{fig:scal_loop}, yielding a one-loop correction~\cite{Bustamante:2009us} given by 
+\begin{align}
+	\Delta m_h^2 = \frac{\lambda_S}{16\pi^2}\Lambda^2 + \dots\, .
+	\label{eq:scalar_correction}
+\end{align}
+In order to obtain the measured value of the Higgs mass, the quantum corrections to the bare Higgs parameter have to be tuned in such a way that they almost cancel, leading to a \textit{fine-tuning} problem that is considered to be unnatural.
+
+Interestingly, the terms quadratically divergent in $\Lambda$ in \cref{eq:fermion_correction} and \cref{eq:scalar_correction} enter with opposite signs. If, for every fermionic loop, there are two bosonic loops with $\lambda_S = \lambda_f^2$, the quadratically diverging terms neatly cancel. As will be discussed, this is exactly the case in supersymmetric theories. Additional correction terms omitted above are at most logarithmic in $\Lambda$, and cancel if the scalar bosons and the fermion have the same masses (this is further discussed in \cref{sec:susy_breaking}).
 
 \begin{figure}
 	\centering
@@ -610,12 +633,13 @@ Thus, in order to obtain the relatively low value of the Higgs mass in the order
 	\caption{A massive fermion \subref{fig:fermion_loop} and a hypothetical massive scalar particle \subref{fig:scal_loop} coupling to the Higgs boson.}\label{fig:loop_corrections_higgs}
 \end{figure}
 
-In SUSY, the Higgs mass is automatically protected from the large quantum corrections by the introduction of two complex scalar partners to each \gls{sm} fermion. The quantum corrections from a hypothetical heavy complex scalar particle $S$ with mass $m_S$ as in \cref{fig:scal_loop} yields a one-loop correction~\cite{Martin:1997ns} given by 
-\begin{align}
-	\Delta m_H^2 = \frac{\lambda_S}{16\pi^2}\left[\Lambda^2 + 2m_S^2\log\left(\Lambda/m_S\right)+ \dots\right].
-	\label{eq:scalar_correction}
-\end{align}
-Interestingly, the corrections in \cref{eq:fermion_correction} and \cref{eq:scalar_correction} enter with opposite signs. Thus, if $\lambda_S = \vert\lambda_f\vert^2$, then the large quantum corrections neatly cancel and no excessive fine-tuning is needed. The requirement $\lambda_S = \vert\lambda_f\vert^2$ means that the fermions and their supersymmetric bosonic partners would have same masses. Such particles would have been discovered long ago in particle physics experiments, meaning that SUSY must be a broken symmetry (see \cref{sec:susy_breaking} for a discussion on \gls{susy} breaking) such that the supersymmetric particles acquire masses well above those of their \gls{sm} partners. 
+%In SUSY, the Higgs mass is automatically protected from the large quantum corrections by the introduction of two complex scalar partners to each \gls{sm} fermion. The quantum corrections from a hypothetical heavy complex scalar particle $S$ with mass $m_S$ as in \cref{fig:scal_loop} yields a one-loop correction~\cite{Martin:1997ns} given by 
+%\begin{align}
+%	\Delta m_h^2 = \frac{\lambda_S}{16\pi^2}\left[\Lambda^2 - 2m_S^2\ln\left(\Lambda/m_S\right)+ \dots\right].
+%	\label{eq:scalar_correction}
+%\end{align}
+
+%Interestingly, the corrections in \cref{eq:fermion_correction} and \cref{eq:scalar_correction} enter with opposite signs. Thus, if $\lambda_S = \vert\lambda_f\vert^2$, then the large quantum corrections neatly cancel and no excessive fine-tuning is needed. The requirement $\lambda_S = \vert\lambda_f\vert^2$ means that the fermions and their supersymmetric bosonic partners would have same masses. Such particles would have been discovered long ago in particle physics experiments, meaning that SUSY must be a broken symmetry (see \cref{sec:susy_breaking} for a discussion on \gls{susy} breaking) such that the supersymmetric particles acquire masses well above those of their \gls{sm} partners. 
 
 \subsubsection{Anomalous magnetic moment of the muon}
 
@@ -747,7 +771,7 @@ where $a$ runs over the gauge groups that generally have differing gauge couplin
 
 
  
-\subsection{The Minimal Supersymmetric Standard Model}
+\subsection{The Minimal Supersymmetric Standard Model}\label{sec:mssm_intro}
 
 The \gls{mssm} is the simplest $N=1$ supersymmetrisation of the \gls{sm} in the sense that it introduces a minimal set of additional particles.
 
