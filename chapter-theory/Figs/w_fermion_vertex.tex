@@ -1,10 +1,10 @@
-\documentclass[class=minimal,border={17pt 15pt 15 15pt}]{standalone}
+\documentclass[class=minimal,border={20pt 16pt 23pt 15pt}]{standalone}
 \usepackage[force]{feynmp-auto}
 \usepackage{xcolor}
 \begin{document}
-	\unitlength=0.65mm
+	\unitlength=0.63mm
 	\begin{fmffile}{w_fermion_vertex_1}
-		\begin{fmfgraph*}(40,30)
+		\begin{fmfgraph*}(40,37)
 						
 			\fmfleftn{i}{1}
 			\fmfrightn{o}{2}
@@ -13,8 +13,8 @@
 
 			\fmf{fermion,tension=0.75}{o1,v1,o2}
 
-		    \fmflabel{$q/\ell$}{o1}
-		    \fmflabel{$q'/\nu$}{o2}
+		    \fmflabel{$\bar{q}'/\bar{\nu}/\bar{\ell}$}{o1}
+		    \fmflabel{$q/\ell/\nu$}{o2}
 		    \fmflabel{$W$}{i1}
 			
 		\end{fmfgraph*}

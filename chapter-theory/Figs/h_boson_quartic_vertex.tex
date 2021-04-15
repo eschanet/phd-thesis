@@ -1,0 +1,27 @@
+\documentclass[class=minimal,border={5pt 15pt 10pt 15pt}]{standalone}
+\usepackage[force]{feynmp-auto}
+\usepackage{xcolor}
+\begin{document}
+	\unitlength=0.65mm
+	\begin{fmffile}{h_boson_quartic_vertex_1}
+		\begin{fmfgraph*}(40,30)
+						
+			\fmfleftn{i}{2}
+			\fmfrightn{o}{2}
+			
+			\fmf{dashes,tension=1}{i1,v1,i2}
+%			\fmf{dashes,tension=0.75}{i2,v1}
+
+			\fmf{dashes,tension=1}{o1,v1,o2}
+%			\fmf{dashes,tension=0.75}{o2,v1}
+			
+%			\fmfdot{v1}
+			
+		    \fmflabel{$h$}{o1}
+		    \fmflabel{$h$}{o2}
+		    \fmflabel{$h$}{i1}
+		    \fmflabel{$h$}{i2}
+			
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[class=minimal,border={15pt 15pt 16pt 15pt}]{standalone}
+\usepackage[force]{feynmp-auto}
+\usepackage{xcolor}
+\begin{document}
+	\unitlength=0.65mm
+	\begin{fmffile}{h_gauge_vertex_1}
+		\begin{fmfgraph*}(40,30)
+						
+			\fmfleftn{i}{1}
+			\fmfrightn{o}{2}
+			
+			\fmf{dashes,tension=1}{i1,v1}
+
+			\fmf{boson,tension=0.75}{o1,v1,o2}
+
+		    \fmflabel{$W/Z$}{o1}
+		    \fmflabel{$W/Z$}{o2}
+		    \fmflabel{$h$}{i1}
+			
+		\end{fmfgraph*}
+	\end{fmffile}
+\end{document}
