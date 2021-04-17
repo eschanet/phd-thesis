@@ -39,7 +39,7 @@ where $\nu_{csb}$ is the expected sample rate in a given bin of a given channel.
 \end{equation}
 Here, $\boldsymbol{f}(\boldsymbol{\phi})$ and $\boldsymbol{\Delta}(\boldsymbol{\phi})$ are the multiplicative and additive \textit{rate modifiers}, respectively, modifying the nominal estimates. Although in practice often only a function of a single model parameter, the rate modifiers can in general be a function of a set of model parameters.
 
-Free parameters directly determined by the Poisson terms for the data observations are called \textit{normalisation factors}.
+Free parameters directly determined by the data observations are called \textit{normalisation factors}.
 The constrained parameters represent the systematic uncertainties considered in the model, which---in frequentist statistics---have fixed but unknown true values.
 The degree to which they cause a deviation of the expected event rates from the nominal event rates is limited through \textit{constraint terms} $c_{\boldsymbol{\chi}}(a_{\boldsymbol{\chi}}\vert\boldsymbol{\chi})$ that can be viewed as \textit{auxiliary measurements} with global observed data $\boldsymbol{a}$. 
 
@@ -96,7 +96,7 @@ The degree of agreement of observed data with a certain hypothesis $H$ is quanti
 	Z = \Phi^{-1}(1-p),
 	\label{eq:significance}
 \end{equation}
-where $\Phi^{-1}$ is the quantile of the standard Gaussian. In \gls{hep}, claiming discovery of a signal conventionally requires a significance of at least $Z=5$. If the significance is lower but still $Z>3$, it is classified as a hint. For exclusion of a signal hypothesis at 95\% confidence level, a $p$-value of 0.05, \ie $Z = 1.64$, is required~\cite{Cowan:2010js}. 
+where $\Phi^{-1}$ is the quantile of the standard Gaussian. In \gls{hep}, claiming discovery of a signal conventionally requires a significance of at least $Z=5$. If the significance is lower but still $Z>3$, it is classified as a hint or evidence. For exclusion of a signal hypothesis at 95\% confidence level, a $p$-value of 0.05, \ie $Z = 1.64$, is required~\cite{Cowan:2010js}. 
 
 The $p$-values are calculated using a \textit{test statistic} that parameterises the compatibility between the hypothesis and data in a single value. At the LHC experiments, the test statistics used for hypothesis testing are based on the \textit{profile likelihood ratio} $\lambda(\mu)$, defined to be
 \begin{equation}
