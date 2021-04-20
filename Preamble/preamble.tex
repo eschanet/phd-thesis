@@ -24,6 +24,8 @@
 
 % Add `customfont' in the document class option to use this section
 
+\usepackage{sectsty} % for sf sections
+
 \ifsetCustomFont
 \usepackage[footnotefigures]{MinionPro}
 \usepackage[footnotefigures]{MyriadPro}
@@ -178,6 +180,11 @@
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 
+\usepackage[titles]{tocloft}
+\setlength{\cftbeforechapskip}{2pt}
+\setlength{\cftbeforesecskip}{-4pt}
+\setlength{\cftbeforesubsecskip}{-4pt}
+%\setlength\cftparskip{-2pt}
 
 % ******************************* Nomenclature *********************************
 % To change the name of the Nomenclature section, uncomment the following line

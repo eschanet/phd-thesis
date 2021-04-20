@@ -821,23 +821,11 @@ wish to left align your text}
 \newcommand{\@location}{}
 \newcommand{\location}[1]{\renewcommand{\@location}{#1}}
 
-\newcommand{\@germanlocation}{}
-\newcommand{\germanlocation}[1]{\renewcommand{\@germanlocation}{#1}}
-
-\newcommand{\@germantitle}{}
-\newcommand{\germantitle}[1]{\renewcommand{\@germantitle}{#1}}
-
 % The year and term the degree will be officially conferred
 \newcommand{\@degreedate}{\monthname[\the\month]\space\the\year}
 \newcommand{\degreedate}[1]{\renewcommand{\@degreedate}{#1}}
 
-\newcommand{\@germandegreedate}{\monthname[\the\month]\space\the\year}
-\newcommand{\germandegreedate}[1]{\renewcommand{\@germandegreedate}{#1}}
-
 % The full (unabbreviated) name of the degree
-\newcommand{\@germandegreetitle}{}
-\newcommand{\germandegreetitle}[1]{\renewcommand{\@germandegreetitle}{#1}}
-
 \newcommand{\@degreetitle}{}
 \newcommand{\degreetitle}[1]{\renewcommand{\@degreetitle}{#1}}
 
@@ -845,17 +833,11 @@ wish to left align your text}
 \newcommand{\@dept}{}
 \newcommand{\dept}[1]{\renewcommand{\@dept}{#1}}
 
-\newcommand{\@germandept}{}
-\newcommand{\germandept}[1]{\renewcommand{\@germandept}{#1}}
-
 % The name of your college (eg. King's)
 \newcommand{\@college}{}
 \newcommand{\college}[1]{\renewcommand{\@college}{#1}}
 
 % The name of your University
-\newcommand{\@germanuniversity}{}
-\newcommand{\germanuniversity}[1]{\renewcommand{\@germanuniversity}{#1}}
-
 \newcommand{\@university}{}
 \newcommand{\university}[1]{\renewcommand{\@university}{#1}}
 
@@ -986,12 +968,15 @@ wish to left align your text}
 \vspace{.2\PHD@titlepagespacing}
 
 % Submission Text
-{\usebox{\PHD@submission}}
+%{\usebox{\PHD@submission}}
+
+\vspace{4em}
+{\usebox{\PHD@author}}
 
 \vfill
 % Author
-{\usebox{\PHD@author}}
-\vspace*{1em}
+%{\usebox{\PHD@author}}
+%\vspace*{1em}
 % College and degree date
 {\usebox{\PHD@collegedate}}
     
@@ -1001,72 +986,6 @@ wish to left align your text}
 
 }
 
-\newcommand{\makegermantitle}{
-% To compute the free vertical space in Title page
-\computeSecondTitlePageSpacing
-
-\thispagestyle{empty}
-
-\begin{singlespace}
-	\begin{center}
-		
-		%% University Crest Long if college crest is defined
-		%\ifPHD@collegeshield%
-		%	{\usebox{\PHD@crest}}
-		%	\vspace{.15\PHD@titlepagespacing}
-		%\fi
-		
-		% Title
-		{\usebox{\PHD@sTitle}} % subtitle is defined
-		
-		
-		% Crest
-		\ifPHD@scollegeshield%
-		\vspace{.1\PHD@stitlepagespacing}
-		{\usebox{\PHD@scollegecrest}}
-		\vspace{.1\PHD@stitlepagespacing}
-		\else
-		\vspace{.15\PHD@stitlepagespacing}
-		{\usebox{\PHD@screst}}
-		\vspace{.15\PHD@stitlepagespacing}
-		\fi
-		
-		
-		
-		
-		%\vspace*{1em}
-		
-		%% Supervisor
-		%\ifPHD@supervisor%
-		%{\usebox{\PHD@supervisor}}
-		%\vspace*{0.5em}
-		%\fi
-		%
-		%% Advisor
-		%\ifPHD@advisor%
-		%{\usebox{\PHD@advisor}}
-		%\vspace*{0.5em}
-		%\fi
-		
-		% Department and University
-		{\usebox{\PHD@sdept}}
-		\vspace{.2\PHD@stitlepagespacing}
-		
-		% Submission Text
-		{\usebox{\PHD@ssubmission}}
-		
-		\vfill
-		% Author
-		{\usebox{\PHD@sauthor}}
-		\vspace*{1em}
-		% College and degree date
-		{\usebox{\PHD@scollegedate}}
-		
-	\end{center}
-	
-\end{singlespace}
-
-}
 
 % ********************************* Dedication *********************************
 % The dedication environment makes sure the dedication gets its
@@ -1241,13 +1160,13 @@ wish to left align your text}
 \newsavebox{\PHD@Title}
 \begin{lrbox}{\PHD@Title}
   \begin{minipage}[c]{0.98\textwidth}
-	\noindent\rule{\textwidth}{2pt}
+	\noindent\rule{\textwidth}{1pt}
  		\vspace{-1.4ex}
  		
     \centering \Large \textbf{\@title}
     
     		\vspace{0.1ex}
- 	\noindent\rule{\textwidth}{2pt}
+ 	\noindent\rule{\textwidth}{1pt}
     \ifthenelse{\equal{\@subtitle}{}}{
       % subtitle is not defined
     }{
@@ -1313,8 +1232,8 @@ wish to left align your text}
 \newsavebox{\PHD@dept}
 \begin{lrbox}{\PHD@dept}
   \begin{minipage}[c]{\textwidth}
-    \centering  {\Large \textsc{\@university} \par}
-    {\Large\textsc{\@dept} \par}      
+    \centering  {\Large\textsc{\@dept} \par} 
+    {\Large \textsc{\@university} \par}     
   \end{minipage}
 \end{lrbox}
 
@@ -1334,7 +1253,12 @@ wish to left align your text}
 \newsavebox{\PHD@author}
 \begin{lrbox}{\PHD@author}
 	\begin{minipage}[c]{\textwidth}
-		\centering \large {\@author}
+	\centering
+		{\large vorgelegt von} \\
+		\vspace{0.5em}   
+		{\Large {\@author}} \\
+		\vspace{0.5em}   
+		{\large aus Luxemburg}
 		\vspace{1em}   
 	\end{minipage}
 \end{lrbox}
@@ -1374,99 +1298,4 @@ wish to left align your text}
 			- \totalheightof{\usebox{\PHD@submission}}
 			- \totalheightof{\usebox{\PHD@collegedate}}
 }
-}
-
-
-\newcommand{\computeSecondTitlePageSpacing}{
-	
-	
-	% Title Box
-	\newsavebox{\PHD@sTitle}
-	\begin{lrbox}{\PHD@sTitle}
-		\begin{minipage}[c]{0.98\textwidth}
-			\noindent\rule{\textwidth}{2pt}
-			 		\vspace{-1.4ex}
-			
-			\centering \Large \textbf{\@germantitle}
-			
-			 		\vspace{0.1ex}
-			\noindent\rule{\textwidth}{2pt}
-			\ifthenelse{\equal{\@subtitle}{}}{
-				% subtitle is not defined
-			}{
-				\\
-				\centering \large {\@subtitle}
-				\noindent\rule{\textwidth}{2pt}
-			} % subtitle is defined
-		\end{minipage}
-	\end{lrbox}
-	
-	% University Crest Box
-	\newsavebox{\PHD@screst}
-	\begin{lrbox}{\PHD@screst}
-		{\@crest \par}
-	\end{lrbox}
-	
-	% Department Box
-	\newsavebox{\PHD@sdept}
-	\begin{lrbox}{\PHD@sdept}
-		\begin{minipage}[c]{\textwidth}
-			\centering  {\Large \textsc{\@germanuniversity} \par}
-			{\Large\textsc{\@germandept} \par}      
-		\end{minipage}
-	\end{lrbox}
-	
-	% Submission Box
-	\newsavebox{\PHD@ssubmission}
-	\begin{lrbox}{\PHD@ssubmission}
-		\begin{minipage}[c]{\textwidth}
-			\begin{center}
-				% \large \submissiontext \par
-				\Large \textsc {\@germandegreetitle} \par
-			\end{center}
-		\end{minipage}
-	\end{lrbox}
-	
-	
-	% Author Box
-	\newsavebox{\PHD@sauthor}
-	\begin{lrbox}{\PHD@sauthor}
-		\begin{minipage}[c]{\textwidth}
-			\centering \large {\@author}
-			\vspace{1em}   
-		\end{minipage}
-	\end{lrbox}
-	
-	% College and Date Box
-	\newsavebox{\PHD@scollegedate}
-	\begin{lrbox}{\PHD@scollegedate}
-		\begin{minipage}[c]{\textwidth}
-			\large
-			\ifthenelse{\equal{\@college}{}}{
-				% college is not defined
-				\begin{center}
-					\@degreedate
-				\end{center}
-			}{
-				% college is defined
-				\begin{minipage}[b]{0.49\textwidth}
-					\flushleft\@college
-				\end{minipage}
-				\begin{minipage}[b]{0.49\textwidth}
-					\flushright \@degreedate
-				\end{minipage}
-			} % college is defined
-		\end{minipage}
-	\end{lrbox}
-	
-	%  Now to compute the free vertical space
-	\newlength{\PHD@stitlepagespacing}
-	\setlength{\PHD@stitlepagespacing}{ \textheight %
-		- \totalheightof{\usebox{\PHD@sTitle}}
-		- \totalheightof{\usebox{\PHD@screst}}
-		- \totalheightof{\usebox{\PHD@sauthor}}
-		- \totalheightof{\usebox{\PHD@sdept}}
-		- \totalheightof{\usebox{\PHD@ssubmission}}
-		- \totalheightof{\usebox{\PHD@scollegedate}}
-	}
 }

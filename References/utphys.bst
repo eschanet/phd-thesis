@@ -367,9 +367,23 @@ FUNCTION {format.names}
     { namesleft #0 > }
     { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't :=
       nameptr #1 >
-	{ namesleft #1 >
-	    { ", " * t * }
-	    { numnames #2 >
+        {
+          nameptr #3
+          #1 + =
+          numnames #4
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
+            'skip$
+          if$
+          namesleft #1 >
+            { ", " * t * }
+            {
+              s nameptr "{ll}" format.name$ duplicate$ "others" =
+                { 't := }
+                { pop$ }
+              if$
+              numnames #2 >
 		{ "," * }
 		'skip$
 	      if$
@@ -547,7 +561,7 @@ FUNCTION {format.date.paren}
 FUNCTION {format.collaboration}
 { collaboration empty$
     { "" }
-    { "{\bfseries " collaboration * "} " * "Collaboration" * }
+    { "{" collaboration * "} " * "Collaboration" * }
   if$
 }
 

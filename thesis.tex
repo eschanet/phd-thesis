@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,11pt,numbered,pdftex,dvipsnames,chapter]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,11pt,numbered,pdftex,dvipsnames]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -131,17 +131,20 @@
 % ******************************** Front Matter ********************************
 \begin{document}
 
+\allsectionsfont{\sffamily} % all sections in sans-serif font
+
 \frontmatter
 
 \maketitle
 
-\cleardoublepage
-
-\makegermantitle
 %supervisors here
 \newpage
+\vfill
 Erstgutachterin: PD\@\xspace Dr.\@\xspace Jeanette Lorenz \\
 Zweitgutachter: Prof.\@\xspace Dr.\@\xspace Wolfgang D\"unnweber
+
+\cleardoublepage
+
 
 \include{Dedication/dedication}
 
@@ -192,7 +195,7 @@ Zweitgutachter: Prof.\@\xspace Dr.\@\xspace Wolfgang D\"unnweber
 
 % ********************************** Appendices ********************************
 
-\part{Appendix}
+\part{Appendices}
 \begin{appendices} % Using appendices environment for more functionality
 	
 	\include{Appendix1/appendix1}
@@ -205,7 +208,7 @@ Zweitgutachter: Prof.\@\xspace Dr.\@\xspace Wolfgang D\"unnweber
 \printglossary[type=\acronymtype,title=Abbreviations]
 
 % ********************************** Bibliography ******************************
-\begin{spacing}{0.9}
+\begin{spacing}{0.1}
 %\backmatter
 % To use the conventional natbib style referencing
 % Bibliography style previews: http://nodonn.tipido.net/bibstyle.php
@@ -226,8 +229,7 @@ Zweitgutachter: Prof.\@\xspace Dr.\@\xspace Wolfgang D\"unnweber
 %\printbibliography[heading=bibintoc, title={References}]
 
 
-\include{Acknowledgement/acknowledgement}
-\include{Declaration/declaration}
+%\include{Acknowledgement/acknowledgement}
 
 \end{spacing}
 
