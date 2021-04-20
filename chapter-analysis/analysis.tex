@@ -96,7 +96,7 @@ For modelling the decays of heavy flavour quarks, \textsc{EvtGen} v1.6~\cite{Lan
 As the $\charg/\neutr$ and $\lsp$ masses are free parameters of the signal model, they are systematically varied, resulting in the set of 137 distinct signal models shown in~\cref{fig:signalgrid}, distributed in the two-dimensional grid spanned by the two mass parameters.
 The generated signal grid covers $\charg/\neutr$ masses from $\SI{150}{\GeV}$ to $\SI{1}{\TeV}$ and $\lsp$ masses from $\SI{0}{\GeV}$ to $\SI{400}{\GeV}$, avoiding the kinematically forbidden region with $m(\charg/\neutr) < m(\lsp) + m(h)$ that does not allow for production of on-shell Higgs bosons.
 
-\gls{mc} datasets of signal models well within the expected sensitivity range of the analysis, \ie with relatively low $\charg/\neutr$ and $\lsp$ masses, are generated using the \textsc{ATLFAST-II}~\cite{Aad:2010ah} detector simulation. The full detector simulation using \textsc{Geant4}~\cite{geant:2002hh} is used for the remaining model points for maximum accuracy in the parameter space relevant to the expected sensitivity. In order to account for pileup effects, all signal samples are overlaid with simulated minimum bias events generated using \textsc{Pythia8} and the A3 tune~\cite{ATL-PHYS-PUB-2016-017}, and reweighted to match the pileup distribution measured in data. 
+\gls{mc} datasets of signal models well within the expected sensitivity range of the analysis, \ie with relatively low $\charg/\neutr$ and $\lsp$ masses, are generated using the \textsc{ATLFAST-II}~\cite{Aad:2010ah} detector simulation. The full detector simulation using \textsc{Geant4}~\cite{geant:2002hh} is used for the remaining model points for maximum accuracy in the parameter space relevant to the expected sensitivity. In order to account for pile-up effects, all signal samples are overlaid with simulated minimum bias events generated using \textsc{Pythia8} and the A3 tune~\cite{ATL-PHYS-PUB-2016-017}, and reweighted to match the pile-up distribution measured in data. 
 
 The cross sections for electroweakino pair production have been calculated using \mbox{\textsc{Resummino}}~\cite{Fuks:2013vua} at \gls{nlo} in the strong coupling constant and including \gls{nll} terms in the soft gluon resummation~\cite{Fiaschi:2018hgm,Fuks:2012qx}.
 
@@ -110,7 +110,7 @@ For diboson and multiboson  processes both \textsc{Sherpa} 2.2.1 and 2.2.2 were 
 All Higgs processes are simulated using \textsc{Powheg-Box} v2 for the matrix element calculations and \textsc{Pythia8} for the parton showers, underlying event and hadronisation. 
 %While the generation of $h+\ttbar$ uses the A14 tune and the NNPDF2.3LO set, $h+V$ and single Higgs production are simulated using the NNPDF 3.0 NNLO set and the AZNLO~\cite{ATL-PHYS-PUB-2013-017} set of tuned generator parameters.
 
-For maximum modelling accuracy, the detector simulation for all \gls{mc} background samples was performed using the full detector simulation based on \textsc{Geant4}. Except for the \gls{mc} samples generated using \textsc{Sherpa}, all background samples use \textsc{EvtGen} v1.2 or v1.6 to model the decay of heavy flavour quarks. Similar to the signal models, in order to account for pileup effects, all background samples are overlaid with simulated minimum bias events generated with \textsc{Pythia8} using the NNPDF 2.3 LO \gls{PDF} set~\cite{Ball:2012cx} and the A3 tune~\cite{ATL-PHYS-PUB-2016-017} of parameters. 
+For maximum modelling accuracy, the detector simulation for all \gls{mc} background samples was performed using the full detector simulation based on \textsc{Geant4}. Except for the \gls{mc} samples generated using \textsc{Sherpa}, all background samples use \textsc{EvtGen} v1.2 or v1.6 to model the decay of heavy flavour quarks. Similar to the signal models, in order to account for pile-up effects, all background samples are overlaid with simulated minimum bias events generated with \textsc{Pythia8} using the NNPDF 2.3 LO \gls{PDF} set~\cite{Ball:2012cx} and the A3 tune~\cite{ATL-PHYS-PUB-2016-017} of parameters. 
 
 \Cref{tab:mc_generators} also lists the accuracies up to which the theoretical cross sections, used to normalise the event rates to a given integrated luminosity, have been calculated. The normalisations of the main \gls{sm} backgrounds $\ttbar$, single top and $\wjets$ are taken from data in the final statistical evaluation, therefore their theoretical cross sections are only used during the development of the analysis strategy.
 
@@ -144,6 +144,23 @@ For maximum modelling accuracy, the detector simulation for all \gls{mc} backgro
 	\label{tab:mc_generators}   
 \end{table}
 
+\subsection{Monte Carlo weights}\label{sec:mc_weights}
+
+In general, \gls{mc} events can have weights that need to be considered when normalising and scaling processes to a given integrated luminosity.
+Weights originate, for example, directly from the generator when including \gls{nlo} corrections in the simulation.
+Another source of weights can be filtered \gls{mc} datasets, generated with specific selections in order to increase event statistics in specific regions of phase space.
+Weights also arise from experimental corrections, and are, for example, used to scale efficiencies in \gls{mc} to those measured in data. Finally, reweighting of \gls{mc} events is also used to correct the \textit{pile-up profile}, \ie the distribution of the mean number of inelastic $pp$ collisions per bunch crossing ($\mu$), in \gls{mc} such that it matches the one measured in data.
+This is necessary because the \gls{mc} simulated events used herein, were largely already generated before the full Run~2 dataset was recorded, and therefore before the full pile-up profile in data was known.
+
+To obtain an event rate estimate for a given integrated luminosity, instead of the raw number of generated MC events, the sum of event weights \textit{w}, scaled to the desired integrated luminosity $L$ and total cross section $\sigma$ has to be used,
+\begin{equation}
+	N_\mathrm{est} =\frac{\sigma L}{\sum_{i\in\mathcal{G}}w_i} \sum_{j\in\mathcal{S}}w_j,
+\end{equation}
+where $i$ runs over the set of generated events $\mathcal{G}$, while $j$ runs over the set of selected events $\mathcal{S}$. The statistical uncertainty on the event rate estimate $N_\mathrm{est}$, due to the finite size of the \gls{mc} sample, is then given by
+ \begin{equation}
+	\Delta N_\mathrm{est} = \sqrt{\sum_{j\in\mathcal{S}}w_j^2}.
+\end{equation}
+
 \section{Object definitions}\label{sec:object_definitions}
 
 The reconstruction and identification of physics objects\footnote{The term \textit{physics objects} denotes the objects reconstructed from the measured detector signals, rather than the actual physical particle(s) of interest traversing the detector. As such, a reconstructed electron, for example, does not necessarily correspond to a real, physical electron.} requires the combination of data from multiple detector components.
@@ -174,7 +191,7 @@ The reconstruction algorithm starts with the preparation of energy deposits into
 These are formed by calorimeter cells containing energy deposits above a certain noise threshold, so-called \textit{seed} cells, including their neighbouring cells which, in turn, can also act as seed cells.
 All cell signals are measured at the electromagnetic scale, assuming that energy deposits stem only from electromagnetic interactions.
 Although the topo-clustering algorithm starts with cells from both calorimeters, only energies from cells in the \gls{em} calorimeter are used in the subsequent electron and photon reconstruction steps~\cite{EGAM-2018-01}.
-Using only \gls{em} topo-clusters with a certain threshold ratio of the \gls{em} energy to the total cluster energy significantly reduces contamination from pileup clusters~\cite{EGAM-2018-01}.
+Using only \gls{em} topo-clusters with a certain threshold ratio of the \gls{em} energy to the total cluster energy significantly reduces contamination from pile-up clusters~\cite{EGAM-2018-01}.
 Next, the \gls{em} topo-clusters are loosely matched to \gls{id} tracks which are subsequently re-fitted in order to account for energy losses through bremsstrahlung~\cite{EGAM-2018-01}.
 Vertices from photon conversions are reconstructed from tracks matched to fixed-size clusters~\cite{PERF-2017-02} and also matched to the \gls{em} topo-clusters.
 In the final step of the reconstruction algorithm, \gls{em} topo-clusters are sorted according to descending $E_{\mathrm{T}}$ and tested as seed clusters for dynamic, variable-size \textit{superclusters}, with different seed requirements for electrons and photons~\cite{EGAM-2018-01}.
@@ -199,7 +216,7 @@ Finally, electrons need to be \textit{isolated}, meaning that their vicinity mus
 Requiring electrons to be isolated prevents the selection of non-prompt electrons originating from \eg \gls{hf} decays or misidentifications of light hadrons.
 Isolation is quantified using two observables, one relying on tracking information and the other one using calorimeter data. The tracking based isolation variable, $p_{\mathrm{T}}^{\mathrm{varcone20}}$, is the sum of all track momenta above $\SI{1}{\GeV}$ (excluding the electrons track itself) in a cone around the electron~\cite{EGAM-2018-01}.
 The size of the cone is chosen to be $\Delta R = \min (\SI{10}{\GeV}/\pt,0.2)$, \ie is shrinking with increasing transverse momentum of the electron.
-The calorimeter based variable $E_{\mathrm{T}}^{\mathrm{cone20}}$ corresponds to the sum of the transverse energies in topo-clusters (excluding the electrons itself and after correcting for pileup effects) in a cone with $\Delta R = 0.2$ around the electrons~\cite{EGAM-2018-01}.
+The calorimeter based variable $E_{\mathrm{T}}^{\mathrm{cone20}}$ corresponds to the sum of the transverse energies in topo-clusters (excluding the electrons itself and after correcting for pile-up effects) in a cone with $\Delta R = 0.2$ around the electrons~\cite{EGAM-2018-01}.
 Both baseline and signal electrons are required to satisfy the \textit{Loose}~\cite{EGAM-2018-01} working point, corresponding to the requirements $p_{\mathrm{T}}^{\mathrm{varcone20}}/\pt < 0.2$ and $E_{\mathrm{T}}^{\mathrm{cone20}} < 0.15$.
 In order to improve the rejection of non-prompt electrons at high transverse momenta, electrons with $\pt >\SI{200}{\GeV}$ need to satisfy the \textit{HighPtCaloOnly} working point, applying the tighter requirement $E_{\mathrm{T}}^{\mathrm{cone20}} < \max (0.015\cdot\pt,\SI{3.5}{\GeV})$. 
 
@@ -243,7 +260,7 @@ Tracks with $\pt > \SI{500}{\MeV}$ and an association to the primary vertex are 
 \improvement{truth jets}
 
 Reconstructed jets undergo a \gls{jes} calibration, correcting the four-momentum and scaling the energy and mass~\cite{Aad:2020flx}.
-In a first step, energy contributions from in-time and out-of-time pileup are removed using a data-driven jet-by-jet approach based on the jet area $A$ and pileup $\pt$ density $\rho = p_\mathrm{T}/A$. The jet area is determined by the relative number of ghost particles (added uniformly in solid angle to the event prior to jet clustering) associated to the jet after clustering. 
+In a first step, energy contributions from in-time and out-of-time pile-up are removed using a data-driven jet-by-jet approach based on the jet area $A$ and pile-up $\pt$ density $\rho = p_\mathrm{T}/A$. The jet area is determined by the relative number of ghost particles (added uniformly in solid angle to the event prior to jet clustering) associated to the jet after clustering. 
 Additionally, a residual correction derived from \gls{mc} simulation is applied, parameterised in the number of mean interactions per bunch crossing and the number of reconstructed primary vertices~\cite{Aad:2020flx,Cacciari:2007fd}.
 The reconstructed jet four-momentum is corrected to the particle-level energy scale through an absolute \gls{jes} and $\eta$ calibration.\unsure{what does this mean exactly?}
 In order to reduce the dependence of the jet response (\ie the ratio between the measured jet energy and the true jet energy) on the flavour and energy distribution of its constituents, a series of multiplicative corrections is applied~\cite{PERF-2011-03}.
@@ -252,7 +269,7 @@ Differences between the jet response in data and \gls{mc} simulation, caused by 
 The jet response in data and \gls{mc} simulations is measured separately, allowing to derive a correction factor that is applied on data\unsure{why not on MC?}.
 Similarly to the \gls{jes}, the \gls{jer} is also calibrated. Its calibration is performed using $\pt$-asymmetry measurements in dijet events~\cite{PERF-2014-02}.
 
-Even after the subtraction of pileup effects, some pileup jets still remain. The \gls{jvt}~\cite{PERF-2014-03}, a multivariate discriminant, is used to suppress pileup jets.
+Even after the subtraction of pile-up effects, some pile-up jets still remain. The \gls{jvt}~\cite{PERF-2014-03}, a multivariate discriminant, is used to suppress pile-up jets.
 It is based on variables that describe the fraction of the total jet momentum corresponding to tracks associated to the primary vertex.
 In the \onelepton search, jets with $\pt < \SI{120}{\GeV}$ and $\vert\eta\vert < 2.5$ need to be associated to the primary vertex using the \textit{medium}~\cite{Aad:2020flx} working point, achieving an average 92\% efficiency for jets originating from the hard scatter interaction.
 
@@ -280,9 +297,9 @@ The missing transverse momentum in each event is computed using all reconstructe
 	\label{eq:met}
 \end{equation}
 While terms originating from the reconstructed, calibrated objects are collectively referred to as the \textit{hard term}, the remaining track term is referred to as \textit{soft term}.
-As $\tau$-leptons are not explicitly reconstructed in this analysis, no dedicated $\tau$-term is included in \cref{eq:met}. Instead, $\tau$-leptons are included in the electron, muon or jet term, depending on their decay mode and reconstruction. The computation of $\etmiss$ uses all baseline objects introduced in the previous sections. Ambiguities between objects are resolved using an overlap removal procedure~\cite{PERF-2016-07} that is separate and independent from the procedure described in \cref{sec:overlap_removal}. In order to reduce effects from pileup, the $\etmiss$ is computed using the \textit{Tight} working point described in Ref.~\cite{ATLAS-CONF-2018-023}, excluding forward jets with $\vert\eta\vert > 2.4$ and $\pt < \SI{30}{\GeV}$.
+As $\tau$-leptons are not explicitly reconstructed in this analysis, no dedicated $\tau$-term is included in \cref{eq:met}. Instead, $\tau$-leptons are included in the electron, muon or jet term, depending on their decay mode and reconstruction. The computation of $\etmiss$ uses all baseline objects introduced in the previous sections. Ambiguities between objects are resolved using an overlap removal procedure~\cite{PERF-2016-07} that is separate and independent from the procedure described in \cref{sec:overlap_removal}. In order to reduce effects from pile-up, the $\etmiss$ is computed using the \textit{Tight} working point described in Ref.~\cite{ATLAS-CONF-2018-023}, excluding forward jets with $\vert\eta\vert > 2.4$ and $\pt < \SI{30}{\GeV}$.
 
-Events without any true $\etmiss$ can have non-zero reconstructed $\etmiss$ due to residual pileup effects, object mismeasurements or particles escaping through uninstrumented regions of the detector. Such \textit{fake} $\etmiss$ allows events without any real $\etmiss$ (\eg $Z(\rightarrow ee)+\mathrm{jets}$) to pass the event selection criteria and end up in the kinematic regions of interest, even after requiring a certain threshold value of $\etmiss$.
+Events without any true $\etmiss$ can have non-zero reconstructed $\etmiss$ due to residual pile-up effects, object mismeasurements or particles escaping through uninstrumented regions of the detector. Such \textit{fake} $\etmiss$ allows events without any real $\etmiss$ (\eg $Z(\rightarrow ee)+\mathrm{jets}$) to pass the event selection criteria and end up in the kinematic regions of interest, even after requiring a certain threshold value of $\etmiss$.
 
 
 \begin{table}
