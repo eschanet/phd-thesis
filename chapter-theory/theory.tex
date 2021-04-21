@@ -14,7 +14,7 @@
 \glsreset{sm}
 
 The \gls{sm}, introduced in the following section, is a theoretical framework providing a description of nature on the level of elementary particles. Although experimentally well-validated, a number of open questions are left unanswered by the \gls{sm}.
-For this reason, the second part of this chapter introduces Supersymmetry, a class of theories that could provide answers to some of these open questions. As searching for Supersymmetry will be the guiding thread for the greater part of this thesis, this chapter will highlight the phenomenological consequences of supersymmetric theories.
+For this reason, the second part of this chapter introduces Supersymmetry, a class of theories that could provide answers to some of these open questions. As searching for Supersymmetry will be the guiding thread throughout this thesis, this chapter will highlight the phenomenological consequences of supersymmetric theories.
 The mathematical description in the following sections largely follows \references\cite{Brock:1354959, Peskin:1995ev} for the \gls{sm} and \references\cite{Martin:1997ns,Bustamante:2009us} for Supersymmetry.
 
 \section{The Standard Model of particle physics}
@@ -769,7 +769,7 @@ which thus yields for the potential $V = W^*_iW^i = F_iF^{*i}$, allowing to writ
 \end{equation}
 obtained by adding the interaction term $\Lagr_\mathrm{int}$ from~\cref{eq:wess_zumino_int} to the free Lagrangian in~\cref{eq:wess_zumino_free} and inserting the expression for the superpotential from~\cref{eq:wess_zumino_potential} and the auxiliary fields from~\cref{eq:wess_zumino_F}.
 
-The Lagrangian in \cref{eq:wess_zumino_lagrangian} immediately reveals that, as expected by supersymmetry, the masses of the fermions and bosons in the same supermultiplet are identical. In order to incorporate gauge supermultiplets and consider the interactions between fermions and gauge bosons observed in the SM, the usual minimal coupling rule has to be applied, replacing $\partial_\mu$ with $\codiff_\mu$. This leads to equation of motions for the auxiliary fields $D^a$
+The Lagrangian in \cref{eq:wess_zumino_lagrangian} immediately reveals that, as expected by supersymmetry, the masses of the fermions and bosons in the same supermultiplet are identical. In order to incorporate gauge supermultiplets and consider the interactions between fermions and gauge bosons observed in the SM, the usual minimal coupling rule has to be applied, replacing $\partial_\mu$ with $\codiff_\mu$. This leads to equation of motions for the auxiliary fields,
 \begin{equation}
 	D^a = -g(\phi^*T^a\phi),
 \end{equation}
@@ -789,7 +789,7 @@ The \gls{mssm} is the simplest $N=1$ supersymmetric extension of the \gls{sm} in
 
 The \gls{mssm} arranges all \gls{sm} particles in chiral (all the fermions and quarks) and gauge (all spin-1 bosons) supermultiplets. As supersymmetric partners (\textit{spartners}) have the same quantum numbers apart from spin, none of the \gls{sm} particles can be spartners of each other.
 Thus, all spartners have to be new, unseen particles. \Cref{tab:particles_MSSM} summaries the names, notations and spins of all spartners introduced in the \gls{mssm}.
-The naming convention is to prepend the names of the spartners of fermions with an 's' (\eg \textit{selectron}, \textit{stop}, ...) and append '-ino' to the names of the spartners of the bosons (\eg \textit{Wino}, \textit{Photino}, ...).
+The naming convention is to prepend the names of the spartners of fermions with an `s' (\eg \textit{selectron}, \textit{stop}, ...) and append `-ino' to the names of the spartners of the bosons (\eg \textit{Wino}, \textit{Higgsino}, ...).
 Supersymmetric particles (\textit{sparticles}) are generally denoted by adding a tilde to the symbol of \gls{sm} particles (\eg $\tilde{e}$, $\tilde{u}$, $\tilde{g}$). 
 
 \begin{table}
@@ -826,7 +826,7 @@ Supersymmetric particles (\textit{sparticles}) are generally denoted by adding a
 \end{table}
 
 An important detail to note is that right-handed and left-handed fermions get their own chiral supermultiplets and thus have distinct spartners, as otherwise the preference of the weak interaction for left-handed particles would be violated. 
-For example, left-handed and right-handed quarks ($q_\mathrm{L}$, $q_\mathrm{R}$) get two different spartners ($\tilde{q}_\mathrm{L}$, $\tilde{q}_\mathrm{R}$), denoted with an index L and R.
+For example, left-handed and right-handed quarks ($q_\mathrm{L}$, $q_\mathrm{R}$) get two different spartners ($\tilde{q}_\mathrm{L}$, $\tilde{q}_\mathrm{R}$), denoted with subscript `L' and `R'.
 The index here refers to the handiness of the SM particle as scalar particles have only one helicity state. Additionally, the spartners of the left-handed and right-handed will mix to form physical mass eigenstates.
 
 It is also worth asking why the spartners of SM particles are of lower spin in the first place, as \eg spin-1 spartners of the SM fermions could also have been considered. The introduction of spin-1 bosons would entail the introduction of new gauge interactions, rendering the \gls{mssm} non-minimal~\cite{Bustamante:2009us}. Furthermore, introducing spartners with spin greater than 1 would make the resulting theory non-renormalisable~\cite{Bustamante:2009us}.
@@ -868,7 +868,7 @@ A total of 105 new parameters with no counterpart in the SM are introduced throu
 	\item SUSY breaking parameters $m^2_{H_u}$, $m^2_{H_d}$ and $b$.
 \end{itemize}
 
-The sfermion mass matrices and the trilinear scalar couplings may introduce additional flavour mixing and CP violation, both of which are heavily constrained by experimental results. Flavour mixing in the lepton sector is for example constrained by an upper limit on \mbox{$\mathrm{BR}(\mu\rightarrow e\gamma)<\SI{4.2e-12}{}$} \cite{Mori:2016vwi}. Bounds on additional CP violation as well as squark mixing terms come from measurements of the electron and neutron electric moments and neutral meson systems\footnote{While it is theoretically possible to fine-tune the numerous phases in the \gls{mssm} such that cancelling contributions are generated, such possibilities will not be discussed in the following.} \cite{pdg2020}. Formally, in order to avoid these terms, SUSY breaking can be assumed to be \textit{flavour-blind}, meaning that the mass matrices are approximately diagonal. The large Yukawa couplings for the third generation squarks and sfermions can then be achieved by assuming that the trilinear scalar couplings are proportional to the corresponding Yukawa coupling matrix~\cite{Martin:1997ns}.
+The sfermion mass matrices and the trilinear scalar couplings may introduce additional flavour mixing and CP violation, both of which are heavily constrained by experimental results. Flavour mixing in the lepton sector is for example constrained by an upper limit on \mbox{$\mathrm{BR}(\mu\rightarrow e\gamma)<\SI{4.2e-12}{}$} \cite{Mori:2016vwi}. Bounds on additional CP violation as well as squark mixing terms come from measurements of the electron and neutron electric moments and neutral meson systems\footnote{While it is theoretically possible to fine-tune the numerous phases in the \gls{mssm} in a way that cancelling contributions are generated, such possibilities will not be discussed in the following.} \cite{pdg2020}. Formally, in order to avoid these terms, SUSY breaking can be assumed to be \textit{flavour-blind}, meaning that the mass matrices are approximately diagonal. The large Yukawa couplings for the third generation squarks and sfermions can then be achieved by assuming that the trilinear scalar couplings are proportional to the corresponding Yukawa coupling matrix~\cite{Martin:1997ns}.
 
 As most of the parameters in the \gls{mssm} are related to soft SUSY breaking, it is not surprising that the phenomenology of the \gls{mssm} strongly depends on the exact breaking mechanism. The breaking is usually assumed to happen in a \textit{hidden sector} and the effects of the breaking are then typically mediated by messenger fields from the hidden sector to the \textit{visible sector} containing all the particles of the \gls{mssm}. Since the hidden sector is assumed to be only weakly or indirectly coupled to the visible sector, the phenomenology mostly depends on the mechanism mediating the breaking. The two most popular mechanisms are \textit{gravity-mediated} and \textit{gauge-mediated} SUSY breaking.
 
@@ -1021,7 +1021,7 @@ In addition, connections to (in)direct \gls{dm} searches and various \gls{sm} me
 		\centering\includegraphics[width=.9\textwidth]{electroweakino_production_3}
 		\caption{\label{fig:electroweakino_production_3}}
 	\end{subfigure}	
-	\caption{Dominant diagrams for production of electroweakino pairs at the Large Hadron Collider. Adapted from \reference\cite{Martin:1997ns}}\label{fig:electroweakino_production}
+	\caption{Dominant diagrams for production of electroweakino pairs at the Large Hadron Collider. Adapted from \reference\cite{Martin:1997ns}.}\label{fig:electroweakino_production}
 \end{figure}
 
 While both the ATLAS experiment~\cite{ATLASsummary} and CMS experiment~\cite{CMSsummary} at the Large Hadron Collider at CERN set strong limits on the presence of gluinos and squarks at the TeV scale, the limits on electroweakinos are mostly still below $\SI{1}{\TeV}$. 
@@ -1051,14 +1051,15 @@ If gluinos and squarks are heavier than a few TeV, \ie too heavy to be within re
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.45\linewidth}
-		\centering\includegraphics[width=.85\textwidth]{C1N2-WhN1N1}
+		\centering\includegraphics[width=.85\textwidth]{C1N2-WhN1N1}		
+		\vspace{0.5em}
 		\caption{\label{fig:Wh_model}}
-	\end{subfigure}%
+	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.55\linewidth}
 		\centering\includegraphics[width=.9\textwidth]{signalgrid}
 		\caption{\label{fig:signalgrid}}
 	\end{subfigure}	
-	\caption{Simplified model used in this thesis. Fig.~\subref{fig:Wh_model} shows a diagram for $\charg\neutr$ pair-production with subsequent decays into $\charg\rightarrow W^\pm\lsp$ and $\neutr\rightarrow h\lsp$. Fig.~\subref{fig:signalgrid} shows the signal grid used. Each discrete point represents a different signal model with a unique set of $\charg/\neutr$ and $\lsp$ masses.}\label{fig:models_used}
+	\caption{Simplified model used in this thesis. Fig.~\subref{fig:Wh_model} shows a diagram for $\charg\neutr$ pair-production with subsequent decays into $\charg\rightarrow W^\pm\lsp$ and $\neutr\rightarrow h\lsp$. Fig.~\subref{fig:signalgrid} shows the signal grid used. Each discrete point represents a different signal model with a unique set of $\charg/\neutr$ and $\lsp$ mass parameters.}\label{fig:models_used}
 \end{figure}
 
 %\begin{figure}
@@ -1079,8 +1080,11 @@ In addition to the simplified model targeted by the SUSY search presented in the
 
 
 \begin{figure}
-	\centering\includegraphics[width=.8\textwidth]{slha}
-	\caption{Mass spectrum of an example \gls{pmssm} model point considered in \cref{part:reinterpretation} of this thesis. The kinematically allowed decays and their branching ratios are indicated through dashed lines. Figure generated using \texttt{pyslha}~\cite{pyslha:2013jua}.}\label{fig:slha}
+	\centering\includegraphics[width=.6\textwidth]{thesis_plot_9127}
+	\caption{
+Mass spectra of two exemplary \gls{pmssm} models. Both models are excluded by the \onelepton search.
+The branching fractions of the different decays are indicated through the width and and greyscale colour (pure black being 100\%, pure white being 0\%) of the arrows. Branching fractions below 10\% are suppressed for the sake of visibility. Figures generated using \texttt{pyslha}~\cite{pyslha:2013jua}.}
+\label{fig:slha}
 \end{figure}
 
 %\begin{figure}

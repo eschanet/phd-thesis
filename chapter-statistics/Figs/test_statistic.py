@@ -4,7 +4,11 @@ from scipy import stats
 
 from matplotlib import rc
 
-rc("font", **{"size":12,"family": "serif", "serif": ["Computer Modern"]})
+rc("font", **{"size":13,"family": "serif", "serif": ["Computer Modern"]})
+# plt.rcParams['font.sans-serif'] = ['Arial', 'sans-serif']
+
+plt.rcParams.update({'font.size': 13})
+
 rc("text", usetex=True)
 
 x = np.linspace(-8, 0, 5000)
@@ -44,7 +48,7 @@ ax.fill_between(
 )
 
 ax.vlines(x=lim, ymin=0, ymax=0.3, color="black")
-ax.text(-1.9, 0.27, '$\\tilde{q}_{\\mu,\\mathrm{obs}}$', fontsize=13)
+ax.text(-1.9, 0.28, '$\\tilde{q}_{\\mu,\\mathrm{obs}}$', fontsize=13)
 
 
 # ax.annotate(
@@ -56,8 +60,9 @@ ax.text(-1.9, 0.27, '$\\tilde{q}_{\\mu,\\mathrm{obs}}$', fontsize=13)
 #     arrowprops=dict(arrowstyle="->", connectionstyle="arc3"),
 # )
 
-ax.legend(loc='upper left',
+ax.legend(loc='upper left',bbox_to_anchor=(0, 1.03), handletextpad=0.5,labelspacing=0.4, frameon=False,
           ncol=1, fancybox=False, shadow=False)
+ax.tick_params(direction="in",which='both',length=4)
 
 ax.set_ylim(ymin=0, ymax=0.5)
 ax.set_ylabel("$f(\\tilde{q}_\\mu)$")

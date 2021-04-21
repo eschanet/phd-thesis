@@ -28,16 +28,16 @@ This chapter therefore introduces the concept of \textit{simplified likelihoods}
 	\centering
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_SRLM_noLabel_v2}
-		\caption{Discovery SR-LM\label{fig:single_bin_SRLM}}
+		\caption{SR-LM (disc.)\label{fig:single_bin_SRLM}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_SRMM_noLabel_v2}
-		\caption{Discovery SR-MM\label{fig:single_bin_SRMM}}
+		\caption{SR-MM (disc.)\label{fig:single_bin_SRMM}}
 	\end{subfigure}\hfill
-	\par\medskip
+	\par\bigskip
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_SRHM_noLabel_v2}
-		\caption{Discovery SR-HM\label{fig:single_bin_SRHM}}
+		\caption{SR-HM (disc.)\label{fig:single_bin_SRHM}}
 	\end{subfigure}%
 	\caption{Comparison of exclusion limits obtained using a likelihood built from all nine exclusion signal regions (orange), and the discovery signal regions (green). As discussed in~\cref{sec:signal_region_definitions}, the discovery signal regions are simple \textit{cut-and-count} regions making minimal model assumptions. As they are not mutually exclusive, they cannot be statistically combined, thus resulting in three separate exclusion contours. All statistical and systematic uncertainties on the background and the signal event rates are included in all regions.}\label{fig:single_bin}
 \end{figure}
@@ -274,18 +274,17 @@ In the case of the ATLAS stop search shown in~\cref{fig:results_stop1L}, signifi
 
 The simplified likelihoods introduced in this chapter can offer precise and computationally efficient approximations of ATLAS \gls{susy} searches for which the full likelihood in \texttt{JSON} format is available. A publicly available python tool has been developed for generic conversion of any full likelihood in \texttt{JSON} format into the simplified format introduced herein~\cite{simplify}.
 
-The procedure of approximating the statistical model of a search is orthogonal to the truth-level analysis discussed in \cref{sec:truth_analysis} in the sense that both approximations target a different part of the analysis workflow shown in \cref{fig:pipeline_analysis}.
-As such, both approaches can be combined into a \textit{simplified analysis} that runs a smeared truth-level analysis in order to determine an estimate for signal event rates, followed by a simplified statistical inference using the simplified likelihood instead of the full statistical model.
-\Cref{fig:exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel} compares the expected and observed exclusion contours obtained in the full \onelepton search published with those obtained with the simplified version of the search, using smeared truth-level analysis and a simplified likelihood.
-The agreement observed between the exclusion contours obtained by both analysis versions is noteworthy, especially given the considerable scope of the two-fold approximation applied in the simplified analysis version.
-This very simplified analysis will be used in the following chapter to enable a computationally efficient reinterpretation of the \onelepton search in the \gls{pmssm}.
-
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.30\textwidth}}]{figure}[\FBwidth]
 {\caption{Expected and observed exclusion contours obtained with the full likelihood and reconstruction-level inputs (orange) and the simplified likelihood and smeared truth-level inputs (purple). All statistical and systematic uncertainties on the background and signal are considered for the reconstruction-level contours determined using the full likelihood.}\label{fig:exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}}
 {\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}}
 \end{figure}
 
+The procedure of approximating the statistical model of a search is orthogonal to the truth-level analysis discussed in \cref{sec:truth_analysis} in the sense that both approximations target a different part of the analysis workflow shown in \cref{fig:pipeline_analysis}.
+As such, both approaches can be combined into a \textit{simplified analysis} that runs a smeared truth-level analysis in order to determine an estimate for signal event rates, followed by a simplified statistical inference using the simplified likelihood instead of the full statistical model.
+\Cref{fig:exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel} compares the expected and observed exclusion contours obtained in the full \onelepton search published with those obtained with the simplified version of the search, using smeared truth-level analysis and a simplified likelihood.
+The agreement observed between the exclusion contours obtained by both analysis versions is noteworthy, especially given the considerable scope of the two-fold approximation applied in the simplified analysis version.
+This very simplified analysis will be used in the following chapter to enable a computationally efficient reinterpretation of the \onelepton search in the \gls{pmssm}.
 
 As the full likelihood defines the full statistical model given the observed data in an analysis, other forms of likelihood simplifications can be thought of.
 One possible approach worth investigating is the construction of likelihood simplifications using a variable number of nuisance parameters, as opposed to reducing the full set of nuisance parameters to a single one.
