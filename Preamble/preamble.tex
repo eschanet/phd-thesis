@@ -174,6 +174,10 @@
 %\renewcommand{\listfigurename}{My List of Figures}
 %\renewcommand{\listtablename}{My List of Tables}
 
+% ********************** Make broken labels extra visible *************************
+
+\makeatletter
+\patchcmd{\@setref}{\bfseries ??}{\bfseries\color{red} undefined Label}{}{}
 
 % ********************** TOC depth and numbering depth *************************
 
@@ -181,8 +185,9 @@
 \setcounter{tocdepth}{2}
 
 \usepackage[titles]{tocloft}
+\setlength{\cftbeforepartskip}{12pt}
 \setlength{\cftbeforechapskip}{2pt}
-\setlength{\cftbeforesecskip}{-4pt}
+\setlength{\cftbeforesecskip}{-3pt}
 \setlength{\cftbeforesubsecskip}{-5pt}
 %\setlength\cftparskip{-2pt}
 

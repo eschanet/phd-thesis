@@ -1,33 +1,54 @@
 %!TEX root = ../thesis.tex
 % ******************************* Thesis Appendix C ********************************
 
-\chapter{}
+\chapter{Reinterpretation in the pMSSM}
 \ifpdf
 \graphicspath{{chapter-pmssm/Figs/Raster/}{chapter-pmssm/Figs/PDF/}{chapter-pmssm/Figs/}}
 \else
 \graphicspath{{chapter-pmssm/Figs/Vector/}{chapter-pmssm/Figs/}}
 \fi
 
+The following sections show supporting material for the reinterpretation of the \onelepton search in the \gls{pmssm}, discussed in \cref{ch:pmssm}.
+
+
+\section{Further validation of the simplified likelihood}
+
+\Cref{fig:validation_simplified_full_likelihood} compares the observed CL$_s$ values obtained for the \gls{pmssm} models sampled using the various likelihoods of the \onelepton search  discussed throughout \cref{part:reinterpretation} of this thesis. In general, the observed CL$_s$ values from the simplified likelihood are closer to those obtained using the full likelihood, than the ones obtained using the single-bin likelihood (built using the discovery signal regions).
+
+Although showing a good agreement, the CL$_s$ naturally do not match perfectly. For this reason, the simplified likelihood can only be used for models giving observed CL$_s$ moderately far away from the exclusion boundary at 0.05. Models with a CL$_s$ value too close to 0.05 need to be evaluated using the full likelihood and \textsc{Recast} for full statistical precision. The benefit of the simplified likelihood, compared to the single-bin approach using the discovery signal regions, is that, due to the improved agreement in observed CL$_s$, the range in observed CL$_s$ around 0.05 to be evaluated using the full likelihood can be chosen to be significantly narrower.
+\begin{figure}[H]
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.45\textwidth}}]{figure}[\FBwidth]
+{\caption{Observed CL$_s$ values obtained for all \gls{pmssm} models sampled for different likelihood configurations of the \onelepton search. In green, the simplified likelihood discussed in \cref{ch:simplify} is compared with the full analysis likelihood. In purple, the single-bin likelihood configuration using the discovery signal regions is used.}\label{fig:validation_simplified_full_likelihood}}
+{\includegraphics[width=0.5\textwidth]{fig_scatter_likelihoods}}
+\end{figure}
+
+\FloatBarrier
+
 \section{Phenomenology of the LSP}
 
-In the following, various two-dimensional projections of the parameter space sampled in function of the \gls{lsp} type are shown.
+\Cref{fig:lsp_phenomenology_parameters} shows the \gls{lsp} type as a function of the \gls{pmssm} parameters $M_1$, $M_2$, $\mu$ and $\tan\beta$. Models with $\vert M_1\vert < \vert M_2\vert$ and $\vert M_1\vert \ll \vert\mu\vert$ tend to have an \gls{lsp} with dominant bino component, while models with $\vert M_2 \vert < \vert M_1 \vert$ and $ \vert M_2 \vert  \ll \vert\mu\vert$, have an \gls{lsp} that is mostly wino-like.
+Models with $\vert\mu\vert\ll \vert M_1 \vert$ and $\vert\mu\vert\ll \vert M_2 \vert$ have mostly higgsino-like \glspl{lsp}.
+%In models with mass parameters in between those edge cases, the \gls{lsp} becomes a mixed state.
+The parameter $\tan\beta$ does not have a large impact on the \gls{lsp} type within the ranges sampled.
 
-\Cref{fig:lsp_phenomenology_parameters} shows the \gls{lsp} type as a function of the \gls{pmssm} parameters $M_1$, $M_2$, $\mu$ and $\tan\beta$, illustrating the behaviour of the neutralino mass mixing matrix introduced in \cref{ch:gauge_theory}. Models with $\vert M_1\vert < \vert M_2\vert$ and $\vert M_1\vert \ll \vert\mu\vert$ tend to have an \gls{lsp} with dominant bino component, while, in models with $\vert M_2 \vert < \vert M_1 \vert$ and $ \vert M_2 \vert  \ll \vert\mu\vert$, the \gls{lsp} is mostly wino-like. Models where  $\vert\mu\vert\ll \vert M_1 \vert$ and $\vert\mu\vert\ll \vert M_2 \vert$, the \gls{lsp} is mostly higgsino-like. In models with mass parameters in between those edge cases, the \gls{lsp} becomes a mixed state. The parameter $\tan\beta$ does not have a large impact on the \gls{lsp} type within the ranges sampled.
+\Cref{fig:impact_electroweakinos_2D_bino_lsp} shows the fraction of models excluded by the \onelepton search in different two-dimensional projections on the electroweakino masses.
+%Only models with a bino-like (left) or wino-like (right) \gls{lsp} are shown in order to highlight the different spectra. No models with a higgsino-like \gls{lsp} are shown since the \onelepton search is not sensitive to such scenarios.
+Models with a bino-like \gls{lsp} tend to have nearly mass-degenerate $\charg$ and $\neutr$ and are thus close to the canonical simplified model considered in the search. Models with a wino-like \gls{lsp} have nearly mass-degenerate $\charg$ and $\lsp$. In such models, the \onelepton search can be sensitive to $\tilde{\chi}_2^\pm\neutr$ production.
 
-\Cref{fig:impact_electroweakinos_2D_bino_lsp} shows the fraction of models excluded by the \onelepton search in different two-dimensional projections on the electroweakino masses. Only models with a bino-like or wino-like \gls{lsp} are shown in order to highlight the different spectra. No models with a higgsino-like \gls{lsp} are shown since the \onelepton search is not sensitive to such scenarios. Models with a bino-like \gls{lsp} tend to have nearly mass-degenerate $\charg$ and $\neutr$ and are thus close to the canonical simplified model considered in the search. Models with a wino-like \gls{lsp} have nearly mass-degenerate $\charg$ and $\lsp$. In such models, the \onelepton search can become sensitive to $\tilde{\chi}_2^\pm\neutr$ production with subsequent decay $\tilde{\chi}_2^\pm \to h\lsp$.
-
- \begin{figure}
+ \begin{figure}[H]
 	\centering
-	\begin{subfigure}[b]{0.5\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{scatter/lsp_types_M1_M2}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{scatter/lsp_types_mu_M2}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
+	
+	\vspace{-1.0em}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{scatter/lsp_types_mu_M1}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{scatter/lsp_types_tanb_M1}
 	\end{subfigure}\hfill
 	\caption{Phenomenology of the \gls{lsp} as a function of two-dimensional projections of the \gls{pmssm} parameter space. The parameters $M_1$, $M_2$, $\mu$ and $\tan\beta$ in various projections. Each point in the plots corresponds to a unique \gls{pmssm} model sampled. The colour codes the nature of the \gls{lsp} using the definitions introduced in \cref{sec:lsp_pheno}.}
@@ -104,9 +125,9 @@ In the following, various two-dimensional projections of the parameter space sam
 
 \section{Impact on electroweakinos}
 
-As illustrated in \cref{fig:higgs_coupling_neutralino}, the couplings of the $\neutr$ to the Higgs boson are suppressed by powers of $\vert\mu\vert/M_2$ in the wino-like and bino-like scnearios~\cite{Arbey:2012fa}, meaning that the branching fraction of $\neutr \rightarrow h \lsp$ takes on reasonably high values only in models with an \gls{lsp} that is nearly pure bino.
+As illustrated in \cref{fig:higgs_coupling_neutralino}, the couplings of the $\neutr$ to the Higgs boson are suppressed by powers of $\vert\mu\vert/M_2$ in the wino-like and bino-like scenarios~\cite{Arbey:2012fa}, meaning that the branching fraction of $\neutr \rightarrow h \lsp$ takes on reasonably high values only in models with an \gls{lsp} that is nearly pure bino.
 
-\Cref{fig:higgsino_spectrum} shows the compressed mass spectrum of an exemplary \gls{pmssm} model point with higgsino-like $\lsp$.
+\Cref{fig:higgsino_spectrum} shows the compressed mass spectrum of an exemplary \gls{pmssm} model point with higgsino-like $\lsp$, a model that the \onelepton search is not expected to be sensitive to.
 
 \begin{figure}[h]
 	\centering
@@ -124,7 +145,7 @@ As illustrated in \cref{fig:higgs_coupling_neutralino}, the couplings of the $\n
 
 \begin{figure}[h]
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.50\textwidth}}]{figure}[\FBwidth]
-{\caption{Mass spectrum of an exemplary \gls{pmssm} model with a higgsino-lik $\lsp$. The branching fractions of the different decays are indicated through the width and and greyscale colour (pure black being 100\%, pure white being 0\%) of the arrows. Branching fractions below 10\% are suppressed for the sake of visibility. Figure generated using \texttt{pyslha}~\cite{pyslha:2013jua}.}\label{fig:higgsino_spectrum}}
+{\caption{Mass spectrum of an exemplary \gls{pmssm} model with a higgsino-like $\lsp$. The branching fractions of the different decays are indicated through the width and and greyscale colour (pure black being 100\%, pure white being 0\%) of the arrows. Branching fractions below 10\% are suppressed for the sake of visibility. Figure generated using \texttt{pyslha}~\cite{pyslha:2013jua}.}\label{fig:higgsino_spectrum}}
 {\includegraphics[width=0.50\textwidth]{thesis_plot_6898.pdf}}
 \end{figure}
 
@@ -157,7 +178,7 @@ In \cref{fig:impact_pMSSM_parameters_1D_2}, the impact of the \onelepton search 
 	\begin{subfigure}[b]{0.4\linewidth}
 		\centering\includegraphics[width=\textwidth]{1D/mqL3}
 	\end{subfigure}
-	\caption{Bin-by-bin number of excluded models as a one-dimensional function of the remaining scanned \gls{pmssm} parameters not already shown in \cref{fig:impact_pMSSM_parameters_1D}. The bin-wise fraction of excluded models, $N^\mathrm{bin}_\mathrm{excl} / N^\mathrm{bin}_\mathrm{total}$, is shown in the lower pad. All models are evaluated using the simplified likelihood of the \onelepton search.}
+	\caption{Bin-by-bin number of excluded models as a one-dimensional function of the remaining \gls{pmssm} parameters not already shown in \cref{fig:impact_pMSSM_parameters_1D}. The bin-wise fraction of excluded models, $N^\mathrm{bin}_\mathrm{excl} / N^\mathrm{bin}_\mathrm{total}$, is shown in the lower pad. All models are evaluated using the simplified likelihood of the \onelepton search.}
 	\label{fig:impact_pMSSM_parameters_1D_2}
 \end{figure}
 
@@ -166,7 +187,7 @@ In \cref{fig:impact_pMSSM_parameters_1D_2}, the impact of the \onelepton search 
 
 \section{Impact on dark matter relic density}
 
-\Cref{fig:relic_density_lsp_withConstraint} compares the density of \gls{pmssm} models in a two-dimensional projection on the $\Omega_{\tilde{\chi}} h^2$--$m(\lsp)$ plane before and after the \gls{lep} constraint on the chargino mass of $\charg > \SI{103.5}{\GeV}$~\cite{lep_susy_results} is applied.
+\Cref{fig:relic_density_lsp_withConstraint} compares the density of \gls{pmssm} models in a two-dimensional projection on the $\Omega_{\tilde{\chi}} h^2$--$m(\lsp)$ plane before and after the \gls{lep} constraint on the chargino mass of $m(\charg) > \SI{103.5}{\GeV}$~\cite{lep_susy_results} is applied. Only models with a bino-like \gls{lsp} provide a light \gls{lsp} with mass below $\SI{e2}{\GeV}$ after the \gls{lep} constraint. In order for the \textit{Z}- and \textit{h}-funnels to become visible, \ie for there to be a sizeable number of models with a light bino-like \gls{lsp} and $\Omega_{\tilde{\chi}} h^2 < 0.12$ c, the region with  $m(\lsp) > \SI{e2}{\GeV}$ would need to be oversampled. Due to the lack thereof within the scope of this thesis, only a small number of models with a bino-like \gls{lsp} and $\Omega_{\tilde{\chi}} h^2 < 0.12$ are sampled and subsequently evaluated using the \onelepton search.
 
 \begin{figure}[h]
 	\centering
@@ -178,6 +199,6 @@ In \cref{fig:impact_pMSSM_parameters_1D_2}, the impact of the \onelepton search 
 		\centering\includegraphics[width=\textwidth]{scatter/relic_density_lsp_limits}
 		\caption{With LEP constraint\label{fig:relic_density_lsp_constraint}}
 	\end{subfigure}\hfill
-	\caption{Density of the \gls{pmssm} model points sampled in the plane spanned by the relic density and the $\lsp$ mass. The model points are additionally shown as a function of the nature of their $\lsp$. In fig.~\subref{fig:relic_density_lsp_no_constraint} all \gls{pmssm} models originally sampled and evaluated are shown. In fig.~\subref{fig:relic_density_lsp_constraint}, only models satisfying the constraint $\charg > \SI{103.5}{\GeV}$ set by \gls{lep}~\cite{lep_susy_results} are shown. The horizontal dashed line represents the \gls{dm} relic density measurement by the Planck collaboration, interpreted as an upper limit $\Omega_{\tilde{\chi}} h^2 < 0.12$ such that the $\lsp$ can be a sub-dominant \gls{dm} component.}
+	\caption{Density of the \gls{pmssm} model points sampled in the plane spanned by the relic density and the $\lsp$ mass. The model points are additionally shown as a function of the nature of their $\lsp$. In fig.~\subref{fig:relic_density_lsp_no_constraint} all \gls{pmssm} models originally sampled and evaluated are shown. In fig.~\subref{fig:relic_density_lsp_constraint}, only models satisfying the constraint $m(\charg) > \SI{103.5}{\GeV}$ set by \gls{lep}~\cite{lep_susy_results} are shown. The horizontal dashed line represents the \gls{dm} relic density measurement by the Planck collaboration, interpreted as an upper limit $\Omega_{\tilde{\chi}} h^2 < 0.12$ such that the $\lsp$ can be a sub-dominant \gls{dm} component.}
 	\label{fig:relic_density_lsp_withConstraint}
 \end{figure}

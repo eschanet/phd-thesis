@@ -21,7 +21,7 @@ In this chapter, the optimisation procedures leading to the final signal regions
 \section{Optimisation methods}
 
 All optimisation methods used in the following require a figure of merit that is maximised in order to find configurations yielding best performance.
-While the multidimensional cut scan and the $N-1$ plots approach introduced in in \cref{sec:n-dim-scan,sec:n-1-scan}, respectively, use the binomial discovery significance $Z_\mathrm{B}$, the fit scan procedure discussed in \cref{sec:fit-scan} aims to maximise the area of the expected exclusion contour.
+While the multidimensional cut scan and the \textit{N}--1 plots approach introduced in in \cref{sec:n-dim-scan,sec:n-1-scan}, respectively, use the binomial discovery significance $Z_\mathrm{B}$, the fit scan procedure discussed in \cref{sec:fit-scan} aims to maximise the area of the expected exclusion contour.
 
 \subsection{Multidimensional cut scan}\label{sec:n-dim-scan}
 
@@ -63,9 +63,9 @@ In the $N$-dimensional cut scan implementation used herein, the available \gls{m
 
 \subsection{N-1 plots}\label{sec:n-1-scan}
 
-Instead of performing a brute-force scan of a large set of cut combinations, a more manual approach, using iterative one-dimensional scans can be employed. In so-called `$N-1$ plots', the kinematic distributions of the background components as well as exemplary signal processes are plotted in conjunction with the significance achieved by applying a cut on each value on the \textit{x}-axis of the one-dimensional distribution plotted. All other selection requirements, except the one on the observable plotted, are applied. This method allows to investigate the impact of a single kinematic requirement on the overall significance value. By repeatedly executing this process for each observable considered, it is possible to iteratively approach a cut combination yielding results comparable to that of a brute-force cut scan. Especially when considering a sizeable set of observables, this manual approach, however, quickly becomes very cumbersome and inefficient, and risks missing optimal cut combinations that would have been found by a brute-force approach.
+Instead of performing a brute-force scan of a large set of cut combinations, a more manual approach, using iterative one-dimensional scans can be employed. In so-called `\textit{N}--1 plots', the kinematic distributions of the background components as well as exemplary signal processes are plotted in conjunction with the significance achieved by applying a cut on each value on the \textit{x}-axis of the one-dimensional distribution plotted. All other selection requirements, except the one on the observable plotted, are applied. This method allows to investigate the impact of a single kinematic requirement on the overall significance value. By repeatedly executing this process for each observable considered, it is possible to iteratively approach a cut combination yielding results comparable to that of a brute-force cut scan. Especially when considering a sizeable set of observables, this manual approach, however, quickly becomes very cumbersome and inefficient, and risks missing optimal cut combinations that would have been found by a brute-force approach.
 
-For this reason, the following optimisation uses an $N$-dimensional cut scan to cover the full space spanned by the observables and scan ranges considered, while $N-1$ plots are used to verify and fine-tune results obtained by the brute-force approach.
+For this reason, the following optimisation uses an $N$-dimensional cut scan to cover the full space spanned by the observables and scan ranges considered, while \textit{N}--1 plots are used to verify and fine-tune results obtained by the brute-force approach.
 
 \subsection{Scans using asymptotic formulae}\label{sec:fit-scan}
 
@@ -110,7 +110,7 @@ The optimisation of the signal regions for the \onelepton search presented herei
 
 \subsection{Starting from benchmark signal points}
 
-A total of six so-called \textit{benchmark} signal points, each representative for a different part of the model parameter space, are chosen for the first step of the optimisation procedure involving $N$-dimensional cut scans and $N-1$ plots.
+A total of six so-called \textit{benchmark} signal points, each representative for a different part of the model parameter space, are chosen for the first step of the optimisation procedure involving $N$-dimensional cut scans and \textit{N}--1 plots.
 Apart from the variables introduced in~\cref{sec:variables}, a set of additional, potentially discriminative observables are considered in the $N$-dimensional cut\improvement{Need presel plots for these} scan\footnote{These variables will turn out not to be used for the final signal regions and are only introduced here for completeness of the optimisation procedure description.}:
 \begin{itemize}
 	\item Transverse momenta of the two leading jets as well as of the lepton ($p_\textrm{T}^\mathrm{jet1}$, $p_\textrm{T}^\mathrm{jet2}$, $\ptl$). Especially for signal models with high mass differences between the electroweakinos, the transverse momenta of the lepton and the jets tend to have higher values than in \gls{sm} background processes.
@@ -145,7 +145,7 @@ The results of the brute-force $N$-dimensional cut scans for each benchmark sign
 The corresponding plots for the remaining benchmark points are shown in~\cref{fig:results_z_vs_eff_rest}. In these figures, the binomial significance is calculated for different uncertainty configurations for each of the two statistically independent subsets.
 In addition, the expected background rate is shown for each subset.
 A cut combination with high achieved significance can be chosen, while avoiding statistical fluctuations and overtightening.
-The cut combinations chosen for each benchmark point, after a round of $N-1$ plots, are shown in~\cref{tab:cut_scan_results}. The $N-1$ plots, shown in~\cref{fig:results_n1_800_0,fig:results_n1_800_150,fig:results_n1_800_250,fig:results_n1_600_300,fig:results_n1_400_200,fig:results_n1_300_150}, are used to validate and fine-tune the cut values obtained through the cut scan and allow to identify and remove cuts on observables that do not contribute significantly to the achieved $Z_\mathrm{B}$ value.
+The cut combinations chosen for each benchmark point, after a round of \textit{N}--1 plots, are shown in~\cref{tab:cut_scan_results}. The \textit{N}--1 plots, shown in~\cref{fig:results_n1_800_0,fig:results_n1_800_150,fig:results_n1_800_250,fig:results_n1_600_300,fig:results_n1_400_200,fig:results_n1_300_150}, are used to validate and fine-tune the cut values obtained through the cut scan and allow to identify and remove cuts on observables that do not contribute significantly to the achieved $Z_\mathrm{B}$ value.
 From the 12 observables initially considered, only six (excluding the \textit{b}-jet multiplicity technically not part of the scan) are part of the optimised cut combination candidates.
 The remaining observables turned out not to significantly improve the sensitivity and are therefore dropped in the following.
 
@@ -168,7 +168,7 @@ The remaining observables turned out not to significantly improve the sensitivit
 				$Z_\mathrm{B}$ $[\sigma]$ & \multicolumn{1}{c}{0.8} & \multicolumn{1}{c}{1.9} & \multicolumn{1}{c}{2.1} & \multicolumn{1}{c}{1.8} & \multicolumn{1}{c}{2.2} & \multicolumn{1}{c}{2.3} \\
 				\bottomrule
 			\end{tabular}
-		\caption{Optimal cut combination for each benchmark signal point obtained with a brute force cut scan and a round of $N-1$ plots. The parameters of the benchmark points $m(\charg/\neutr)$ and $m(\lsp)$, both given in $\SI{}{\GeV}$. The significance is computed for \onethirtynineifb with the binomial discovery significance $Z_\mathrm{B}$ and includes MC statistical uncertainty as well as a flat 30\% systematic uncertainty. A dash `--' is used where no requirement on the respective observable is applied.}
+		\caption{Optimal cut combination for each benchmark signal point obtained with a brute force cut scan and a round of \textit{N}--1 plots. The parameters of the benchmark points $m(\charg/\neutr)$ and $m(\lsp)$, both given in $\SI{}{\GeV}$. The significance is computed for \onethirtynineifb with the binomial discovery significance $Z_\mathrm{B}$ and includes MC statistical uncertainty as well as a flat 30\% systematic uncertainty. A dash `--' is used where no requirement on the respective observable is applied.}
 		\label{tab:cut_scan_results}
 	\end{center}
 \end{table}
@@ -205,7 +205,7 @@ Configurations with multiple, disjoint patches of excluded areas in the paramete
 As expected from~\cref{tab:cut_scan_results}, the best performing configurations define multiple signal region bins in the $\mt$ and $\mct$ distributions, while keeping a constant baseline selection on the remaining observables.
 \Cref{fig:plot_binnings} shows a comparison of the expected exclusion contour for exemplary two-dimensional shape-fit configurations, using signal regions binned in ($\mt$, $\etmiss$), ($\mt$, $\mbb$) or ($\mt$, $\mct$).
 The setup using a two-dimensional shape-fit in $\mt$ and $\mct$ clearly maximises the expected excluded area.
-In addition, this configuration also leads to optimal sensitivity within the expected limit, as is illustrated in~\cref{fig:plot_binnings_cls}.
+%In addition, this configuration also leads to optimal sensitivity within the expected limit, as is illustrated in~\cref{fig:plot_binnings_cls}.
 Finally, applying a requirement on high values of $\mlb$ in the highest $\mt$ bins has been shown (cf.~\cref{fig:plot_mlb1_cls}) to significantly improve sensitivity to signal models with high mass differences. 
 
 In~\cref{fig:previous_analysis_comparison}, the fully optimised two-dimensional shape-fit configuration is compared with the signal regions of the previous iteration of the search~\cite{SUSY-2017-01}, scaled up to the integrated luminosity of the full Run~2 dataset.
@@ -270,7 +270,7 @@ All three signal regions are further divided into three $\mct$ bins each, result
 All three \glspl{sr} otherwise share a common set of requirements on the number of jets, $\etmiss$ and $\mbb$.
 As shape-fits are by construction highly model-dependent\footnote{The signal shapes need to be known in order to estimate the expected signal rates in multiple, disjoint signal region bins.}, these \glspl{sr} will be used for deriving model-dependent limits in the case where no significant excess compared to the expected \gls{sm} background rate is seen in data.
 For this reason, the shape-fit regions will be referred to as \textit{exclusion} regions in the following. A graphical representation of the nine exclusion signal region bins is shown in~\cref{fig:sr_strategy}.
-The kinematic distributions in each SR-LM, SR-MM and SR-HM are shown as $N-1$ plots in \cref{fig:Wh_reopt_second_round_n1_srlm,fig:Wh_reopt_second_round_n1_srmm,fig:Wh_reopt_second_round_n1_srhm}.
+The kinematic distributions in each SR-LM, SR-MM and SR-HM are shown as \textit{N}--1 plots in \cref{fig:Wh_reopt_second_round_n1_srlm,fig:Wh_reopt_second_round_n1_srmm,fig:Wh_reopt_second_round_n1_srhm}.
 
 For evaluating a potential excess in data compared to the expected background rate, a second set of signal regions is derived from the optimised shape-fit setup.
 For each of the three bins in the transverse mass (SR-LM, SR-MM, and SR-HM), the three $\mct$ bins are summed up and the upper bound on $\mt$ is removed (if present).
@@ -326,7 +326,7 @@ In case no significant excess over the \gls{sm} expectation is seen in data, the
 		\vspace{-2em}
 		\caption{\label{fig:Wh_reopt_second_round_n1_srlm_njet}}
 	\end{subfigure}
-	\caption{$N-1$ plots for SR-LM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
+	\caption{\textit{N}--1 plots for SR-LM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
 	\label{fig:Wh_reopt_second_round_n1_srlm}
 \end{figure}
 
@@ -363,7 +363,7 @@ In case no significant excess over the \gls{sm} expectation is seen in data, the
 		\vspace{-2em}
 		\caption{\label{fig:Wh_reopt_second_round_n1_srmm_njet}}
 	\end{subfigure}
-	\caption{$N-1$ plots for SR-MM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
+	\caption{\textit{N}--1 plots for SR-MM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
 	\label{fig:Wh_reopt_second_round_n1_srmm}
 \end{figure}
 
@@ -401,7 +401,7 @@ In case no significant excess over the \gls{sm} expectation is seen in data, the
 		\vspace{-2em}
 		\caption{\label{fig:Wh_reopt_second_round_n1_srhm_njet}}
 	\end{subfigure}
-	\caption{$N-1$ plots for SR-HM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
+	\caption{\textit{N}--1 plots for SR-HM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
 	\label{fig:Wh_reopt_second_round_n1_srhm}
 \end{figure}
 

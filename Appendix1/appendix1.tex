@@ -1,7 +1,7 @@
 %!TEX root = ../thesis.tex
 % ******************************* Thesis Appendix A ****************************
 
-\chapter{}
+\chapter{Additional analysis material}
 
 \ifpdf
 \graphicspath{{chapter-optimisation/Figs/Raster/}{chapter-electroweak/Figs/PDF/}{chapter-optimisation/Figs/}}
@@ -9,36 +9,45 @@
 \graphicspath{{chapter-optimisation/Figs/Vector/}{chapter-electroweak/Figs/}}
 \fi
 
+This appendix provides additional plots for the signal region optimisation and results presented in \cref{part:simplified_model_analysis} of this thesis.
 
-\section{Additional information on signal region optimisation}\label{app:n-1_plots_cut_opt}
+\section{Signal region optimisation}\label{app:n-1_plots_cut_opt}
 
-The following figures provide additional information on the signal region optimisation performed in~\cref{ch:signal_region_optimisation}. \Cref{fig:results_z_vs_eff_rest} shows the results of the $N$-dimensional cut scan for the remaining benchmark signal points considered. As before, three different uncertainty configurations are used for computing the significance $Z_\mathrm{B}$, and all values are computed for the two statistically independent subsets used during the $N$-dimensional scan. This approach allows to gauge the impact of statistical fluctuations on the cut combinations tested.
+\subsection{Raw results from \textit{N}-dimensional scan}
+\Cref{fig:results_z_vs_eff_rest} shows the results of the $N$-dimensional cut scan for all benchmark signal points considered. As in \cref{ch:signal_region_optimisation}, three different uncertainty configurations are used for computing the significance $Z_\mathrm{B}$, and all values are computed for the two statistically independent subsets of the \gls{mc} datasets used during the $N$-dimensional scan. This approach allows to gauge the impact of statistical fluctuations on the cut combinations tested.
 
-By choosing a well-performing cut combination for each benchmark point, the optimised selections in~\cref{fig:results_n1_800_0,fig:results_n1_800_150,fig:results_n1_800_250,fig:results_n1_600_300,fig:results_n1_400_200,fig:results_n1_300_150} are found after a round of $N-1$ plots. As discussed in~\cref{sec:towards_signal_regions} the optimal cut combinations for each benchmark signal point are consolidated into multiple signal regions designed to be sensitive to different kinematic regions of the model parameter space. 
-
-\Cref{fig:results_HF_scan_app} shows additional information on some of the investigated simplified shape-fit configurations. Two-dimensional shape-fits in $(\mt,\mbb)$, $(\mt,\met)$ and $(\mt,\mct)$ with $3\times 3$ bins each are compared. The configuration using bins in $\mt$ and $\mct$ results in the best expected CL$_s$ values throughout the entire signal grid. Adding a requirement on high values of $\mlb$ to SR-HM further increases the expected sensitivity. Overall, the expected sensitivity achieved through introduction of the two-dimensional shape fit significantly exceeds the sensitivity of the previous analysis iteration (using a one-dimensional shape-fit in $\mt$, scaled to \onethirtynineifb).
+By choosing a well-performing cut combination for each benchmark point, the optimised selections in~\cref{fig:results_n1_800_0,fig:results_n1_800_150,fig:results_n1_800_250,fig:results_n1_600_300,fig:results_n1_400_200,fig:results_n1_300_150} are found after a round of $N$--1 plots. As discussed in~\cref{sec:towards_signal_regions} the optimal cut combinations for each benchmark signal point are consolidated into multiple signal regions designed to be sensitive to different kinematic regions of the model parameter space. 
 
 \begin{figure}[hb]
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_800_250.pdf}
+		\caption{$m(\charg/\neutr), m(\lsp) =  800, \SI{250}{\GeV}$}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_800_150.pdf}
 		\caption{$m(\charg/\neutr), m(\lsp) =  800, \SI{150}{\GeV}$}
 	\end{subfigure}\hfill
+	\par\bigskip
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_800_0.pdf}
 		\caption{$m(\charg/\neutr), m(\lsp) =  800, \SI{0}{\GeV}$}
 	\end{subfigure}\hfill
-	\par\bigskip
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_600_300.pdf}
 		\caption{$m(\charg/\neutr), m(\lsp) =  600, \SI{300}{\GeV}$}
 	\end{subfigure}\hfill
+	\par\bigskip
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_400_200.pdf}
 		\caption{$m(\charg/\neutr), m(\lsp) =  400, \SI{200}{\GeV}$}
 	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_300_150.pdf}
+		\caption{$m(\charg/\neutr), m(\lsp) =  300, \SI{150}{\GeV}$}
+	\end{subfigure}\hfill
 
-	\caption[N-dimensional cut scan results]{Results of the $N$-dimensional cut scan for the remaining four benchmark points. The binomial discovery significance $Z_\mathrm{B}$ is plotted against the signal efficiency for varying uncertainty configurations. Additionally, the expected \gls{sm} background rates are shown, including statistical uncertainty for one of the two statistically independent samples (shaded area). The solid and dashed lines represent the two statistically independent subset that the \gls{mc} samples are split into.}
+	\caption[N-dimensional cut scan results]{Results of the $N$-dimensional cut scan for all benchmark points. The binomial discovery significance $Z_\mathrm{B}$ is plotted against the signal efficiency for varying uncertainty configurations. Additionally, the expected \gls{sm} background rates are shown, including statistical uncertainties for one of the two statistically independent samples (shaded area). The solid and dashed lines represent the two statistically independent subset that the \gls{mc} samples are split into.}
 	\label{fig:results_z_vs_eff_rest}
 \end{figure}
 
@@ -51,12 +60,14 @@ By choosing a well-performing cut combination for each benchmark point, the opti
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/mct}
 	\end{subfigure}\hfill
+	\par\medskip
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/met}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/mlb1}
 	\end{subfigure}\hfill
+	\par\medskip
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/mbb_both}
 	\end{subfigure}\hfill
@@ -64,7 +75,7 @@ By choosing a well-performing cut combination for each benchmark point, the opti
 		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_0/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (800, 0) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{0}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[\textit{N}--1 plots for the chosen cut combination for the (800, 0) signal point]{\textit{N}--1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{0}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical as well as 30\% systematic uncertainties (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_800_0}
 \end{figure}
 
@@ -91,7 +102,7 @@ By choosing a well-performing cut combination for each benchmark point, the opti
 		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_150/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (800, 150) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{150}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[N-1 plots for the chosen cut combination for the (800, 150) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{150}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical as well as 30\% systematic uncertainties (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_800_150}
 \end{figure}
 
@@ -116,7 +127,7 @@ By choosing a well-performing cut combination for each benchmark point, the opti
 		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_800_250/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (800, 250) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{250}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[\textit{N}--1 plots for the chosen cut combination for the (800, 250) signal point]{\textit{N}--1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{800}{\GeV}, \SI{250}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical as well as 30\% systematic uncertainties (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_800_250}
 \end{figure}
 
@@ -141,7 +152,7 @@ By choosing a well-performing cut combination for each benchmark point, the opti
 		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_600_300/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (600, 300) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{600}{\GeV}, \SI{300}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[\textit{N}--1 plots for the chosen cut combination for the (600, 300) signal point]{\textit{N}--1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{600}{\GeV}, \SI{300}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical as well as 30\% systematic uncertainties (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_600_300}
 \end{figure}
 
@@ -166,7 +177,7 @@ By choosing a well-performing cut combination for each benchmark point, the opti
 		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_400_200/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (400, 200) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{400}{\GeV}, \SI{200}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[N-1 plots for the chosen cut combination for the (400, 200) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{400}{\GeV}, \SI{200}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical as well as 30\% systematic uncertainties (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_400_200}
 \end{figure}
 
@@ -191,31 +202,97 @@ By choosing a well-performing cut combination for each benchmark point, the opti
 		\centering\includegraphics[width=0.9\textwidth]{N-1_cut_scan/n1_300_150/nJet30}
 	\end{subfigure}
 
-	\caption[N-1 plots for the chosen cut combination for the (300, 150) signal point]{N-1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{300}{\GeV}, \SI{150}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical uncertainty as well as 30\% systematic uncertainty (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
+	\caption[\textit{N}--1 plots for the chosen cut combination for the (300, 150) signal point]{\textit{N}--1 plots for the chosen cut combination for the $(m(\charg/\neutr), m(\lsp)) = (\SI{300}{\GeV}, \SI{150}{\GeV})$ signal point. The shaded region includes \gls{mc} statistical as well as 30\% systematic uncertainties (added in quadrature) on the background. The significance is computed using the binomial discovery significance using the uncertainty on the background.}
 	\label{fig:results_n1_300_150}
 \end{figure}
 
+\FloatBarrier
+
+\subsection{Impact}
+
+
+As discussed in \cref{sec:variables}, the distribution of $\mlb$ has a kinematic at about $\SI{153}{\GeV}$ for $\ttbar$ and single top production events where the lepton and leading \textit{b}-jet originate from the same top quark decay. In the \gls{susy} processes considered, $\mlb$ depends on the mass-scale of the electroweakinos pair-produced, and thus offers especially good discriminative power in the high electroweakino mass regime targeted by SR-HM.
+
+\Cref{fig:plot_mlb1_cls} illustrates the impact of adding a requirement of $\mlb > \SI{120}{\GeV}$ in SR-HM, revealing a noticeable increase in sensitivity. Studies have shown that the addition of $\mlb > \SI{120}{\GeV}$ to the remaining signal regions does not improve the sensitivity further.
+
+\begin{figure}[h]
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.35\textwidth}}]{figure}[\FBwidth]
+{\caption{Comparison of different shape-fit configurations, illustrating the sensitivity increase achieved through a requirement on high $\mlb$ values in SR-HM on top of the two-dimensional shape-fit in $\mt$ and $\mct$. All exclusion limits shown are expected limits at 95\% CL, using \gls{mc} statistical and 30\% systematic uncertainties. Background estimation in the signal regions is taken directly from \gls{mc} for all \gls{sm} backgrounds.}
+\label{fig:plot_mlb1_cls}}
+{\includegraphics[width=0.60\textwidth]{HF/plot_mlb1}}
+\end{figure}
+%
+%\begin{figure}
+%	\centering
+%	\begin{subfigure}[b]{0.5\linewidth}
+%		\centering\includegraphics[width=1.0\textwidth]{HF/plot_mlb1_cls}
+%		\caption{\label{fig:plot_mlb1_cls}}
+%	\end{subfigure}\hfill
+%
+%	\caption{Comparison of different shape-fit configurations. Fig.~\subref{fig:plot_binnings_cls} compares three different two-dimensional shape-fit configurations using $3\times 3$ bins in ($\mt$, $\etmiss$), ($\mt$, $\mbb$) and ($\mt$, $\mct$). Fig.~\subref{fig:plot_mlb1_cls} illustrates the sensitivity increase achieved through a requirement on high $\mlb$ values in SR-HM on top of the two-dimensional shape-fit in $\mt$ and $\mct$. Fig.~\subref{fig:plot_2d_shapefit_cls} compares the two-dimensional shape-fit in $\mt$ and $\mct$ to the previous analysis iteration signal regions scaled to \onethirtynineifb. All exclusion limits shown are expected limits at 95\% CL, using \gls{mc} statistical and 30\% systematic uncertainty. Background estimation in the signal regions is taken directly from \gls{mc} for all \gls{sm} backgrounds.}
+%	\label{fig:results_HF_scan_app}
+%\end{figure}
+
+\FloatBarrier
+
+\ifpdf
+\graphicspath{{chapter-background/Figs/Raster/}{chapter-background/Figs/PDF/}{chapter-background/Figs/}}
+\else
+\graphicspath{{chapter-background/Figs/Vector/}{chapter-background/Figs/}}
+\fi
+
+\section{Background estimation}\label{app:background_estimation}
+
+The signal contamination in all validation regions is shown in \cref{fig:signal_contaminations_VRs}. In the VR-off regions the maximum signal contamination is found to be about 7\%--13\%, depending on the requirement on $\mt$. In the VR-on regions, the maximum signal contamination amounts to about 5\%--14\%, depending again on the $\mt$-bin.
+
+\Cref{fig:susy_summary_plot} provides a comprehensive summary of current results of ATLAS searches for \gls{susy}. The limits on the sparticle masses set by different searches in various models and signatures are given.
 
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=1.0\textwidth]{HF/plot_binnings_cls}
-		\caption{\label{fig:plot_binnings_cls}}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VR_onLM}
+		\caption{VR-onLM\label{fig:signal_contamination_VRon1}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=1.0\textwidth]{HF/plot_mlb1_cls}
-		\caption{\label{fig:plot_mlb1_cls}}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VR_offLM}
+		\caption{VR-offLM\label{fig:signal_contamination_VRoff1}}
 	\end{subfigure}\hfill
-	\par\bigskip
+	\par\medskip
 	\begin{subfigure}[b]{0.5\linewidth}
-		\centering\includegraphics[width=1.0\textwidth]{HF/plot_2d_shapefit_cls}
-		\caption{\label{fig:plot_2d_shapefit_cls}}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VR_onMM}
+		\caption{VR-onMM\label{fig:signal_contamination_VRon2}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VR_offMM}
+		\caption{VR-offMM\label{fig:signal_contamination_VRoff2}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VR_onHM}
+		\caption{VR-onHM\label{fig:signal_contaminations_VRon3}}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=1.0\textwidth]{signal_contamination/plot_VR_offHM}
+		\caption{VR-offHM\label{fig:signal_contaminations_VRoff3}}
 	\end{subfigure}\hfill
 
-	\caption{Comparison of different shape-fit configurations. Fig.~\subref{fig:plot_binnings_cls} compares three different two-dimensional shape-fit configurations using $3\times 3$ bins in ($\mt$, $\etmiss$), ($\mt$, $\mbb$) and ($\mt$, $\mct$). Fig.~\subref{fig:plot_mlb1_cls} illustrates the sensitivity increase achieved through a requirement on high $\mlb$ values in SR-HM on top of the two-dimensional shape-fit in $\mt$ and $\mct$. Fig.~\subref{fig:plot_2d_shapefit_cls} compares the two-dimensional shape-fit in $\mt$ and $\mct$ to the previous analysis iteration signal regions scaled to \onethirtynineifb. All shown exclusion limits are expected limits at 95\% CL, using \gls{mc} statistical and 30\% systematic uncertainty. Background estimation in the signal regions is taken directly from \gls{mc} for all \gls{sm} backgrounds.}
-	\label{fig:results_HF_scan_app}
+	\caption{Signal contamination (shown on the \textit{z-axis}) for all \glspl{vr} throughout the signal grid. The space between the signal points (indicated by the black circles) is interpolated using Delaunay triangles.}
+	\label{fig:signal_contaminations_VRs}
 \end{figure}
 
 
 
-\FloatBarrier
+\ifpdf
+\graphicspath{{chapter-results/Figs/Raster/}{chapter-results/Figs/PDF/}{chapter-results/Figs/}}
+\else
+\graphicspath{{chapter-results/Figs/Vector/}{chapter-results/Figs/}}
+\fi
+
+
+\begin{sidewaysfigure}[ht]
+	\centering\includegraphics[width=0.9\textwidth]{susy_summary}
+	\caption{Summary of the results of ATLAS searches for \gls{susy}. A representative selection of the available search results is shown. Results are given with respect to the nominal cross section. In some cases additional dependencies are indicated by darker bands showing different model parameters. Figure adapted from \reference\cite{ATL-PHYS-PUB-2020-020}.}
+	\label{fig:susy_summary_plot}
+\end{sidewaysfigure}
+
+
+

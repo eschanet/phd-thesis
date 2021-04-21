@@ -1,7 +1,7 @@
 %!TEX root = ../thesis.tex
 % ******************************* Thesis Appendix C ********************************
 
-\chapter{}
+\chapter{Simplified analysis}
 
 
 \ifpdf
@@ -10,9 +10,13 @@
 \graphicspath{{chapter-pmssm/Figs/Vector/}{chapter-pmssm/Figs/}}
 \fi
 
+The following sections provide additional material on the approximations made in the context of the \textit{simplified analysis} used throughout \cref{part:reinterpretation} of this thesis. The simplified analysis is composed of truth-level analysis using smeared truth \gls{mc} datasets, and the simplified likelihood for the statistical inference.
+
 \section{Truth smearing}
 
-The estimated event rates in the exclusion signal regions at truth-level before and after truth smearing are compared with the reconstruction-level event rates in \cref{fig:smearing_signal_regions_1,fig:smearing_signal_regions_2,fig:smearing_signal_regions_3}. Each one of the 125 signal models from the simplified model signal grid corresponds to one point in the scatter plots. The smearing significantly improves the agreement between truth- and reconstruction-level event rate estimates in all signal region bins.
+The estimated event rates in the exclusion signal regions at truth-level before and after truth smearing are compared with the \textit{reconstruction}-level (\ie after detector simulation) event rates in \cref{fig:smearing_signal_regions_1,fig:smearing_signal_regions_2,fig:smearing_signal_regions_3}. Each one of the 137 signal models from the simplified model signal grid corresponds to one point in the scatter plots. The error bars correspond to the \gls{mc} statistical uncertainties at truth- and reconstruction-level.
+
+The smearing significantly improves the agreement between truth- and reconstruction-level event rate estimates in all signal region bins. While the lepton reconstruction and identification efficiencies are crucial to provide a good agreement between truth- and reconstruction-level distributions down to the lower bounds of $\SI{7}{\GeV}$ and $\SI{6}{\GeV}$ used for electrons and muons, respectively, in the analysis, the flavour-tagging efficiencies provide the overall agreement in normalisation (since all signal regions require exactly two \textit{b}-tagged jets in the final state).
 
 \begin{figure}
 	\centering
@@ -34,7 +38,7 @@ The estimated event rates in the exclusion signal regions at truth-level before 
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{yields_SR-LM_high_mct_smeared}
 	\end{subfigure}
-	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-LM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the original 1-lepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
+	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-LM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the original \onelepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
 	\label{fig:smearing_signal_regions_1}
 \end{figure}
 
@@ -58,7 +62,7 @@ The estimated event rates in the exclusion signal regions at truth-level before 
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{yields_SR-MM_high_mct_smeared}
 	\end{subfigure}
-	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-MM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the original 1-lepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
+	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-MM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the original \onelepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
 	\label{fig:smearing_signal_regions_2}
 \end{figure}
 
@@ -82,7 +86,7 @@ The estimated event rates in the exclusion signal regions at truth-level before 
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{yields_SR-HM_high_mct_smeared}
 	\end{subfigure}
-	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-HM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the original 1-lepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
+	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-HM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the original \onelepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
 	\label{fig:smearing_signal_regions_3}
 \end{figure}
 
@@ -97,57 +101,87 @@ The estimated event rates in the exclusion signal regions at truth-level before 
 
 \section{Simplified likelihood results}
 
-\Cref{fig:app_results_simplify_1Lbb,fig:results_analyses} show comparisons of the exclusion limits obtained using the full and simplified likelihoods for different ATLAS \gls{susy} searches. In addition to the exclusion limits, the observed CL$_s$ are given for every signal model tested. 
-Although some likelihood simplifications needed special care (see \cref{sec:simplify_limitations}) and validation, a good agreement is observed throughout all analyses tested.
+%\Cref{fig:app_results_simplify_1Lbb,fig:results_analyses} show comparisons of the exclusion limits obtained using the full and simplified likelihoods for different ATLAS \gls{susy} searches. In addition to the exclusion limits, the observed CL$_s$ are given for every signal model tested. 
+%Although some likelihood simplifications needed special care (see \cref{sec:simplify_limitations}) and validation, a good agreement is observed throughout all analyses tested.
 
-\Cref{fig:app_results_cls_1,fig:app_results_cls_2} directly compare the expected and observed CL$_s$ values obtained using both likelihood configurations for each ATLAS \gls{susy} search considered. Both linear- and log-scale representations are shown, revealing that the simplified likelihood tends to lead to good agreement in the CL$_s$ values around $0.05$, while slightly overestimating sensitivity in the region with CL$_s \ll 0.05$, where signal models are in any case being excluded (and thus to some extent it is not important how small the CL$_s$ value actually is).
+\Cref{fig:limitations_simplied_compressed,fig:limitations_simplied_stop1l} highlight the limitations of the simplified likelihood approach using the ATLAS compressed and stop searches, discussed in \cref{sec:simplify_limitations}.
 
-\Cref{fig:limitations_simplied_compressed,fig:limitations_simplied_stop1l} highlight the limitations of the simplified likelihood approach using the ATLAS compressed and stop searches.
-
-\vspace{5em}
-
-\begin{figure}[hb]
-\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.30\textwidth}}]{figure}[\FBwidth]
-{\caption{Comparison of the simplified likelihood (blue contours) and full likelihood (orange contours) results for the search for electroweakinos presented previously. The observed contours are shown as solid lines, while the expected contours are shown as dashed lines. Observed CL$_s$ values from both likelihoods are given. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood.}\label{fig:app_results_simplify_1Lbb}}
-{\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_CLs_noLabel}}
-\end{figure}
-
-
-
-\begin{figure}
+\Cref{fig:app_results_cls_1,fig:app_results_cls_2} directly compare the expected and observed CL$_s$ values obtained using both likelihood configurations for each ATLAS \gls{susy} search considered. Both linear- and log-scale representations are shown, revealing that the simplified likelihood tends to lead to good agreement in the CL$_s$ values around $0.05$, while slightly overestimating sensitivity in the region with CL$_s \ll 0.05$, where signal models are in any case being excluded.
+\begin{figure}[H]
 	\centering
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_sbottom_CLs_noLabel_v2}
-		\caption{ATLAS sbottom search~\cite{SUSY-2018-31}\label{fig:results_sbottom_CLs}}
+	\captionsetup[subfigure]{aboveskip=-3pt,belowskip=-2pt}
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_compressed_noCRs_noLabel_v2}
+		\caption{With problematic \glspl{sr}\label{fig:exclusion_compressed_CLs_noLabel_v2_withCRs}}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_CLs_noLabel_v2}
-		\caption{ATLAS stop search\label{fig:results_stop1L_CLs}}
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_compressed_noLabel_v2}
+		\caption{Without problematic \glspl{sr}\label{fig:exclusion_compressed_CLs_noLabel_v2_withoutCRs}}
 	\end{subfigure}\hfill
-	\par\medskip
-	\par\medskip
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_2L0J_CLs_noLabel_v2}
-		\caption{ATLAS 2-lepton search~\cite{SUSY-2018-32}\label{fig:results_2L0J_CLs}}
+	\caption{The contours obtained with the full and simplified likelihoods of the ATLAS compressed search~\cite{SUSY-2018-16} are shown with the problematic signal regions \subref{fig:exclusion_compressed_CLs_noLabel_v2_withCRs} included and \subref{fig:exclusion_compressed_CLs_noLabel_v2_withoutCRs} removed. A noticeable improvement in agreement between the simplified and full likelihood contours is observed after removing the signal regions responsible for the instabilities discussed in \cref{sec:simplify_limitations}.}\label{fig:limitations_simplied_compressed}
+\end{figure}
+\begin{figure}[H]
+	\centering
+		\captionsetup[subfigure]{aboveskip=-3pt,belowskip=-2pt}
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_withCRs_noLabel_v2}
+		\caption{Allowing signal contamination in CRs\label{fig:exclusion_stop1L_noLabel_v2_withCRs}}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_directstaus_CLs_noLabel_v2}
-		\caption{ATLAS direct stau search~\cite{SUSY-2018-04}\label{fig:results_directstaus_CLs}}
+	\begin{subfigure}[b]{0.47\textwidth}
+		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_noLabel_v2}
+		\caption{Vetoing signal contamination in CRs\label{fig:exclusion_stop1L_noLabel_v2_withoutCRs}}
 	\end{subfigure}\hfill
-	\par\medskip
-	\par\medskip
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_3Loffshell_CLs_noLabel_v2}
-		\caption{ATLAS 3-lepton search\label{fig:results_3Loffshell_CLs}}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_compressed_CLs_noLabel_v2}
-		\caption{ATLAS compressed search~\cite{SUSY-2018-16}\label{fig:results_compressed_CLs}}
-	\end{subfigure}\hfill
-	\caption{Comparison of the simplified likelihood (blue contours) and full likelihood (orange contours) results for different ATLAS \gls{susy} searches. The observed contours are shown as solid lines, while the expected contours are shown as dashed lines. Observed CL$_s$ values from both likelihoods are given. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood, and the simplified uncertainties in the case of the simplified likelihood.}\label{fig:results_analyses_CLs}
+	\caption{The contours obtained with the full and simplified likelihoods of the ATLAS stop search. In fig.~\subref{fig:exclusion_stop1L_noLabel_v2_withCRs} the simplified likelihood is also applied on signal points with $m(\tilde{t}_1) < m(\lsp)+m(t)$, where significant signal contamination in the \glspl{cr} occurs. In fig.~\subref{fig:exclusion_stop1L_noLabel_v2_withoutCRs}, such signal points are removed and thus not evaluated using the simplified likelihood.}\label{fig:limitations_simplied_stop1l}
 \end{figure}
 
 
+%
+%\vspace{5em}
+%
+%\begin{figure}[hb]
+%\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.30\textwidth}}]{figure}[\FBwidth]
+%{\caption{Comparison of the simplified likelihood (blue contours) and full likelihood (orange contours) results for the search for electroweakinos presented previously. The observed contours are shown as solid lines, while the expected contours are shown as dashed lines. Observed CL$_s$ values from both likelihoods are given. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood.}\label{fig:app_results_simplify_1Lbb}}
+%{\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_CLs_noLabel}}
+%\end{figure}
+
+
+\FloatBarrier
+
+
+%\begin{figure}
+%	\centering
+%	\begin{subfigure}[b]{0.5\textwidth}
+%		\centering\includegraphics[width=\textwidth]{exclusion_sbottom_CLs_noLabel_v2}
+%		\caption{ATLAS sbottom search~\cite{SUSY-2018-31}\label{fig:results_sbottom_CLs}}
+%	\end{subfigure}\hfill
+%	\begin{subfigure}[b]{0.5\textwidth}
+%		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_CLs_noLabel_v2}
+%		\caption{ATLAS stop search\label{fig:results_stop1L_CLs}}
+%	\end{subfigure}\hfill
+%	\par\medskip
+%	\par\medskip
+%	\begin{subfigure}[b]{0.5\textwidth}
+%		\centering\includegraphics[width=\textwidth]{exclusion_2L0J_CLs_noLabel_v2}
+%		\caption{ATLAS 2-lepton search~\cite{SUSY-2018-32}\label{fig:results_2L0J_CLs}}
+%	\end{subfigure}\hfill
+%	\begin{subfigure}[b]{0.5\textwidth}
+%		\centering\includegraphics[width=\textwidth]{exclusion_directstaus_CLs_noLabel_v2}
+%		\caption{ATLAS direct stau search~\cite{SUSY-2018-04}\label{fig:results_directstaus_CLs}}
+%	\end{subfigure}\hfill
+%	\par\medskip
+%	\par\medskip
+%	\begin{subfigure}[b]{0.5\textwidth}
+%		\centering\includegraphics[width=\textwidth]{exclusion_3Loffshell_CLs_noLabel_v2}
+%		\caption{ATLAS 3-lepton search\label{fig:results_3Loffshell_CLs}}
+%	\end{subfigure}\hfill
+%	\begin{subfigure}[b]{0.5\textwidth}
+%		\centering\includegraphics[width=\textwidth]{exclusion_compressed_CLs_noLabel_v2}
+%		\caption{ATLAS compressed search~\cite{SUSY-2018-16}\label{fig:results_compressed_CLs}}
+%	\end{subfigure}\hfill
+%	\caption{Comparison of the simplified likelihood (blue contours) and full likelihood (orange contours) results for different ATLAS \gls{susy} searches. The observed contours are shown as solid lines, while the expected contours are shown as dashed lines. Observed CL$_s$ values from both likelihoods are given. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood, and the simplified uncertainties in the case of the simplified likelihood.}\label{fig:results_analyses_CLs}
+%\end{figure}
+%
+%
 
 \begin{figure}
 	\centering
@@ -208,30 +242,4 @@ Although some likelihood simplifications needed special care (see \cref{sec:simp
 	\caption{Scatter plots comparing the observed and expected CL$_s$ values obtained using the simplified and the full likelihoods for the same set of signal models originally considered in the various ATLAS \gls{susy} searches. Both linear and logarithmic scale representations are shown on the left- and right-hand side, respectively, illustrating the full range of CL$_s$ values. Apart from the scales, both columns show exactly the same results for each row of plots.}\label{fig:app_results_cls_2}
 \end{figure}
 
-
-\begin{figure}
-	\centering
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_compressed_noCRs_noLabel_v2}
-		\caption{With problematic \glspl{sr}\label{fig:exclusion_compressed_CLs_noLabel_v2_withCRs}}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_compressed_noLabel_v2}
-		\caption{Without problematic \glspl{sr}\label{fig:exclusion_compressed_CLs_noLabel_v2_withoutCRs}}
-	\end{subfigure}\hfill
-	\caption{The contours obtained with the full and simplified likelihoods of the ATLAS compressed search~\cite{SUSY-2018-16} are shown with the problematic signal regions \subref{fig:exclusion_compressed_CLs_noLabel_v2_withCRs} included and \subref{fig:exclusion_compressed_CLs_noLabel_v2_withoutCRs} removed. A noticeable improvement in agreement between the simplified and full likelihood contours is observed after removing the signal regions responsible for the instabilities discussed in \cref{sec:simplify_limitations}.}\label{fig:limitations_simplied_compressed}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_withCRs_noLabel_v2}
-		\caption{Allowing signal contamination in \glspl{cr}\label{fig:exclusion_stop1L_noLabel_v2_withCRs}}
-	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_noLabel_v2}
-		\caption{Vetoing signal contamination in \glspl{cr}\label{fig:exclusion_stop1L_noLabel_v2_withoutCRs}}
-	\end{subfigure}\hfill
-	\caption{The contours obtained with the full and simplified likelihoods of the ATLAS stop search. In fig.~\subref{fig:exclusion_stop1L_noLabel_v2_withCRs} the simplified likelihood is also applied on signal points with $m(\tilde{t}_1) < m(\lsp)+m(t)$, where significant signal contamination in the \glspl{cr} occurs. In fig.~\subref{fig:exclusion_stop1L_noLabel_v2_withoutCRs}, such signal points are removed and thus not evaluated using the simplified likelihood.}\label{fig:limitations_simplied_stop1l}
-\end{figure}
 
