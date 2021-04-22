@@ -13,11 +13,7 @@
 
 \chapter{Simplified likelihoods}\label{ch:simplify}
 
-\ifpdf
-    \graphicspath{{chapter-simplify/Figs/Raster/}{chapter-simplify/Figs/PDF/}{chapter-simplify/Figs/}}
-\else
-    \graphicspath{{chapter-simplify/Figs/Vector/}{chapter-simplify/Figs/}}
-\fi
+\graphicspath{{chapter-simplify/Figs/Vector/}{chapter-simplify/Figs/}}
 
 In the previous chapter, the concept of preserving an analysis for the purpose of reinterpretations was introduced and a truth-level version of the signal pipeline was discussed. In large-scale reinterpretations involving a large number of \gls{susy} models to be tested against, not only the signal pipeline, but also the statistical inference requires significant computational effort. 
 This chapter therefore introduces the concept of \textit{simplified likelihoods}, a method approximating the statistical model of an analysis using the \lib{HistFactory} template in order to achieve more efficient log-likelihood fits and, ultimately, hypothesis tests.

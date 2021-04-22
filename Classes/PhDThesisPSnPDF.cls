@@ -272,18 +272,18 @@ supported!}
 
 % *************************** Graphics and Figures *****************************
 \RequirePackage[usenames, dvipsnames]{color}
-\ifpdf
-  % Convert eps figures to pdf
-  \RequirePackage{epstopdf}
-  \RequirePackage[pdftex]{graphicx}
-  \DeclareGraphicsExtensions{.png, .jpg, .pdf}
-  \pdfcompresslevel=9
-  \graphicspath{{Figs/Raster/}{Figs/}}
-\else
-  \RequirePackage{graphicx}
-  \DeclareGraphicsExtensions{.eps, .ps}
-  \graphicspath{{Figs/Vector/}{Figs/}}
-\fi
+%\ifpdf
+%  % Convert eps figures to pdf
+%  \RequirePackage{epstopdf}
+%  \RequirePackage[pdftex]{graphicx}
+%  \DeclareGraphicsExtensions{.png, .jpg, .pdf}
+%  \pdfcompresslevel=9
+%  \graphicspath{{Figs/Raster/}{Figs/}}
+%\else
+%  \RequirePackage{graphicx}
+%  \DeclareGraphicsExtensions{.eps, .ps}
+%  \graphicspath{{Figs/Vector/}{Figs/}}
+%\fi
 
 
 
@@ -551,23 +551,28 @@ supported!}
 
 
 \ifxetex
-  % XeLaTeX
-  \usepackage{amsmath}
-  \usepackage{fontspec}
-  \usepackage[]{unicode-math}
-  \setmainfont[
-    Extension = .otf,
-    UprightFont = *-Regular,
-    BoldFont = *-Bold,
-    ItalicFont = *-Italic,
-    BoldItalicFont = *-BoldItalic,
-  ]{XITS}
-  
-  \setmathfont[ 
-    Extension = .otf,
-    BoldFont = *-Bold,
-  ]{XITS Math}
-  
+%  % XeLaTeX
+	\usepackage{amsmath}
+	\usepackage{fontspec}
+	\usepackage{unicode-math}
+	\usepackage{microtype}
+
+%	\usepackage[T1]{fontenc}
+%	\usepackage[utf8]{inputenc}
+
+
+  \setmainfont{XITS}
+  \setmathfont{XITS Math}  
+
+%
+%\usepackage{fontspec}
+%\usepackage{unicode-math}
+
+%\setmainfont{Libertinus Serif}
+%\setsansfont{Libertinus Sans}
+%\setmathfont{Libertinus Math}
+
+
 \else
   % default: pdfLaTeX
   \RequirePackage[utf8]{inputenc}
@@ -738,8 +743,8 @@ wish to left align your text}
   \renewcommand{\sectionmark}[1]{\markright{\thesection\ ##1\ }}
   \fancyhf{}
   \fancyhead[RO]{\nouppercase \rightmark\hspace{0.25em} | 
-    \hspace{0.25em} \bfseries{\thepage}}
-  \fancyhead[LE]{ {\bfseries\thepage} \hspace{0.25em} | 
+    \hspace{0.25em} \thepage}
+  \fancyhead[LE]{ {\thepage} \hspace{0.25em} | 
     \hspace{0.25em} \nouppercase \leftmark}
 }
 
@@ -776,7 +781,7 @@ wish to left align your text}
     \renewcommand{\sectionmark}[1]{\markright{\thesection\ ##1}}
     \fancyhf{}
     \fancyhead[LO]{\nouppercase \rightmark}
-    \fancyhead[LE,RO]{\bfseries\thepage}
+    \fancyhead[LE,RO]{\thepage}
     \fancyhead[RE]{\nouppercase \leftmark}
   \fi
 \fi
@@ -943,7 +948,7 @@ wish to left align your text}
 \else
 	\vspace{.15\PHD@titlepagespacing}
 	{\usebox{\PHD@crest}}
-	\vspace{.15\PHD@titlepagespacing}
+	\vspace{.2\PHD@titlepagespacing}
 \fi
 
 

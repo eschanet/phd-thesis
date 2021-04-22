@@ -6,11 +6,7 @@
 
 \chapter{Signal region optimisation}\label{ch:signal_region_optimisation}
 
-\ifpdf
-    \graphicspath{{chapter-optimisation/Figs/Raster/}{chapter-optimisation/Figs/PDF/}{chapter-optimisation/Figs/}}
-\else
-    \graphicspath{{chapter-optimisation/Figs/Vector/}{chapter-optimisation/Figs/}}
-\fi
+\graphicspath{{chapter-optimisation/Figs/Vector/}{chapter-optimisation/Figs/}}
 
 \glsreset{sr}
 
@@ -61,7 +57,7 @@ As the significance values obtained for such configurations are obviosuly not tr
 
 In the $N$-dimensional cut scan implementation used herein, the available \gls{mc} datasets are split in two statistically independent, equally sized subsets. Although resulting in an additional dilution of the available \gls{mc} statistics, this approach allows to generate two independent \gls{roc} curves and  to compute two independent values for the discovery significance for each cut combination candidate. A large difference in either the \gls{roc} curves or the significance values is an indication for statistical fluctuations as a result of overtightened cuts. In addition, requirements on the minimum number of unweighted \gls{mc} events for different background processes, as well as the maximum allowed statistical uncertainty on a given process, can be applied. In combination, these precautions offer a good handle against statistical fluctuations. In the following, the $N$-dimensional cut scan implementation provided by \textsc{ahoi}~\cite{ahoi} is used.
 
-\subsection{N-1 plots}\label{sec:n-1-scan}
+\subsection[\textit{N}--1]{\textit{N}--1 plots}\label{sec:n-1-scan}
 
 Instead of performing a brute-force scan of a large set of cut combinations, a more manual approach, using iterative one-dimensional scans can be employed. In so-called `\textit{N}--1 plots', the kinematic distributions of the background components as well as exemplary signal processes are plotted in conjunction with the significance achieved by applying a cut on each value on the \textit{x}-axis of the one-dimensional distribution plotted. All other selection requirements, except the one on the observable plotted, are applied. This method allows to investigate the impact of a single kinematic requirement on the overall significance value. By repeatedly executing this process for each observable considered, it is possible to iteratively approach a cut combination yielding results comparable to that of a brute-force cut scan. Especially when considering a sizeable set of observables, this manual approach, however, quickly becomes very cumbersome and inefficient, and risks missing optimal cut combinations that would have been found by a brute-force approach.
 
@@ -77,7 +73,8 @@ The estimation of the background event rates in the signal regions is taken from
 As building the likelihood and executing the statistical inference takes a considerable computational effort, this method benefits from the previous optimisation steps defining promising signal region candidates worth scanning over.
 In order to keep the number of configurations to be tested at a manageable level, the signal region candidates obtained from the previous methods are only varied to a limited degree, assuming that they were already close to optimal to begin with.
 
-\section[Optimisation for the $1\ell$ search]{Optimisation for the $\boldsymbol{1\ell}$ search}
+%\section[Optimisation for the $1\ell$ search]{Optimisation for the $\boldsymbol{1\ell}$ search}
+\section{Optimisation for the 1-lepton search}
 
 \begin{table}
 	\centering

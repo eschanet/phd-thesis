@@ -5,11 +5,7 @@
 
 \chapter{Preservation and reusability}\label{ch:preservation}
 
-\ifpdf
-    \graphicspath{{chapter-preservation/Figs/Raster/}{chapter-preservation/Figs/PDF/}{chapter-preservation/Figs/}}
-\else
-    \graphicspath{{chapter-preservation/Figs/Vector/}{chapter-preservation/Figs/}}
-\fi
+\graphicspath{{chapter-preservation/Figs/Vector/}{chapter-preservation/Figs/}}
 
 The current particle physics experiments are designed to collect physics data over a span of several decades, and operate at scales and complexities that make it impossible for the experiments to be repeated in the foreseeable future.
 The data taken at these experiments and physics results derived are thus highly valuable and major problems arise from a scientific reproducibility point of view. 
@@ -143,11 +139,8 @@ The \textsc{Recast} implementation of the analysis presented in this work has be
 
 \section{Truth-level analysis}\label{sec:truth_analysis}
 
-\ifpdf
-    \graphicspath{{chapter-pmssm/Figs/Raster/}{chapter-pmssm/Figs/PDF/}{chapter-pmssm/Figs/}}
-\else
-    \graphicspath{{chapter-pmssm/Figs/Vector/}{chapter-pmssm/Figs/}}
-\fi
+\graphicspath{{chapter-pmssm/Figs/Vector/}{chapter-pmssm/Figs/}}
+
 
 A full preservation of the entire analysis pipeline, as presented in the previous section, is highly desirable as it allows for a maximum precision reinterpretation of the original analysis using a new \gls{bsm} model.
 As the full detector simulation needs a significant amount of computing resources in addition to the non-negligible wall time of the actual preserved analysis pipeline, this approach can only be used on a limited set of models.

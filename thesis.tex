@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,11pt,numbered,pdftex,dvipsnames]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,11pt,numbered]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -132,7 +132,7 @@
 % ******************************** Front Matter ********************************
 \begin{document}
 
-\allsectionsfont{\sffamily} % all sections in sans-serif font
+%\allsectionsfont{\sffamily} % all sections in sans-serif font
 
 \frontmatter
 
@@ -140,11 +140,28 @@
 
 %supervisors here
 \newpage
-\mbox{}
-\vfill
+\thispagestyle{empty}
+%\mbox{}
+{
+\small
 Erstgutachterin: PD\@\xspace Dr.\@\xspace Jeanette Lorenz \\
 Zweitgutachter: Prof.\@\xspace Dr.\@\xspace Wolfgang D\"unnweber
+}
+\vfill
+{
+\small
+\myTitle
 
+Thesis submitted for a doctoral degree in physics\\
+at the faculty of physics of the\\
+Ludwig-Maximilians University\\
+Munich, Germany
+
+Submitted by Eric Schanet, born in Luxembourg\\
+on May 4th, 2021 %and defended June 26th, 2021
+
+Supported by the Luxembourg National Research Fund (FNR) (13562317)
+}
 \cleardoublepage
 
 
@@ -207,6 +224,7 @@ Zweitgutachter: Prof.\@\xspace Dr.\@\xspace Wolfgang D\"unnweber
 	
 \end{appendices}
 
+%\printglossary[type=\acronymtype,title=Abbreviations,nonumberlist]
 \printglossary[type=\acronymtype,title=Abbreviations]
 
 % ********************************** Bibliography ******************************

@@ -24,15 +24,17 @@
 
 % Add `customfont' in the document class option to use this section
 
-\usepackage{sectsty} % for sf sections
-
+%\usepackage{sectsty} % for sf sections
+%
 \ifsetCustomFont
-\usepackage[footnotefigures]{MinionPro}
-\usepackage[footnotefigures]{MyriadPro}
-\input{glyphtounicode}
-\pdfgentounicode=1
-\renewcommand{\scdefault}{ssc}
-\allsectionsfont{\sffamily}
+%\usepackage[footnotefigures]{MinionPro}
+%%\usepackage[footnotefigures]{MyriadPro}
+%\input{glyphtounicode}
+%\pdfgentounicode=1
+%\renewcommand{\scdefault}{ssc}
+%\allsectionsfont{\sffamily}
+
+%\usepackage{libertine}
 
 
 %\usepackage[scaled=0.85]{luximono} % Monospace font
@@ -119,16 +121,26 @@
 \frenchspacing
 
 % ******************************* Language *********************************
-\usepackage[ngerman,british]{babel}
-
+\ifxetex
+  	\usepackage{polyglossia}
+\else
+	\usepackage[ngerman,british]{babel}
+\fi
 % ******************************** Hyphenations**********************************
-\hyphenchar\font=\string"7F
-%\hyphenation{Trans-zen-denz trans-zen-dent}
 
-\begin{hyphenrules}{ngerman}
-	\hyphenation{Arbeits-at-mo-sphä-re}
-\end{hyphenrules}
+\ifpdf
+	\hyphenchar\font=\string"7F
+	%\hyphenation{Trans-zen-denz trans-zen-dent}
 
+	\begin{hyphenrules}{ngerman}
+		\hyphenation{Arbeits-at-mo-sphä-re}
+	\end{hyphenrules}
+\else
+	\tolerance=1
+	\emergencystretch=\maxdimen
+	\hyphenpenalty=10000
+	\hbadness=10000
+\fi
 % ************************ Formatting / Footnote *******************************
 
 % Don't break enumeration (etc.) across pages in an ugly manner (default 10000)
@@ -187,7 +199,7 @@
 \usepackage[titles]{tocloft}
 \setlength{\cftbeforepartskip}{12pt}
 \setlength{\cftbeforechapskip}{2pt}
-\setlength{\cftbeforesecskip}{-3pt}
+\setlength{\cftbeforesecskip}{-4pt}
 \setlength{\cftbeforesubsecskip}{-5pt}
 %\setlength\cftparskip{-2pt}
 
@@ -295,7 +307,7 @@
 \usepackage{relsize} % for Cpp command
 \usepackage{placeins}
 \usepackage{braket}
-\usepackage{bbold}
+%\usepackage{bbold}
 \usepackage{multirow}
 \usepackage{tikz}
 \usepackage{pdflscape}
