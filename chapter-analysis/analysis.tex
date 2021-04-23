@@ -28,7 +28,7 @@ As opposed to this, the search presented in the following uses the full dataset 
 As this search analyses events in final states with exactly one lepton, it will often be referred to as the \textit{1}$\ell$ \textit{search} in the following.
 
 \begin{figure}
-	\centering\includegraphics[width=.4\textwidth]{model_c1n2_Wh}
+	\centering\includegraphics[width=.4\textwidth]{c1n2_wh_1lbb}
 	\caption{Diagram for the simplified model used in this work including the decays $W^\pm\rightarrow\ell^\pm\nu_\ell$ and $h\rightarrow b\bar{b}$.}\label{fig:Wh_model_full}
 \end{figure}
 
@@ -87,14 +87,14 @@ As \gls{qcd} multi-jet processes have been shown to play a negligible role in al
 
 \subsection{Signal samples}\label{sec:signal_samples}
 
-The $\charg/\neutr$ pair production signal samples were generated at \gls{lo} using \textsc{MadGraph5\_aMC@NLO} 2.6.2~\cite{MGaMCNLO:2014hca,Frederix:2012ps} with up to two additional partons in the matrix element. The NNPDF 2.3 LO \gls{PDF} set~\cite{Ball:2012cx} was used for calculating the hard scatter matrix elements.
+The $\charg\neutr$ pair production signal samples were generated at \gls{lo} using \textsc{MadGraph5\_aMC@NLO} 2.6.2~\cite{MGaMCNLO:2014hca,Frederix:2012ps} with up to two additional partons in the matrix element. The NNPDF 2.3 LO \gls{PDF} set~\cite{Ball:2012cx} was used for calculating the hard scatter matrix elements.
 \textsc{MadGraph5\_aMC@NLO} is interfaced with \textsc{Pythia8}~\cite{Pythia8:2007gs} for the parton shower, hadronisation and underlying event, using the A14 set of tuned parameters~\cite{ATL-PHYS-PUB-2014-021}. The CKKW-L~\cite{Lonnblad:2011xx} scheme for matching the parton showers to the matrix elements was used with a nominal merging scale of $\SI{30}{\GeV}$.
 For modelling the decays of heavy flavour quarks, \textsc{EvtGen} v1.6~\cite{Lange:2001uf} is used. 
 
-As the $\charg/\neutr$ and $\lsp$ masses are free parameters of the signal model, they are systematically varied, resulting in the set of 137 distinct signal models shown in~\cref{fig:signalgrid}, distributed in the two-dimensional grid spanned by the two mass parameters.
-The generated signal grid covers $\charg/\neutr$ masses from $\SI{150}{\GeV}$ to $\SI{1}{\TeV}$ and $\lsp$ masses from $\SI{0}{\GeV}$ to $\SI{400}{\GeV}$, avoiding the kinematically forbidden region with $m(\charg/\neutr) < m(\lsp) + m(h)$ that does not allow for production of on-shell Higgs bosons.
+As the $\charg$/$\neutr$ and $\lsp$ masses are free parameters of the signal model, they are systematically varied, resulting in the set of 137 distinct signal models shown in~\cref{fig:signalgrid}, distributed in the two-dimensional grid spanned by the two mass parameters.
+The generated signal grid covers $\charg$/$\neutr$ masses from $\SI{150}{\GeV}$ to $\SI{1}{\TeV}$ and $\lsp$ masses from $\SI{0}{\GeV}$ to $\SI{400}{\GeV}$, avoiding the kinematically forbidden region with \mbox{$m(\charg$/$\neutr) < m(\lsp) + m(h)$} that does not allow for production of on-shell Higgs bosons.
 
-\gls{mc} datasets of signal models well within the expected sensitivity range of the analysis, \ie with relatively low $\charg/\neutr$ and $\lsp$ masses, are generated using the \textsc{ATLFAST-II}~\cite{Aad:2010ah} detector simulation. The full detector simulation using \textsc{Geant4}~\cite{geant:2002hh} is used for the remaining model points for maximum accuracy in the parameter space relevant to the expected sensitivity. In order to account for pile-up effects, all signal samples are overlaid with simulated minimum bias events generated using \textsc{Pythia8} and the A3 tune~\cite{ATL-PHYS-PUB-2016-017}, and reweighted to match the pile-up distribution measured in data. 
+\gls{mc} datasets of signal models well within the expected sensitivity range of the analysis, \ie with relatively low $\charg$/$\neutr$ and $\lsp$ masses, are generated using the \textsc{ATLFAST-II}~\cite{Aad:2010ah} detector simulation. The full detector simulation using \textsc{Geant4}~\cite{geant:2002hh} is used for the remaining model points for maximum accuracy in the parameter space relevant to the expected sensitivity. In order to account for pile-up effects, all signal samples are overlaid with simulated minimum bias events generated using \textsc{Pythia8} and the A3 tune~\cite{ATL-PHYS-PUB-2016-017}, and reweighted to match the pile-up distribution measured in data. 
 
 The cross sections for electroweakino pair production have been calculated using \mbox{\textsc{Resummino}}~\cite{Fuks:2013vua} at \gls{nlo} in the strong coupling constant and including \gls{nll} terms in the soft gluon resummation~\cite{Fiaschi:2018hgm,Fuks:2012qx}.
 
@@ -147,7 +147,7 @@ For maximum modelling accuracy, the detector simulation for all \gls{mc} backgro
 In general, \gls{mc} events can have weights that need to be considered when normalising and scaling processes to a given integrated luminosity.
 Weights originate, for example, directly from the generator when including \gls{nlo} corrections in the simulation.
 Another source of weights can be filtered \gls{mc} datasets, generated with specific selections in order to increase event statistics in specific regions of phase space.
-Weights also arise from experimental corrections, and are, for example, used to scale efficiencies in \gls{mc} to those measured in data. Finally, reweighting of \gls{mc} events is also used to correct the \textit{pile-up profile}, \ie the distribution of the mean number of inelastic $pp$ collisions per bunch crossing ($\mu$), in \gls{mc} such that it matches the one measured in data.
+Weights also arise from experimental corrections, and are, for example, used to scale efficiencies in \gls{mc} to those measured in data. Finally, reweighting of \gls{mc} events is also used to correct the \textit{pile-up profile}, \ie the distribution of the mean number of inelastic $pp$ collisions per bunch crossing, in \gls{mc} such that it matches the one measured in data.
 This is necessary because the \gls{mc} simulated events used herein, were largely already generated before the full Run~2 dataset was recorded, and therefore before the full pile-up profile in data was known.
 
 To obtain an event rate estimate for a given integrated luminosity, instead of the raw number of generated MC events, the sum of event weights \textit{w}, scaled to the desired integrated luminosity $L$ and total cross section $\sigma$ has to be used,

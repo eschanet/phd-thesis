@@ -1,4 +1,6 @@
 \input{feynman_preamble}
+  \usepackage{libertinus}
+  \usepackage[libertine]{newtxmath}
 \begin{document}
 	\unitlength=1mm
 	\begin{fmffile}{wjets_1}
@@ -21,12 +23,12 @@
 			\fmf{fermion,tension=0.5}{v3,v2}
 
 			\fmf{gluon,label=$g$,label.side=left,tension=0.2}{v2,o2}
-			\fmf{photon,label=$W^+$}{v3,v4}
+			\fmf{photon,label=$W^\pm$}{v3,v4}
 			
 			%produzione b b
 			\fmf{fermion}{v4,o3}
 			\fmf{fermion}{o4,v4}
-			\fmflabel{$\ell^+$}{o4}
+			\fmflabel{$\ell^\pm$}{o4}
 			\fmflabel{$\nu$}{o3}
 		\end{fmfgraph*}
 	\end{fmffile}

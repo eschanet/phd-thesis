@@ -1,4 +1,6 @@
 \input{feynman_preamble}
+  \usepackage{libertinus}
+  \usepackage[libertine]{newtxmath}
 \begin{document}
 	\unitlength=1mm
 	\begin{fmffile}{ttv_1}
@@ -14,7 +16,7 @@
 			%mediatore
 			\fmf{fermion,tension=0.5}{v1,v3}
 			
-			\fmf{photon,label=$W^+$,label.side=left,tension=1}{v2,v1}
+			\fmf{photon,label=$W^\pm$,label.side=left,tension=1}{v2,v1}
 			\fmf{fermion,tension=1}{v2,o1}
 			\fmf{fermion,tension=1}{o2,v2}
 			
@@ -26,7 +28,7 @@
 			\fmflabel{$q'$}{i1}
 			\fmflabel{$t$}{o3}
 			\fmflabel{$\bar{t}$}{o4}
-			\fmflabel{$\ell^+$}{o2}
+			\fmflabel{$\ell^\pm$}{o2}
 			\fmflabel{$\nu$}{o1}								
 		\end{fmfgraph*}
 	\end{fmffile}
