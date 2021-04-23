@@ -91,7 +91,7 @@ where $N^\mathrm{MC}_p(\mathrm{R}_j)$ and $N^\mathrm{MC}_p(\mathrm{CR}_i)$ are t
 with $f_p^\mathrm{variation}$ and $f_p^\mathrm{nominal}$ the transfer factors from the variational and nominal samples, respectively.
 If the \gls{mc} datasets used for deriving the variational and nominal transfer factors are statistically independent, a statistical component of the uncertainty is derived using the individual statistical uncertainties on the background estimate,
 \begin{equation}
-	\Delta f_p^\mathrm{stat} = (\Delta f_p^\mathrm{syst} + 1 ) \sqrt{\sum_{n\in\boldsymbol{N}}(\frac{\sigma_n}{n})^2},
+	\Delta f_p^\mathrm{stat} = (\Delta f_p^\mathrm{syst} + 1 ) \sqrt{\sum_{n\in\makemebold{N}}(\frac{\sigma_n}{n})^2},
 \end{equation}
  where $n$ runs over the set of expected event rates and $\sigma_n$ is the absolute \gls{mc} statistical uncertainty associated to each expected event rate $n$.
  In the following, the control region used to evaluate the uncertainties on the transfer factors is taken to be the sum of all \glspl{cr} introduced in~\cref{sec:control_regions}.
@@ -108,7 +108,7 @@ If the \gls{mc} datasets used for deriving the variational and nominal transfer 
  
  \subsection{Background}
  
- \subsubsection{$\boldsymbol{\ttbar}$ and single top}
+ \subsubsection{$\makemebold{\ttbar}$ and single top}
  
  Theory uncertainties on the estimate of $\ttbar$ and single top processes arise for example from the simulation of the hard scattering between the interacting partons.
  These are evaluated by comparing the estimates from the nominal \gls{mc} datasets generated using \textsc{Powheg-Box}~\cite{PowhegBox:2010xd} and \textsc{Pythia8}~\cite{Pythia8:2007gs} with those from alternative datasets generated using \textsc{MadGraph\_aMC@NLO}~\cite{MGaMCNLO:2014hca,Frederix:2012ps} and \textsc{Pythia8}.
@@ -125,7 +125,7 @@ If the \gls{mc} datasets used for deriving the variational and nominal transfer 
  While the former removes all diagrams in the \gls{nlo} $Wt$ amplitude that are doubly resonant (meaning that they involve an intermediate top quark that can be on-shell), the latter introduces subtraction terms in the \gls{nlo} $Wt$ cross section cancelling the $\ttbar$ contribution~\cite{Frixione:2008yi}.
  As the diagram removal scheme is used for estimating the event rate of the $Wt$ channel in the analysis, a comparison with an estimation using the diagram subtraction scheme allows to derive an uncertainty associated to the interference.
   
- \subsubsection{$\boldsymbol{W/Z+\mathrm{jets}}$}
+ \subsubsection{$\makemebold{W/Z+\mathrm{jets}}$}
  
  For $W/Z+\mathrm{jets}$ processes, simulated using \textsc{Sherpa 2.2.1}~\cite{Gleisberg:2008ta,Bothmann:2019yzt}, four different unphysical scales can be varied in order to evaluate uncertainties on the modelling.
  The renormalisation $\mu_\mathrm{R}$ and factorisation $\mu_\mathrm{F}$ scales are both varied independently and together up and down by a factor of two, resulting in a total of seven combined variations.

@@ -127,7 +127,7 @@ From a theoretical point of view, the SM is a non-Abelian gauge theory based on 
 \end{equation*}
 where $U(n)$ ($SU(n)$) describes (special) unitary groups, \ie the Lie groups of $n\times n$ unitary matrices (with determinant 1, if special). $SU(3)_C$ generates \gls{qcd}, describing the interaction of particles with colour charge $C$ through exchange of gluons, and $SU(2)_L \otimes U(1)_Y$ generates the electroweak interaction. Here, the subscript $Y$ represents the weak hypercharge, while $L$ indicates that $SU(2)_L$ only couples to left-handed particles (right-handed antiparticles).
 
-\subsubsection{Feyman diagrams}
+\subsubsection{Feynman diagrams}
 
 Transitioning from classical field theory to quantum field theory is typically done through either canonical quantisation or the usage of the path integral formalism. As only the simplest field theories can be solved analytically, \ie those containing only free fields and no interactions, perturbation theory is used for calculating scattering cross sections and decay rates for any \gls{qft} containing interactions. Any transition matrix can then be written as a series expansion in the coupling constant, with each term represented by Feynman diagrams. 
 
@@ -210,17 +210,17 @@ where the group indices $a = 1,\dots,N$ are to be summed over. The group generat
 \begin{equation}
 	[T^a,T^b] = i f^{abc}T^c,
 \end{equation}
-where $f^{abc}$ are the so-called structure constants quantifying the lack of commutativity between the generators. By convention, the basis for the generators $T^a$ is typically chosen such that $f^{abc}$ is completely anti-symmetric~\cite{Brock:1354959}. In order to make the Lagrangian invariant under local phase transformations, \ie under transformations with a set of spacetime-dependent real parameters $\alpha^a(x)$, a vector field $\boldsymbol{W}_\mu$ together with a coupling constant $g$ have to be introduced through the covariant derivative  
+where $f^{abc}$ are the so-called structure constants quantifying the lack of commutativity between the generators. By convention, the basis for the generators $T^a$ is typically chosen such that $f^{abc}$ is completely anti-symmetric~\cite{Brock:1354959}. In order to make the Lagrangian invariant under local phase transformations, \ie under transformations with a set of spacetime-dependent real parameters $\alpha^a(x)$, a vector field $\makemebold{W}_\mu$ together with a coupling constant $g$ have to be introduced through the covariant derivative  
 \begin{equation}
-	\partial_\mu \rightarrow \codiff_\mu = \partial_\mu - ig\boldsymbol{W}_\mu.
+	\partial_\mu \rightarrow \codiff_\mu = \partial_\mu - ig\makemebold{W}_{\mu}.
 \end{equation}
-As $\codiff_\mu$ acts on the $n$-dimensional multiplet $\Psi$, the introduced gauge field $\boldsymbol{W}_\mu$ has to be a $n\times n$ matrix and can thus be expanded in terms of the generators
+As $\codiff_\mu$ acts on the $n$-dimensional multiplet $\Psi$, the introduced gauge field $\makemebold{W}_\mu$ has to be a $n\times n$ matrix and can thus be expanded in terms of the generators
 \begin{equation}
-	\boldsymbol{W}_\mu(x) = T^a W_\mu^a(x),
+	\makemebold{W}_\mu(x) = T^a W_\mu^a(x),
 \end{equation}
 thereby explicitly illustrating, that a total of $N$ gauge fields $W^a_\mu$ are introduced through the covariant derivative. Similar to \gls{qed} above, the covariant derivative also introduces an interaction term of the form
 \begin{equation}
-	\Lagr_\mathrm{int} = g\bar{\Psi}\gamma^\mu\boldsymbol{W}_\mu\Psi,
+	\Lagr_\mathrm{int} = g\bar{\Psi}\gamma^\mu\makemebold{W}_\mu\Psi,
 \end{equation}
 into the Lagrangian in \cref{eq:free_lagrangian}, coupling the gauge fields $W^a_\mu$ to the fermion multiplet. For infinitesimal $\alpha^a(x)$, the gauge fields gauge transform according to
 \begin{equation}
@@ -311,7 +311,7 @@ with $\gamma^5 = i\gamma^0\gamma^1\gamma^2\gamma^3$. As the weak interaction onl
 \end{equation} 
 The quantum number associated with $SU(2)$ symmetry transformations is called weak isospin $I$ with the third component $I_3$. Fermion doublets have $I=1/2$, with the upper component having $I_3 = 1/2$ and the lower component $I_3=-1/2$. Right-handed fermion fields have $I=0$, \ie are singlet states in weak isospin space
 \begin{equation}
-	e_\mathrm{R},u_\mathrm{R},d_\mathrm{R}, \qquad \mu_\mathrm{R},c_\mathrm{R},s_\mathrm{R}, \qquad \tau_\mathrm{R},t_\mathrm{R},b_\mathrm{R}, 
+	e_\mathrm{R},\,  u_\mathrm{R},\,  d_\mathrm{R}, \qquad \mu_\mathrm{R},\,  c_\mathrm{R},\,  s_\mathrm{R}, \qquad \tau_\mathrm{R},\,  t_\mathrm{R},\,  b_\mathrm{R}, 
 \end{equation}
 and thus do not couple to the weak interaction. In the electroweak theory, neutrinos are assumed to be strictly massless, therefore no right-handed neutrino singlets exist. 
 
@@ -842,10 +842,10 @@ In the \gls{mssm}, two Higgs doublets are needed in order to give masses to the 
 
 As illustrated in \cref{sec:susy_lagrangian} using the Wess--Zumino model, interactions are introduced using the superpotential. In the \gls{mssm}, the superpotential reads
 \begin{equation}
-	W_\mathrm{MSSM} = \bar{u}\boldsymbol{y_u}QH_u - \bar{d}\boldsymbol{y_d}QH_d - \bar{e}\boldsymbol{y_e}LH_d + \mu H_uH_d,
+	W_\mathrm{MSSM} = \bar{u}\makemebold{y_u}QH_u - \bar{d}\makemebold{y_d}QH_d - \bar{e}\makemebold{y_e}LH_d + \mu H_uH_d,
 	\label{eq:mssm_superpotential}
 \end{equation}
-where $Q$ and $L$ correspond to the supermultiplets containing the left-handed quarks and leptons as well as their spartners, respectively. Likewise, $\bar{u}$, $\bar{d}$, $\bar{e}$ correspond to the supermultiplets containing the right-handed up-type quarks, down-type quarks and leptons as well as their spartners, respectively. The parameters $\boldsymbol{y_u}$, $\boldsymbol{y_d}$ and $\boldsymbol{y_e}$ are the $3\times 3$ Yukawa coupling matrices. Except for the third generation, the Yukawa couplings are known to be relatively small~\cite{Martin:1997ns} and are thus not of direct interest for the phenomenology of the theory. Phenomenologically more interesting are the supersymmetric gauge interactions that dominate the production and decay process of spartners in the \gls{mssm}~\cite{Martin:1997ns}. The superpotential in \cref{eq:mssm_superpotential} illustrates again why two Higgs doublets are needed in the \gls{mssm}, since terms like $\bar{u}QH_d^*$ or $\bar{e}LH_u^*$ are not allowed due to the holomorphism of the superpotential. The term $\mu H_u H_d$ contains the \textit{higgsino mass parameter} $\mu$ and is the supersymmetric version of the Higgs mass term in the SM Lagrangian.
+where $Q$ and $L$ correspond to the supermultiplets containing the left-handed quarks and leptons as well as their spartners, respectively. Likewise, $\bar{u}$, $\bar{d}$, $\bar{e}$ correspond to the supermultiplets containing the right-handed up-type quarks, down-type quarks and leptons as well as their spartners, respectively. The parameters $\makemebold{y_u}$, $\makemebold{y_d}$ and $\makemebold{y_e}$ are the $3\times 3$ Yukawa coupling matrices. Except for the third generation, the Yukawa couplings are known to be relatively small~\cite{Martin:1997ns} and are thus not of direct interest for the phenomenology of the theory. Phenomenologically more interesting are the supersymmetric gauge interactions that dominate the production and decay process of spartners in the \gls{mssm}~\cite{Martin:1997ns}. The superpotential in \cref{eq:mssm_superpotential} illustrates again why two Higgs doublets are needed in the \gls{mssm}, since terms like $\bar{u}QH_d^*$ or $\bar{e}LH_u^*$ are not allowed due to the holomorphism of the superpotential. The term $\mu H_u H_d$ contains the \textit{higgsino mass parameter} $\mu$ and is the supersymmetric version of the Higgs mass term in the SM Lagrangian.
 
 
 \subsubsection{Soft supersymmetry breaking}\label{sec:susy_breaking}
@@ -859,7 +859,7 @@ where $\Lagr_\mathrm{soft}$ contains all the symmetry breaking terms, whilst $\L
 A total of 105 new parameters with no counterpart in the SM are introduced through $\Lagr_\mathrm{soft}$~\cite{Martin:1997ns,Dimopoulos:1995ju}:
 \begin{itemize}
 	\item Gaugino mass parameters $M_1$, $M_2$ and $M_3$.
-	\item Trilinear scalar couplings, parametrised by $3\times 3$ matrices in generation space $\boldsymbol{a_u}$, $\boldsymbol{a_d}$, $\boldsymbol{a_e}$, representing Higgs-squark-squark and Higgs-slepton-slepton interactions.
+	\item Trilinear scalar couplings, parametrised by $3\times 3$ matrices in generation space $\makemebold{a_u}$, $\makemebold{a_d}$, $\makemebold{a_e}$, representing Higgs-squark-squark and Higgs-slepton-slepton interactions.
 	\item Hermitian $3\times 3$ matrices in generation space \boldmath $m_Q^2$, $m^2_{\bar{u}}$, $m^2_{\bar{d}}$, $m^2_L$, $m^2_{\bar{e}}$ \unboldmath that represent the sfermion masses.
 	\item SUSY breaking parameters $m^2_{H_u}$, $m^2_{H_d}$ and $b$.
 \end{itemize}
@@ -891,7 +891,7 @@ Due to electroweak symmetry breaking, the gauginos and higgsinos are not mass ei
 Both charginos and neutralinos are by convention labeled in ascending mass order. As the exact diagonalised forms of their mass mixing matrices are, in general, relatively complicated~\cite{Choi:2001ww}, they are typically evaluated in limits where one component dominates. Neutralinos with a dominant wino, bino or higgsino component will be called wino-, bino- or higgsino-like, respectively, in the following. Likewise, charginos will be called wino- or higgsino-like, if the respective component dominates.
 %Both charginos and neutralinos are by convention labeled in ascending mass order. In the gauge-eigenstate basis $\psi^0 = (\tilde{B},\tilde{W}^0,\tilde{H}^0_d,\tilde{H}^0_u)$, the neutralino mixing matrix reads~\cite{Martin:1997ns}
 %\begin{equation}
-%	\boldsymbol{M}_{\tilde{\chi}}^0 = 	\begin{pmatrix}
+%	\makemebold{M}_{\tilde{\chi}}^0 = 	\begin{pmatrix}
 %		M_1 & 0 & -g_1v_d/\sqrt{2} & g_1 v_u/\sqrt{2} \\
 %		0 & M_2 & g_2 v_d/\sqrt{2} & - g_2 v_u/\sqrt{2} \\
 %		- g_1 v_d/\sqrt{2} & g_2 v_d/\sqrt{2} & 0 & -\mu \\
@@ -903,16 +903,16 @@ Both charginos and neutralinos are by convention labeled in ascending mass order
 %
 %The chargino mixing matrix can be written in a similar fashion. In the gauge-eigenstate $\psi^\pm = (\tilde{W}^\pm , \tilde{H}^+_u, \tilde{W}^-, \tilde{H}^-_d)$, it can be written as
 %\begin{equation}
-%	\boldsymbol{M}_{\tilde{\chi}^\pm} = \begin{pmatrix}
-%		\mathbb{0}_2 & \boldsymbol{X}^T \\
-%		\boldsymbol{X} & \mathbb{0}_2
+%	\makemebold{M}_{\tilde{\chi}^\pm} = \begin{pmatrix}
+%		\mathbb{0}_2 & \makemebold{X}^T \\
+%		\makemebold{X} & \mathbb{0}_2
 %	\end{pmatrix}
-%	\qquad \textrm{with} \quad \boldsymbol{X} = \begin{pmatrix}
+%	\qquad \textrm{with} \quad \makemebold{X} = \begin{pmatrix}
 %		M_2 & g_2 v_u\\
 %		g_2 v_d & \mu
 %	\end{pmatrix}.
 %\end{equation}
-%The masses of the charginos are then the eigenvalues of the doubly degenerate $4\times 4$ matrix $\boldsymbol{M}^{\dagger}_{\tilde{\chi}^\pm}\boldsymbol{M}_{\tilde{\chi}^\pm}$ and can be expressed in terms of $M_2$, $\mu$ and $\sin{2\beta}$~\cite{Martin:1997ns}. 
+%The masses of the charginos are then the eigenvalues of the doubly degenerate $4\times 4$ matrix $\makemebold{M}^{\dagger}_{\tilde{\chi}^\pm}\makemebold{M}_{\tilde{\chi}^\pm}$ and can be expressed in terms of $M_2$, $\mu$ and $\sin{2\beta}$~\cite{Martin:1997ns}. 
 
 Squarks and sleptons also mix, respectively. As in principle any scalars with the same electric charge, colour charge and R-parity (see~\cref{sec:rparity}) can mix with each other, the mass eigenstates of the sleptons and squarks should a priori be obtained through diagonalisation of three $6\times 6$ mixing matrices (one for up-type squarks, one for down-type squarks and one for charged sleptons) and one $3\times 3$ matrix (for sneutrinos). The assumption of flavour-blind soft SUSY breaking terms leads to most of the mixing angles being very small. As opposed to the first and second generation, the third generation sfermions have relatively large Yukawa couplings, therefore the superpartners of the left- and right-handed fermions mix to mass eigenstates $(\tilde{t}_1,\tilde{t}_2)$, $(\tilde{b}_1,\tilde{b}_2)$, $(\tilde{\tau}_1,\tilde{\tau}_2)$, again labeled in ascending mass order. The first and second generation sfermions, on the other hand, having very small Yukawa couplings, end up in nearly mass-degenerate, unmixed pairs.
 

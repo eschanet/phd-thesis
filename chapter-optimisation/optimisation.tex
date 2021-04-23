@@ -57,7 +57,7 @@ As the significance values obtained for such configurations are obviosuly not tr
 
 In the $N$-dimensional cut scan implementation used herein, the available \gls{mc} datasets are split in two statistically independent, equally sized subsets. Although resulting in an additional dilution of the available \gls{mc} statistics, this approach allows to generate two independent \gls{roc} curves and  to compute two independent values for the discovery significance for each cut combination candidate. A large difference in either the \gls{roc} curves or the significance values is an indication for statistical fluctuations as a result of overtightened cuts. In addition, requirements on the minimum number of unweighted \gls{mc} events for different background processes, as well as the maximum allowed statistical uncertainty on a given process, can be applied. In combination, these precautions offer a good handle against statistical fluctuations. In the following, the $N$-dimensional cut scan implementation provided by \textsc{ahoi}~\cite{ahoi} is used.
 
-\subsection[\textit{N}--1]{\textit{N}--1 plots}\label{sec:n-1-scan}
+\subsection[\textit{N}--1]{$\makemebold{N}$--1 plots}\label{sec:n-1-scan}
 
 Instead of performing a brute-force scan of a large set of cut combinations, a more manual approach, using iterative one-dimensional scans can be employed. In so-called `\textit{N}--1 plots', the kinematic distributions of the background components as well as exemplary signal processes are plotted in conjunction with the significance achieved by applying a cut on each value on the \textit{x}-axis of the one-dimensional distribution plotted. All other selection requirements, except the one on the observable plotted, are applied. This method allows to investigate the impact of a single kinematic requirement on the overall significance value. By repeatedly executing this process for each observable considered, it is possible to iteratively approach a cut combination yielding results comparable to that of a brute-force cut scan. Especially when considering a sizeable set of observables, this manual approach, however, quickly becomes very cumbersome and inefficient, and risks missing optimal cut combinations that would have been found by a brute-force approach.
 
@@ -73,7 +73,7 @@ The estimation of the background event rates in the signal regions is taken from
 As building the likelihood and executing the statistical inference takes a considerable computational effort, this method benefits from the previous optimisation steps defining promising signal region candidates worth scanning over.
 In order to keep the number of configurations to be tested at a manageable level, the signal region candidates obtained from the previous methods are only varied to a limited degree, assuming that they were already close to optimal to begin with.
 
-%\section[Optimisation for the $1\ell$ search]{Optimisation for the $\boldsymbol{1\ell}$ search}
+%\section[Optimisation for the $1\ell$ search]{Optimisation for the $\makemebold{1\ell}$ search}
 \section{Optimisation for the 1-lepton search}
 
 \begin{table}
@@ -113,18 +113,18 @@ Apart from the variables introduced in~\cref{sec:variables}, a set of additional
 	\item Transverse momenta of the two leading jets as well as of the lepton ($p_\textrm{T}^\mathrm{jet1}$, $p_\textrm{T}^\mathrm{jet2}$, $\ptl$). Especially for signal models with high mass differences between the electroweakinos, the transverse momenta of the lepton and the jets tend to have higher values than in \gls{sm} background processes.
 	\item Object-based $\etmiss$ significance $\mathcal{S}$~\cite{met_significance:2294922}, a quantity designed to quantify how genuine the reconstructed $\etmiss$ in an event is. It is determined through a hypothesis test using a log-likelihood ratio that takes into account the resolution of all objects entering the computation of $\etmiss$. As such, $\mathcal{S}$ offers good discrimination against events with a sizeable fraction of fake $\etmiss$ in the event originating \eg from jet mismeasurements or the non-hermeticity of the detector. Events with a large share of fake $\etmiss$ accumulate at low values of $\mathcal{S}$, while events with mostly real $\etmiss$ tend to have large values of $\mathcal{S}$. 
 	\item The distance between the two leading jets $\Delta R_{jj}$ as well as between the two \textit{b}-jets $\Delta R_{b\bar{b}}$. Especially in events with a large mass difference between the electroweakinos, the Higgs can get a significant boost, such that the two \textit{b}-jets from the Higgs decay tend to be close together in the laboratory frame (and are also the highest-$\pt$ jets in an event), resulting in small values of both $\Delta R_{jj}$ and $\Delta R_{b\bar{b}}$. In \gls{sm} background processes, however, the two leading (\textit{b}-)jets often do not originate from the same object and thus tend to be further apart.
-	\item The azimuthal distance between the lepton $\pt$ and the missing transverse momentum, $\Delta \phi (\boldsymbol{p}_\mathrm{T}^\ell, \boldsymbol{p}_\mathrm{T}^\mathrm{miss})$. This observable exploits the fact that the lepton and the $\etmiss$ tend to have a more back-to-back configuration in signal events than in many \gls{sm} processes where the lepton and the neutrino (the latter often responsible for a large part of the $\etmiss$ in an event) often originate from the same $W$ boson decay.
+	\item The azimuthal distance between the lepton $\pt$ and the missing transverse momentum, $\Delta \phi (\makemebold{p}_\mathrm{T}^\ell, \makemebold{p}_\mathrm{T}^\mathrm{miss})$. This observable exploits the fact that the lepton and the $\etmiss$ tend to have a more back-to-back configuration in signal events than in many \gls{sm} processes where the lepton and the neutrino (the latter often responsible for a large part of the $\etmiss$ in an event) often originate from the same $W$ boson decay.
 \end{itemize}
 
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_300_150.pdf}
-		\caption{$m(\charg/\neutr), m(\lsp) =  300, \SI{150}{\GeV}$}
+		\caption{$m(\charg$/$\neutr), m(\lsp) =  300, \SI{150}{\GeV}$}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering\includegraphics[width=1.0\textwidth]{N-1_cut_scan/z_vs_effs_800_250.pdf}
-		\caption{$m(\charg/\neutr), m(\lsp) =  800, \SI{250}{\GeV}$}
+		\caption{$m(\charg$/$\neutr), m(\lsp) =  800, \SI{250}{\GeV}$}
 	\end{subfigure}\hfill
 
 	\caption[N-dimensional cut scan results]{Results of the $N$-dimensional cut scan for two exemplary benchmark points. The binomial discovery significance $Z_\mathrm{B}$ is plotted against the signal efficiency for different uncertainty configurations. Additionally, the expected \gls{sm} background event rates are shown (grey), including their statistical uncertainties for one of the two statistically independent samples (grey shaded area). The solid and dashed lines represent the two statistically independent subsets that the \gls{mc} samples are split into.}
@@ -165,7 +165,7 @@ The remaining observables turned out not to significantly improve the sensitivit
 				$Z_\mathrm{B}$ $[\sigma]$ & \multicolumn{1}{c}{0.8} & \multicolumn{1}{c}{1.9} & \multicolumn{1}{c}{2.1} & \multicolumn{1}{c}{1.8} & \multicolumn{1}{c}{2.2} & \multicolumn{1}{c}{2.3} \\
 				\bottomrule
 			\end{tabular}
-		\caption{Optimal cut combination for each benchmark signal point obtained with a brute force cut scan and a round of \textit{N}--1 plots. The parameters of the benchmark points $m(\charg/\neutr)$ and $m(\lsp)$, both given in $\SI{}{\GeV}$. The significance is computed for \onethirtynineifb with the binomial discovery significance $Z_\mathrm{B}$ and includes MC statistical uncertainty as well as a flat 30\% systematic uncertainty. A dash `--' is used where no requirement on the respective observable is applied.}
+		\caption{Optimal cut combination for each benchmark signal point obtained with a brute force cut scan and a round of \textit{N}--1 plots. The parameters of the benchmark points $m(\charg$/$\neutr)$ and $m(\lsp)$, both given in $\SI{}{\GeV}$. The significance is computed for \onethirtynineifb with the binomial discovery significance $Z_\mathrm{B}$ and includes MC statistical uncertainty as well as a flat 30\% systematic uncertainty. A dash `--' is used where no requirement on the respective observable is applied.}
 		\label{tab:cut_scan_results}
 	\end{center}
 \end{table}

@@ -1,5 +1,13 @@
 \documentclass[class=minimal,border={5pt 10pt 5pt 15pt}]{standalone}
 \usepackage[force]{feynmp-auto}
+	\usepackage{amsmath}
+	\usepackage{fontspec}
+	\usepackage{unicode-math}
+	\usepackage{microtype}
+
+	\setmainfont{Libertinus Serif}
+	\setsansfont{Libertinus Sans}
+	\setmathfont{Libertinus Math}
 \usepackage{xcolor}
 \begin{document}
 	\unitlength=0.75mm
@@ -14,7 +22,7 @@
 			\fmf{boson,label=$$}{i1,v1}
 			\fmf{boson,label=$$}{v2,o1}
 
-			\fmf{dashes,label=$H$,label.side=left,left=1,tension=0.4}{v1,v2}	
+			\fmf{dashes,label=$h$,label.side=left,left=1,tension=0.4}{v1,v2}	
 			\fmf{boson,left=1,tension=0.4}{v2,v1}	
 
 		\end{fmfgraph*}

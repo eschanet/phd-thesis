@@ -11,7 +11,7 @@
 
 This chapter aims to give an introduction to the search for electroweakinos presented in this work. First, the final state targeted is introduced and motivated, followed by the \gls{sm} background processes that need to be considered when performing searches for \gls{susy} in this final state. Next, the reconstruction and identification of physics objects as well as the event selection requirements are described.
 
-%\section[Search for electroweakinos in the $1\ell$ final state]{Search for electroweakinos in the $\boldsymbol{1\ell}$ final state}
+%\section[Search for electroweakinos in the $1\ell$ final state]{Search for electroweakinos in the $\makemebold{1\ell}$ final state}
 \section{Search for electroweakinos in the 1-lepton final state}
 
 In the search for electroweakinos presented herein, the simplified model introduced in \cref{sec:models_used} is interpreted in a final state with a lepton, two \textit{b}-tagged jets and high missing transverse momentum.
@@ -288,10 +288,10 @@ The working point chosen for the \texttt{MV2c10} tagger achieves a \textit{b}-ta
 \subsection{Missing transverse momentum}
 
 Momentum conservation in the transverse plane implies that the sum of the transverse momenta of all objects in a $pp$ collision should vanish.
-Particles escaping the detector without being measured thus lead to a momentum imbalance, in the following referred to as missing transverse momentum $\boldsymbol{p}^{\textrm{miss}}_\textrm{T}$ with magnitude $\etmiss$.
+Particles escaping the detector without being measured thus lead to a momentum imbalance, in the following referred to as missing transverse momentum $\makemebold{p}^{\textrm{miss}}_\textrm{T}$ with magnitude $\etmiss$.
 The missing transverse momentum in each event is computed using all reconstructed objects and takes into account tracks associated to the primary vertex but not used for any reconstructed object~\cite{PERF-2016-07}, yielding
 \begin{equation}
-	\boldsymbol{p}^{\textrm{miss}}_\textrm{T} = - \sum\boldsymbol{p}^{e}_{\textrm{T}} - \sum\boldsymbol{p}^{\gamma}_{\textrm{T}} - \sum\boldsymbol{p}^{\mu}_{\textrm{T}} - \sum\boldsymbol{p}^{\mathrm{jet}}_{\textrm{T}} - \sum\boldsymbol{p}^{\mathrm{track}}_{\textrm{T}}.
+	\makemebold{p}^{\textrm{miss}}_\textrm{T} = - \sum\makemebold{p}^{e}_{\textrm{T}} - \sum\makemebold{p}^{\gamma}_{\textrm{T}} - \sum\makemebold{p}^{\mu}_{\textrm{T}} - \sum\makemebold{p}^{\mathrm{jet}}_{\textrm{T}} - \sum\makemebold{p}^{\mathrm{track}}_{\textrm{T}}.
 	\label{eq:met}
 \end{equation}
 While terms originating from the reconstructed, calibrated objects are collectively referred to as the \textit{hard term}, the remaining track term is referred to as \textit{soft term}.
@@ -359,13 +359,13 @@ In order to separate supersymmetric signal events from \gls{sm} processes, it is
 
 The simplified model depicted in \cref{fig:Wh_model_full} features two \textit{b}-jets in the final state, originating from the decay of the Higgs boson. In the following, all events are thus required to have exactly two \textit{b}-jets in the final state, significantly reducing contributions from \eg $\wjets$ processes that have a relatively low probability of producing two \textit{b}-jets. In order to avoid rejecting signal events with \gls{isr} or \gls{fsr} (as \eg in \cref{fig:mcviz_signal}), a third, light-flavour jet is allowed in the final state.
 
-\subsubsection[Invariant mass of the \textit{b}-tagged jets]{Invariant mass of the $\boldsymbol{b}$-tagged jets}
+\subsubsection[Invariant mass of the \textit{b}-tagged jets]{Invariant mass of the $\makemebold{b}$-tagged jets}
 
 The invariant mass of the two \textit{b}-jets $\mbb$ can be defined using the well-known energy-momentum relation, 
 \begin{equation}
-	\mbb^2 = (\boldsymbol{\mathrm{P}}_{b_1}+\boldsymbol{\mathrm{P}}_{b_2})^2 = m^2_{b_1} + m^2_{b_2} + 2\left(E_{b_1}E_{b_2} - \boldsymbol{p}_{b_1}\boldsymbol{p}_{b_2}\right)
+	\mbb^2 = (\makemebold{\mathrm{P}}_{b_1}+\makemebold{\mathrm{P}}_{b_2})^2 = m^2_{b_1} + m^2_{b_2} + 2\left(E_{b_1}E_{b_2} - \makemebold{p}_{b_1}\makemebold{p}_{b_2}\right)
 \end{equation}
-where $\boldsymbol{\mathrm{P}}_{b_1}$ and $\boldsymbol{\mathrm{P}}_{b_2}$ are the four-vector momenta of the leading and subleading \textit{b}-jets, respectively. The term \textit{leading} henceforth refers to the object with the largest $\pt$ in its object category. In the high-relativistic limit $E \gg m$, the invariant mass of the two \textit{b}-jets can be written as
+where $\makemebold{\mathrm{P}}_{b_1}$ and $\makemebold{\mathrm{P}}_{b_2}$ are the four-vector momenta of the leading and subleading \textit{b}-jets, respectively. The term \textit{leading} henceforth refers to the object with the largest $\pt$ in its object category. In the high-relativistic limit $E \gg m$, the invariant mass of the two \textit{b}-jets can be written as
 \begin{equation}
 	\mbb = \sqrt{2\pt^{b_1}\pt^{b_2}(\cosh\Delta\eta_{bb} - \cos\Delta\phi_{bb})},
 \end{equation}
@@ -381,9 +381,9 @@ The missing transverse energy $\etmiss$ is an observable finding widespread usag
 
 The transverse masse $\mt$~\cite{Arnison:1983rp,transversemass:163856} is one of the most important observables considered in \onelepton search. It aims to reconstruct the mass of a heavy particle decaying into two daughter particles subject to a co-linear boost in the laboratory transverse plane. In \gls{susy} searches targeting the \onelepton final state, $\mt$ is commonly used to reconstruct the transverse mass of the $W$ boson decaying into a lepton--neutrino pair, and is therefore defined as
 \begin{equation}
-	\mt = \sqrt{2\pt^\ell\etmiss(1-\cos[\Delta\phi(\boldsymbol{p}_\mathrm{T}^\ell,\boldsymbol{p}_\mathrm{T}^\mathrm{miss})])},
+	\mt = \sqrt{2\pt^\ell\etmiss(1-\cos[\Delta\phi(\makemebold{p}_\mathrm{T}^\ell,\makemebold{p}_\mathrm{T}^\mathrm{miss})])},
 \end{equation}
-where $\boldsymbol{p}_\mathrm{T}^\ell$ is the momentum three-vector of the lepton in the event. As events with additional leptons are vetoed, the vast majority of the leptons in background processes stem from leptonic decays of $W$ bosons. In background events where the neutrino from $W\rightarrow\ell\nu$ is the only source of $\etmiss$, the transverse mass has a Jacobian peak at the $W$ boson mass, 
+where $\makemebold{p}_\mathrm{T}^\ell$ is the momentum three-vector of the lepton in the event. As events with additional leptons are vetoed, the vast majority of the leptons in background processes stem from leptonic decays of $W$ bosons. In background events where the neutrino from $W\rightarrow\ell\nu$ is the only source of $\etmiss$, the transverse mass has a Jacobian peak at the $W$ boson mass, 
 \begin{equation}
 	\mt^\mathrm{max} = m_W \approx \SI{80}{\GeV}.
 \end{equation}
@@ -434,7 +434,7 @@ For $\ttbar$ events where each top quark decays via $t\rightarrow bW$, the two \
 \end{equation}
 In signal events, the two input \textit{b}-jets originate from the same Higgs boson, and thus $\mct$ does not exhibit a kinematic endpoint, but tends to yield higher values. \Cref{fig:norm_mct} clearly illustrates the kinematic endpoint for $\ttbar$ backgrounds and further shows that signal distributions result in higher values depending on their mass parameter scales. Similar  as for the transverse mass, varying lower bounds on $\mct$ will be used in \cref{ch:signal_region_optimisation} to define signal regions optimised to different kinematic regimes. 
 
-\subsubsection[Invariant mass of the lepton and leading \textit{b}-jet]{Invariant mass of the lepton and leading $\boldsymbol{b}$-jet}
+\subsubsection[Invariant mass of the lepton and leading \textit{b}-jet]{Invariant mass of the lepton and leading $\makemebold{b}$-jet}
 
 The invariant mass of the lepton and the leading \textit{b}-jet, $\mlb$, is designed to offer high rejection power towards $\ttbar$ and single top processes. In events where the lepton and leading \textit{b}-jet originate from the same top quark decay $t\rightarrow bW \rightarrow b\ell\nu$, the $\mlb$ distribution has a kinematic endpoint at 
 \begin{equation}

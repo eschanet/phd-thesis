@@ -15,11 +15,11 @@ The following description largely adheres to \references\cite{Cranmer:2015nia, C
 
 \section{The likelihood function}\label{sec:likelihood_function}
  
-In measurements in \gls{hep}, a \textit{statistical model} $f(\boldsymbol{x}\vert\boldsymbol{\phi})$ is a parametric family of \glspl{pdf} describing the probability of observing data $\boldsymbol{x}$ given a set\footnote{Sets of parameters (as opposed to single parameters) will henceforth be written using bold face.} of model parameters $\boldsymbol{\phi}$.
-The latter typically describe parameters of the physical theory or unknown detector effects. The \textit{likelihood function} $L(\boldsymbol{\phi})$ is then numerically equivalent to $f(\boldsymbol{x}\vert\boldsymbol{\phi})$ with $\boldsymbol{x}$ fixed.
-As opposed to the \glsfirst{pdf} $f(\boldsymbol{x})$ describing the value of $f$ as a function of $\boldsymbol{x}$ given a set of fixed parameters $\boldsymbol{\phi}$, the likelihood refers to the value of $f$ as a function of $\boldsymbol{\phi}$ given a fixed\footnote{This important difference is why the likelihood is written here as $L(\boldsymbol{\phi})$ instead of the equally common $L(\boldsymbol{x}\vert\boldsymbol{\phi})$.} value of $\boldsymbol{x}$.
+In measurements in \gls{hep}, a \textit{statistical model} $f(\makemebold{x}\vert\makemebold{\phi})$ is a parametric family of \glspl{pdf} describing the probability of observing data $\makemebold{x}$ given a set\footnote{Sets of parameters (as opposed to single parameters) will henceforth be written using bold face.} of model parameters $\makemebold{\phi}$.
+The latter typically describe parameters of the physical theory or unknown detector effects. The \textit{likelihood function} $L(\makemebold{\phi})$ is then numerically equivalent to $f(\makemebold{x}\vert\makemebold{\phi})$ with $\makemebold{x}$ fixed.
+As opposed to the \glsfirst{pdf} $f(\makemebold{x})$ describing the value of $f$ as a function of $\makemebold{x}$ given a set of fixed parameters $\makemebold{\phi}$, the likelihood refers to the value of $f$ as a function of $\makemebold{\phi}$ given a fixed\footnote{This important difference is why the likelihood is written here as $L(\makemebold{\phi})$ instead of the equally common $L(\makemebold{x}\vert\makemebold{\phi})$.} value of $\makemebold{x}$.
 
-Searches for \gls{bsm} physics are often\footnote{While searches for \gls{bsm} physics using unbinned distributions also exist, only binned searches are considered in the following.} centred around the measurement of several disjoint binned distributions, called \textit{channels} $c$, each associated with different event selection criteria yielding observed event counts $\boldsymbol{n}$.
+Searches for \gls{bsm} physics are often\footnote{While searches for \gls{bsm} physics using unbinned distributions also exist, only binned searches are considered in the following.} centred around the measurement of several disjoint binned distributions, called \textit{channels} $c$, each associated with different event selection criteria yielding observed event counts $\makemebold{n}$.
 In such counting experiments where each event is independently drawn from the same underlying distribution, each bin is described by a Poisson term.
 The Poisson probability to observe $n$ events with an expectation of $\nu$ events, $\mathrm{Pois}(n\vert\nu)$, is given by
 \begin{equation}
@@ -27,25 +27,25 @@ The Poisson probability to observe $n$ events with an expectation of $\nu$ event
 \end{equation}
 The expectation $\nu_{cb}$ in each channel $c$ and bin $b$ is a sum over the set of physics processes considered, called \textit{samples} in the following, 
 \begin{equation}
-	\nu_{cb} = \sum_{s\in\mathrm{samples}}\nu_{csb}(\boldsymbol{\eta},\boldsymbol{\chi}),
+	\nu_{cb} = \sum_{s\in\mathrm{samples}}\nu_{csb}(\makemebold{\eta},\makemebold{\chi}),
 \end{equation}
-where $\nu_{csb}$ is the expected sample rate in a given bin of a given channel. The sample-wise rates are in general a function of the model parameters $\boldsymbol{\phi}$ that can either be \textit{free parameters} $\boldsymbol{\eta}$ or \textit{constrained parameters} $\boldsymbol{\chi}$. Possible modifications of the expected sample rates due to model parameters are considered to be either multiplicative or additive changes to the nominal estimate $\nu_{csb}^0$ of the form
+where $\nu_{csb}$ is the expected sample rate in a given bin of a given channel. The sample-wise rates are in general a function of the model parameters $\makemebold{\phi}$ that can either be \textit{free parameters} $\makemebold{\eta}$ or \textit{constrained parameters} $\makemebold{\chi}$. Possible modifications of the expected sample rates due to model parameters are considered to be either multiplicative or additive changes to the nominal estimate $\nu_{csb}^0$ of the form
 \begin{equation}
-	\nu_{csb}(\boldsymbol{\eta},\boldsymbol{\chi}) = \left(\prod_i f^i_{csb}(\boldsymbol{\eta},\boldsymbol{\chi}) \right)\left(\nu^0_{csb} + \sum_j {\Delta^j_{csb}(\boldsymbol{\eta},\boldsymbol{\chi})} \right).
+	\nu_{csb}(\makemebold{\eta},\makemebold{\chi}) = \left(\prod_i f^i_{csb}(\makemebold{\eta},\makemebold{\chi}) \right)\left(\nu^0_{csb} + \sum_j {\Delta^j_{csb}(\makemebold{\eta},\makemebold{\chi})} \right).
 \end{equation}
-Here, $\boldsymbol{f}(\boldsymbol{\phi})$ and $\boldsymbol{\Delta}(\boldsymbol{\phi})$ are the multiplicative and additive \textit{rate modifiers}, respectively, modifying the nominal estimates. Although in practice often only a function of a single model parameter, the rate modifiers can in general be a function of a set of model parameters.
+Here, $\makemebold{f}(\makemebold{\phi})$ and $\makemebold{\Delta}(\makemebold{\phi})$ are the multiplicative and additive \textit{rate modifiers}, respectively, modifying the nominal estimates. Although in practice often only a function of a single model parameter, the rate modifiers can in general be a function of a set of model parameters.
 
 Free parameters directly determined by the data observations are called \textit{normalisation factors}.
 The constrained parameters represent the systematic uncertainties considered in the model, which---in frequentist statistics---have fixed but unknown true values.
-The degree to which they cause a deviation of the expected event rates from the nominal event rates is limited through \textit{constraint terms} $c_{\boldsymbol{\chi}}(a_{\boldsymbol{\chi}}\vert\boldsymbol{\chi})$ that can be viewed as \textit{auxiliary measurements} with global observed data $\boldsymbol{a}$. 
+The degree to which they cause a deviation of the expected event rates from the nominal event rates is limited through \textit{constraint terms} $c_{\makemebold{\chi}}(a_{\makemebold{\chi}}\vert\makemebold{\chi})$ that can be viewed as \textit{auxiliary measurements} with global observed data $\makemebold{a}$. 
 
-For a given observation $\boldsymbol{x} = (\boldsymbol{n},\boldsymbol{a})$ of observed events $\boldsymbol{n}$ and auxiliary data $\boldsymbol{a}$, the likelihood then reads
+For a given observation $\makemebold{x} = (\makemebold{n},\makemebold{a})$ of observed events $\makemebold{n}$ and auxiliary data $\makemebold{a}$, the likelihood then reads
 \begin{equation}
-	L (\boldsymbol{\eta}, \boldsymbol{\chi}) = \prod_{c\in\mathrm{channels}} \prod_{b\in\mathrm{bins_c}} \mathrm{Pois}(n_{cb}\vert\nu_{cb}(\boldsymbol{\eta},\boldsymbol{\chi})) \prod_{\chi\in\boldsymbol{\chi}}c_\chi (a_\chi\vert\chi),
+	L (\makemebold{\eta}, \makemebold{\chi}) = \prod_{c\in\mathrm{channels}} \prod_{b\in\mathrm{bins_c}} \mathrm{Pois}(n_{cb}\vert\nu_{cb}(\makemebold{\eta},\makemebold{\chi})) \prod_{\chi\in\makemebold{\chi}}c_\chi (a_\chi\vert\chi),
 \end{equation}
 where, given a certain integrated luminosity, $n_{cb}$ and $\nu_{cb}$ refer to the corresponding observed and expected rate of events, respectively~\cite{ATL-PHYS-PUB-2019-029}.
-Most of the systematic uncertainties are so-called \textit{interpolation parameters} $\boldsymbol{\alpha}$ representing either normalisation uncertainties or correlated shape uncertainties\improvement{Explain this further}.
-Their constraint terms $c_{\boldsymbol{\alpha}}(a_{\boldsymbol{\alpha}}\vert\boldsymbol{\alpha})$ are parametrised by a Gaussian\footnote{Other parameterisations are also possible and discussed in \reference\cite{Cranmer:1456844}, but not used in the following.} with mean $a = 0$ and variance $\sigma = 1$, with $\alpha = 0$ representing the nominal value.
+Most of the systematic uncertainties are so-called \textit{interpolation parameters} $\makemebold{\alpha}$ representing either normalisation uncertainties or correlated shape uncertainties\improvement{Explain this further}.
+Their constraint terms $c_{\makemebold{\alpha}}(a_{\makemebold{\alpha}}\vert\makemebold{\alpha})$ are parametrised by a Gaussian\footnote{Other parameterisations are also possible and discussed in \reference\cite{Cranmer:1456844}, but not used in the following.} with mean $a = 0$ and variance $\sigma = 1$, with $\alpha = 0$ representing the nominal value.
 The \textit{up} and \textit{down} variations are then given by $\alpha=\pm 1$, thereby representing $\pm 1\sigma$ variations.
 The impact of any given value of the parameter on the event rates is subsequently evaluated through polynomial interpolation and exponential extrapolation\footnote{Different interpolation and extrapolation strategies are discussed in \reference\cite{Cranmer:1456844} but not mentioned herein as they will not be used in the following.}, a method that avoids discontinuous first and second derivatives at $\alpha = 0$ and ensures positive values for the predicted event rates~\cite{Cranmer:1456844}.
 
@@ -55,15 +55,15 @@ It is parametrised by a Gaussian with mean corresponding to the nominal integrat
 Uncertainties arising from the finite size of the \gls{mc} datasets used to derive estimated event rates are modelled by bin-wise scale factors $\gamma_b$.
 The constraint terms are Gaussian distributions with central value equal to unity and standard deviations calculated from the individual uncertainties of the samples defined in the respective channel.
 
-As the event rate in a given bin can depend on multiple parameters, and likewise, a single parameter can affect the expected event rate in multiple bins across various channels, correlations between the model parameters $\boldsymbol{\phi}$ can occur.
+As the event rate in a given bin can depend on multiple parameters, and likewise, a single parameter can affect the expected event rate in multiple bins across various channels, correlations between the model parameters $\makemebold{\phi}$ can occur.
 
 The above prescription for building binned likelihoods is called the \textsc{HistFactory} template~\cite{Cranmer:1456844}. In this work, two independent implementations of the \textsc{HistFactory} template are used.
 The first implementation, predominantly used in~\cref{part:simplified_model_analysis}, relies on \textsc{RooFit}~\cite{RooFit:2003ir} (using the \texttt{Minuit}~\cite{James:310399} package) and \textsc{RooStats}~\cite{RooStats:2010pm} for model parameter estimation and hypothesis tests, and is fully integrated into the \textsc{Root} data analysis framework~\cite{ROOT:1997pa,ROOT-2}. The user interface and the steering of statistical fits, as well as the bookkeeping of their results, is provided by \textsc{HistFitter}~\cite{HistFitter:2014wma}.
 The second implementation, used in~\cref{part:reinterpretation}, makes use of \texttt{pyhf}~\cite{pyhf_joss,pyhf}, a recent pure-\texttt{python} implementation of \textsc{HistFactory} that is independent of the \textsc{Root} environment.
 The \texttt{pyhf} implementation of \textsc{HistFactory} relies on \textsc{Numpy}~\cite{numpy} and uses computational graph libraries like \textsc{PyTorch}~\cite{pytorch}, \textsc{TensorFlow}~\cite{tensorflow2015-whitepaper} and \textsc{JAX}~\cite{jax2018github} to significantly speed up the parameter estimation process by leveraging the computational advantages of tensor algebra and automatic differentiation.
  
-Apart from separating the model parameter set into free and constrained parameters $\boldsymbol{\phi} = (\boldsymbol{\eta},\boldsymbol{\chi})$, a separate partition $\boldsymbol{\phi} = (\boldsymbol{\psi},\boldsymbol{\theta})$ is frequently used in the context of hypothesis testing.
-Here, $\boldsymbol{\psi}$ are so-called \textit{parameters of interests} of the model for which hypothesis tests are performed, and $\boldsymbol{\theta}$ are \textit{nuisance parameters} that are not of immediate interest but need to be accounted for to correctly model the data.
+Apart from separating the model parameter set into free and constrained parameters $\makemebold{\phi} = (\makemebold{\eta},\makemebold{\chi})$, a separate partition $\makemebold{\phi} = (\makemebold{\psi},\makemebold{\theta})$ is frequently used in the context of hypothesis testing.
+Here, $\makemebold{\psi}$ are so-called \textit{parameters of interests} of the model for which hypothesis tests are performed, and $\makemebold{\theta}$ are \textit{nuisance parameters} that are not of immediate interest but need to be accounted for to correctly model the data.
 In the search presented in this work, the only \gls{poi} is the \textit{signal strength} parameter $\mu$, representing the ratio of the signal process cross section to its reference cross section as expected from theory.
 The expected event rate $\nu_i$ in each bin $i$ can then be parametrised through
 \begin{equation}
@@ -73,11 +73,11 @@ where $S_b$ and $B_b$ are the bin-wise expected signal and background rates, res
   
 \section{Parameter estimation}
 
-Given a likelihood $L(\boldsymbol{\phi})$ for a fixed set of observations $\boldsymbol{x}$, a measurement can be understood as a parameter estimation. In general, an estimator $\hat{\phi}$ is a function of the observed data used to estimate the true value of the model parameter $\phi$.
+Given a likelihood $L(\makemebold{\phi})$ for a fixed set of observations $\makemebold{x}$, a measurement can be understood as a parameter estimation. In general, an estimator $\hat{\phi}$ is a function of the observed data used to estimate the true value of the model parameter $\phi$.
 
-In particle physics, the most commonly used estimator is the \gls{mle}. The \glspl{mle} for the model parameters $\boldsymbol{\hat{\phi}}$ are defined to be the parameter values that maximise $L(\boldsymbol{\phi})$, or equivalently, maximise $\ln{L(\boldsymbol{\phi})}$ and minimise $-\ln{L(\boldsymbol{\phi})}$. The logarithm of the likelihood is used for computational reasons, as it not only reduces the computational complexity by avoiding exponentials and products, but also avoids potential problems arising from finite floating point precision. As the logarithm is a monotonically increasing function, $\ln{L(\boldsymbol{\phi})}$ has maxima at the same parameter values as ${L(\boldsymbol{\phi})}$. The negative logarithm of the likelihood is chosen in order to stick to the convention of optimisers in statistical packages typically minimising the result of a \textit{loss function}.
+In particle physics, the most commonly used estimator is the \gls{mle}. The \glspl{mle} for the model parameters $\makemebold{\hat{\phi}}$ are defined to be the parameter values that maximise $L(\makemebold{\phi})$, or equivalently, maximise $\ln{L(\makemebold{\phi})}$ and minimise $-\ln{L(\makemebold{\phi})}$. The logarithm of the likelihood is used for computational reasons, as it not only reduces the computational complexity by avoiding exponentials and products, but also avoids potential problems arising from finite floating point precision. As the logarithm is a monotonically increasing function, $\ln{L(\makemebold{\phi})}$ has maxima at the same parameter values as ${L(\makemebold{\phi})}$. The negative logarithm of the likelihood is chosen in order to stick to the convention of optimisers in statistical packages typically minimising the result of a \textit{loss function}.
 
-The \glspl{mle} $\boldsymbol{\hat{\phi}}$ can thus be found by solving the system of equations
+The \glspl{mle} $\makemebold{\hat{\phi}}$ can thus be found by solving the system of equations
 \begin{equation}
  \frac{\partial \ln L}{\partial\phi_i} = 0,
 \end{equation}
@@ -96,21 +96,21 @@ where $\Phi^{-1}$ is the quantile of the standard Gaussian. In \gls{hep}, claimi
 
 The $p$-values are calculated using a \textit{test statistic} that parameterises the compatibility between the hypothesis and data in a single value. At the LHC experiments, the test statistics used for hypothesis testing are based on the \textit{profile likelihood ratio} $\lambda(\mu)$, defined to be
 \begin{equation}
-	\lambda(\mu) = \frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\boldsymbol{\theta}})},
+	\lambda(\mu) = \frac{L(\mu,\makemebold{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\makemebold{\theta}})},
 	\label{eq:profile_likelihood}
 \end{equation}
-where the \glspl{cmle} $\boldsymbol{\hat{\hat{\theta}}}$ are the values of $\boldsymbol{\theta}$ that maximise the likelihood with $\mu$ fixed. The distribution of the profile likelihood ratio depends explicitly on $\mu$, and implicitly on $\boldsymbol{x} = (\boldsymbol{n},\boldsymbol{a})$, but is asymptotically  (\ie in the limit of a large number of events) independent of the nuisance parameters $\boldsymbol{\theta}$\footnote{Eliminated by choosing specific values of the nuisance parameters for a given $\boldsymbol{x}$ and $\mu$, often referred to as \textit{profiling}.} in the case where the tested value of $\mu$ is the true value $\mu'$~\cite{Cranmer:2015nia}. The asymptotic independence from $\boldsymbol{\theta}$ follows from Wilks' theorem~\cite{wilks1938} and is one of the main motivations for using the profile likelihood ratio, as it avoids the problem of having to compute $p$-values for all possible values of $\boldsymbol{\theta}$. A generalisation to tested values of $\mu$ not corresponding to the true value $\mu'$ can be derived using Wald's theorem~\cite{wald10.2307/1990256}, allowing to obtain the distribution $f(\lambda(\mu)\vert \mu',\boldsymbol{\theta})$. The profile likelihood ratio takes values between 0 and 1, with $\lambda(\mu) = 1$ corresponding to cases where the tested value of $\mu$ is in good agreement with the observed data. In \cref{eq:profile_likelihood}, the nuisance parameters result in a broadening of the profile likelihood distribution, reflecting the loss of information about $\mu$ due to systematic uncertainties~\cite{Cowan:2010js}.
+where the \glspl{cmle} $\makemebold{\hat{\hat{\theta}}}$ are the values of $\makemebold{\theta}$ that maximise the likelihood with $\mu$ fixed. The distribution of the profile likelihood ratio depends explicitly on $\mu$, and implicitly on $\makemebold{x} = (\makemebold{n},\makemebold{a})$, but is asymptotically  (\ie in the limit of a large number of events) independent of the nuisance parameters $\makemebold{\theta}$\footnote{Eliminated by choosing specific values of the nuisance parameters for a given $\makemebold{x}$ and $\mu$, often referred to as \textit{profiling}.} in the case where the tested value of $\mu$ is the true value $\mu'$~\cite{Cranmer:2015nia}. The asymptotic independence from $\makemebold{\theta}$ follows from Wilks' theorem~\cite{wilks1938} and is one of the main motivations for using the profile likelihood ratio, as it avoids the problem of having to compute $p$-values for all possible values of $\makemebold{\theta}$. A generalisation to tested values of $\mu$ not corresponding to the true value $\mu'$ can be derived using Wald's theorem~\cite{wald10.2307/1990256}, allowing to obtain the distribution $f(\lambda(\mu)\vert \mu',\makemebold{\theta})$. The profile likelihood ratio takes values between 0 and 1, with $\lambda(\mu) = 1$ corresponding to cases where the tested value of $\mu$ is in good agreement with the observed data. In \cref{eq:profile_likelihood}, the nuisance parameters result in a broadening of the profile likelihood distribution, reflecting the loss of information about $\mu$ due to systematic uncertainties~\cite{Cowan:2010js}.
 
 As the rate of signal processes considered in the following is in general non-negative, an estimator for $\mu$ should satisfy $\hat{\mu}\geq 0$. In order to avoid the formal complications of having a boundary at $\mu = 0$, it is convenient to consider an effective estimator $\hat{\mu}$ that is allowed to become negative, provided that the respective Poisson terms for $\mu S_b + B_b$ remain positive. Imposing a constraint equivalent to requiring $\mu \geq 0$ on the test statistic itself, leads to the alternative definition of the profile likelihood as
 \begin{equation}
 	\tilde{\lambda}(\mu)= 
 \begin{cases}
-     \frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\boldsymbol{\theta}})}, & \hat{\mu} \geq 0,\\
-     \frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(0,\boldsymbol{\hat{\hat{\theta}}}(0))},              & \hat{\mu} < 0,
+     \frac{L(\mu,\makemebold{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\makemebold{\theta}})}, & \hat{\mu} \geq 0,\\
+     \frac{L(\mu,\makemebold{\hat{\hat{\theta}}}(\mu))}{L(0,\makemebold{\hat{\hat{\theta}}}(0))},              & \hat{\mu} < 0,
 \end{cases}
 \label{eq:lambda_tilde}
 \end{equation}
-where $\boldsymbol{\hat{\hat{\theta}}}(0)$ and $\boldsymbol{\hat{\hat{\theta}}}(\mu)$ are the \glspl{cmle} of $\boldsymbol{\theta}$ given a signal strength parameter of 0 and $\mu$, respectively. 
+where $\makemebold{\hat{\hat{\theta}}}(0)$ and $\makemebold{\hat{\hat{\theta}}}(\mu)$ are the \glspl{cmle} of $\makemebold{\theta}$ given a signal strength parameter of 0 and $\mu$, respectively. 
 
 \subsubsection{Discovery}
 For the important special case where $\mu = 0$ is tested in a model with $\mu \geq 0$, \ie discovery of a non-negative signal (rejection of the background-only hypothesis), the profile likelihood $\tilde{\lambda}(\mu)$ is used to build the test statistic
@@ -150,8 +150,8 @@ If the background-only ($\mu = 0$) hypothesis cannot be rejected, the hypotheses
     0,              & \hat{\mu} > \mu
 \end{cases} =
 \begin{cases}
-    -2 \ln{\frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\boldsymbol{\theta}})}}, & \hat{\mu} < 0,\\
-    -2 \ln{\frac{L(\mu,\boldsymbol{\hat{\hat{\theta}}}(\mu))}{L(0,\boldsymbol{\hat{\hat{\theta}}}(0))}},              & 0 \leq \hat{\mu} \leq \mu, \\
+    -2 \ln{\frac{L(\mu,\makemebold{\hat{\hat{\theta}}}(\mu))}{L(\hat{\mu},\hat{\makemebold{\theta}})}}, & \hat{\mu} < 0,\\
+    -2 \ln{\frac{L(\mu,\makemebold{\hat{\hat{\theta}}}(\mu))}{L(0,\makemebold{\hat{\hat{\theta}}}(0))}},              & 0 \leq \hat{\mu} \leq \mu, \\
     0  & \hat{\mu} > \mu.
 \end{cases}
 \label{eq:upper_limit_test_statistic}
@@ -183,7 +183,7 @@ which yields for the significance $Z_\mu$ the expression
 \end{cases}
 \end{equation}
 
-\section[CL$_s$ approach]{CL$\boldsymbol{_s}$ approach}\label{sec:cls_approach}
+\section[CL$_s$ approach]{CL$\makemebold{_s}$ approach}\label{sec:cls_approach}
 
 \begin{figure}
 	\centering

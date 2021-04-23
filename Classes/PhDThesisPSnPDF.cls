@@ -251,6 +251,7 @@ supported!}
 \RequirePackage{ifthen}   % Conditional statements
 \RequirePackage{ifpdf}    % Check for pdfLaTeX
 \RequirePackage{ifxetex}  % XeLaTeX
+\RequirePackage{ifluatex} % LuaLaTeX
 
 % *********************** Table of Contents & Appendices ***********************
 % add Bibliography, List of figures and tables to contents
@@ -517,8 +518,8 @@ supported!}
 % Font Selection
 \ifPHD@times
   \ifxetex
-  \else
-    \RequirePackage{mathptmx}  % times roman, including math (where possible)
+	\else
+  	    \RequirePackage{mathptmx}  % times roman, including math (where possible)
   \fi
   \setFonttrue
   \message{PhDThesisPSnPDF: Using Times Roman font}
@@ -561,16 +562,37 @@ supported!}
 %	\usepackage[utf8]{inputenc}
 
 
-  \setmainfont{XITS}
-  \setmathfont{XITS Math}  
+%  \setmainfont{XITS}
+%  \setmathfont{XITS Math}  
 
 %
 %\usepackage{fontspec}
 %\usepackage{unicode-math}
+%
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont[bold-style=ISO]{Libertinus Math}
 
-%\setmainfont{Libertinus Serif}
-%\setsansfont{Libertinus Sans}
-%\setmathfont{Libertinus Math}
+\else \ifluatex
+	\usepackage{amsmath}
+%	\usepackage{fontspec}
+%%	\usepackage{unicode-math}
+%	\usepackage{microtype}
+%	
+%  \usepackage[libertine]{newtxmath}
+%%	\setmainfont{Libertinus Serif}
+%%	\setsansfont{Libertinus Sans}
+%%	\setmathfont{newtxmath}
+%%	\setmathrm{Libertinus Math}
+%	
+%	
+
+\usepackage{amssymb}
+\usepackage[math-style=TeX]{unicode-math}
+	\usepackage{amsthm}
+	\usepackage{libertinus}
+	\usepackage[libertine]{newtxmath}
+	\usepackage{mathspec}
 
 
 \else
@@ -592,6 +614,8 @@ supported!}
   \RequirePackage{amsfonts}
   \RequirePackage{amsmath}
   \RequirePackage{amssymb}
+  
+\fi
 \fi
 
 % Don't break enumeration (etc.) across pages in an ugly manner

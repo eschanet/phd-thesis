@@ -24,38 +24,29 @@
 
 % Add `customfont' in the document class option to use this section
 
-%\usepackage{sectsty} % for sf sections
+\usepackage{sectsty} % for sf sections
+\allsectionsfont{\sffamily} % all sections in sans-serif font
+	
 %
 \ifsetCustomFont
-%\usepackage[footnotefigures]{MinionPro}
-%%\usepackage[footnotefigures]{MyriadPro}
-%\input{glyphtounicode}
-%\pdfgentounicode=1
-%\renewcommand{\scdefault}{ssc}
-%\allsectionsfont{\sffamily}
 
-%\usepackage{libertine}
-
-
-%\usepackage[scaled=0.85]{luximono} % Monospace font
-%\usepackage[letterspace=160,babel=true,tracking=true,kerning=true]{microtype}
-
-  % Set your custom font here and use `customfont' in options. Leave empty to
-  % load computer modern font (default LaTeX font).
-  %\RequirePackage{helvet}
-
-  % For use with XeLaTeX
-  %  \setmainfont[
-  %    Path              = ./libertine/opentype/,
-  %    Extension         = .otf,
-  %    UprightFont = LinLibertine_R,
-  %    BoldFont = LinLibertine_RZ, % Linux Libertine O Regular Semibold
-  %    ItalicFont = LinLibertine_RI,
-  %    BoldItalicFont = LinLibertine_RZI, % Linux Libertine O Regular Semibold Italic
-  %  ]
-  %  {libertine}
-  %  % load font from system font
-  %  \newfontfamily\libertinesystemfont{Linux Libertine O}
+  \usepackage{libertinus}
+  \usepackage[libertine]{newtxmath}
+  
+  \AtBeginDocument{%
+  \DeclareMathSymbol{0}{\mathalpha}{operators}{`0}%
+  \DeclareMathSymbol{1}{\mathalpha}{operators}{`1}%
+  \DeclareMathSymbol{2}{\mathalpha}{operators}{`2}%
+  \DeclareMathSymbol{3}{\mathalpha}{operators}{`3}%
+  \DeclareMathSymbol{4}{\mathalpha}{operators}{`4}%
+  \DeclareMathSymbol{5}{\mathalpha}{operators}{`5}%
+  \DeclareMathSymbol{6}{\mathalpha}{operators}{`6}%
+  \DeclareMathSymbol{7}{\mathalpha}{operators}{`7}%
+  \DeclareMathSymbol{8}{\mathalpha}{operators}{`8}%
+  \DeclareMathSymbol{9}{\mathalpha}{operators}{`9}%
+  }
+  
+  \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n} % get me my nice mathcals back
 \fi
 
 % *****************************************************************************
@@ -107,7 +98,7 @@
 
 
 % *********************************** SI Units *********************************
-\usepackage[binary-units=true]{siunitx} % use this package module for SI units
+\usepackage[binary-units=true,mode=text]{siunitx} % use this package module for SI units
 
 
 % ******************************* Line Spacing *********************************
@@ -128,18 +119,18 @@
 \fi
 % ******************************** Hyphenations**********************************
 
-\ifpdf
+\ifxetex
+	\tolerance=1
+	\emergencystretch=\maxdimen
+	\hyphenpenalty=10000
+	\hbadness=10000
+\else
 	\hyphenchar\font=\string"7F
 	%\hyphenation{Trans-zen-denz trans-zen-dent}
 
 	\begin{hyphenrules}{ngerman}
 		\hyphenation{Arbeits-at-mo-sphä-re}
 	\end{hyphenrules}
-\else
-	\tolerance=1
-	\emergencystretch=\maxdimen
-	\hyphenpenalty=10000
-	\hbadness=10000
 \fi
 % ************************ Formatting / Footnote *******************************
 
@@ -364,6 +355,14 @@
 
 % ******************************** New custom commands **********************************
 
+\newcommand{\makemebold}[1]{%
+    \ifpdf
+    	\boldsymbol{#1}
+    \else
+    	\symbf{#1}
+    \fi
+}%
+
 \newcommand{\comment}[1]
 {\par {\bfseries \color{blue} #1 \par}} %comment showed
 \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
@@ -379,9 +378,9 @@
 \newcommand{\Lagr}{\mathcal{L}}
 \newcommand{\etmiss}{E_{\textrm{T}}^{\textrm{miss}}}
 \newcommand{\met}{E_{\textrm{T}}^{\textrm{miss}}}
-\newcommand{\vetmiss}{\boldsymbol{E}_{\textrm{T}}^{\textrm{miss}}}
-\newcommand{\ptmiss}{p_{\textrm{T}}^{\textrm{miss}}}
-\newcommand{\pt}{p_{\textrm{T}}}
+\newcommand{\vetmiss}{\makemebold{E}_{\textrm{T}}^{\textrm{miss}}}
+\newcommand{\ptmiss}{p_{\mathrm{T}}^{\textrm{miss}}}
+\newcommand{\pt}{p_{\mathrm{T}}}
 \newcommand{\mbb}{m_{b\bar{b}}}
 \newcommand{\ptl}{p^\ell_{\textrm{T}}}
 \newcommand{\mt}{m_{\textrm{T}}}
@@ -389,7 +388,7 @@
 \newcommand{\mlb}{m_{\ell b_{1}}}
 \newcommand{\mjj}{m_{\textrm{jj}}}
 \newcommand{\GeV}{\SI{}{\GeV}}
-\newcommand{\vptlep}{\boldsymbol{p}_{\textrm{T}}^\ell}
+\newcommand{\vptlep}{\makemebold{p}_{\textrm{T}}^\ell}
 \newcommand{\lsp}{\tilde{\chi}_1^0}
 \newcommand{\charg}{\tilde{\chi}_1^\pm}
 \newcommand{\neutr}{\tilde{\chi}_2^0}

@@ -57,7 +57,7 @@ Hence the motivation to introduce a method for approximating ATLAS searches for 
 \section{Building simplified likelihoods}\label{sec:building_simplified_likelihoods}
 
 In order to retain the full statistical combination of multiple signal region bins implemented in many SUSY searches, while still being able to achieve a sufficiently fast approximation, the statistical treatment of the background model including its uncertainties needs to be simplified.
-In the procedure presented in the following, this is achieved by first performing a background-only fit to data using the full likelihood in order to determine the best-fit values of all model parameters $\boldsymbol{\phi}$.
+In the procedure presented in the following, this is achieved by first performing a background-only fit to data using the full likelihood in order to determine the best-fit values of all model parameters $\makemebold{\phi}$.
 The post-fit total background estimate as well as the total uncertainty on the estimate in every bin are subsequently computed from the best-fit values, and used to construct a simplified likelihood.
 
 As the full likelihood in \texttt{JSON} format defines the full statistical model used for the statistical inference, the above background-only fit can be performed using \texttt{pyhf} and the preserved likelihood of the analysis.
@@ -203,7 +203,7 @@ A comparison of the exclusion contours obtained with the full and simplified lik
 The observed and expected CL$_s$ values obtained using both likelihoods are shown in~\cref{fig:scatter_cls}. As expected from the exclusion contour, both the simplified and the full likelihood agree reasonably well across the majority of the CL$_s$ range. For signal models well within exclusion ($\mathrm{CL}_s \ll 0.05$) based on the full likelihood, the simplified likelihood of the \onelepton search tends to result in slightly lower CL$_s$ values than the full likelihood, yielding a slightly too optimistic sensitivity estimate. In the range relevant to the exclusion contour at 95\% CL (CL$_s\approx0.05$), the results from the simplified likelihood agree however well with those from the full likelihood.
 
 In addition to the \onelepton search, the simplified likelihood approach has been tested on the ATLAS \gls{susy} searches listed in \cref{tab:simplified_performance}. An overview of the results can be seen in~\cref{fig:results_analyses}, comparing the exclusion contours obtained with the simplified likelihood against the full analysis results. In some analyses, \eg, the ATLAS sbottom  and ATLAS $3\ell$ searches, the simplified likelihoods show excellent agreements. In other analyses, like \eg, the ATLAS direct stau search, the agreement is less good but overall still acceptable.
-In summary, this demonstrates that the method can, in many cases, offer a fast and reliable approximation of ATLAS searches for \gls{susy} using the \text{HistFactory} template.
+In summary, this demonstrates that the method can, in many cases, offer a fast and reliable approximation of ATLAS searches for \gls{susy} using the \lib{HistFactory} template.
 
 \begin{figure}
 	\centering
