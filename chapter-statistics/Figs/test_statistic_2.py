@@ -4,11 +4,24 @@ from scipy import stats
 
 from matplotlib import rc
 
-rc("font", **{"size":13,"family": "serif", "serif": ["Computer Modern"]})
+# rc("font", **{"size":13,"family": "serif", "serif": ["Computer Modern"]})
 # plt.rcParams['font.sans-serif'] = ['Arial', 'sans-serif']
+rc_fonts = {
+    "font.family": "serif",
+    "font.size": 13,
+    "text.usetex": True,
+    'text.latex.preview': True,
+    'text.latex.preamble': [
+        r"""
+        \usepackage{libertine}
+        \usepackage[libertine]{newtxmath}
+        """],
+}
 
-plt.rcParams.update({'font.size': 13})
-rc("text", usetex=True)
+plt.rcParams.update(rc_fonts)
+
+# plt.rcParams.update({'font.size': 13})
+# rc("text", usetex=True)
 
 lim = -44
 x = np.linspace(-80, 0, 5000)

@@ -22,14 +22,21 @@ Final states with exactly one lepton have lower branching fractions but allow to
 Targeting the decay of the Higgs boson into a pair of \textit{b} quarks allows to search to benefit from the high branching ratio of 58.3\% of this decay mode, and permits a full reconstruction of Higgs candidates, a procedure that will be used in the following to achieve a high signal-to-background ratio.
 \Cref{fig:Wh_model_full} shows the full signal model targeted in this search, including the considered decays of the $W$ and Higgs bosons. 
 
-Previous searches for electroweakinos in this final state have been performed by the \mbox{ATLAS} \cite{SUSY-2013-23,SUSY-2017-01} and CMS~\cite{CMS-SUS-16-043} Collaborations, and have excluded $\charg/\neutr$ masses up to $\SI{540}{\GeV}$ and $\SI{490}{\GeV}$, respectively, for massless $\lsp$.
+Previous searches for electroweakinos in this final state have been performed by the \mbox{ATLAS}~\cite{SUSY-2013-23,SUSY-2017-01} and CMS~\cite{CMS-SUS-16-043} Collaborations, and have excluded $\charg/\neutr$ masses up to $\SI{540}{\GeV}$ and $\SI{490}{\GeV}$, respectively, for massless $\lsp$.
 The two previous ATLAS searches used $\SI{20.3}{\per\femto\barn}$ of $\sqrt{s}=\SI{8}{\TeV}$ and $\SI{36.1}{\per\femto\barn}$ of $\sqrt{s}=\SI{13}{\TeV}$ $pp$ collision data, respectively.
 As opposed to this, the search presented in the following uses the full dataset available from the Run~2 data taking period, amounting to an unprecedented $\SI{139}{\per\femto\barn}$ of $pp$ collision data at $\sqrt{s}=\SI{13}{\TeV}$~\cite{SUSY-2019-08}.
 As this search analyses events in final states with exactly one lepton, it will often be referred to as the \textit{1}$\ell$ \textit{search} in the following.
 
+%\begin{figure}
+%	\centering\includegraphics[width=.4\textwidth]{c1n2_wh_1lbb}
+%	\caption{Diagram for the simplified model used in this work including the decays $W^\pm\rightarrow\ell^\pm\nu_\ell$ and $h\rightarrow b\bar{b}$.}\label{fig:Wh_model_full}
+%\end{figure}
+
 \begin{figure}
-	\centering\includegraphics[width=.4\textwidth]{c1n2_wh_1lbb}
-	\caption{Diagram for the simplified model used in this work including the decays $W^\pm\rightarrow\ell^\pm\nu_\ell$ and $h\rightarrow b\bar{b}$.}\label{fig:Wh_model_full}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
+{\caption{Diagram of the simplified model for $\charg\neutr$ pair production with subsequent decays into $\charg\rightarrow W^\pm\lsp \to \ell^\pm\nu_\ell\lsp$ and $\neutr\rightarrow h\lsp \to b\bar{b}\lsp$.}\label{fig:Wh_model_full}}
+\hspace{3em}
+{\includegraphics[width=0.35\textwidth]{c1n2_wh_1lbb}}
 \end{figure}
 
 \section{Standard Model backgrounds}
@@ -353,7 +360,7 @@ As the reconstruction procedure runs independently for each object type, it may 
 
 \section{Analysis variables}\label{sec:variables}
 
-In order to separate supersymmetric signal events from \gls{sm} processes, it is necessary to apply requirements on different discriminating observables, creating so-called \textit{signal regions} enriched in signal events. In addition, these variables are also used to construct regions enriched in \gls{sm} background events, in the following used to derive a reliable background estimate for the signal regions. The distributions of all discriminating variables obtained from \gls{mc} simulation are illustrated in \cref{fig:norm_obs}, comparing signal and \gls{sm} background distributions. Both are normalised to unity in order to highlight their differences in shape. Most observables show a dependence on the absolute mass scale of the supersymmetric particles, as well as the mass difference between $\charg/\neutr$ and $\lsp$, resulting in different shapes for different signal points. 
+In order to separate supersymmetric signal events from \gls{sm} processes, it is necessary to apply requirements on different discriminating observables, creating so-called \textit{signal regions} enriched in signal events. In addition, these variables are also used to construct regions enriched in \gls{sm} background events, in the following used to derive a reliable background estimate for the signal regions. The distributions of all discriminating variables obtained from \gls{mc} simulation are illustrated in \cref{fig:norm_obs}, comparing signal and \gls{sm} background distributions. Both are normalised to unity in order to highlight their differences in shape. Most observables show a dependence on the absolute mass scale of the supersymmetric particles, as well as the mass difference between $\charg$/$\neutr$ and $\lsp$, resulting in different shapes for different signal points. 
 
 \subsubsection{Number of jets}
 
@@ -473,11 +480,11 @@ Thus, no trigger efficiency correction is considered in the following. A statist
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.49\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{trigger/met_ele}
 		\caption{Electron channel\label{fig:trigger_met_ele}}
 	\end{subfigure}\hfill
-	\begin{subfigure}[b]{0.49\linewidth}
+	\begin{subfigure}[b]{0.47\linewidth}
 		\centering\includegraphics[width=\textwidth]{trigger/met_mu}
 		\caption{Muon channel\label{fig:trigger_met_mu}}
 	\end{subfigure}
