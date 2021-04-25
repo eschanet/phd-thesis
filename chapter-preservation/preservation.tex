@@ -212,7 +212,7 @@ The transverse momentum of truth jets is smeared using a Gaussian with standard 
 Only truth jets with $\SI{10}{\GeV} < \pt < \SI{1.5}{\TeV}$ are smeared. For truth jets with $\pt > \SI{20}{\GeV}$, the flavour tagging efficiency is considered using efficiencies parameterised in $\eta$, $\pt$ and the \textsc{MV2c10} efficiency working point (introduced in~\cref{sec:object_definitions}) used, measured in fully reconstructed simulated $\ttbar$ events~\cite{FTAG-2018-01}.
 
 Finally, the smeared missing transverse energy is computed using the transverse momenta of all smeared truth objects in the event, including an approximation for the track soft term. The latter is approximated using resolution measurements from $Z\rightarrow \ell\ell$ events~\cite{ATLAS-CONF-2018-023}, allowing to infer a distribution of the mean soft term projected in the direction longitudinal to the total transverse momentum of all hard objects in an event, $\makemebold{p}_\mathrm{T}^\mathrm{hard}$. The measured resolution parallel and perpendicular to $\makemebold{p}_\mathrm{T}^\mathrm{hard}$ is then used to smear the nominal soft track value.
- 
+
   \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.47\linewidth}
@@ -243,20 +243,6 @@ Finally, the smeared missing transverse energy is computed using the transverse 
 	\label{fig:smearing_preselection}
 \end{figure}
  
-\section{Validation of the truth-level analysis}
-
-\subsection{Validation in loose preselection}
-
- The performance of the truth smearing is illustrated in~\cref{fig:smearing_preselection} in a loose preselection for an exemplary benchmark signal point.
- The loose preselection applied requires a final state with exactly one lepton, $\met>\SI{50}{\GeV}$, $\mt > \SI{50}{\GeV}$, and 2--3 jets, two of which need to be \textit{b}-tagged.
- The reconstruction-level distributions are compared with the truth-level distributions before and after truth smearing. It can be observed that the truth smearing noticeably improves the agreement between the truth- and reconstruction-level distributions.
- While the lepton and jet reconstruction and identification efficiencies are---due to their dependence on $\eta$, $\pt$ and individual working points---crucial for the overall agreement in shape, especially at low $\pt$, the inclusion of flavour-tagging efficiencies significantly improves the overall agreement in normalisation.
- 
-Although some minor differences remain, a good agreement is observed overall across the relevant kinematic distributions at loose preselection level.
-Most of the differences remaining between smeared truth-level and reconstruction-level distributions in individual bins are well within the \gls{mc} statistical uncertainties arising from the relatively limited \gls{mc} statistics available.
- 
- \subsection{Validation in signal regions}
-
  \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.49\linewidth}
@@ -279,7 +265,22 @@ Most of the differences remaining between smeared truth-level and reconstruction
 	\end{subfigure}
 	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing. From top to bottom, the SR-LM, SR-MM and SR-HM signal regions are shown, with cumulative (integrated) $\mct$ bins. Every single point in the scatter plots represents a single signal model considered in the \onelepton search. Uncertainty bars include \gls{mc} statistical uncertainties.}
 	\label{fig:smearing_signal_regions}
-\end{figure}
+\end{figure} 
+ 
+\section{Validation of the truth-level analysis}
+
+\subsection{Validation in loose preselection}
+
+ The performance of the truth smearing is illustrated in~\cref{fig:smearing_preselection} in a loose preselection for an exemplary benchmark signal point.
+ The loose preselection applied requires a final state with exactly one lepton, $\met>\SI{50}{\GeV}$, $\mt > \SI{50}{\GeV}$, and 2--3 jets, two of which need to be \textit{b}-tagged.
+ The reconstruction-level distributions are compared with the truth-level distributions before and after truth smearing. It can be observed that the truth smearing noticeably improves the agreement between the truth- and reconstruction-level distributions.
+ While the lepton and jet reconstruction and identification efficiencies are---due to their dependence on $\eta$, $\pt$ and individual working points---crucial for the overall agreement in shape, especially at low $\pt$, the inclusion of flavour-tagging efficiencies significantly improves the overall agreement in normalisation.
+ 
+Although some minor differences remain, a good agreement is observed overall across the relevant kinematic distributions at loose preselection level.
+Most of the differences remaining between smeared truth-level and reconstruction-level distributions in individual bins are well within the \gls{mc} statistical uncertainties arising from the relatively limited \gls{mc} statistics available.
+
+ 
+ \subsection{Validation in signal regions}
  
  As the expected signal rates in the signal regions are ultimately what is entering the statistical inference, it is important that the good agreement observed at preselection is still present in the kinematically tighter selections of the signal regions.
  Additionally, it is worth investigating the agreement across all signal models considered in the original analysis, as opposed to only validating specific benchmark points.
@@ -290,13 +291,13 @@ Most of the differences remaining between smeared truth-level and reconstruction
 The truth smearing drastically improves the agreement in event rate estimates at truth- and reconstruction-level across all \gls{sr} bins.
 While, compared to reconstruction-level, the event rates are generally overestimated at truth-level before smearing, both tend to agree well within statistical uncertainties after smearing. 
  
-\subsection{Validation using likelihood}
-
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.35\textwidth}}]{figure}[\FBwidth]
 {\caption{Expected and observed exclusion contours obtained with the full likelihood using reconstruction-level inputs (orange) as well as truth-level inputs before (purple) and after (green) smearing. Uncertainties include all statistical and systematic uncertainties on the background and signal for the reconstruction-level contours, but only statistical and systematic uncertainties on the background for truth-level signal inputs.}\label{fig:simplified_likelihood_after_smearing}}
 {\includegraphics[width=0.60\textwidth]{exclusion_1Lbb_truthInput_compareReco_BkgOnly_noLabel}}
 \end{figure}
+ 
+\subsection{Validation using likelihood}
 
 Using the nominal expected event rates at (smeared) truth-level for every signal model in the original signal grid considered in the \onelepton search, expected and observed CL$_s$ values can be computed and exclusion contours can be derived.
 \Cref{fig:simplified_likelihood_after_smearing} compares the expected and observed exclusion contours obtained using the full likelihood and reconstruction-level signal inputs with those obtained using the full likelihood and truth-level signal inputs before and after truth smearing.

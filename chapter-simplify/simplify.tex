@@ -192,15 +192,15 @@ In addition to the \onelepton search, the simplified likelihood approach is vali
 
 \section{Physics performance}\label{sec:physics_performance}
 
+A comparison of the exclusion contours obtained with the full and simplified likelihoods in the context of the \onelepton search is shown in~\cref{fig:results_simplify_1Lbb}. The results obtained using the simplified likelihood are shown in blue, while the results obtained using the full likelihood are given in orange. Both the observed (without the usual theoretical up and down variations on the signal cross section) and expected exclusion limits including the uncertainty band are shown. In the case of the full likelihood, the complete set of \gls{mc} statistical and systematic uncertainties introduced in \cref{ch:uncertainties} are taken into account. As discussed in \cref{sec:building_simplified_likelihoods}, the uncertainty band on the simplified likelihood contour results from the single nuisance parameter built through reduction of the original nuisance parameters.
+
+The observed and expected CL$_s$ values obtained using both likelihoods are shown in~\cref{fig:scatter_cls}. As expected from the exclusion contour, both the simplified and the full likelihood agree reasonably well across the majority of the CL$_s$ range. For signal models well within exclusion ($\mathrm{CL}_s \ll 0.05$) based on the full likelihood, the simplified likelihood of the \onelepton search tends to result in slightly lower CL$_s$ values than the full likelihood, yielding a slightly too optimistic sensitivity estimate. In the range relevant to the exclusion contour at 95\% CL (CL$_s\approx0.05$), the results from the simplified likelihood agree however well with those from the full likelihood.
+
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.30\textwidth}}]{figure}[\FBwidth]
 {\caption{Comparison of the simplified likelihood (blue) and full likelihood (orange) exclusion contours for the \onelepton search. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood, and only the simplified uncertainties in the case of the simplified likelihood.}\label{fig:results_simplify_1Lbb}}
 {\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_noLabel}}
 \end{figure}
-
-A comparison of the exclusion contours obtained with the full and simplified likelihoods in the context of the \onelepton search is shown in~\cref{fig:results_simplify_1Lbb}. The results obtained using the simplified likelihood are shown in blue, while the results obtained using the full likelihood are given in orange. Both the observed (without the usual theoretical up and down variations on the signal cross section) and expected exclusion limits including the uncertainty band are shown. In the case of the full likelihood, the complete set of \gls{mc} statistical and systematic uncertainties introduced in \cref{ch:uncertainties} are taken into account. As discussed in \cref{sec:building_simplified_likelihoods}, the uncertainty band on the simplified likelihood contour results from the single nuisance parameter built through reduction of the original nuisance parameters.
-
-The observed and expected CL$_s$ values obtained using both likelihoods are shown in~\cref{fig:scatter_cls}. As expected from the exclusion contour, both the simplified and the full likelihood agree reasonably well across the majority of the CL$_s$ range. For signal models well within exclusion ($\mathrm{CL}_s \ll 0.05$) based on the full likelihood, the simplified likelihood of the \onelepton search tends to result in slightly lower CL$_s$ values than the full likelihood, yielding a slightly too optimistic sensitivity estimate. In the range relevant to the exclusion contour at 95\% CL (CL$_s\approx0.05$), the results from the simplified likelihood agree however well with those from the full likelihood.
 
 In addition to the \onelepton search, the simplified likelihood approach has been tested on the ATLAS \gls{susy} searches listed in \cref{tab:simplified_performance}. An overview of the results can be seen in~\cref{fig:results_analyses}, comparing the exclusion contours obtained with the simplified likelihood against the full analysis results. In some analyses, \eg, the ATLAS sbottom  and ATLAS $3\ell$ searches, the simplified likelihoods show excellent agreements. In other analyses, like \eg, the ATLAS direct stau search, the agreement is less good but overall still acceptable.
 In summary, this demonstrates that the method can, in many cases, offer a fast and reliable approximation of ATLAS searches for \gls{susy} using the \lib{HistFactory} template.
@@ -219,6 +219,7 @@ In summary, this demonstrates that the method can, in many cases, offer a fast a
 \end{figure}
 
 
+\section{Limitations}\label{sec:simplify_limitations}
 
 \begin{figure}
 	\centering
@@ -251,8 +252,6 @@ In summary, this demonstrates that the method can, in many cases, offer a fast a
 	\caption{Simplified likelihood results for the different ATLAS searches studied. The results from the simplified likelihood (blue) are compared with the results of the full analysis likelihood (orange). The same reconstruction-level signal inputs are used in both cases. The shorthand notation `\textit{LH}' refers to likelihood.}\label{fig:results_analyses}
 \end{figure}
 
-\section{Limitations}\label{sec:simplify_limitations}
-
 Building a well-performing simplified likelihood is not always as straightforward as described in~\cref{sec:building_simplified_likelihoods}, and some analyses require special care when approximated. For example, in the case of the ATLAS compressed search~\cite{SUSY-2018-16}, shown in~\cref{fig:results_compressed}, only a subset of the original analysis signal regions are entering the simplified likelihood, because studies showed this to yield an overall improvement in agreement between the two likelihoods. The straightforward structure of the simplified likelihood is, in this case, not able to reproduce the statistical behaviour of the background model of the full likelihood in the signal regions omitted. As these signal regions were found to only add limited sensitivity to the search, their removal in the simplified likelihood yields an overall improvement in agreement. \Cref{fig:limitations_simplied_compressed} further illustrates the impact of removing these signal regions in the simplified likelihood.
 
 It is worth highlighting again that the simplified likelihood assumes that the total background model can be described by a single sample with a single rate modifier, constrained by a Gaussian and correlated over all bins, with background event rates and uncertainties obtained from a background-only fit using the full likelihood.
@@ -270,17 +269,17 @@ In the case of the ATLAS stop search shown in~\cref{fig:results_stop1L}, signifi
 
 The simplified likelihoods introduced in this chapter can offer precise and computationally efficient approximations of ATLAS \gls{susy} searches for which the full likelihood in \texttt{JSON} format is available. A publicly available python tool has been developed for generic conversion of any full likelihood in \texttt{JSON} format into the simplified format introduced herein~\cite{simplify}.
 
-\begin{figure}
-\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.30\textwidth}}]{figure}[\FBwidth]
-{\caption{Expected and observed exclusion contours obtained with the full likelihood and reconstruction-level inputs (orange) and the simplified likelihood and smeared truth-level inputs (purple). All statistical and systematic uncertainties on the background and signal are considered for the reconstruction-level contours determined using the full likelihood.}\label{fig:exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}}
-{\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}}
-\end{figure}
-
 The procedure of approximating the statistical model of a search is orthogonal to the truth-level analysis discussed in \cref{sec:truth_analysis} in the sense that both approximations target a different part of the analysis workflow shown in \cref{fig:pipeline_analysis}.
 As such, both approaches can be combined into a \textit{simplified analysis} that runs a smeared truth-level analysis in order to determine an estimate for signal event rates, followed by a simplified statistical inference using the simplified likelihood instead of the full statistical model.
 \Cref{fig:exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel} compares the expected and observed exclusion contours obtained in the full \onelepton search published with those obtained with the simplified version of the search, using smeared truth-level analysis and a simplified likelihood.
 The agreement observed between the exclusion contours obtained by both analysis versions is noteworthy, especially given the considerable scope of the two-fold approximation applied in the simplified analysis version.
 This very simplified analysis will be used in the following chapter to enable a computationally efficient reinterpretation of the \onelepton search in the \gls{pmssm}.
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.30\textwidth}}]{figure}[\FBwidth]
+{\caption{Expected and observed exclusion contours obtained with the full likelihood and reconstruction-level inputs (orange) and the simplified likelihood and smeared truth-level inputs (purple). All statistical and systematic uncertainties on the background and signal are considered for the reconstruction-level contours determined using the full likelihood.}\label{fig:exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}}
+{\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}}
+\end{figure}
 
 As the full likelihood defines the full statistical model given the observed data in an analysis, other forms of likelihood simplifications can be thought of.
 One possible approach worth investigating is the construction of likelihood simplifications using a variable number of nuisance parameters, as opposed to reducing the full set of nuisance parameters to a single one.
@@ -290,10 +289,7 @@ A similar approach was already introduced in \cref{ch:uncertainties}, where the 
 
 Up until very recently, the only way for physicists outside the collaboration to re-use ATLAS searches for \gls{susy} required building approximations of their statistical models based on lossy projections of the full likelihood.
 With ATLAS' recent push to publish full analysis likelihoods, new approaches for approximation of the statistical models are becoming available.
-In principle, the full likelihood contains all information necessary for generating a simplified likelihood with a certain degree of compromise between statistical precision and computational efficiency, allowing to find an ideal approximation given constraints on available computing resources of the specific use-case. 
-
-\improvement{ref to simplify}
-
+In principle, the full likelihood contains all information necessary for generating a simplified likelihood with a certain degree of compromise between statistical precision and computational efficiency, allowing to find an ideal approximation given constraints on available computing resources of the specific use-case.
 
 
 

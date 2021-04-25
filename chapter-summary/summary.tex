@@ -14,23 +14,23 @@
 
 \graphicspath{{chapter-summary/Figs/Vector/}{chapter-summary/Figs/}}
 
-This thesis presented a search for direct production of electroweakinos in events with one lepton, missing transverse momentum and a Higgs boson decaying into two \textit{b}-jets.
+This thesis presented a search for direct production of electroweakinos in events with one lepton, missing transverse momentum and a Higgs boson decaying into two \textit{b}-quarks.
 The full dataset of Run~2 of the \gls{lhc}, amounting to \onethirtynineifb of $pp$ collisions at $\sqrt{s} = \SI{13}{\TeV}$, recorded with the ATLAS experiment, was analysed.
 The search targets a simplified electroweakino ($\charg\neutr$) pair production model with subsequent decays into $W$ and Higgs bosons together with two lightest neutralinos ($\lsp$). The $\lsp$ is the \gls{lsp} of the model, is electrically neutral and stable, and thus could be a good candidate for \gls{dm}.
-It escapes the detector without leaving a trace, resulting, in general, in a significant amount of missing transverse momentum that can be triggered on.
-The search further targets a $W$ boson decay into a lepton--neutrino pair and a Higgs boson decay into a \textit{b}-jet pair.
+It escapes the detector without leaving a measurable signal, resulting, in general, in a significant amount of missing transverse momentum that can be triggered on.
+The search further targets a $W$ boson decay into a lepton--neutrino pair and a Higgs boson decay into a \textit{b}-quark pair, appearing as \textit{b}-tagged jets in the detector.
 
 Both the lepton--neutrino and the \textit{b}-jet pairs offer powerful discriminative handles, exploited through the use of a number of kinematic observables in order to maximise the signal-to-background ratio in the phase space targeted.
 Using a dedicated optimisation procedure, two sets of signal regions are defined, one targeting generic \gls{bsm} scenarios (called \textit{discovery} signal regions), and one optimised for the simplified model in question (called \textit{exclusion} signal regions). 
 The exclusion signal regions are designed to be mutually exclusive through their requirements on the transverse mass ($\mt$) and the contransverse mass ($\mct$).
-Contributions from \gls{sm} background processes in the signal regions originate primarily from $\ttbar$ and single top production, as well as $\wjets$ processes. Contributions from \gls{sm} backgrounds are estimated either with a semi-data-driven technique using dedicated control regions, or directly from \gls{mc} simulation.
-A binned likelihood is constructed, statistically combining all exclusion signal regions into a two-dimensional shape-fit that exploits the varying shapes of the $\mt$ and $\mct$ distributions of \gls{susy} signal and \gls{sm} background processes. This approach allows to achieve sensitivity to a wide variety of kinematic regimes.
+Contributions from \gls{sm} background processes in the signal regions originate primarily from $\ttbar$ and single top production, as well as $\wjets$ processes. They are estimated either with a semi-data-driven technique using dedicated control regions, or directly from \gls{mc} simulation.
+A binned likelihood is constructed, statistically combining all exclusion signal regions into a two-dimensional shape-fit that exploits the varying shapes of the $\mt$ and $\mct$ distributions of \gls{susy} signal and \gls{sm} background processes. This approach achieves sensitivity to a wide variety of kinematic regimes.
 %A combined likelihood containing terms for all control and signal regions including all systematic uncertainties considered was constructed and fit to data. 
 
 No significant excess has been observed in any of the signal regions, and thus model-dependent exclusion limits and model-independent upper limits on the visible cross section of \gls{bsm} processes have been derived.
 Due to the introduction of the two-dimensional shape-fit and the unprecedented amount of \onethirtynineifb of \textit{pp} collision data analysed, the model-dependent exclusion limits set by previous searches targeting the same simplified model can be significantly extended.
-For a massless \gls{lsp}, $\charg/\neutr$ masses up to $\SI{740}{\GeV}$ can be excluded at 95\% CL. In the case of a heavier \gls{lsp} with $m(\lsp)\approx\SI{250}{\GeV}$, the limits on the $\charg/\neutr$ masses weaken to about $\SI{600}{\GeV}$.
-At the time of writing, the limits obtained by this search represent the most stringent constraints on $\charg\neutr$ pair production set by ATLAS in the context of the simplified model considered~\cite{ATL-PHYS-PUB-2020-020}.
+For a massless \gls{lsp}, \mbox{$\charg$/$\neutr$} masses up to $\SI{740}{\GeV}$ can be excluded at 95\% CL. In the case of a heavier \gls{lsp} with $m(\lsp)\approx\SI{250}{\GeV}$, the limits on the \mbox{$\charg$/$\neutr$} masses weaken to about $\SI{600}{\GeV}$.
+At the time of writing, the limits obtained by this search are the most stringent constraints on $\charg\neutr$ pair production set by ATLAS in the context of the simplified model considered~\cite{ATL-PHYS-PUB-2020-020}.
 The model-independent 95\% CL upper limits on the visible cross section of \gls{bsm} processes vary between $\SI{0.26}{\femto\barn}$ and $\SI{0.11}{\femto\barn}$, depending on the signal region considered. 
 
 The absence of physics beyond the \gls{sm} in the Run~2 dataset of the \gls{lhc} in the search presented herein, is in line with the results of other \gls{susy} searches performed by ATLAS and CMS.
@@ -47,19 +47,18 @@ Thus, simplified model limits can in general not be trivially interpreted as the
  
 Due to the rapidly changing landscape of models for physics beyond the \gls{sm} and the limited scope of parameter limits quoted by the experiments, reinterpretations of searches for supersymmetry are highly desirable and see significant interest from both the experimental and theory communities.
 With this in mind, the search for \gls{susy} presented herein was implemented to be fully reinterpretable in the light of new \gls{bsm} models.
-This is achieved by using a cyber-infrastructure called \textsc{Recast}~\cite{RECAST_cranmer}, relying on containerised workflows orchestrating parametrised job templates.
+This is achieved by using the \textsc{Recast}~\cite{RECAST_cranmer} cyber-infrastructure, relying on containerised workflows orchestrating parametrised job templates.
 Additionally, the full likelihood of the search was made publicly available in a readily available format, allowing it to be incorporated in a number of reinterpretation efforts outside of ATLAS~\cite{SModelS_pyhf:2020grj,Goodsell:2020ddr}. 
  
-Large-scale reinterpretations in high-dimensional model spaces are especially interesting, but computationally extremely challenging, and thus require suitable approximations. In this thesis, a method to generically approximate the likelihoods of \gls{susy} searches using binned distributions was introduced and validated using a selection of ATLAS searches for \gls{susy}.
-The search previously presented was reinterpreted in the \gls{pmssm}, a 19-dimensional parameter space containing more realistic \gls{susy} scenarios (compared to simplified models). Due to the assumption of 100\% branching fractions not being satisfied in many of these more complete \gls{susy} scenarios, the sensitivity of the \onelepton search was found to be noticeably reduced. A small fraction of models sampled could, however, still be excluded.
+Large-scale reinterpretations in high-dimensional model spaces are especially interesting, but computationally extremely challenging, and thus require suitable approximations. In this thesis, a method to generically approximate the likelihoods of \gls{susy} searches using binned distributions was introduced, and subsequently validated using a selection of ATLAS searches for \gls{susy}.
+The search previously presented was reinterpreted in the \gls{pmssm}, a 19-dimensional parameter space containing more realistic \gls{susy} scenarios (compared to simplified models). Due to the assumption of 100\% branching fractions not being satisfied in many of these more complete \gls{susy} scenarios, the sensitivity of the \onelepton search was found to be noticeably reduced. Although a small fraction of models sampled could still be excluded, these results illustrate that it could be worth designing searches to be sensitive to several, complementary decay modes.
 
-The impact of the \onelepton search on electroweakino masses was investigated, revealing some sensitivity to $\tilde{\chi}_2^\pm\neutr$ production with a wino-like \gls{lsp}, in addition to sensitivity towards models phenomenologically close to the simplified model the search was optimised for.
-The impact of the \onelepton search on the \gls{dm} relic density was also investigated.
+The impact of the \onelepton search on the electroweakino masses in the \gls{pmssm} was investigated, revealing some sensitivity to $\tilde{\chi}_2^\pm\neutr$ production with a wino-like \gls{lsp}, in addition to sensitivity towards models phenomenologically close to the simplified model originally considered. Furthermore, the impact of the \onelepton search on the \gls{dm} relic density was discussed.
 While no conclusive statement could be made for models with a bino-like $\lsp$ because of the limited number of such models sampled in the relevant parameter space, some models with a wino-like $\lsp$ with cosmological abundance satisfying the Planck constraint could still be excluded. 
  
  Although hopes of quickly finding supersymmetric particles with the \gls{lhc} have not materialised, there is still a possibility of finding hints for physics beyond the \gls{sm} in the collision data recorded by the \gls{lhc} experiments.
  Considerable regions of the parameter space of realistic \gls{susy} scenarios are still largely unconstrained and offer ample space for \gls{susy} to hide in.
- In order to provide a comprehensive overview of the constrained parameter space, it is not only important to optimise searches to be sensitive to the complex phenomenology of realistic supersymmetric scenarios, but also to design the searches to be systematically reinterpretable, especially in light of more complete and realistic scenarios.
- After all, searches for \gls{bsm} physics are the tools that shine a light on the otherwise unilluminated landscapes of the parameter spaces of \gls{bsm} theories.
- Allowing these tools to be reusable significantly increases the area of parameter space they can shine a light onto.    
+ In order to provide a comprehensive overview of the constrained parameter space, it is not only important to optimise searches to be sensitive to the complex phenomenology of realistic supersymmetric scenarios, but also to design the searches to be systematically reinterpretable, especially in light of more complete and realistic scenarios drawn from a high-dimensional parameter space.
+ After all, searches for \gls{bsm} physics are the tools that shine a light on the otherwise dark landscapes of the parameter spaces of \gls{bsm} theories.
+ Allowing these tools to be reusable significantly increases the area of parameter space they can shine a light onto, and hence significantly increases the scientific impact they can make.
  
