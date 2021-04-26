@@ -30,8 +30,9 @@
 %
 \ifsetCustomFont
 
-  \usepackage{libertinus}
+  \usepackage[tt=false]{libertinus}
   \usepackage[libertine]{newtxmath}
+  \usepackage[zerostyle=d,scaled=.94]{newtxtt}
   
   \AtBeginDocument{%
   \DeclareMathSymbol{0}{\mathalpha}{operators}{`0}%
@@ -258,7 +259,7 @@
 
 \lstset{aboveskip=10pt,belowskip=5pt}
 \lstdefinelanguage{json}{
-    basicstyle=\scriptsize\ttfamily,
+    basicstyle=\footnotesize\ttfamily,
     keywords={true,false,null},
     keywordstyle=\color{bool_color}\bfseries,
     commentstyle=\color{string_color}\bfseries, % Green strings
