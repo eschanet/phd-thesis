@@ -31,7 +31,11 @@
 \ifsetCustomFont
 
   \usepackage[tt=false]{libertinus}
-  \usepackage[libertine]{newtxmath}
+  \usepackage[
+  	libertine,
+  	upint,
+  	slantedGreek
+  ]{newtxmath}
   \usepackage[zerostyle=d,scaled=.94]{newtxtt}
   
   \AtBeginDocument{%
@@ -306,6 +310,7 @@
 \usepackage{xargs}    % Use more than one optional parameter in a new commands       
 \usepackage{makecell}
 \usepackage{rotating} % for landscape figures
+\usepackage{bbold} % double stroke numbers
 
 
 % package for displaying captions on weird places
@@ -437,6 +442,9 @@
 \newcommand{\references}{Refs.\@\xspace}
 \newcommand{\References}{Refs.\@\xspace}
 
+
+\newcommand{\iu}{\mathrm{i}\mkern1mu}
+\newcommand{\di}{\mathrm{i}}
 
 % ******************************** Acronyms **********************************
 

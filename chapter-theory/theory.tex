@@ -35,7 +35,7 @@ The most prominent recent progress is undoubtedly the discovery of the Higgs bos
 	\setlength\heavyrulewidth{0.2ex}
 	\small
 	\caption{Names, electric charges and masses (rounded to three significant digits if known to that precision) of all observed fermions in the SM~\cite{pdg2020}. The symbols used in the following are indicated in parentheses after the particle names.}
-	\begin{tabular} {c c c c c}
+	\begin{tabular} {l c c c r}
 		
 		\toprule
 				& generation & particle & electric charge [$e$] & mass \\ 
@@ -107,14 +107,14 @@ The mediators of the weak force are massive, resulting in a finitely ranged inte
 
 Formally, the SM is a collection of a special type of \glspl{qft}, called gauge theories. In the same way that quantum mechanics is the quantisation of dynamical fields of particles, \gls{qft} is the application of quantum mechanics to dynamical systems of fields, providing a uniform description of quantum mechanical particles and classical fields, while including special relativity.
 
-In classical mechanics, the fundamental quantity  is the action $S$, which is the time integral of the Lagrangian $L$, a functional characterising the state of a system of particles in terms of generalised coordinates $q_1, \dots, q_n$. In field theory, the Lagrangian can be written as spatial integral of a Lagrangian density $\Lagr(\phi_i,\partial_\mu\phi_i)$, which is a function of fields $\phi_i$ and their spacetime derivates $\partial_\mu\phi_i$. In the following, the Lagrangian density $\Lagr$ will simply be referred to as the \textit{Lagrangian}. The action can then be written as
+In classical mechanics, the fundamental quantity  is the action $S$, which is the time integral of the Lagrangian $L$, a functional characterising the state of a system of particles in terms of generalised coordinates $q_1, \dots, q_n$. In field theory, the Lagrangian can be written as spatial integral of a Lagrangian density $\Lagr(\phi_i,\uppartial_\mu\phi_i)$, which is a function of fields $\phi_i$ and their spacetime derivates $\uppartial_\mu\phi_i$. In the following, the Lagrangian density $\Lagr$ will simply be referred to as the \textit{Lagrangian}. The action can then be written as
 \begin{equation}
-	S = \int L\diff t = \int\Lagr\left(\phi_i,\partial_\mu\phi_i\right)\Diff4 x.
+	S = \int L\diff t = \int\Lagr\left(\phi_i,\uppartial_\mu\phi_i\right)\Diff4 x.
 \end{equation}
 
 Using the principle of least action $\delta S = 0$, the equation of motions for each field are given by the Euler-Lagrange-equation,
 \begin{equation}
-	\partial_\mu\left(\frac{\partial\Lagr}{\partial\left(\partial_\mu\phi_i\right)}\right)-\frac{\partial\Lagr}{\partial\phi_i}=0.
+	\uppartial_\mu\left(\frac{\uppartial\Lagr}{\uppartial\left(\uppartial_\mu\phi_i\right)}\right)-\frac{\uppartial\Lagr}{\uppartial\phi_i}=0.
 	\label{eq:euler_lagrange}
 \end{equation}
 As opposed to the Hamiltonian formalism, the Lagrange formulation of field theory is especially well suited for the relativistic dynamics in particle physics, as it exhibits explicit Lorentz-invariance~\cite{Peskin:1995ev}. This is a direct consequence of the principle of least action, since Lorentz-transformed extrema in the action will still be extrema for Lorentz-invariant Lagrangians.
@@ -139,7 +139,7 @@ Using appropriate Feynman rules dictating the possible vertices (representing in
 
 The gauge principle is fundamental to the SM and dictates that the existence of gauge fields is directly related to symmetries under local gauge transformations. \gls{qed}, being the simplest gauge theory, can be taken to illustrate this important principle. The free Dirac Lagrangian for a single, non-interacting fermion with mass $m$ is given by
 \begin{equation}
-	\Lagr_\mathrm{Dirac}=\bar{\psi}\left(i\gamma^\mu\partial_\mu - m\right)\psi,
+	\Lagr_\mathrm{Dirac}=\bar{\psi}\left(i\gamma^\mu\uppartial_\mu - m\right)\psi,
 	\label{eq:dirac_lagrangian}
 \end{equation}
 where $\psi$ is a four-component complex spinor field, $\bar{\psi} = \psi^\dagger\gamma^0$, and $\gamma^\mu$ with $\mu = 0,1,2,3 $ are the Dirac matrices with the usual anticommutation relations generating a matrix representation of the Dirac algebra 
@@ -149,27 +149,27 @@ where $\psi$ is a four-component complex spinor field, $\bar{\psi} = \psi^\dagge
 
 It is worth noting that the free Dirac Lagrangian is invariant under a global $U(1)$ transformation
 \begin{equation}
-	\psi \rightarrow e^{i\theta}\psi,
+	\psi \rightarrow \mathrm{e}^{i\theta}\psi,
 \end{equation}
 where the phase $\theta$ is spacetime independent and real-valued. In order to produce the physics of electromagnetism, the free Dirac Lagrangian, has to be invariant under \textit{local} $U(1)$ phase transformations with a spacetime dependent phase $\theta(x)$. This is, however, not the case, as the transformed Lagrangian picks up an additional term from the spacetime derivative of the phase,
 \begin{equation}
-	\Lagr_\mathrm{Dirac} \to \Lagr_\mathrm{Dirac} - (\partial_\mu\theta(x))\bar{\psi}\gamma^\mu\psi.
+	\Lagr_\mathrm{Dirac} \to \Lagr_\mathrm{Dirac} - (\uppartial_\mu\theta(x))\bar{\psi}\gamma^\mu\psi.
 \end{equation}
 
 For the Dirac Lagrangian to become invariant under a local gauge transformation, a new vector field $A_\mu(x)$ has to be introduced and the partial derivative has to be replaced with the covariant derivative
 \begin{equation}
-	\partial_\mu \rightarrow \codiff_\mu \equiv \partial_\mu + ieA_\mu,
+	\uppartial_\mu \rightarrow \codiff_\mu \equiv \uppartial_\mu + ieA_\mu,
 \end{equation}
-where $e$ can be identified with the elementary charge and represents the coupling of the fermion field to the gauge field $A_\mu$. The prescription of achieving local gauge invariance by replacing $\partial_\mu$ with $D_\mu$ is called \textit{minimal coupling} and leads to a Lagrangian that is invariant under the transformations
+where $e$ can be identified with the elementary charge and represents the coupling of the fermion field to the gauge field $A_\mu$. The prescription of achieving local gauge invariance by replacing $\uppartial_\mu$ with $D_\mu$ is called \textit{minimal coupling} and leads to a Lagrangian that is invariant under the transformations
 \begin{equation}
-	\psi \rightarrow e^{i\theta\left(x\right)}\psi,\, \, \, \, \, \, \, \, \, \, A_\mu \rightarrow A_\mu - \frac{1}{e}\partial_\mu\theta(x).
+	\psi \rightarrow \mathrm{e}^{i\theta\left(x\right)}\psi,\, \, \, \, \, \, \, \, \, \, A_\mu \rightarrow A_\mu - \frac{1}{e}\uppartial_\mu\theta(x).
 	\label{eq:gauge_field}
 \end{equation}
 The modified Lagrangian now includes a term for interactions between the gauge field and the fermion field,
 \begin{equation}
 \begin{split}
 	\Lagr &= \Lagr_\mathrm{Dirac} + \Lagr_\mathrm{int} \\
-		&= \bar{\psi}\left(i\gamma^\mu\partial_\mu - m\right)\psi - \left(e\bar{\psi}\gamma^\mu\psi\right)A_\mu,
+		&= \bar{\psi}\left(i\gamma^\mu\uppartial_\mu - m\right)\psi - \left(e\bar{\psi}\gamma^\mu\psi\right)A_\mu,
 	\label{eq:modified_lagrangian}
 \end{split}
 \end{equation}
@@ -177,7 +177,7 @@ and is indeed invariant under a local phase transformation. Yet, it cannot be co
 \begin{equation}
 	\Lagr_\mathrm{Proca} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + \frac{1}{2}m_A^2A^\nu A_\nu,
 \end{equation}
-where $F^{\mu\nu}\equiv\left(\partial^\mu A^\nu-\partial^\nu A^\mu\right)$ is the field strength tensor that is invariant under the transformation in \cref{eq:gauge_field}. Since $A^\nu A_\nu$ is not invariant under the local transformation of above, the only way to keep the full Lagrangian invariant under a local phase transformation is by requiring $m_A=0$, \ie the gauge field $A_\mu$ introduced has to be massless, resulting in the Maxwell Lagrangian (ultimately generating the Maxwell equations),
+where $F^{\mu\nu}\equiv\left(\uppartial^\mu A^\nu-\uppartial^\nu A^\mu\right)$ is the field strength tensor that is invariant under the transformation in \cref{eq:gauge_field}. Since $A^\nu A_\nu$ is not invariant under the local transformation of above, the only way to keep the full Lagrangian invariant under a local phase transformation is by requiring $m_A=0$, \ie the gauge field $A_\mu$ introduced has to be massless, resulting in the Maxwell Lagrangian (ultimately generating the Maxwell equations),
 \begin{equation}
 	\Lagr_\mathrm{Maxwell} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
 \end{equation}
@@ -186,7 +186,7 @@ This finally yields the full Lagrangian
 \begin{equation}
 \begin{split}
 		\Lagr_\mathrm{QED} & = \Lagr_\mathrm{Dirac} + \Lagr_\mathrm{Maxwell} + \Lagr_\mathrm{int} \\
-	  				& = \bar{\psi}\left(i\gamma^\mu\partial_\mu\right)\psi - m\bar{\psi}\psi - \frac{1}{4}F^{\mu\nu}F_{\mu\nu} - \left(e\bar{\psi}\gamma^\mu\psi\right)A_\mu,
+	  				& = \bar{\psi}\left(i\gamma^\mu\uppartial_\mu\right)\psi - m\bar{\psi}\psi - \frac{1}{4}F^{\mu\nu}F_{\mu\nu} - \left(e\bar{\psi}\gamma^\mu\psi\right)A_\mu,
 \end{split}
 \end{equation}
 which can be identified to be the full Lagrangian of \gls{qed}. The gauge field $A_\mu$ introduced is therefore nothing else than the electromagnetic potential with its associated massless particle, the photon. Thus, by applying the gauge principle on the free Dirac Lagrangian, \ie forcing a global phase invariance to hold locally, a new massless gauge field has to be introduced, including interaction terms with the existing fields in the Lagrangian. In the case of the free Dirac Lagrangian, local gauge invariance produces all of \gls{qed}.
@@ -195,7 +195,7 @@ As Yang and Mills have shown in 1954~\cite{PhysRev.96.191}, requiring a global p
 
 A total of $n$ fermion fields with mass $m$ are needed, arranged in an $n$-dimensional multiplet $\Psi = (\psi_1,\dots,\psi_n)^T$. The free Lagrangian,
 \begin{equation}
-	\Lagr_\mathrm{free} = \bar{\Psi}\left(i\gamma^\mu\partial_\mu -m\right)\Psi,
+	\Lagr_\mathrm{free} = \bar{\Psi}\left(i\gamma^\mu\uppartial_\mu -m\right)\Psi,
 	\label{eq:free_lagrangian}
 \end{equation}
 is invariant under a global phase transformation of the form
@@ -204,7 +204,7 @@ is invariant under a global phase transformation of the form
 \end{equation}
 Each element in the set of transformations $U$ can be written in terms of the group generators $T^a$ as
 \begin{equation}
-	U(\alpha^1,\dots,\alpha^N) = e^{i\alpha^aT^a},
+	U(\alpha^1,\dots,\alpha^N) = \mathrm{e}^{i\alpha^aT^a},
 \end{equation}
 where the group indices $a = 1,\dots,N$ are to be summed over. The group generators $T^a$ satisfy the commutation relations
 \begin{equation}
@@ -212,7 +212,7 @@ where the group indices $a = 1,\dots,N$ are to be summed over. The group generat
 \end{equation}
 where $f^{abc}$ are the so-called structure constants quantifying the lack of commutativity between the generators. By convention, the basis for the generators $T^a$ is typically chosen such that $f^{abc}$ is completely anti-symmetric~\cite{Brock:1354959}. In order to make the Lagrangian invariant under local phase transformations, \ie under transformations with a set of spacetime-dependent real parameters $\alpha^a(x)$, a vector field $\makemebold{W}_\mu$ together with a coupling constant $g$ have to be introduced through the covariant derivative  
 \begin{equation}
-	\partial_\mu \rightarrow \codiff_\mu = \partial_\mu - ig\makemebold{W}_{\mu}.
+	\uppartial_\mu \rightarrow \codiff_\mu = \uppartial_\mu - ig\makemebold{W}_{\mu}.
 \end{equation}
 As $\codiff_\mu$ acts on the $n$-dimensional multiplet $\Psi$, the introduced gauge field $\makemebold{W}_\mu$ has to be a $n\times n$ matrix and can thus be expanded in terms of the generators
 \begin{equation}
@@ -224,28 +224,28 @@ thereby explicitly illustrating, that a total of $N$ gauge fields $W^a_\mu$ are 
 \end{equation}
 into the Lagrangian in \cref{eq:free_lagrangian}, coupling the gauge fields $W^a_\mu$ to the fermion multiplet. For infinitesimal $\alpha^a(x)$, the gauge fields gauge transform according to
 \begin{equation}
-	W_\mu^a \rightarrow W_\mu^a + \frac{1}{g}\partial_\mu\alpha^a + f^{abc} W_\mu^b \alpha^c,
+	W_\mu^a \rightarrow W_\mu^a + \frac{1}{g}\uppartial_\mu\alpha^a + f^{abc} W_\mu^b \alpha^c,
 \end{equation}
 where the term with $\alpha^a$ looks familiar to the $U(1)$ example and corresponds to the Abelian case, while the term with $f^{abc}$ introduces the non-Abelian structure into the theory~\cite{Brock:1354959}. The same non-Abelian structure is again clearly visible when introducing a kinetic term for the gauge fields into the Lagrangian
 \begin{equation}
 	\Lagr_{W} = -\frac{1}{4} F^a_{\mu\nu} F^{\mu\nu,a},
 \end{equation} 
-with the field-strength tensor now $F^a_{\mu\nu} = \partial_\mu W^a_\nu - \partial_\nu W^a_\mu + gf^{abc}W^b_\mu W^c_\nu$. As was already the case for \gls{qed}, the above Lagrangian contains Abelian terms quadratic in $W$, describing the propagation of the free gauge fields. This time, the Lagrangian additionally includes non-Abelian terms cubic and quartic in $W$, leading to self-interaction of the gauge fields.
+with the field-strength tensor now $F^a_{\mu\nu} = \uppartial_\mu W^a_\nu - \uppartial_\nu W^a_\mu + gf^{abc}W^b_\mu W^c_\nu$. As was already the case for \gls{qed}, the above Lagrangian contains Abelian terms quadratic in $W$, describing the propagation of the free gauge fields. This time, the Lagrangian additionally includes non-Abelian terms cubic and quartic in $W$, leading to self-interaction of the gauge fields.
 
 \subsubsection{Quantum chromodynamics}
 
 \gls{qcd}, the gauge theory describing the strong interaction between quarks and gluons in the SM, is an example for a non-Abelian Yang-Mills theory~\cite{PhysRev.96.191}. \gls{qcd} is based on the gauge group $SU(3)_C$, with the subscript $C$ indicating that the quantum number associated with the symmetry group is the \textit{colour}. Each quark is described by a triplet of fermion fields $q = (q_r,q_g,q_b)^T$, where the subscripts refer to the three different colours. The symmetry group $SU(3)$ has a total of $n^2-1 = 8$ generators, usually expressed in terms of the Gell-Mann matrices $\lambda^a$~\cite{Peskin:1995ev}. The covariant derivative introducing the gauge fields $G_\mu^a$ acting on the quark triplets is then
 \begin{equation}
-	\codiff_\mu = \partial_\mu - ig_s \frac{\lambda^a}{2	}G_\mu^a,
+	\codiff_\mu = \uppartial_\mu - ig_s \frac{\lambda^a}{2	}G_\mu^a,
 \end{equation}
 with $g_s$ the coupling constant of the strong interaction, typically written as $\alpha_s = g_s^2 / (4\pi)$ in analogy to the fine-structure constant in \gls{qed}. Gauge invariance thus introduces a total of $N=8$ gauge fields that can be identified with the eight gluons, leading to the full Lagrangian of \gls{qcd}
 \begin{equation}
 	\Lagr_\mathrm{QCD} = \sum_q{\bar{q}(i\gamma^\mu\codiff_\mu - m_q)q} - \frac{1}{4}G^a_{\mu\nu}G^{\mu\nu,a},
-%	\Lagr_\mathrm{QCD} = \sum_q{\bar{q}(i\gamma^\mu\partial_\mu - m_q)q} - \sum_q{g_s\bar{q}\gamma^\mu\frac{\lambda^a}{2}qG^a_\mu} - \frac{1}{4}G^a_{\mu\nu}G^{\mu\nu,a},
+%	\Lagr_\mathrm{QCD} = \sum_q{\bar{q}(i\gamma^\mu\uppartial_\mu - m_q)q} - \sum_q{g_s\bar{q}\gamma^\mu\frac{\lambda^a}{2}qG^a_\mu} - \frac{1}{4}G^a_{\mu\nu}G^{\mu\nu,a},
 \end{equation}
 where $q = u,d,s,c,b,t$ and $G^a_{\mu\nu}$ are the gluon field strengths given by
 \begin{equation}
-	G^a_{\mu\nu} = \partial_\mu G^a_\nu - \partial_\nu G^a_\mu + g_s f^{abc}G^b_\mu G^c_\nu.
+	G^a_{\mu\nu} = \uppartial_\mu G^a_\nu - \uppartial_\nu G^a_\mu + g_s f^{abc}G^b_\mu G^c_\nu.
 \end{equation}
 As expected from the previous section, $\Lagr_\mathrm{QCD}$ contains terms that are cubic and quartic in the gluon fields, resulting in gluon self-interaction in the theory. All possible \gls{qcd} interaction vertices involving gluons and quarks are shown in \cref{fig:qcd_vertices}. The gluon self-interaction leads to a number of phenomena unknown to Abelian theories, rendering the kinematics of \gls{qcd} highly non-trivial.
 
@@ -317,17 +317,17 @@ and thus do not couple to the weak interaction. In the electroweak theory, neutr
 
 The fermion doublets can be written in a free Lagrangian similar to \cref{eq:free_lagrangian,eq:dirac_lagrangian},
 \begin{equation}
-	\Lagr = \bar{\psi}_\mathrm{L}i\gamma^\mu\partial_\mu\psi_\mathrm{L},
+	\Lagr = \bar{\psi}_\mathrm{L}i\gamma^\mu\uppartial_\mu\psi_\mathrm{L},
 \end{equation}
 with one crucial difference---the omission of the fermion masses. As $\bar{\psi}\psi = \bar{\psi}_\mathrm{L}\psi_\mathrm{R} + \bar{\psi}_\mathrm{R}\psi_\mathrm{L}$, mass terms would mix left- and right-handed terms and break gauge invariance. \Cref{sec:ssb} will illustrate how fermion masses will instead be generated in the electroweak theory. For left-handed fermion fields, local $SU(2)_\mathrm{L}$ transformations can be written as
 \begin{equation}
 	\psi_\mathrm{L} \rightarrow \mathrm{exp}\left(ig_2\alpha^a\frac{\sigma^a}{2}\right)\psi_\mathrm{L},
 \end{equation}  
-where $g_2$ is the coupling constant, $\alpha^a$ (with $a=1,2,3$) are real parameters and the Pauli matrices $\sigma^a$ are the generators of $SU(2)_\mathrm{L}$. By introducing the covariant derivative $\codiff_\mu = \partial_\mu + ig_2\frac{\sigma^a}{2}W^a_\mu$ and including the usual kinetic term for the gauge fields, the Lagrangian becomes invariant under $SU(2)_\mathrm{L}$ transformations and reads
+where $g_2$ is the coupling constant, $\alpha^a$ (with $a=1,2,3$) are real parameters and the Pauli matrices $\sigma^a$ are the generators of $SU(2)_\mathrm{L}$. By introducing the covariant derivative $\codiff_\mu = \uppartial_\mu + ig_2\frac{\sigma^a}{2}W^a_\mu$ and including the usual kinetic term for the gauge fields, the Lagrangian becomes invariant under $SU(2)_\mathrm{L}$ transformations and reads
 \begin{equation}
 	\Lagr = \bar{\psi}_\mathrm{L}i\gamma^\mu\codiff_\mu\psi_\mathrm{L} - \frac{1}{4}W^a_{\mu\nu}W^{\mu\nu,a},
 \end{equation}
-with the gauge field strength tensors $W^a_{\mu\nu} = \partial_\mu W^a_\nu - \partial_\nu W^a_\mu + g_2 \epsilon^{abc}W^b_\mu W^c_\nu$, where $\epsilon^{abc}$ are the structure constants. As previously in the case of \gls{qcd}, the non-Abelian structure of the symmetry group causes self-interactions of the gauge fields.
+with the gauge field strength tensors $W^a_{\mu\nu} = \uppartial_\mu W^a_\nu - \uppartial_\nu W^a_\mu + g_2 \epsilon^{abc}W^b_\mu W^c_\nu$, where $\epsilon^{abc}$ are the structure constants. As previously in the case of \gls{qcd}, the non-Abelian structure of the symmetry group causes self-interactions of the gauge fields.
 
 In order to include electromagnetic interactions, the weak isospin group is extended with the $U(1)_Y$, corresponding to the multiplication of a phase factor $e^{i\alpha\frac{Y}{2}}$ to each of the preceding doublets and singlets. Here, $Y$ is the weak hypercharge as given by the Gell-Mann--Nishijima relation~\cite{Gell-Mann1956,10.1143/PTP.13.285,10.1143/PTP.10.581},
 \begin{equation}
@@ -337,14 +337,14 @@ In order to include electromagnetic interactions, the weak isospin group is exte
 with $Q$ the electric charge.
 As will be discussed in \cref{sec:ssb}, the spontaneous breaking of the \mbox{$SU(2)_\mathrm{L}\otimes U(1)_Y$} gauge symmetry will recover the electromagnetic gauge group $U(1)_\mathrm{em}$~\cite{Peskin:1995ev}.
 
-By modifying the covariant derivative to include a $U(1)_Y$ gauge field and ensuring that $U(1)_Y$ acts the same on left-handed and right-handed fermions, it becomes $\codiff_\mu = \partial_\mu + ig_2\frac{\sigma^a}{2}W^a_\mu + ig_1\frac{Y}{2}B_\mu$ for left-handed fermions and $\codiff_\mu = \partial_\mu + ig_1\frac{Y}{2}B_\mu$ for right-handed fermions. The full electroweak Lagrangian then is
+By modifying the covariant derivative to include a $U(1)_Y$ gauge field and ensuring that $U(1)_Y$ acts the same on left-handed and right-handed fermions, it becomes $\codiff_\mu = \uppartial_\mu + ig_2\frac{\sigma^a}{2}W^a_\mu + ig_1\frac{Y}{2}B_\mu$ for left-handed fermions and $\codiff_\mu = \uppartial_\mu + ig_1\frac{Y}{2}B_\mu$ for right-handed fermions. The full electroweak Lagrangian then is
 \begin{equation}
 \begin{split}
-	\Lagr_\mathrm{electroweak} = & \sum_j{\bar{\psi}_\mathrm{L}^j i \gamma^\mu \left(\partial_\mu -ig_2\frac{\sigma^a}{2} W^a_\mu + ig_1 \frac{Y}{2} B_\mu \right) \psi^j_\mathrm{L}} \\
-	& + \sum_j{\bar{\psi}_\mathrm{R}^j i \gamma^\mu \left(\partial_\mu + ig_1 \frac{Y}{2} B_\mu \right) \psi^j_\mathrm{R}}, 
+	\Lagr_\mathrm{electroweak} = & \sum_j{\bar{\psi}_\mathrm{L}^j i \gamma^\mu \left(\uppartial_\mu -ig_2\frac{\sigma^a}{2} W^a_\mu + ig_1 \frac{Y}{2} B_\mu \right) \psi^j_\mathrm{L}} \\
+	& + \sum_j{\bar{\psi}_\mathrm{R}^j i \gamma^\mu \left(\uppartial_\mu + ig_1 \frac{Y}{2} B_\mu \right) \psi^j_\mathrm{R}}, 
 \end{split}
 \end{equation}
-where $B_{\mu\nu} = \partial_\mu B_\nu - \partial_\nu B_\mu$, and the two sums run over the left- and right-handed fermions, respectively.
+where $B_{\mu\nu} = \uppartial_\mu B_\nu - \uppartial_\nu B_\mu$, and the two sums run over the left- and right-handed fermions, respectively.
 
 \subsubsection{Spontaneous symmetry breaking}
 \label{sec:ssb}
@@ -726,8 +726,8 @@ The simplest supersymmetric model that can be shown to realise the superalgebra 
 \begin{equation}
 \begin{split}
 S & = \int \diff^4x(\Lagr_\mathrm{scalar} + \Lagr_\mathrm{fermion}), \\
-	\Lagr_\mathrm{scalar} & = - \partial^\mu\phi^*\partial_\mu\phi, \\
-	\Lagr_\mathrm{fermion} & = - i\psi^\dagger\bar{\sigma}^\mu\partial_\mu\psi , \\
+	\Lagr_\mathrm{scalar} & = - \uppartial^\mu\phi^*\uppartial_\mu\phi, \\
+	\Lagr_\mathrm{fermion} & = - i\psi^\dagger\bar{\sigma}^\mu\uppartial_\mu\psi , \\
 	\label{eq:wess_zumino_free}
 \end{split}
 \end{equation}
@@ -735,7 +735,7 @@ with a massless complex scalar $\phi$ and a spin-1/2 fermion $\psi$, correspondi
 \begin{equation}
 \begin{split}
 	\Lagr_\mathrm{free} & = \Lagr_\mathrm{scalar} + \Lagr_\mathrm{fermion} + \Lagr_\mathrm{aux},  \qquad \mathrm{with} \quad \Lagr_\mathrm{aux} = F^{*i}F_i.
-%	 & = \partial^\mu\phi^{*i}\partial_\mu\phi_i + i\psi^{\dagger i}\bar{\sigma}^\mu\partial_\mu\psi_i + F^{*i}F_i,
+%	 & = \uppartial^\mu\phi^{*i}\uppartial_\mu\phi_i + i\psi^{\dagger i}\bar{\sigma}^\mu\uppartial_\mu\psi_i + F^{*i}F_i,
 \end{split}
 \label{eq:free_wess_zumino}
 \end{equation} 
@@ -746,7 +746,7 @@ The auxiliary term $\Lagr_\mathrm{aux}$ implies the trivial equations of motion 
 \end{equation}
 where $W^{ij}$ is a holomorphic\footnote{A holomorphic function is a complex-valued function in one or more complex variables that is complex differentiable in a neighbourhood for every point of its domain.} function of the complex scalar fields $\phi_i$ of the form~\cite{Bustamante:2009us}
 \begin{equation}
-	W^{ij} = \frac{\partial^2 W}{\partial\phi_i\partial\phi_j}. 
+	W^{ij} = \frac{\uppartial^2 W}{\uppartial\phi_i\uppartial\phi_j}. 
 \end{equation}
 Here, $W$ is called the \textit{superpotential}. For the final Lagrangian to be renormalisable, the superpotential can at most be cubic~\cite{Bustamante:2009us}, and thus can be written as
 \begin{equation}
@@ -755,17 +755,17 @@ Here, $W$ is called the \textit{superpotential}. For the final Lagrangian to be 
 \end{equation}
 where $y^{ij}$ are the Yukawa couplings between the scalar and the two fermions, thus containing all non-gauge interactions. The term quadratic in the fields contains the fermion mass matrix $m^{ij}$, which is equal to the mass matrix of the scalar bosons due to supersymmetry, as will be shown below. Requiring $\Lagr_\mathrm{int}$ to be invariant under supersymmetry transformations further defines the potential $V$. The equations of motion of the auxiliary fields $F$ can be written as
 \begin{equation}
-	F_i = -\frac{\partial W(\phi)}{\partial \phi^i} = - W^*_i, \qquad F^{*i} = - \frac{\partial W(\phi)}{\partial \phi_i} = - W^i,
+	F_i = -\frac{\uppartial W(\phi)}{\uppartial \phi^i} = - W^*_i, \qquad F^{*i} = - \frac{\uppartial W(\phi)}{\uppartial \phi_i} = - W^i,
 	\label{eq:wess_zumino_F}
 \end{equation} 
 which thus yields for the potential $V = W^*_iW^i = F_iF^{*i}$, allowing to write the Lagrangian without explicitly introducing the auxiliary fields. The full Lagrangian of the Wess-Zumino model with general chiral interactions between the scalar and fermion fields in the chiral supermultiplets~\cite{Bustamante:2009us} is then given by
 \begin{equation}
-	\Lagr = -\partial^\mu\phi^{*i}\partial_\mu\phi_i - i\psi^{\dagger i}\bar{\sigma}^\mu\partial_\mu\psi_i - \frac{1}{2} m^{ij}\psi_i \psi_j - \frac{1}{2} m_{ij}^* \psi^{\dagger i} \psi^{\dagger j} - \frac{1}{2} y^{ijk} \phi_i \psi_j \psi_k - \frac{1}{2} y^*_{ijk} \phi^{*i} \psi^{\dagger j} \psi^{\dagger k} - V(\phi,\phi^*),
+	\Lagr = -\uppartial^\mu\phi^{*i}\uppartial_\mu\phi_i - i\psi^{\dagger i}\bar{\sigma}^\mu\uppartial_\mu\psi_i - \frac{1}{2} m^{ij}\psi_i \psi_j - \frac{1}{2} m_{ij}^* \psi^{\dagger i} \psi^{\dagger j} - \frac{1}{2} y^{ijk} \phi_i \psi_j \psi_k - \frac{1}{2} y^*_{ijk} \phi^{*i} \psi^{\dagger j} \psi^{\dagger k} - V(\phi,\phi^*),
 	\label{eq:wess_zumino_lagrangian}
 \end{equation}
 obtained by adding the interaction term $\Lagr_\mathrm{int}$ from~\cref{eq:wess_zumino_int} to the free Lagrangian in~\cref{eq:wess_zumino_free} and inserting the expression for the superpotential from~\cref{eq:wess_zumino_potential} and the auxiliary fields from~\cref{eq:wess_zumino_F}.
 
-The Lagrangian in \cref{eq:wess_zumino_lagrangian} immediately reveals that, as expected by supersymmetry, the masses of the fermions and bosons in the same supermultiplet are identical. In order to incorporate gauge supermultiplets and consider the interactions between fermions and gauge bosons observed in the SM, the usual minimal coupling rule has to be applied, replacing $\partial_\mu$ with $\codiff_\mu$. This leads to equation of motions for the auxiliary fields,
+The Lagrangian in \cref{eq:wess_zumino_lagrangian} immediately reveals that, as expected by supersymmetry, the masses of the fermions and bosons in the same supermultiplet are identical. In order to incorporate gauge supermultiplets and consider the interactions between fermions and gauge bosons observed in the SM, the usual minimal coupling rule has to be applied, replacing $\uppartial_\mu$ with $\codiff_\mu$. This leads to equation of motions for the auxiliary fields,
 \begin{equation}
 	D^a = -g(\phi^*T^a\phi),
 \end{equation}
