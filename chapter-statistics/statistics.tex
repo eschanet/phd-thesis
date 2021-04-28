@@ -8,28 +8,28 @@
 
 \graphicspath{{chapter-statistics/Figs/Vector/}{chapter-statistics/Figs/}}
 
-In \gls{hep}, statistical models are used in order to quantify the correspondence between theoretical predictions and the experimental observations.
+In \gls{hep}, statistical models are used to quantify the correspondence between theoretical predictions and the experimental observations.
 This chapter introduces the statistical concepts, methods and formulae used for statistical inference in this thesis.
-A frequentist approach is employed, interpreting probabilities as the frequencies of the outcomes of repeatable experiments that may either be real, based on computer simulations, or mathematical abstraction~\cite{pdg2020}.
+A frequentist approach is employed, interpreting probabilities as the frequencies of the outcomes of repeatable experiments that may either be real, based on computer simulations, or originate from mathematical abstraction~\cite{pdg2020}.
 The following description largely adheres to \references\cite{Cranmer:2015nia, Cowan:2010js}.
 
 \section{The likelihood function}\label{sec:likelihood_function}
  
 In measurements in \gls{hep}, a \textit{statistical model} $f(\makemebold{x}\vert\makemebold{\phi})$ is a parametric family of \glspl{pdf} describing the probability of observing data $\makemebold{x}$ given a set\footnote{Sets of parameters (as opposed to single parameters) will henceforth be written using bold face.} of model parameters $\makemebold{\phi}$.
 The latter typically describe parameters of the physical theory or unknown detector effects. The \textit{likelihood function} $L(\makemebold{\phi})$ is then numerically equivalent to $f(\makemebold{x}\vert\makemebold{\phi})$ with $\makemebold{x}$ fixed.
-As opposed to the \glsfirst{pdf} $f(\makemebold{x})$ describing the value of $f$ as a function of $\makemebold{x}$ given a set of fixed parameters $\makemebold{\phi}$, the likelihood refers to the value of $f$ as a function of $\makemebold{\phi}$ given a fixed\footnote{This important difference is why the likelihood is written here as $L(\makemebold{\phi})$ instead of the equally common $L(\makemebold{x}\vert\makemebold{\phi})$.} value of $\makemebold{x}$.
+As opposed to the \gls{pdf} $f(\makemebold{x})$, describing the value of $f$ as a function of $\makemebold{x}$ given a set of fixed parameters $\makemebold{\phi}$, the likelihood refers to the value of $f$ as a function of $\makemebold{\phi}$ given a fixed\footnote{This important difference is why the likelihood is written here as $L(\makemebold{\phi})$ instead of the equally common $L(\makemebold{x}\vert\makemebold{\phi})$.} value of $\makemebold{x}$.
 
 Searches for \gls{bsm} physics are often\footnote{While searches for \gls{bsm} physics using unbinned distributions also exist, only binned searches are considered in the following.} centred around the measurement of several disjoint binned distributions, called \textit{channels} $c$, each associated with different event selection criteria yielding observed event counts $\makemebold{n}$.
-In such counting experiments where each event is independently drawn from the same underlying distribution, each bin is described by a Poisson term.
+In such counting experiments, where each event is independently drawn from the same underlying distribution, each bin is described by a Poisson term.
 The Poisson probability to observe $n$ events with an expectation of $\nu$ events, $\mathrm{Pois}(n\vert\nu)$, is given by
 \begin{equation}
-	\mathrm{Pois}(n\vert\nu) = \frac{\nu^n}{n!}e^{-\nu}.
+	\mathrm{Pois}(n\vert\nu) = \frac{\nu^n}{n!}\mathrm{e}^{-\nu}.
 \end{equation}
 The expectation $\nu_{cb}$ in each channel $c$ and bin $b$ is a sum over the set of physics processes considered, called \textit{samples} in the following, 
 \begin{equation}
 	\nu_{cb} = \sum_{s\in\mathrm{samples}}\nu_{csb}(\makemebold{\eta},\makemebold{\chi}),
 \end{equation}
-where $\nu_{csb}$ is the expected sample rate in a given bin of a given channel. The sample-wise rates are in general a function of the model parameters $\makemebold{\phi}$ that can either be \textit{free parameters} $\makemebold{\eta}$ or \textit{constrained parameters} $\makemebold{\chi}$. Possible modifications of the expected sample rates due to model parameters are considered to be either multiplicative or additive changes to the nominal estimate $\nu_{csb}^0$ of the form
+where $\nu_{csb}$ is the expected sample rate in a given bin of a given channel. The sample-wise rates are in general a function of the model parameters $\makemebold{\phi}$ that can be either \textit{free parameters} $\makemebold{\eta}$ or \textit{constrained parameters} $\makemebold{\chi}$. Possible modifications of the expected sample rates due to model parameters are considered to be either multiplicative or additive changes to the nominal estimate $\nu_{csb}^0$ of the form
 \begin{equation}
 	\nu_{csb}(\makemebold{\eta},\makemebold{\chi}) = \left(\prod_i f^i_{csb}(\makemebold{\eta},\makemebold{\chi}) \right)\left(\nu^0_{csb} + \sum_j {\Delta^j_{csb}(\makemebold{\eta},\makemebold{\chi})} \right).
 \end{equation}
@@ -53,9 +53,9 @@ Sample rates derived directly from theory calculations (\ie \gls{mc} simulation)
 As discussed in~\cref{sec:lumi_datataking}, the integrated luminosity is itself a measurement that is subject to uncertainties, requiring an additional constraint term in the likelihood.
 It is parametrised by a Gaussian with mean corresponding to the nominal integrated luminosity measurement and standard deviation equal to the integrated luminosity measurement uncertainty.
 Uncertainties arising from the finite size of the \gls{mc} datasets used to derive estimated event rates are modelled by bin-wise scale factors $\gamma_b$.
-The constraint terms are Gaussian distributions with central value equal to unity and standard deviations calculated from the individual uncertainties of the samples defined in the respective channel.
+The constraint terms are Gaussian distributions with central value equal to unity and standard deviations calculated from the individual statistical uncertainties of the samples defined in the respective channel.
 
-As the event rate in a given bin can depend on multiple parameters, and likewise, a single parameter can affect the expected event rate in multiple bins across various channels, correlations between the model parameters $\makemebold{\phi}$ can occur.
+As the event rate in a given bin can depend on multiple parameters, and likewise, a single parameter can affect the expected event rate in multiple bins across different channels, correlations between the model parameters $\makemebold{\phi}$ can occur.
 
 The above prescription for building binned likelihoods is called the \textsc{HistFactory} template~\cite{Cranmer:1456844}. In this work, two independent implementations of the \textsc{HistFactory} template are used.
 The first implementation, predominantly used in~\cref{part:simplified_model_analysis}, relies on \textsc{RooFit}~\cite{RooFit:2003ir} (using the \texttt{Minuit}~\cite{James:310399} package) and \textsc{RooStats}~\cite{RooStats:2010pm} for model parameter estimation and hypothesis tests, and is fully integrated into the \textsc{Root} data analysis framework~\cite{ROOT:1997pa,ROOT-2}. The user interface and the steering of statistical fits, as well as the bookkeeping of their results, is provided by \textsc{HistFitter}~\cite{HistFitter:2014wma}.
@@ -77,7 +77,7 @@ Given a likelihood $L(\makemebold{\phi})$ for a fixed set of observations $\make
 
 In particle physics, the most commonly used estimator is the \gls{mle}. The \glspl{mle} for the model parameters $\makemebold{\hat{\phi}}$ are defined to be the parameter values that maximise $L(\makemebold{\phi})$, or equivalently, maximise $\ln{L(\makemebold{\phi})}$ and minimise $-\ln{L(\makemebold{\phi})}$. The logarithm of the likelihood is used for computational reasons, as it not only reduces the computational complexity by avoiding exponentials and products, but also avoids potential problems arising from finite floating point precision. As the logarithm is a monotonically increasing function, $\ln{L(\makemebold{\phi})}$ has maxima at the same parameter values as ${L(\makemebold{\phi})}$. The negative logarithm of the likelihood is chosen in order to stick to the convention of optimisers in statistical packages typically minimising the result of a \textit{loss function}.
 
-The \glspl{mle} $\makemebold{\hat{\phi}}$ can thus be found by solving the system of equations
+The \glspl{mle} $\makemebold{\hat{\phi}}$ can, in general, be found by solving the system of equations
 \begin{equation}
  \frac{\uppartial \ln L}{\uppartial\phi_i} = 0,
 \end{equation}
@@ -85,14 +85,17 @@ where the index $i$ runs over all parameters. Due to the complexity of the likel
 
 \section{Statistical tests}
 
-In addition to estimating the values of model parameters, searches for \gls{susy} are naturally interested in claiming discovery (or alternatively exclusion) of hypothesised signal models. In the frequentist approach, this can be formulated in terms of hypothesis tests, evaluating a \textit{null hypothesis} $H_0$ against an \textit{alternative hypothesis} $H_1$, with the goal of rejecting the null hypothesis. For discovering a new signal process, $H_0$ is defined to describe only known \gls{sm} processes and thus called \textit{background-only} hypothesis. The alternative hypothesis $H_1$ is then the \textit{signal-plus-background} hypothesis describing both \gls{sm} background processes as well as the signal process considered. When excluding a signal model the signal-plus-background hypothesis takes over the role of $H_0$ and is tested against the background-only hypothesis.
+In addition to estimating the values of model parameters, searches for \gls{susy} are naturally interested in claiming discovery (or exclusion) of hypothesised signal models.
+In the frequentist approach, this can be formulated in terms of hypothesis tests, evaluating a \textit{null hypothesis} $H_0$ against an \textit{alternative hypothesis} $H_1$, with the goal of rejecting the null hypothesis.
+For discovering a new signal process, $H_0$ is defined to describe only known \gls{sm} processes and thus called \textit{background-only} hypothesis.
+The alternative hypothesis $H_1$ is then the \textit{signal-plus-background} hypothesis describing both \gls{sm} background processes as well as the signal process considered. When excluding a signal model, the signal-plus-background hypothesis takes over the role of $H_0$ and is tested against the background-only hypothesis.
 
-The degree of agreement of observed data with a certain hypothesis $H$ is quantified by calculating a $p$-value, representing the probability of finding data of greater or more extreme incompatibility under assumption of $H$. The hypothesis can then be considered as excluded if its observed $p$-value is below a specified threshold. It is common to convert the $p$-value into a \textit{significance} $Z$, defined in such a way that a Gaussian distributed observable with measured value $Z$ standard deviations above its mean gives a one-sided upper tail probability equal to $p$. This yields the expression
+The degree of agreement of observed data with a certain hypothesis $H$ is quantified by calculating a $p$-value, representing the probability of finding data of greater or more extreme incompatibility under assumption of $H$. The hypothesis can then be considered to be excluded if its observed $p$-value is below a specified threshold. It is common to convert the $p$-value into a \textit{significance} $Z$, defined in such a way that a Gaussian distributed observable with measured value $Z$ standard deviations above its mean gives a one-sided upper tail probability equal to $p$. This yields the expression
 \begin{equation}
-	Z = \Phi^{-1}(1-p),
+	Z = \upPhi^{-1}(1-p),
 	\label{eq:significance}
 \end{equation}
-where $\Phi^{-1}$ is the quantile of the standard Gaussian. In \gls{hep}, claiming discovery of a signal conventionally requires a significance of at least $Z=5$. If the significance is lower but still $Z>3$, it is classified as a hint or evidence. For exclusion of a signal hypothesis at 95\% confidence level, a $p$-value of 0.05, \ie $Z = 1.64$, is required~\cite{Cowan:2010js}. 
+where $\upPhi^{-1}$ is the quantile of the standard Gaussian. In \gls{hep}, claiming discovery of a signal conventionally requires a significance of at least $Z=5$. If the significance is lower but still $Z>3$, it is classified as a hint or evidence. For exclusion of a signal hypothesis at 95\% confidence level, a $p$-value of 0.05, \ie $Z = 1.64$, is required~\cite{Cowan:2010js}. 
 
 The $p$-values are calculated using a \textit{test statistic} that parameterises the compatibility between the hypothesis and data in a single value. At the LHC experiments, the test statistics used for hypothesis testing are based on the \textit{profile likelihood ratio} $\lambda(\mu)$, defined to be
 \begin{equation}
@@ -200,13 +203,13 @@ which yields for the significance $Z_\mu$ the expression
 	\caption{Distribution of the \glspl{pdf} of the signal plus background (in orange) and background-only (in blue) models. The orange and blue coloured areas represent the $p_{s+b}$ and $p_{b}$ values, respectively. Figure~\subref{fig:cls_close} shows a case where both \glspl{pdf} are close together, while figure \subref{fig:cls_close} shows a case where they are well separated. Figures created by the author but based on \reference\cite{Cowan:2013pha}.}\label{fig:cls_method}
 \end{figure}
 
-In the CL$_{s+b}$ method, a signal-plus-background model is excluded if $p_{s+b} < \alpha$, where $\alpha$ is defined by the desired confidence level, typically $\mathrm{CL} = 1 - \alpha = 95\%$, and $p_{s+b}$ can be calculated using the test statistic $\tilde{q}_\mu$ (with $\mu = 1$) introduced in~\cref{eq:upper_limit_test_statistic}. If the experiment has very low sensitivity to a specific signal-plus-background model, \eg because the production cross section is too low, the distribution of the test statistic of the signal-plus-background model will be very close to that of the background-only model. In case of an underfluctuation in data, the $\mu = 1$ model can then be falsely excluded, even though no sensitivity is expected. \Cref{fig:cls_method} illustrates this with a simple example. In fact, the exclusion of models to which the experiment has no sensitivity has a probability of at least $\alpha$~\cite{Cowan:2013pha}.
+In the CL$_{s+b}$ method, a signal-plus-background model is excluded if $p_{s+b} < \alpha$, where $\alpha$ is defined by the desired confidence level, typically $\mathrm{CL} = 1 - \alpha = 95\%$, and $p_{s+b}$ can be calculated using the test statistic $\tilde{q}_\mu$ (with $\mu = 1$) introduced in~\cref{eq:upper_limit_test_statistic}. If the experiment has very low sensitivity to a specific signal-plus-background model, \eg because the production cross section of the signal process is too low, the distribution of the test statistic of the signal-plus-background model will be very close to that of the background-only model. In case of an underfluctuation in data, the $\mu = 1$ model can then be falsely excluded, even though no sensitivity is expected. \Cref{fig:cls_method} illustrates this with a simple example. In fact, the exclusion of models to which the experiment has no sensitivity has a probability of at least $\alpha$~\cite{Cowan:2013pha}.
 
 This problem can be remedied by adopting the CL$_s$ method~\cite{Read:2002hq}, altering the threshold for excluding a model in a way to avoid exclusion of models to which the experiment has very low sensitivity. The CL$_s$ value is defined as
 \begin{equation}
 	\mathrm{CL}_s = \frac{p_{s+b}}{1-p_b},
 \end{equation}
-where $p_b$ is the $p$-value of the background-only hypothesis\footnote{It is worth highlighting that $p_b$ is equal to $p_\mu$ from \cref{eq:pmu} with $\mu=0$. This is strictly different from $p_0$ in \cref{eq:disc_pvalue} as it relies a different test statistic.}. If the distributions of the test statistics for the signal-plus-background and the background-only models are close to each other (as seen in~\cref{fig:cls_close}) a small value of $p_{s+b}$ due to an underfluctuation in data will entail a large value of $p_b$. Consequently, in the calculation of the CL$_s$ value, $p_{s+b}$ will be penalised by $1-p_b$ (that will be close to 0), resulting in CL$_s > p_{s+b}$, preventing the exclusion of the signal-plus-background model. Conversely, in the case where the two test statistics are well-separated (see~\cref{fig:cls_far}) and $p_{s+b} < \alpha$, then $p_b$ will also be small and thus CL$_s$ will be close to $p_{s+b}$ obtained by the frequentist approach. 
+where $p_b$ is the $p$-value of the background-only hypothesis\footnote{It is worth highlighting that $p_b$ is equal to $p_\mu$ from \cref{eq:pmu} with $\mu=0$. This is strictly different from $p_0$ in \cref{eq:disc_pvalue} as it relies on a different test statistic.}. If the distributions of the test statistics for the signal-plus-background and the background-only models are close to each other (as illustrated in~\cref{fig:cls_close}) a small value of $p_{s+b}$ due to an underfluctuation in data will entail a large value of $p_b$. Consequently, in the calculation of the CL$_s$ value, $p_{s+b}$ will be penalised by $1-p_b$ (that will be close to 0), resulting in CL$_s > p_{s+b}$, preventing the exclusion of the signal-plus-background model. Conversely, in the case where the two test statistics are well-separated (see~\cref{fig:cls_far}) and $p_{s+b} < \alpha$, then $p_b$ will also be small and thus CL$_s$ will be close to $p_{s+b}$ obtained by the frequentist approach. 
 
 \section{Asimov dataset}
 
@@ -214,8 +217,8 @@ Searches for \gls{bsm} physics are not only interested in the significance obtai
 For example, for rejecting the $\mu = 1$ hypothesis, searches are interested in the expected significance obtained assuming data generated according to the $\mu = 0$ hypothesis.
 
 The expected experimental sensitivity can be determined using an artificial dataset called the \textit{Asimov dataset}, defined such that \glspl{mle} of all parameters determined using Asimov data correspond to the true parameter values.
-This is achieved by constructing a dataset where the number of events in each bin is exactly equal to the expected event rate in that bin. Using Asimov data, the Asimov likelihood $L_\mathrm{A}$ as well as the profile likelihood $\lambda_\mathrm{A}$ can be evaluated and thus a median significance can be determined.
-Non-integer values for data are not an issue as factorial terms from the Poisson probabilities are canceled in the profile likelihood and can thus be dropped altogether. 
+This is achieved by constructing a dataset where the number of events in each bin is exactly equal to the expected event rate in that bin. Using Asimov data, the Asimov likelihood $L_\mathrm{A}$ as well as the corresponding profile likelihood $\lambda_\mathrm{A}$ can be evaluated, and thus a median significance can be determined.
+Non-integer values for data counts are not an issue as factorial terms from the Poisson probabilities are canceled in the profile likelihood and can thus be dropped altogether. 
 
 \section{Sensitivity estimation}\label{sec:sensitivity_estimation}
 
@@ -233,15 +236,15 @@ where $\mu$ is again the signal strength parameter. The relative background unce
 \begin{equation}
 	\tau = \frac{B}{\Delta B^2}.
 \end{equation}
-As $n_{\mathrm{SR}}$ and $n_{\mathrm{CR}}$ are each drawn from a Poisson probability with unknown means $\nu_\mathrm{SR}$ and $\nu_\mathrm{CR}$, the background-only hypothesis corresponds exactly to the case where the ratio of Poisson means $\lambda = \nu_\mathrm{CR} / \nu_\mathrm{SR}$ is equal to $\tau$~\cite{Cousins:2007bmb}. The two Poisson terms can then be written as the product of a single Poisson term with mean $n_\mathrm{tot} = n_\mathrm{SR} + n_\mathrm{CR}$ and the binomial probability of picking $n_\mathrm{SR}$ events out of $n_\mathrm{tot}$ with probability $\rho = \nu_\mathrm{SR} / \nu_\mathrm{tot} = 1 / (1+\lambda)$. The likelihood can thus be written as
+As $n_{\mathrm{SR}}$ and $n_{\mathrm{CR}}$ are each drawn from a Poisson probability with unknown means $\nu_\mathrm{SR}$ and $\nu_\mathrm{CR}$, the background-only hypothesis corresponds exactly to the case where the ratio of Poisson means \mbox{$\lambda = \nu_\mathrm{CR} / \nu_\mathrm{SR}$} is equal to $\tau$~\cite{Cousins:2007bmb}. The two Poisson terms can then be written as the product of a single Poisson term with mean $n_\mathrm{tot} = n_\mathrm{SR} + n_\mathrm{CR}$ and the binomial probability $B(n_\mathrm{SR}\vert\rho,n_\mathrm{tot})$ of picking $n_\mathrm{SR}$ events out of $n_\mathrm{tot}$ with probability $\rho = \nu_\mathrm{SR} / \nu_\mathrm{tot} = 1 / (1+\lambda)$. The likelihood can therefore be written as
 \begin{equation}
 \begin{split}
 	L(\mu, B) & = \mathrm{Pois} (n_\mathrm{tot}\vert\lambda_\mathrm{tot})\cdot B(n_\mathrm{SR}\vert\rho,n_\mathrm{tot}) \\ 
-	& = \frac{e^{-\lambda_\mathrm{tot}}\lambda_{\mathrm{tot}}^{n_\mathrm{tot}}}{n_\mathrm{tot}\,!} \cdot{n_\mathrm{tot}\choose n_\mathrm{SR}} \rho^\lambda_\mathrm{tot} (1-\rho)^{n_\mathrm{tot}-n_\mathrm{SR}}.
+	& = \frac{\mathrm{e}^{-\lambda_\mathrm{tot}}\lambda_{\mathrm{tot}}^{n_\mathrm{tot}}}{n_\mathrm{tot}\,!} \cdot{n_\mathrm{tot}\choose n_\mathrm{SR}} \rho^\lambda_\mathrm{tot} (1-\rho)^{n_\mathrm{tot}-n_\mathrm{SR}}.
 \end{split}
 \end{equation}
 
-Since the background-only hypothesis cannot only be expressed as $\mu = 0$ but also as $\nu_\mathrm{SR} = \nu_B$, $\lambda = \tau$, and especially also as $\rho = 1/(1+\tau)$~\cite{Cousins:2007bmb}, its $p$-value can be calculated using the well-know frequentist binomial test,
+Since the background-only hypothesis cannot only be expressed as $\mu = 0$ but also as $\nu_\mathrm{SR} = \nu_B$, $\lambda = \tau$, and especially also as $\rho = 1/(1+\tau)$~\cite{Cousins:2007bmb}, its $p$-value can be calculated using the well-known frequentist binomial test,
 \begin{equation}
 	p_\mathrm{B} = \sum_{j=n_\mathrm{SR}}^{n_\mathrm{tot}} B (j\vert n_\mathrm{tot}, \rho).
 \end{equation}
