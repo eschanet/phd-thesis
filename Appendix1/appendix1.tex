@@ -3,11 +3,50 @@
 
 \chapter{Additional analysis material}
 
-\graphicspath{{chapter-optimisation/Figs/Vector/}{chapter-optimisation/Figs/}}
+\graphicspath{{chapter-analysis/Figs/}}
 
-This appendix provides additional plots for the signal region optimisation and results presented in \cref{part:simplified_model_analysis} of this thesis.
+This appendix provides additional analysis material for the \onelepton search presented in \cref{part:simplified_model_analysis} of this thesis.
+
+\section{Kinematic distributions}\label{app:kinematic_distributions}
+
+\Cref{fig:norm_obs_app} illustrates the dependence on the electroweakino mass scale and the mass difference between $\charg$/$\neutr$ and $\lsp$ for a selection of relevant kinematic observables. In the plots on the left column of \cref{fig:norm_obs_app}, only \mbox{$m(\charg$/$\neutr)$} is varied while $m(\lsp)$ is kept at $\SI{0}{\GeV}$. On the right-hand side of \cref{fig:norm_obs_app}, \mbox{$m(\charg$/$\neutr)$} is fixed at $\SI{450}{\GeV}$, while $m(\lsp)$ is varied. As can be observed, model points with increasing \mbox{$\charg$/$\neutr$} mass show increasing values in kinematic observables like $\etmiss$, $\mt$, $\mct$ and the $\pt$ of the lepton. Model points with increasingly small electroweakino mass differences tend to exhibit less $\etmiss$ and overall softer objects (as \eg more events with leptons with relatively low $\pt$).
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{high_mass/met}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{mass_diff/met}
+	\end{subfigure}\hfill
+	\par\medskip
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{high_mass/lep1Pt}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{mass_diff/lep1Pt}
+	\end{subfigure}\hfill
+	\par\medskip
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{high_mass/mt}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{mass_diff/mt}
+	\end{subfigure}\hfill
+	\par\medskip
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{high_mass/mct}
+	\end{subfigure}\hfill
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering\includegraphics[width=0.8\textwidth]{mass_diff/mct}
+	\end{subfigure}
+
+	\caption{Dependence of some of the kinematic observables on the \mbox{$\charg$/$\neutr$} mass scale (left) and \mbox{$\charg$/$\neutr$}--$\lsp$ mass differences (right). The simulated \gls{sm} backgrounds are stacked on top of each other and summarised in a single `SM' histogram. Distributions from exemplary signal models with the quoted mass parameters are overlaid. In order to emphasise the shape differences, both total background and signal distributions are normalised to unity. A preselection requiring a lepton, at least two jets and $\etmiss > \SI{100}{\GeV}$ is applied.}\label{fig:norm_obs_app}
+\end{figure}
 
 \section{Signal region optimisation}\label{app:n-1_plots_cut_opt}
+
+\graphicspath{{chapter-optimisation/Figs/Vector/}{chapter-optimisation/Figs/}}
 
 \subsection{Raw results from \textit{N}-dimensional scan}
 \Cref{fig:results_z_vs_eff_rest} shows the results of the $N$-dimensional cut scan for all benchmark signal points considered. As in \cref{ch:signal_region_optimisation}, three different uncertainty configurations are used for computing the significance $Z_\mathrm{B}$, and all values are computed for the two statistically independent subsets of the \gls{mc} datasets used during the $N$-dimensional scan. This approach allows to gauge the impact of statistical fluctuations on the cut combinations tested.

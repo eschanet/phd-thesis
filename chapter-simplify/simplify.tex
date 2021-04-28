@@ -56,7 +56,7 @@ In summary, this motivates the introduction of a method for approximating ATLAS 
 
 \section{Building simplified likelihoods}\label{sec:building_simplified_likelihoods}
 
-In order to retain the full statistical combination of multiple signal region bins implemented in many SUSY searches, while still being able to achieve a sufficiently fast approximation, the statistical treatment of the background model including its uncertainties needs to be simplified.
+In order to retain the full statistical combination of multiple signal region bins implemented in many \gls{susy} searches, while still being able to achieve a sufficiently fast approximation, the statistical treatment of the background model including its uncertainties needs to be simplified.
 In the procedure presented in the following, this is achieved by first performing a background-only fit to data using the full likelihood in order to determine the best-fit values of all model parameters $\makemebold{\phi}$.
 The post-fit total background estimates as well as the total uncertainty on the estimates in every bin are subsequently computed from the best-fit values, and used to construct a simplified likelihood.
 
@@ -285,7 +285,7 @@ This very simplified analysis will be used in the following chapter to enable a 
 As the full likelihood defines the full statistical model given the observed data in an analysis, other forms of likelihood simplifications can be thought of.
 One possible approach worth investigating is the construction of likelihood simplifications using a variable number of nuisance parameters, as opposed to reducing the full set of nuisance parameters to a single one.
 In such an approach, a principal components analysis could project the full $N$-dimensional nuisance parameter space onto a number $n\leq N$ principal components maximising the variance of the projected space, \ie resulting in minimal loss in bin-by-bin correlation information.
-The $n$ principal components can then be kept separate in a simplified likelihood, while the $N-n$ remaining components can be combined into a \textit{residual} term\footnote{The simplified likelihood introduced in this thesis can be understood as the special case where $n=0$ is chosen and none of the principal components are kept separate while all $N$ nuisance parameters are combined into a single residual term.}.
+The $n$ principal components can then be kept separate in a simplified likelihood, while the $N-n$ remaining components can be combined into a \textit{residual} term\footnote{The simplified likelihood introduced in this thesis can be understood as the special case where $n=0$ is chosen and none of the principal components are kept separate while all $N$ nuisance parameters are combined into a single residual term (taking into account correlations between them).}.
 A similar approach was already introduced in \cref{ch:uncertainties}, where the large number of nuisance parameters related to the \gls{jer} and \gls{jes} uncertainties were reduced to a more manageable set of \textit{effective} nuisance parameters with minimal loss in bin-by-bin correlation information. 
 
 Up until very recently, the only way for physicists outside the collaboration to re-use ATLAS searches for \gls{susy} required building approximations of their statistical models based on publicly available lossy projections of the full likelihood.
