@@ -8,12 +8,12 @@
 
 \graphicspath{{chapter-uncertainties/Figs/Vector/}{chapter-uncertainties/Figs/}}
 
-Several sources of systematic uncertainties need to be considered in the following. As laid out in \cref{ch:statistics}, they enter the likelihood as nuisance parameters and can be interpreted as a loss of information on the signal strength parameter. In the following, they are separated into experimental uncertainties, arising \eg from finite detector resolution, and theoretical uncertainties due to modelling of the physics processes during simulation. 
+Several sources of systematic uncertainties need to be considered in the following. As laid out in \cref{ch:statistics}, they enter the likelihood as nuisance parameters and can be interpreted as a loss of information on the signal strength parameter. In the following, they are separated into experimental uncertainties, arising for example from finite detector resolution, and theoretical uncertainties due to modelling of the physics processes during simulation. 
 
 \section{Experimental uncertainties}
 
 Experimental uncertainties arise from the methods used to reconstruct, identify and calibrate the physics objects used in the \onelepton search.
-They are evaluated using up and down variations provided either as variational weights\footnote{See \cref{sec:mc_weights} for a discussion on the use of weights in \gls{mc} events.} in the case of efficiency uncertainties, or as additional variational samples derived by re-executing the entire object reconstruction pipeline with varied parameters.
+They are evaluated using up and down variations provided either as variational weights\footnote{See \cref{sec:mc_weights} for a discussion on the use of weights in \gls{mc} events.} in the case of efficiency uncertainties, or as additional variational \gls{mc} datasets derived by re-executing the entire object reconstruction pipeline with varied parameters.
 
 \subsection{Pile-up reweighting and luminosity}
 
@@ -23,30 +23,29 @@ In order to account for differences in the measured inelastic \textit{pp} cross 
 %As \gls{mc} samples are generated with integer values of $\mu$ only, the scale factor is applied to data instead.
 The uncertainty on the pile-up correction is evaluated by varying the data scale factor by $\pm 0.04$ and deriving variational pile-up weights.
 
-As detailed in \cref{sec:lumi_datataking}, the total integrated luminosity relies on the measurement of the bunch luminosity which, in turn, needs precise measurements of the visible inelastic cross section $\sigma_\mathrm{vis}$, as well as the visible pile-up parameter $\mu_\mathrm{vis}$.
-Uncertainties on the measurement of the total recorded cross section are dominated by the uncertainties on $\sigma_\mathrm{vis}$ that is measured during special \glsfirst{vdm} scans.
+As detailed in \cref{sec:lumi_datataking}, the total integrated luminosity relies on the measurement of the bunch luminosity, which, in turn, needs precise measurements of the visible inelastic cross section $\sigma_\mathrm{vis}$, as well as the visible pile-up parameter $\mu_\mathrm{vis}$.
+Uncertainties on the measurement of the total recorded luminosity are dominated by the uncertainties on $\sigma_\mathrm{vis}$ that is measured during special \glsfirst{vdm} scans.
 For the full Run~2 dataset, an overall luminosity uncertainty of $\pm 1.7\%$, is considered for all \gls{mc} processes not normalised to data using a control region, derived using the methods described in \reference\cite{ATLAS-CONF-2019-021}.
 
 \subsection{Triggers}
 
-All selections considered in the analysis apply a minimum requirement of $\etmiss > \SI{240}{\GeV}$, thus targeting a region where the $\etmiss$ triggers are fully efficient (see~\cref{sec:trigger_strategy}). For this reason, no trigger scale factors and associated uncertainties are needed. Instead, only a 2\% normalisation uncertainty correlated over all bins is considered to cover differences between the trigger plateaus due to \gls{mc} statistical uncertainties. 
+All selections considered in the analysis apply a minimum requirement of $\etmiss > \SI{240}{\GeV}$, thus targeting a region where the $\etmiss$ triggers are fully efficient (cf.~\cref{sec:trigger_strategy}). For this reason, no trigger scale factors and associated uncertainties are needed. Instead, only a 2\% normalisation uncertainty, correlated over all bins, is considered to cover differences between the trigger plateaus due to \gls{mc} statistical uncertainties. 
 
 \subsection{Leptons}
 
 Uncertainties on electrons arise primarily from energy scale and resolution measurements~\cite{EGAM-2018-01,PERF-2017-01}.
 They are assumed to be fully correlated in $\eta$ and are summed in quadrature, resulting in one nuisance parameter for the energy scale and one for the resolution.
-Uncertainties on muons arise from calibrations of the muon momentum scale and resolution, and are evaluated using variations in the smearing of the \gls{id} and \gls{ms} tracks as well as the momentum scale, resulting in a total of five Gaussian-constrained nuisance parameters entering the likelihood~\cite{PERF-2015-10}.
-Additional lepton-related uncertainties considered in the following originate from measurements of the reconstruction, identification and isolation efficiencies. Two more uncertainties arising from track-to-vertex association and bad muon identification efficiencies are considered in the case of muons.
+Uncertainties on muons arise from calibrations of the muon momentum scale and resolution, and are evaluated using variations in the smearing of the inner detector and muon spectrometer tracks as well as the momentum scale, resulting in a total of five Gaussian-constrained nuisance parameters entering the likelihood~\cite{PERF-2015-10}.
+Additional lepton-related uncertainties, considered in the following, originate from measurements of the reconstruction, identification and isolation efficiencies. In the case of muons, two more uncertainties, arising from track-to-vertex association and bad muon identification efficiencies, are considered.
 
 \subsection{Jets}
 
-The calibration of the jets to the absolute \gls{jes} is subject to uncertainties arising \eg from the \textit{in situ} measurements, pile-up effects or flavour-dependence~\cite{Aad:2020flx}, encoded in a large set of 125 parameters.
-The full detail contained in the complete set of uncertainty components offers far greater statistical precision than needed for the \onelepton search.
+The calibration of the jets to the absolute \gls{jes} is subject to uncertainties arising from, \eg, the \textit{in situ} measurements, pile-up effects or flavour-dependence~\cite{Aad:2020flx}. They are encoded in a large set of 125 parameters, the full detail of which offers far greater statistical precision than needed for the \onelepton search.
 As the majority of the parameters (a total of 98) stems from \textit{in situ} measurements, an eigenvector decomposition is performed on the covariance matrix of these components~\cite{ATL-PHYS-PUB-2015-014}, allowing to determine the 15 principal orthogonal components (including a residual term adding the remaining terms in quadrature), with minimal loss in bin-by-bin correlation information.
-Five additional parameters evaluating uncertainties arising from \textit{in situ} $\eta$-intercalibrations of forward jets with respect to central jets are kept separate due to their two-dimensional dependence on $\pt$ and $\eta$~\cite{Aad:2020flx}.
+Five additional parameters, evaluating uncertainties arising from \textit{in situ} $\eta$-intercalibrations of forward jets with respect to central jets, are kept separate due to their two-dimensional dependence on $\pt$ and $\eta$~\cite{Aad:2020flx}.
 Effects from pile-up are described by four additional nuisance parameters. Uncertainties arising from differing detector responses to gluon- and quark-initiated jets as well as flavour-related differences are accounted for by two more nuisance parameters.
-Uncertainties on jets that are not contained in the calorimeters and \textit{punch-through} into the \gls{ms} are evaluated with an additional parameter.
-A last parameter encodes the uncertainties arising from the calibration of \gls{mc} samples reconstructed using \textsc{ATLFAST-II} instead with the full detector simulation.
+Uncertainties on jets that are not contained in the calorimeters and \textit{punch-through} into the muon spectrometer are evaluated with an additional parameter.
+A last parameter encodes the uncertainties arising from the calibration of \gls{mc} samples reconstructed using \textsc{ATLFAST-II} instead of the full \textsc{Geant4}-based detector simulation.
 
 Systematic uncertainties on the \gls{jer} arise from measured differences between data and \gls{mc} simulation, noise from pile-up, and \textit{in situ} measurements of the jet $\pt$ imbalance.
 A similar eigenvector decomposition as for part of the \gls{jes} uncertainties is used, reducing the set of nuisance parameters considered in the following to 13~\cite{Aad:2020flx}.
@@ -54,9 +53,9 @@ Finally, uncertainties related to the efficiency of jet vertex tagging are evalu
 
 \subsection{Flavour tagging}
  
- Uncertainties on the flavour tagging efficiency originate from \eg modelling uncertainties, as well as uncertainties on the reconstruction of physics objects.
- Similar to the \gls{jer} and \gls{jes} uncertainties, the full set of nuisance parameters that would in principle need to be included in order to consider the full bin-by-bin correlations and $\pt$ and $\eta$ dependence of the flavour-tagging uncertainties, is reduced to a more manageable size using an eigenvector decomposition.
- This leads to a total of five nuisance parameters encoding uncertainties on the \textit{b}-tagging efficiency, c-jet and light-jet mis-tagging rate as well as on the extrapolation to high-$\pt$ jets~\cite{FTAG-2018-01, PERF-2016-05}.  
+ Uncertainties on the flavour tagging efficiency originate from modelling uncertainties and uncertainties on the reconstruction of physics objects.
+ Similar to the \gls{jer} and \gls{jes} uncertainties, the full set of nuisance parameters, that would in principle need to be included in order to consider the full bin-by-bin correlations and $\pt$ and $\eta$ dependence of the flavour-tagging uncertainties, is reduced to a more manageable size using an eigenvector decomposition.
+ This leads to a total of five nuisance parameters encoding uncertainties on the \textit{b}-tagging efficiency, the c-jet and light-jet mis-tagging rate, and the extrapolation to high-$\pt$ jets~\cite{FTAG-2018-01, PERF-2016-05}.  
  
 \subsection{Missing transverse energy}
 
@@ -67,15 +66,15 @@ All track soft term uncertainties are derived by comparing \gls{mc} simulation t
 
 \section{Theoretical uncertainties}
 
-As discussed in~\cref{sec:mc_simulation}, due to finite order calculations, the different steps of the \gls{mc} simulation generally introduces a certain number of unphysical scales and parameters.
+As discussed in~\cref{sec:mc_simulation}, due to finite order calculations, the different steps of the \gls{mc} simulation generally introduce a certain number of unphysical scales and parameters.
 In order to quantify the uncertainties arising from the ad-hoc values of these, the \gls{mc} simulation generally needs to be re-run with systematically varied parameter values.
 Since varied \gls{mc} simulation parameters affect the event kinematics even before reconstruction and calibration, it is computationally very expensive to produce a full set of variations for each \gls{mc} simulated dataset used in the nominal analysis.
 
 In the following, different approaches are used to derive the theory uncertainties.
 For some of the variational \gls{mc} datasets, the full \gls{mc} simulation chain was run with reduced statistics.
-For others, alternative \gls{mc} datasets produced with a different set of \gls{mc} generators and tunes were available.
+For others, alternative \gls{mc} datasets, produced with a different set of \gls{mc} generators and tunes, were available.
 For others still, variations were already processed during the initial \gls{mc} simulation of the nominal sample and subsequently stored as variational weights.
-Finally, some of the variational \gls{mc} datasets were simulated at \gls{mc} truth-level, \ie without detector simulation.
+Finally, some of the variational \gls{mc} datasets were simulated at \gls{mc} truth-level, \ie skipping the detector simulation.
 The latter approach was used especially in the case of \gls{susy} signal samples, where the impact of the full detector simulation compared to truth-level comparisons is expected to be small in the context of theory uncertainties.
 Additionally, a full simulation of \gls{mc} datasets for all parameter variations and all signal points considered, would be computationally unfeasible. 
 
@@ -112,17 +111,17 @@ If the \gls{mc} datasets used for deriving the variational and nominal transfer 
  
  Theory uncertainties on the estimate of $\ttbar$ and single top processes arise for example from the simulation of the hard scattering between the interacting partons.
  These are evaluated by comparing the estimates from the nominal \gls{mc} datasets generated using \textsc{Powheg-Box}~\cite{PowhegBox:2010xd} and \textsc{Pythia8}~\cite{Pythia8:2007gs} with those from alternative datasets generated using \textsc{MadGraph\_aMC@NLO}~\cite{MGaMCNLO:2014hca,Frederix:2012ps} and \textsc{Pythia8}.
- Uncertainties resulting from the hadronisation and fragmentation scheme chosen in \textsc{Pythia8} are estimated by a comparison to a \gls{mc} dataset generated using \textsc{Powheg} and \textsc{Herwig++}~\cite{Herwig:2015jjp}.
- Uncertainties arising from \gls{isr} are evaluated at full reconstruction level by varying up and down by a factor of two the unphysical renormalisation $\mu_\mathrm{R}$ and factorisation $\mu_\mathrm{F}$ scales as well as the parameters controlling the parton showering and the matching with the matrix elements~\cite{ATL-PHYS-PUB-2016-004}.
- Likewise, uncertainties arising from the simulation of \gls{fsr} are estimated by varying the effective coupling $\alpha_s^{\mathrm{FSR}}$~\cite{ATL-PHYS-PUB-2016-004}. 
+ Uncertainties resulting from the hadronisation and fragmentation scheme chosen in \textsc{Pythia8} are estimated through a comparison to a \gls{mc} dataset generated using \textsc{Powheg} and \textsc{Herwig++}~\cite{Herwig:2015jjp}.
+ Uncertainties arising from initial state radiation are evaluated at full reconstruction level by varying up and down by a factor of two the unphysical renormalisation $\mu_\mathrm{R}$ and factorisation $\mu_\mathrm{F}$ scales as well as the parameters controlling the parton showering and the matching with the matrix elements~\cite{ATL-PHYS-PUB-2016-004}.
+ Likewise, uncertainties arising from the simulation of final state radiation are estimated by varying the effective coupling $\alpha_s^{\mathrm{FSR}}$~\cite{ATL-PHYS-PUB-2016-004}. 
  
  Uncertainties also originate from the \gls{PDF} set used during generation of the nominal \gls{mc} dataset.
- As detailed in~\cref{tab:mc_generators}, the \textsc{NNPDF3.0NLO} set is used for the simulation of both $\ttbar$ and single top processes.
- An envelope around the variational expected event rates obtained from the \textsc{NNPDF3.0NLO} uncertainties are used to compute an uncertainty on the transfer factor.
+ As detailed in~\cref{tab:mc_generators}, the \textsc{NNPDF 3.0 NLO} set is used for the simulation of both $\ttbar$ and single top processes.
+ An envelope around the variational expected event rates, obtained from the \textsc{NNPDF 3.0 NLO} uncertainties, is used to compute an uncertainty on the transfer factor.
  
  Beyond \gls{lo} single top production diagrams, interference appears between $Wt$ and $\ttbar$ production.
  Two approaches are commonly used to try and isolate the $Wt$ channel: diagram removal and diagram subtraction~\cite{Frixione:2008yi}.
- While the former removes all diagrams in the \gls{nlo} $Wt$ amplitude that are doubly resonant (meaning that they involve an intermediate top quark that can be on-shell), the latter introduces subtraction terms in the \gls{nlo} $Wt$ cross section cancelling the $\ttbar$ contribution~\cite{Frixione:2008yi}.
+ While the former removes all diagrams in the \gls{nlo} $Wt$ amplitude that are doubly resonant, \ie that involve an intermediate top quark which can be on-shell, the latter introduces subtraction terms in the \gls{nlo} $Wt$ cross section cancelling the $\ttbar$ contribution~\cite{Frixione:2008yi}.
  As the diagram removal scheme is used for estimating the event rate of the $Wt$ channel in the analysis, a comparison with an estimation using the diagram subtraction scheme allows to derive an uncertainty associated to the interference.
   
  \subsubsection{$\makemebold{W/Z+\mathrm{jets}}$}
@@ -130,26 +129,26 @@ If the \gls{mc} datasets used for deriving the variational and nominal transfer 
  For $W/Z+\mathrm{jets}$ processes, simulated using \textsc{Sherpa 2.2.1}~\cite{Gleisberg:2008ta,Bothmann:2019yzt}, four different unphysical scales can be varied in order to evaluate uncertainties on the modelling.
  The renormalisation $\mu_\mathrm{R}$ and factorisation $\mu_\mathrm{F}$ scales are both varied independently and together up and down by a factor of two, resulting in a total of seven combined variations.
  Three envelopes are determined from varying only $\mu_\mathrm{R}$, only $\mu_\mathrm{F}$ or $\mu_\mathrm{R}$ and $\mu_\mathrm{F}$ together, allowing to determine three separate uncertainties.
- The CKKW \gls{me} and \gls{ps} matching scheme also uses an unphysical scale for determining the overlap between jets from the \gls{me} and the \gls{ps}.
+ The CKKW matrix element and parton shower matching scheme also uses an unphysical scale for determining the overlap between jets from the matrix elements and the parton showers.
  The nominal value of $\SI{20}{\GeV}$ for the merging scale is varied to $\SI{30}{\GeV}$ and $\SI{15}{\GeV}$ for the up and down systematic variations, respectively.
- Finally, the scale used for resummation of soft gluon emission, $\mu_\mathrm{QSF}$, is varied up and down by a factor of two, and the effect on the expected event rates is determined.
+ Finally, the scale used for resummation of soft gluon emission $\mu_\mathrm{QSF}$ is varied up and down by a factor of two, and the effect on the expected event rates is determined.
  
  An additional uncertainty arises from the choice of \gls{PDF} set used for simulating $W/Z+\mathrm{jets}$.
  It is evaluated by propagating the \gls{PDF} error set (containing slightly different parameterisations of the \gls{PDF}) to the analysis observables.
- Uncertainties due to the choice of the strong coupling constant $\alpha_s(m_Z) = 0.118$ for fitting the \glspl{PDF} are estimated by comparing with variations using $\alpha_s(m_Z) = 0.119$ and $\alpha_s(m_Z) = 0.117$, and added in quadrature to the \gls{PDF} uncertainty.
+ Uncertainties due to the choice of the strong coupling constant $\alpha_s(m_Z) = 0.118$ for fitting the \glspl{PDF} are estimated by comparing with variations using $\alpha_s(m_Z) = 0.119$ and $\alpha_s(m_Z) = 0.117$, and are added in quadrature to the \gls{PDF} uncertainty.
  
  As the $Z+\mathrm{jets}$ process is not normalised to data in a dedicated \gls{cr} but to its nominal \gls{sm} cross section, an additional normalisation uncertainty corresponding to the theoretical uncertainty on the cross section is considered.
   
  \subsubsection{Other backgrounds}
  
- For diboson, multiboson and $\ttbar+V$ processes, uncertainties arising from the unphysical scales $\mu_\mathrm{F}$, $\mu_\mathrm{R}$ as well as $\mu_\mathrm{QSF}$ and the \gls{me} and \gls{ps} matching scale are considered using the same prescription described above for the $W/Z+\mathrm{jets}$ processes.
+ For diboson, multiboson and $\ttbar+V$ processes, uncertainties arising from the unphysical scales $\mu_\mathrm{F}$, $\mu_\mathrm{R}$ as well as $\mu_\mathrm{QSF}$ and the matrix element and parton shower matching scale are considered using the same prescription described above for the $W/Z+\mathrm{jets}$ processes.
  For these three processes as well as for the other minor backgrounds $V+h$ and $\ttbar+h$, additional uncertainties on the \gls{sm} cross sections used for normalisation are taken into account.
   
  \subsection{Signal}\label{sec:signal_theory_uncertainties}
  
- Theoretical uncertainties on the \gls{susy} signal processes arise from the unphysical factorisation, renormalisation and CKKW-L \gls{me} and \gls{ps} merging scales.
- These are evaluated using a similar procedure as for background processes, varying the different scales up and down by a factor of two and comparing to the expected signal rates.
- An additional uncertainty on \gls{ps} originating from the chosen \textsc{Pythia8} tune is estimated by varying up and down the chosen value for $\alpha_s^\mathrm{ISR}$.\unsure{yea but how much?}
+ Theoretical uncertainties on the \gls{susy} signal processes arise from the unphysical factorisation, renormalisation and CKKW-L matrix element and parton shower merging scales.
+ These are evaluated using a similar procedure as for background processes, varying the different scales up and down by a factor of two and comparing the expected signal rates.
+ An additional uncertainty on parton showering originating from the chosen \textsc{Pythia8} tune is estimated by varying up and down the value chosen for $\alpha_s^\mathrm{ISR}$.\unsure{yea but how much?}
  
  As detailed in~\cref{sec:signal_samples}, the cross sections of electroweakino pair production are calculated using \textsc{Resummino}. Theoretical uncertainties on the cross sections are considered in the following, but do not enter the statistical fit procedure as nuisance parameter.
  Instead, in addition to the set of observed CL$_s$ values using the nominal cross section, two additional variational sets are derived using signal cross sections fixed at their $\pm 1\sigma$ variations.
@@ -159,20 +158,20 @@ Due to the large number of \gls{mc} samples, all theory uncertainties on \gls{su
 As the \glspl{vr} typically have relatively low signal contamination and thus low signal \gls{mc} statistics available for evaluating theory uncertainties, requirements on observables with negligible impact on the shapes of the theoretical uncertainties are relaxed.
 In the on-peak \glspl{vr}, the requirements relaxed are $\mt>\SI{60}{\GeV}$ and $\etmiss > \SI{140}{\GeV}$.
 The same relaxed selection is applied in \glspl{sr} in cases where the \gls{mc} statistical uncertainties are too high for a reliable estimation of the theoretical uncertainties.
-In the off-peak \glspl{vr}, the requirements relaxed are $\mt>\SI{60}{\GeV}$ and $\etmiss>\SI{60}{\GeV}$ and $\mct>\SI{60}{\GeV}$.
-Overall, the theoretical uncertainties on the expected signal rate range from about 10\% in phase space regions with large mass splitting between $\charg/\neutr$ and $\lsp$ to about 25\% in regions with small mass splittings.\improvement{Plots from HF numbers?}
+In the off-peak \glspl{vr}, the requirements relaxed are $\mt>\SI{60}{\GeV}$, $\etmiss>\SI{60}{\GeV}$ and $\mct>\SI{60}{\GeV}$.
+Overall, the theoretical uncertainties on the expected signal rate range from about 10\% in phase space regions with large mass splitting to about 25\% in regions with small mass splittings.\improvement{Plots from HF numbers?}
  
  
 \section{Impact on signal regions}
 
 \Cref{tab:systematics_summary} shows a breakdown of the dominant systematic uncertainties on the background prediction in the \glspl{sr}, obtained after a background-only fit in the \glspl{cr} with subsequent extrapolation to the \glspl{sr}.
-The total uncertainties in the \glspl{sr} amount to 15\% in SR-LM and increases to 25\% in SR-MM and 34\% in SR-HM. Theoretical uncertainties have the largest contribution to the total uncertainties.
-For SR-LM, the largest uncertainties, amounting to 10\% of the total background estimate, originates from the $\ttbar$ parton shower uncertainties.
+The total uncertainties in the \glspl{sr} amount to 15\% in SR-LM and increases to 25\% in SR-MM and 34\% in SR-HM. Theoretical uncertainties give the largest contribution to the total uncertainties.
+For SR-LM, the largest uncertainties, amounting to 10\% of the total background estimate, originate from the $\ttbar$ parton shower uncertainties.
 For SR-MM (SR-HM), the single top generator uncertainties are the largest ones with 10\% (21\%) of the total background estimate.
 Theoretical uncertainties on $\wjets$ and other minor backgrounds have only small to negligible effects.
-The experimental uncertainties in general have less impact on the total uncertainties than the theoretical ones, with the largest experimental uncertainties contributing only 5--10\% depending on the \gls{sr}.
+The experimental uncertainties in general have less impact on the total uncertainties than the theoretical ones, with the largest experimental uncertainties contributing only 5--10\%, depending on the \gls{sr}.
 The dominant experimental uncertainties arise from the \gls{jes} and \gls{jer}, as well as from $\etmiss$ modelling and pile-up effects.
-The \gls{mc} statistical uncertainties contribute 5--18\%, depending on the \gls{sr}.  
+The \gls{mc} statistical uncertainties contribute 5--18\%, depending on the signal region.  
 
 \begin{table}
 \begin{center}
