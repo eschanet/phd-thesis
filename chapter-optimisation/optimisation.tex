@@ -10,14 +10,14 @@
 
 \glsreset{sr}
 
-In order to discover the rare \gls{susy} signals considered in the following, dedicated kinematic regions enriched in signal events, so called \glspl{sr} are constructed.
+In order to discover the rare \gls{susy} signals considered in the following, dedicated kinematic regions enriched in signal events, so-called \glspl{sr}, are constructed.
 They are optimised such as to be sensitive to a maximum number of signal models considered in this analysis.
 In this chapter, the optimisation procedures leading to the final signal regions are introduced and discussed. 
 
 \section{Optimisation methods}
 
-All optimisation methods used in the following require a figure of merit that is maximised in order to find configurations yielding best performance.
-While the multidimensional cut scan and the \textit{N}--1 plots approach introduced in in \cref{sec:n-dim-scan,sec:n-1-scan}, respectively, use the binomial discovery significance $Z_\mathrm{B}$, the fit scan procedure discussed in \cref{sec:fit-scan} aims to maximise the area of the expected exclusion contour.
+All optimisation methods used in the following require a figure of merit that is maximised in order to find configurations yielding optimal performance.
+While the multidimensional cut scan and the \textit{N}--1 plots approach, introduced in \cref{sec:n-dim-scan,sec:n-1-scan}, respectively, use the binomial discovery significance $Z_\mathrm{B}$, the fit scan procedure, discussed in \cref{sec:fit-scan}, aims to maximise the area of the expected exclusion contour.
 
 \subsection{Multidimensional cut scan}\label{sec:n-dim-scan}
 
@@ -32,7 +32,7 @@ While the multidimensional cut scan and the \textit{N}--1 plots approach introdu
 		\caption{\label{fig:z_vs_eff}}
 	\end{subfigure}\hfill
 
-	\caption{Small $N$-dimensional cut scan using $10^4$ unique cut combinations, illustrating the approach of~\subref{fig:roc_curve} generating a \gls{roc} curve from the scanned cut combinations in order to \subref{fig:z_vs_eff} reduce the number of candidates used in computationally expensive significance calculations. The cut combination candidates forming the \gls{roc} curve (dark blue) also maximise the discovery significance. In \subref{fig:z_vs_eff}, the significance $Z_\mathrm{B}$ includes the \gls{mc} statistical uncertainty on the expected background rate as well as 30\% flat systematic uncertainty.} 
+	\caption{Small $N$-dimensional cut scan using $10^4$ unique cut combinations, illustrating the approach of~\subref{fig:roc_curve} generating a \gls{roc} curve from the scanned cut combinations in order to \subref{fig:z_vs_eff} reduce the number of candidates used in computationally expensive significance calculations. The cut combination candidates forming the \gls{roc} curve (dark blue) also maximise the discovery significance. In \subref{fig:z_vs_eff}, the significance $Z_\mathrm{B}$ includes the \gls{mc} statistical uncertainty on the expected background rate and a constant 30\% systematic uncertainty.} 
 	\label{fig:ahoi_examples}
 \end{figure}
 
@@ -50,12 +50,12 @@ The approach is illustrated in a small scan using $10^4$ cut combinations in \cr
 The cut combination candidates maximising the background rejection and thus lying on the \gls{roc} curve in \cref{fig:roc_curve} are the same candidates that maximise the discovery significance in \cref{fig:z_vs_eff}.
 
 A common problem of $N$-dimensional scans is the concept of \textit{overtightening} the selections given the available \gls{mc} statistics.
-Since the cross sections of the \gls{susy} process considered are many orders of magnitude smaller than those of the dominant \gls{sm} processes, it is often necessary to apply tight requirements on the kinematic observables in order to achieve a significant signal-to-background separation.
+Since the cross sections of the \gls{susy} processes considered are many orders of magnitude smaller than those of the dominant \gls{sm} processes, it is often necessary to apply tight requirements on the kinematic observables in order to achieve a significant signal-to-background separation.
 However, due to the finite amount of \gls{mc} statistics available, many of the more extreme cut combinations select kinematic regions where not enough \gls{mc} statistics are available for a reasonable estimation of the background rates.
 Thus, by maximising the background rejection, it may occur that cut combinations are selected where the mere lack of \gls{mc} statistics, needed to properly estimate the background rates, causes a high significance value.
 As the significance values obtained for such configurations are obviosuly not trustworthy, they need to be avoided. 
 
-In the $N$-dimensional cut scan implementation used herein, the available \gls{mc} datasets are split in two statistically independent, equally sized subsets. Although resulting in an additional dilution of the available \gls{mc} statistics, this approach allows to generate two independent \gls{roc} curves and  to compute two independent values for the discovery significance for each cut combination candidate. A large difference in either the \gls{roc} curves or the significance values is an indication for statistical fluctuations as a result of overtightened cuts. In addition, requirements on the minimum number of unweighted \gls{mc} events for different background processes, as well as the maximum allowed statistical uncertainty on a given process, can be applied. In combination, these precautions offer a good handle against statistical fluctuations. In the following, the $N$-dimensional cut scan implementation provided by \textsc{ahoi}~\cite{ahoi} is used.
+In the $N$-dimensional cut scan implementation used herein, the available \gls{mc} datasets are split in two statistically independent, equally sized subsets. Although resulting in an additional dilution of the available \gls{mc} statistics, this approach allows to generate two independent \gls{roc} curves and  to compute two independent values for the discovery significance for each cut combination candidate. A large difference in either the \gls{roc} curves or the significance values is an indication for statistical fluctuations as a result of overtightened cuts. In addition, requirements on the minimum number of unweighted \gls{mc} events for different background processes, as well as the maximum allowed statistical uncertainty on a given process, can be applied. In combination, these precautions offer a good handle against statistical fluctuations. In the following, the $N$-dimensional cut scan implementation provided by \texttt{ahoi}~\cite{ahoi} is used.
 
 \subsection[\textit{N}--1]{$\makemebold{N}$--1 plots}\label{sec:n-1-scan}
 
@@ -65,7 +65,7 @@ For this reason, the following optimisation uses an $N$-dimensional cut scan to 
 
 \subsection{Scans using asymptotic formulae}\label{sec:fit-scan}
 
-The last of the optimisation methods used in the following relies on scans over sets of simplified fit configuration in order to run a simplified version of the full statistical inference machinery on a large number of signal region candidates.
+The last of the optimisation methods, used in the following, relies on scans over sets of simplified log-likelihood fit configurations in order to run a simplified version of the full statistical inference machinery on a large number of signal region candidates.
 While the preceding optimisation methods rely on the binomial significance computed in independent \textit{cut-and-count} signal regions, the simplified fit scans statistically combine disjunct signal regions by building a single likelihood, and compute the \textit{p}-values using the asymptotic formulae introduced in~\cref{ch:statistics}.
 In addition, the simplified fits use all available signal points instead of relying on a limited set of benchmark points, and can thus derive an estimate of the expected exclusion contour for a large number of signal region candidates.
 The estimation of the background event rates in the signal regions is taken from \gls{mc} simulation only and considers a constant systematic uncertainty of 30\% on the estimated event rate, correlated over all signal region bins. Statistical uncertainties on the background estimate from limited \gls{mc} statistics are also taken into account. 
@@ -103,16 +103,16 @@ In order to keep the number of configurations to be tested at a manageable level
 	\label{tab:cut_scan}   
 \end{table}
 
-The optimisation of the signal regions for the \onelepton search presented herein benefits from the experience of past analyses investigating the same simplified model in the same final state~\cite{SUSY-2013-23,SUSY-2017-01}, but explores new observables and considers signal region configurations optimised for the integrated luminosity of the full Run~2 dataset. 
+The optimisation of the signal regions for the \onelepton search benefits from the experience of past analyses investigating the same simplified model in the same final state~\cite{SUSY-2013-23,SUSY-2017-01}, but explores new observables and considers signal region configurations optimised for the integrated luminosity of the full Run~2 dataset. 
 
 \subsection{Starting from benchmark signal points}
 
-A total of six so-called \textit{benchmark} signal points, each representative for a different part of the model parameter space, are chosen for the first step of the optimisation procedure involving $N$-dimensional cut scans and \textit{N}--1 plots.
+A total of six so-called \textit{benchmark} signal points, each representative of a different part of the model parameter space, are chosen for the first step of the optimisation procedure involving $N$-dimensional cut scans and \textit{N}--1 plots.
 Apart from the variables introduced in~\cref{sec:variables}, a set of additional, potentially discriminative observables are considered in the $N$-dimensional cut\improvement{Need presel plots for these} scan\footnote{These variables will turn out not to be used for the final signal regions and are only introduced here for completeness of the optimisation procedure description.}:
 \begin{itemize}
-	\item Transverse momenta of the two leading jets as well as of the lepton ($p_\textrm{T}^\mathrm{jet1}$, $p_\textrm{T}^\mathrm{jet2}$, $\ptl$). Especially for signal models with high mass differences between the electroweakinos, the transverse momenta of the lepton and the jets tend to have higher values than in \gls{sm} background processes.
-	\item Object-based $\etmiss$ significance $\mathcal{S}$~\cite{met_significance:2294922}, a quantity designed to quantify how genuine the reconstructed $\etmiss$ in an event is. It is determined through a hypothesis test using a log-likelihood ratio that takes into account the resolution of all objects entering the computation of $\etmiss$. As such, $\mathcal{S}$ offers good discrimination against events with a sizeable fraction of fake $\etmiss$ in the event originating \eg from jet mismeasurements or the non-hermeticity of the detector. Events with a large share of fake $\etmiss$ accumulate at low values of $\mathcal{S}$, while events with mostly real $\etmiss$ tend to have large values of $\mathcal{S}$. 
-	\item The distance between the two leading jets $\upDelta R_{jj}$ as well as between the two \textit{b}-jets $\upDelta R_{b\hspace{-0.06em}\bar{b}}$. Especially in events with a large mass difference between the electroweakinos, the Higgs can get a significant boost, such that the two \textit{b}-jets from the Higgs decay tend to be close together in the laboratory frame (and are also the highest-$\pt$ jets in an event), resulting in small values of both $\upDelta R_{jj}$ and $\upDelta R_{b\hspace{-0.06em}\bar{b}}$. In \gls{sm} background processes, however, the two leading (\textit{b}-)jets often do not originate from the same object and thus tend to be further apart.
+	\item The transverse momenta of the two leading jets as well as of the lepton ($p_\textrm{T}^\mathrm{jet1}$, $p_\textrm{T}^\mathrm{jet2}$, $\ptl$). Especially for signal models with high mass differences between the electroweakinos, the transverse momenta of the lepton and the jets tend to have higher values than in \gls{sm} background processes.
+	\item The object-based $\etmiss$ significance $\mathcal{S}$~\cite{met_significance:2294922}, an observable designed to quantify how genuine the reconstructed $\etmiss$ in an event is. It is determined through a hypothesis test using a log-likelihood ratio that takes into account the resolution of all objects entering the computation of $\etmiss$. As such, $\mathcal{S}$ offers good discrimination against events with a sizeable fraction of fake $\etmiss$ in the event originating, \eg, from jet mismeasurements or the non-hermeticity of the detector. Events with a large share of fake $\etmiss$ accumulate at low values of $\mathcal{S}$, while events with mostly real $\etmiss$ tend to have large values of $\mathcal{S}$. 
+	\item The distance between the two leading jets $\upDelta R_{jj}$ as well as between the two \textit{b}-jets $\upDelta R_{b\hspace{-0.06em}\bar{b}}$. Especially in events with a large mass difference between the electroweakinos, the Higgs can receive a significant boost, such that the two \textit{b}-jets from the Higgs decay tend to be close together in the laboratory frame (and are also the highest-$\pt$ jets in an event), resulting in small values of both $\upDelta R_{jj}$ and $\upDelta R_{b\hspace{-0.06em}\bar{b}}$. In \gls{sm} background processes, however, the two leading (\textit{b}-)jets often do not originate from the same object and thus tend to be further apart.
 	\item The azimuthal distance between the lepton $\pt$ and the missing transverse momentum, denoted by $\upDelta \phi (\makemebold{p}_\mathrm{T}^\ell, \makemebold{p}_\mathrm{T}^\mathrm{miss})$. This observable exploits the fact that the lepton and the $\etmiss$ tend to have a more back-to-back configuration in signal events than in many \gls{sm} processes where the lepton and the neutrino (the latter often responsible for a large part of the $\etmiss$ in an event) often originate from the same $W$ boson decay.
 \end{itemize}
 
@@ -131,7 +131,7 @@ Apart from the variables introduced in~\cref{sec:variables}, a set of additional
 	\label{fig:results_z_vs_eff}
 \end{figure}
 
-In order to avoid selecting cut combination candidates with overtightened selection criteria compared to the available \gls{mc} statistics, constraints on the relative statistical uncertainty on the background and on the number of unweighted \gls{mc} events passing the cut combination candidates are applied.
+In order to avoid selecting cut combination candidates with overtightened selection criteria compared to the available \gls{mc} statistics, constraints are applied on the relative statistical uncertainty on the background, and on the number of unweighted \gls{mc} events passing the cut combination candidates.
 Cut combinations are only considered if they result in less than 50\% relative statistical uncertainty on the total background.
 In addition, all cut combinations need to result in at least five unweighted \gls{mc} events for each of the three major backgrounds, $\ttbar$, single top and $\wjets$.
 
@@ -165,7 +165,7 @@ The remaining observables turned out not to significantly improve the sensitivit
 				$Z_\mathrm{B}$ $[\sigma]$ & \multicolumn{1}{c}{0.8} & \multicolumn{1}{c}{1.9} & \multicolumn{1}{c}{2.1} & \multicolumn{1}{c}{1.8} & \multicolumn{1}{c}{2.2} & \multicolumn{1}{c}{2.3} \\
 				\bottomrule
 			\end{tabular}
-		\caption{Optimal cut combination for each benchmark signal point obtained with a brute force cut scan and a round of \textit{N}--1 plots. The parameters of the benchmark points $m(\charg$/$\neutr)$ and $m(\lsp)$, both given in $\SI{}{\GeV}$. The significance is computed for \onethirtynineifb with the binomial discovery significance $Z_\mathrm{B}$ and includes MC statistical uncertainty as well as a flat 30\% systematic uncertainty. A dash `--' is used where no requirement on the respective observable is applied.}
+		\caption{Optimal cut combination for each benchmark signal point obtained with a brute force cut scan and a round of \textit{N}--1 plots. The parameters of the benchmark points are $m(\charg$/$\neutr)$ and $m(\lsp)$, both given in $\SI{}{\GeV}$. The significance is computed for \onethirtynineifb with the binomial discovery significance $Z_\mathrm{B}$ and includes MC statistical uncertainty as well as a constant 30\% systematic uncertainty. A dash `--' is used where no requirement on the respective observable is applied.}
 		\label{tab:cut_scan_results}
 	\end{center}
 \end{table}
@@ -179,18 +179,18 @@ The optimal cut combinations obtained for the benchmark signal points, shown in~
 From~\cref{tab:cut_scan_results}, it can be concluded, that all benchmark points favour a common baseline selection including exactly two \textit{b}-jets, possibly one additional light jet, a Higgs mass window requirement of roughly $\mbb\in [100,140]$~$\SI{}{\GeV}$, and $\etmiss > \SI{240}{\GeV}$.
 The remaining requirements on $\mt$, $\mct$ and $\mlb$ are, however, not easily consolidated into a single signal region, as they vastly differ depending on the model parameter space and kinematic regime represented by each benchmark point.
 
-From the normalised distributions in~\cref{fig:norm_obs}, it can already be seen that signal points from different kinematic regimes in the parameter space would in principle prefer different requirements on all three of these observables.
+It can already be seen from the normalised distributions in~\cref{fig:norm_obs,fig:norm_obs_app}, that signal points from different kinematic regimes in the parameter space would in principle prefer different requirements on all three of these observables.
 Designing a single signal region that achieves optimal sensitivity to the entire parameter space studied, is thus not possible.
 Instead, a more generalised configuration is chosen, defining multiple signal region bins orthogonal to each other through their requirements on $\mt$ and $\mct$.
-Being mutually exclusive, such signal region bins can be statistically combined in a single likelihood, effectively creating a two-dimensional shape-fit in these observables as the different signal region bins can be fit simultaneously.
+Being mutually exclusive, such signal region bins can be statistically combined in a single likelihood and can be used in a simultaneous fit to data, effectively creating a two-dimensional shape-fit in these observables.
 Such a shape-fit configuration allows to exploit the differences in shape between signal and background distributions, and is able to accommodate the varying shapes of signal points from different regions in the parameter space, making it an ideal statistical tool to cover a wide range of kinematic regimes.
 
 The optimal number of bins as well as values of the individual bin edges in both distributions depends on the available \gls{mc} statistics and is determined using the simplified fit scans introduced in~\cref{sec:fit-scan}.
-The \gls{mc} statistical uncertainty, as well as a systematic uncertainty of 30\%, correlated over all bins, is considered in each scanned configuration.
+The \gls{mc} statistical uncertainties, as well as a systematic uncertainty of 30\%, correlated over all bins, are considered in each configuration.
 The number of bins is varied in each direction ($\mt$ and $\mct$) between two and five using different bin edges, varied within ranges determined by the optimal cut values obtained for the benchmark points.
 As configurations with more bins could, in some circumstances, potentially benefit from the additional \gls{mc} statistics resulting from looser selection criteria on the remaining variables, the previously consolidated baseline selection is also allowed to vary to some extent.
-Finally, although not expected to yield better performance, configurations with multiple orthogonal \gls{sr} bins in the $\etmiss$ or $\mbb$ are also included in the scan.
-A subset of the investigated candidates is shown in~\cref{fig:fit_scan_optimisation}, only showing the nominal expected exclusion limit at 95\% without uncertainty bands.
+Finally, although not expected to yield better performance, configurations with multiple orthogonal signal region bins in $\etmiss$ or $\mbb$ are also included in the scan.
+A subset of the investigated candidates is illustrated in~\cref{fig:fit_scan_optimisation}, showing the nominal expected exclusion limit at 95\% without uncertainty bands.
 Configurations with multiple, disjoint patches of excluded areas in the parameter space are discarded, as they typically result from high statistical fluctuations.
 
 \begin{figure}
@@ -203,10 +203,10 @@ As expected from~\cref{tab:cut_scan_results}, the best performing configurations
 \Cref{fig:plot_binnings} shows a comparison of the expected exclusion contour for exemplary two-dimensional shape-fit configurations, using signal regions binned in ($\mt$, $\etmiss$), ($\mt$, $\mbb$) or ($\mt$, $\mct$).
 The setup using a two-dimensional shape-fit in $\mt$ and $\mct$ clearly maximises the expected excluded area.
 %In addition, this configuration also leads to optimal sensitivity within the expected limit, as is illustrated in~\cref{fig:plot_binnings_cls}.
-Finally, applying a requirement on high values of $\mlb$ in the highest $\mt$ bins has been shown (cf.~\cref{fig:plot_mlb1_cls}) to significantly improve sensitivity to signal models with high mass differences. 
+Finally, applying a requirement on high values of $\mlb$ in the highest $\mt$ bins has been shown (cf.~\cref{fig:plot_mlb1_cls}) to further increase sensitivity to signal models with high mass differences. 
 
 In~\cref{fig:previous_analysis_comparison}, the fully optimised two-dimensional shape-fit configuration is compared with the signal regions of the previous iteration of the search~\cite{SUSY-2017-01}, scaled up to the integrated luminosity of the full Run~2 dataset.
-It can be seen that a significant improvement in sensitivity can be achieved through the introduction of the two-dimensional shape-fit strategy.
+It can clearly be seen that a significant improvement in sensitivity is achieved through the introduction of the two-dimensional shape-fit strategy.
 
  \begin{figure}
 	\centering
@@ -261,13 +261,13 @@ It can be seen that a significant improvement in sensitivity can be achieved thr
 \end{table}
 
 An overview of the final signal region definitions is provided in~\cref{tab:SignalRegionDef}.
-Based on the previously discussed results, three signal regions bins in $\mt$ are defined, optimised for different regimes in the $\charg/\neutr$ and $\lsp$ mass difference, and called a low (SR-LM), medium (SR-MM), and high (SR-HM) mass signal regions, respectively.
+Based on the previously discussed results, three signal regions bins in $\mt$ are defined, optimised for different regimes in the \mbox{$\charg$/$\neutr$} and $\lsp$ mass difference. According to the mass difference regime targeted, they are aptly called low (SR-LM), medium (SR-MM), and high (SR-HM) mass signal regions, respectively.
 While SR-LM targets the smallest values of $\mt$, SR-MM and SR-HM target progressively increasing values of $\mt$.
-All three signal regions are further divided into three $\mct$ bins each, resulting in a total of nine disjoint \gls{sr} bins. The signal region with the highest requirement on $\mt$ (SR-HM) also requires $\mlb>\SI{120}{\GeV}$, for the reason explained previously.
-All three \glspl{sr} otherwise share a common set of requirements on the number of jets, $\etmiss$ and $\mbb$.
-As shape-fits are by construction highly model-dependent\footnote{The signal shapes need to be known in order to estimate the expected signal rates in multiple, disjoint signal region bins.}, these \glspl{sr} will be used for deriving model-dependent limits in the case where no significant excess compared to the expected \gls{sm} background rate is seen in data.
+All three signal regions are further divided into three $\mct$ bins each, resulting in a total of nine disjoint signal region bins. The signal region with the highest requirement on $\mt$ (SR-HM) also requires $\mlb>\SI{120}{\GeV}$, for the reason explained previously.
+All three signal regions otherwise share a common set of requirements on the number of jets, $\etmiss$ and $\mbb$.
+As shape-fits are by construction highly model-dependent\footnote{The signal shapes need to be known in order to estimate the expected signal rates in multiple, disjoint signal region bins.}, these \glspl{sr} will be used for deriving model-dependent limits in the case where no significant excess, compared to the expected \gls{sm} background rate, is seen in data.
 For this reason, the shape-fit regions will be referred to as \textit{exclusion} regions in the following. A graphical representation of the nine exclusion signal region bins is shown in~\cref{fig:sr_strategy}.
-The kinematic distributions in each SR-LM, SR-MM and SR-HM are shown as \textit{N}--1 plots in \cref{fig:Wh_reopt_second_round_n1_srlm,fig:Wh_reopt_second_round_n1_srmm,fig:Wh_reopt_second_round_n1_srhm}.
+The kinematic distributions in SR-LM, SR-MM and SR-HM are shown as \textit{N}--1 plots in \cref{fig:Wh_reopt_second_round_n1_srlm,fig:Wh_reopt_second_round_n1_srmm,fig:Wh_reopt_second_round_n1_srhm}.
 
 For evaluating a potential excess in data compared to the expected background rate, a second set of signal regions is derived from the optimised shape-fit setup.
 For each of the three bins in the transverse mass (SR-LM, SR-MM, and SR-HM), the three $\mct$ bins are summed up and the upper bound on $\mt$ is removed (if present).
@@ -323,7 +323,7 @@ In case no significant excess over the \gls{sm} expectation is seen in data, the
 		\vspace{-2em}
 		\caption{\label{fig:Wh_reopt_second_round_n1_srlm_njet}}
 	\end{subfigure}
-	\caption{\textit{N}--1 plots for SR-LM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
+	\caption{\textit{N}--1 plots for SR-LM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% systematic uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srlm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
 	\label{fig:Wh_reopt_second_round_n1_srlm}
 \end{figure}
 
@@ -360,7 +360,7 @@ In case no significant excess over the \gls{sm} expectation is seen in data, the
 		\vspace{-2em}
 		\caption{\label{fig:Wh_reopt_second_round_n1_srmm_njet}}
 	\end{subfigure}
-	\caption{\textit{N}--1 plots for SR-MM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
+	\caption{\textit{N}--1 plots for SR-MM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% systematic uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srmm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
 	\label{fig:Wh_reopt_second_round_n1_srmm}
 \end{figure}
 
@@ -398,7 +398,7 @@ In case no significant excess over the \gls{sm} expectation is seen in data, the
 		\vspace{-2em}
 		\caption{\label{fig:Wh_reopt_second_round_n1_srhm_njet}}
 	\end{subfigure}
-	\caption{\textit{N}--1 plots for SR-HM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
+	\caption{\textit{N}--1 plots for SR-HM, with exemplary signal points and all $\mct$ bins included. The dashed area represents the \gls{mc} statistical uncertainties on the background. In all figures except \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct}, the significance in the lower pad is obtained by summing up all the events in the direction of the cut arrow and includes 30\% systematic uncertainties as well as MC statistical uncertainties. In \figname~\subref{fig:Wh_reopt_second_round_n1_srhm_mct} the significance is only computed on a bin-by-bin basis, \ie not summing up all events in the direction of the cut arrow.}
 	\label{fig:Wh_reopt_second_round_n1_srhm}
 \end{figure}
 
