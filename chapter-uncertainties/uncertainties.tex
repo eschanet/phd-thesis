@@ -86,19 +86,19 @@ For a process $p$, a control region CR$_i$, and a destination region R$_j$, the 
 \end{equation}
 where $N^\mathrm{MC}_p(\mathrm{R}_j)$ and $N^\mathrm{MC}_p(\mathrm{CR}_i)$ are the expected event rates for the process $p$ in CR$_i$ and R$_j$, respectively. The systematic uncertainty on the transfer factor is then given by
 \begin{equation}
-	\Delta f_p^\mathrm{syst} = \frac{f_p^\mathrm{variation}}{f_p^\mathrm{nominal}} - 1,
+	\upDelta f_p^\mathrm{syst} = \frac{f_p^\mathrm{variation}}{f_p^\mathrm{nominal}} - 1,
 \end{equation}
 with $f_p^\mathrm{variation}$ and $f_p^\mathrm{nominal}$ the transfer factors from the variational and nominal samples, respectively.
 If the \gls{mc} datasets used for deriving the variational and nominal transfer factors are statistically independent, a statistical component of the uncertainty is derived using the individual statistical uncertainties on the background estimate,
 \begin{equation}
-	\Delta f_p^\mathrm{stat} = (\Delta f_p^\mathrm{syst} + 1 ) \sqrt{\sum_{n\in\makemebold{N}}(\frac{\sigma_n}{n})^2},
+	\upDelta f_p^\mathrm{stat} = (\upDelta f_p^\mathrm{syst} + 1 ) \sqrt{\sum_{n\in\makemebold{N}}(\frac{\sigma_n}{n})^2},
 \end{equation}
  where $n$ runs over the set of expected event rates and $\sigma_n$ is the absolute \gls{mc} statistical uncertainty associated to each expected event rate $n$.
  In the following, the control region used to evaluate the uncertainties on the transfer factors is taken to be the sum of all \glspl{cr} introduced in~\cref{sec:control_regions}.
   
  For backgrounds directly estimated from \gls{mc} simulation, the systematic uncertainty on the expected event rate in each region R$_i$ is given by
  \begin{equation}
- 	\Delta n_p^\mathrm{syst}(\mathrm{R}_i) = \frac{n_p^\mathrm{syst}(\mathrm{R}_i)n_p^\mathrm{nominal}(\mathrm{P})}{n_p^\mathrm{nominal}(\mathrm{R}_i)n_p^\mathrm{syst}(\mathrm{P})} - 1,
+ 	\upDelta n_p^\mathrm{syst}(\mathrm{R}_i) = \frac{n_p^\mathrm{syst}(\mathrm{R}_i)n_p^\mathrm{nominal}(\mathrm{P})}{n_p^\mathrm{nominal}(\mathrm{R}_i)n_p^\mathrm{syst}(\mathrm{P})} - 1,
  \end{equation}
  where the region P is a so-called \textit{loose preselection} with minimal analysis selection criteria, used for normalisation of the event rates to be compared.
  If not otherwise indicated, the loose preselection used for normalisation requires exactly one isolated lepton, 2--3 jets of which at least one is \textit{b}-tagged, $\etmiss>\SI{220}{\GeV}$ and $\mt>\SI{50}{\GeV}$.

@@ -31,9 +31,9 @@ The expectation $\nu_{cb}$ in each channel $c$ and bin $b$ is a sum over the set
 \end{equation}
 where $\nu_{csb}$ is the expected sample rate in a given bin of a given channel. The sample-wise rates are in general a function of the model parameters $\makemebold{\phi}$ that can be either \textit{free parameters} $\makemebold{\eta}$ or \textit{constrained parameters} $\makemebold{\chi}$. Possible modifications of the expected sample rates due to model parameters are considered to be either multiplicative or additive changes to the nominal estimate $\nu_{csb}^0$ of the form
 \begin{equation}
-	\nu_{csb}(\makemebold{\eta},\makemebold{\chi}) = \left(\prod_i f^i_{csb}(\makemebold{\eta},\makemebold{\chi}) \right)\left(\nu^0_{csb} + \sum_j {\Delta^j_{csb}(\makemebold{\eta},\makemebold{\chi})} \right).
+	\nu_{csb}(\makemebold{\eta},\makemebold{\chi}) = \left(\prod_i f^i_{csb}(\makemebold{\eta},\makemebold{\chi}) \right)\left(\nu^0_{csb} + \sum_j {\upDelta^j_{csb}(\makemebold{\eta},\makemebold{\chi})} \right).
 \end{equation}
-Here, $\makemebold{f}(\makemebold{\phi})$ and $\makemebold{\Delta}(\makemebold{\phi})$ are the multiplicative and additive \textit{rate modifiers}, respectively, modifying the nominal estimates. Although in practice often only a function of a single model parameter, the rate modifiers can in general be a function of a set of model parameters.
+Here, $\makemebold{f}(\makemebold{\phi})$ and $\makemebold{\upDelta}(\makemebold{\phi})$ are the multiplicative and additive \textit{rate modifiers}, respectively, modifying the nominal estimates. Although in practice often only a function of a single model parameter, the rate modifiers can in general be a function of a set of model parameters.
 
 Free parameters directly determined by the data observations are called \textit{normalisation factors}.
 The constrained parameters represent the systematic uncertainties considered in the model, which---in frequentist statistics---have fixed but unknown true values.
@@ -224,7 +224,7 @@ Non-integer values for data counts are not an issue as factorial terms from the 
 
 When designing search regions for an analysis, it is necessary to achieve an optimal signal-to-background separation power.
 A significance metric is needed in order to quantify the separation power and to have a metric to optimise for.
-In the following, the expected discovery significance introduced in \reference\cite{Cousins:2007bmb} is used. As the full statistical model is in general not yet known when designing the search regions, appropriate assumptions have to be made. In a \textit{cut-and-count} selection where only the total number of events after a selection are relevant (and not \eg their distribution), the significance is determined by the total number of signal events $S$, the total number of background events $B$ and the uncertainty on the expected number of background events $\Delta B$.
+In the following, the expected discovery significance introduced in \reference\cite{Cousins:2007bmb} is used. As the full statistical model is in general not yet known when designing the search regions, appropriate assumptions have to be made. In a \textit{cut-and-count} selection where only the total number of events after a selection are relevant (and not \eg their distribution), the significance is determined by the total number of signal events $S$, the total number of background events $B$ and the uncertainty on the expected number of background events $\upDelta B$.
 This can be modelled as a so-called \textit{on/off problem}\footnote{The \textit{on/off} nomenclature originates from gamma ray astronomy where \textit{on} refers to the telescope pointing on-source (measuring signal and background photons), while \textit{off} refers to it pointing off-source (measuring only background photons). This problem is an exact analog to the \gls{hep} problem herein, where the off-source measurement typically corresponds to some \textit{sideband} measurement, \ie a measurement of events in a region of a parameter disjoint from the parameter range where the signal might exist.}~\cite{Cousins:2007bmb, Cranmer:2005hi}, where the \textit{cut-and-count} experiment uses two bins, a \gls{sr} enriched in signal events, and a \gls{cr} containing only background events.
 In the background-only hypothesis, the parameter $\tau = n_\mathrm{CR} / n_\mathrm{SR}$ then denotes the ratio between the event rate in the \gls{cr}, $n_\mathrm{CR}$, and the event rate in the \gls{sr}, $n_\mathrm{SR}$.
 
@@ -234,7 +234,7 @@ If $\tau$ is known, then the likelihood of this simple configuration can be writ
 \end{equation} 
 where $\mu$ is again the signal strength parameter. The relative background uncertainty can thus be treated as coming from a Poisson-distributed auxiliary measurement containing only background (\ie in the \gls{cr}) with corresponding uncertainty $\sqrt{\tau B}$, leading to the approximation
 \begin{equation}
-	\tau = \frac{B}{\Delta B^2}.
+	\tau = \frac{B}{\upDelta B^2}.
 \end{equation}
 As $n_{\mathrm{SR}}$ and $n_{\mathrm{CR}}$ are each drawn from a Poisson probability with unknown means $\nu_\mathrm{SR}$ and $\nu_\mathrm{CR}$, the background-only hypothesis corresponds exactly to the case where the ratio of Poisson means \mbox{$\lambda = \nu_\mathrm{CR} / \nu_\mathrm{SR}$} is equal to $\tau$~\cite{Cousins:2007bmb}. The two Poisson terms can then be written as the product of a single Poisson term with mean $n_\mathrm{tot} = n_\mathrm{SR} + n_\mathrm{CR}$ and the binomial probability $B(n_\mathrm{SR}\vert\rho,n_\mathrm{tot})$ of picking $n_\mathrm{SR}$ events out of $n_\mathrm{tot}$ with probability $\rho = \nu_\mathrm{SR} / \nu_\mathrm{tot} = 1 / (1+\lambda)$. The likelihood can therefore be written as
 \begin{equation}
