@@ -65,7 +65,7 @@ For this reason, the following optimisation uses an $N$-dimensional cut scan to 
 
 \subsection{Scans using asymptotic formulae}\label{sec:fit-scan}
 
-The last of the optimisation methods, used in the following, relies on scans over sets of simplified log-likelihood fit configurations in order to run a simplified version of the full statistical inference machinery on a large number of signal region candidates.
+The last of the optimisation methods, used in the following, relies on scans over sets of simplified profile likelihood fit configurations in order to run a simplified version of the full statistical inference machinery on a large number of signal region candidates.
 While the preceding optimisation methods rely on the binomial significance computed in independent \textit{cut-and-count} signal regions, the simplified fit scans statistically combine disjunct signal regions by building a single likelihood, and compute the \textit{p}-values using the asymptotic formulae introduced in~\cref{ch:statistics}.
 In addition, the simplified fits use all available signal points instead of relying on a limited set of benchmark points, and can thus derive an estimate of the expected exclusion contour for a large number of signal region candidates.
 The estimation of the background event rates in the signal regions is taken from \gls{mc} simulation only and considers a constant systematic uncertainty of 30\% on the estimated event rate, correlated over all signal region bins. Statistical uncertainties on the background estimate from limited \gls{mc} statistics are also taken into account. 
