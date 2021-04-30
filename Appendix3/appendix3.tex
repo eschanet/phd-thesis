@@ -10,9 +10,9 @@ The following sections provide additional material on the approximations made in
 
 \section{Truth smearing}
 
-The estimated event rates in the exclusion signal regions at truth-level before and after truth smearing are compared with the \textit{reconstruction}-level (\ie after detector simulation) event rates in \cref{fig:smearing_signal_regions_1,fig:smearing_signal_regions_2,fig:smearing_signal_regions_3}. Each one of the 137 signal models from the simplified model signal grid corresponds to one point in the scatter plots. The error bars correspond to the \gls{mc} statistical uncertainties at truth- and reconstruction-level.
+The estimated event rates in the exclusion signal regions at truth-level before and after truth smearing are compared with the reconstruction-level event rates in \cref{fig:smearing_signal_regions_1,fig:smearing_signal_regions_2,fig:smearing_signal_regions_3}. Each one of the 125 signal points from the simplified model signal grid corresponds to one point in the scatter plots. The error bars correspond to the \gls{mc} statistical uncertainties at truth- and reconstruction-level.
 
-The smearing significantly improves the agreement between truth- and reconstruction-level event rate estimates in all signal region bins. While the lepton reconstruction and identification efficiencies are crucial to provide a good agreement between truth- and reconstruction-level distributions down to the lower bounds of $\SI{7}{\GeV}$ and $\SI{6}{\GeV}$ used for electrons and muons, respectively, in the analysis, the flavour-tagging efficiencies provide the overall agreement in normalisation (since all signal regions require exactly two \textit{b}-tagged jets in the final state).
+The smearing significantly improves the agreement between truth- and reconstruction-level event rate estimates in all signal region bins. While the lepton reconstruction and identification efficiencies are crucial to provide a good agreement between truth- and reconstruction-level distributions down to the lower bounds of $\SI{7}{\GeV}$ and $\SI{6}{\GeV}$ used for electrons and muons, respectively, the flavour-tagging efficiencies provide the overall agreement in normalisation (since all signal regions require exactly two \textit{b}-tagged jets in the final state).
 
 \begin{figure}
 	\centering
@@ -34,7 +34,7 @@ The smearing significantly improves the agreement between truth- and reconstruct
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{yields_SR-LM_high_mct_smeared}
 	\end{subfigure}
-	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-LM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the original \onelepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
+	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-LM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the \onelepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
 	\label{fig:smearing_signal_regions_1}
 \end{figure}
 
@@ -58,7 +58,7 @@ The smearing significantly improves the agreement between truth- and reconstruct
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{yields_SR-MM_high_mct_smeared}
 	\end{subfigure}
-	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-MM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the original \onelepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
+	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-MM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the \onelepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
 	\label{fig:smearing_signal_regions_2}
 \end{figure}
 
@@ -82,7 +82,7 @@ The smearing significantly improves the agreement between truth- and reconstruct
 	\begin{subfigure}[b]{0.49\linewidth}
 		\centering\includegraphics[width=\textwidth]{yields_SR-HM_high_mct_smeared}
 	\end{subfigure}
-	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-HM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the original \onelepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
+	\caption{Comparison of the event rates at truth- and reconstruction-level before (left) and after (right) truth smearing in SR-HM. From top to bottom, the low, medium and high $\mct$ bins are shown. Every single point in the scatter plots represents a single signal model considered in the \onelepton analysis. Uncertainties include only \gls{mc} statistical uncertainties.}
 	\label{fig:smearing_signal_regions_3}
 \end{figure}
 
@@ -110,7 +110,7 @@ The smearing significantly improves the agreement between truth- and reconstruct
 		\centering\includegraphics[width=\textwidth]{exclusion_compressed_noLabel_v2}
 		\caption{Without problematic \glspl{sr}\label{fig:exclusion_compressed_CLs_noLabel_v2_withoutCRs}}
 	\end{subfigure}\hfill
-	\caption{The contours obtained with the full and simplified likelihoods of the ATLAS compressed search~\cite{SUSY-2018-16} are shown with the problematic signal regions \subref{fig:exclusion_compressed_CLs_noLabel_v2_withCRs} included and \subref{fig:exclusion_compressed_CLs_noLabel_v2_withoutCRs} removed. A noticeable improvement in agreement between the simplified and full likelihood contours is observed after removing the signal regions responsible for the instabilities discussed in \cref{sec:simplify_limitations}.}\label{fig:limitations_simplied_compressed}
+	\caption{The contours obtained with the full and simplified likelihoods of the ATLAS compressed search~\cite{SUSY-2018-16} are shown with the problematic signal regions \subref{fig:exclusion_compressed_CLs_noLabel_v2_withCRs} included in the simplified likelihood and \subref{fig:exclusion_compressed_CLs_noLabel_v2_withoutCRs} removed from it. A noticeable improvement in agreement between the two likelihoods is observed after removing the signal regions responsible for the instabilities discussed in \cref{sec:simplify_limitations}.}\label{fig:limitations_simplied_compressed}
 \end{figure}
 \begin{figure}[H]
 	\centering
@@ -123,7 +123,7 @@ The smearing significantly improves the agreement between truth- and reconstruct
 		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_noLabel_v2}
 		\caption{Vetoing signal contamination in CRs\label{fig:exclusion_stop1L_noLabel_v2_withoutCRs}}
 	\end{subfigure}\hfill
-	\caption{The contours obtained with the full and simplified likelihoods of the ATLAS stop search. In fig.~\subref{fig:exclusion_stop1L_noLabel_v2_withCRs} the simplified likelihood is also applied on signal points with $m(\tilde{t}_1) < m(\lsp)+m(t)$, where significant signal contamination in the \glspl{cr} occurs. In fig.~\subref{fig:exclusion_stop1L_noLabel_v2_withoutCRs}, such signal points are removed and thus not evaluated using the simplified likelihood.}\label{fig:limitations_simplied_stop1l}
+	\caption{Contours obtained with the full and simplified likelihoods of the ATLAS stop search. In fig.~\subref{fig:exclusion_stop1L_noLabel_v2_withCRs} the simplified likelihood is also applied on signal points with $m(\tilde{t}_1) < m(\lsp)+m(t)$, where significant signal contamination in the \glspl{cr} occurs. In fig.~\subref{fig:exclusion_stop1L_noLabel_v2_withoutCRs}, such signal points are removed and thus not evaluated using the simplified likelihood.}\label{fig:limitations_simplied_stop1l}
 \end{figure}
 
 
@@ -201,7 +201,7 @@ The smearing significantly improves the agreement between truth- and reconstruct
 		\centering\includegraphics[width=\textwidth]{cls_scatter_2L0J_log}
 		\caption{ATLAS $2\ell$ search~\cite{SUSY-2018-32}}
 	\end{subfigure}\hfill
-	\caption{Scatter plots comparing the observed and expected CL$_s$ values obtained using the simplified and the full likelihoods for the same set of signal models originally considered in the various ATLAS \gls{susy} searches. Both linear and logarithmic scale representations are shown on the left- and right-hand side, respectively, illustrating the full range of CL$_s$ values. Apart from the scales, both columns show exactly the same results for each row of plots.}\label{fig:app_results_cls_1}
+	\caption{Scatter plots comparing the observed and expected CL$_s$ values obtained using the simplified and the full likelihoods for the same set of signal models originally considered in the various ATLAS \gls{susy} searches. Both linear and logarithmic scale representations are shown on the left- and right-hand side, respectively, illustrating the full range of CL$_s$ values. Apart from the scales, the left-hand and right-hand plots in each row do not differ from each other.}\label{fig:app_results_cls_1}
 \end{figure}
 
 
@@ -231,7 +231,7 @@ The smearing significantly improves the agreement between truth- and reconstruct
 		\centering\includegraphics[width=\textwidth]{cls_scatter_compressed_log}
 		\caption{ATLAS compressed search~\cite{SUSY-2018-16}}
 	\end{subfigure}\hfill
-	\caption{Scatter plots comparing the observed and expected CL$_s$ values obtained using the simplified and the full likelihoods for the same set of signal models originally considered in the various ATLAS \gls{susy} searches. Both linear and logarithmic scale representations are shown on the left- and right-hand side, respectively, illustrating the full range of CL$_s$ values. Apart from the scales, both columns show exactly the same results for each row of plots.}\label{fig:app_results_cls_2}
+	\caption{Scatter plots comparing the observed and expected CL$_s$ values obtained using the simplified and the full likelihoods for the same set of signal models originally considered in the various ATLAS \gls{susy} searches. Both linear and logarithmic scale representations are shown on the left- and right-hand side, respectively, illustrating the full range of CL$_s$ values. Apart from the scales, the left-hand and right-hand plots in each row do not differ from each other.}\label{fig:app_results_cls_2}
 \end{figure}
 
 
