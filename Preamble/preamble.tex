@@ -266,8 +266,8 @@
     basicstyle=\footnotesize\ttfamily,
     keywords={true,false,null},
     keywordstyle=\color{bool_color}\bfseries,
-    commentstyle=\color{string_color}\bfseries, % Green strings
-    stringstyle=\color{kw_color}\bfseries, % Purple keywords
+    commentstyle=\color{black}, 
+    stringstyle=\color{string_color}\bfseries,
     numberstyle=\scriptsize,
     stepnumber=1,
     numbersep=8pt,
@@ -275,8 +275,12 @@
     breaklines=true,
     frame=lines,
 %    backgroundcolor=\color{background},
-    comment=[s]{\ "}{"},
+%    comment=[s]{\ "}{"},
+%    string=[s]{"}{"},
     string=[s]{"}{"},
+    comment=[l]{:\ "},
+    morecomment=[l]{:"},
+%    morecomment=[l]{:"},
     literate=
      *{0}{{{\color{numb}0}}}{1}
       {1}{{{\color{numb}1}}}{1}
@@ -288,12 +292,12 @@
       {7}{{{\color{numb}7}}}{1}
       {8}{{{\color{numb}8}}}{1}
       {9}{{{\color{numb}9}}}{1}
-      {:}{{{\color{punct}{:}}}}{1}
-      {,}{{{\color{punct}{,}}}}{1}
-      {\{}{{{\color{delim}{\{}}}}{1}
-      {\}}{{{\color{delim}{\}}}}}{1}
-      {[}{{{\color{delim}{[}}}}{1}
-      {]}{{{\color{delim}{]}}}}{1},
+%      {:}{{{\color{punct}{:}}}}{1}
+%      {,}{{{\color{punct}{,}}}}{1}
+%      {\{}{{{\color{delim}{\{}}}}{1}
+%      {\}}{{{\color{delim}{\}}}}}{1}
+%      {[}{{{\color{delim}{[}}}}{1}
+%      {]}{{{\color{delim}{]}}}}{1},
 }
 
 
