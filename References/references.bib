@@ -3,15 +3,27 @@
 
 % ------------------------------- simplify ----------------------------
 
-@ARTICLE{Gansner00anopen,
-    author = {Emden R. Gansner and Stephen C. North},
-    title = {An open graph visualization system and its applications to software engineering},
-    journal = {SOFTWARE - PRACTICE AND EXPERIENCE},
-    year = {2000},
-    volume = {30},
-    number = {11},
-    pages = {1203--1233}
+@article{Gansner00anopen,
+author = {Gansner, Emden R. and North, Stephen C.},
+title = {An Open Graph Visualization System and Its Applications to Software Engineering},
+year = {2000},
+doi = {10.5555/358668.358697},
+issue_date = {Sept. 2000},
+publisher = {John Wiley & Sons, Inc.},
+address = {USA},
+volume = {30},
+number = {11},
+issn = {0038-0644},
+journal = {Softw. Pract. Exper.},
+month = sep,
+pages = {1203–1233},
+numpages = {31},
+keywords = {software engineering, graph visualization, open systems}
 }
+
+  
+
+
 
 @InProceedings{neato,
 author="Gansner, Emden R.
@@ -28,7 +40,7 @@ abstract="One of the most popular graph drawing methods is based on achieving gr
 isbn="978-3-540-31843-9"
 }
 
-@techreport{Buttinger:2014726,
+@Booklet{Buttinger:2014726,
       author        = "Buttinger, William",
       title         = "{Using Event Weights to account for differences in
                        Instantaneous Luminosity and Trigger Prescale in Monte
@@ -36,6 +48,7 @@ isbn="978-3-540-31843-9"
       institution   = "CERN",
       address       = "Geneva",
       reportNumber  = "ATL-COM-SOFT-2015-119",
+      howpublished  = "{ATL-COM-SOFT-2015-119}",
       month         = "May",
       year          = "2015",
       url           = "https://cds.cern.ch/record/2014726",
@@ -77,7 +90,6 @@ pages={113-119},
 abstract={The solutions adopted by the high-energy physics community to foster reproducible research are examples of best practices that could be embraced more widely. This first experience suggests that reproducibility requires going beyond openness.},
 issn={1745-2481},
 doi={10.1038/s41567-018-0342-2},
-url={https://doi.org/10.1038/s41567-018-0342-2}
 }
 
 
@@ -85,17 +97,17 @@ url={https://doi.org/10.1038/s41567-018-0342-2}
 % ------------------------------- simplify ----------------------------
 
 @software{simplify,
-  author = "{Schanet, Eric}",
-  title = "{simplify}",
+  author = "Schanet, Eric",
+  title = "{Simplify: Create and validate simplified likelihoods}",
   version = {0.1.5},
   url = {https://github.com/eschanet/simplify},
 }
 
 @software{simplified_lh_SUSY-2019-08,
-  author = "{Schanet, Eric}",
-  title = "{SUSY-2019-08 simplified likelihood}",
+  author = "Schanet, Eric",
+  title = "{Simplified likelihood for SUSY-2019-08}",
   version = {0.0.1},
-  url = {https://github.com/eschanet/simplify/blob/master/examples/ANA-SUSY-2019-08/simplify_BkgOnly.json},
+  url = {https://github.com/eschanet/simplify/blob/6ba1586ae009faab5e5da4f7ac29c4385a6f751f/examples/ANA-SUSY-2019-08/simplify_BkgOnly.json},
 }
 
 @software{json_patch,
@@ -122,20 +134,21 @@ url={https://doi.org/10.1038/s41567-018-0342-2}
     year = "2015"
 }
 
-@techreport{Schanet:2758958,
+@Booklet{Schanet:2758958,
       author        = "Schanet, Eric and Lorenz, Jeanette Miriam and Stark,
                        Giordon Holtsberg and Heinrich, Lukas Alexander",
       title         = "{Simplified likelihoods for searches for supersymmetry}",
       institution   = "CERN",
       address       = "Geneva",
       reportNumber  = "ATL-COM-PHYS-2021-124",
+      howpublished  = "{ATL-COM-PHYS-2021-124}",
       month         = "Mar",
       year          = "2021",
       url           = "https://cds.cern.ch/record/2758958",
 }
 
 
-@techreport{Alderweireldt:2672096,
+@article{Alderweireldt:2672096,
       author        = "Alderweireldt, Sara Caroline and Vermeulen, Ambrosius
                        Thomas and Pedraza Diaz, Lucia and Resseguie, Elodie
                        Deborah and Dandoy, Jeffrey Rogers and Machado Miguens,
@@ -157,7 +170,7 @@ url={https://doi.org/10.1038/s41567-018-0342-2}
 
 % ------------------------------- discussion ----------------------------
 
-@techreport{CMS-PAS-SUS-20-003,
+@Booklet{CMS-PAS-SUS-20-003,
       title         = "{Search for chargino-neutralino production in final states
                        with a Higgs boson and a W boson}",
       institution   = "CERN",
@@ -166,6 +179,7 @@ url={https://doi.org/10.1038/s41567-018-0342-2}
       number        = "CMS-PAS-SUS-20-003",
       year          = "2021",
       reportNumber  = "CMS-PAS-SUS-20-003",
+      howpublished  = "{CMS-PAS-SUS-20-003}",
       url           = "https://cds.cern.ch/record/2758360",
 }
 
@@ -177,7 +191,8 @@ url={https://doi.org/10.1038/s41567-018-0342-2}
  publisher = {Springer New York},
  year = {1985},
  address = {New York, NY},
- isbn = {978-1-4612-5056-2}
+ isbn = {978-1-4612-5056-2},
+ doi = {10.1007/978-1-4612-5056-2}
  }
 
 @article{ArkaniHamed:2005px,
@@ -243,7 +258,7 @@ url={https://doi.org/10.1038/s41567-018-0342-2}
 
 @article{Binet:2134524,
  author = "Binet, S and Couturier, B",
- title = "{docker \& HEP: Containerization of applications for development, distribution and preservation}",
+ title = "{Docker \& HEP: Containerization of applications for development, distribution and preservation}",
  journal = "J. Phys.: Conf. Ser.",
  number = "2",
  volume = "664",
@@ -266,12 +281,13 @@ url={https://doi.org/10.1038/s41567-018-0342-2}
 	abstract = {Docker promises the ability to package applications and their dependencies into lightweight containers that move easily between different distros, start up quickly and are isolated from each other.},
 	journal = {Linux J.},
 	month = mar,
-	articleno = {2}
+	articleno = {2},
+	doi = "10.5555/2600239.2600241",
 }
 
 @misc{simpleanalysis,
   collaboration = {ATLAS},
-  title = {SimpleAnalysis},
+  title = {{SimpleAnalysis: Simplified ATLAS SUSY analysis framework}},
   year = {2021},
   publisher = {GitLab},
   journal = {GitLab repository},
@@ -281,13 +297,15 @@ url={https://doi.org/10.1038/s41567-018-0342-2}
 
 @inproceedings{chard20funcx,
 title = {funcX: A Federated Function Serving Fabric for Science},
-url = {http://dx.doi.org/10.1145/3369583.3392683},
 DOI = {10.1145/3369583.3392683},
-journal = {Proceedings of the 29th International Symposium on High-Performance Parallel and Distributed Computing},
+booktitle = {Proceedings of the 29th International Symposium on High-Performance Parallel and Distributed Computing},
 publisher = {ACM},
 author = {Chard, Ryan and Babuji, Yadu and Li, Zhuozhao and Skluzacek, Tyler and Woodard, Anna and Blaiszik, Ben and Foster, Ian and Chard, Kyle},
 year = {2020},
 month = {Jun},
+    eprint = "2005.04215",
+    archivePrefix = "arXiv",
+    primaryClass = "cs.DC",
 }
 
 @inproceedings{Feickert:2021sua,
@@ -349,7 +367,7 @@ month = {Jun},
   url = {https://www.hepdata.net/record/resource/1408476?view=true},
   collaboration = {ATLAS},
   language = {en},
-  title = {1Lbb-likelihoods-hepdata.tar.gz},
+  title = {Full analysis likelihood: 1Lbb-likelihoods-hepdata.tar.gz},
   publisher = {HEPData},
   year = {2020}
 }
@@ -404,12 +422,11 @@ month = {Jun},
 }
 
 
-@misc{HEPdata_1Lbb,
+@article{HEPdata_1Lbb,
   doi = {10.17182/HEPDATA.90607.V4},
   url = {https://www.hepdata.net/record/ins1755298?version=4},
   collaboration = {ATLAS},
-  language = {en},
-  title = {Search for direct production of electroweakinos in final states with one lepton,  missing transverse momentum and a Higgs boson decaying into two $b$-jets in $pp$ collisions at $\sqrt{s}=13$ TeV with the ATLAS detector},
+  title = {{HEPData record for SUSY-2019-08 analysis data}},
   publisher = {HEPData},
   year = {2021}
 }
@@ -548,7 +565,7 @@ month = {Jun},
     year = "2020"
 }
 
-@techreport{analysis_preservation_atlas,
+@article{analysis_preservation_atlas,
       author        = "Cranmer, Kyle and Heinrich, Lukas and Jones, Roger and
                        South, David",
       title         = "{Analysis Preservation in ATLAS}",
@@ -564,7 +581,7 @@ month = {Jun},
 
 % ------------------------------- results ----------------------------
 
-@techreport{ATL-PHYS-PUB-2020-020,
+@article{ATL-PHYS-PUB-2020-020,
       title         = "{SUSY July 2020 Summary Plot Update}",
       institution   = "CERN",
       collaboration = "ATLAS",
@@ -576,7 +593,7 @@ month = {Jun},
       url           = "http://cds.cern.ch/record/2725258",
 }
 
-@techreport{ATL-PHYS-PUB-2021-007,
+@article{ATL-PHYS-PUB-2021-007,
       title         = "{SUSY March 2021 Summary Plot Update}",
       institution   = "CERN",
       collaboration = "ATLAS Collaboration",
@@ -588,21 +605,6 @@ month = {Jun},
       note          = "All figures including auxiliary figures are available at
                        https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2021-007",
 }
-
-
-@book{Apollinari:2116337,
-      author        = "Apollinari, G and Béjar Alonso, I and Brüning, O and
-                       Lamont, M and Rossi, L",
-      title         = "{High-Luminosity Large Hadron Collider (HL-LHC):
-                       Preliminary Design Report}",
-      publisher     = "CERN",
-      address       = "Geneva",
-      series        = "CERN Yellow Reports: Monographs",
-      year          = "2015",
-      url           = "https://cds.cern.ch/record/2116337",
-      doi           = "10.5170/CERN-2015-005",
-}
-
 
 % ------------------------------- background estimation ----------------------------
 
@@ -622,17 +624,17 @@ month = {Jun},
 
 % ------------------------------- pmssm ----------------------------
 
-@techreport{ATLAS-CONF-2021-015,
+@Booklet{ATLAS-CONF-2021-015,
       title         = "{Search for long-lived charginos based on a
                        disappearing-track signature using 136 fb$^{-1}$ of $pp$
                        collisions at $\sqrt{s}$ = 13 TeV with the ATLAS detector}",
       institution   = "CERN",
       collaboration = "ATLAS",
-      address       = "Geneva",
       number        = "ATLAS-CONF-2021-015",
       month         = "Mar",
       year          = "2021",
       reportNumber  = "ATLAS-CONF-2021-015",
+      howpublished  = "{ATLAS-CONF-2021-015}",
       url           = "https://cds.cern.ch/record/2759676",
 }
 
@@ -663,22 +665,20 @@ month = {Jun},
     volume = "83",
     pages = "3780--3783",
     year = "1999",
-    note = "[Erratum: Phys.Rev.Lett. 100, 029901 (2008)]"
+    note = "[Erratum: Phys. Rev. Lett. 100, 029901 (2008)]"
 }
 
 
-@techreport{prospino:314229,
+@article{prospino:314229,
       author        = "Beenakker, W. and Hopker, R. and Spira, M.",
       title         = "{PROSPINO: A Program for the Production of Supersymmetric
                        Particles in Next-to-leading Order QCD}",
-      number        = "hep-ph/9611232",
+    eprint = "hep-ph/9611232",
+    archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
       month         = "Nov",
       year          = "1996",
-      reportNumber  = "hep-ph/9611232",
       url           = "https://cds.cern.ch/record/314229",
-      note          = "12 pages, latex, no figures, Complete postscript file and
-                       FORTRAN source codes available from
-                       http://wwwcn.cern.ch/~mspira/prospino/",
 }
 
 
@@ -838,18 +838,17 @@ month = {Jun},
 }
 
 @article{Berger_2009,
-   title={Supersymmetry without prejudice},
-   volume={2009},
-   ISSN={1029-8479},
-   url={http://dx.doi.org/10.1088/1126-6708/2009/02/023},
-   DOI={10.1088/1126-6708/2009/02/023},
-   number={02},
-   journal={Journal of High Energy Physics},
-   publisher={Springer Science and Business Media LLC},
-   author={Berger, Carola F and Gainer, James S and Hewett, JoAnne L and Rizzo, Thomas G},
-   year={2009},
-   month={Feb},
-   pages={023–023}
+    author = "Berger, Carola F. and Gainer, James S. and Hewett, JoAnne L. and Rizzo, Thomas G.",
+    title = "{Supersymmetry Without Prejudice}",
+    eprint = "0812.0980",
+    archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
+    reportNumber = "MIT-CTP-3988, SLAC-PUB-13388",
+    doi = "10.1088/1126-6708/2009/02/023",
+    journal = "JHEP",
+    volume = "02",
+    pages = "023",
+    year = "2009"
 }
 
 
@@ -981,22 +980,18 @@ url="https://doi.org/10.1007/BF01931367"
 
 
 @article{RooFit:2003ir,
-      author         = "Verkerke, Wouter and Kirkby, David P.",
-      title          = "{The RooFit toolkit for data modeling}",
-      booktitle      = "{Statistical Problems in Particle Physics, Astrophysics
-                        and Cosmology (PHYSTAT 05): Proceedings, Oxford, UK,
-                        September 12-15, 2005}",
-      journal        = "eConf",
-      volume         = "C0303241",
-      year           = "2003",
-      pages          = "MOLT007",
-      note           = "[,186(2003)]",
-      eprint         = "physics/0306116",
-      archivePrefix  = "arXiv",
-      primaryClass   = "physics",
-      reportNumber   = "CHEP-2003-MOLT007",
-      SLACcitation   = "%%CITATION = PHYSICS/0306116;%%"
+    author = "Verkerke, Wouter and Kirkby, David P.",
+    editor = "Lyons, L. and Karagoz, Muge",
+    title = "{The RooFit toolkit for data modeling}",
+    eprint = "physics/0306116",
+    archivePrefix = "arXiv",
+    reportNumber = "CHEP-2003-MOLT007",
+    journal = "eConf",
+    volume = "C0303241",
+    pages = "MOLT007",
+    year = "2003"
 }
+
 @article{Alves:2011wf,
       author         = "{LHC New Physics Working Group}",
       editor         = "Arkani-Hamed, Nima and Arora, Sanjay and Bai, Yang and
@@ -1044,6 +1039,18 @@ keywords = "C++, Object-oriented, Framework, Interpreter, Data storage, Data ana
       url           = "https://cds.cern.ch/record/310399",
 }
 
+@article{James:1975dr,
+    author = "James, F. and Roos, M.",
+    title = "{Minuit: A System for Function Minimization and Analysis of the Parameter Errors and Correlations}",
+    reportNumber = "CERN-DD-75-20",
+    doi = "10.1016/0010-4655(75)90039-9",
+    journal = "Comput. Phys. Commun.",
+    volume = "10",
+    pages = "343--367",
+    year = "1975"
+}
+
+
 @article{ROOT:1997pa,
       author         = "Brun, R. and Rademakers, F.",
       title          = "{ROOT: An object oriented data analysis framework}",
@@ -1059,7 +1066,7 @@ keywords = "C++, Object-oriented, Framework, Interpreter, Data storage, Data ana
 }
 
 
-@techreport{HistFactory:1456844,
+@Booklet{HistFactory:1456844,
       author        = "Cranmer, Kyle and Lewis, George and Moneta, Lorenzo and
                        Shibata, Akira and Verkerke, Wouter",
       title         = "{HistFactory: A tool for creating statistical models for
@@ -1071,6 +1078,7 @@ keywords = "C++, Object-oriented, Framework, Interpreter, Data storage, Data ana
       month         = "Jan",
       year          = "2012",
       reportNumber  = "CERN-OPEN-2012-016",
+      howpublished  = "{CERN-OPEN-2012-016}",
       url           = "http://cds.cern.ch/record/1456844",
 }
 
@@ -1089,7 +1097,7 @@ keywords = "C++, Object-oriented, Framework, Interpreter, Data storage, Data ana
       SLACcitation   = "%%CITATION = ARXIV:1410.1280;%%"
 }
 
-@techreport{Electroweak_reference_for_c1c1_ww:2266359,
+@article{Electroweak_reference_for_c1c1_ww:2266359,
       title         = "{Search for direct chargino pair production with W-boson
                        mediated decays in events with two leptons and missing
                        transverse momentum at $\sqrt{s} = 13$ TeV with the ATLAS
@@ -1105,7 +1113,7 @@ keywords = "C++, Object-oriented, Framework, Interpreter, Data storage, Data ana
 }
 
 
-@techreport{Electroweak_reference_for_c1c1_ww_old:2266359,
+@article{Electroweak_reference_for_c1c1_ww_old:2266359,
 	author        = "Williams, Sarah and others",
 	title         = "{Search for direct chargino pair production with $W$-boson
 	mediated decays in events with two leptons and missing
@@ -1120,7 +1128,7 @@ keywords = "C++, Object-oriented, Framework, Interpreter, Data storage, Data ana
 	url           = "https://cds.cern.ch/record/2266359",
 }
 
-@techreport{lumi_projection:2256082,
+@article{lumi_projection:2256082,
       author        = "Chen, Xin",
       title         = "{Prospects of LHC Higgs Physics at the end of Run III}",
       institution   = "CERN",
@@ -1136,7 +1144,7 @@ keywords = "C++, Object-oriented, Framework, Interpreter, Data storage, Data ana
 
 @misc{ahoi,
   author = {Hartmann, Nikolai},
-  title = {ahoi},
+  title = {{ahoi: a horrible optimisation instrument}},
   year = {2018},
   publisher = {GitLab},
   journal = {GitLab repository},
@@ -1162,7 +1170,7 @@ keywords = "C++, Object-oriented, Framework, Interpreter, Data storage, Data ana
  publisher = {The MIT Press},
 } 
 
-@techreport{met_significance:2294922,
+@article{met_significance:2294922,
       title         = "{Object-based missing transverse momentum significance in
                        the ATLAS detector}",
       institution   = "CERN",
@@ -1178,13 +1186,16 @@ keywords = "C++, Object-oriented, Framework, Interpreter, Data storage, Data ana
 
 % ------------------------------- Statistical concepts ----------------------------
 
-@incollection{pytorch,
+@article{pytorch,
 title = {PyTorch: An Imperative Style, High-Performance Deep Learning Library},
 author = {Paszke, Adam and Gross, Sam and Massa, Francisco and Lerer, Adam and Bradbury, James and Chanan, Gregory and Killeen, Trevor and Lin, Zeming and Gimelshein, Natalia and Antiga, Luca and Desmaison, Alban and Kopf, Andreas and Yang, Edward and DeVito, Zachary and Raison, Martin and Tejani, Alykhan and Chilamkurthy, Sasank and Steiner, Benoit and Fang, Lu and Bai, Junjie and Chintala, Soumith},
-booktitle = {Advances in Neural Information Processing Systems 32},
-editor = {H. Wallach and H. Larochelle and A. Beygelzimer and F. d\textquotesingle Alch\'{e}-Buc and E. Fox and R. Garnett},
+booktitle = {Adv. Neural Inf. Process. Syst.},
 pages = {8024--8035},
+volume = {32},
 year = {2019},
+eprint={1912.01703},
+archivePrefix = "arXiv",
+primaryClass={cs.LG},
 publisher = {Curran Associates, Inc.},
 url = {http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf}
 }
@@ -1217,7 +1228,6 @@ url = {http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-perf
  pages         = {357--362},
  doi           = {10.1038/s41586-020-2649-2},
  publisher     = {Springer Science and Business Media {LLC}},
- url           = {https://doi.org/10.1038/s41586-020-2649-2}
 }
 
 @misc{tensorflow2015-whitepaper,
@@ -1278,7 +1288,6 @@ author={
 
 @article{pyhf_joss,
   doi = {10.21105/joss.02823},
-  url = {https://doi.org/10.21105/joss.02823},
   year = {2021},
   publisher = {The Open Journal},
   volume = {6},
@@ -1300,7 +1309,7 @@ author={
 	pages          = "1554",
 	doi            = "10.1140/epjc/s10052-011-1554-0,
 	10.1140/epjc/s10052-013-2501-z",
-	note           = "[Erratum: Eur. Phys. J.C73,2501(2013)]",
+	note           = "[Erratum: Eur. Phys. J. C 73, 2501 (2013)]",
 	eprint         = "1007.1727",
 	archivePrefix  = "arXiv",
 	primaryClass   = "physics.data-an",
@@ -1317,7 +1326,6 @@ number = "1",
 pages = "60--62",
 publisher = "The Institute of Mathematical Statistics",
 title = "The Large-Sample Distribution of the Likelihood Ratio for Testing Composite Hypotheses",
-url = "https://doi.org/10.1214/aoms/1177732360",
 volume = "9",
 year = "1938"
 }
@@ -1371,25 +1379,18 @@ year = "1938"
     year = "2013"
 }
 
-
 @inproceedings{Cranmer:2005hi,
-	author         = "Cranmer, K.",
-	title          = "{Statistical challenges for searches for new physics at
-	the LHC}",
-	booktitle      = "{Statistical Problems in Particle Physics, Astrophysics
-	and Cosmology (PHYSTAT 05): Proceedings, Oxford, UK,
-	September 12-15, 2005}",
-	url            = "http://www.physics.ox.ac.uk/phystat05/proceedings/files//Cranmer_LHCStatisticalChallenges.ps",
-	year           = "2005",
-	pages          = "112-123",
-	doi            = "10.1142/9781860948985_0026",
-	eprint         = "physics/0511028",
-	archivePrefix  = "arXiv",
-	primaryClass   = "physics.data-an",
-	SLACcitation   = "%%CITATION = PHYSICS/0511028;%%"
+    author = "Cranmer, Kyle",
+    title = "{Statistical challenges for searches for new physics at the LHC}",
+    booktitle = "{Statistical Problems in Particle Physics, Astrophysics and Cosmology}",
+    eprint = "physics/0511028",
+    archivePrefix = "arXiv",
+    doi = "10.1142/9781860948985_0026",
+    month = "9",
+    year = "2005"
 }
 
-@techreport{Cranmer:1456844,
+@article{Cranmer:1456844,
       author        = "Cranmer, Kyle and Lewis, George and Moneta, Lorenzo and
                        Shibata, Akira and Verkerke, Wouter",
       title         = "{HistFactory: A tool for creating statistical models for
@@ -1418,20 +1419,6 @@ year = "1938"
 
 
 % ------------------------------- Object reconstruction ----------------------------
-
-@techreport{ATLAS-CONF-2018-023,
-      title         = "{$E_{\text{T}}^{\text{miss}}$ performance in the ATLAS
-                       detector using 2015-2016 LHC p-p collisions}",
-      institution   = "CERN",
-      collaboration = "ATLAS",
-      address       = "Geneva",
-      number        = "ATLAS-CONF-2018-023",
-      month         = "Jun",
-      year          = "2018",
-      reportNumber  = "ATLAS-CONF-2018-023",
-      url           = "http://cds.cern.ch/record/2625233",
-}
-
 
 @article{Aad:2020gmm,
     collaboration = "ATLAS",
@@ -1468,18 +1455,15 @@ year = "1938"
     year = "2008"
 }
 
-
 @article{Fruhwirth:178627,
-      author        = {Fr\"uhwirth, R},
-      title         = "{Application of Kalman filtering to track and vertex
-                       fitting}",
-      journal       = "Nucl. Instrum. Methods Phys. Res., A",
-      number        = "HEPHY-PUB-503",
-      volume        = "262",
-      pages         = "444. 19 p",
-      month         = "Jun",
-      year          = "1987",
-      url           = "https://cds.cern.ch/record/178627",
+    author        = {Fr\"uhwirth, R},
+    title = "{Application of Kalman filtering to track and vertex fitting}",
+    reportNumber = "HEPHY-PUB-87-503",
+    doi = "10.1016/0168-9002(87)90887-4",
+    journal = "Nucl. Instrum. Meth. A",
+    volume = "262",
+    pages = "444--450",
+    year = "1987"
 }
 
 @article{Tovey:2008ui,
@@ -1507,19 +1491,16 @@ year = "1938"
     year = "2010"
 }
 
-
 @article{transversemass:163856,
-      author        = "Arnison, Geoffrey and others",
-      title         = "{Further evidence for charged intermediate vector bosons
-                       at the SPS collider}",
-      journal       = "Phys. Lett. B",
-      collaboration = "Aachen-Annecy-Birmingham-CERN-Helsinki-London(QMC)-Paris(CdF)-Riverside-Rome-Rutherford-Saclay(CEN)-Vienna",
-      number        = "CERN-EP-83-111",
-      volume        = "129",
-      pages         = "273-282. 17 p",
-      month         = "Jun",
-      year          = "1985",
-      url           = "https://cds.cern.ch/record/163856",
+    author = "Arnison, G. and others",
+    collaboration = "UA1",
+    title = "{Further Evidence for Charged Intermediate Vector Bosons at the SPS Collider}",
+    reportNumber = "CERN-EP/83-111",
+    doi = "10.1016/0370-2693(83)90860-2",
+    journal = "Phys. Lett. B",
+    volume = "129",
+    pages = "273--282",
+    year = "1983"
 }
 
 @article{Arnison:1983rp,
@@ -1549,7 +1530,7 @@ year = "1938"
 	SLACcitation   = "%%CITATION = ARXIV:0802.1188;%%"
 }
 
-@techreport{overlapremoval:1700874,
+@Booklet{overlapremoval:1700874,
    author        = "Adams, D and others",
 	title         = "{Recommendations of the Physics Objects and Analysis
 	Harmonisation Study Groups 2014}",
@@ -1559,6 +1540,7 @@ year = "1938"
 	month         = "Jul",
 	year          = "2014",
 	reportNumber  = "ATL-PHYS-INT-2014-018",
+	howpublished  = "{ATL-PHYS-INT-2014-018}",
 	url           = "https://cds.cern.ch/record/1743654",
 }
 @article{METPerformance:2018tkc,
@@ -1603,13 +1585,14 @@ year = "1938"
     year = "2008"
 }
 
-@article{Aad:2020flx,
+@Booklet{Aad:2020flx,
     collaboration = "ATLAS",
     title = "{Jet energy scale and resolution measured in proton-proton collisions at $\sqrt{s}=13$ TeV with the ATLAS detector}",
     eprint = "2007.02645",
     archivePrefix = "arXiv",
     primaryClass = "hep-ex",
     reportNumber = "CERN-EP-2020-083",
+    howpublished = "CERN-EP-2020-083",
     month = "7",
     year = "2020"
 }
@@ -1680,7 +1663,7 @@ year = "1938"
 	reportNumber   = "CERN-PH-EP-2014-153",
 	SLACcitation   = "%%CITATION = ARXIV:1407.5063;%%"
 }
-@techreport{EleReco,
+@article{EleReco,
 	collaboration = "ATLAS",
 	title         = "{Electron identification measurements in ATLAS using
 	$\sqrt{s}$ = 13 TeV data with 50 ns bunch spacing}",
@@ -1693,7 +1676,7 @@ year = "1938"
 	url           = "https://cds.cern.ch/record/2048202",
 }
 
-@techreport{JetCleaning:2015ofz,
+@article{JetCleaning:2015ofz,
 	  collaboration = "ATLAS",
       title         = "{Selection of jets produced in 13TeV proton-proton
                        collisions with the ATLAS detector}",
@@ -1791,17 +1774,27 @@ year = "1938"
 % ------------------------------- EXPERIMENT --------------------------------
 
 @techreport{Bajko:1168025,
-      author        = "Bajko, M and others",
+      author        = "Bajko, M and Bertinelli, F and Catalan-Lasheras, N and
+                       Claudet, S and Cruikshank, P and Dahlerup-Petersen, K and
+                       Denz, R and Fessia, P and Garion, C and Jimenez, JM and
+                       Kirby, G and Lebrun, Ph and Le Naour, S and Mess, K-H and
+                       Modena, M and Montabonnet, V and Nunes, R and Parma, V and
+                       Perin, A and de Rijk, G and Rijllart, A and Rossi, L and
+                       Schmidt, R and Siemko, A and Strubin, P and Tavian, L and
+                       Thiesen, H and Tock, J and Todesco, E and Veness, R and
+                       Verweij, A and Walckiers, L and Van Weelderen, R and Wolf,
+                       R and Fehér, S and Flora, R and Koratzinos, M and Limon, P
+                       and Strait, J",
       title         = "{Report of the Task Force on the Incident of 19th
                        September 2008 at the LHC}",
       institution   = "CERN",
       address       = "Geneva",
-      number        = "LHC-PROJECT-Report-1168. CERN-LHC-PROJECT-Report-1168",
+      reportNumber  = "CERN-LHC-PROJECT-Report-1168",
       month         = "Mar",
       year          = "2009",
-      reportNumber  = "LHC-PROJECT-Report-1168",
       url           = "https://cds.cern.ch/record/1168025",
 }
+
 
 
 @article{Aad:2020wji,
@@ -1822,14 +1815,13 @@ year = "1938"
 
 @article{YENNIE1961379,
 title = {The infrared divergence phenomena and high-energy processes},
-journal = {Annals of Physics},
+    journal = "Annals Phys.",
 volume = {13},
 number = {3},
 pages = {379-452},
 year = {1961},
 issn = {0003-4916},
 doi = {https://doi.org/10.1016/0003-4916(61)90151-8},
-url = {https://www.sciencedirect.com/science/article/pii/0003491661901518},
 author = {D.R Yennie and S.C Frautschi and H Suura},
 abstract = {A general treatment of the infrared divergence problem in quantum electrodynamics is given. The main feature of this treatment is the separation of the infrared divergences as multiplicative factors, which are treated to all order of perturbation theory, and the conversion of the residual perturbation expansion into one which has no infrared divergence, and hence no need for an infrared cutoff. In the infrared factors, which are exponential in form, the infrared divergences arising from the real and virtual photons cancel out in the usual way. These factors can then be expressed solely in terms of the momenta of the initial and final charged particles and an integral over the region of phase space available to the undetected photons; they do not depend upon the specific details of the interaction. Electron scattering from a static potential is treated in considerable detail, and several other examples are discussed briefly. As an important byproduct of the general treatment, it is found that when the infrared contributions are separated in a particular way, they dominate the radiative corrections at high energies and together with certain “magnetic terms” and vacuum polarization corrections seem to give all the contributions proportional to ln (Em). All of these corrections can be easily estimated (in most cases) simply from a knowledge of the external momenta of the charged particles; this then provides a very powerful and accurate way of estimating radiative corrections to high-energy processes.}
 }
@@ -1854,15 +1846,17 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 }
 
 
-@techreport{blewett1971proceedings,
-  title={PROCEEDINGS OF THE 8th INTERNATIONAL CONFERENCE ON HIGH-ENERGY ACCELERATORS, CERN 1971. Conference Held at Geneva, 20--24 September 1971.},
-  author={Blewett, MH and Vogt-Nilsen, N},
-  year={1971},
-  institution={1971}
+@proceedings{blewett1971proceedings,
+      author        = "Blewett, Myrtle Hildred and Vogt-Nilsen, Nils",
+      title         = "{}",
+      organization  = "CERN",
+      publisher     = "CERN",
+      address       = "Geneva",
+      year          = "1971",
+      url           = "https://cds.cern.ch/record/103798",
 }
 
-
-@techreport{CERN:2723123,
+@article{CERN:2723123,
       author        = "CERN",
       title         = "{CERN Annual report 2019}",
       institution   = "CERN",
@@ -1889,34 +1883,40 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 }
 
 
-@techreport{Capeans:1291633,
+@article{Capeans:1291633,
       title         = "{ATLAS Insertable B-Layer Technical Design Report}",
       collaboration = "ATLAS",
       number        = "CERN-LHCC-2010-013. ATLAS-TDR-19",
       month         = "Sep",
       year          = "2010",
+      report		= "CERN-LHCC-2010-013",
       reportNumber  = "CERN-LHCC-2010-013",
       url           = "http://cds.cern.ch/record/1291633",
 }
 
 
 @article{ATLAS:1999uwa,
-      title          = "{ATLAS: Detector and physics performance technical design
-                        report. Volume 1}",
-      collaboration  = "ATLAS",
-      year           = "1999",
-      reportNumber   = "CERN-LHCC-99-14, ATLAS-TDR-14",
-      SLACcitation   = "%%CITATION = CERN-LHCC-99-14;%%"
+      title         = "{ATLAS detector and physics performance: Technical Design
+                       Report, 1}",
+      publisher     = "CERN",
+      collaboration = "ATLAS",
+      address       = "Geneva",
+      series        = "Technical design report. ATLAS",
+      year          = "1999",
+      url           = "https://cds.cern.ch/record/391176",
 }
 
 @article{ATLAS:1999vwa,
-    author = "Airapetian, A. and others",
-    collaboration = "ATLAS",
-    title = "{ATLAS: Detector and physics performance technical design report. Volume 2}",
-    reportNumber = "CERN-LHCC-99-15, ATLAS-TDR-15",
-    month = "5",
-    year = "1999"
+      title         = "{ATLAS detector and physics performance: Technical Design
+                       Report, 2}",
+      publisher     = "CERN",
+      collaboration = "ATLAS Collaboration",
+      address       = "Geneva",
+      series        = "Technical design report. ATLAS",
+      year          = "1999",
+      url           = "https://cds.cern.ch/record/391177",
 }
+
 
 
 @article{pdg2018,
@@ -1930,17 +1930,14 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
       url			 = "http://pdg.lbl.gov"
 }
 
-
 @article{Evans:1129806,
-      author        = "Evans, Lyndon R and Bryant, Philip",
-      title         = "{LHC Machine}",
-      journal       = "JINST",
-      volume        = "3",
-      pages         = "S08001. 164 p",
-      year          = "2008",
-      url           = "http://cds.cern.ch/record/1129806",
-      note          = "This report is an abridged version of the LHC Design
-                       Report (CERN-2004-003)",
+    editor = "Evans, Lyndon and Bryant, Philip",
+    title = "{LHC Machine}",
+    doi = "10.1088/1748-0221/3/08/S08001",
+    journal = "JINST",
+    volume = "3",
+    pages = "S08001",
+    year = "2008"
 }
 
 @article{Aad:2008zzm,
@@ -1996,36 +1993,37 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 }
 
 @article{Pinfold:2009oia,
-    collaboration = "MoEDAL",
-    title = "{Technical Design Report of the MoEDAL Experiment}",
-    reportNumber = "CERN-LHCC-2009-006, MoEDAL-TDR-001",
-    month = "6",
-    year = "2009"
+      title         = "{Technical Design Report of the MoEDAL Experiment}",
+      collaboration = "MoEDAL Collaboration",
+      reportNumber  = "CERN-LHCC-2009-006, MoEDAL-TDR-001",
+      month         = "Jun",
+      year          = "2009",
+      url           = "https://cds.cern.ch/record/1181486",
 }
+
+
 
 @article{Adriani:2006jd,
-    collaboration = "LHCf",
-    title = "{Technical design report of the LHCf experiment: Measurement of photons and neutral pions in the very forward region of LHC}",
-    reportNumber = "CERN-LHCC-2006-004",
-    month = "2",
-    year = "2006"
+      title         = "{LHCf experiment: Technical Design Report}",
+      publisher     = "CERN",
+      collaboration = "LHCf",
+      address       = "Geneva",
+      series        = "Technical design report. LHCf",
+      year          = "2006",
+      url           = "https://cds.cern.ch/record/926196",
 }
+
 
 @article{Scrivens:1382102,
-      author        = "Scrivens, R and Kronberger, M and Küchler, D and Lettry,
-                       J and Mastrostefano, C and Midttun, O and O’Neil, M and
-                       Pereira, H and Schmitzer, C",
-      title         = "{Overview of the status and developments on primary ion
-                       sources at CERN*}",
-      number        = "CERN-ATS-2011-172",
-      pages         = "4 p",
-      month         = "Sep",
-      year          = "2011",
-      reportNumber  = "CERN-ATS-2011-172",
-      url           = "https://cds.cern.ch/record/1382102",
+    author = "Lettry, J. and Scrivens, R. and Kronberger, M. and Kuchler, D. and Midttun, O. and Paoluzzi, M. M. and Pereira, H. and Schmitzer, C.",
+    editor = "Petit-Jean-Genaz, Christine",
+    title = "{Overview of the Status and Developments on Primary Ion Sources at CERN}",
+    reportNumber = "IPAC-2011-THPS025, CERN-ATS-2011-172",
+    journal = "Conf. Proc. C",
+    volume = "110904",
+    pages = "3474--3476",
+    year = "2011"
 }
-
-
 
 @article{Martinez:2016udm,
 	author         = "Martínez, A. Ruiz",
@@ -2082,8 +2080,6 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
       pages         = "2518. 27 p",
       month         = "Feb",
       year          = "2013",
-      reportNumber  = "CERN-PH-EP-2013-026",
-      url           = "https://cds.cern.ch/record/1517411",
       doi           = "10.1140/epjc/s10052-013-2518-3",
 }
 
@@ -2102,7 +2098,7 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 }
 
 
-@techreport{ATLAS-CONF-2019-021,
+@article{ATLAS-CONF-2019-021,
       title         = "{Luminosity determination in $pp$ collisions at
                        $\sqrt{s}=13$ TeV using the ATLAS detector at the LHC}",
       institution   = "CERN",
@@ -2117,8 +2113,7 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 
 
 @book{Apollinari:2284929,
-      author        = "Apollinari G. and Béjar Alonso I. and Brüning O. and
-                       Fessia P. and Lamont M. and Rossi L. and Tavian L.",
+    editor = {Apollinari, G and B\'ejar Alonso, I and Br\"uning, O and Lamont, M and Rossi, L},
       title         = "{High-Luminosity Large Hadron Collider (HL-LHC): Technical
                        Design Report V. 0.1}",
       publisher     = "CERN",
@@ -2141,62 +2136,54 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
     year = "2014"
 }
 
-
 @article{Avoni_2018,
-	doi = {10.1088/1748-0221/13/07/p07017},
-	url = {https://doi.org/10.1088/1748-0221/13/07/p07017},
-	year = 2018,
-	month = {jul},
-	publisher = {{IOP} Publishing},
-	volume = {13},
-	number = {07},
-	pages = {P07017--P07017},
 	author = {G. Avoni and M. Bruschi and G. Cabras and D. Caforio and N. Dehghanian and A. Floderus and B. Giacobbe and F. Giannuzzi and F. Giorgi and P. Grafström and V. Hedberg and F. Lasagni Manghi and S. Meneghini and J. Pinfold and E. Richards and C. Sbarra and N. Semprini Cesari and A. Sbrizzi and R. Soluk and G. Ucchielli and S. Valentinetti and O. Viazlo and M. Villa and C. Vittori and R. Vuillermet and A. Zoccoli},
-	title = {The new {LUCID}-2 detector for luminosity measurement and monitoring in {ATLAS}},
-	journal = {Journal of Instrumentation}
+    title = "{The new LUCID-2 detector for luminosity measurement and monitoring in ATLAS}",
+    doi = "10.1088/1748-0221/13/07/P07017",
+    journal = "JINST",
+    volume = "13",
+    number = "07",
+    pages = "P07017",
+    year = "2018"
 }
 
-@techreport{vanderMeer:296752,
+
+@article{vanderMeer:296752,
       author        = "van der Meer, S",
       title         = "{Calibration of the effective beam height in the ISR}",
       institution   = "CERN",
       address       = "Geneva",
-      number        = "CERN-ISR-PO-68-31. ISR-PO-68-31",
+      number        = "CERN-ISR-PO-68-31",
       year          = "1968",
       url           = "https://cds.cern.ch/record/296752",
 }
 
 @article{GRAFSTROM201597,
-	title = "Luminosity determination at proton colliders",
-	journal = "Progress in Particle and Nuclear Physics",
-	volume = "81",
-	pages = "97 - 148",
-	year = "2015",
-	issn = "0146-6410",
-	doi = "https://doi.org/10.1016/j.ppnp.2014.11.002",
-	url = "http://www.sciencedirect.com/science/article/pii/S0146641014000878",
-	author = "P. Grafström and W. Kozanecki",
-	keywords = "Luminosity determination, Hadron colliders, van der Meer scans, Elastic pp scattering, Beam imaging"
+      author        = "Grafström, P and Kozanecki, W",
+      title         = "{Luminosity determination at proton colliders}",
+      journal       = "Prog. Part. Nucl. Phys.",
+      volume        = "81",
+      pages         = "97-148. 52 p",
+      year          = "2015",
+      doi           = "10.1016/j.ppnp.2014.11.002",
 }
 
 
-@techreport{Potamianos:2209070,
-      author        = "Potamianos, Karolos",
-      title         = "{The upgraded Pixel detector and the commissioning of the
-                       Inner Detector tracking of the ATLAS experiment for Run-2
-                       at the Large Hadron Collider}",
-      institution   = "CERN",
-      collaboration = "ATLAS",
-      address       = "Geneva",
-      number        = "ATL-PHYS-PROC-2016-104",
-      month         = "Aug",
-      year          = "2016",
-      reportNumber  = "ATL-PHYS-PROC-2016-104",
-      url           = "https://cds.cern.ch/record/2209070",
-      note          = "15 pages, EPS-HEP 2015 Proceedings",
+
+@article{Potamianos:2209070,
+    author = "Potamianos, Karolos",
+    title = "{The upgraded Pixel detector and the commissioning of the Inner Detector tracking of the ATLAS experiment for Run-2 at the Large Hadron Collider}",
+    eprint = "1608.07850",
+    archivePrefix = "arXiv",
+    primaryClass = "physics.ins-det",
+    reportNumber = "ATL-PHYS-PROC-2016-104",
+    journal = "PoS",
+    volume = "EPS-HEP2015",
+    pages = "261",
+    year = "2015"
 }
 
-@unpublished{Pequenao:1095926,
+@misc{Pequenao:1095926,
       author        = "Joao Pequenao",
       title         = "{Computer generated image of the ATLAS inner detector}",
       month         = "Mar",
@@ -2219,39 +2206,32 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
     year = "2018"
 }
 
-
 @article{Lee:2637852,
-      author        = "Lee, Sehwook and Livan, Michele and Wigmans, Richard",
-      title         = "{Dual-Readout Calorimetry}",
-      journal       = "Rev. Mod. Phys.",
-      number        = "arXiv:1712.05494. 2",
-      volume        = "90",
-      pages         = "025002. 40 p",
-      month         = "Dec",
-      year          = "2017",
-      reportNumber  = "arXiv:1712.05494",
-      url           = "https://cds.cern.ch/record/2637852",
-      note          = "44 pages, 53 figures, accepted for publication in Review
-                       of Modern Physics",
-      doi           = "10.1103/RevModPhys.90.025002",
+    author = "Lee, Sehwook and Livan, Michele and Wigmans, Richard",
+    title = "{Dual-Readout Calorimetry}",
+    eprint = "1712.05494",
+    archivePrefix = "arXiv",
+    primaryClass = "physics.ins-det",
+    doi = "10.1103/RevModPhys.90.025002",
+    journal = "Rev. Mod. Phys.",
+    volume = "90",
+    number = "2",
+    pages = "025002",
+    year = "2018"
 }
-
 
 @article{AMALDI1977390,
-title = "The real part of the forward proton proton scattering amplitude measured at the CERN intersecting storage rings",
-journal = "Physics Letters B",
-volume = "66",
-number = "4",
-pages = "390 - 394",
-year = "1977",
-issn = "0370-2693",
-doi = "https://doi.org/10.1016/0370-2693(77)90022-3",
-url = "http://www.sciencedirect.com/science/article/pii/0370269377900223",
-author = "U. Amaldi and G. Cocconi and A.N. Diddens and R.W. Dobinson and J. Dorenbosch and W. Duinker and D. Gustavson and J. Meyer and K. Potter and A.M. Wetherell and A. Baroncelli and C. Bosio",
-abstract = "The real part of the proton proton elastic scattering amplitude has been determined from its interference with the Coulomb amplitude at total centre-of-mass energies up to 62 GeV. The observed steady increase of ϱ with energy indicates that the total proton proton cross section continues to increase well beyond this energy."
+	author = "U. Amaldi and G. Cocconi and A.N. Diddens and R.W. Dobinson and J. Dorenbosch and W. Duinker and D. Gustavson and J. Meyer and K. Potter and A.M. Wetherell and A. Baroncelli and C. Bosio",
+    title = "{The Real Part of the Forward Proton Proton Scattering Amplitude Measured at the CERN Intersecting Storage Rings}",
+    reportNumber = "Print-77-0078 (CERN)",
+    doi = "10.1016/0370-2693(77)90022-3",
+    journal = "Phys. Lett. B",
+    volume = "66",
+    pages = "390--394",
+    year = "1977"
 }
 
-@techreport{Leite:1628749,
+@Booklet{Leite:1628749,
       author        = "Leite, M",
       title         = "{Performance of the ATLAS Zero Degree Calorimeter}",
       institution   = "CERN",
@@ -2259,12 +2239,12 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
       number        = "ATL-FWD-PROC-2013-001",
       month         = "Nov",
       year          = "2013",
-      reportNumber  = "ATL-FWD-PROC-2013-001",
+      howpublished  = "{ATL-FWD-PROC-2013-001}",
       url           = "https://cds.cern.ch/record/1628749",
 }
 
 @article{AbdelKhalek:2016tiv,
-    author = "Abdel Khalek, S. and others",
+   author={Khalek, S. Abdel and Allongue, B. and Anghinolfi, F. and Barrillon, P. and Blanchot, G. and Blin-Bondil, S. and Braem, A. and Chytka, L. and Muíño, P. Conde and Düren, M. and et al.},
     title = "{The ALFA Roman Pot Detectors of ATLAS}",
     eprint = "1609.00249",
     archivePrefix = "arXiv",
@@ -2277,7 +2257,7 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
     year = "2016"
 }
 
-@book{CERN-LHCC-98-014,
+@article{CERN-LHCC-98-014,
       title         = "{ATLAS level-1 trigger: Technical Design Report}",
       publisher     = "CERN",
       collaboration = "ATLAS",
@@ -2288,9 +2268,7 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
       url           = "https://cds.cern.ch/record/381429",
 }
 
-@book{Jenni:616089,
-      author        = "Jenni, Peter and Nessi, Marzio and Nordberg, Markus and
-                       Smith, Kenway",
+@article{Jenni:616089,
       title         = "{ATLAS high-level trigger, data-acquisition and controls:
                        Technical Design Report}",
       publisher     = "CERN",
@@ -2302,7 +2280,7 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
       url           = "https://cds.cern.ch/record/616089",
 }
 
-@techreport{Adamczyk:2017378,
+@article{Adamczyk:2017378,
       author        = "Adamczyk, L and Banaś, E and Brandt, A and Bruschi, M and
                        Grinstein, S and Lange, J and Rijssenbeek, M and Sicho, P
                        and Staszewski, R and Sykora, T and Trzebiński, M and
@@ -2313,6 +2291,7 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
       month         = "May",
       year          = "2015",
       reportNumber  = "CERN-LHCC-2015-009",
+      howpublished  = "CERN-LHCC-2015-009",
       url           = "https://cds.cern.ch/record/2017378",
 }
 
@@ -2373,8 +2352,7 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
 }
 
 @article{Buckley:2011ms,
-    author = "Buckley, Andy and others",
-    title = "{General-purpose event generators for LHC physics}",
+   author={Buckley, Andy and Butterworth, Jonathan and Gieseke, Stefan and Grellscheid, David and Höche, Stefan and Hoeth, Hendrik and Krauss, Frank and Lönnblad, Leif and Nurse, Emily and Richardson, Peter and et al.},    title = "{General-purpose event generators for LHC physics}",
     eprint = "1101.2599",
     archivePrefix = "arXiv",
     primaryClass = "hep-ph",
@@ -2394,13 +2372,14 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
     journal = "Sov. J. Nucl. Phys.",
     volume = "15",
     pages = "438--450",
-    year = "1972"
+    year = "1972",
+    url = "https://cds.cern.ch/record/427157",
 }
 
 @inproceedings{Blumlein:1996wj,
     author = "Blumlein, J. and Doyle, T. and Hautmann, F. and Klein, M. and Vogt, A.",
     title = "{Structure functions in deep inelastic scattering at HERA}",
-    booktitle = "{Workshop on Future Physics at HERA (To be followed by meetings 7-9 Feb and 30-31 May 1996 at DESY)}",
+    booktitle = "{Workshop on Future Physics at HERA}",
     eprint = "hep-ph/9609425",
     archivePrefix = "arXiv",
     month = "9",
@@ -2483,7 +2462,7 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
     year = "1979"
 }
 
-@techreport{Buckley:1191215,
+@articlearticle{Buckley:1191215,
       author        = "Buckley, Andy and Hoeth, Hendrik and Lacker, Heiko and
                        Schulz, Holger and von Seggern, Jan Eike",
       title         = "{Systematic event generator tuning for the LHC}",
@@ -2524,7 +2503,7 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
     year = "2001"
 }
 
-@techreport{ATL-SOFT-PUB-2018-002,
+@Booklet{ATL-SOFT-PUB-2018-002,
       title         = "{The new Fast Calorimeter Simulation in ATLAS}",
       institution   = "CERN",
       collaboration = "ATLAS",
@@ -2533,6 +2512,7 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
       month         = "Jul",
       year          = "2018",
       reportNumber  = "ATL-SOFT-PUB-2018-002",
+      howpublished  = "{ATL-SOFT-PUB-2018-002}",
       url           = "https://cds.cern.ch/record/2630434",
 }
 
@@ -2549,7 +2529,7 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
     volume = "22",
     pages = "563--579",
     year = "2001",
-    note = "[Addendum: Eur.Phys.J.C 23, 769--772 (2002)]"
+    note = "[Addendum: Eur. Phys. J. C 23, 769--772 (2002)]"
 }
 
 
@@ -2596,33 +2576,28 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
  }
 
 @article{PhysRevLett.61.510,
-  title = {Laboratory Limits on Galactic Cold Dark Matter},
-  author = {Caldwell, D. O. and Eisberg, R. M. and Grumm, D. M. and Witherell, M. S. and Sadoulet, B. and Goulding, F. S. and Smith, A. R.},
-  journal = {Phys. Rev. Lett.},
-  volume = {61},
-  issue = {5},
-  pages = {510--513},
-  numpages = {0},
-  year = {1988},
-  month = {Aug},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRevLett.61.510},
-  url = {https://link.aps.org/doi/10.1103/PhysRevLett.61.510}
+    author = "Caldwell, David O. and Eisberg, R. M. and Grumm, D. M. and Witherell, Michael S. and Sadoulet, B. and Goulding, F. S. and Smith, A. R.",
+    editor = "Srednicki, M. A.",
+    title = "{Laboratory Limits on Galactic Cold Dark Matter}",
+    reportNumber = "UCSB-HEP-88-6",
+    doi = "10.1103/PhysRevLett.61.510",
+    journal = "Phys. Rev. Lett.",
+    volume = "61",
+    pages = "510",
+    year = "1988"
 }
 
+
 @article{PhysRevD.48.5505,
-  title = {Search for neutralino dark matter heavier than the $W$ boson at Kamiokande},
-  author = {Mori, M. and Nojiri, M. M. and Hirata, K. S. and Kihara, K. and Oyama, Y. and Suzuki, A. and Takahashi, K. and Yamada, M. and Takei, H. and Koga, M. and Miyano, K. and Miyata, H. and Fukuda, Y. and Hayakawa, T. and Inoue, K. and Ishida, T. and Kajita, T. and Koshio, Y. and Nakahata, M. and Nakamura, K. and Sakai, A. and Sato, N. and Shiozawa, M. and Suzuki, J. and Suzuki, Y. and Totsuka, Y. and Koshiba, M. and Nishijima, K. and Kajimura, T. and Suda, T. and Suzuki, A. T. and Hara, T. and Nagashima, Y. and Takita, M. and Yokoyama, H. and Yoshimoto, A. and Kaneyuki, K. and Takeuchi, Y. and Tanimori, T. and Tasaka, S. and Nishikawa, K.},
-  journal = {Phys. Rev. D},
-  volume = {48},
-  issue = {12},
-  pages = {5505--5518},
-  numpages = {0},
-  year = {1993},
-  month = {Dec},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRevD.48.5505},
-  url = {https://link.aps.org/doi/10.1103/PhysRevD.48.5505}
+    author = "Mori, M. and others",
+    collaboration = "Kamiokande",
+    title = "{Search for neutralino dark matter in Kamiokande}",
+    reportNumber = "KEK-PREPRINT-93-77, NGTHEP-93-1, ICRR-298-93-10, TKU-PAP-93-01, KOBE-AP-93-01, OULNS-93-01, TIT-HPE-93-05, INS-997",
+    doi = "10.1103/PhysRevD.48.5505",
+    journal = "Phys. Rev. D",
+    volume = "48",
+    pages = "5505--5518",
+    year = "1993"
 }
 
 @article{Akerib:2005zy,
@@ -2646,9 +2621,20 @@ abstract = "The real part of the proton proton elastic scattering amplitude has 
  title = {The Birth of particle physics},
  publisher = {Cambridge University Press},
  year = {1986},
- address = {Cambridge Cambridgeshire New York},
+ address = {Cambridge},
  isbn = {9780521338370}
  }
+ 
+ @book{Liddle:1976476,
+      author        = "Liddle, Andrew",
+      title         = "{An introduction to modern cosmology; 3rd ed.}",
+      publisher     = "Wiley",
+      address       = "Chichester",
+      month         = "Mar",
+      year          = "2015",
+      url           = "https://cds.cern.ch/record/1976476",
+      doi           = "1118502140",
+}
  
  @inproceedings{Bustamante:2009us,
     author = "Bustamante, M. and Cieri, L. and Ellis, John",
@@ -2690,91 +2676,67 @@ author = "Detlev Buchholz and Sergio Doplicher and Roberto Longo",
 abstract = "Extending the construction of local generators of symmetries in (S. Doplicher, Commun. Math. Phys.85 (1982), 73; S. Doplicher and R. Longo, Commun. Math. Phys.88 (1983), 399) to space-time and supersymmetries, we establish a weak form of Noether's theorem in quantum field theory. We also comment on the physical significance of the “split property,” underlying our analysis, and discuss some local aspects of superselection rules following from our results."
 }
 
-
 @article{PhysRev.78.182,
-  title = {An Identity in Quantum Electrodynamics},
-  author = {Ward, J. C.},
-  journal = {Phys. Rev.},
-  volume = {78},
-  issue = {2},
-  pages = {182--182},
-  numpages = {0},
-  year = {1950},
-  month = {Apr},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRev.78.182},
-  url = {https://link.aps.org/doi/10.1103/PhysRev.78.182}
+    author = "Ward, John Clive",
+    title = "{An Identity in Quantum Electrodynamics}",
+    doi = "10.1103/PhysRev.78.182",
+    journal = "Phys. Rev.",
+    volume = "78",
+    pages = "182",
+    year = "1950"
 }
 
 @Article{Takahashi1957,
-author={Takahashi, Y.},
-title={On the generalized ward identity},
-journal={Il Nuovo Cimento (1955-1965)},
-year={1957},
-month={Aug},
-day={01},
-volume={6},
-number={2},
-pages={371-375},
-issn={1827-6121},
-doi={10.1007/BF02832514},
-url={https://doi.org/10.1007/BF02832514}
+	author={Takahashi, Y.},
+	title={On the generalized ward identity},
+	journal={Il Nuovo Cimento (1955-1965)},
+	year={1957},
+	volume={6},
+	number={2},
+	pages={371-375},
+	doi={10.1007/BF02832514},
 }
 
 @article{THOOFT1971173,
-title = "Renormalization of massless Yang-Mills fields",
-journal = "Nuclear Physics B",
-volume = "33",
-number = "1",
-pages = "173 - 199",
-year = "1971",
-issn = "0550-3213",
-doi = "https://doi.org/10.1016/0550-3213(71)90395-6",
-url = "http://www.sciencedirect.com/science/article/pii/0550321371903956",
-author = "G. 'tHooft",
+    author = "'t Hooft, Gerard",
+    title = "{Renormalization of Massless Yang-Mills Fields}",
+    doi = "10.1016/0550-3213(71)90395-6",
+    journal = "Nucl. Phys. B",
+    volume = "33",
+    pages = "173--199",
+    year = "1971"
 }
 
 @article{THOOFT1972189,
-title = "Regularization and renormalization of gauge fields",
-journal = "Nuclear Physics B",
-volume = "44",
-number = "1",
-pages = "189 - 213",
-year = "1972",
-issn = "0550-3213",
-doi = "https://doi.org/10.1016/0550-3213(72)90279-9",
-url = "http://www.sciencedirect.com/science/article/pii/0550321372902799",
-author = "G. {'t Hooft} and M. Veltman",
-abstract = "A new regularization and renormalization procedure is presented. It is particularly well suited for the treatment of gauge theories. The method works for theories that were known to be renormalizable as well as for Yang-Mills type theories. Overlapping divergencies are disentangled. The procedure respects unitarity, causality and allows shifts of integration variables. In non-anomalous cases also Ward identities are satisfied at all stages. It is transparent when anomalies, such as the Bell-Jackiw-Adler anomaly, may occur."
+    author = "'t Hooft, Gerard and Veltman, M. J. G.",
+    title = "{Regularization and Renormalization of Gauge Fields}",
+    doi = "10.1016/0550-3213(72)90279-9",
+    journal = "Nucl. Phys. B",
+    volume = "44",
+    pages = "189--213",
+    year = "1972"
 }
 
 @article{TAYLOR1971436,
-title = "Ward identities and charge renormalization of the Yang-Mills field",
-journal = "Nuclear Physics B",
-volume = "33",
-number = "2",
-pages = "436 - 444",
-year = "1971",
-issn = "0550-3213",
-doi = "https://doi.org/10.1016/0550-3213(71)90297-5",
-url = "http://www.sciencedirect.com/science/article/pii/0550321371902975",
-author = "J.C. Taylor",
+    author = "Taylor, J. C.",
+    title = "{Ward Identities and Charge Renormalization of the Yang-Mills Field}",
+    doi = "10.1016/0550-3213(71)90297-5",
+    journal = "Nucl. Phys. B",
+    volume = "33",
+    pages = "436--444",
+    year = "1971"
 }
 
-@Article{Slavnov1972,
-author={Slavnov, A. A.},
-title={Ward identities in gauge theories},
-journal={Theoretical and Mathematical Physics},
-year={1972},
-month={Feb},
-day={01},
-volume={10},
-number={2},
-pages={99-104},
-issn={1573-9333},
-doi={10.1007/BF01090719},
-url={https://doi.org/10.1007/BF01090719}
+@article{Slavnov1972,
+    author = "Slavnov, A. A.",
+    title = "{Ward Identities in Gauge Theories}",
+    doi = "10.1007/BF01090719",
+    journal = "Theor. Math. Phys.",
+    volume = "10",
+    pages = "99--107",
+    year = "1972"
 }
+
 
 @book{Brock:1354959,
       author        = "Brock, Ian C and Schorner-Sadenius, Thomas",
@@ -2784,176 +2746,123 @@ url={https://doi.org/10.1007/BF01090719}
       year          = "2011",
       url           = "https://cds.cern.ch/record/1354959",
       doi           = "10.1002/9783527634965",
+      isbn			= "9783527410019",
 }
 
-
 @article{PhysRevD.10.2445,
-  title = {Confinement of quarks},
-  author = {Wilson, Kenneth G.},
-  journal = {Phys. Rev. D},
-  volume = {10},
-  issue = {8},
-  pages = {2445--2459},
-  numpages = {0},
-  year = {1974},
-  month = {Oct},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRevD.10.2445},
-  url = {https://link.aps.org/doi/10.1103/PhysRevD.10.2445}
+    author = "Wilson, Kenneth G.",
+    editor = "Taylor, J. C.",
+    title = "{Confinement of Quarks}",
+    reportNumber = "CLNS-262",
+    doi = "10.1103/PhysRevD.10.2445",
+    journal = "Phys. Rev. D",
+    volume = "10",
+    pages = "2445--2459",
+    year = "1974"
 }
 
 @article{GLASHOW1961579,
-title = "Partial-symmetries of weak interactions",
-journal = "Nuclear Physics",
-volume = "22",
-number = "4",
-pages = "579 - 588",
-year = "1961",
-issn = "0029-5582",
-doi = "https://doi.org/10.1016/0029-5582(61)90469-2",
-url = "http://www.sciencedirect.com/science/article/pii/0029558261904692",
-author = "Sheldon L. Glashow",
-abstract = "Weak and electromagnetic interactions of the leptons are examined under the hypothesis that the weak interactions are mediated by vector bosons. With only an isotopic triplet of leptons coupled to a triplet of vector bosons (two charged decay-intermediaries and the photon) the theory possesses no partial-symmetries. Such symmetries may be established if additional vector bosons or additional leptons are introduced. Since the latter possibility yields a theory disagreeing with experiment, the simplest partially-symmetric model reproducing the observed electromagnetic and weak interactions of leptons requires the existence of at least four vector-boson fields (including the photon). Corresponding partially-conserved quantities suggest leptonic analogues to the conserved quantities associated with strong interactions: strangeness and isobaric spin."
+    author = "Glashow, S. L.",
+    title = "{Partial Symmetries of Weak Interactions}",
+    doi = "10.1016/0029-5582(61)90469-2",
+    journal = "Nucl. Phys.",
+    volume = "22",
+    pages = "579--588",
+    year = "1961"
 }
 
 @article{PhysRevLett.19.1264,
-  title = {A Model of Leptons},
-  author = {Weinberg, Steven},
-  journal = {Phys. Rev. Lett.},
-  volume = {19},
-  issue = {21},
-  pages = {1264--1266},
-  numpages = {0},
-  year = {1967},
-  month = {Nov},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRevLett.19.1264},
-  url = {https://link.aps.org/doi/10.1103/PhysRevLett.19.1264}
+    author = "Weinberg, Steven",
+    title = "{A Model of Leptons}",
+    doi = "10.1103/PhysRevLett.19.1264",
+    journal = "Phys. Rev. Lett.",
+    volume = "19",
+    pages = "1264--1266",
+    year = "1967"
 }
 
-@Article{Salam1959,
-author={Salam, Abdus
-and Ward, J. C.},
-title={Weak and electromagnetic interactions},
-journal={Il Nuovo Cimento (1955-1965)},
-year={1959},
-month={Feb},
-day={01},
-volume={11},
-number={4},
-pages={568-577},
-abstract={The postulate of a «local connection» in a [3] charge space leads to the introduction of three spin one fields. One of these can be identified with the electro-magnetic field and the other two can be shown to mediate all known weak interactions, thus unifying these interactions with electro-magnetism. The theory takes account of the fact that weak interactions violate parity and strangeness conservation while electromagnetic interactions do not do so.},
-issn={1827-6121},
-doi={10.1007/BF02726525},
-url={https://doi.org/10.1007/BF02726525}
+@article{Salam1959,
+    author = "Salam, Abdus",
+    title = "{Weak and Electromagnetic Interactions}",
+    doi = "10.1142/9789812795915_0034",
+    journal = "Conf. Proc. C",
+    volume = "680519",
+    pages = "367--377",
+    year = "1968"
 }
-
 
 @article{PhysRev.105.1413,
-  title = {Experimental Test of Parity Conservation in Beta Decay},
-  author = {Wu, C. S. and Ambler, E. and Hayward, R. W. and Hoppes, D. D. and Hudson, R. P.},
-  journal = {Phys. Rev.},
-  volume = {105},
-  issue = {4},
-  pages = {1413--1415},
-  numpages = {0},
-  year = {1957},
-  month = {Feb},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRev.105.1413},
-  url = {https://link.aps.org/doi/10.1103/PhysRev.105.1413}
+    author = "Wu, C. S. and Ambler, E. and Hayward, R. W. and Hoppes, D. D. and Hudson, R. P.",
+    title = "{Experimental Test of Parity Conservation in $\beta$ Decay}",
+    doi = "10.1103/PhysRev.105.1413",
+    journal = "Phys. Rev.",
+    volume = "105",
+    pages = "1413--1414",
+    year = "1957"
 }
 
-@Article{Gell-Mann1956,
-author={Gell-Mann, M.},
-title={The interpretation of the new particles as displaced charge multiplets},
-journal={Il Nuovo Cimento (1955-1965)},
-year={1956},
-month={Apr},
-day={01},
-volume={4},
-number={2},
-pages={848-866},
-issn={1827-6121},
-doi={10.1007/BF02748000},
-url={https://doi.org/10.1007/BF02748000}
+@article{Gell-Mann1956,
+    author = "Gell-Mann, M.",
+    title = "{The interpretation of the new particles as displaced charge multiplets}",
+    doi = "10.1007/BF02748000",
+    journal = "Nuovo Cim.",
+    volume = "4",
+    number = "S2",
+    pages = "848--866",
+    year = "1956"
 }
 
 @article{10.1143/PTP.13.285,
-    author = {Nishijima, Kazuhiko},
-    title = "{Charge Independence Theory of V Particles*}",
-    journal = {Progress of Theoretical Physics},
-    volume = {13},
-    number = {3},
-    pages = {285-304},
-    year = {1955},
-    month = {03},
-    abstract = "{Based on the charge independence hypothesis the properties of V particles are theoretically investigated. It is found that the curious behaviours of these unstable particles are most simply interpreted in terms of the η-charge conservation law which directly results from the C.I. hypothesis and suitable isotopic spin assignments to these particles. The topics which are discussed in this paper are(a) the isotopic spin assignments to V particles,(b) the concept of the η-charge,(c) the η-charge conservation law which is to incorporate with the even-odd rule, the so-called “cascade” decay of some hyperons, and the positive excess of long-lived K particles,(d) the interpretation of heavy nuclear fragments,(e) the possible models of τ-mesons.}",
-    issn = {0033-068X},
-    doi = {10.1143/PTP.13.285},
-    url = {https://doi.org/10.1143/PTP.13.285},
-    eprint = {https://academic.oup.com/ptp/article-pdf/13/3/285/5425869/13-3-285.pdf},
+    author = "Nishijima, Kazuhiko",
+    title = "{Charge Independence Theory of V Particles}",
+    doi = "10.1143/PTP.13.285",
+    journal = "Prog. Theor. Phys.",
+    volume = "13",
+    number = "3",
+    pages = "285--304",
+    year = "1955"
 }
 
-
 @article{10.1143/PTP.10.581,
-    author = {Nakano, Tadao and Nishijima, Kazuhiko},
-    title = "{Charge Independence for V-particles*}",
-    journal = {Progress of Theoretical Physics},
-    volume = {10},
-    number = {5},
-    pages = {581-582},
-    year = {1953},
-    month = {11},
-    issn = {0033-068X},
-    doi = {10.1143/PTP.10.581},
-    url = {https://doi.org/10.1143/PTP.10.581},
-    eprint = {https://academic.oup.com/ptp/article-pdf/10/5/581/5364926/10-5-581.pdf},
+    author = "Nakano, T. and Nishijima, K.",
+    title = "{Charge Independence for V-particles}",
+    doi = "10.1143/PTP.10.581",
+    journal = "Prog. Theor. Phys.",
+    volume = "10",
+    pages = "581--582",
+    year = "1953"
 }
 
 @article{PhysRevLett.13.321,
-  title = {Broken Symmetry and the Mass of Gauge Vector Mesons},
-  author = {Englert, F. and Brout, R.},
-  journal = {Phys. Rev. Lett.},
-  volume = {13},
-  issue = {9},
-  pages = {321--323},
-  numpages = {0},
-  year = {1964},
-  month = {Aug},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRevLett.13.321},
-  url = {https://link.aps.org/doi/10.1103/PhysRevLett.13.321}
+    author = "Englert, F. and Brout, R.",
+    editor = "Taylor, J. C.",
+    title = "{Broken Symmetry and the Mass of Gauge Vector Mesons}",
+    doi = "10.1103/PhysRevLett.13.321",
+    journal = "Phys. Rev. Lett.",
+    volume = "13",
+    pages = "321--323",
+    year = "1964"
 }
 
 @article{PhysRevLett.13.508,
-  title = {Broken Symmetries and the Masses of Gauge Bosons},
-  author = {Higgs, Peter W.},
-  journal = {Phys. Rev. Lett.},
-  volume = {13},
-  issue = {16},
-  pages = {508--509},
-  numpages = {0},
-  year = {1964},
-  month = {Oct},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRevLett.13.508},
-  url = {https://link.aps.org/doi/10.1103/PhysRevLett.13.508}
+    author = "Higgs, Peter W.",
+    editor = "Taylor, J. C.",
+    title = "{Broken Symmetries and the Masses of Gauge Bosons}",
+    doi = "10.1103/PhysRevLett.13.508",
+    journal = "Phys. Rev. Lett.",
+    volume = "13",
+    pages = "508--509",
+    year = "1964"
 }
 
 @article{PhysRev.145.1156,
-  title = {Spontaneous Symmetry Breakdown without Massless Bosons},
-  author = {Higgs, Peter W.},
-  journal = {Phys. Rev.},
-  volume = {145},
-  issue = {4},
-  pages = {1156--1163},
-  numpages = {0},
-  year = {1966},
-  month = {May},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRev.145.1156},
-  url = {https://link.aps.org/doi/10.1103/PhysRev.145.1156}
+    author = "Higgs, Peter W.",
+    title = "{Spontaneous Symmetry Breakdown without Massless Bosons}",
+    doi = "10.1103/PhysRev.145.1156",
+    journal = "Phys. Rev.",
+    volume = "145",
+    pages = "1156--1163",
+    year = "1966"
 }
 
 @book{Liddle:1976476,
@@ -2983,17 +2892,16 @@ url={https://doi.org/10.1007/BF02748000}
       SLACcitation   = "%%CITATION = ARXIV:0810.3921;%%"
 }
 
-
 @article{Zwicky:437297,
-      author        = "Zwicky, F",
-      title         = "{Die Rotverschiebung von extragalaktischen Nebeln}",
-      journal       = "Helv. Phys. Acta",
-      volume        = "6",
-      pages         = "110-127",
-      year          = "1933",
-      url           = "https://cds.cern.ch/record/437297",
-      doi           = "10.5169/seals-110267",
+    author = "Zwicky, F.",
+    title = "{Die Rotverschiebung von extragalaktischen Nebeln}",
+    doi = "10.1007/s10714-008-0707-4",
+    journal = "Helv. Phys. Acta",
+    volume = "6",
+    pages = "110--127",
+    year = "1933"
 }
+
 
 @article{Bertone:2004pz,
     author = "Bertone, Gianfranco and Hooper, Dan and Silk, Joseph",
@@ -3009,7 +2917,7 @@ url={https://doi.org/10.1007/BF02748000}
 }
 
 @article{Bennett:1996ce,
-    author = "Bennett, C.L. and others",
+    author = "Bennett, C. L. and Banday, A. and Gorski, K. M. and Hinshaw, G. and Jackson, P. and Keegstra, P. and Kogut, A. and Smoot, George F. and Wilkinson, D. T. and Wright, E. L.",
     title = "{Four year COBE DMR cosmic microwave background observations: Maps and basic results}",
     eprint = "astro-ph/9601067",
     archivePrefix = "arXiv",
@@ -3021,62 +2929,47 @@ url={https://doi.org/10.1007/BF02748000}
     year = "1996"
 }
 
+
 @article{COBE,
-       author = {Smoot, G.~F. and others},
-        title = "{Structure in the COBE Differential Microwave Radiometer First-Year Maps}",
-      journal = {ApJS},
-     keywords = {Cosmic Background Explorer Satellite, Microwave Radiometers, Normal Density Functions, Relic Radiation, Root-Mean-Square Errors, Astronomical Maps, Milky Way Galaxy, Space Radiation, COSMOLOGY: COSMIC MICROWAVE BACKGROUND, COSMOLOGY: OBSERVATIONS},
-         year = {1992},
-        month = {September},
-       volume = {396},
-        pages = {L1},
-          doi = {10.1086/186504},
-       adsurl = {https://ui.adsabs.harvard.edu/abs/1992ApJ...396L...1S},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+    author = "Smoot, George F. and others",
+    collaboration = "COBE",
+    title = "{Structure in the COBE differential microwave radiometer first year maps}",
+    reportNumber = "PRINT-92-0148 (UC,BERKELEY)",
+    doi = "10.1086/186504",
+    journal = "Astrophys. J. Lett.",
+    volume = "396",
+    pages = "L1--L5",
+    year = "1992"
 }
-
-
-
 
 @article{WMAP2,
+    author = "Bennett, C. L. and others",
     collaboration = "WMAP",
-        title = "{Nine-year Wilkinson Microwave Anisotropy Probe (WMAP) Observations: Final Maps and Results}",
-      journal = {ApJS},
-     keywords = {cosmic background radiation, cosmology: observations, dark matter, early universe, instrumentation: detectors, space vehicles, space vehicles: instruments, telescopes, Astrophysics - Cosmology and Nongalactic Astrophysics},
-         year = {2013},
-        month = {October},
-       volume = {208},
-       number = {2},
-          eid = {20},
-        pages = {20},
-          doi = {10.1088/0067-0049/208/2/20},
-archivePrefix = {arXiv},
-       eprint = {1212.5225},
- primaryClass = {astro-ph.CO},
-       adsurl = {https://ui.adsabs.harvard.edu/abs/2013ApJS..208...20B},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+    title = "{Nine-Year Wilkinson Microwave Anisotropy Probe (WMAP) Observations: Final Maps and Results}",
+    eprint = "1212.5225",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.CO",
+    doi = "10.1088/0067-0049/208/2/20",
+    journal = "Astrophys. J. Suppl.",
+    volume = "208",
+    pages = "20",
+    year = "2013"
 }
-
-
 
 @article{WMAP1,
+    author = "Hinshaw, G. and others",
     collaboration = "WMAP",
-        title = "{Nine-year Wilkinson Microwave Anisotropy Probe (WMAP) Observations: Cosmological Parameter Results}",
-      journal = {ApJS},
-     keywords = {cosmic background radiation, cosmology: observations, dark matter, early universe, instrumentation: detectors, space vehicles, space vehicles: instruments, telescopes, Astrophysics - Cosmology and Nongalactic Astrophysics},
-         year = {2013},
-        month = {October},
-       volume = {208},
-       number = {2},
-          eid = {19},
-        pages = {19},
-          doi = {10.1088/0067-0049/208/2/19},
-archivePrefix = {arXiv},
-       eprint = {1212.5226},
- primaryClass = {astro-ph.CO},
-       adsurl = {https://ui.adsabs.harvard.edu/abs/2013ApJS..208...19H},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+    title = "{Nine-Year Wilkinson Microwave Anisotropy Probe (WMAP) Observations: Cosmological Parameter Results}",
+    eprint = "1212.5226",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.CO",
+    doi = "10.1088/0067-0049/208/2/19",
+    journal = "Astrophys. J. Suppl.",
+    volume = "208",
+    pages = "19",
+    year = "2013"
 }
+
 
 @article{Planck,
     collaboration = "Planck",
@@ -3137,7 +3030,15 @@ archivePrefix = {arXiv},
     year = "2006"
 }
 
-@book{baer_tata_2006, place={Cambridge}, title={Weak Scale Supersymmetry: From Superfields to Scattering Events}, DOI={10.1017/CBO9780511617270}, publisher={Cambridge University Press}, author={Baer, Howard and Tata, Xerxes}, year={2006}}
+@book{baer_tata_2006, 
+	place={Cambridge}, 
+	title={Weak Scale Supersymmetry: From Superfields to Scattering Events}, 
+	DOI={10.1017/CBO9780511617270}, 
+	publisher={Cambridge University Press},    
+	address = "Cambridge",
+	author={Baer, Howard and Tata, Xerxes}, 
+	year={2006}
+}
 
 @article{Czarnecki:2001pv,
     author = "Czarnecki, Andrzej and Marciano, William J.",
@@ -3210,33 +3111,25 @@ archivePrefix = {arXiv},
     year = "2019"
 }
 
-
 @article{Nambu:1960tm,
-      author         = "Nambu, Yoichiro",
-      title          = "{Quasiparticles and Gauge Invariance in the Theory of
-                        Superconductivity}",
-      journal        = "Phys. Rev.",
-      volume         = "117",
-      year           = "1960",
-      pages          = "648-663",
-      doi            = "10.1103/PhysRev.117.648",
-      note           = "[,132(1960)]",
-      SLACcitation   = "%%CITATION = PHRVA,117,648;%%"
+    author = "Nambu, Yoichiro",
+    editor = "Taylor, J. C.",
+    title = "{Quasiparticles and Gauge Invariance in the Theory of Superconductivity}",
+    doi = "10.1103/PhysRev.117.648",
+    journal = "Phys. Rev.",
+    volume = "117",
+    pages = "648--663",
+    year = "1960"
 }
 
 @article{PhysRevLett.10.531,
-  title = {Unitary Symmetry and Leptonic Decays},
-  author = {Cabibbo, Nicola},
-  journal = {Phys. Rev. Lett.},
-  volume = {10},
-  issue = {12},
-  pages = {531--533},
-  numpages = {0},
-  year = {1963},
-  month = {Jun},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRevLett.10.531},
-  url = {https://link.aps.org/doi/10.1103/PhysRevLett.10.531}
+    author = "Cabibbo, Nicola",
+    title = "{Unitary Symmetry and Leptonic Decays}",
+    doi = "10.1103/PhysRevLett.10.531",
+    journal = "Phys. Rev. Lett.",
+    volume = "10",
+    pages = "531--533",
+    year = "1963",
 }
 
 
@@ -3253,20 +3146,15 @@ archivePrefix = {arXiv},
       SLACcitation   = "%%CITATION = PTPKA,49,652;%%"
 }
 
-
 @article{PMNS:1962mu,
-      author         = "Maki, Ziro and Nakagawa, Masami and Sakata, Shoichi",
-      title          = "{Remarks on the unified model of elementary particles}",
-      journal        = "Prog. Theor. Phys.",
-      volume         = "28",
-      year           = "1962",
-      pages          = "870-880",
-      doi            = "10.1143/PTP.28.870",
-      note           = "[,34(1962)]",
-      SLACcitation   = "%%CITATION = PTPKA,28,870;%%"
+    author = "Maki, Ziro and Nakagawa, Masami and Sakata, Shoichi",
+    title = "{Remarks on the unified model of elementary particles}",
+    doi = "10.1143/PTP.28.870",
+    journal = "Prog. Theor. Phys.",
+    volume = "28",
+    pages = "870--880",
+    year = "1962"
 }
-
-
 
 @inproceedings{Djouadi:1998di,
     author = "MSSM Working Group",
@@ -3355,32 +3243,25 @@ archivePrefix = {arXiv},
 }
 
 @article{PhysRev.159.1251,
-	title = {All Possible Symmetries of the $S$ Matrix},
-	author = {Coleman, Sidney and Mandula, Jeffrey},
-	journal = {Phys. Rev.},
-	volume = {159},
-	issue = {5},
-	pages = {1251--1256},
-	numpages = {0},
-	year = {1967},
-	month = {Jul},
-	publisher = {American Physical Society},
-	doi = {10.1103/PhysRev.159.1251},
-	url = {https://link.aps.org/doi/10.1103/PhysRev.159.1251}
+    author = "Coleman, Sidney R. and Mandula, J.",
+    editor = "Zichichi, A.",
+    title = "{All Possible Symmetries of the S Matrix}",
+    doi = "10.1103/PhysRev.159.1251",
+    journal = "Phys. Rev.",
+    volume = "159",
+    pages = "1251--1256",
+    year = "1967"
 }
 
 @article{Haag:1974qh,
-	author         = "Haag, Rudolf and Lopuszanski, Jan T. and Sohnius, Martin",
-	title          = "{All Possible Generators of Supersymmetries of the s
-	Matrix}",
-	journal        = "Nucl. Phys.",
-	volume         = "B88",
-	year           = "1975",
-	pages          = "257",
-	doi            = "10.1016/0550-3213(75)90279-5",
-	note           = "[,257(1974)]",
-	reportNumber   = "Print-74-1630 (KARLSRUHE)",
-	SLACcitation   = "%%CITATION = NUPHA,B88,257;%%"
+    author = "Haag, Rudolf and Lopuszanski, Jan T. and Sohnius, Martin",
+    title = "{All Possible Generators of Supersymmetries of the s Matrix}",
+    reportNumber = "Print-74-1630 (KARLSRUHE)",
+    doi = "10.1016/0550-3213(75)90279-5",
+    journal = "Nucl. Phys. B",
+    volume = "88",
+    pages = "257",
+    year = "1975"
 }
 
 @article{PhysRevLett.32.438,
@@ -3430,18 +3311,17 @@ archivePrefix = {arXiv},
 
 @article{Martin:1997ns,
       author         = "Martin, Stephen P.",
-      title          = "{A Supersymmetry primer}",
-      year           = "1997",
-      pages          = "1-98",
+      title          = "{A Supersymmetry Primer}",
+      journal 	   = "Adv. Ser. Direct. High Energy Phys.",
+      volume	   = "18",
+      pages	         = "1",
+      year           = "1998",
       doi            = "10.1142/9789812839657_0001, 10.1142/9789814307505_0001",
-      note           = "[Adv. Ser. Direct. High Energy Phys.18,1(1998)]",
-      eprint         = "hep-ph/9709356v7",
+      eprint         = "hep-ph/9709356",
       archivePrefix  = "arXiv",
-      primaryClass   = "hep-ph",
       reportNumber   = "FERMILAB-PUB-97-425-T",
       SLACcitation   = "%%CITATION = HEP-PH/9709356;%%"
 }
-
 
 @article{Kolb:1447482,
       author        = "Kolb, Edward W",
@@ -3475,6 +3355,7 @@ archivePrefix = {arXiv},
     title = "{Gravitational lens magnification and the mass of abell 1689}",
     eprint = "astro-ph/9801158",
     archivePrefix = "arXiv",
+    primaryClass   = "astro-ph",
     doi = "10.1086/305827",
     journal = "Astrophys. J.",
     volume = "501",
@@ -3497,17 +3378,13 @@ archivePrefix = {arXiv},
 @article{pdg2020,
     author = {{Particle Data Group}},
     title = "{Review of Particle Physics}",
-    journal = {Progress of Theoretical and Experimental Physics},
+    journal = {{Prog. Theor. Exp. Phys}},
     volume = {2020},
     number = {8},
     year = {2020},
     month = {08},
-    abstract = "{The Review summarizes much of particle physics and cosmology. Using data from previous editions, plus 3,324 new measurements from 878 papers, we list, evaluate, and average measured properties of gauge bosons and the recently discovered Higgs boson, leptons, quarks, mesons, and baryons. We summarize searches for hypothetical particles such as supersymmetric particles, heavy bosons, axions, dark photons, etc. Particle properties and search limits are listed in Summary Tables. We give numerous tables, figures, formulae, and reviews of topics such as Higgs Boson Physics, Supersymmetry, Grand Unified Theories, Neutrino Mixing, Dark Energy, Dark Matter, Cosmology, Particle Detectors, Colliders, Probability and Statistics. Among the 120 reviews are many that are new or heavily revised, including a new review on High Energy Soft QCD and Diffraction and one on the Determination of CKM Angles from B Hadrons.The Review is divided into two volumes. Volume 1 includes the Summary Tables and 98 review articles. Volume 2 consists of the Particle Listings and contains also 22 reviews that address specific aspects of the data presented in the Listings.The complete Review (both volumes) is published online on the website of the Particle Data Group (pdg.lbl.gov) and in a journal. Volume 1 is available in print as the PDG Book. A Particle Physics Booklet with the Summary Tables and essential tables, figures, and equations from selected review articles is available in print and as a web version optimized for use on phones as well as an Android app.}",
     issn = {2050-3911},
     doi = {10.1093/ptep/ptaa104},
-    url = {https://doi.org/10.1093/ptep/ptaa104},
-    note = {083C01},
-    eprint = {https://academic.oup.com/ptep/article-pdf/2020/8/083C01/34673722/ptaa104.pdf},
 }
 
 @article{Fukuda:1998mi,
@@ -3527,21 +3404,17 @@ archivePrefix = {arXiv},
       SLACcitation   = "%%CITATION = HEP-EX/9807003;%%"
 }
 
-
 @article{PhysRev.96.191,
-  title = {Conservation of Isotopic Spin and Isotopic Gauge Invariance},
-  author = {Yang, C. N. and Mills, R. L.},
-  journal = {Phys. Rev.},
-  volume = {96},
-  issue = {1},
-  pages = {191--195},
-  numpages = {0},
-  year = {1954},
-  month = {Oct},
-  publisher = {American Physical Society},
-  doi = {10.1103/PhysRev.96.191},
-  url = {https://link.aps.org/doi/10.1103/PhysRev.96.191}
+    author = "Yang, Chen-Ning and Mills, Robert L.",
+    editor = "Hsu, Jong-Ping and Fine, D.",
+    title = "{Conservation of Isotopic Spin and Isotopic Gauge Invariance}",
+    doi = "10.1103/PhysRev.96.191",
+    journal = "Phys. Rev.",
+    volume = "96",
+    pages = "191--195",
+    year = "1954"
 }
+
 
 @article{Roszkowski:2017nbc,
     author = "Roszkowski, Leszek and Sessolo, Enrico Maria and Trojanowski, Sebastian",
@@ -3570,26 +3443,25 @@ archivePrefix = {arXiv},
 	year={2016},
 }
 
-
 @article{physics/0503066,
-Author = {Emmy Noether and M. A. Tavel},
-Title = {Invariant Variation Problems},
-Year = {2005},
-Eprint = {arXiv:physics/0503066},
-Howpublished = {Gott.Nachr.1918:235-257,1918; Transp.Theory
-  Statist.Phys.1:186-207,1971},
-Doi = {10.1080/00411457108231446},
+    author = "Noether, Emmy",
+    title = "{Invariant Variation Problems}",
+    eprint = "physics/0503066",
+    archivePrefix = "arXiv",
+    doi = "10.1080/00411457108231446",
+    journal = "Gott. Nachr.",
+    volume = "1918",
+    pages = "235--257",
+    year = "1918"
 }
 
 @book{Peskin:1995ev,
-      author         = "Peskin, Michael E. and Schroeder, Daniel V.",
-      title          = "{An Introduction to quantum field theory}",
-      publisher      = "Addison-Wesley",
-      address        = "Reading, USA",
-      year           = "1995",
-      url            = "http://www.slac.stanford.edu/~mpeskin/QFT.html",
-      ISBN           = "9780201503975, 0201503972",
-      SLACcitation   = "%%CITATION = INSPIRE-407703;%%"
+    author = "Peskin, Michael E. and Schroeder, Daniel V.",
+    title = "{An Introduction to quantum field theory}",
+    isbn = "978-0-201-50397-5",
+    publisher = "Addison-Wesley",
+    address = "Reading, USA",
+    year = "1995"
 }
 
 @book{DeGrand:1055545,
@@ -3756,17 +3628,14 @@ abstract = "Supergauge transformations are defined in four space-time dimensions
 }
 
 @article{LAHANAS19871,
-title = "The road to no-scale supergravity",
-journal = "Physics Reports",
-volume = "145",
-number = "1",
-pages = "1 - 139",
-year = "1987",
-issn = "0370-1573",
-doi = "https://doi.org/10.1016/0370-1573(87)90034-2",
-url = "http://www.sciencedirect.com/science/article/pii/0370157387900342",
-author = "A.B Lahanas and D.V Nanopoulos",
-abstract = "No-scale supergravity is a leading candidate for an effective theory that describes nature at energies below the Planck scale (mp≌1019 GeV). Its virtues, such as an automatically vanishing cosmological constant (at least at the classical level), dynamical determination of all mass scales in terms of a fundamental one (mp) and acceptable low-energy phenomenology makes no-scale supergravity unique. Furthermore, it may provide the missing link between an effective low-energy theory and the fundamental Theory Of Everything (TOE), as it may be derived as the low-energy limit of the superstring, our best candidate for the TOE. In this report not only do we discuss the structure, physical properties, and implications of no-scale models but we also study in considerable detail all the basic ingredients that come to play in their structure, such as supersymmetry and supergravity. Supersymmetry and minimal supergravity models are discussed, including their weak points that eventually lead us to no-scale models. At the end, we also cover some recent developments in superstring theories and how these are connected with our no-scale structure."
+    author = "Lahanas, A. B. and Nanopoulos, Dimitri V.",
+    title = "{The Road to No Scale Supergravity}",
+    reportNumber = "CERN-TH-4400-86",
+    doi = "10.1016/0370-1573(87)90034-2",
+    journal = "Phys. Rept.",
+    volume = "145",
+    pages = "1",
+    year = "1987"
 }
 
 @article{Nilles:1983ge,
@@ -3827,7 +3696,6 @@ url={https://doi.org/10.1023/A:1017244005639}
 }
 
 @article{Mori:2016vwi,
-    author = "Mori, Toshinori",
     collaboration = "MEG",
     title = "{Final Results of the MEG Experiment}",
     eprint = "1606.08168",
@@ -3912,68 +3780,26 @@ url={https://doi.org/10.1023/A:1017244005639}
     year = "2016"
 }
 
-@techreport{ATL-PHYS-PUB-2020-020,
-      title         = "{SUSY July 2020 Summary Plot Update}",
-      institution   = "CERN",
-      collaboration = "ATLAS",
-      address       = "Geneva",
-      number        = "ATL-PHYS-PUB-2020-020",
-      month         = "Jul",
-      year          = "2020",
-      reportNumber  = "ATL-PHYS-PUB-2020-020",
-      url           = "http://cds.cern.ch/record/2725258",
-}
-
 @misc{ATLASsummary,
   collaboration = "ATLAS",
-  title = {Mass reach of the ATLAS searches for Supersymmetry},
+  title = {{Mass reach of the ATLAS searches for Supersymmetry}},
   year = {2020},
   howpublished = {\url{https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2020-020/fig_23.png}},
 }
 
 @misc{CMSsummary,
   collaboration = "CMS",
-  title = {Summary plot Moriond 2017},
+  title = "{Summary plot Moriond 2017}",
   year = {2017},
   howpublished = {\url{https://twiki.cern.ch/twiki/pub/CMSPublic/SUSYSummary2017/Moriond2017_BarPlot.pdf}},
 }
 
 @misc{lep_susy_results,
-  author = "LEP SUSY Working Group",
-  title = {Notes LEPSUSYWG/02-04.1 and LEPSUSYWG/01-03.1},
+  author = "{LEP2 SUSY WG, ALEPH, DELPHI, L3 and OPAL experiments,}",
+  title = {Combined LEP results},
   year = {2004},
   howpublished = {\url{http://lepsusy.web.cern.ch/lepsusy/}},
   note = {Accessed: 2021-02-11}
-}
-
-
-
-@article{Chatrchyan:2012ufa,
-    collaboration = "CMS",
-    title = "{Observation of a New Boson at a Mass of 125 GeV with the CMS Experiment at the LHC}",
-    eprint = "1207.7235",
-    archivePrefix = "arXiv",
-    primaryClass = "hep-ex",
-    reportNumber = "CMS-HIG-12-028, CERN-PH-EP-2012-220",
-    doi = "10.1016/j.physletb.2012.08.021",
-    journal = "Phys. Lett. B",
-    volume = "716",
-    pages = "30--61",
-    year = "2012"
-}
-
-@article{Aad:2012tfa,
-    collaboration = "ATLAS",
-    title = "{Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC}",
-    eprint = "1207.7214",
-    archivePrefix = "arXiv",
-    primaryClass = "hep-ex",
-    reportNumber = "CERN-PH-EP-2012-218",
-    doi = "10.1016/j.physletb.2012.08.020",
-    journal = "Phys. Lett. B",
-    volume = "716",
-    pages = "1--29",
-    year = "2012"
 }
 
 

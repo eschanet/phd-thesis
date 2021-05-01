@@ -129,6 +129,10 @@
 
 \fi
 
+\newenvironment{thesisinfo}[1][10em]
+  {\noindent\begin{tabular}{@{}l@{~\makebox[#1]{\dotfill}}}}
+  {\end{tabular}}
+
 % ******************************** Front Matter ********************************
 \begin{document}
 
@@ -136,32 +140,39 @@
 
 \maketitle
 
-%supervisors here
 \newpage
 \thispagestyle{empty}
-%\mbox{}
+
 {
 \small
+\begin{tikzpicture}[remember picture,overlay,shift={(current page text area.north west)}]
+\node [above right]{\parbox{\textwidth}{
 Erstgutachterin: PD\@\xspace Dr.\@\xspace Jeanette Lorenz \\
-Zweitgutachter: Prof.\@\xspace Dr.\@\xspace Wolfgang D\"unnweber
+Zweitgutachter: Prof.\@\xspace Dr.\@\xspace Wolfgang D\"unnweber}};
+\end{tikzpicture}
 }
+
 \vfill
+
 {
 \small
-\myTitle
+\begin{tikzpicture}[remember picture,overlay,shift={(current page text area.south west)}]
+\node [above right]{\parbox{0.67\textwidth}{
+\myTitle \\
 
 Thesis submitted for a doctoral degree in physics\\
 at the faculty of physics of the\\
 Ludwig-Maximilians University\\
-Munich, Germany
+Munich, Germany\\
 
-Submitted by Eric Schanet, born in Luxembourg\\
-on May 4th, 2021 %and defended June 26th, 2021
+Submitted by Eric Schanet, born in Luxembourg,\\
+on May 4th, 2021\\ %and defended June 26th, 2021
 
-Supported by the Luxembourg National Research Fund (FNR) (13562317)
+Supported by the Luxembourg National Research Fund (FNR) (13562317)}};
+\end{tikzpicture}
 }
-\cleardoublepage
 
+\cleardoublepage
 
 \include{Dedication/dedication}
 
