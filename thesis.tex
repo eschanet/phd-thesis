@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,11pt,numbered,customfont,chapter]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,11pt,numbered,customfont]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -114,7 +114,7 @@
 %	\includeonly{chapter-results/results,Appendix1/appendix1}
 %	\includeonly{chapter-preservation/preservation,Appendix3/appendix3}
 %	\includeonly{chapter-simplify/simplify,Appendix3/appendix3}
-	\includeonly{chapter-pmssm/pmssm,Appendix4/appendix4}
+%	\includeonly{chapter-pmssm/pmssm,Appendix4/appendix4}
 
 %	\includeonly{chapter-statistics/statistics}
 %	\includeonly{chapter-electroweak/electroweak}
@@ -126,6 +126,7 @@
 %	\includeonly{chapter-preservation/preservation,Appendix3/appendix3,Appendix4/appendix4}
 %	\includeonly{chapter-simplify/simplify,Appendix3/appendix3,Appendix4/appendix4}
 %	\includeonly{Appendix1/appendix1,Appendix3/appendix3,Appendix4/appendix4}
+	\includeonly{Acknowledgement/acknowledgement}
 
 \fi
 
@@ -166,7 +167,7 @@ Ludwig-Maximilians University\\
 Munich, Germany\\
 
 Submitted by Eric Schanet, born in Luxembourg,\\
-on May 4th, 2021\\ %and defended June 26th, 2021
+on May 7th, 2021\\ %and defended June 26th, 2021
 
 Supported by the Luxembourg National Research Fund (FNR) (13562317)}};
 \end{tikzpicture}
@@ -234,7 +235,7 @@ Supported by the Luxembourg National Research Fund (FNR) (13562317)}};
 \end{appendices}
 
 %\printglossary[type=\acronymtype,title=Abbreviations,nonumberlist]
-\printglossary[type=\acronymtype,title=Abbreviations]
+\printglossary[style=mcolindex, type=\acronymtype,title=Abbreviations]
 
 % ********************************** Bibliography ******************************
 \begin{spacing}{0.1}
@@ -258,9 +259,9 @@ Supported by the Luxembourg National Research Fund (FNR) (13562317)}};
 %\printbibliography[heading=bibintoc, title={References}]
 
 
-%\include{Acknowledgement/acknowledgement}
-
 \end{spacing}
+\include{Acknowledgement/acknowledgement}
+
 
 % *************************************** Index ********************************
 \printthesisindex % If index is present

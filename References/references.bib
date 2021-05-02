@@ -34,7 +34,7 @@ title="Graph Drawing by Stress Majorization",
 doi={10.1007/978-3-540-31843-9_25},
 booktitle="Graph Drawing",
 year="2005",
-publisher="Springer",
+publisher="Springer-Verlag",
 address="Berlin",
 pages="239--250",
 abstract="One of the most popular graph drawing methods is based on achieving graph-theoretic target distances. This method was used by Kamada and Kawai [15], who formulated it as an energy optimization problem. Their energy is known in the multidimensional scaling (MDS) community as the stress function. In this work, we show how to draw graphs by stress majorization, adapting a technique known in the MDS community for more than two decades. It appears that majorization has advantages over the technique of Kamada and Kawai in running time and stability. We also found the majorization-based optimization being essential to a few extensions to the basic energy model. These extensions can improve layout quality and computation speed in practice.",
@@ -185,7 +185,7 @@ doi={10.1038/s41567-018-0342-2},
 @Book{amari1985differential-geometrical,
  author = {Amari, Shunichi},
  title = {Differential-Geometrical Methods in Statistics},
- publisher = {Springer New York},
+ publisher = {Springer-Verlag},
  year = {1985},
  address = {New York, NY},
  isbn = {978-1-4612-5056-2},
@@ -342,12 +342,13 @@ month = {Jun},
 }
 
 
-@misc{fullLH_1Lbb ,
-  doi = {10.17182/HEPDATA.90607.V3/R3},
+@article{fullLH_1Lbb ,
+  doi = {10.17182/hepdata.90607.v3/r3},
+  note = {doi: 10.17182/hepdata.90607.v3/r3},
   url = {https://www.hepdata.net/record/resource/1408476?view=true},
   collaboration = {ATLAS},
   language = {en},
-  title = {Full likelihood of SUSY-2019-08: 1Lbb-likelihoods-hepdata.tar.gz},
+  title = "{Full likelihood for SUSY-2019-08: 1Lbb-likelihoods-hepdata.tar.gz}",
   publisher = {HEPData},
   year = {2020}
 }
@@ -403,12 +404,13 @@ month = {Jun},
 
 
 @article{HEPdata_1Lbb,
-  doi = {10.17182/HEPDATA.90607.V4},
+  doi = {10.17182/hepdata.90607.v4},
   url = {https://www.hepdata.net/record/ins1755298?version=4},
   collaboration = {ATLAS},
   title = {{HEPData record for SUSY-2019-08 analysis data}},
   publisher = {HEPData},
-  year = {2021}
+  year = {2021},
+  note = {doi: 10.17182/hepdata.90607.v4}
 }
 
 @article{HEPData:2017ypu,
@@ -530,7 +532,7 @@ month = {Jun},
 
 
 @article{reinterpretation_workshop,
-    collaboration = "LHC Reinterpretation Forum",
+    collaboration = "{LHC Reinterpretation Forum}",
     title = "{Reinterpretation of LHC Results for New Physics: Status and Recommendations after Run 2}",
     eprint = "2003.07868",
     archivePrefix = "arXiv",
@@ -1081,15 +1083,15 @@ keywords = "C++, Object-oriented, Framework, Interpreter, Data storage, Data ana
       url           = "https://cds.cern.ch/record/2256082",
 }
 
-
-@misc{ahoi,
+@software{ahoi,
   author = {Hartmann, Nikolai},
   title = {{ahoi: a horrible optimisation instrument}},
   year = {2018},
-  publisher = {GitLab},
+   version = {255e74c1},
+	 publisher = {GitLab},
   journal = {GitLab repository},
   howpublished = {\url{https://gitlab.com/nikoladze/ahoi}},
-  commit = {255e74c159c5a5a1104dffa2138351b5b0e2e037}
+  commit = {255e74c1}
 }
 
 @misc{simpleanalysis,
@@ -1429,7 +1431,6 @@ year = "1938"
 }
 
 @article{transversemass:163856,
-    author = "Arnison, G. and others",
     collaboration = "UA1",
     title = "{Further Evidence for Charged Intermediate Vector Bosons at the SPS Collider}",
     reportNumber = "CERN-EP/83-111",
@@ -1691,7 +1692,7 @@ year = "1938"
 
 @article{Aad:2019aic,
     collaboration = "ATLAS",
-    title = "{ATLAS b-jet identification performance and efficiency measurement with $t{\bar{t}}$ events in pp collisions at $\sqrt{s}=13$ TeV}",
+    title = "{ATLAS $b$-jet identification performance and efficiency measurement with $t{\bar{t}}$ events in $pp$ collisions at $\sqrt{s}=13$ TeV}",
     eprint = "1907.05120",
     archivePrefix = "arXiv",
     primaryClass = "hep-ex",
@@ -1749,7 +1750,7 @@ year = "1938"
 
 @article{YENNIE1961379,
 title = {The infrared divergence phenomena and high-energy processes},
-    journal = "Annals Phys.",
+    journal = "Ann. Phys.",
 volume = {13},
 number = {3},
 pages = {379-452},
@@ -1793,7 +1794,7 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
       author        = "CERN",
       title         = "{CERN Annual report 2019}",
       institution   = "CERN",
-      series        = "Annual Report of the European Organization for Nuclear Research",
+      series        = "Annu. Rep. Eur. Org. Nucl. Res.",
       year          = "2020",
       url           = "https://cds.cern.ch/record/2723123",
       doi           = "10.17181/AnnualReport2019",
@@ -1828,22 +1829,24 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 }
 
 
-@article{ATLAS:1999uwa,
+@Booklet{ATLAS:1999uwa,
       title         = "{ATLAS detector and physics performance: Technical Design
                        Report, 1}",
       publisher     = "CERN",
       collaboration = "ATLAS",
       series        = "Technical design report. ATLAS",
+      howpublished = "{ATLAS-TDR-14}",
       year          = "1999",
       url           = "https://cds.cern.ch/record/391176",
 }
 
-@article{ATLAS:1999vwa,
+@Booklet{ATLAS:1999vwa,
       title         = "{ATLAS detector and physics performance: Technical Design
                        Report, 2}",
       publisher     = "CERN",
       collaboration = "ATLAS",
       series        = "Technical design report. ATLAS",
+      howpublished = "{ATLAS-TDR-15}",
       year          = "1999",
       url           = "https://cds.cern.ch/record/391177",
 }
@@ -1923,23 +1926,25 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
     year = "2008"
 }
 
-@article{Pinfold:2009oia,
+@Booklet{Pinfold:2009oia,
       title         = "{Technical Design Report of the MoEDAL Experiment}",
-      collaboration = "MoEDAL Collaboration",
+      collaboration = "MoEDAL",
       reportNumber  = "CERN-LHCC-2009-006, MoEDAL-TDR-001",
       month         = "Jun",
       year          = "2009",
+      howpublished = "{MoEDAL-TDR-001}",
       url           = "https://cds.cern.ch/record/1181486",
 }
 
 
 
-@article{Adriani:2006jd,
+@Booklet{Adriani:2006jd,
       title         = "{LHCf experiment: Technical Design Report}",
       publisher     = "CERN",
       collaboration = "LHCf",
       series        = "Technical design report. LHCf",
       year          = "2006",
+      howpublished = "{LHCF-TDR-001}",
       url           = "https://cds.cern.ch/record/926196",
 }
 
@@ -1987,7 +1992,7 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 
 @article{Aaboud:2016hhf,
     collaboration = "ATLAS",
-    title = "{Luminosity determination in pp collisions at $\sqrt{s}$ = 8 TeV using the ATLAS detector at the LHC}",
+    title = "{Luminosity determination in $pp$ collisions at $\sqrt{s}$ = 8 TeV using the ATLAS detector at the LHC}",
     eprint = "1608.03953",
     archivePrefix = "arXiv",
     primaryClass = "hep-ex",
@@ -2001,7 +2006,7 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 }
 
 @article{Aad:1517411,
-      title         = "{Improved luminosity determination in pp collisions at
+      title         = "{Improved luminosity determination in $pp$ collisions at
                        $\sqrt{s}$ = 7 TeV using the ATLAS detector at the LHC.}",
       journal       = "Eur. Phys. J. C",
       collaboration = "ATLAS",
@@ -2043,7 +2048,7 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 
 
 @book{Apollinari:2284929,
-    editor = {Apollinari, G and B\'ejar Alonso, I and Br\"uning, O and Lamont, M and Rossi, L},
+    author = {Apollinari, G and B\'ejar Alonso, I and Br\"uning, O and Lamont, M and Rossi, L},
       title         = "{High-Luminosity Large Hadron Collider (HL-LHC): Technical
                        Design Report V. 0.1}",
       publisher     = "CERN",
@@ -2365,7 +2370,15 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
     year = "2002"
 }
 
-@book{andersson_1998, place={Cambridge}, series={Cambridge Monographs on Particle Physics, Nuclear Physics and Cosmology}, title={The Lund Model}, DOI={10.1017/CBO9780511524363}, publisher={Cambridge University Press}, author={Andersson, Bo}, year={1998}, collection={Cambridge Monographs on Particle Physics, Nuclear Physics and Cosmology}}
+@book{andersson_1998, 
+	address={Cambridge}, 
+	series={Cambridge Monographs on Particle Physics, Nuclear Physics and Cosmology}, 
+	title={The Lund Model}, 
+	DOI={10.1017/CBO9780511524363}, 
+	publisher={Cambridge University Press}, 
+	author={Andersson, Bo}, year={1998}, 
+	collection={Cambridge Monographs on Particle Physics, Nuclear Physics and Cosmology}
+	}
 
 @article{Andersson:1983ia,
     author = "Andersson, Bo and Gustafson, G. and Ingelman, G. and Sjostrand, T.",
@@ -2516,7 +2529,6 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 
 
 @article{PhysRevD.48.5505,
-    author = "Mori, M. and others",
     collaboration = "Kamiokande",
     title = "{Search for neutralino dark matter in Kamiokande}",
     reportNumber = "KEK-PREPRINT-93-77, NGTHEP-93-1, ICRR-298-93-10, TKU-PAP-93-01, KOBE-AP-93-01, OULNS-93-01, TIT-HPE-93-05, INS-997",
@@ -2528,7 +2540,6 @@ abstract = {A general treatment of the infrared divergence problem in quantum el
 }
 
 @article{Akerib:2005zy,
-    author = "Akerib, D. S. and others",
     collaboration = "CDMS",
     title = "{Exclusion limits on the WIMP-nucleon cross section from the first run of the Cryogenic Dark Matter Search in the Soudan Underground Laboratory}",
     eprint = "astro-ph/0507190",
@@ -2868,7 +2879,6 @@ abstract = "Extending the construction of local generators of symmetries in (S. 
 }
 
 @article{WMAP2,
-    author = "Bennett, C. L. and others",
     collaboration = "WMAP",
     title = "{Nine-Year Wilkinson Microwave Anisotropy Probe (WMAP) Observations: Final Maps and Results}",
     eprint = "1212.5225",
@@ -2882,7 +2892,6 @@ abstract = "Extending the construction of local generators of symmetries in (S. 
 }
 
 @article{WMAP1,
-    author = "Hinshaw, G. and others",
     collaboration = "WMAP",
     title = "{Nine-Year Wilkinson Microwave Anisotropy Probe (WMAP) Observations: Cosmological Parameter Results}",
     eprint = "1212.5226",
@@ -3392,7 +3401,7 @@ abstract = "Extending the construction of local generators of symmetries in (S. 
 
 @Article{ARNISON1983103,
   Title                    = {Experimental observation of isolated large transverse energy electrons with associated missing energy at s=540 GeV},
-  Author                   = {{UA1 Collaboration}},
+  Author                   = {{UA1}},
   Journal                  = {Physics Letters B},
   Year                     = {1983},
   Number                   = {1},
@@ -3407,8 +3416,8 @@ abstract = "Extending the construction of local generators of symmetries in (S. 
 }
 
 @Article{BANNER1983476,
-  Title                    = {Observation of single isolated electrons of high transverse momentum in events with missing transverse energy at the CERN pp collider},
-  Author                   = {{UA2 Collaboration}},
+  Title                    = {Observation of single isolated electrons of high transverse momentum in events with missing transverse energy at the CERN $pp$ collider},
+  Author                   = {{UA2}},
   Journal                  = {Physics Letters B},
   Year                     = {1983},
   Number                   = {5},
