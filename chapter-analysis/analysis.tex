@@ -161,7 +161,7 @@ For maximum modelling accuracy, the detector simulation for all \gls{mc} backgro
 	\textit{h (ggF)} & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.212 & NNPDF 3.0 NNLO & N$^3$LO+N$^3$LL~\cite{deFlorian:2016spz} & AZNLO \\
 	\textit{h (VBF)} & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.212 & NNPDF 3.0 NNLO & NNLO+NLO~\cite{deFlorian:2016spz} & AZNLO \\
 	\bottomrule
-	\end{tabular}}\vspace{3mm}
+	\end{tabular}}\vspace{2mm}
 	\label{tab:mc_generators}   
 \end{table}
 
@@ -452,11 +452,11 @@ In signal events, the lepton and leading \textit{b}-jet originate from the decay
 
 The trigger strategy of an analysis is crucial to select $pp$ events worth investigating, and typically relies on triggers sensitive to physics objects that are important to the signal scenarios considered. The data used in this analysis has been recorded with $\etmiss$ triggers.
 Selecting events with invisible particles is inherently difficult, precisely because these particles do not leave a trace in the detector.
-Similar to offline analysis, the trigger algorithms need to infer the $\etmiss$ from the momenta of the visible particles, while also having to satisfy the stringent event rate constraints set by the high-luminosity environment of the \gls{lhc}.
+Similar to offline analysis, the trigger algorithms infer the $\etmiss$ from the momenta of the visible particles, but also need to satisfy the stringent event rate constraints set by the high-luminosity environment of the \gls{lhc}.
 
 As described in \cref{sec:trigger}, the \gls{l1} trigger uses only parts of the instrumented regions, a technique that is not well suited for momentum imbalance triggers that rely on a sum of momenta over the full solid angle~\cite{Aad:2020les}.
 In the \gls{l1} trigger, dedicated hardware sums the signals from calorimeter cells into \textit{towers} with a granularity matching that of the calorimeter.
-Towers of calorimeter cells exceeding a certain threshold are used to generate larger towers with coarser granularity, the $x$ and $y$ projections of which are subsequently summed to get an estimate of $\etmiss$ in the event. The tower thresholds are varied such that stable trigger rates are provided during the different data-taking periods.
+Towers of calorimeter cells exceeding a certain threshold are used to generate larger towers with coarser granularity, the $x$ and $y$ projections of which are subsequently summed to get an estimate of $\etmiss$. The tower thresholds are varied to provide stable trigger rates during the different data-taking periods.
 The \gls{l1} triggers, used in this analysis, employed a threshold of $\etmiss > \SI{50}{\GeV}$ before feeding passing events to the \gls{hlt} for further analysis. 
 
 Two different types of $\etmiss$ trigger algorithms are used by the \gls{hlt}, one based on jets (\texttt{mht} algorithm), and one implementing local pile-up suppression (\texttt{pufit} algorithm)~\cref{sec:reco_electrons}.
