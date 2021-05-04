@@ -49,13 +49,13 @@ This procedure effectively generates a \gls{roc} curve, that can be used to perf
 The approach is illustrated in a small scan using $10^4$ cut combinations in \cref{fig:ahoi_examples}.
 The cut combination candidates maximising the background rejection and thus lying on the \gls{roc} curve in \cref{fig:roc_curve} are the same candidates that maximise the discovery significance in \cref{fig:z_vs_eff}.
 
-A common problem of $N$-dimensional scans is the concept of \textit{overtightening} the selections given the available \gls{mc} statistics.
+A common problem of $N$-dimensional scans is the concept of \textit{over-tightening} the selections given the available \gls{mc} statistics.
 Since the cross sections of the \gls{susy} processes considered are many orders of magnitude smaller than those of the dominant \gls{sm} processes, it is often necessary to apply tight requirements on the kinematic observables in order to achieve a significant signal-to-background separation.
 However, due to the finite amount of \gls{mc} statistics available, many of the more extreme cut combinations select kinematic regions where not enough \gls{mc} statistics are available for a reasonable estimation of the background rates.
 Thus, by maximising the background rejection, it may occur that cut combinations are selected where the mere lack of \gls{mc} statistics, needed to properly estimate the background rates, causes a high significance value.
-As the significance values obtained for such configurations are obviosuly not trustworthy, they need to be avoided. 
+As the significance values obtained for such configurations are obviously not trustworthy, they need to be avoided. 
 
-In the $N$-dimensional cut scan implementation used herein, the available \gls{mc} datasets are split in two statistically independent, equally sized subsets. Although resulting in an additional dilution of the available \gls{mc} statistics, this approach allows to generate two independent \gls{roc} curves and  to compute two independent values for the discovery significance for each cut combination candidate. A large difference in either the \gls{roc} curves or the significance values is an indication for statistical fluctuations as a result of overtightened cuts. In addition, requirements on the minimum number of unweighted \gls{mc} events for different background processes, as well as the maximum allowed statistical uncertainty on a given process, can be applied. In combination, these precautions offer a good handle against statistical fluctuations. In the following, the $N$-dimensional cut scan implementation provided by \texttt{ahoi}~\cite{ahoi} is used.
+In the $N$-dimensional cut scan implementation used herein, the available \gls{mc} datasets are split in two statistically independent, equally sized subsets. Although resulting in an additional dilution of the available \gls{mc} statistics, this approach allows to generate two independent \gls{roc} curves and  to compute two independent values for the discovery significance for each cut combination candidate. A large difference in either the \gls{roc} curves or the significance values is an indication for statistical fluctuations as a result of over-tightened cuts. In addition, requirements on the minimum number of unweighted \gls{mc} events for different background processes, as well as the maximum allowed statistical uncertainty on a given process, can be applied. In combination, these precautions offer a good handle against statistical fluctuations. In the following, the $N$-dimensional cut scan implementation provided by \texttt{ahoi}~\cite{ahoi} is used.
 
 \subsection[\textit{N}--1 plots]{$\makemebold{N}$--1 plots}\label{sec:n-1-scan}
 
@@ -131,7 +131,7 @@ Apart from the variables introduced in~\cref{sec:variables}, a set of additional
 	\label{fig:results_z_vs_eff}
 \end{figure}
 
-In order to avoid selecting cut combination candidates with overtightened selection criteria compared to the available \gls{mc} statistics, constraints are applied on the relative statistical uncertainty on the background, and on the number of unweighted \gls{mc} events passing the cut combination candidates.
+In order to avoid selecting cut combination candidates with over-tightened selection criteria compared to the available \gls{mc} statistics, constraints are applied on the relative statistical uncertainty on the background, and on the number of unweighted \gls{mc} events passing the cut combination candidates.
 Cut combinations are only considered if they result in less than 50\% relative statistical uncertainty on the total background.
 In addition, all cut combinations need to result in at least five unweighted \gls{mc} events for each of the three major backgrounds, $\ttbar$, single top and $\wjets$.
 
@@ -141,7 +141,7 @@ The results of the brute-force $N$-dimensional cut scans for each benchmark sign
 \Cref{fig:results_z_vs_eff} shows the results of two such cut scans using two of the benchmark signal points.
 The corresponding plots for the remaining benchmark points are shown in~\cref{fig:results_z_vs_eff_rest}. In these figures, the binomial significance is calculated for different uncertainty configurations for each of the two statistically independent subsets.
 In addition, the expected background rate is shown for each subset.
-A cut combination with high achieved significance can be chosen, while avoiding statistical fluctuations and overtightening.
+A cut combination with high achieved significance can be chosen, while avoiding statistical fluctuations and over-tightening.
 The cut combinations chosen for each benchmark point, after a round of \textit{N}--1 plots, are shown in~\cref{tab:cut_scan_results}. The \textit{N}--1 plots, shown in~\cref{fig:results_n1_800_0,fig:results_n1_800_150,fig:results_n1_800_250,fig:results_n1_600_300,fig:results_n1_400_200,fig:results_n1_300_150}, are used to validate and fine-tune the cut values obtained through the cut scan and allow to identify and remove cuts on observables that do not contribute significantly to the achieved $Z_\mathrm{B}$ value.
 From the 12 observables initially considered, only six (excluding the \textit{b}-jet multiplicity technically not part of the scan) are part of the optimised cut combination candidates.
 The remaining observables turned out not to significantly improve the sensitivity and are therefore dropped in the following.
