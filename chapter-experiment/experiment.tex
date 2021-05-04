@@ -412,12 +412,12 @@ Clusters further split up until the $Q_0$ scale is reached, at which point they 
  
  The simulation steps that cannot be performed from first principles but rely on phenomenological models (underlying event, \gls{ps}, hadronisation) introduce free parameters that need to be derived or \textit{tuned} from parameter optimisations against experimental data. In ATLAS, the output of \gls{mc} event generators is stored in so-called EVNT data format containing HepMC-like~\cite{Dobbs:2001ck} event records. Although only the stable final-state particles are propagated to the detector simulation, the original event record contains the connected tree (either the entirety or only part of it, depending on the \gls{mc} generator used) as so-called \textit{Monte Carlo truth}. A representation of a full simulated \gls{susy} signal event considering the simplified model for electroweakino pair production from \cref{fig:Wh_model} is shown in \cref{fig:mcviz_signal}. 
 		
-\begin{figure}
-	\centering    
-	\includegraphics[width=\textwidth]{test26}
-	\caption{Pictorial representation of a (relatively simple) fully showered electroweakino pair production event with a final state including an electron and two \textit{b}-jets. Most of the additional activity in the event stems from \gls{qcd} interactions and results in a large amount of hadrons in the final state. The two incoming protons are marked as blue blobs. Gluons are represented as green curly green lines, and gluon self interaction is shown as green blobs (indicating only initial and final particles). Gauge and Higgs bosons are shown as pink lines. Photon radiation is shown as curly yellow lines.}
-	\label{fig:mcviz_signal}
-\end{figure}		
+%\begin{figure}
+%	\centering    
+%	\includegraphics[width=\textwidth]{test26}
+%	\caption{Pictorial representation of a (relatively simple) fully showered electroweakino pair production event with a final state including an electron and two \textit{b}-jets. Most of the additional activity in the event stems from \gls{qcd} interactions and results in a large amount of hadrons in the final state. The two incoming protons are marked as blue blobs. Gluons are represented as green curly green lines, and gluon self interaction is shown as green blobs (indicating only initial and final particles). Gauge and Higgs bosons are shown as pink lines. Photon radiation is shown as curly yellow lines.}
+%	\label{fig:mcviz_signal}
+%\end{figure}		
 		
 \subsubsection{Detector simulation}\label{sec:detector_simulation}
 
@@ -431,12 +431,12 @@ For the large-scale reinterpretation discussed in \cref{part:reinterpretation} o
 
 During the digitisation step, the hits from the detector simulation are converted into detector responses, so-called \textit{digits} that are typically produced when currents or voltages in the respective readout channels rise above a certain threshold in a given time window. The digitisation considers a modelling of the peculiarities of each detector component, including electronic noise and cross-talk~\cite{Aad:2010ah}. The effects from out-of-time and in-time pile-up are considered by reading in multiple events and overlaying their hits. In order to match the true pile-up distribution in data, the number of events to overlay per bunch crossing can be set at run time. As described in~\cref{sec:pileup}, effects from cavern background, beam halo and beam gas can either be mitigated or removed at analysis level and are therefore typically not simulated. 
 
-%\begin{sidewaysfigure}[ht]
-%    \includegraphics[width=\textwidth]{test}
-%    \caption{Pictorial representation of a fully showered electroweakino pair production event. The two incoming protons are marked as blue circles. The pair-produced electroweakinos can be found on the left-hand side of the graph. Most of the additional activity in the event stems from \gls{qcd} interactions and results in a large amount of hadrons in the final state.}
-%    \label{fig:mcviz_signal}
-%\end{sidewaysfigure}
-%
+\begin{sidewaysfigure}[ht]
+    \includegraphics[width=0.9\textwidth]{test26}
+    \caption{Pictorial representation of a (relatively simple) fully showered electroweakino pair production event with a final state including an electron and two \textit{b}-jets. Most of the additional activity in the event stems from \gls{qcd} interactions and results in a large amount of hadrons in the final state. The two incoming protons are marked as blue blobs. Gluons are represented as green curly green lines, and gluon self interaction is shown as green blobs (indicating only initial and final particles). Gauge and Higgs bosons are shown as pink lines. Photon radiation is shown as curly yellow lines.}
+    \label{fig:mcviz_signal}
+\end{sidewaysfigure}
+
 
 
 

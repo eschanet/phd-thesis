@@ -23,16 +23,16 @@ This chapter introduces the concept of \textit{simplified likelihoods}, a method
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_SRLM_noLabel_v2}
+		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_SRLM_noLabel_v3}
 		\caption{SR-LM (disc.)\label{fig:single_bin_SRLM}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_SRMM_noLabel_v2}
+		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_SRMM_noLabel_v3}
 		\caption{SR-MM (disc.)\label{fig:single_bin_SRMM}}
 	\end{subfigure}\hfill
 	\par\bigskip
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_SRHM_noLabel_v2}
+		\centering\includegraphics[width=\textwidth]{exclusion_1Lbb_SRHM_noLabel_v3}
 		\caption{SR-HM (disc.)\label{fig:single_bin_SRHM}}
 	\end{subfigure}%
 	\caption{Comparison of exclusion limits obtained using the likelihood built from all nine exclusion signal regions (orange), and the discovery signal regions (green). As discussed in~\cref{sec:signal_region_definitions}, the discovery signal regions are simple \textit{cut-and-count} regions making minimal model assumptions. They are not mutually exclusive and, therefore, cannot be statistically combined, resulting in three separate exclusion contours. The full set of statistical and systematic uncertainties on the background and the signal event rates are included in all regions. The shorthand notation `LH' refers to likelihood.}\label{fig:single_bin}
@@ -237,7 +237,7 @@ In the range relevant to the exclusion contour at 95\% CL (\ie CL$_s\approx0.05$
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.30\textwidth}}]{figure}[\FBwidth]
 {\caption{Comparison of the exclusion contours obtained with the simplified likelihood (blue) and the full likelihood (orange) of the \onelepton search. The uncertainty band includes all \gls{mc} statistical and systematic uncertainties in the case of the full likelihood, and only the simplified uncertainties in the case of the simplified likelihood. The shorthand notation `\textit{LH}' refers to likelihood.}\label{fig:results_simplify_1Lbb}}
-{\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_noLabel}}
+{\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_noLabel_v2}}
 \end{figure}
 
 In addition to the \onelepton search, the simplified likelihood approach has been validated on the ATLAS searches for \gls{susy} listed in \cref{tab:simplified_performance}. An overview of the results is shown in~\cref{fig:results_analyses}, comparing the exclusion contours obtained with the simplified likelihood against the full analysis results. In some analyses, \eg, the ATLAS sbottom and ATLAS $3\ell$ searches, both likelihoods are  in excellent agreement. In other analyses, like \eg, the ATLAS direct stau search, the agreement is less impressive but overall still acceptable.
@@ -263,29 +263,29 @@ In summary, this validation demonstrates that the simplified likelihood method i
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_sbottom_noLabel_v2}
+		\centering\includegraphics[width=\textwidth]{exclusion_sbottom_noLabel_v3}
 		\caption{ATLAS sbottom search~\cite{SUSY-2018-31}\label{fig:results_sbottom}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_noLabel_v2}
+		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_noLabel_v3}
 		\caption{ATLAS stop search\label{fig:results_stop1L}}
 	\end{subfigure}\hfill
 	\par\medskip
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_2L0J_noLabel_v2}
+		\centering\includegraphics[width=\textwidth]{exclusion_2L0J_noLabel_v3}
 		\caption{ATLAS $2\ell$ search~\cite{SUSY-2018-32}\label{fig:results_2L0J}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_directstaus_noLabel_v2}
+		\centering\includegraphics[width=\textwidth]{exclusion_directstaus_noLabel_v3}
 		\caption{ATLAS direct stau search~\cite{SUSY-2018-04}\label{fig:results_directstaus}}
 	\end{subfigure}\hfill
 	\par\medskip
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_3Loffshell_noLabel_v2}
+		\centering\includegraphics[width=\textwidth]{exclusion_3Loffshell_noLabel_v3}
 		\caption{ATLAS $3\ell$ search\label{fig:results_3Loffshell}}
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
-		\centering\includegraphics[width=\textwidth]{exclusion_compressed_noLabel_v2}
+		\centering\includegraphics[width=\textwidth]{exclusion_compressed_noLabel_v3}
 		\caption{ATLAS compressed search~\cite{SUSY-2018-16}\label{fig:results_compressed}}
 	\end{subfigure}\hfill
 	\caption{Simplified likelihood results for the different ATLAS searches studied. The results from the simplified likelihood (blue) are compared with the results of the full analysis likelihood (orange). The same reconstruction-level signal inputs are used in both cases. The shorthand notation `\textit{LH}' refers to likelihood.}\label{fig:results_analyses}
@@ -313,7 +313,7 @@ In \cref{fig:limitations_simplied_stop1l}, the impact of applying the simplified
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.30\textwidth}}]{figure}[\FBwidth]
 {\caption{Expected and observed exclusion contours obtained with the full likelihood and reconstruction-level inputs (orange) and the simplified likelihood and smeared truth-level inputs (purple). All statistical and systematic uncertainties on the background and signal are considered for the reconstruction-level contours determined using the full likelihood.}\label{fig:exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}}
-{\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel}}
+{\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel_v2}}
 \end{figure}
 
 The simplified likelihood method~\cite{Schanet:2758958} introduced in this chapter can offer precise and computationally efficient approximations of ATLAS \gls{susy} searches for which the full likelihood in \texttt{JSON} format is available. A publicly available python tool has been developed for the generic conversion of any full likelihood in \texttt{JSON} format into the simplified format introduced herein~\cite{simplify}.
