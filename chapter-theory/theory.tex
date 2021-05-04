@@ -25,8 +25,6 @@ It provides an extremely precise description of the interactions of elementary p
 In 1964, the Nobel prize was awarded to Feynman, Schwinger and Tomonoga for their fundamental work on \gls{qed}, a quantum field theory allowing the precise calculation of fundamental processes like, \eg, the anomalous magnetic moment of the electron that is known to a relative experimental uncertainty of $2.3 \times 10^{-10}$~\cite{Mohr:2015ccw}.
 In 1979, Glashow, Weinberg and Salam were awarded the Nobel prize for their work towards electroweak unification.
 The most prominent recent progress is undoubtedly the discovery of the Higgs boson, not only resulting in the Nobel prize being awarded to Englert and Higgs, but also completing the \gls{sm}, roughly 50 years after the existence of the Higgs boson had been postulated. 
-
-	\improvement{Couplings and masses are measured from experiment}
 		
 \subsection{Particle content of the Standard Model}
 
@@ -94,7 +92,7 @@ All fermions in the SM are listed in \cref{tab:particles_fermions}.
 	\label{tab:particles_bosons}   
 \end{table}
 
-The fundamental forces described by the SM are propagated by bosons with spin-1.
+The fundamental forces described by the SM are propagated by bosons with spin-1\footnote{Natural units $\hbar = c = 1$ are used henceforth.}.
 The photon~$\gamma$ couples to electrically charged particles and mediates the electromagnetic interaction.
 As the photon is massless, the electromagnetic force has infinite range.
 The strong force is mediated by gluons carrying one unit of colour and one unit of anti-colour.
@@ -250,7 +248,7 @@ where $q = u,d,s,c,b,t$ and $G^a_{\mu\nu}$ are the gluon field strengths given b
 \end{equation}
 As expected from the previous section, $\Lagr_\mathrm{QCD}$ contains terms that are cubic and quartic in the gluon fields, resulting in gluon self-interaction in the theory. All possible \gls{qcd} interaction vertices involving gluons and quarks are shown in \cref{fig:qcd_vertices}. The gluon self-interaction leads to a number of phenomena unknown to Abelian theories, rendering the kinematics of \gls{qcd} highly non-trivial.
 
-In \gls{qcd}, an effect similar to the electric charge screening in \gls{qed} happens through quark-antiquark pairs, resulting in a screening of the colour charge. However, the existence of gluon loops in the gluon propagator due to gluon self-interaction creates an opposing \textit{antiscreening} effect of colour charges. At short distances or large momentum scales, colour-charged particles essentially become free particles, a phenomenon called \textit{asymptotic freedom}. In this regime, where $\alpha_s$ is sufficiently small, \gls{qcd} processes can be calculated using perturbation theory. At large distances or small moment scales, however, $\alpha_s$ becomes large, and gluons interact very strongly with colour-charged particles, meaning that no free gluons or quarks can exist. This phenomenon is called \textit{confinement} and implies that free quarks and gluons will be subject to \textit{hadronisation}, \ie form colourless bound states by combining with other quarks or gluons (that can be created from the vacuum). In a particle detector, hadronisation manifests itself as collimated showers of particles, called \textit{jets}. At momentum scales where the strong coupling constant $\alpha_s$ becomes large ($\alpha_s \approx \mathcal{O}(1)$), \gls{qcd} processes can no longer be calculated using perturbation theory and instead lattice \gls{qcd}~\cite{PhysRevD.10.2445,DeGrand:1055545} is used. 
+In \gls{qcd}, an effect similar to the electric charge screening in \gls{qed} happens through quark-antiquark pairs, resulting in a screening of the colour charge. However, the existence of gluon loops in the gluon propagator due to gluon self-interaction creates an opposing \textit{antiscreening} effect of colour charges. At short distances or large momentum scales, colour-charged particles essentially become free particles, a phenomenon called \textit{asymptotic freedom}. In this regime, where $\alpha_s$ is sufficiently small, \gls{qcd} processes can be calculated using perturbation theory. At large distances or small moment scales, however, $\alpha_s$ becomes large, and gluons interact very strongly with colour-charged particles, meaning that no free gluons or quarks can exist. This phenomenon is called \textit{confinement} and implies that free quarks and gluons will be subject to \textit{hadronisation}, \ie form colourless bound states by combining with other quarks or gluons (that can be created from the vacuum). In a particle detector, hadronisation manifests itself as collimated showers of particles, called \textit{jets}. At momentum scales where the strong coupling constant $\alpha_s$ becomes large ($\alpha_s \approx \mathcal{O}(1)$), \gls{qcd} processes can no longer be calculated using perturbation theory and instead lattice \gls{qcd} is used~\cite{PhysRevD.10.2445,DeGrand:1055545}. 
 
 
 \begin{figure}
@@ -521,7 +519,7 @@ yielding fermion couplings to the Higgs field proportional to the fermion masses
 % 	\Lagr_\mathrm{Yukawa, gen} = - \sum_{f=\ell,d,u}{\left(m_f\bar{\psi}_f\psi_f + \frac{m_f}{v}h\bar{\psi}_f\psi_f\right)} \qquad \textrm{with} \quad m_f = \frac{1}{\sqrt{2}}\lambda_f v.
 %\end{equation}
 
-When introducing all three fermion generations, additional Yukawa terms mixing fermions of different generations appear in the Lagrangian~\cite{Brock:1354959}. The terms involving quark fields can be parametrised using the \gls{ckm} matrix $V_\mathrm{CKM}$~\cite{PhysRevLett.10.531,CKM:1973fv}, quantifying the transition probability between quark generations. Since no right-handed neutrinos exist in the SM, no generation mixing in the lepton sector occurs and hence no neutrino mass terms are allowed in the \gls{sm}. Neutrino oscillations have, however, been observed experimentally, thus at least two massive neutrino generations need to exist. Their mixing can be described\footnote{Technically, this is already an extension of the \gls{sm}.} with the \gls{pmns} matrix~\cite{PMNS:1962mu}, allowing neutrinos to acquire mass \eg through the see-saw mechanism~\cite{Brdar:2019iem}.
+When introducing all three fermion generations, additional Yukawa terms mixing fermions of different generations appear in the Lagrangian~\cite{Brock:1354959}. The terms involving quark fields can be parametrised using the \gls{ckm} matrix~\cite{PhysRevLett.10.531,CKM:1973fv}, quantifying the transition probability between quark generations. Since no right-handed neutrinos exist in the SM, no generation mixing in the lepton sector occurs and hence no neutrino mass terms are allowed in the \gls{sm}. Neutrino oscillations have, however, been observed experimentally, thus at least two massive neutrino generations need to exist. Their mixing can be described\footnote{Technically, this is already an extension of the \gls{sm}.} with the \gls{pmns} matrix~\cite{PMNS:1962mu}, allowing neutrinos to acquire mass \eg through the see-saw mechanism~\cite{Brdar:2019iem}.
  
 \subsection{Renormalisation and divergencies}
 \label{ch:renormalisation}
@@ -546,8 +544,7 @@ At lowest order in the perturbative expansion, the momenta of the internal lines
 \end{figure}
 
 The momentum integrals in loop corrections, however, lead to \textit{ultraviolet divergencies} for large momenta. In order to eliminate the divergencies, the integrals have to be \textit{regularised}, \eg by applying a cut-off scale $\Lambda$, or calculating the integrals in a number $D = 4-\epsilon$ of dimensions where they converge. The potential divergencies are then absorbed in parameters of the Lagrangian, such as coupling constants and masses, after which the regulator is removed again (\eg by setting $\epsilon\rightarrow 0$) and a \textit{renormalisation} procedure is applied, replacing the bare parameter values with the physical, measured values~\cite{Brock:1354959}. Renormalisation effectively absorbs the effects of quantum fluctuations, acting on much smaller scales than the scale of the given problem, into the parameters of the theory.
-\improvement{Mass dimension needs to be < 4}
-As Veltmann and t'Hooft~\cite{THOOFT1972189,THOOFT1971173} have shown, all Yang-Mills theories with massive gauge fields are renormalisable, rendering the \gls{sm} as a whole a renormalisable theory.  
+ As Veltmann and t'Hooft~\cite{THOOFT1972189,THOOFT1971173} have shown, all Yang-Mills theories with massive gauge fields are renormalisable, rendering the \gls{sm} as a whole a renormalisable theory.  
 
 \section{Supersymmetry}
 
@@ -576,7 +573,7 @@ The anisotropies in the \gls{cmb}, studied by the COBE~\cite{Bennett:1996ce,COBE
 	\Omega_b h^2 &= 0.02237\pm0.00015,
 \end{split}
 \end{align}
-suggest that ordinary baryonic matter only makes up $\sim 4.9\%$ of the universe's matter content, while \gls{dm} accounts for $\sim 26.1\%$\footnote{The remaining $\sim 69\%$ are taken up by \textit{dark energy}, the nature of which is still an open question.}.
+suggest that ordinary baryonic matter only makes up $\sim 4.9\%$ of the universe's matter content, while \gls{dm} accounts for $\sim 26.1\%$. The remaining $\sim 69\%$ are taken up by \textit{dark energy}, the nature of which is yet another open question.
 
 Candidates for cold \gls{dm} need to satisfy certain conditions: they have to be stable on cosmological timescales (otherwise they would have decayed by now), they have to couple only very weakly to the electromagnetic interaction (if at all, otherwise they would be \textit{luminous} matter) and they need to have the right relic density. Analyses of structure formations in the Universe have furthermore shown that most \gls{dm} should have been \textit{cold}, \ie non-relativistic, at the beginning of galaxy formation~\cite{Bertone:2004pz}. Candidates for \gls{dm} particles are \eg sterile neutrinos, axions, primordial black holes, or \glspl{wimp}.
 
@@ -589,7 +586,7 @@ In the SM, the only \gls{dm} candidate particle is the neutrino. Given the upper
 
 Although the \gls{sm} provides a good description of nature up to the energy scale probed with today's accelerators, some of its peculiar aspects hint to a more fundamental theory. A prominent example is the question why the electric charges of the electrons and the charges of the quarks in the protons and neutrons in the nuclei exactly cancel, making for electrically neutral atoms~\cite{Brock:1354959}. Or in other words: why are the charges of all observed particles simple multiples of the fundamental charge? And why are they quantised in the first place?
 
-An explanation to many of these peculiarities comes naturally when describing the \gls{sm} as a unified theory with a single non-Abelian gauge group, \eg $SU(5)$~\cite{PhysRevLett.32.438}. The larger symmetry group with a single coupling constant is then thought to be spontaneously broken at very high energy, such that the known \gls{sm} interactions are recovered at the lower energies probed in today's experiments. In such a \gls{gut}, the particles in the \gls{sm} are arranged in anomaly-free\footnote{In the sense that loop corrections do not break symmetries the Lagrangian has.}, irreducible representations of the gauge group, thereby, for example, naturally ensuring the fractional charges of quarks~\cite{Peskin:1995ev}.
+An explanation to many of these peculiarities comes naturally when describing the \gls{sm} as a unified theory with a single non-Abelian gauge group, \eg $SU(5)$~\cite{PhysRevLett.32.438}. The larger symmetry group with a single coupling constant is then thought to be spontaneously broken at very high energy, such that the known \gls{sm} interactions are recovered at the lower energies probed in today's experiments. In such a \gls{gut}, the particles in the \gls{sm} are arranged in anomaly-free\footnote{In the sense that loop corrections do not break symmetries that the Lagrangian has.}, irreducible representations of the gauge group, thereby, for example, naturally ensuring the fractional charges of quarks~\cite{Peskin:1995ev}.
 
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
@@ -702,8 +699,7 @@ As spinors are complex objects, $Q^\dagger$ is also a symmetry operator. In orde
 \end{equation}
 where $P^\mu$ is the four-momentum generator of spacetime translations, $\sigma_\mu = (\mathbb{1}_2,\sigma_i)$, $\bar{\sigma}_\mu = (\mathbb{1}_2,-\sigma_i)$ with $i=1,2,3$ and the Pauli matrices $\sigma_i$, and $\sigma^{\mu\nu} = \frac{i}{4}(\sigma^\mu\bar{\sigma}^\nu - \sigma^\nu\bar{\sigma}^\mu)$ as well as $\bar{\sigma}^{\mu\nu} = \frac{i}{4}(\bar{\sigma}^\mu\sigma^\nu - \bar{\sigma}^\nu\sigma^\mu)$. This is the simplest version of SUSY, called $\mathcal{N}=1$ symmetry, as it introduces only one pair of generators. Supersymmetric theories with $\mathcal{N}\geq 2$ pairs of generators also exist and generally have some theoretical advantages as, \eg, fewer divergencies in the case of $\mathcal{N}=2$, or even no divergencies at all in the case of $\mathcal{N}=4$~\cite{Bustamante:2009us}. \gls{susy} models with $\mathcal{N}\geq 2$, however, do not allow for parity violation and thus fail to describe the physics of the SM, disqualifying them from a phenomenological point of view~\cite{Bustamante:2009us}.
 
-As both \gls{susy} generators commute with spacetime translations (see \cref{eq:commute}), they also both commute with the squared mass operator $-P^2$. Consequently, particles related by the generators, called \textit{superpartners}, must have equal eigenvalues under $-P^2$, \ie they must have equal masses. Furthermore, the \gls{susy} generators also commute with the gauge transformation generators, hence superpartners must have same electric charge, weak isospin and degrees of freedom in colour space~\cite{Martin:1997ns}.\improvement{Mention link to gravity}
-
+As both \gls{susy} generators commute with spacetime translations (see \cref{eq:commute}), they also both commute with the squared mass operator $-P^2$. Consequently, particles related by the generators, called \textit{superpartners}, must have equal eigenvalues under $-P^2$, \ie they must have equal masses. Furthermore, the \gls{susy} generators also commute with the gauge transformation generators, hence superpartners must have same electric charge, weak isospin and degrees of freedom in colour space~\cite{Martin:1997ns}.
 
 \subsection{Supermultiplets}\label{sec:supermultiplets}
 
@@ -721,7 +717,7 @@ As a massless spin-1 boson has two helicity states, \ie $n_b = 2$, the superpart
 	\Phi = (\lambda_a,A^\mu_a,D_a).
 \end{equation}
  Like the chiral auxiliary field, the gauge auxiliary field does not correspond to a physical particle and can be eliminated on-shell through its equations of motion~\cite{Martin:1997ns}.
-
+ 
 \subsection{Supersymmetric Lagrangian}\label{sec:susy_lagrangian}
 
 The simplest supersymmetric model that can be shown to realise the superalgebra is the massless, non-interacting Wess--Zumino model~\cite{Wess:1974tw} with the action~\cite{Bustamante:2009us,Martin:1997ns} 
@@ -957,8 +953,8 @@ Although both R-parity conserving and R-parity violating models exist and are se
 	$M_A$ & mass of the CP-odd Higgs boson \\
 	$\mu$ & Higgs-higgsino mass parameters \\
 	$M_1$, $M_2$, $M_3$ & wino, bino and gluino mass parameters \\
-	$m_{\tilde{q}}$, $m_{\tilde{u}_R}$, $m_{\tilde{d}_R}$, $m_{\tilde{\ell}}$, $m_{\tilde{e}_R}$ & first and second generation sfermion masses \\
-	$m_{\tilde{Q}}$, $m_{\tilde{t}_R}$, $m_{\tilde{b}_R}$, $m_{\tilde{L}}$, $m_{\tilde{\tau}_R}$ & third generation sfermion masses \\
+	$m_{\tilde{q}}$, $m_{\tilde{u}_\mathrm{R}}$, $m_{\tilde{d}_\mathrm{R}}$, $m_{\tilde{\ell}}$, $m_{\tilde{e}_\mathrm{R}}$ & first and second generation sfermion masses \\
+	$m_{\tilde{Q}}$, $m_{\tilde{t}_\mathrm{R}}$, $m_{\tilde{b}_\mathrm{R}}$, $m_{\tilde{L}}$, $m_{\tilde{\tau}_\mathrm{R}}$ & third generation sfermion masses \\
 	$A_t$, $A_b$, $A_\tau$ & third generation trilinear couplings \\
 	\bottomrule					
 	\end{tabular}\vspace{3mm}
@@ -1001,7 +997,7 @@ Often, the constraints set on sparticle masses in simplified models, significant
 \begin{figure}
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.45\textwidth}}]{figure}[\FBwidth]
 {\caption{Cross sections of different \gls{susy} production processes at $\sqrt{s}=\SI{13}{\TeV}$ in $pp$ collisions. Cross sections for pair production of electroweakinos are significantly smaller than, \eg, those for pair production of gluinos. The shaded bands correspond to the theory uncertainty of each cross section. Cross sections taken for coloured and electroweak sector taken from \references\cite{Beenakker:2016lwe,Beneke:2009ye} and \references\cite{Fiaschi:2018hgm,Fuks:2012qx,Fiaschi:2018xdm}, respectively.}\label{fig:SUSY_xsecs}}
-{\includegraphics[width=0.5\textwidth]{SUSY_xsecs}}
+{\includegraphics[width=0.5\textwidth]{SUSY_xsecs.png}}
 \end{figure}
 
 One way of circumventing these issues, while sticking to the simplified model approach, is to ensure that the limits obtained in different simplified models involving different production and decay mechanisms are combined into limits representing more complex \gls{susy} spectra.
@@ -1033,7 +1029,7 @@ While both the ATLAS experiment~\cite{ATL-PHYS-PUB-2021-007} and CMS experiment~
 The reason for the relatively low limits on electroweakinos are the low cross-sections of electroweakino production, compared to those of squark and gluino production.
 As can be seen in \cref{fig:SUSY_xsecs}, the cross sections for $\charg\neutr$ pair production (the main production process considered in the following) is more than two orders of magnitude smaller than that for gluino pair production.  
 
-Apart from the electroweakino mass limits set by the current collider experiments, some additional limits from the LEP experiments are still relevant in some corners of the phase space. Combining the results from all four LEP experiments leads to a general lower chargino mass limit of $\SI{103.5}{\GeV}$, except for scenarios with a low sneutrino mass~\cite{lep_susy_results}. For small mass splittings between the chargino and the \gls{lsp}, the lower limit is a little weaker, with dedicated searches excluding charginos with $m(\charg) < \SI{91.9}{\GeV}$~\cite{lep_susy_results}. For mass splittings larger than $\SI{1.5}{\GeV}$ and up to $\SI{50}{\GeV}$, the \gls{lep} chargino limits have recently been superseded by a dedicated ATLAS search for compressed \gls{susy} scenarios~\cite{SUSY-2018-16}, excluding chargino masses up to $\SI{240}{\GeV}$ for a mass splitting of $\SI{7}{\GeV}$. For the neutralino, a lower limit on the lightest neutralino mass comes from limits on the invisible width of the $Z$ boson, excluding $m(\lsp) < \SI{45.5}{\GeV}$, depending on the $Z$--neutralino coupling~\cite{pdg2020}. \improvement{displaced leptons}
+Apart from the electroweakino mass limits set by the current collider experiments, some additional limits from the LEP experiments are still relevant in some corners of the phase space. Combining the results from all four LEP experiments leads to a general lower chargino mass limit of $\SI{103.5}{\GeV}$, except for scenarios with a low sneutrino mass~\cite{lep_susy_results}. For small mass splittings between the chargino and the \gls{lsp}, the lower limit is a little weaker, with dedicated searches excluding charginos with $m(\charg) < \SI{91.9}{\GeV}$~\cite{lep_susy_results}. For mass splittings larger than $\SI{1.5}{\GeV}$ and up to $\SI{50}{\GeV}$, the \gls{lep} chargino limits have recently been superseded by a dedicated ATLAS search for compressed \gls{susy} scenarios~\cite{SUSY-2018-16}, excluding chargino masses up to $\SI{240}{\GeV}$ for a mass splitting of $\SI{7}{\GeV}$. For the neutralino, a lower limit on the lightest neutralino mass comes from limits on the invisible width of the $Z$ boson, excluding $m(\lsp) < \SI{45.5}{\GeV}$, depending on the $Z$--neutralino coupling~\cite{pdg2020}.
 
 \subsection{Production of electroweakinos at the Large Hadron Collider}
 

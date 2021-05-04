@@ -195,15 +195,17 @@
 \usepackage[titles]{tocloft}
 \setlength{\cftbeforepartskip}{12pt}
 \setlength{\cftbeforechapskip}{2pt}
-\setlength{\cftbeforesecskip}{-4pt}
-\setlength{\cftbeforesubsecskip}{-5pt}
+\setlength{\cftbeforesecskip}{-4.5pt}
+\setlength{\cftbeforesubsecskip}{-5.5pt}
 %\setlength\cftparskip{-2pt}
 
 % ******************************* Nomenclature *********************************
 % To change the name of the Nomenclature section, uncomment the following line
 \renewcommand{\nomname}{Symbols}
 
-\RequirePackage[acronym]{glossaries}
+%\RequirePackage[acronym]{glossaries}
+\RequirePackage[acronym,indexonlyfirst,nogroupskip]{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short}
 \renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}}
 \makeglossaries
 
@@ -250,7 +252,7 @@
 % ******************************** Listings **********************************
 
 \usepackage{listings}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \crefname{lstlisting}{listing}{listings}
 \Crefname{lstlisting}{Listing}{Listings}
 
@@ -316,7 +318,7 @@
 \usepackage{makecell}
 \usepackage{rotating} % for landscape figures
 \usepackage{bbold} % double stroke numbers
-
+\usepackage{bookmark}
 
 % package for displaying captions on weird places
 \RequirePackage{floatrow}
@@ -325,7 +327,7 @@
 % Select what to do with todonotes: 
 % \usepackage[disable]{todonotes} % notes not showed
 \setlength{\marginparwidth}{2cm}
-\usepackage[draft,textsize=small,disable]{todonotes}   % notes showed
+\usepackage[draft,textsize=small]{todonotes}   % notes showed
 
 % ******************************** Style stuff **********************************
 % ************************* Some hacks of my thesis style class I am too lazy to implement correctly ****************************

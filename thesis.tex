@@ -1,5 +1,6 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} 
 
 \documentclass[a4paper,11pt,numbered,customfont]{Classes/PhDThesisPSnPDF}
 
@@ -133,7 +134,7 @@
 \newenvironment{thesisinfo}[1][10em]
   {\noindent\begin{tabular}{@{}l@{~\makebox[#1]{\dotfill}}}}
   {\end{tabular}}
-
+  
 % ******************************** Front Matter ********************************
 \begin{document}
 
@@ -202,20 +203,31 @@ Supported by the Luxembourg National Research Fund (FNR) (13562317)}};
 
 \part{Fundamental concepts}\label{part:fundamentals}
 \include{chapter-theory/theory}
+\cleardoublepage
 \include{chapter-experiment/experiment}
+\cleardoublepage
 \include{chapter-statistics/statistics}
+\cleardoublepage
 
 \part{The 1-lepton analysis}\label{part:simplified_model_analysis}
 \include{chapter-analysis/analysis}
+\cleardoublepage
 \include{chapter-optimisation/optimisation}
+\cleardoublepage
 \include{chapter-background/background}
+\cleardoublepage
 \include{chapter-uncertainties/uncertainties}
+\cleardoublepage
 \include{chapter-results/results}
+\cleardoublepage
 
 \part{Reinterpretation}\label{part:reinterpretation}
 \include{chapter-preservation/preservation}
+\cleardoublepage
 \include{chapter-simplify/simplify}
+\cleardoublepage
 \include{chapter-pmssm/pmssm}
+\cleardoublepage
 
 \part{Summary and Outlook}\label{part:summary}
 \include{chapter-summary/summary}
@@ -236,8 +248,9 @@ Supported by the Luxembourg National Research Fund (FNR) (13562317)}};
 	
 \end{appendices}
 
+\bookmarksetup{startatroot}% this is it
 %\printglossary[type=\acronymtype,title=Abbreviations,nonumberlist]
-\printglossary[type=\acronymtype,title=Abbreviations,nonumberlist]
+\printglossary[type=\acronymtype,title=Abbreviations]
 
 % ********************************** Bibliography ******************************
 \begin{spacing}{0.1}

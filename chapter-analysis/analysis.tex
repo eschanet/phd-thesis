@@ -52,7 +52,7 @@ An exemplary decay into a final state relevant for this search is shown in~\cref
 
 Apart from processes involving top quarks, the production of a $W$ boson in association with multiple jets ($\wjets$) is the third major background considered in the \onelepton search.
 If the $W$ boson undergoes a leptonic decay and two of the produced jets are tagged as originating from $b$ quarks (with a procedure introduced in \cref{sec:flavour_tagging}), the signature of this process can be similar to that of signal events.
-An exemplary diagram for a $\wjets$ event is illustrated in~\cref{fig:wjets}.\improvement{what slices?}
+An exemplary diagram for a $\wjets$ event is illustrated in~\cref{fig:wjets}.
 
 Production of multiple vector bosons $V$ ($=W,Z$), although not a dominant background due to low cross sections, can still result in the same final state as the signal process.
 In the following, diboson ($VV$) and multiboson ($VVV$) processes are considered.
@@ -261,16 +261,14 @@ Jets are reconstructed using the anti-$k_t$ algorithm~\cite{Cacciari:2008gp}, im
 A radius parameter of $R=0.4$ is used for all jets considered in the following. The inputs to the anti-$k_t$ algorithm are topo-clusters~\cite{Aad:2020flx}, built at the \gls{em} scale using the procedure introduced in~\cref{sec:reco_electrons}.
 Tracks with $\pt > \SI{500}{\MeV}$ and an association to the primary vertex are assigned to jets using \textit{ghost association}~\cite{Cacciari:2007fd}, a method treating them as particles with infinitesimal momentum such that the properties of the calorimeter-based jets are not changed. 
 
-\improvement{truth jets}
-
 Reconstructed jets undergo a \gls{jes} calibration, correcting the four-momentum and scaling the energy and mass~\cite{Aad:2020flx}.
 In a first step, energy contributions from in-time and out-of-time pile-up are removed using a data-driven jet-by-jet approach based on the jet area $A$ and pile-up $\pt$ density $\rho = p_\mathrm{T}/A$. The jet area is determined by the relative number of ghost particles (added uniformly in solid angle to the event prior to jet clustering) associated to the jet after clustering. 
 Additionally, a residual correction derived from \gls{mc} simulation is applied, parameterised in the number of mean interactions per bunch crossing and the number of reconstructed primary vertices~\cite{Aad:2020flx,Cacciari:2007fd}.
-The reconstructed jet four-momentum is corrected to the particle-level energy scale through an absolute \gls{jes} and $\eta$ calibration.\unsure{what does this mean exactly?}
+The reconstructed jet four-momentum is corrected to the particle-level energy scale through an absolute \gls{jes} and $\eta$ calibration.
 In order to reduce the dependence of the jet response (\ie the ratio between the measured jet energy and the true jet energy) on the flavour and energy distribution of its constituents, a series of multiplicative corrections is applied~\cite{PERF-2011-03}.
 These improve the \gls{jer} and are based on data from the calorimeters, jet-related tracking information, as well as \gls{ms} information.
 Differences between the jet response in data and \gls{mc} simulation, caused by imperfect detector and physics simulations, are corrected using so-called \textit{in situ} calibrations~\cite{Aad:2020flx}.
-The jet response in data and \gls{mc} simulations is measured separately, allowing to derive a correction factor that is applied on data\unsure{why not on MC?}.
+The jet response in data and \gls{mc} simulations is measured separately, allowing to derive a correction factor that is applied on data.
 Similarly to the \gls{jes}, the \gls{jer} is also calibrated. Its calibration is performed using $\pt$-asymmetry measurements in dijet events~\cite{PERF-2014-02}.
 
 Even after the subtraction of pile-up effects, some pile-up jets still remain. The \gls{jvt}~\cite{PERF-2014-03}, a multivariate discriminant, is used to suppress pile-up jets.
@@ -428,7 +426,7 @@ In the signal scenarios considered in the analysis, the \glspl{lsp} constitute a
 
 \subsubsection{Contransverse mass}
 
-The contransverse mass $\mct$~\cite{Tovey:2008ui} is designed to have a kinematic endpoint for events with pair-produced heavy particles decaying into invisible and visible particles subject to a contra-linear boost.\improvement{is that in lab frame?} In the following, $\mct$ is defined as
+The contransverse mass $\mct$~\cite{Tovey:2008ui} is designed to have a kinematic endpoint for events with pair-produced heavy particles decaying into invisible and visible particles subject to a contra-linear boost. In the following, $\mct$ is defined as
 \begin{equation}
 	\mct = \sqrt{2\pt^{b_1}\pt^{b_2}(1+\cos\upDelta\phi_{b\hspace{-0.06em}b})},
 \end{equation}

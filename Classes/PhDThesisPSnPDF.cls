@@ -651,8 +651,7 @@ supported!}
   \ifsetCustomMargin
   % Margin to be define in preamble using geometry package
   \else
-    \RequirePackage[paper=\PHD@papersize,hmarginratio=1:1,
-      vmarginratio=1:1,scale=0.75,bindingoffset=5mm]{geometry}
+    \RequirePackage[paper=\PHD@papersize, marginratio={4:6,5:6}, scale={0.72,0.75},bindingoffset=6mm]{geometry}
   \fi
 
   \if@twoside
@@ -1189,13 +1188,13 @@ wish to left align your text}
 \newsavebox{\PHD@Title}
 \begin{lrbox}{\PHD@Title}
   \begin{minipage}[c]{0.98\textwidth}
-	\noindent\rule{\textwidth}{1pt}
+%	\noindent\rule{\textwidth}{1pt}
  		\vspace{-1.4ex}
  		
     \centering \Large \textbf{\@title}
     
     		\vspace{0.1ex}
- 	\noindent\rule{\textwidth}{1pt}
+% 	\noindent\rule{\textwidth}{1pt}
     \ifthenelse{\equal{\@subtitle}{}}{
       % subtitle is not defined
     }{
