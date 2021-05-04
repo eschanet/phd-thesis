@@ -129,7 +129,7 @@ The user-specifiable arguments for the event selection and physics object calibr
 \subsection{Workflow preservation}
 
  \begin{sidewaysfigure}
-	\centering\includegraphics[width=1.0\textwidth]{yadage_workflow_instance}
+	\centering\includegraphics[width=0.95\textwidth]{yadage_workflow_instance}
 	\caption{Graph of the workflow as specified for the analysis pipeline. The containerised processing steps are represented as blue rectangular nodes, while input parameters, input files and outputs are shown as red oval nodes. The workflow is comprised of four processing steps: \texttt{signal\_analysis\_stage\_mc16(a,d,e)}, \texttt{merging\_stage}, \texttt{workspace\_creation\_stage} and \texttt{statistical\_inference\_stage}. The first two steps perform the object calibration, event selection and merging of the three \gls{mc} datasets representing the three data-taking periods 2015--2016, 2017 and 2018. The latter two steps implement the patching of the partial likelihood with the expected signal rates, as well as the final statistical inference. Compared to \cref{fig:pipeline_analysis} the first two steps implement the \textit{signal analysis} part, while the latter two steps implement the \textit{statistical inference} deriving the final results. Figured created using \textsc{GraphViz}~\cite{Gansner00anopen,neato}.} 
 	\label{fig:recast_workflow}
 \end{sidewaysfigure}

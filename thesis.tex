@@ -2,7 +2,7 @@
 % Please have a look at the README.md file for info on how to use the template
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>} 
 
-\documentclass[a4paper,11pt,numbered,customfont]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,11pt,numbered,customfont,print]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -198,7 +198,7 @@ Supported by the Luxembourg National Research Fund (FNR) (13562317)}};
 % ******************************** Main Matter *********************************
 \mainmatter
 
-\listoftodos[Notes]
+%\listoftodos[Notes]
 \include{Introduction/introduction}
 
 \part{Fundamental concepts}\label{part:fundamentals}
@@ -273,8 +273,10 @@ Supported by the Luxembourg National Research Fund (FNR) (13562317)}};
 
 %\printbibliography[heading=bibintoc, title={References}]
 
-
 \end{spacing}
+
+\cleardoublepage
+
 \include{Acknowledgement/acknowledgement}
 
 

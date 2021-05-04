@@ -651,7 +651,7 @@ supported!}
   \ifsetCustomMargin
   % Margin to be define in preamble using geometry package
   \else
-    \RequirePackage[paper=\PHD@papersize, marginratio={4:6,5:6}, scale={0.72,0.75},bindingoffset=6mm]{geometry}
+    \RequirePackage[paper=\PHD@papersize, marginratio={4:6,5:6}, scale={0.72,0.75},bindingoffset=5mm]{geometry}
   \fi
 
   \if@twoside
@@ -1191,7 +1191,7 @@ wish to left align your text}
 %	\noindent\rule{\textwidth}{1pt}
  		\vspace{-1.4ex}
  		
-    \centering \Large \textbf{\@title}
+    \centering \fontsize{18}{24}\selectfont \textsc{\@title}
     
     		\vspace{0.1ex}
 % 	\noindent\rule{\textwidth}{1pt}
@@ -1282,11 +1282,11 @@ wish to left align your text}
 \begin{lrbox}{\PHD@author}
 	\begin{minipage}[c]{\textwidth}
 	\centering
-		{\large vorgelegt von} \\
+		{\large \textsc{vorgelegt von}} \\
 		\vspace{0.5em}   
-		{\Large {\@author}} \\
+		{\large \textsc{\@author}} \\
 		\vspace{0.5em}   
-		{\large aus Luxemburg}
+		{\large \textsc{aus Luxemburg}}
 		\vspace{1em}   
 	\end{minipage}
 \end{lrbox}
@@ -1299,7 +1299,9 @@ wish to left align your text}
   \ifthenelse{\equal{\@college}{}}{
     % college is not defined
     \begin{center}
+    \textsc{
       \@degreedate
+      }
     \end{center}
   }{
     % college is defined
