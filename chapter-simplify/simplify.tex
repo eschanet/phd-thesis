@@ -69,21 +69,21 @@ The following description highlights the specification details relevant to the s
 
 In the simplified likelihood, the background model is approximated with a single background sample, representing the total \gls{sm} background estimate in the different analysis channels.
 The pre-fit sample rate of the total background sample in the simplified likelihood is set to the total post-fit background estimate obtained in the background-only fit using the full likelihood.
-Furthermore, the complete set of nuisance parameters in the original full likelihood is reduced to a single constrained parameter with up and down variations corresponding to the post-fit uncertainties on the total \gls{sm} background estimates in each bin.
+Furthermore, the complete set of nuisance parameters in the original full likelihood is reduced to a single constrained parameter corresponding to the post-fit uncertainties on the total \gls{sm} background estimates in each bin.
 It is constrained by a Gaussian of the form $\mathrm{Gaus}(a = 0, \sigma = 1)$ and is correlated over all bins in each channel. The $1\sigma$ up and down evaluations of the rate modification, necessary for the interpolations during the profile likelihood fit to data, are given by the post-fit uncertainties on the total background estimate.
 Although the final uncertainty is thus constrained by a simple Gaussian, non-Gaussian effects are included to some extent due to the full treatment of the uncertainties in the full likelihood fit, performed in order to derive the pre-fit values for the simplified likelihood.
 
-\Cref{lst:bkg_sample} shows a representative total background sample, called `\texttt{total\_bkg}', defining expected event rates for a channel with three bins. The single nuisance parameter is called `\texttt{total\_error}' and is implemented as a \textit{rate modifier} (cf. \cref{sec:likelihood_function}).
+\Cref{lst:bkg_sample} shows a representative total background sample, called `\texttt{total\_bkg}' and taken from the \onelepton search, defining expected event rates for a channel with three bins. The single nuisance parameter is called `\texttt{total\_error}' and is implemented as a \textit{rate modifier} (cf. \cref{sec:likelihood_function}).
 
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[language=json,firstnumber=1,caption={Representative total background sample with sample rate and total uncertainty for three separate bins, derived from a fit in the \glspl{sr} and \glspl{cr} using the full likelihood. The \texttt{histosys} type modifier in \lib{HistFactory} implements a shape uncertainty correlated over all bins.},captionpos=b, label=lst:bkg_sample]
 {
   "name": "total_bkg",
-  "data": [6.44, 4.62, 1.60],
+  "data": [6.4, 4.6, 1.6],
   "modifiers": [{
     "data": {
-      "hi_data": [8.43, 6.04, 2.23], 
-      "lo_data": [4.45, 3.19, 0.97]
+      "hi_data": [8.4, 6.0, 2.2], 
+      "lo_data": [4.5, 3.2, 0.9]
     }, 
     "name": "total_error",
     "type": "histosys"
@@ -97,7 +97,7 @@ Although the final uncertainty is thus constrained by a simple Gaussian, non-Gau
 Each channel in the full likelihood with the original number of bins is also entering the simplified likelihood\footnote{Being able to reproduce the full statistical combination of all analysis regions is one of the main motivations for the introduction of the simplified likelihood.}.
 Each contains a total background sample as specified above.
 Apart from the total background sample, one additional sample is needed: the signal sample.
-It introduces the unconstrained signal strength parameter $\mu$ as second and final parameter of the likelihood. In the hypothesis tests, the signal strength parameter acts as \gls{poi}.
+It introduces the unconstrained signal strength parameter $\mu$ as second and final parameter of the likelihood. In the hypothesis tests, the signal strength parameter acts as \glsfirst{poi}.
 
 As an example, the channel definition of the exclusion signal region SR-HM in the simplified likelihood of the \onelepton search is shown in \cref{lst:sig_sample}. For simplicity, the representative signal sample does not introduce any additional uncertainties on the signal rates, thereby assuming them to be negligible. Depending on the \gls{bsm} scenario, signal uncertainties can, however, be introduced through additional event rate modifiers.
 
@@ -136,7 +136,7 @@ According to the \texttt{JSON} specification defined in \reference\cite{ATL-PHYS
       "name": "SR-HM", 
       "data": [6.0, 5.0, 3.0]
     },
-    \dots
+    ...
   }	
 }
 \end{lstlisting}
@@ -300,10 +300,10 @@ As these signal regions were found to only add limited sensitivity to the search
 
 It is worth highlighting again that the simplified likelihood assumes the total background model to be describable by a single sample with a single rate modifier, constrained by a Gaussian and correlated over all bins, with background event rates and uncertainties obtained from a background-only fit using the full likelihood.
 This, in particular, assumes that the background model is sufficiently constrained by the large statistics in the \glspl{cr} and that the introduction of signal contributions---especially in the \glspl{sr}---does not significantly change the background model in a way that cannot be replicated with the simplified likelihood.
-A configuration, where the background model is no longer mostly constrained by the large statistics in the control regions is tolerable to some extent in the full analysis likelihood, but turns out to be problematic for the simplified likelihood, as it lacks the number of parameters to be able to replicate the behaviour of the full likelihood.  
+A configuration, where the background model is no longer mostly constrained by the large statistics in the control regions, is tolerable to some extent in the full analysis likelihood, but turns out to be problematic for the simplified likelihood, as it lacks the number of parameters to be able to replicate the behaviour of the full likelihood.  
 
 An additional limitation arises in cases of significant signal contamination in the \glspl{cr}. In the full likelihood, significant signal contaminations in the \glspl{cr} generally lead to smaller background estimates in the \glspl{sr}, which, in turn, result in conservative exclusion limits given the observed data.
-In the simplified likelihood, even with the \glspl{cr} included, the single constrained nuisance parameter does not offer enough degrees of freedom\footnote{In the full likelihood the normalisation of the \gls{sm} background is taken care of through floating normalisation parameters (and to some extent other constrained parameters), hence there are more degrees of freedom to fit the model to data.} to scale down the background model in the $\mu = 1$ hypothesis to the levels obtained in the full likelihood, ultimately resulting in \textit{fake} sensitivity in the \glspl{cr}.
+In the simplified likelihood, even with the \glspl{cr} included, the single constrained nuisance parameter does not offer enough degrees of freedom\footnote{In the full likelihood the normalisation of the dominant \gls{sm} backgrounds is typically taken care of through floating normalisation parameters (and to some extent other constrained parameters), hence there are more degrees of freedom to fit the model to data.} to scale down the background model in the $\mu = 1$ hypothesis to the levels obtained in the full likelihood, ultimately resulting in \textit{fake} sensitivity in the \glspl{cr}.
 Although it is generally important to limit signal contamination in the \glspl{cr} for the sake of healthy profile likelihood fits, this is especially true in the case of very simplified likelihoods, like the one introduced herein.
 In the case of the ATLAS stop search, shown in~\cref{fig:results_stop1L}, significant signal contamination\footnote{Since the kinematic properties of the $\tilde{t}_1$ decays drastically change in the parameter region with $m(\tilde{t}_1) < m(\lsp)+m(t)$, this is a kinematic region that the analysis is not designed to be sensitive to. Therefore the \glspl{cr} are not guaranteed to be free of signal contamination.} of more than 30\% appears in the control regions for many signal models with $m(\tilde{t}_1) < m(\lsp)+m(t)$, thereby breaking one of the base assumptions of the simplified likelihood.
 In \cref{fig:limitations_simplied_stop1l}, the impact of applying the simplified likelihood on signal models with significant signal contamination in the region $m(\tilde{t}_1) < m(\lsp)+m(t)$ is shown. In practice, this means that models need to be carefully checked for potential signal contamination in the control regions, and cannot be evaluated using the simplified likelihood in case the signal contamination is found to be too high\footnote{The exact amount of tolerable signal contamination should be explicitly checked on a per-analysis basis. For models exceeding the tolerated amount, the full likelihood may be used instead of the simplified one.}.
@@ -316,7 +316,7 @@ In \cref{fig:limitations_simplied_stop1l}, the impact of applying the simplified
 {\includegraphics[width=0.65\textwidth]{exclusion_1Lbb_truthInput_BkgSignal_700_200_noLabel_v2}}
 \end{figure}
 
-The simplified likelihood method~\cite{Schanet:2758958} introduced in this chapter can offer precise and computationally efficient approximations of ATLAS \gls{susy} searches for which the full likelihood in \texttt{JSON} format is available. A publicly available python tool has been developed for the generic conversion of any full likelihood in \texttt{JSON} format into the simplified format introduced herein~\cite{simplify}.
+The simplified likelihood method~\cite{Schanet:2758958} introduced in this chapter can offer precise and computationally efficient approximations of ATLAS searches for \gls{susy} for which the full likelihood in \texttt{JSON} format is available. A publicly available python tool has been developed for the generic conversion of any full likelihood in \texttt{JSON} format into the simplified format introduced herein~\cite{simplify}. Although only explicitly investigated and validated in the context of ATLAS searches for \gls{susy}, the simplified likelihood method can in principle be applied on any search for \gls{bsm} physics relying on the \textsc{HistFactory} template.
 
 The procedure of approximating the statistical model of a search is orthogonal to the truth-level analysis discussed in \cref{sec:truth_analysis} in the sense that both approximations target a different part of the analysis workflow shown in \cref{fig:pipeline_analysis}.
 As such, both approaches can be combined into a \textit{simplified analysis} that runs a smeared truth-level analysis in order to determine an estimate for the signal event rates, followed by a simplified statistical inference using the simplified likelihood.
