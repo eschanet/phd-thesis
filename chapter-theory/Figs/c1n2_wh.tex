@@ -38,19 +38,19 @@ enddef;}
 \input{ppVertex.fmf}
 
 % UPPER CASCADE
-\fmf{ewkino,lab=\color{red}\chinoonepm,lab.side=left,fore=red,tension=2}{ppVertex,v1}
+\fmf{ewkino,lab=\color{red}{$\tilde{\chi}^{\pm}_1$},lab.side=left,fore=red,tension=2}{ppVertex,v1}
 
     \fmf{ewkino,fore=red}{v1,LSP1}
-    \fmflabel{\color{red}\ninoone}{LSP1}
+    \fmflabel{\color{red}{$\tilde{\chi}^{0}_1$}}{LSP1}
 
     \fmf{boson}{v1,W}
     \fmflabel{$W^\pm$}{W}
 
 % LOWER CASCADE
-\fmf{ewkino,lab=\color{red}\ninotwo,lab.side=right,fore=red,tension=2}{ppVertex,v2}
+\fmf{ewkino,lab=\color{red}{$\tilde{\chi}^{0}_2$},lab.side=right,fore=red,tension=2}{ppVertex,v2}
 
     \fmf{ewkino,fore=red}{v2,LSP2}
-    \fmflabel{\color{red}\ninoone}{LSP2}
+    \fmflabel{\color{red}{$\tilde{\chi}^{0}_1$}}{LSP2}
 
     \fmf{dashes}{v2,h}
     \fmflabel{$h$}{h}
