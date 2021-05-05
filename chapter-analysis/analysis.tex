@@ -5,6 +5,7 @@
 
 \chapter{Analysis overview}\label{ch:1lepton}
 
+\glsreset{em}
 
 \graphicspath{{chapter-analysis/Figs/Vector/}{chapter-analysis/Figs/}}
 
@@ -123,12 +124,12 @@ The cross sections for electroweakino pair production have been calculated using
 
 \subsection{Background datasets}
 
-Top quark pair production and single top processes were generated using \textsc{Powheg-Box} v2~\cite{PowhegBox:2010xd}, implementing the \textsc{Powheg} method~\cite{Powheg1,Powheg2} for merging \gls{nlo} matrix elements with the parton showers without resorting to negative event weights\footnote{It is, in general, desirable to avoid negative \gls{mc} weights when generating \gls{mc} events, as they not only dilute the statistical power of the dataset generated, but also need to be processed through the time-consuming detector simulation.}.
+Top quark pair production and single top processes were generated at \gls{nlo} in \gls{qcd} using \textsc{Powheg-Box} v2~\cite{PowhegBox:2010xd}, implementing the \textsc{Powheg} method~\cite{Powheg1,Powheg2} for merging \gls{nlo} matrix elements with the parton showers without resorting to negative event weights\footnote{It is, in general, desirable to avoid negative \gls{mc} weights when generating \gls{mc} events, as they not only dilute the statistical power of the dataset generated, but also need to be processed through the time-consuming detector simulation.}.
 The parton showering, hadronisation and underlying event were simulated using \textsc{Pythia8}. Production of $\ttbar+V$ is generated using \textsc{MadGraph5\_aMC@NLO} 2.3.3, interfaced with \textsc{Pythia8} for the parton showering. 
 $W/Z+\mathrm{jets}$ processes are simulated using \textsc{Sherpa} 2.2.1~\cite{Gleisberg:2008ta,Bothmann:2019yzt}, allowing for up to two (four) additional parton emissions at NLO (LO) accuracy. 
 %The CKKW scheme~\cite{Hoeche:2009rj,Catani:2001cc}, extended to NLO accuracy~\cite{Hoeche:2012yf}, is used for matching and merging the matrix elements and parton showers. 
 For diboson and multiboson  processes both \textsc{Sherpa} 2.2.1 and 2.2.2 were used. 
-All Higgs processes are simulated using \textsc{Powheg-Box} v2 for the matrix element calculations and \textsc{Pythia8} for the parton showers, underlying event and hadronisation. 
+All Higgs processes are simulated using \textsc{Powheg-Box} v2 for the matrix element calculations and \textsc{Pythia8} for the parton showers, underlying event and hadronisation. All processes are simulated at \gls{nlo} in \gls{qcd}, except for \gls{ggf} Higgs production, which is modelled at \gls{nnlo}.
 %While the generation of $h+\ttbar$ uses the A14 tune and the NNPDF2.3LO set, $h+V$ and single Higgs production are simulated using the NNPDF 3.0 NNLO set and the AZNLO~\cite{ATL-PHYS-PUB-2013-017} set of tuned generator parameters.
 
 For maximum modelling accuracy, the detector simulation for all \gls{mc} background datasets was performed using the full detector simulation based on \textsc{Geant4}. Except for the \gls{mc} datasets generated using \textsc{Sherpa}, all background datasets use \textsc{EvtGen}~\cite{Lange:2001uf} to improve the modelling of heavy flavour decays and \textit{b}-tagging efficiency. Similar to the signal models, pile-up effects are taken into account by overlaying all background datasets with simulated minimum bias events generated with \textsc{Pythia8} using the NNPDF 2.3 LO \gls{PDF} set~\cite{Ball:2012cx} and the A3 tune~\cite{ATL-PHYS-PUB-2016-017} of parameters. 
@@ -146,20 +147,20 @@ For maximum modelling accuracy, the detector simulation for all \gls{mc} backgro
 	\midrule
 	Signal & \textsc{MG5\_aMC@NLO} 2.6.2 & \textsc{Pythia} 8.230 & NNPDF 2.3 LO~\cite{Ball:2012cx} & NLO+NLL~\cite{Fuks:2013vua,Fiaschi:2018hgm,Fuks:2012qx} & A14~\cite{ATL-PHYS-PUB-2014-021} \\
 	\midrule	
-	$\ttbar$ & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.230 & NNPDF 3.0 NLO~\cite{Ball:2014uwa} & NNLO+NNLL~\cite{Czakon:2011xx,Cacciari:2011hy} & A14 \\
+	$\ttbar$ & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.230 & NNPDF 3.0 NLO~\cite{Ball:2014uwa} & NNLO + NNLL~\cite{Czakon:2011xx,Cacciari:2011hy} & A14 \\
 	$t$ (s-channel) & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.230 & NNPDF 3.0 NLO & NLO~\cite{Kant:2014oha} & A14 \\
 	$t$ (t-channel) & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.230 & NNPDF 3.0 NLO & NLO~\cite{Kant:2014oha} & A14 \\
 	$t+W$ & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.230 & NNPDF 3.0 NLO & NNLO~\cite{Kant:2014oha,Kidonakis:2010ux} & A14 \\
 	$\ttbar + V$ & \textsc{MG5\_aMC@NLO} 2.3.3 & \textsc{Pythia} 8.210 & NNPDF 3.0 NLO & NLO~\cite{Campbell:2012dh,Lazopoulos:2008de} & A14 \\
 	\midrule
-	$V+\mathrm{jets}$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1} & NNPDF 3.0 NNLO~\cite{Ball:2014uwa} & NNLO~\cite{Gavin:2010az} & \textsc{Sherpa} default \\
+	$V+\mathrm{jets}$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1} & NNPDF 3.0 NNLO~\cite{Ball:2014uwa} & NNLO~\cite{Anastasiou:2003ds} & \textsc{Sherpa} default \\
 	$VV$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1/2.2.2} & NNPDF 3.0 NNLO & NLO~\cite{ATL-PHYS-PUB-2017-005} & \textsc{Sherpa} default\\
 	$VVV$ & \multicolumn{2}{c}{\textsc{Sherpa} 2.2.1/2.2.2} & NNPDF 3.0 NNLO & NLO~\cite{ATL-PHYS-PUB-2017-005} & \textsc{Sherpa} default\\
 	\midrule
 	$h+\ttbar$ & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.230 & NNPDF 3.0 NLO & NLO~\cite{deFlorian:2016spz} & A14 \\
-	$h+V$ & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.212 & NNPDF 3.0 NNLO & NNLO+NLO~\cite{deFlorian:2016spz} & AZNLO~\cite{ATL-PHYS-PUB-2013-017} \\
-	\textit{h (ggF)} & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.212 & NNPDF 3.0 NNLO & N$^3$LO+N$^3$LL~\cite{deFlorian:2016spz} & AZNLO \\
-	\textit{h (VBF)} & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.212 & NNPDF 3.0 NNLO & NNLO+NLO~\cite{deFlorian:2016spz} & AZNLO \\
+	$h+V$ & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.212 & NNPDF 3.0 NNLO & NNLO (QCD) + NLO (EW)~\cite{deFlorian:2016spz} & AZNLO~\cite{ATL-PHYS-PUB-2013-017} \\
+	\textit{h (ggF)} & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.212 & NNPDF 3.0 NNLO & N$^3$LO (QCD) + NLO (EW)~\cite{deFlorian:2016spz} & AZNLO \\
+	\textit{h (VBF)} & \textsc{Powheg-Box} v2 & \textsc{Pythia} 8.212 & NNPDF 3.0 NNLO & NNLO (QCD) + NLO (EW)~\cite{deFlorian:2016spz} & AZNLO \\
 	\bottomrule
 	\end{tabular}}\vspace{2mm}
 	\label{tab:mc_generators}   
@@ -383,7 +384,7 @@ The missing transverse energy $\etmiss$ is an observable finding widespread usag
 
 \subsubsection{Transverse mass}
 
-The transverse masse $\mt$~\cite{Arnison:1983rp,transversemass:163856} is one of the most important observables considered in \onelepton search. It aims to reconstruct the mass of a heavy particle decaying into two daughter particles subject to a co-linear boost in the laboratory transverse plane. In \gls{susy} searches targeting the \onelepton final state, $\mt$ is commonly used to reconstruct the transverse mass of the $W$ boson decaying into a lepton--neutrino pair, and is therefore defined as
+The transverse mass $\mt$~\cite{Arnison:1983rp,transversemass:163856} is one of the most important observables considered in \onelepton search. It aims to reconstruct the mass of a heavy particle decaying into two daughter particles subject to a co-linear boost in the laboratory transverse plane. In \gls{susy} searches targeting the \onelepton final state, $\mt$ is commonly used to reconstruct the transverse mass of the $W$ boson decaying into a lepton--neutrino pair, and is therefore defined as
 \begin{equation}
 	\mt = \sqrt{2\pt^\ell\etmiss(1-\cos[\upDelta\phi(\makemebold{p}_\mathrm{T}^\ell,\makemebold{p}_\mathrm{T}^\mathrm{miss})])},
 \end{equation}
