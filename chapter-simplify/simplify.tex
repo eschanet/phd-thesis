@@ -39,7 +39,7 @@ This chapter introduces the concept of \textit{simplified likelihoods}, a method
 \end{figure}
 
 Reinterpretations of ATLAS searches for \gls{susy} in more complete and realistic \gls{susy} scenarios (as opposed to simplified models) typically involve high-dimensional parameter spaces that are computationally extremely challenging to sample and compare to ATLAS data in an exhaustive manner.
-Large-scale reinterpretations of this type have already been performed by the ATLAS Collaboration after the Run~1 data-taking period in both the full 19-dimensional \gls{pmssm}~\cite{pMSSM-scan-run1:2015baa}, as well as in a 5-dimensional representation of the \gls{pmssm} focussing on the electroweak sector~\cite{Aaboud:2016wna}.
+Large-scale reinterpretations of this type have already been performed by the ATLAS Collaboration after the Run~1 data-taking period in both the full 19-dimensional \gls{pmssm}~\cite{pMSSM-scan-run1:2015baa}, as well as in a 5-dimensional representation of the \gls{pmssm} focusing on the electroweak sector~\cite{Aaboud:2016wna}.
 Due to the complexity of the statistical models of ATLAS searches for \gls{susy}, originating from the large number of channels and the sizeable set of nuisance parameters usually considered\footnote{As an example, the full likelihood of the \onelepton search using the exclusion signal regions has 8 channels with a total of 14 bins. Each channel contains event rates for 9 samples that depend on a total of 115 modifiers.}, the wall time needed for the statistical inference is usually not negligible.
 In a typical large-scale reinterpretation involving \mbox{$\mathcal{O}(10^5$--$10^6)$} sampled models, an optimistic estimation of the wall time needed for the statistical inference per model of \mbox{$\mathcal{O}(\SI{10}{\second}$--$\SI{e2}{\second})$} is too computationally expensive, especially when more than just a single ATLAS search is included.
 It is thus crucial to reduce the number of models that need to be evaluated using the searches' full statistical model.
@@ -73,10 +73,10 @@ Furthermore, the complete set of nuisance parameters in the original full likeli
 It is constrained by a Gaussian of the form $\mathrm{Gaus}(a = 0, \sigma = 1)$ and is correlated over all bins in each channel. The $1\sigma$ up and down evaluations of the rate modification, necessary for the interpolations during the profile likelihood fit to data, are given by the post-fit uncertainties on the total background estimate.
 Although the final uncertainty is thus constrained by a simple Gaussian, non-Gaussian effects are included to some extent due to the full treatment of the uncertainties in the full likelihood fit, performed in order to derive the pre-fit values for the simplified likelihood.
 
-\Cref{lst:bkg_sample} shows an exemplary total background sample, called `\texttt{total\_bkg}', defining expected event rates for a channel with three bins. The single nuisance parameter is called `\texttt{total\_error}' and is implemented as a \textit{rate modifier} (cf. \cref{sec:likelihood_function}).
+\Cref{lst:bkg_sample} shows a representative total background sample, called `\texttt{total\_bkg}', defining expected event rates for a channel with three bins. The single nuisance parameter is called `\texttt{total\_error}' and is implemented as a \textit{rate modifier} (cf. \cref{sec:likelihood_function}).
 
 \begin{minipage}{\linewidth}
-\begin{lstlisting}[language=json,firstnumber=1,caption={Exemplary total background sample with sample rate and total uncertainty for three separate bins, derived from a fit in the \glspl{sr} and \glspl{cr} using the full likelihood. The \texttt{histosys} type modifier in \lib{HistFactory} implements a shape uncertainty correlated over all bins.},captionpos=b, label=lst:bkg_sample]
+\begin{lstlisting}[language=json,firstnumber=1,caption={Representative total background sample with sample rate and total uncertainty for three separate bins, derived from a fit in the \glspl{sr} and \glspl{cr} using the full likelihood. The \texttt{histosys} type modifier in \lib{HistFactory} implements a shape uncertainty correlated over all bins.},captionpos=b, label=lst:bkg_sample]
 {
   "name": "total_bkg",
   "data": [6.44, 4.62, 1.60],
@@ -99,10 +99,10 @@ Each contains a total background sample as specified above.
 Apart from the total background sample, one additional sample is needed: the signal sample.
 It introduces the unconstrained signal strength parameter $\mu$ as second and final parameter of the likelihood. In the hypothesis tests, the signal strength parameter acts as \gls{poi}.
 
-As an example, the channel definition of the exclusion signal region SR-HM in the simplified likelihood of the \onelepton search is shown in \cref{lst:sig_sample}. For simplicity, the exemplary signal sample does not introduce any additional uncertainties on the signal rates, thereby assuming them to be negligible. Depending on the \gls{bsm} scenario, signal uncertainties can, however, be introduced through additional event rate modifiers.
+As an example, the channel definition of the exclusion signal region SR-HM in the simplified likelihood of the \onelepton search is shown in \cref{lst:sig_sample}. For simplicity, the representative signal sample does not introduce any additional uncertainties on the signal rates, thereby assuming them to be negligible. Depending on the \gls{bsm} scenario, signal uncertainties can, however, be introduced through additional event rate modifiers.
 
 \begin{minipage}{\linewidth}
-\begin{lstlisting}[language=json,firstnumber=1,caption={Channel definition of the exclusion signal region SR-HM of the \onelepton search. The exemplary signal sample with sample rate and unconstrained normalisation parameter does not introduce any additional uncertainties. The three dots `\dots' contain the remaining definition for the total background sample from \cref{lst:bkg_sample}.},captionpos=b, label=lst:sig_sample]
+\begin{lstlisting}[language=json,firstnumber=1,caption={Channel definition of the exclusion signal region SR-HM of the \onelepton search. The representative signal sample with sample rate and unconstrained normalisation parameter does not introduce any additional uncertainties. The three dots `\dots' contain the remaining definition for the total background sample from \cref{lst:bkg_sample}.},captionpos=b, label=lst:sig_sample]
 {
   "name": "SR-HM",
   "samples": [
