@@ -683,8 +683,10 @@ supported!}
     % Margin to be define in preamble using geometry package
     \else
       % No Margin staggering on Odd and Even side
+%      \RequirePackage[paper=\PHD@papersize,hmarginratio=10:7,
+%        vmarginratio=1:1,scale={0.702,0.75}]{geometry} % dvips
       \RequirePackage[paper=\PHD@papersize,hmarginratio=1:1,
-        vmarginratio=1:1,scale={0.72,0.75}]{geometry} % dvips
+        vmarginratio=1:1,scale={0.702,0.75}]{geometry} % dvips
     \fi
     \hypersetup{pdfpagelayout=OneColumn}
 \fi
