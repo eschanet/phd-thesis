@@ -8,8 +8,8 @@ This is my thesis.
 --------------------------------------------------------------------------------
 ## What is this?
 
-A thesis. No shit, it's a thesis.
+The full source of m y PhD thesis
 
 ## Acknowledgements
 
-The LaTeX template for this thesis has been forked from Krishna Kumar: <https://github.com/kks32/phd-thesis-template>
+The LaTeX template for this thesis has been originally forked from [Krishna Kumar](https://github.com/kks32/phd-thesis-template) but subsequently adapted quite a bit.
