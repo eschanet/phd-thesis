@@ -126,7 +126,7 @@ As an example, the channel definition of the exclusion signal region SR-HM in th
 
 \subsubsection{Observations and measurements}
 
-According to the \texttt{JSON} specification defined in \reference\cite{ATL-PHYS-PUB-2019-029}, the data observed by the analysis in each channel (and each bin) is introduced by means of an \textit{observation}. In the case of the simplified likelihood, this is taken directly from the full likelihood and, by construction, does not need to be modified in any form. An example of an observation including several channels and bins is shown in~\cref{lst:observation}.
+According to the \texttt{JSON} specification defined in \reference\cite{ATL-PHYS-PUB-2019-029}, the data observed by the analysis in each channel (and each bin) is introduced by means of an \textit{observation}. In the case of the simplified likelihood, this is taken directly from the full likelihood and, by construction, does not need to be modified in any form. An example of an observation, taken from the \onelepton search, is shown in~\cref{lst:observation}.
 
 \begin{minipage}{\linewidth}
 \begin{lstlisting}[language=json,firstnumber=1,caption={Example of an observation in the simplified likelihood, taken directly from the full likelihood of the \onelepton search. The number of events observed in data are given for each bin in the exclusion signal region SR-HM. Similar entries exist for all other regions, indicated by the dots `\dots'.},captionpos=b, label=lst:observation]
@@ -196,7 +196,7 @@ The original 125 signal points of the \onelepton search were used in each config
 				ATLAS $1\ell$ search~\cite{SUSY-2019-08} & $4.93 \pm 0.11$ & $0.040 \pm 0.0057$ & 123$\times$ \\
 				ATLAS direct stau search~\cite{SUSY-2018-04} & $1.91 \pm 0.090$ & $0.039 \pm 0.0055$ & 49$\times$\\
 				ATLAS sbottom search~\cite{SUSY-2018-31} & $1.36 \pm 0.067$ & $0.038 \pm 0.0046$ & 36$\times$ \\
-				ATLAS stop search & $2.27 \pm 0.062$ & $0.044 \pm 0.011$ & 51$\times$\\
+				ATLAS stop search~\cite{SUSY-2018-07} & $2.27 \pm 0.062$ & $0.044 \pm 0.011$ & 51$\times$\\
 				\bottomrule
 			\end{tabular}
 		\caption{Benchmarks of the wall times needed for computing the CL$_s$ value for a single signal model using the full and the simplified likelihoods. 
@@ -268,7 +268,7 @@ In summary, this validation demonstrates that the simplified likelihood method i
 	\end{subfigure}\hfill
 	\begin{subfigure}[b]{0.5\textwidth}
 		\centering\includegraphics[width=\textwidth]{exclusion_stop1L_noLabel_v3}
-		\caption{ATLAS stop search\label{fig:results_stop1L}}
+		\caption{ATLAS stop search~\cite{SUSY-2018-07}\label{fig:results_stop1L}}
 	\end{subfigure}\hfill
 	\par\medskip
 	\begin{subfigure}[b]{0.5\textwidth}
