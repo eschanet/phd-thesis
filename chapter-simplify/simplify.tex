@@ -69,7 +69,7 @@ The following description highlights the specification details relevant to the s
 
 In the simplified likelihood, the background model is approximated with a single background sample, representing the total \gls{sm} background estimate in the different analysis channels.
 The pre-fit sample rate of the total background sample in the simplified likelihood is set to the total post-fit background estimate obtained in the background-only fit using the full likelihood.
-Furthermore, the complete set of nuisance parameters in the original full likelihood is reduced to a single constrained parameter corresponding to the post-fit uncertainties on the total \gls{sm} background estimates in each bin.
+Furthermore, the complete set of nuisance parameters in the original full likelihood is reduced to a single constrained parameter corresponding to the total systematic uncertainties on the total \gls{sm} background estimates in each bin.
 It is constrained by a Gaussian of the form $\mathrm{Gaus}(a = 0, \sigma = 1)$ and is correlated over all bins in each channel. The $1\sigma$ up and down evaluations of the rate modification, necessary for the interpolations during the profile likelihood fit to data, are given by the post-fit uncertainties on the total background estimate.
 Although the final uncertainty is thus constrained by a simple Gaussian, non-Gaussian effects are included to some extent due to the full treatment of the uncertainties in the full likelihood fit, performed in order to derive the pre-fit values for the simplified likelihood.
 
